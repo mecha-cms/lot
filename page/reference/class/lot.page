@@ -1,0 +1,65 @@
+---
+title: Class `Lot`
+description: Register variables and makes them available globally in the shields.
+type: Markdown
+...
+
+### Set
+
+~~~ .xmp.php
+Lot::set($key, $value = null, $scope = null);
+~~~
+
+Set a `$test` variable for usage in the shields:
+
+~~~ .php
+Lot::set('test', 'Hello!');
+~~~
+
+### Get
+
+~~~ .xmp.php
+Lot::get($key, $fail = false, $scope = null);
+~~~
+
+Get `test` value from the `$GLOBALS` variable:
+
+~~~ .php
+echo Lot::get('test');
+~~~
+
+### Reset
+
+~~~ .xmp.php
+Lot::reset($key = null, $scope = null);
+~~~
+
+Remove `test` property from the `$GLOBALS` variable:
+
+~~~ .xmp.php
+Lot::reset('test');
+~~~
+
+Remove all properties that has been set by the `Lot::set()` method:
+
+~~~ .php
+Lot::reset();
+~~~
+
+---
+
+### Variables
+
+Here are list of variables that are available globally in the shields:
+
+ - `$config`
+ - `$date`
+ - `$language`
+ - `$url`
+ - `$u_r_l` → alias for `$url`
+
+Global variables created by [Page][link:../extension/page] extension:
+
+ - `$pager`
+ - `$page`
+ - `$pages`
