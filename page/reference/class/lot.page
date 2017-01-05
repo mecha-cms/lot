@@ -55,6 +55,7 @@ Here are list of variables that are available globally in the shields:
  - `$config`
  - `$date`
  - `$language`
+ - `$site`
  - `$url`
  - `$u_r_l` → alias for `$url`
 

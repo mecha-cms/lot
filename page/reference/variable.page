@@ -17,6 +17,10 @@ This variable is an instance of the [`Date` class][link:class/date] with current
 
 This variable is an instance of the [`Language` class][link:class/language].
 
+### `$site`
+
+This is an alias for `$config`.
+
 ### `$url`
 
 This variable is an instance of the [`URL` class][link:class/u-r-l].
