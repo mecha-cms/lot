@@ -52,3 +52,11 @@ Return the stored extension states if any, otherwise, return `$fail`:
 ~~~ .php
 $state = Extend::state('minify');
 ~~~
+
+> **Note:** If `$key` is array, then it will going to be the alternate values of the `$state` output if some data are not available:
+>
+> ~~~ .php
+> $state = Extend::state('minify', [
+>     'html' => [2, 1] // add `html` property to `$state` if missing
+> ]);
+> ~~~

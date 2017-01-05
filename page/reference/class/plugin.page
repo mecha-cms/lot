@@ -55,4 +55,12 @@ Return the stored plugin states if any, otherwise, return `$fail`:
 $state = Plugin::state('markdown');
 ~~~
 
+> **Note:** If `$key` is array, then it will going to be the alternate values of the `$state` output if some data are not available:
+>
+> ~~~ .php
+> $state = Plugin::state('markdown', [
+>     'table_class' => 1 // add `table_class` property to `$state` if missing
+> ]);
+> ~~~
+
 [connect:../extension/plugin]

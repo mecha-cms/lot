@@ -161,6 +161,15 @@ Get `title` property from a page if available, otherwise, return `Untitled`:
 $test = Page::open('path\to\file.page')->get('title', 'Untitled');
 ~~~
 
+Get `title` and `url` properties from a page:
+
+~~~ .php
+$page = Page::open('path\to\file.page');
+
+$title = $page->get('title');
+$url = $page->get('url');
+~~~
+
 ### Save
 
 ~~~ .xmp.pgp
