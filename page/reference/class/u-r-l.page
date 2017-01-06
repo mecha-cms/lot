@@ -37,11 +37,11 @@ __test__(
 Result:
 
 ~~~ .no-highlight
-http://localhost/sub-directory
+[[url.protocol]][[url.host]]/sub-directory
 ~~~
 
 ~~~ .no-highlight
-http://localhost/sub-directory/foo
+[[url.protocol]][[url.host]]/sub-directory/foo
 ~~~
 
 ~~~ .no-highlight
@@ -61,7 +61,7 @@ javascript:;
 ~~~
 
 ~~~ .no-highlight
-http://localhost/sub-directory/foo/bar
+[[url.protocol]][[url.host]]/sub-directory/foo/bar
 ~~~
 
 ~~~ .no-highlight
@@ -73,7 +73,7 @@ http://foo
 ~~~
 
 ~~~ .no-highlight
-http://localhost/foo
+[[url.protocol]][[url.host]]/foo
 ~~~
 
 ~~~ .no-highlight
@@ -93,7 +93,7 @@ javascript:;
 ~~~
 
 ~~~ .no-highlight
-http://localhost/foo/bar
+[[url.protocol]][[url.host]]/foo/bar
 ~~~
 
 ### Short
@@ -106,22 +106,22 @@ Convert full URL into relative URL:
 
 ~~~ .php
 __test__(
-    URL::short('http://localhost/sub-directory'),
-    URL::short('http://localhost/sub-directory/foo'),
-    URL::short('http://localhost/sub-directory?foo'),
-    URL::short('http://localhost/sub-directory&foo'),
-    URL::short('http://localhost/sub-directory#foo'),
-    URL::short('http://localhost/sub-directory/javascript:;'),
-    URL::short('http://localhost/sub-directory/foo/bar'),
+    URL::short('[[url.protocol]][[url.host]]/sub-directory'),
+    URL::short('[[url.protocol]][[url.host]]/sub-directory/foo'),
+    URL::short('[[url.protocol]][[url.host]]/sub-directory?foo'),
+    URL::short('[[url.protocol]][[url.host]]/sub-directory&foo'),
+    URL::short('[[url.protocol]][[url.host]]/sub-directory#foo'),
+    URL::short('[[url.protocol]][[url.host]]/sub-directory/javascript:;'),
+    URL::short('[[url.protocol]][[url.host]]/sub-directory/foo/bar'),
     URL::short('//foo'),
     URL::short('http://foo'),
-    URL::short('http://localhost/sub-directory', false),
-    URL::short('http://localhost/sub-directory/foo', false),
-    URL::short('http://localhost/sub-directory?foo', false),
-    URL::short('http://localhost/sub-directory&foo', false),
-    URL::short('http://localhost/sub-directory#foo', false),
-    URL::short('http://localhost/sub-directory/javascript:;', false),
-    URL::short('http://localhost/sub-directory/foo/bar', false),
+    URL::short('[[url.protocol]][[url.host]]/sub-directory', false),
+    URL::short('[[url.protocol]][[url.host]]/sub-directory/foo', false),
+    URL::short('[[url.protocol]][[url.host]]/sub-directory?foo', false),
+    URL::short('[[url.protocol]][[url.host]]/sub-directory&foo', false),
+    URL::short('[[url.protocol]][[url.host]]/sub-directory#foo', false),
+    URL::short('[[url.protocol]][[url.host]]/sub-directory/javascript:;', false),
+    URL::short('[[url.protocol]][[url.host]]/sub-directory/foo/bar', false),
     URL::short('//foo', false),
     URL::short('http://foo', false)
 );
@@ -226,22 +226,22 @@ echo $url; // return `$url->url` (the base URL)
 The available properties:
 
 ~~~ .no-highlight
-// http://localhost/sub-directory/foo/bar?foo=bar#foo
+// [[url.protocol]][[url.host]]/sub-directory/foo/bar?foo=bar#foo
 
-$url → http://localhost/sub-directory
+$url → [[url.protocol]][[url.host]]/sub-directory
  │
- ├── scheme: http
- ├── protocol: http://
- ├── host: localhost
- ├── port: 80
+ ├── scheme: [[url.scheme]]
+ ├── protocol: [[url.protocol]]
+ ├── host: [[url.host]]
+ ├── port: [[url.port]]
  ├── user: null ← or depends on `$_SESSION['url']['user']`
  ├── pass: null ← or depends on `$_SESSION['url']['pass']`
  ├── directory: sub-directory
- ├── url: http://localhost/sub-directory
+ ├── url: [[url.protocol]][[url.host]]/sub-directory
  ├── path: foo/bar
  ├── query: ?foo=bar
  ├── previous: null ← or depends on `$_SESSION['url']['previous']`
- ├── current: http://localhost/sub-directory/foo/bar
+ ├── current: [[url.protocol]][[url.host]]/sub-directory/foo/bar
  ├── next: null ← or depends on `$_SESSION['url']['next']`
  └── hash: null ← or depends on `$_COOKIE['url']['hash']`
 ~~~

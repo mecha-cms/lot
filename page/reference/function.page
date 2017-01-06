@@ -152,11 +152,11 @@ $test_1 = [
     'user' => null,
     'pass' => null,
     'directory' => 'sub-directory',
-    'url' => 'http://localhost/sub-directory',
+    'url' => '[[url.protocol]][[url.host]]/sub-directory',
     'path' => 'foo/bar',
     'query' => '?foo=bar',
     'previous' => null,
-    'current' => 'http://localhost/sub-directory/foo/bar',
+    'current' => '[[url.protocol]][[url.host]]/sub-directory/foo/bar',
     'next' => null,
     'hash' => null
 ];

@@ -1,0 +1,8 @@
+---
+title: Class `Asset\Union`
+description: Determine how `Asset::{$extension}` will output the resulted data.
+...
+
+> **Info:** This class is located in `lot\extend\asset\engine\kernel` folder.
+
+[connect:../genome]

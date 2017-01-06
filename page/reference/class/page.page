@@ -128,7 +128,7 @@ $test = [
     'author' => 'Taufik Nurrohman',
     'link' => null,
     'content' => '<p>Page content.</p>',
-    'url' => 'http://localhost/--',
+    'url' => '[[url]]/--',
     'date' => Date::__set_state([
         'date' => 1483259587
     ])

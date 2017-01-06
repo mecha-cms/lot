@@ -1,0 +1,22 @@
+---
+title: Class `Guardian`
+description: Basic security.
+...
+
+### Kick
+
+~~~ .xmp.php
+Guardian::kick($path = "");
+~~~
+
+Redirect to ` [[url]]/foo/bar `:
+
+~~~ .php
+Guardian::kick('foo/bar');
+~~~
+
+Redirect to `http://example.com`:
+
+~~~ .php
+Guardian::kick('http://example.com');
+~~~

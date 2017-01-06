@@ -60,7 +60,7 @@ Block::reset('mark');
 ### Replace
 
 ~~~ .xmp.php
-Block::replace($id, $fn, $content, $strict = false);
+Block::replace($id, $fn | $text, $content, $strict = false);
 ~~~
 
 Replace `mark` block in `$content` with advance pattern:
