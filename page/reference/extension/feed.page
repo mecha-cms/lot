@@ -1,0 +1,18 @@
+---
+title: Feeds
+description: Add RSS and JSON feeds format features.
+...
+
+### Usage
+
+ - Normal page format → `path/to/file`
+ - RSS page format → `path/to/file/feed.rss`
+ - JSON page format → `path/to/file/feed.json`
+
+### Dependency
+
+#### Extension
+
+ - [Pages][link:page]
+
+[Download Latest Version]([[url]]/2016/d/mecha-cms/extend.feed/archive/master.zip) {.button}

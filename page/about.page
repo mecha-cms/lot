@@ -6,15 +6,22 @@ type: Markdown
 
 <p class="mecha-head"><span></span><span></span></p>
 
-**Mecha** is a file–based CMS that is focused on the principle that a static website must be personal, portable, light and easy to be exported and backed up. However, this doesn’t mean that Mecha is powerless. Mecha has a fairly flexible set of API that you can use without having to make it bloated, keeping you happy focused on developing your own website, according to your personality.
+**Mecha** is a file–based CMS that survives on a principle that, a static website must be personal, portable, light and easy to be exported and backed up. However, this doesn’t mean that Mecha is powerless. Mecha has a fairly flexible set of API that you can use without having to make it bloated, keeping you happy focused on developing your own website, according to your personality.
 
-[Download](https://github.com/mecha-cms/genome) {.button}
+[Download Development Version]([[url]]/2016/d/mecha-cms/genome/archive/master.zip) {.button} [Download Version `1.2.8`]([[url]]/2016/d/mecha-cms/mecha/archive/v1.2.8.zip) {.button}
 
 ### Features
 
- 1. It is easy to write an article using [Markdown][link:article/markdown-syntax].
+ 1. Writing pages with ease using [Markdown][link:article/markdown-syntax].
  2. Unlimited page childrens.
- 3. etc.
+ 3. Custom fields.
+ 4. Extensible as hell.
+ 5. Create unique design for each blog posts by adding special CSS and JavaScript files using the [art][link:reference/extension/plugin/art] plugin.
+ 6. Built–in commenting system using the [response][link:reference/extension/response] extension.
+ 7. Almost everything are optional. [^1]
+ 8. RSS and Sitemap using the [Feed][link:reference/extension/feed] extension.
+ 9. Easy to use and [well documented][link:reference] API.
+ 10. Panel extension (coming soon).
 
 ### System Requirements
 
@@ -24,13 +31,9 @@ type: Markdown
 ### Getting Started
 
  1. Make sure that you already have the required component.
- 2. Download **Mecha** by cloning [this](https://github.com/mecha-cms/mecha) **GitHub** repo.
- 3. Upload **Mecha** through your FTP/SFTP to the public folder/directory in your site [^1]
- 4. Type `http://example.org/knock.php` in the address bar of your web browser. Or, if for some reason you have to upload this CMS in a sub-folder, then just type `http://example.org/your-sub-folder-name/knock.php` [^2]
- 5. Put your name, your email, your _user_ and _pass_ data in the form provided then click **Install**.
- 6. There will appear a message describes that you are able to log in now. Log in!
- 7. Once logged in, you can start configuring the blog by visiting the configuration page.
- 8. Post something!
+ 2. Download Mecha by cloning [this](https://github.com/mecha-cms/genome) **GitHub** repo.
+ 3. Upload Mecha through your FTP/SFTP to the public folder/directory in your site [^2]
+ 4. _To be continued._
 
-[^1]: Usually named as `public_html`, `www` or `htdocs`
-[^2]: Seriously, if you really typed domain http://example.org, then you really are in a big trouble!
+[^1]: Mecha started to rebuild itself through two new principles: 1). everything is a page, 2). everything is a plugin.
+[^2]: Usually named as `public_html`, `www` or `htdocs`.

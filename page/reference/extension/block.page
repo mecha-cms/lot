@@ -1,5 +1,5 @@
 ---
-title: Block Extension
+title: Blocks
 description: Blocks are some kind of placeholders that are available within the page content, which is normally written just like normal HTML markup, but with custom enclosing characters. Each of the block patterns then can be replaced by another contents.
 ...
 
@@ -87,3 +87,5 @@ As of **Mecha** version `1.x.x` _shortcodes_:
 ~~~
 
 [connect:../class/block]
+
+[Download Latest Version]([[url]]/2016/d/mecha-cms/extend.block/archive/master.zip) {.button}

@@ -1,0 +1,18 @@
+---
+title: Art Direction Plugin
+description: Create unique design for each blog posts by adding special CSS and JavaScript files.
+...
+
+To enable this feature, add `css.data` and `js.data` files to a folder that is named with the same name as the page slug and stored in the same directory level:
+
+~~~ .no-highlight
+lot\
+ │
+ └── page\
+     ├── blog-page\
+     │   ├── css.data
+     │   └── js.data
+     └── blog-page.page
+~~~
+
+Write custom CSS code in `css.data` file, and custom JavaScript code in `js.data` file.

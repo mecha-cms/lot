@@ -1,5 +1,5 @@
 ---
-title: Page Extension
+title: Pages
 description: This extension enables basic features of a website by utilizing the structure of the page files placement in the `lot\page` folder. This extension also adds some useful properties to the global `$config` variable.
 ...
 
@@ -82,7 +82,7 @@ lot\
      └── no-no-no.page
 ~~~
 
-Users can store their miscellaneous data that has relationship with the page file in that folder with extension `.data`. This is called [link:field].
+Users can store their miscellaneous data that has relationship with the page file in that folder with extension `.data`. This is called **Field**.
 
 ### Field
 
