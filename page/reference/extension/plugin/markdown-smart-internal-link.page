@@ -12,7 +12,7 @@ The link syntax is exactly the same as referenced link syntax in **Markdown**, t
 ~~~ .markdown
 [‌link:page-one‌] → will be replaced into `[Page Title](/directory/directory/page-one "Page Title")`
 [‌link text‌][‌link:page-one‌] → will be replaced into `[link text](/directory/directory/page-one "Page Title")`
-[‌link:does-not-exist‌] → will be replaced into `<s style="color:#f00;" title="[link:does-not-exist]">link broken</s>`
+[‌link:does-not-exist‌] → will be replaced into `<s style="color:#f00;" title="[‌link:does-not-exist‌]">link broken</s>`
 ~~~
 
 All of the page path provided will be parsed relative to in which the page is stored. To go to the up level of the current page path, you can use `../` pattern:
@@ -25,6 +25,6 @@ All of the page path provided will be parsed relative to in which the page is st
 
 #### Plugin
 
-  - [Markdown Parser][link:markdown]
+  - [link:markdown]
 
 [Download Latest Version]([[url]]/2016/d/mecha-cms/extend.plugin.markdown-smart-internal-link/archive/master.zip) {.button}

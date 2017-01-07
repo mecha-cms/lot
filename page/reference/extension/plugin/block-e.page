@@ -17,6 +17,6 @@ echo $date->year; // output the current year
 
 #### Extension
 
- - [Block][link:../block]
+ - [link:../block]
 
 [Download Latest Version]([[url]]/2016/d/mecha-cms/extend.plugin.block-e/archive/master.zip) {.button}

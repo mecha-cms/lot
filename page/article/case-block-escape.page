@@ -1,0 +1,42 @@
+---
+title: Escaping Blocks
+description: How to write literal block syntax in the page content?
+...
+
+Unlike [Markdown][link:../reference/extension/plugin/markdown], [blocks][link:../reference/extension/block] are still accessible within the `<code>` tags. So, it is not possible to write literal block syntax within the `<code>` tags. To write literal block syntax in the page content, you will need to wrap the syntax with some backtick characters like so:
+
+~~~ .no-highlight
+`[‌[‌block‌]‌]`
+~~~
+
+~~~ .no-highlight
+`[‌[‌block‌]‌]`content`[‌[‌/‌block‌]‌]`
+~~~
+
+This will make the block parser ignore them, and instead, it will unwrap the blocks from backtick characters and keep the syntax visible as how it was written without the surrounding `` ` `` characters.
+
+That’s the first option. The second option is by using an invisible characters that have no dimension at all, but still considered exists in the string. For this reason, **Mecha** chooses to use `&zwnj;` as the best candidate to handle this task.
+
+> The zero-width non-joiner (ZWNJ) is a non-printing character used in the computerization of writing systems that make use of ligatures. When placed between two characters that would otherwise be connected into a ligature, a ZWNJ causes them to be printed in their final and initial forms, respectively. This is also an effect of a space character, but a ZWNJ is used when it is desirable to keep the words closer together or to connect a word with its morpheme. — [Wikipedia](https://en.wikipedia.org/wiki/Zero-width_non-joiner "Zero-Width Non-Joiner – Wikipedia")
+
+It is clear that the block parser essentially requires the `[‌[` and `]‌]` characters to be present lined up exactly without any additional characters in between. By adding these characters between them, the probability of them to be parsed is very small. `&zwnj;` character is invisible, but it is still considered exists. As an example, put your cursor in the text input below and then press <kbd title="Key Command/Control">⌘</kbd>+<kbd title="Key A">A</kbd> to select all characters in it, then press <kbd title="Key Backspace">⌫</kbd> to show the placeholder text:
+
+<p><input type="text" value="&zwnj;" placeholder="If I showed up, it means that there aren’t any characters here." class="input block"></p>
+
+Unfortunately, you can’t just copy that invisible character from the text input anyway. It does work with content editable elements, but not with form elements. This may depend on the browser vendors. You can copy the character here:
+
+<p contenteditable="true" style="border:1px dashed;min-height:1em;" class="block">&zwnj;</p>
+
+And then paste it between `[‌`, `‌]`, `/` and the block ID so that it becomes like this:
+
+~~~ .no-highlight
+[•[•block•]•]content[•[•/•block•]•]
+~~~
+
+### Why Invisible Characters?
+
+It’s just for the sake of aesthetics. By using invisible characters, your page’s source will be kept clean and readable by others as it is. Using `` ` `` as the escaping characters is conform with the procedure, but some Markdown users may assume  that, a ``‌`[‌[‌block‌]‌]`‌`` syntax will turn into HTML `<code>[‌[‌block‌]‌]</code>`. In fact, it will only turn into `[‌[‌block‌]‌]` because they need at least two `` ` `` characters to make it becomes wrapped by the HTML `<code>`.
+
+Some good source code editor like [CodeMirror](http://codemirror.com "CodeMirror") can visualize them as red dots (depends on the theme I guess):
+
+![1]([[asset]]/png/article/case-block-escape.png)

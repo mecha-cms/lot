@@ -6,3 +6,16 @@ description: Determine how `Asset::{$extension}` will output the resulted data.
 > **Info:** This class is located in `lot\extend\asset\engine\kernel` folder.
 
 [connect:../genome]
+
+### Example
+
+Force CSS assets to be outputted as inline CSS:
+
+~~~ .php
+Asset\Union::plug('css', function($value, $key, $attr) {
+    if ($content = File::open($value['path'])->read()) {
+        return '<style media="screen">' . $content . '</style>';
+    }
+    return "";
+});
+~~~
