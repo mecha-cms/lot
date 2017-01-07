@@ -24,7 +24,7 @@ Blocks are configurable. Even, you can create your own block markup by editing t
  - The `0` parts are configuration for the block tags.
  - The `1` parts are configuration for the block tags’ attributes.
  - The `2` parts are for the block comments markup.
- - The `3` parts are for the [escape marker][link:../article/case-block-escape].
+ - The `3` parts are for the [escape marker][link:../../article/case-block-escape].
 
 Following is an example of configuring block patterns as regular HTML (custom HTML tags):
 
