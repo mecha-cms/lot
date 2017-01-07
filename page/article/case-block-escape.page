@@ -5,11 +5,11 @@ description: How to write literal block syntax in the page content?
 
 Unlike [Markdown][link:../reference/extension/plugin/markdown], [blocks][link:../reference/extension/block] are still accessible within the `<code>` tags. So, it is not possible to write literal block syntax within the `<code>` tags. To write literal block syntax in the page content, you will need to wrap the syntax with some backtick characters like so:
 
-~~~ .no-highlight
+~~~ .txt
 `[‌[‌block‌]‌]`
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 `[‌[‌block‌]‌]`content`[‌[‌/‌block‌]‌]`
 ~~~
 
@@ -29,7 +29,7 @@ Unfortunately, you can’t just copy that invisible character from the text inpu
 
 And then paste it between `[‌`, `‌]`, `/` and the block ID so that it becomes like this:
 
-~~~ .no-highlight
+~~~ .txt
 [•[•block•]•]content[•[•/•block•]•]
 ~~~
 

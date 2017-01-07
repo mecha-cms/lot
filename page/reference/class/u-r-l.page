@@ -36,63 +36,63 @@ __test__(
 
 Result:
 
-~~~ .no-highlight
+~~~ .txt
 [[url.protocol]][[url.host]]/sub-directory
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 [[url.protocol]][[url.host]]/sub-directory/foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 ?foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 &foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 #foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 javascript:;
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 [[url.protocol]][[url.host]]/sub-directory/foo/bar
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 //foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 http://foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 [[url.protocol]][[url.host]]/foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 ?foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 &foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 #foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 javascript:;
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 [[url.protocol]][[url.host]]/foo/bar
 ~~~
 
@@ -131,75 +131,75 @@ __test__(
 
 Result:
 
-~~~ .no-highlight
+~~~ .txt
 /sub-directory
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 /sub-directory/foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 /sub-directory?foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 /sub-directory&foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 /sub-directory#foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 /sub-directory/javascript:;
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 /sub-directory/foo/bar
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 //foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 http://foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 ?foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 &foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 #foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 javascript:;
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 foo/bar
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 //foo
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 http://foo
 ~~~
 
@@ -225,7 +225,7 @@ echo $url; // return `$url->url` (the base URL)
 
 The available properties:
 
-~~~ .no-highlight
+~~~ .txt
 // [[url.protocol]][[url.host]]/sub-directory/foo/bar?foo=bar#foo
 
 $url → [[url.protocol]][[url.host]]/sub-directory

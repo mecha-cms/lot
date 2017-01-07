@@ -9,7 +9,7 @@ What is a page?
 
 A page is a plain text file stored in the `lot\page` folder. The proper file name format for a page file is `*.page` where `*` is the page slug that only accept `a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `k`, `l`, `m`, `n`, `o`, `p`, `q`, `r`, `s`, `t`, `u`, `v`, `w`, `x`, `y`, `z`, `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9` and `-` characters.
 
-~~~ .no-highlight
+~~~ .txt
 lot\
  └── page\
      ├── lorem-ipsum.page
@@ -73,7 +73,7 @@ Most of the default data are just an empty string or `null`, which can also be t
 
 A page file can also has a connection with a folder that is located in the same directory level, by setting the folder name with the same name as the page name, without the file extension (the page state).
 
-~~~ .no-highlight
+~~~ .txt
 lot\
  └── page\
      ├── lorem-ipsum\
@@ -88,7 +88,7 @@ Users can store their miscellaneous data that has relationship with the page fil
 
 **Field** has a higher priority than the page headers. So, if you have a `title.data` stored in `lot\page\lorem-ipsum` folder, then the content of that file will overrides the `title` data from the page headers.
 
-~~~ .no-highlight
+~~~ .txt
 lot\
  └── page\
      ├── lorem-ipsum\
@@ -106,7 +106,7 @@ Users can also put another page file in that folder. This is called **Page Child
 
 **Page Children** will overrides the item page view of the current file that has relationship with the current folder –the `lot\lorem-ipsum.page` file– and will replace that item page view into an index page view, contain list of `lot\lorem-ipsum`’s page children.
 
-~~~ .no-highlight
+~~~ .txt
 lot\
  └── page\
      ├── lorem-ipsum\
@@ -123,26 +123,26 @@ lot\
 
 > **Note:** To tell the extension to disable the page listing on certain folders, put the page file that has relationship with the folder inside that folder instead:
 >
-> ~~~ .no-highlight
+> ~~~ .txt
 > // before
 > lot\page\lorem-ipsum\
 > lot\page\lorem-ipsum.page
 > ~~~
 >
-> ~~~ .no-highlight
+> ~~~ .txt
 > // after
 > lot\page\lorem-ipsum\lorem-ipsum.page
 > lot\page\
 > ~~~
 > Or simply create an empty parent page duplicate. This will keep the parent page included in the post listing of the parent folder:
 >
-> ~~~ .no-highlight
+> ~~~ .txt
 > // before
 > lot\page\lorem-ipsum\
 > lot\page\lorem-ipsum.page
 > ~~~
 >
-> ~~~ .no-highlight
+> ~~~ .txt
 > // after
 > lot\page\lorem-ipsum\lorem-ipsum.page
 > lot\page\lorem-ipsum.page
@@ -150,7 +150,7 @@ lot\
 
 And so on…
 
-~~~ .no-highlight
+~~~ .txt
 lot\
  └── page\
      ├── lorem-ipsum\

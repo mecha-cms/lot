@@ -1,0 +1,13 @@
+---
+title: Automatic Paragraph
+description: Wrap `description` data with paragraph tags if it doesn’t have paragraph tags.
+...
+
+~~~ .php
+Hook::set('page.output', function($data) {
+    if (!empty($data['description']) && strpos($data['description'], '</p>') === false) {
+        $data['description'] = '<p>' . str_replace(["\n\n", "\n"], ['</p><p>', '<br>'], trim(n($data['description']))) . '</p>';
+    }
+    return $data;
+});
+~~~

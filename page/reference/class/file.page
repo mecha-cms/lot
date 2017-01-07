@@ -121,7 +121,7 @@ $tree_3 = File::explore('path\to\folder', true, true);
 
 Result:
 
-~~~ .no-highlight
+~~~ .txt
 $tree_1
  │
  ├── path\to\folder\file-1.txt: 1
@@ -131,7 +131,7 @@ $tree_1
  └── path\to\folder\folder-3: 0
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 $tree_2
  │
  ├── path\to\folder\file-1.txt: 1
@@ -151,7 +151,7 @@ $tree_2
          └── path\to\folder\folder-3\folder-1\file-3.txt: 1
 ~~~
 
-~~~ .no-highlight
+~~~ .txt
 $tree_3
  │
  ├── path\to\folder\file-1.txt: 1

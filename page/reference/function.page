@@ -1,6 +1,6 @@
 ---
 title: Function Reference
-description: Jump to `engine\ignite.php` file.
+description: Helper functions.
 ...
 
 ### Test
@@ -174,7 +174,7 @@ $test_3 = false;
 $test_4 = 0;
 ~~~
 
-### Alphabets
+### Others
 
 #### `a`
 
@@ -219,17 +219,87 @@ $test = [
 
 #### `c`
 
+~~~ .xmp.php
+ 
+~~~
+
+Convert text to camel case:
+
+~~~ .php
+ 
+~~~
+
 #### `d`
+
+~~~ .xmp.php
+ 
+~~~
+
+Declare classes with callback:
+
+~~~ .php
+ 
+~~~
 
 #### `e`
 
+~~~ .xmp.php
+ 
+~~~
+
+Evaluate string data to their appropriate data type:
+
+~~~ .php
+ 
+~~~
+
 #### `f`
+
+~~~ .xmp.php
+ 
+~~~
+
+Filter/sanitize string:
+
+~~~ .php
+ 
+~~~
 
 #### `g`
 
+~~~ .xmp.php
+ 
+~~~
+
+Advance PHP `glob` function:
+
+~~~ .php
+ 
+~~~
+
 #### `h`
 
+~~~ .xmp.php
+ 
+~~~
+
+Convert text to snake case with `-` (hyphen) as the default separator:
+
+~~~ .php
+ 
+~~~
+
 #### `i`
+
+~~~ .xmp.php
+ 
+~~~
+
+Include files with callback:
+
+~~~ .php
+ 
+~~~
 
 #### `j`
 
@@ -237,9 +307,29 @@ $test = [
 
 #### `l`
 
+~~~ .xmp.php
+ 
+~~~
+
+Convert text to lower case:
+
+~~~ .php
+ 
+~~~
+
 #### `m`
 
 #### `n`
+
+~~~ .xmp.php
+ 
+~~~
+
+Convert `\r\n` and `\r` to `\n` and `\t` to 4 spaces:
+
+~~~ .php
+ 
+~~~
 
 #### `o`
 
@@ -287,22 +377,138 @@ $test = stdClass::__set_state([
 
 #### `p`
 
+~~~ .xmp.php
+ 
+~~~
+
+Convert text to pascal case:
+
+~~~ .php
+ 
+~~~
+
 #### `q`
+
+~~~ .xmp.php
+ 
+~~~
+
+Quantity counter (length of string, number or [anemon][link:class/anemon]):
+
+~~~ .php
+ 
+~~~
 
 #### `r`
 
+~~~ .xmp.php
+ 
+~~~
+
+Require files with callback:
+
+~~~ .php
+ 
+~~~
+
 #### `s`
+
+~~~ .xmp.php
+ 
+~~~
+
+Convert data type to their string format (this is the inverse version of [`e`][link:#reference:e]:
+
+~~~ .php
+ 
+~~~
 
 #### `t`
 
+~~~ .xmp.php
+ 
+~~~
+
+Trim string from `?` and `!` once:
+
+~~~ .php
+$test = t('????abc!!!!', '?', '!');
+~~~
+
+Result:
+
+~~~ .php
+$test = '???abc!!!';
+~~~
+
 #### `u`
+
+~~~ .xmp.php
+ 
+~~~
+
+Convert text to upper case:
+
+~~~ .php
+ 
+~~~
 
 #### `v`
 
+~~~ .xmp.php
+ 
+~~~
+
+Un–escape characters (this is the inverse version of [`x`][link:#reference:x]):
+
+~~~ .php
+ 
+~~~
+
 #### `w`
+
+~~~ .xmp.php
+ 
+~~~
+
+Convert any data to plain words:
+
+~~~ .php
+ 
+~~~
 
 #### `x`
 
+~~~ .xmp.php
+ 
+~~~
+
+Escape characters:
+
+~~~ .php
+ 
+~~~
+
 #### `y`
 
+~~~ .xmp.php
+ 
+~~~
+
+Output/yield an echo–based function as normal return–based function:
+
+~~~ .php
+ 
+~~~
+
 #### `z`
+
+~~~ .xmp.php
+ 
+~~~
+
+Export array/object into a compact PHP file:
+
+~~~ .php
+ 
+~~~
