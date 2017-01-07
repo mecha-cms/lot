@@ -13,6 +13,7 @@ Constant | Description | Example
 `N` | Return a new line character. | `\n`
 `X` | Return a placeholder character. | ␚
 `SESSION` | Return the custom `session_save_path` path. | `.\www\__session`
+`DEBUG` | Enable or disable debug mode. | `true`
 `ENGINE` | Return the engine folder path. | `.\www\engine`
 `LOT` | Return the lot folder path. | `.\www\lot`
 `ASSET` | Return the asset folder path. | `.\www\lot\asset`
