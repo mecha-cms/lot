@@ -31,7 +31,7 @@ If you have to translate them into numbers, then:
 2: archive
 ~~~
 
-To read `lot\page\lorem-ipsum.page` from the site, visit `[[url]]/lorem-ipsum`.
+To read `lot\page\lorem-ipsum.page` from the site, visit ` [[url]]/lorem-ipsum `.
 
 A minimal page file data consists of a text. Any text. With optional headers data written in a flat YAML syntax:
 
@@ -82,7 +82,7 @@ lot\
      └── no-no-no.page
 ~~~
 
-Users can store their miscellaneous data that has relationship with the page file in that folder with extension `.data`. This is called **Field**.
+Users can store their miscellaneous data that has relationship with the page file in that folder with extension `data`. This is called **Field**.
 
 ### Field
 
