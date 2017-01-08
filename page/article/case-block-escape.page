@@ -33,6 +33,6 @@ You can copy that invisible character from the text input and then paste it betw
 
 It’s just for the sake of aesthetics. By using invisible characters, your page’s source will be kept clean and readable by others as it is. Using `` ` `` as the escaping characters is conform with the procedure, but some Markdown users may assume  that, a ``‌`[‌[‌block‌]‌]`‌`` syntax will turn into HTML `<code>[‌[‌block‌]‌]</code>`. In fact, it will only turn into `[‌[‌block‌]‌]` because they need at least two `` ` `` characters to make it becomes wrapped by the HTML `<code>`.
 
-Some good source code editor like [CodeMirror](http://codemirror.com "CodeMirror") can visualize them as red dots (depends on the theme I guess):
+Some good source code editor like [CodeMirror](http://codemirror.net "CodeMirror") can visualize them as red dots (depends on the theme I guess):
 
 ![1]([[asset]]/png/article/case-block-escape.png)

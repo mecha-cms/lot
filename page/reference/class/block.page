@@ -60,7 +60,7 @@ Block::reset('mark');
 ### Replace
 
 ~~~ .xmp.php
-Block::replace($id, $fn | $text, $content, $strict = false);
+Block::replace($id, $fn | $text, $content);
 ~~~
 
 Replace `mark` block in `$content` with advance pattern:
@@ -73,7 +73,7 @@ Block::set('mark', function($content) {
             $c = ' style="background-color:' . $b['color'] . ';";
         }
         return '<mark' . $c . '>' . $a . '</mark>';
-    });
+    }, $content);
 });
 ~~~
 
