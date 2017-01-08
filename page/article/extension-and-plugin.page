@@ -1,0 +1,10 @@
+---
+title: Extension and Plugin, What’s the Difference?
+description: A comparison table between extension and plugin.
+...
+
+Extension | Plugin
+--------- | ------
+Stand alone. | Is part of the extension.
+Add functionality. | Apply the added functionality.
+`lot\extend\:exension` | `lot\extend\plugin\lot\worker\:plugin`

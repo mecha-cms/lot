@@ -1,0 +1,62 @@
+---
+title: Table of Content
+description: Generate table of content automatically.
+...
+
+This plugin will automatically create table of content within the page content that has several headers so that you can use it to navigate between page headers. If you set the `type` value to `2`, then the table of content will not be inserted into the page content, and this plugin will only serves as an automatic permanent link ID generator of headers in your page content.
+
+### Usage
+
+Configuration data are available in `lot\extend\plugin\lot\worker\t-o-c\lot\state\config.php`.
+
+#### Custom Header ID
+
+You always have full control to determine your own header ID using the [Markdown Extra][link:../../../article/markdown-syntax#reference:special-attributes] syntax or with plain HTML markup. This plugin will not overwrite the specific ID that you have specified in the header:
+
+~~~ .markdown
+#### Header Special {#special}
+~~~
+
+~~~ .html
+<h3 id="special">Header Special</h3>
+~~~
+
+#### Exclude Headers from TOC
+
+Add a `not-toc-stage` or `not-toc-point` class to the desired headers to exclude them from the TOC tree and to disable the automatic permanent link ID creation:
+
+~~~ .markdown
+#### Example Header {.not-toc-stage}
+~~~
+
+~~~ .html
+<h3 class="not-toc-stage">Example Header</h3>
+~~~
+
+#### Custom Placement
+
+Add a `[‌[‌toc‌]‌]` block anywhere in the page content to mark the position you want to put the generated TOC tree to.
+
+#### Disable TOC
+
+To disable the automatic table of content placement on certain page, add a `toc` header property with a value that can be evaluated to `false`:
+
+~~~ .yaml
+---
+title: Page Title
+description: Page description.
+author: Taufik Nurrohman
+type: HTML
+toc: false
+...
+~~~
+
+### Dependency
+
+#### Extension
+
+ - [link:../block]
+
+[Download Latest Version]([[url]]/2016/d/mecha-cms/extend.plugin.t-o-c/archive/master.zip) {.button}
+
+ *[TOC]: Table of Content

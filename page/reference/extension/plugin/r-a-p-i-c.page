@@ -7,7 +7,7 @@ This plugin will automatically insert your ad code into the page content with ra
 
 ### Usage
 
-Open `lot\extend\plugin\lot\asset\r-a-p-i-c\lot\worker\content.php` then put your ad code there.
+Open `lot\extend\plugin\lot\worker\r-a-p-i-c\lot\worker\content.php` then put your ad code there.
 
 To disable the automatic ad placement on certain page, add a `rapic` header property with a value that can be evaluated to `false`:
 
