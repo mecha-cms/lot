@@ -23,11 +23,7 @@ It is clear that the block parser essentially requires the `[‌[` and `]‌]` c
 
 <p><input type="text" value="&zwnj;" placeholder="If I showed up, it means that there aren’t any characters here." class="input block"></p>
 
-Unfortunately, you can’t just copy that invisible character from the text input anyway. It does work with content editable elements, but not with form elements. This may depend on the browser vendors. You can copy the character here:
-
-<p contenteditable="true" style="border:1px dashed;min-height:1em;" class="block">&zwnj;</p>
-
-And then paste it between `[‌`, `‌]`, `/` and the block ID so that it becomes like this:
+You can copy that invisible character from the text input and then paste it between `[‌`, `‌]`, `/` and the block ID so that it becomes like this:
 
 ~~~ .txt
 [•[•block•]•]content[•[•/•block•]•]
