@@ -1,0 +1,25 @@
+---
+title: Basic Recent Posts/Pages
+description: Show list of pages in reverse order by time.
+...
+
+~~~ .php
+$_path = PAGE . DS . 'article';
+$_chunk = 7;
+
+echo '<h3>Recent Pages</h3>';
+if ($_pages = Get::pages($_path, 'page', -1, 'time')) {
+    echo '<ul>';
+    foreach (Anemon::eat($_pages)->chunk($_chunk, 0) as $_page) {
+        $_page = Page::open($_page['path'])->get([
+            'url' => null,
+            'title' => null
+        ]);
+        echo '<li><a href="' . $_page['url'] . '">' . $_page['title'] . '</a></li>';
+    }
+    echo '</ul>';
+}
+~~~
+
+ - `$_path` → select which page folder you want to list.
+ - `$_chunk` → how many pages you want to show in the list.

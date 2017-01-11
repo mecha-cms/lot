@@ -42,7 +42,7 @@ Session::reset();
 ### Get
 
 ~~~ .xmp.php
-Session::get($key = null, $fail = "");
+Session::get($key = null, $fail = null);
 ~~~
 
 Get a session:

@@ -16,5 +16,6 @@ Put this block in the desired page content you want to show the link list to:
 #### Extension
 
   - [link:../block]
+  - [link:../page]
 
 [Download Latest Version]([[url]]/2016/d/mecha-cms/extend.plugin.archive/archive/master.zip) {.button}

@@ -6,7 +6,7 @@ description: Internationalization.
 ### Constructor
 
 ~~~ .xmp.php
-Language();
+Language($input = []);
 ~~~
 
 Get language files from the `lot\language` folder then convert it into object:
@@ -27,23 +27,21 @@ Language::set('foo', 'bar');
 
 #### Get
 
-
-
 Get language property:
 
 ### Static Call
 
 ~~~ .xmp.php
-Language::{$property}($x = "");
+Language::{$property}($vars = []);
 ~~~
 
-Get language property staticly:
+Get language property statically:
 
 ~~~ .php
 echo Language::home();
 ~~~
 
-Get language property dynamicly:
+Get language property dynamically:
 
 ~~~ .php
 echo $language->home;
@@ -51,4 +49,25 @@ echo $language->home;
 
 ~~~ .php
 echo $language->home();
+~~~
+
+### String Variable
+
+Let’s say we have a language property called `test` like this:
+
+~~~ .yaml
+test: Hello %{place}%! My name is %{object}%.
+~~~
+
+~~~ .php
+echo Language::test([
+    'place' => 'world',
+    'object' => 'Mocha'
+]);
+~~~
+
+The code above will return the `test` value into this:
+
+~~~ .txt
+Hello world! My name is Mocha.
 ~~~

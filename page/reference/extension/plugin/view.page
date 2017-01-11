@@ -1,0 +1,16 @@
+---
+title: Page View
+description: Page views counter.
+...
+
+This plugin adds a `view` property to the current page with dynamic value. Each page visits will increment the `view` property value by one.
+
+### Usage
+
+To show the current page views, add this to the `page.php` file in your active shield:
+
+~~~ .php
+<?php echo $page->view; ?>
+~~~
+
+[Download Latest Version]([[url]]/2016/d/mecha-cms/extend.plugin.view/archive/master.zip) {.button}

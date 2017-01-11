@@ -54,7 +54,7 @@ Cookie::reset();
 ### Get
 
 ~~~ .xmp.php
-Cookie::get($key = null, $fail = "");
+Cookie::get($key = null, $fail = null);
 ~~~
 
 Get a cookie:

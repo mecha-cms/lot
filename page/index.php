@@ -1,11 +1,11 @@
 <?php
 
-Hook::set('page.input', function($data) {
-    if (!empty($data['content']) && strpos($data['content'], '[connect:') !== false) {
-        $data['content'] = str_replace('[connect:', '**Related:** [link:', $data['content']);
+Hook::set('page.content', function($content) {
+    if (strpos($content, '[connect:') === false) {
+        return $content;
     }
-    return $data;
-}, .9);
+    return str_replace('[connect:', '**Related:** [link:', $content);
+}, .8);
 
 if (Extend::exist('block')) {
     // add `[[asset]]` block
@@ -17,7 +17,7 @@ if (Extend::exist('block')) {
 // add static `time` field automatically
 Hook::set('shield.before', function() {
     extract(Lot::get(null, []));
-    $time = Path::D($page->path) . DS . $page->slug . DS . 'time.data';
+    $time = Path::F($page->path) . DS . 'time.data';
     if ($site->type === 'page' && !File::exist($time)) {
         File::write($page->time)->saveTo($time);
     }

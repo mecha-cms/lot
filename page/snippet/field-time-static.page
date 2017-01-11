@@ -6,7 +6,7 @@ description: Automatically generates `time.data` file on first page visit, so th
 ~~~ .php
 Hook::set('shield.before', function() {
     extract(Lot::get(null, []));
-    $time = Path::D($page->path) . DS . $page->slug . DS . 'time.data';
+    $time = Path::F($page->path) . DS . 'time.data';
     if ($site->type === 'page' && !File::exist($time)) {
         File::write($page->time)->saveTo($time);
     }

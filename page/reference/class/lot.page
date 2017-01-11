@@ -21,7 +21,7 @@ Lot::set('test', 'Hello!');
 Lot::get($key, $fail = false, $scope = null);
 ~~~
 
-Get `test` value from the `$GLOBALS` variable:
+Get `test` value from the `$GLOBALS` storage:
 
 ~~~ .php
 echo Lot::get('test');
@@ -33,9 +33,9 @@ echo Lot::get('test');
 Lot::reset($key = null, $scope = null);
 ~~~
 
-Remove `test` property from the `$GLOBALS` variable:
+Remove `test` property from the `$GLOBALS` storage:
 
-~~~ .xmp.php
+~~~ .php
 Lot::reset('test');
 ~~~
 
@@ -55,6 +55,7 @@ Here are list of variables that are available globally in the shields:
  - `$date`
  - `$language`
  - `$site`
+ - `$state`
  - `$url`
  - `$u_r_l` → alias for `$url`
 
@@ -63,3 +64,5 @@ Global variables created by [Page][link:../extension/page] extension:
  - `$pager`
  - `$page`
  - `$pages`
+
+[connect:../variable]
