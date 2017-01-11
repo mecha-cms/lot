@@ -53,7 +53,7 @@ Header 2
 &gt;
 &gt; &gt; This is nested block quote.
 &gt;
-&gt; Back to the first level.</code></pre><h3>List</h3><h4 class="toc-stage" id="reference:unordered-list">Unordered List</h4><p>Use <code>*</code>, <code>-</code> or <code>+</code> at the beginning of text to create unordered list items:</p><pre><code class="markdown">* List item 1
+&gt; Back to the first level.</code></pre><h3>List</h3><h4>Unordered List</h4><p>Use <code>*</code>, <code>-</code> or <code>+</code> at the beginning of text to create unordered list items:</p><pre><code class="markdown">* List item 1
 * List item 2
 * List item 3</code></pre><pre><code class="markdown">- List item 1
 - List item 2
@@ -63,7 +63,7 @@ Header 2
   &lt;li&gt;List item 1&lt;/li&gt;
   &lt;li&gt;List item 2&lt;/li&gt;
   &lt;li&gt;List item 3&lt;/li&gt;
-&lt;/ul&gt;</code></pre><h4 class="toc-stage" id="reference:ordered-list">Ordered List</h4><p>Use numbers followed by periods at the beginning of text to create ordered list items:</p><pre><code class="markdown">1. List item 1
+&lt;/ul&gt;</code></pre><h4>Ordered List</h4><p>Use numbers followed by periods at the beginning of text to create ordered list items:</p><pre><code class="markdown">1. List item 1
 2. List item 2
 3. List item 3</code></pre><blockquote><p><strong>Note:</strong> The actual numbers you use to mark the list have no effect on the <abbr title="Hyper Text Markup Language">HTML</abbr> output Markdown produces. So, this will also work:</p><pre><code class="markdown">9. List item 1
 1. List item 2
@@ -71,7 +71,7 @@ Header 2
   &lt;li&gt;List item 1&lt;/li&gt;
   &lt;li&gt;List item 2&lt;/li&gt;
   &lt;li&gt;List item 3&lt;/li&gt;
-&lt;/ol&gt;</code></pre><h4 class="toc-stage" id="reference:nested-list-items">Nested List Items</h4><pre><code class="markdown">1. Lists item 1
+&lt;/ol&gt;</code></pre><h4>Nested List Items</h4><pre><code class="markdown">1. Lists item 1
    - List item 1.1
    - List item 1.2
      1. List item 1.2.1
@@ -89,7 +89,7 @@ Header 2
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;List item 2&lt;/li&gt;
-&lt;/ol&gt;</code></pre><h4 class="toc-stage" id="reference:paragraphs-in-list-items">Paragraphs in List Items</h4><p>If list items are separated by blank lines, Markdown will wrap the items in <code>&lt;p&gt;</code> tags in the <abbr title="Hyper Text Markup Language">HTML</abbr> output:</p><pre><code class="markdown">* List item 1
+&lt;/ol&gt;</code></pre><h4>Paragraphs in List Items</h4><p>If list items are separated by blank lines, Markdown will wrap the items in <code>&lt;p&gt;</code> tags in the <abbr title="Hyper Text Markup Language">HTML</abbr> output:</p><pre><code class="markdown">* List item 1
 
 * List item 2
 
@@ -101,7 +101,7 @@ Header 2
     &lt;p&gt;List item 2&lt;/p&gt;
     &lt;p&gt;Another paragraph in list item two.&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</code></pre><h3>Code</h3><h4 class="toc-stage" id="reference:inline-code">Inline Code</h4><p>To create a code span, wrap the text you want with a backtick:</p><pre><code class="markdown">This is a paragraph with some `inline code` in it.</code></pre><p>Result:</p><pre><code class="html">&lt;p&gt;This is a paragraph with some &lt;code&gt;inline code&lt;/code&gt; in it.&lt;/p&gt;</code></pre><p>To include a literal backtick character within a code span, you can use multiple backticks as the opening and closing delimiters:</p><pre><code class="markdown">``There is a literal backtick (`) here.``</code></pre><h4 class="toc-stage" id="reference:block-code">Block Code</h4><p>Indent some paragraph with 4 spaces or a tab to wrap them in a <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tag, and also automatically escape the <abbr title="Hyper Text Markup Language">HTML</abbr> code in it:</p><pre><code class="markdown">This is a normal paragraph.
+&lt;/ul&gt;</code></pre><h3>Code</h3><h4>Inline Code</h4><p>To create a code span, wrap the text you want with a backtick:</p><pre><code class="markdown">This is a paragraph with some `inline code` in it.</code></pre><p>Result:</p><pre><code class="html">&lt;p&gt;This is a paragraph with some &lt;code&gt;inline code&lt;/code&gt; in it.&lt;/p&gt;</code></pre><p>To include a literal backtick character within a code span, you can use multiple backticks as the opening and closing delimiters:</p><pre><code class="markdown">``There is a literal backtick (`) here.``</code></pre><h4>Block Code</h4><p>Indent some paragraph with 4 spaces or a tab to wrap them in a <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tag, and also automatically escape the <abbr title="Hyper Text Markup Language">HTML</abbr> code in it:</p><pre><code class="markdown">This is a normal paragraph.
 
     This is a code block with some &lt;abbr&gt;HTML&lt;/abbr&gt; markup.
 
@@ -109,7 +109,7 @@ This is another normal paragraph.</code></pre><p>A code block continues until it
 
 &lt;pre&gt;&lt;code&gt;This is a code block with some &amp;lt;abbr&amp;gt;HTML&amp;lt;/abbr&amp;gt; markup.&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;This is another normal paragraph.&lt;/p&gt;</code></pre><h5 class="toc-stage" id="reference:markdown-extra-s-fenced-code-block-syntax">Markdown Extra’s Fenced Code Block Syntax</h5>
+&lt;p&gt;This is another normal paragraph.&lt;/p&gt;</code></pre><h5>Markdown Extra’s Fenced Code Block Syntax</h5>
 <p>The code block starts with a line containing three or more tilde or backtick characters, and ends with the first line with the same number of tilde or backtick characters:</p><pre><code class="markdown">~~~~~~~~~~~~~~~~~~~~~
 This is a code block.
 ~~~~~~~~~~~~~~~~~~~~~</code></pre><pre><code class="markdown">`````````````````````
@@ -124,23 +124,23 @@ This is a code block.
 
 - - -
 
----------------------------------------</code></pre><h3>Link</h3><p>Markdown supports two style of links: <a href="#reference:inline-link">inline</a> and <a href="#reference:referenced-link">reference</a>.</p><h4 class="toc-stage" id="reference:inline-link">Inline Link</h4><p>To create an inline link, use a set of regular parentheses immediately after the link text’s closing square bracket. Inside the parentheses, put the <abbr title="Uniform Resource Locator">URL</abbr> where you want the link to point, along with an optional title for the link, surrounded in quotes:</p><pre><code class="markdown">This is [an example](http://example.com "Title") inline link.
+---------------------------------------</code></pre><h3>Link</h3><p>Markdown supports two style of links: <a href="#reference:inline-link">inline</a> and <a href="#reference:referenced-link">reference</a>.</p><h4>Inline Link</h4><p>To create an inline link, use a set of regular parentheses immediately after the link text’s closing square bracket. Inside the parentheses, put the <abbr title="Uniform Resource Locator">URL</abbr> where you want the link to point, along with an optional title for the link, surrounded in quotes:</p><pre><code class="markdown">This is [an example](http://example.com "Title") inline link.
 
 [This link](http://example.net) has no title attribute.</code></pre><p>Result:</p><pre><code class="html">&lt;p&gt;This is &lt;a href="http://example.com" title="Title"&gt;
 an example&lt;/a&gt; inline link.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href="http://example.net"&gt;This link&lt;/a&gt; has no
-title attribute.&lt;/p&gt;</code></pre><h4 class="toc-stage" id="reference:referenced-link">Referenced Link</h4><p>Reference-style links use a second set of square brackets, inside which you place a label of your choosing to identify the link:</p><pre><code class="markdown">This is [an example][id] reference-style link.</code></pre><p>Then, anywhere in the document, you define your link label like this, on a line by itself:</p><pre><code>[id]: http://example.com "Optional Title"</code></pre><p>The following three link definitions are equivalent:</p><pre><code class="markdown">[foo]: http://example.com "Optional Title Here"
+title attribute.&lt;/p&gt;</code></pre><h4>Referenced Link</h4><p>Reference-style links use a second set of square brackets, inside which you place a label of your choosing to identify the link:</p><pre><code class="markdown">This is [an example][id] reference-style link.</code></pre><p>Then, anywhere in the document, you define your link label like this, on a line by itself:</p><pre><code>[id]: http://example.com "Optional Title"</code></pre><p>The following three link definitions are equivalent:</p><pre><code class="markdown">[foo]: http://example.com "Optional Title Here"
 [foo]: http://example.com 'Optional Title Here'
-[foo]: http://example.com (Optional Title Here)</code></pre><p>The link <abbr title="Uniform Resource Locator">URL</abbr> may, optionally, be surrounded by angle brackets:</p><pre><code class="markdown">[id]: &lt;http://example.com&gt; "Optional Title Here"</code></pre><p>Link definitions can be placed anywhere in your Markdown document. But if you want, you can put them all at the end of your document, sort of like footnotes.</p><h4 class="toc-stage" id="reference:implicit-link-name-shortcut">Implicit Link Name Shortcut</h4><p>The implicit link name shortcut allows you to omit the name of the link, in which case the link text itself is used as the name. Just use an empty set of square brackets:</p><pre><code class="markdown">[Google][]</code></pre><p>And then define the link:</p><pre><code class="markdown">[Google]: https://www.google.com</code></pre><h4 class="toc-stage" id="reference:automatic-link">Automatic Link</h4><p>If you want to show the actual text of a <abbr title="Uniform Resource Locator">URL</abbr> or email address, and also have it be a clickable link, you can do this:</p><pre><code class="markdown">&lt;http://example.com&gt;
+[foo]: http://example.com (Optional Title Here)</code></pre><p>The link <abbr title="Uniform Resource Locator">URL</abbr> may, optionally, be surrounded by angle brackets:</p><pre><code class="markdown">[id]: &lt;http://example.com&gt; "Optional Title Here"</code></pre><p>Link definitions can be placed anywhere in your Markdown document. But if you want, you can put them all at the end of your document, sort of like footnotes.</p><h4>Implicit Link Name Shortcut</h4><p>The implicit link name shortcut allows you to omit the name of the link, in which case the link text itself is used as the name. Just use an empty set of square brackets:</p><pre><code class="markdown">[Google][]</code></pre><p>And then define the link:</p><pre><code class="markdown">[Google]: https://www.google.com</code></pre><h4>Automatic Link</h4><p>If you want to show the actual text of a <abbr title="Uniform Resource Locator">URL</abbr> or email address, and also have it be a clickable link, you can do this:</p><pre><code class="markdown">&lt;http://example.com&gt;
 
 &lt;address@example.com&gt;</code></pre><p>Markdown will turn the text into this:</p><pre><code class="html">&lt;a href="http://example.com"&gt;http://example.com&lt;/a&gt;
 
-&lt;a href="&amp;#109;&amp;#x61;&amp;#x69;&amp;#108;&amp;#x74;&amp;#x6f;&amp;#58;&amp;#x61;&amp;#x64;&amp;#100;&amp;#114;&amp;#x65;&amp;#115;&amp;#115;&amp;#x40;&amp;#101;&amp;#120;&amp;#x61;m&amp;#112;&amp;#x6c;e&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;"&gt;&amp;#x61;&amp;#x64;&amp;#100;&amp;#114;&amp;#x65;&amp;#115;&amp;#115;&amp;#x40;&amp;#101;&amp;#120;&amp;#x61;m&amp;#112;&amp;#x6c;e&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&lt;/a&gt;</code></pre><h3>Image</h3><p>Markdown uses an image syntax that is intended to resemble the syntax for links, allowing for two styles: <a href="#reference:inline-image">inline</a> and <a href="#reference:referenced-image">reference</a>.</p><h4 class="toc-stage" id="reference:inline-image">Inline Image</h4><pre><code class="markdown">![alt text](path/to/image.jpg)
+&lt;a href="&amp;#109;&amp;#x61;&amp;#x69;&amp;#108;&amp;#x74;&amp;#x6f;&amp;#58;&amp;#x61;&amp;#x64;&amp;#100;&amp;#114;&amp;#x65;&amp;#115;&amp;#115;&amp;#x40;&amp;#101;&amp;#120;&amp;#x61;m&amp;#112;&amp;#x6c;e&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;"&gt;&amp;#x61;&amp;#x64;&amp;#100;&amp;#114;&amp;#x65;&amp;#115;&amp;#115;&amp;#x40;&amp;#101;&amp;#120;&amp;#x61;m&amp;#112;&amp;#x6c;e&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&lt;/a&gt;</code></pre><h3>Image</h3><p>Markdown uses an image syntax that is intended to resemble the syntax for links, allowing for two styles: <a href="#reference:inline-image">inline</a> and <a href="#reference:referenced-image">reference</a>.</p><h4>Inline Image</h4><pre><code class="markdown">![alt text](path/to/image.jpg)
 
 ![alt text](path/to/image.jpg "Optional Title")</code></pre><p>Result:</p><pre><code class="html">&lt;p&gt;&lt;img alt="alt text" src="path/to/image.jpg"&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt="alt text" src="path/to/image.jpg" title="Optional Title"&gt;&lt;/p&gt;</code></pre><h4 class="toc-stage" id="reference:referenced-image">Referenced Image</h4><p>Reference-style image syntax looks like this:</p><pre><code class="markdown">![alt text][id]</code></pre>
+&lt;p&gt;&lt;img alt="alt text" src="path/to/image.jpg" title="Optional Title"&gt;&lt;/p&gt;</code></pre><h4>Referenced Image</h4><p>Reference-style image syntax looks like this:</p><pre><code class="markdown">![alt text][id]</code></pre>
 <p>Where <var>id</var> is the name of a defined image reference. Image references are defined using syntax identical to link references:</p><pre><code class="markdown">[id]: path/to/image.jpg  "Optional Title"</code></pre><h3>Table</h3><p>The first line contains column headers. Second line contains a mandatory separator line between the headers and the content. Each following line is a row in the table. Columns are always separated by the pipe (<code>|</code>) character:</p><pre><code class="markdown">Table Header 1 | Table Header 2
 -------------- | --------------
 Table Cell 1.1 | Table Cell 1.2
@@ -170,7 +170,7 @@ Table Cell 3.1 | Table Cell 3.2</code></pre><p>or …</p><pre><code class="markd
       &lt;td&gt;Table Cell 3.2&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;</code></pre><h4 class="toc-stage" id="reference:table-alignments">Table Alignments</h4><p>Add some colons to the separator lines. A colon that added at the left of the separator line will make the column left-aligned. A colon that added at the right of the separator line will make the column right-aligned. Colons that added at both side means the column is center-aligned:</p><pre><code class="markdown">Table Header 1 | Table Header 2 | Table Header 3
+&lt;/table&gt;</code></pre><h4>Table Alignments</h4><p>Add some colons to the separator lines. A colon that added at the left of the separator line will make the column left-aligned. A colon that added at the right of the separator line will make the column right-aligned. Colons that added at both side means the column is center-aligned:</p><pre><code class="markdown">Table Header 1 | Table Header 2 | Table Header 3
 -------------: | :------------: | :-------------
 Table Cell 1.1 | Table Cell 1.2 | Table Cell 1.3
 Table Cell 2.1 | Table Cell 2.2 | Table Cell 2.3
