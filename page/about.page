@@ -5,11 +5,13 @@ type: Markdown
 rapic: false
 ...
 
-<p class="mecha-head"><span></span><span></span></p>
+### Philosophy
 
-**Mecha** is a file–based CMS that survives on a principle that, a static website must be personal, portable, light and easy to be exported and backed up. However, this doesn’t mean that Mecha is powerless. Mecha has a fairly flexible set of API that you can use without having to make it bloated, keeping you happy focused on developing your own website, according to your personality.
+Mecha is a file–based CMS that survives on a principle that a database–less site should be personal, portable, light and easy to be exported and backed up. That’s why most of the [projects][link:reference/extension] associated with Mecha are created with personal natures and are dedicated to be used for personal purposes such as blog, journal and diary. Mecha’s market share are people with high creativity and individuals who want to dedicate themselves to the freedom of speech and to share their ideas to the world, that probably doesn’t have much time to learn the web programming language. By introducing Mecha as files and folders that used to be seen by people everyday in their working desktop, we hope you will soon be familiar with how Mecha CMS works. Mecha is as simple as files and folders.
 
-[Download Development Version]([[url]]/2016/d/mecha-cms/genome/archive/master.zip) {.button} [Download Version `1.2.8`]([[url]]/2016/d/mecha-cms/mecha/archive/v1.2.8.zip) {.button}
+Yet, this doesn’t mean that Mecha is weak. Mecha has fairly flexible set of [API][link:reference] that you can use without having to make it bloated, keeping you happy focused on developing your own site, according to your personality.
+
+If you want to make something that is super huge with Mecha, it would be possible, but remember that Mecha wasn’t created to replace databases. Mecha is created to help people getting rid of various resources that are not needed from the start (such as databases). There will be times when you need a database, and when that time comes, just use a database. Mecha is fairly open to be extended with other database–based applications.
 
 ### Features
 
@@ -22,7 +24,7 @@ rapic: false
  - Almost everything are optional. [^1]
  - RSS and Sitemap using the [feed][link:reference/extension/feed] extension.
  - Easy to use and [well documented][link:reference] API.
- - Panel extension (coming soon).
+ - Control panel extension (coming soon).
 
 ### System Requirements
 
@@ -32,9 +34,9 @@ rapic: false
 ### Getting Started
 
  1. Make sure that you already have the required component.
- 2. Download Mecha by cloning [this](https://github.com/mecha-cms/genome) **GitHub** repo.
- 3. Upload Mecha through your FTP/SFTP to the public folder/directory in your site [^2]
+ 2. Download the available package from the [home page][link:home].
+ 3. Upload Mecha through your FTP/SFTP to the public folder/directory in your site then extract [^2]
  4. _To be continued._
 
-[^1]: Mecha started to rebuild itself through two main principles: 1) everything is a page, 2) everything is a plugin.
+[^1]: Mecha started to rebuild itself through two main principles: 1) everything is a page, 2) everything is an extension.
 [^2]: Usually named as `public_html`, `www` or `htdocs`.
