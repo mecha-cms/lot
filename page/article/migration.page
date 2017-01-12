@@ -3,7 +3,7 @@ title: Migration Guide
 description: Migrating from version `1.x.x` to version `2.x.x`.
 ...
 
-This page describes about how to make your old pages becomes readable by the second generation of **Mecha**. On this page, you will see some comparisons between **Mecha** version `1.x.x` with **Mecha** version `2.x.x` —in the hope that you can make some adjustments based on their similarities.
+This page describes about how to make your old pages becomes readable by the second generation of Mecha. On this page, you will see some comparisons between Mecha version `1.x.x` with Mecha version `2.x.x` —in the hope that you can make some adjustments based on their similarities.
 
 ### Page Headers
 
@@ -59,7 +59,7 @@ echo $page->foo;
 echo $page->bar;
 ~~~
 
-> **Info:** You can revert to the old behavior of **Mecha** by storing the custom fields data as JSON and save it to a file named as `fields.data` instead:
+> **Info:** You can revert to the old behavior of Mecha by storing the custom fields data as JSON and save it to a file named as `fields.data` instead:
 >
 > ~~~ .txt
 > lot\
@@ -168,7 +168,7 @@ kind: [1,2,3,11]
 ...
 ~~~
 
-> **Note:** It is highly recommended to set the `time` and `kind` data in a separated field files because those fields data are commonly used to sort the pages. Reading embedded fields value in the page file is fairly slow, therefore, **Mecha** sets a higher priority on reading the separated fields data instead of the embedded fields data. In the case of [reading page property individually][link:../reference/class/page#reference:get], **Mecha** will first seek for a separated field file from the page. When the desired field can be found, **Mecha** will only read that field and then cancel the process of reading the entire content of that page file:
+> **Note:** It is highly recommended to set the `time` and `kind` data in a separated field files because those fields data are commonly used to sort the pages. Reading embedded fields value in the page file is fairly slow, therefore, Mecha sets a higher priority on reading separated fields data instead of embedded fields data. In the case of [reading page property individually][link:../reference/class/page#reference:get], Mecha will first seek for a separated field file from the page. When the desired field can be found, Mecha will only read that field and then cancel the process of reading the entire content of that page file:
 >
 > ~~~ .txt
 > lot\
@@ -202,7 +202,7 @@ Prior to version `2.x.x`, blocks are enclosed with curly brackets:
 
 #### Version `2.x.x`
 
-In this version, blocks will be enclosed with angle brackets:
+In this version, blocks will be enclosed with square brackets:
 
 ~~~ .txt
 [‌[‌block‌]‌]
