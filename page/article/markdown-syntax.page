@@ -149,7 +149,7 @@ Table Cell 3.1 | Table Cell 3.2</code></pre><p>or …</p><pre><code class="markd
 | -------------- | -------------- |
 | Table Cell 1.1 | Table Cell 1.2 |
 | Table Cell 2.1 | Table Cell 2.2 |
-| Table Cell 3.1 | Table Cell 3.2 |</code></pre><p>Result:</p><pre><code class="html">&lt;table class="border"&gt;
+| Table Cell 3.1 | Table Cell 3.2 |</code></pre><p>Result:</p><pre><code class="html">&lt;table class="table"&gt;
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th&gt;Table Header 1&lt;/th&gt;
