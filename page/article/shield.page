@@ -3,4 +3,155 @@ title: Shield
 description: WTF is shield?
 ...
 
-This is going to be the page content.
+Shield is a term used by Mecha to express _theme_ in another CMS.
+
+A shield is a folder with a unique name, stored in `lot\shield` folder:
+
+~~~ .txt
+lot\
+ └── shield\
+     ├── document\
+     ├── shield-1\
+     ├── shield-2\
+     ├── …
+     └── …
+~~~
+
+A standard shield should at least contains files that structured like this:
+
+~~~ .txt
+document/
+ ├── asset/
+ │   ├── css/
+ │   │   ├── document.css
+ │   │   └── document.min.css
+ │   └── js/
+ │       ├── document.js
+ │       └── document.min.js
+ ├── state/
+ │   └── config.php
+ ├── 404.php
+ ├── about.page
+ ├── bottom.php
+ ├── footer.php
+ ├── header.php
+ ├── index.php
+ ├── menu.php
+ ├── page.php
+ ├── pages.php
+ └── top.php
+~~~
+
+### Error
+
+Minimum requirements for `404.php` file:
+
+~~~ .html
+<?php Shield::get('top'); ?>
+<p>404 not found!</p>
+<?php Shield::get('bottom'); ?>
+~~~
+
+### Index
+
+This file contains custom functions used by the shield:
+
+~~~ .php
+<?php
+
+Asset::set('css/document.min.css');
+Asset::set('js/document.min.js');
+~~~
+
+### Top
+
+Minimum requirements for `404.php` file:
+
+~~~ .html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="<?php echo $site->charset; ?>">
+    <link href="<?php echo $url; ?>/favicon.ico" rel="shortcut icon">
+    <title><?php echo To::text($site->page->title); ?></title>
+  </head>
+  <body>
+    <header>
+      <h1><?php echo $site->title; ?></h1>
+      <p><?php echo $site->slogan; ?></p>
+    </header>
+~~~
+
+### Bottom
+
+Minimum requirements for `bottom.php` file:
+
+~~~ .html
+    <footer>
+      <p>&#x00A9; <?php echo $date->year; ?></p>
+    </footer>
+  </body>
+</html>
+~~~
+
+### Page
+
+Minimum requirements for `page.php` file:
+
+~~~ .html
+<main>
+  <article>
+    <h3><?php echo $page->title; ?></h3>
+    <div><?php echo $page->content; ?></div>
+  </article>
+  <nav><?php echo $pager; ?></nav>
+</main>
+~~~
+
+### Pages
+
+Minimum requirements for `pages.php` file:
+
+~~~ .html
+<main>
+  <?php if ($pages): ?>
+  <?php foreach ($pages as $page): ?>
+  <article>
+    <h4><a href="<?php echo $page->url; ?>"><?php echo $page->title; ?></a></h4>
+    <div><?php echo $page->content; ?></div>
+  </article>
+  <?php endforeach; ?>
+  <?php endif; ?>
+  <nav><?php echo $pager; ?></nav>
+</main>
+~~~
+
+### Menu
+
+Minimum requirements for `menu.php` file:
+
+~~~ .html
+<nav>
+  <ul>
+    <li><a href="<?php echo $url; ?>">Home</a></li>
+    <li><a href="<?php echo $url; ?>/about">About</a></li>
+    <li><a href="<?php echo $url; ?>/archive">Archive</a></li>
+  </ul>
+</nav>
+~~~
+
+### About
+
+Minimum requirements for `about.page` file:
+
+~~~ .yaml
+---
+title: Shield Title
+description: Shield description.
+author: Shield Author
+link: http://example.com
+version: 1.0.0
+...
+
+<p>Usage, external credits, etc.</p>
+~~~

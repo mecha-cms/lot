@@ -2,3 +2,9 @@
 title: Class `State`
 description: Get states data.
 ...
+
+### Call Static
+
+~~~ .xmp.php
+State::{$name}();
+~~~

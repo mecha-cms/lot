@@ -382,6 +382,10 @@ File::upload($_FILES['file'], 'path\to\folder', function($file) {
 
 ### Size
 
+~~~ .xmp.php
+File::size($file, $unit = null, $prec = 2);
+~~~
+
 Convert file size.
 
 **Options:** `B`, `KB`, `MB`, `GB`, `TB`
