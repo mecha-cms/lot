@@ -13,4 +13,4 @@ return [
 ];
 ~~~
 
-You should be automatically redirected to the home page when you go to ` [[url]]/index `.
+You should be automatically redirected to the home page when you go to `http://localhost/index`.

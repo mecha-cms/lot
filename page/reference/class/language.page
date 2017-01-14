@@ -17,17 +17,27 @@ $language = new Language;
 
 #### Set
 
-~~~ .xmp.php
+Set new language property:
+
+~~~ .php
 $language->foo = 'bar';
 ~~~
 
-~~~ .xmp.php
+~~~ .php
 Language::set('foo', 'bar');
 ~~~
 
 #### Get
 
 Get language property:
+
+~~~ .php
+echo $language->foo;
+~~~
+
+~~~ .php
+echo Language::get('foo');
+~~~
 
 ### Static Call
 
