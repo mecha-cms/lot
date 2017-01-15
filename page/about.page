@@ -1,7 +1,6 @@
 ---
 title: About
 description: WTF is Mecha?
-type: Markdown
 rapic: false
 ...
 
@@ -24,7 +23,7 @@ If you want to make something that is super huge with Mecha, it would be possibl
  - Almost everything are optional. [^1]
  - RSS and Sitemap using the [feed][link:reference/extension/feed] extension.
  - Easy to use and [well documented][link:reference] API.
- - Control panel extension (coming soon).
+ - Control panel extension ([coming soon](https://github.com/mecha-cms/extend.panel)).
 
 ### Dependencies
 

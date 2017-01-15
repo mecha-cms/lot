@@ -30,7 +30,7 @@ type: Markdown
 ...
 ~~~
 
-In version `2.x.x`, you can create custom fields as separate files named as the field key with extension `.data`, stored in a folder with the same name as the page name, without the file extension ([the page state][link:../reference/extension/page]). Here, custom fields value will becomes the file content:
+In version `2.x.x`, you can create custom fields as separate files named as the field key with extension `data`, stored in a folder with the same name as the page name, without the file extension ([the page state][link:../reference/extension/page]). Here, custom fields value will becomes the file content:
 
 ~~~ .txt
 lot\

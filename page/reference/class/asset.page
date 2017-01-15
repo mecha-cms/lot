@@ -145,7 +145,7 @@ echo Asset::css('style-2.css'); // → return `<link href=" … /style-2.css" re
 ~~~
 
 ~~~ .php
-echo Asset::css('script-1.js', [
+echo Asset::js('script-1.js', [
     'type' => 'text/javascript'
 ]); // → return `<script src=" … /script-1.css" type="text/javascript"></script>`
 ~~~

@@ -8,8 +8,8 @@ The easiest way to replace the default home page appearance is to use the builtâ
 ~~~ .txt
 return [
     'path' => 'index', // â† this
-    'chunk' => 3,
-    'sort' => [-1, 'time']
+    'sort' => [-1, 'time'],
+    'chunk' => 3
 ];
 ~~~
 

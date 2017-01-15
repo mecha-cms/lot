@@ -76,11 +76,11 @@ lot\
      └── no-no-no.page
 ~~~
 
-Users can store their miscellaneous data that has relationship with the page file in that folder with extension `data`. This is called **Field**.
+Users can store their miscellaneous data that has relationship with the page file in that folder with extension `data`. This is called **Data**.
 
-### Field
+### Data
 
-**Field** has a higher priority than the page headers. So, if you have a `title.data` stored in `lot\page\lorem-ipsum` folder, then the content of that file will overrides the `title` data from the page headers.
+**Data** has a higher priority than the page headers. So, if you have a `title.data` stored in `lot\page\lorem-ipsum` folder, then the content of that file will overrides the `title` data from the page headers.
 
 ~~~ .txt
 lot\
@@ -94,11 +94,11 @@ lot\
      └── no-no-no.page
 ~~~
 
-Users can also put another page file in that folder. This is called **Page Children**.
+Users can also put another page file in that folder. This is called **Child**.
 
-### Page Children
+### Child
 
-**Page Children** will overrides the item page view of the current file that has relationship with the current folder –the `lot\lorem-ipsum.page` file– and will replace that item page view into an index page view, contain list of `lot\lorem-ipsum`’s page children.
+**Child** will overrides the item page view of the current file that has relationship with the current folder –the `lot\lorem-ipsum.page` file– and will replace that item page view into an index page view, contain list of `lot\lorem-ipsum`’s page children.
 
 ~~~ .txt
 lot\
