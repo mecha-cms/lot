@@ -1,14 +1,15 @@
 ---
 title: Static Time Field
-description: Automatically generates `time.data` file on first page visit, so that updating page files will not change the publication time.
+description: Automatically generates `time.data` file on the first page visit, so that updating page files will not change the publication time.
 ...
 
 ~~~ .php
-Hook::set('shield.before', function() {
-    extract(Lot::get(null, []));
-    $time = Path::F($page->path) . DS . 'time.data';
-    if ($site->type === 'page' && !File::exist($time)) {
-        File::write($page->time)->saveTo($time);
+Hook::set('shield.before', function() use($site) {
+    if ($page = Lot::get('page')) {
+        $time = Path::F($page->path) . DS . 'time.data';
+        if ($site->type === 'page' && !File::exist($time)) {
+            File::write($page->time)->saveTo($time);
+        }
     }
 });
 ~~~

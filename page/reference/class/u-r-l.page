@@ -32,7 +32,7 @@ __test__(
 );
 ~~~
 
-> **Note:** If `$root` is `false`, then a `/` character at the beginning of URL path will be ignored, and the result will always relative to the URL path where the CMS is being installed. The `$root` parameter changes makes sense only when **Mecha** is installed in a sub–directory.
+> **Note:** If `$root` is `false`, then a `/` character at the beginning of URL path will be ignored, and the result will always relative to the URL path where the CMS is being installed. The `$root` parameter changes makes sense only when Mecha is installed in a sub–directory.
 
 Result:
 
@@ -127,7 +127,7 @@ __test__(
 );
 ~~~
 
-> **Note:** If `$root` is `false`, then the sub–directory path where the CMS is being installed will be removed too, and the leading `/` will also be removed. The `$root` parameter changes makes sense only when **Mecha** is installed in a sub–directory.
+> **Note:** If `$root` is `false`, then the sub–directory path where the CMS is being installed will be removed too, and the leading `/` will also be removed. The `$root` parameter changes makes sense only when Mecha is installed in a sub–directory.
 
 Result:
 

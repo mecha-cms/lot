@@ -71,7 +71,7 @@ As [Twig](http://twig.sensiolabs.org/doc/tags/embed.html "embed - Documentation 
 ]
 ~~~
 
-As of **Mecha** version `1.x.x` _shortcodes_:
+As of Mecha version `1.x.x` _shortcodes_:
 
 ~~~ .xmp.txt
 {‌{‌block‌}‌}content{‌{‌/‌block‌}‌}

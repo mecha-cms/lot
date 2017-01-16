@@ -1,5 +1,5 @@
 ---
-title: Basic Random Posts/Pages
+title: Basic Random Posts
 description: Show list of pages in random order.
 ...
 
@@ -7,7 +7,7 @@ description: Show list of pages in random order.
 $_path = PAGE . DS . 'article';
 $_chunk = 7;
 
-echo '<h3>Random Pages</h3>';
+echo '<h3>Random Posts</h3>';
 if ($_pages = Get::pages($_path, 'page')) {
     echo '<ul>';
     foreach (Anemon::eat($_pages)->shake()->chunk($_chunk, 0) as $_page) {

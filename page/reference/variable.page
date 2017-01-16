@@ -3,7 +3,7 @@ title: Reserved Variables
 description: You shouldn’t redefine these PHP variables.
 ...
 
-These variables are used by **Mecha**. This is not mandatory, but it would be better if you don’t change their values.
+These variables are used by Mecha. This is not mandatory, but it would be better if you don’t change their values.
 
 ### `$config`
 

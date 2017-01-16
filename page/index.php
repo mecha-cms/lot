@@ -15,10 +15,11 @@ if (Extend::exist('block')) {
 }
 
 // add static `time` field automatically
-Hook::set('shield.before', function() {
-    extract(Lot::get(null, []));
-    $time = Path::F($page->path) . DS . 'time.data';
-    if ($site->type === 'page' && !File::exist($time)) {
-        File::write($page->time)->saveTo($time);
+Hook::set('shield.before', function() use($site) {
+    if ($page = Lot::get('page')) {
+        $time = Path::F($page->path) . DS . 'time.data';
+        if ($site->type === 'page' && !File::exist($time)) {
+            File::write($page->time)->saveTo($time);
+        }
     }
 });

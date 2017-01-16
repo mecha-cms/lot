@@ -176,4 +176,9 @@ lot\
 
 ### Hooks
 
- - `elevator.pager` → Will affect the HTML output of the page’s pagination.
+ - `elevator.page` → Will affect the configuration data of the item page’s pagination.
+ - `elevator.pages` → Will affect the configuration data of the index page’s pagination.
+ - `elevator.page.links` → Will affect the generated links of the item page’s pagination.
+ - `elevator.pages.links` → Will affect the generated links of the index page’s pagination.
+ - `elevator.page.unit` → Will affect the generated HTML of the item page’s pagination.
+ - `elevator.pages.unit` → Will affect the generated HTML of the index page’s pagination.
