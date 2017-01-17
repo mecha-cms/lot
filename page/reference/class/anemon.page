@@ -153,14 +153,10 @@ $array = [
 ];
 ~~~
 
-### Extend and Concat
+### Extend
 
 ~~~ .xmp.php
 Anemon::extend(&$input, $a[, $b[, $c[, ...]]]);
-~~~
-
-~~~ .xmp.php
-Anemon::concat(&$input, $a[, $b[, $c[, ...]]]);
 ~~~
 
 Extend arrays:
@@ -209,6 +205,12 @@ $a = [
 ];
 ~~~
 
+### Concat
+
+~~~ .xmp.php
+Anemon::concat(&$input, $a[, $b[, $c[, ...]]]);
+~~~
+
 Concatenate arrays:
 
 ~~~ .php
@@ -251,7 +253,7 @@ $a = [
 ];
 ~~~
 
-With `Anemon::extend()`, the result is different:
+With `Anemon::extend()`, the result will be different:
 
 ~~~ .php
 $a = [
@@ -411,8 +413,8 @@ $test_2 = [
 
 #### Sort
 
-~~~ .php
-->sort($order = 1, $key = null, $preserve_key = false, $null = X);
+~~~ .xmp.php
+->sort($sort = 1, $preserve_key = false);
 ~~~
 
 Sort array values:
@@ -447,13 +449,13 @@ $array = [
 $test_1 = Anemon::eat($array)->sort(1)->vomit();
 
 // sort by value of the `color` property
-$test_2 = Anemon::eat($array)->sort(1, 'color')->vomit();
+$test_2 = Anemon::eat($array)->sort([1, 'color'])->vomit();
 
 // preserve original array key
-$test_3 = Anemon::eat($array)->sort(-1, 'color', true)->vomit();
+$test_3 = Anemon::eat($array)->sort([-1, 'color'], true)->vomit();
 
 // set default value of array item with missing `color` property as `#black`
-$test_4 = Anemon::eat($array)->sort(-1, 'color', true, '#black')->vomit();
+$test_4 = Anemon::eat($array)->sort([-1, 'color'], '#black')->vomit();
 ~~~
 
 Result:
