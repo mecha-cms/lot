@@ -36,7 +36,6 @@ document/
  ├── footer.php
  ├── header.php
  ├── index.php
- ├── menu.php
  ├── page.php
  ├── pages.php
  └── top.php
@@ -65,7 +64,7 @@ Asset::set('js/document.min.js');
 
 ### Top
 
-Minimum requirements for `404.php` file:
+Minimum requirements for `top.php` file:
 
 ~~~ .html
 <!DOCTYPE html>
@@ -126,20 +125,6 @@ Minimum requirements for `pages.php` file:
 </main>
 ~~~
 
-### Menu
-
-Minimum requirements for `menu.php` file:
-
-~~~ .html
-<nav>
-  <ul>
-    <li><a href="<?php echo $url; ?>">Home</a></li>
-    <li><a href="<?php echo $url; ?>/about">About</a></li>
-    <li><a href="<?php echo $url; ?>/archive">Archive</a></li>
-  </ul>
-</nav>
-~~~
-
 ### About
 
 Minimum requirements for `about.page` file:
@@ -149,9 +134,10 @@ Minimum requirements for `about.page` file:
 title: Shield Title
 description: Shield description.
 author: Shield Author
+type: Markdown
 link: http://example.com
 version: 1.0.0
 ...
 
-<p>Usage, external credits, etc.</p>
+Usage, external credits, etc.
 ~~~
