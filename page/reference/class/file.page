@@ -257,7 +257,7 @@ This is just a shortcut for `File::write(serialize('test!'))->saveTo('path\to\fi
 File::serialize('test!')->saveTo('path\to\file.txt');
 ~~~
 
-### Unerialize
+### Unserialize
 
 This is just a shortcut for `unserialize(File::open('file.txt')->read())`
 

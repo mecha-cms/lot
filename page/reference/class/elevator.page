@@ -70,6 +70,12 @@ $elevator = [
 $elevator_str = '<span>◀</span> <a href="foo/bar">◆</a> <a href="foo/bar/2">▶</a>';
 ~~~
 
+> **Info:** For item page elevator, set the `$chunk` parameter as `null` and `$index` parameter as array value you treat as the current item.
+>
+> ~~~ .php
+> $elevator = new Elevator(['foo', 'bar', 'baz'], null, 'bar');
+> ~~~
+
 ---
 
 ### Advance

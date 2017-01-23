@@ -21,6 +21,18 @@ Result:
 $test = '<button name="x" type="button" value="on">Activate</button>';
 ~~~
 
+#### Reset Button
+
+~~~ .xmp.php
+Form::reset($name = null, $value = null, $text = "", $attr = [], $dent = 0);
+~~~
+
+#### Submit Button
+
+~~~ .xmp.php
+Form::submit($name = null, $value = null, $text = "", $attr = [], $dent = 0);
+~~~
+
 ### Input
 
 ~~~ .xmp.php
@@ -37,6 +49,82 @@ Result:
 
 ~~~ .php
 $test = '<input name="x" type="url" value="test value" placeholder="http://">';
+~~~
+
+#### Checkbox Input
+
+TODO
+
+~~~ .xmp.php
+Form::checkbox($name = null ...);
+~~~
+
+#### Color Input
+
+~~~ .xmp.php
+Form::color($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~
+
+#### Date Input
+
+~~~ .xmp.php
+Form::date($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~
+
+#### Email Input
+
+~~~ .xmp.php
+Form::email($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~
+
+#### Number Input
+
+~~~ .xmp.php
+Form::number($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~
+
+#### Password Input
+
+~~~ .xmp.php
+Form::password($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~
+
+#### Radio Inputs
+
+TODO
+
+~~~ .xmp.php
+Form::radio($name = null ...);
+~~~
+
+#### Range Input
+
+~~~ .xmp.php
+Form::range($name = null, $value = [0, 0, 10], $attr = [], $dent = 0);
+~~~
+
+#### Search Input
+
+~~~ .xmp.php
+Form::search($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~
+
+#### Tel Input
+
+~~~ .xmp.php
+Form::tel($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~
+
+#### Text Input
+
+~~~ .xmp.php
+Form::text($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~
+
+#### URL Input
+
+~~~ .xmp.php
+Form::url($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
 ~~~
 
 ### Select

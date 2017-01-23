@@ -21,7 +21,7 @@ $test = From::json('{"foo":"bar"}');
 From::base64($input);
 ~~~
 
-Decode **Base64** string:
+Decode Base64 string:
 
 ~~~ .php
 $test = From::base64('RHVhIGdhcmlzIHJlbCBpdHUgc2VwZXJ0aSBrYXUgZGFuIGFrdS4gSGFueWEgYmVyc2FtYSB0YXBpIHRhayBiZXJ0ZW11Lg==');

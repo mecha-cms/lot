@@ -230,7 +230,7 @@ Title 2
 : Definition of Title 2 goes here.</code></pre><h3>Footnote</h3><p>A footnote is made of two things: 1). A marker in the text that will become a superscript number 2). A footnote definition that will be placed in a list of footnotes at the end of the document:</p><pre><code class="markdown">This is some text with a footnote. [^1]
 
 [^1]: And this is the footnote.</code></pre><p>Footnote definitions can be found anywhere in the document, but footnotes will always be listed in the order they are linked to in the text. You cannot make two links to the same footnotes:</p><pre><code class="html">&lt;p&gt;This is some text with a footnote. &lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;div class="footnotes"&gt;
+&lt;div class="notes"&gt;
   &lt;hr&gt;
   &lt;ol&gt;
     &lt;li id="fn:1"&gt;

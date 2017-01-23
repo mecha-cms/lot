@@ -2,3 +2,31 @@
 title: Class `Get`
 description: Data caller.
 ...
+
+### Page
+
+Plugged by [page extension][link:../extension/page].
+
+~~~ .xmp.php
+Get::page($path, $key = null, $fail = false, $for = null);
+~~~
+
+### Pages
+
+Plugged by [page extension][link:../extension/page].
+
+~~~ .xmp.php
+Get::pages($folder = PAGE, $state = 'page', $sort = [-1, 'time'], $key = null);
+~~~
+
+List all published and archived pages from `lot\page\blog` and sort them by `slug` ascending:
+
+~~~ .php
+$files = Get::pages('lot\page\blog', 'page,archive', [1, 'slug']);
+~~~
+
+List all published and archived pages from `lot\page\blog` and sort them ascending by `slug`, output only the `path` property of each item returned:
+
+~~~ .php
+$files = Get::pages('lot\page\blog', 'page,archive', [1, 'slug'], 'path');
+~~~

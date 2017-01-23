@@ -3,6 +3,12 @@ title: Class `Guardian`
 description: Basic security.
 ...
 
+### Hash
+
+~~~ .xmp.php
+Guardian::hash($salt = "");
+~~~
+
 ### Kick
 
 ~~~ .xmp.php
@@ -19,4 +25,10 @@ Redirect to `http://example.com`:
 
 ~~~ .php
 Guardian::kick('http://example.com');
+~~~
+
+### Abort
+
+~~~ .xmp.php
+Guardian::abort($message, $exit = true);
 ~~~
