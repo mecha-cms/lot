@@ -6,7 +6,7 @@ description: Working with pages.
 ### Open
 
 ~~~ .xmp.php
-Page::open($path);
+Page::open($path, $lot = [], $NS = 'page');
 ~~~
 
 Initialize by opening a page file:

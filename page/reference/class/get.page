@@ -3,6 +3,30 @@ title: Class `Get`
 description: Data caller.
 ...
 
+### Internet Protocol
+
+~~~ .xmp.php
+Get::ip($fail = false);
+~~~
+
+Get user’s IP:
+
+~~~ .php
+echo Get::ip();
+~~~
+
+### User Agent
+
+~~~ .xmp.php
+Get::ua($fail = false);
+~~~
+
+Get user’s user agent:
+
+~~~ .php
+echo Get::ua();
+~~~
+
 ### Page
 
 Plugged by [page extension][link:../extension/page].

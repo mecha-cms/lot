@@ -125,7 +125,7 @@ $test_2 = '#';
 ### Reset
 
 ~~~ .xmp.php
-Anemon::reset(&$input, $key);
+Anemon::reset(&$input, $key = null);
 ~~~
 
 Remove array value recursively:
