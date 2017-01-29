@@ -74,7 +74,7 @@ Hook::reset('the_header', 'do_set_header');
 ### Fire
 
 ~~~ .xmp.php
-Hook::fire($id, $lot = null);
+Hook::fire($id, array $lot = []);
 ~~~
 
 Execute the `the_header` hook:
@@ -90,7 +90,7 @@ Hook::fire('the_header'); // → `<meta name="generator" content="Mecha">`
 #### Namespaces
 
 ~~~ .xmp.php
-Hook::NS($id, $lot);
+Hook::NS($id, array $lot = []);
 ~~~
 
 This …

@@ -37,7 +37,7 @@ Return the folder path of current extension folder if exists:
 
 ~~~ .php
 if ($path = Extend::exist('minify')) {
-    // do something with `$path` …
+    // do something with `$path`…
 }
 ~~~
 

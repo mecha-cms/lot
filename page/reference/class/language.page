@@ -42,7 +42,7 @@ echo Language::get('foo');
 ### Static Call
 
 ~~~ .xmp.php
-Language::{$property}($vars = []);
+Language::{$property}($vars = [], $preserve_case = false);
 ~~~
 
 Get language property statically:

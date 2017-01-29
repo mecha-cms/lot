@@ -37,11 +37,11 @@ __test__(
 Result:
 
 ~~~ .txt
-[[url.protocol]][[url.host]]/sub-directory
+[[url.protocol]][[url.host]]/directory
 ~~~
 
 ~~~ .txt
-[[url.protocol]][[url.host]]/sub-directory/foo
+[[url.protocol]][[url.host]]/directory/foo
 ~~~
 
 ~~~ .txt
@@ -61,7 +61,7 @@ javascript:;
 ~~~
 
 ~~~ .txt
-[[url.protocol]][[url.host]]/sub-directory/foo/bar
+[[url.protocol]][[url.host]]/directory/foo/bar
 ~~~
 
 ~~~ .txt
@@ -106,22 +106,22 @@ Convert full URL into relative URL:
 
 ~~~ .php
 __test__(
-    URL::short('[[url.protocol]][[url.host]]/sub-directory'),
-    URL::short('[[url.protocol]][[url.host]]/sub-directory/foo'),
-    URL::short('[[url.protocol]][[url.host]]/sub-directory?foo'),
-    URL::short('[[url.protocol]][[url.host]]/sub-directory&foo'),
-    URL::short('[[url.protocol]][[url.host]]/sub-directory#foo'),
-    URL::short('[[url.protocol]][[url.host]]/sub-directory/javascript:;'),
-    URL::short('[[url.protocol]][[url.host]]/sub-directory/foo/bar'),
+    URL::short('[[url.protocol]][[url.host]]/directory'),
+    URL::short('[[url.protocol]][[url.host]]/directory/foo'),
+    URL::short('[[url.protocol]][[url.host]]/directory?foo'),
+    URL::short('[[url.protocol]][[url.host]]/directory&foo'),
+    URL::short('[[url.protocol]][[url.host]]/directory#foo'),
+    URL::short('[[url.protocol]][[url.host]]/directory/javascript:;'),
+    URL::short('[[url.protocol]][[url.host]]/directory/foo/bar'),
     URL::short('//foo'),
     URL::short('http://foo'),
-    URL::short('[[url.protocol]][[url.host]]/sub-directory', false),
-    URL::short('[[url.protocol]][[url.host]]/sub-directory/foo', false),
-    URL::short('[[url.protocol]][[url.host]]/sub-directory?foo', false),
-    URL::short('[[url.protocol]][[url.host]]/sub-directory&foo', false),
-    URL::short('[[url.protocol]][[url.host]]/sub-directory#foo', false),
-    URL::short('[[url.protocol]][[url.host]]/sub-directory/javascript:;', false),
-    URL::short('[[url.protocol]][[url.host]]/sub-directory/foo/bar', false),
+    URL::short('[[url.protocol]][[url.host]]/directory', false),
+    URL::short('[[url.protocol]][[url.host]]/directory/foo', false),
+    URL::short('[[url.protocol]][[url.host]]/directory?foo', false),
+    URL::short('[[url.protocol]][[url.host]]/directory&foo', false),
+    URL::short('[[url.protocol]][[url.host]]/directory#foo', false),
+    URL::short('[[url.protocol]][[url.host]]/directory/javascript:;', false),
+    URL::short('[[url.protocol]][[url.host]]/directory/foo/bar', false),
     URL::short('//foo', false),
     URL::short('http://foo', false)
 );
@@ -132,31 +132,31 @@ __test__(
 Result:
 
 ~~~ .txt
-/sub-directory
+/directory
 ~~~
 
 ~~~ .txt
-/sub-directory/foo
+/directory/foo
 ~~~
 
 ~~~ .txt
-/sub-directory?foo
+/directory?foo
 ~~~
 
 ~~~ .txt
-/sub-directory&foo
+/directory&foo
 ~~~
 
 ~~~ .txt
-/sub-directory#foo
+/directory#foo
 ~~~
 
 ~~~ .txt
-/sub-directory/javascript:;
+/directory/javascript:;
 ~~~
 
 ~~~ .txt
-/sub-directory/foo/bar
+/directory/foo/bar
 ~~~
 
 ~~~ .txt
@@ -203,6 +203,31 @@ foo/bar
 http://foo
 ~~~
 
+### Initial
+
+~~~ .xmp.php
+URL::i($url);
+~~~
+
+Remove the trailing page offset from URL:
+
+~~~ .php
+__test__(
+    URL::i('[[url]]/blog'),
+    URL::i('[[url]]/blog/4')
+);
+~~~
+
+Result:
+
+~~~ .txt
+[[url]]/blog
+~~~
+
+~~~ .txt
+[[url]]/blog
+~~~
+
 ---
 
 ### Advance
@@ -226,9 +251,9 @@ echo $url; // return `$url->url` (the base URL)
 The available properties:
 
 ~~~ .txt
-// [[url.protocol]][[url.host]]/sub-directory/foo/bar?foo=bar#foo
+// [[url.protocol]][[url.host]]/directory/foo/bar?foo=bar#foo
 
-$url → [[url.protocol]][[url.host]]/sub-directory
+$url → [[url.protocol]][[url.host]]/directory
  │
  ├── scheme: [[url.scheme]]
  ├── protocol: [[url.protocol]]
@@ -236,12 +261,12 @@ $url → [[url.protocol]][[url.host]]/sub-directory
  ├── port: [[url.port]]
  ├── user: null ← or depends on `$_SESSION['url']['user']`
  ├── pass: null ← or depends on `$_SESSION['url']['pass']`
- ├── directory: sub-directory
- ├── url: [[url.protocol]][[url.host]]/sub-directory
+ ├── directory: directory
+ ├── url: [[url.protocol]][[url.host]]/directory
  ├── path: foo/bar
  ├── query: ?foo=bar
  ├── previous: null ← or depends on `$_SESSION['url']['previous']`
- ├── current: [[url.protocol]][[url.host]]/sub-directory/foo/bar
+ ├── current: [[url.protocol]][[url.host]]/directory/foo/bar
  ├── next: null ← or depends on `$_SESSION['url']['next']`
  └── hash: null ← or depends on `$_COOKIE['url']['hash']`
 ~~~

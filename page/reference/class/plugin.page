@@ -39,7 +39,7 @@ Return the folder path of current plugin folder if exists:
 
 ~~~ .php
 if ($path = Plugin::exist('markdown')) {
-    // do something with `$path` …
+    // do something with `$path`…
 }
 ~~~
 

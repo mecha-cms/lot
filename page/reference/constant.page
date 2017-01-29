@@ -8,7 +8,6 @@ Constant | Description | Example
 `DS` | Return the directory separator. | `\`
 `ROOT` | Return the private file path without the trailing directory separator | `.\www`
 `DENT` | Return the standard indentation characters of HTML page. | <mark><code>&nbsp;&nbsp;</code></mark>
-`S` | Return a non–breaking space. | <mark><code>&nbsp;</code></mark>
 `T` | Return a tab character. | `\t`
 `N` | Return a new line character. | `\n`
 `X` | Return a placeholder character. | ␚
@@ -22,7 +21,7 @@ Constant | Description | Example
 `PAGE` | Return the page folder path. | `.\www\lot\page`
 `SHIELD` | Return the shield folder path. | `.\www\lot\shield`
 `STATE` | Return the state folder path. | `.\www\lot\state`
-`PLUGIN` | Return the plugin folder path. | `.\www\lot\extend\plugin`
+`PLUGIN` | Return the plugin folder path. | `.\www\lot\extend\plugin\lot\worker`
 `HTML_WISE_I` | Return inline HTML tag names allowed to be written in the page editor. | `b,code,i,u`
 `HTML_WISE_B` | Return block HTML tag names allowed to be written in the page editor. | `h1,h2,h3,h4,h5,h6,p`
 `HTML_WISE` | Combination of `HTML_WISE_I` and `HTML_WISE_B` | `b,code,i,u,h1,h2,h3,h4,h5,h6,p`

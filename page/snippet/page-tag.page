@@ -1,0 +1,17 @@
+---
+title: Basic Page Tags
+description: List all tags of the current page.
+...
+
+Requires [tags][link:../reference/extension/tag] extension.
+
+~~~ .php
+if (is_array($page->tags)) {
+    $_tags = [];
+    foreach ($page->tags as $v) {
+        $_tags[$v->title] = HTML::a($v->title, $v->url);
+    }
+    ksort($_tags); // sort by title…
+    echo 'Tags: ' . implode(', ', $_tags);
+}
+~~~

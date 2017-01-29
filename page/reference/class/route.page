@@ -24,8 +24,8 @@ Set a new route:
 
 ~~~ .php
 Route::set('blog/%i%', function($step = 1) {
-    // here, `$step` will return `4` if we are in `[[url]]/blog/4`
-    // and will return `1` if we are in `[[url]]/blog`
+    // here, `$step` will return `4` if we are in `‌[[url]]‌/blog/4`
+    // and will return `1` if we are in `‌[[url]]‌/blog`
 });
 ~~~
 
@@ -113,7 +113,7 @@ Route::pattern($pattern, $fn = false, $stack = null);
 Set a new route or routes using plain regular expression pattern:
 
 ~~~ .php
-Route::pattern('#^blog\/([^\/]+)?\/(\d+)?$#', function($slug = "", $step = 1) { … });
+Route::pattern('#^blog(?:\/([^\/]+))?(?:\/(\d+))?$#', function($slug = "", $step = 1) { … });
 ~~~
 
 ### Is

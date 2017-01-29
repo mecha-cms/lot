@@ -18,7 +18,7 @@ if (Extend::exist('block')) {
 Hook::set('shield.before', function() use($site) {
     if ($page = Lot::get('page')) {
         $time = Path::F($page->path) . DS . 'time.data';
-        if ($site->type === 'page' && !File::exist($time)) {
+        if ($site->type !== '404' && !File::exist($time)) {
             File::write($page->time)->saveTo($time);
         }
     }

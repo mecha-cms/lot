@@ -376,7 +376,7 @@ Custom callback function:
 
 ~~~ .php
 File::upload($_FILES['file'], 'path\to\folder', function($file) {
-    // do something …
+    // do something…
 });
 ~~~
 

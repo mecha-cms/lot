@@ -1,0 +1,174 @@
+---
+title: Tags
+description: Adds `query` and `tags` property to the page based on the `kind` property.
+...
+
+This extension enables tags features on any pages by utilizing the `kind` property value as the tag ID. This extension also adds some routes like ` [[url]]/blog/tag/slug ` on every pages to make it possible to list all pages in the current folder by tags.
+
+### Constants
+
+This extension will automatically adds a `tag` folder within the `lot` folder, which will also automatically set a new constant based on the folder name with a value as the folder path:
+
+~~~ .php
+TAG
+~~~
+
+### Methods
+
+There are some methods added to the default [classes][link:../class]:
+
+#### Tag
+
+~~~ .xmp.php
+Get::tag();
+~~~
+
+Arguments are the same with [`Get::page()`][link:../class/get#reference:page].
+
+#### Tags
+
+~~~ .xmp.php
+Get::tags();
+~~~
+
+Arguments are the same with [`Get::pages()`][link:../class/get#reference:pages], except the `$folder` parameter that uses `TAG` [constant][link:../constant] value by default, and the `$sort` parameter that uses `slug` as the default sort key instead of `time`.
+
+#### From
+
+~~~ .xmp.php
+From::tag($slug, $fail = false);
+~~~
+
+Get tag ID from the tag slug.
+
+#### To
+
+~~~ .xmp.php
+To::tag($id, $fail = false);
+~~~
+
+Get tag slug from the tag ID.
+
+### Working with Tags
+
+[Panel][link:panel] extension can help you to automate everything from the start. But, if you have to, you can still make this extension works without any _backend_ extensions at all. It is because the panel extension was created only to convert your generic files and folders interface into a rich graphic user interface. Just like comparison between _Command Prompt_ appearance to the desktop _Windows_ appearance.
+
+Before we get started, you need to understand about the way this extension works. **First**, you have to know that this extension adds a `query` and `tags` property to the page if the page contains `kind` property that is not empty:
+
+~~~
+$page = [
+    …
+    …
+    'kind' => [1, 2, 3], // [^1]
+    'query' => ['foo', 'bar', 'baz'], // [^2]
+    'tags' => [ // [^3]
+        0 => [
+            …
+            …
+            'id' => 1,
+            'slug' => 'foo',
+            'url' => '[[url]]/tag/foo'
+        ],
+        1 => [
+            …
+            …
+            'id' => 2,
+            'slug' => 'bar',
+            'url' => '[[url]]/tag/bar'
+        ],
+        2 => [
+            …
+            …
+            'id' => 3,
+            'slug' => 'baz',
+            'url' => '[[url]]/tag/baz'
+        ]
+    ]
+];
+
+// [^1]: These numbers will be used as the tag ID.
+// [^2]: These queries are generated automatically based on the available tags.
+// [^3]: These rich tags data are also generated based on the available tags.
+~~~
+
+**Second**, writing tag files is the same as writing regular page files. The only difference is that the `id` property must be stored in a separated file, not embedded in the page file content.
+
+~~~ .txt
+lot\
+ └── tag\
+     ├── foo\
+     │   └── id.data
+     ├── bar\
+     │   └── id.data
+     ├── baz\
+     │   └── id.data
+     ├── foo.page
+     ├── bar.page
+     └── baz.page
+~~~
+
+**Third**, make sure to set a unique integer number on each `id.data` files. These numbers, then will be used to connect between the `kind` data with the available tags.
+
+Here’s an example of a tag file content:
+
+~~~ .yaml
+---
+title: The Tag Name
+description: Short description about this tag.
+...
+
+Long description about this tag.
+~~~
+
+**Fourth**, to connect between tags and the current page, create a `kind.data` file in the related folder, contains list of tags ID written in a valid JSON format:
+
+~~~ .txt
+lot\
+ └── page\
+     ├── test-page\
+     │   └── kind.data
+     └── test-page.page
+~~~
+
+Example content of `kind.data` file:
+
+~~~ .json
+[1,2,3]
+~~~
+
+You can also embed the `kind` property to the page headers, but this way is a little bit [slower][link:../../article/migration] to be parsed than the separated file version:
+
+~~~ .yaml
+---
+title: Page Title
+description: Page description.
+author: Taufik Nurrohman
+type: Markdown
+kind: [1,2,3]
+...
+
+Page content goes here.
+~~~
+
+#### Tags Listing
+
+ - [link:../../snippet/tag]
+ - [link:../../snippet/page-tag]
+
+_To be continued._
+
+### Properties
+
+ - `$site->tag` → Return the current page tag slug when you are in the tags page. Default is `null`.
+
+### Hooks
+
+ - `tag.*` → Behaves like `page.*` hooks, but its target is only for the rich tags output.
+
+### Dependency
+
+#### Extension
+
+ - [link:page]
+
+[Download Latest Version]([[url]]/2016/d/mecha-cms/extend.tag/archive/master.zip) {.button}

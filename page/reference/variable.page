@@ -1,9 +1,9 @@
 ---
-title: Reserved Variables
-description: You shouldn’t redefine these PHP variables.
+title: Variables
+description: Reserved variables.
 ...
 
-These variables are used by Mecha. This is not mandatory, but it would be better if you don’t change their values.
+These PHP variables are reserved. It would be better if you don’t change their values. You shouldn’t redefine these PHP variables. Please consider to choose another variable names other than these.
 
 ### `$config`
 
@@ -29,14 +29,20 @@ This variable returns the state data of the current shield if available.
 
 This variable is an instance of the [`URL` class][link:class/u-r-l].
 
+### `$u_r_l`
+
+This is an alias for `$url`.
+
 ### `$pages`
 
-This variable is a list of the [`Page` class][link:class/page] instances.
+This variable contains list of the [`Page` class][link:class/page] instances. [^1]
 
 ### `$page`
 
-This variable is an instance of the [`Page` class][link:class/page] with current page path as the input.
+This variable is an instance of the [`Page` class][link:class/page] with current page path as the input. [^1]
 
 ### `$pager`
 
-This variable is an instance of the [`Elevator` class][link:class/elevator].
+This variable is an instance of the [`Elevator` class][link:class/elevator]. [^1]
+
+[^1]: Added by the [page][link:extension/page] extension.

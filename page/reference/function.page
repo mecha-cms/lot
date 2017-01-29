@@ -1,5 +1,5 @@
 ---
-title: Function Reference
+title: Functions
 description: Helper functions.
 ...
 
@@ -72,7 +72,7 @@ Return `true` if `$x` is array or object.
 __is_instance__($x);
 ~~~
 
-Return `true` if `$x` is an instance of class.
+Return `true` if `$x` is an instance of _any_ class.
 
 ### Is JSON
 
@@ -213,9 +213,11 @@ $test = [
 ];
 ~~~
 
-> **Note:** Class instance will not be converted into array.
+> **Note:** Class instance will not be converted into array if `$safe` is set to `true`.
 
 #### `b`
+
+_Reserved._
 
 #### `c`
 
@@ -303,21 +305,27 @@ Include files with callback:
 
 #### `j`
 
+_Reserved._
+
 #### `k`
+
+_Reserved._
 
 #### `l`
 
 ~~~ .xmp.php
- 
+$test = l('POKÉMON');
 ~~~
 
-Convert text to lower case:
+Result:
 
 ~~~ .php
- 
+$test = 'pokémon';
 ~~~
 
 #### `m`
+
+_Reserved._
 
 #### `n`
 
@@ -373,7 +381,7 @@ $test = stdClass::__set_state([
 ]);
 ~~~
 
-> **Note:** Array with numeric keys will not be converted into object.
+> **Note:** Array with numeric keys will not be converted into object if `$safe` is set to `true`.
 
 #### `p`
 
@@ -417,7 +425,7 @@ Require files with callback:
  
 ~~~
 
-Convert data type to their string format (this is the inverse version of [`e`][link:#reference:e]:
+Convert data type to their string format (this is the inverse version of [`e`][link:#reference:e]):
 
 ~~~ .php
  
@@ -429,28 +437,34 @@ Convert data type to their string format (this is the inverse version of [`e`][l
  
 ~~~
 
-Trim string from `?` and `!` once:
+Trim string from `??` and `!!` once:
 
 ~~~ .php
-$test = t('????abc!!!!', '?', '!');
+$test = t('????abc!!!!', '??', '!!');
 ~~~
 
 Result:
 
 ~~~ .php
-$test = '???abc!!!';
+$test = '??abc!!';
 ~~~
 
 #### `u`
 
 ~~~ .xmp.php
- 
+u($x);
 ~~~
 
 Convert text to upper case:
 
 ~~~ .php
- 
+$test = u('pokémon');
+~~~
+
+Result:
+
+~~~ .php
+$test = 'POKÉMON';
 ~~~
 
 #### `v`

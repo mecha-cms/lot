@@ -13,14 +13,12 @@ echo '<h3>Popular Posts</h3>';
 if ($_pages = Get::pages($_path, 'page', [-1, 'view'])) {
     echo '<ul>';
     foreach (Anemon::eat($_pages)->chunk($_chunk, 0) as $_page) {
-        $_page = Page::open($_page['path'])->get([
-            'url' => null,
-            'title' => null,
-            'view' => '0 ' . $language->page_view[1]
-        ]);
-        echo '<li><a href="' . $_page['url'] . '">' . $_page['title'] . '</a> (' . $_page['view'] . ')</li>';
+        $_page = new Page($_page['path']);
+        echo '<li>' . HTML::a($_page->title, $_page->url) . ' (' . $_page->view . ')</li>';
     }
     echo '</ul>';
+} else {
+    echo '<p>No views yet.</p>';
 }
 ~~~
 
