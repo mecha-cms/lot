@@ -6,13 +6,13 @@ description: Array workers.
 ### Step
 
 ~~~ .xmp.php
-Anemon::step($input, $NS = null);
+Anemon::step($input, $NS = '.');
 ~~~
 
 Create list of _namespace_ steps from a string:
 
 ~~~ .php
-$test = Anemon::step('foo.bar.baz'); // ← default `$NS` is `.`
+$test = Anemon::step('foo.bar.baz');
 ~~~
 
 Result:
@@ -34,7 +34,6 @@ Anemon::edge($input, $min = null, $max = null);
 Prevent input value exceeds the minimum and maximum value:
 
 ~~~ .php
-
 $min = 0;
 $max = 100;
 

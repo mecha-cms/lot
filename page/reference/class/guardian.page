@@ -9,6 +9,12 @@ description: Basic security.
 Guardian::hash($salt = "");
 ~~~
 
+### Token
+
+~~~ .xmp.php
+Guardian::token();
+~~~
+
 ### Kick
 
 ~~~ .xmp.php

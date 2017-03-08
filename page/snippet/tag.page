@@ -11,7 +11,7 @@ $_path = $url->path;
 if ($site->tag) { // → `blog/tag/tag-slug`
     $_path = URL::I($url->path); // remove page offset in URL path
     $_path = Path::D($_path, 2);
-} else if ($site->type === 'page') { // → `blog/page-slug`
+} else if ($site->is === 'page') { // → `blog/page-slug`
     $_path = Path::D($_path);
 }
 if ($_kinds = glob(PAGE . DS . $_path . DS . '*' . DS . 'kind.data', GLOB_NOSORT)) {

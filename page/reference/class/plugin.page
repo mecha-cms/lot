@@ -5,30 +5,6 @@ description: Working with plugins.
 
 > **Info:** This class is located in `lot\extend\plugin\engine\kernel` folder.
 
-### Version
-
-~~~ .xmp.php
-Plugin::version($id, $v = null);
-~~~
-
-Return the `version` property of `about.page` file in the current plugin folder or `0.0.0`:
-
-~~~ .php
-$test = Plugin::version('markdown');
-~~~
-
-### Info
-
-~~~ .xmp.php
-Plugin::info($id);
-~~~
-
-Return a page object of `about.page` file in the current plugin folder:
-
-~~~ .php
-$info = Plugin::info('markdown');
-~~~
-
 ### Exist
 
 ~~~ .xmp.php

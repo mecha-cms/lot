@@ -1,0 +1,10 @@
+---
+title: Search Form
+description: Basic search form.
+...
+
+~~~ .php
+<form action="<?php echo $site->is === 'page' ? Path::D($url->current) : $url->current; ?>" method="get">
+  <input name="q" type="text" value="<?php echo Request::get('q', ""); ?>"> <button type="submit"><?php echo $language->search; ?></button>
+</form>
+~~~

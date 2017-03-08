@@ -169,7 +169,7 @@ lot\
 
 ### Properties
 
- - `$site->type` → Return an empty string on home page, `page` on item page and `pages` on index page. Default is `404`.
+ - `$site->is` → Return an empty string on home page, `page` on item page and `pages` on index page. Default is `404`.
  - `$site->state` → Return the current page state. Default is `page`.
 
 ### Hooks

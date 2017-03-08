@@ -3,11 +3,11 @@ title: Tags
 description: Adds `query` and `tags` property to the page based on the `kind` property.
 ...
 
-This extension enables tags features on any pages by utilizing the `kind` property value as the tag ID. This extension also adds some routes like ` [[url]]/blog/tag/slug ` on every pages to make it possible to list all pages in the current folder by tags.
+This extension enables tags feature on any pages by utilizing the `kind` property value as the tag ID. This extension also adds a new route definition like ` [[url]]/blog/tag/slug ` on every pages to make it possible to list all pages in the current folder by tags.
 
 ### Constants
 
-This extension will automatically adds a `tag` folder within the `lot` folder, which will also automatically set a new constant based on the folder name with a value as the folder path:
+This extension automatically adds a `tag` folder within the `lot` folder, which will also automatically set a new constant based on the folder name with a value as the folder path:
 
 ~~~ .php
 TAG
@@ -20,7 +20,7 @@ There are some methods added to the default [classes][link:../class]:
 #### Tag
 
 ~~~ .xmp.php
-Get::tag();
+Get::tag( … );
 ~~~
 
 Arguments are the same with [`Get::page()`][link:../class/get#reference:page].
@@ -28,10 +28,10 @@ Arguments are the same with [`Get::page()`][link:../class/get#reference:page].
 #### Tags
 
 ~~~ .xmp.php
-Get::tags();
+Get::tags($folder = TAG, …, $sort = [1, 'id'], …);
 ~~~
 
-Arguments are the same with [`Get::pages()`][link:../class/get#reference:pages], except the `$folder` parameter that uses `TAG` [constant][link:../constant] value by default, and the `$sort` parameter that uses `slug` as the default sort key instead of `time`.
+Arguments are the same with [`Get::pages()`][link:../class/get#reference:pages], except the `$folder` parameter that uses `TAG` [constant][link:../constant] value by default, and the `$sort` parameter that uses `id` as the default sort key instead of `time`.
 
 #### From
 
@@ -51,9 +51,13 @@ Get tag slug from the tag ID.
 
 ### Working with Tags
 
-[Panel][link:panel] extension can help you to automate everything from the start. But, if you have to, you can still make this extension works without any _backend_ extensions at all. It is because the panel extension was created only to convert your generic files and folders interface into a rich graphic user interface. Just like comparison between _Command Prompt_ appearance to the desktop _Windows_ appearance.
+[Panel][link:panel] extension can help you to automate everything from the start. But, if you have to, you can still make this extension works without any _backend_ extensions at all. It is because the panel extension was created only to convert your generic files and folders interface into a rich graphical user interface. Just like a comparison between _Command Prompt_ appearance to the desktop _Windows_ appearance.
 
-Before we get started, you need to understand about the way this extension works. **First**, you have to know that this extension adds a `query` and `tags` property to the page if the page contains `kind` property that is not empty:
+Before we get started, you need to understand about the way this extension works.
+
+#### Page Properties
+
+**First**, you have to know that this extension adds a `query` and `tags` property to the page if the page contains `kind` property that is not empty:
 
 ~~~
 $page = [
@@ -91,21 +95,25 @@ $page = [
 // [^3]: These rich tags data are also generated based on the available tags.
 ~~~
 
+#### File Structure
+
 **Second**, writing tag files is the same as writing regular page files. The only difference is that the `id` property must be stored in a separated file, not embedded in the page file content.
 
 ~~~ .txt
 lot\
  └── tag\
-     ├── foo\
-     │   └── id.data
      ├── bar\
      │   └── id.data
      ├── baz\
      │   └── id.data
-     ├── foo.page
+     ├── foo\
+     │   └── id.data
      ├── bar.page
-     └── baz.page
+     ├── baz.page
+     └── foo.page
 ~~~
+
+#### File Content
 
 **Third**, make sure to set a unique integer number on each `id.data` files. These numbers, then will be used to connect between the `kind` data with the available tags.
 
@@ -113,12 +121,14 @@ Here’s an example of a tag file content:
 
 ~~~ .yaml
 ---
-title: The Tag Name
+title: Tag Name
 description: Short description about this tag.
 ...
 
 Long description about this tag.
 ~~~
+
+#### Connections
 
 **Fourth**, to connect between tags and the current page, create a `kind.data` file in the related folder, contains list of tags ID written in a valid JSON format:
 
@@ -151,6 +161,18 @@ Page content goes here.
 ~~~
 
 #### Tags Listing
+
+~~~ .php
+echo implode(', ', $page->query);
+~~~
+
+~~~ .php
+$tags = [];
+foreach ((array) $page->tags as $v) {
+    $tags[] = HTML::a($v->title, $v->url);
+}
+echo implode(', ', $tags);
+~~~
 
  - [link:../../snippet/tag]
  - [link:../../snippet/page-tag]

@@ -1,10 +1,44 @@
 ---
 title: Class `State`
 description: Get states data.
+author: @ta-tau-taufik
+type: Markdown
 ...
 
 ### Call Static
 
 ~~~ .xmp.php
-State::{$name}();
+$x = State::{$name}();
+~~~
+
+Load `lot\state\config.php` file:
+
+~~~ .php
+$config = State::config();
+~~~
+
+Result:
+
+~~~ .php
+echo $config['title']; // key `title` does exist, return the `title` value
+echo $config['xyz']; // key `xyz` does not exist, broken!
+~~~
+
+### Constructor
+
+~~~ .xmp.php
+$state = new State($x);
+~~~
+
+Convert `$config` array into safe object:
+
+~~~ .php
+$config = new State($config);
+~~~
+
+Result:
+
+~~~ .php
+echo $config->title; // key `title` does exist, return the `title` value
+echo $config->xyz; // key `xyz` does not exist, return `null`
 ~~~

@@ -3,30 +3,6 @@ title: Class `Extend`
 description: Working with extensions.
 ...
 
-### Version
-
-~~~ .xmp.php
-Extend::version($id, $v = null);
-~~~
-
-Return the `version` property of `about.page` file in the current extension folder or `0.0.0`:
-
-~~~ .php
-$test = Extend::version('minify');
-~~~
-
-### Info
-
-~~~ .xmp.php
-Extend::info($id);
-~~~
-
-Return a page object of `about.page` file in the current extension folder:
-
-~~~ .php
-$info = Extend::info('minify');
-~~~
-
 ### Exist
 
 ~~~ .xmp.php

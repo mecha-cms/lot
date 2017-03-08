@@ -206,15 +206,15 @@ http://foo
 ### Initial
 
 ~~~ .xmp.php
-URL::i($url);
+URL::I($url);
 ~~~
 
 Remove the trailing page offset from URL:
 
 ~~~ .php
 __test__(
-    URL::i('[[url]]/blog'),
-    URL::i('[[url]]/blog/4')
+    URL::I('[[url]]/blog'),
+    URL::I('[[url]]/blog/4')
 );
 ~~~
 

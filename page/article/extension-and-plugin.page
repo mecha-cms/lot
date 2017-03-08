@@ -7,4 +7,4 @@ Extension | Plugin
 --------- | ------
 Stand alone. | Is part of the extension.
 Add functionality. | Apply the added functionality.
-`lot\extend\:exension` | `lot\extend\plugin\lot\worker\:plugin`
+`lot\extend\:extension` | `lot\extend\plugin\lot\worker\:plugin`
