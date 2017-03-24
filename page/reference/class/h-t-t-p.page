@@ -5,12 +5,107 @@ description: Working with HTTP headers.
 
 ### Status
 
+~~~ .xmp.php
+HTTP::status($i = 200);
+~~~
+
 ### Query
+
+~~~ .xmp.php
+HTTP::query($query = [], $c = ['?', '&amp;', '=']);
+~~~
+
+Add, remove and update the current query string URL keys and values:
+
+~~~ .php
+// → ?a=b&c=d&e=[f]=g
+
+echo HTTP::query(['c' => 1000]);
+~~~
+
+Result:
+
+~~~ .txt
+?a=b&amp;c=1000&amp;e=[f]=g
+~~~
+
+> **Note:** Setting the property value to `true` will insert a query string without value, setting the property value to the string `"true"` will insert a query string with value `true`:
+>
+> ~~~ .php
+> // → ?a=b
+>
+> echo HTTP::query([
+>     'c' => true,
+>     'd' => 'true'
+> ]);
+> ~~~
+>
+> Result:
+>
+> ~~~ .txt
+> ?a=b&amp;c&amp;d=true
+> ~~~
+>
+> Setting the property value to `false` will remove the query string, setting the property value to the string `"false"` will insert a query string with value `false`:
+>
+> ~~~ .php
+> // → ?a=b
+>
+> echo HTTP::query([
+>     'a' => false,
+>     'c' => 'false'
+> ]);
+> ~~~
+>
+> Result:
+>
+> ~~~ .txt
+> ?c=false
+> ~~~
 
 ### Header
 
+~~~ .xmp.php
+HTTP::header($key, $value = null);
+~~~
+
+Set HTTP headers:
+
+~~~ .php
+HTTP::header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');
+~~~
+
+~~~ .php
+HTTP::header('Expires', 'Sat, 26 Jul 1997 05:00:00 GMT');
+~~~
+
+~~~ .php
+HTTP::header([
+    'Expires' => 'Sat, 26 Jul 1997 05:00:00 GMT',
+    'Cache-Control' => 'no-cache, must-revalidate'
+]);
+~~~
+
 ### Mime
+
+~~~ .xmp.php
+HTTP::mime($mime, $charset = null);
+~~~
+
+Set mime type in HTTP headers:
+
+~~~ .php
+HTTP::mime('text/xml');
+~~~
 
 ### Post
 
+~~~ .xmp.php
+HTTP::post($url, $fields = []);
+~~~
+
 ### Get
+
+~~~ .xmp.php
+HTTP::get($url, $fields = []);
+~~~

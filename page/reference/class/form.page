@@ -53,10 +53,22 @@ $test = '<input name="x" type="url" value="test value" placeholder="http://">';
 
 #### Checkbox Input
 
-TODO
-
 ~~~ .xmp.php
-Form::checkbox($name = null ...);
+Form::checkbox($name = null, $value = null, $check = false, $text = "", $attr = [], $dent = 0);
+~~~
+
+Create a HTML `<input type="checkbox">` element with a label that reads _I agree to the Term of Service_:
+
+~~~ .php
+$test = Form::checkbox('x', 1, false, 'I agree to the Term of Service');
+~~~
+
+Result:
+
+~~~ .php
+$test = '<label>
+  <input name="x" type="checkbox" value="1">&nbsp;<span>I agree to the Term of Service</span>
+</label>';
 ~~~
 
 #### Color Input
@@ -91,10 +103,27 @@ Form::password($name = null, $value = null, $placeholder = null, $attr = [], $de
 
 #### Radio Inputs
 
-TODO
-
 ~~~ .xmp.php
-Form::radio($name = null ...);
+Form::radio($name = null, $options = [], $select = null, $attr = [], $dent = 0);
+~~~
+
+Create list of HTML `<input type="radio">` elements with their labels:
+
+~~~ .php
+$test = Form::radio('c', [
+    'red' => 'Red',
+    'green' => 'Green',
+    'blue' => 'Blue'
+], 'green');
+~~~
+
+Result:
+
+~~~ .php
+$test = '<label><input name="c" type="radio" value="red">&nbsp;<span>Red</span></label><br>
+<label><input name="c" type="radio" value="green" checked>&nbsp;<span>Green</span></label><br>
+<label><input name="c" type="radio" value="blue">&nbsp;<span>Blue</span></label>
+';
 ~~~
 
 #### Range Input
