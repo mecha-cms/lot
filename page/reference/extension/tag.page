@@ -181,7 +181,7 @@ _To be continued._
 
 ### Properties
 
- - `$site->tag` → Return the current page tag slug when you are in the tags page. Default is `null`.
+ - `$site->tag` → Return the current page tag when you are in the tags page. Default is `null`.
 
 ### Hooks
 

@@ -7,7 +7,7 @@ description: Show log in/out link if we have panel extension.
 <!-- if we have `panel` extension -->
 <?php if (Extend::exist('panel')): ?>
 <!-- if user is logged in, add log out link -->
-<?php if (!empty($__is_enter)): ?>
+<?php if (!empty($__user_enter)): ?>
 <a href="<?php echo $url . '/' . Extend::state('panel', 'path', 'panel') . '/::g::/exit'; ?>">
   <?php echo $language->log_out; ?>
 </a>

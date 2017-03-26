@@ -26,7 +26,7 @@ if ($_kinds = glob(PAGE . DS . $_path . DS . '*' . DS . 'kind.data', GLOB_NOSORT
     }
     foreach (array_count_values($_data) as $_k => $_v) {
         if (($_slug = To::tag($_k)) === false) continue;
-        $_tag = new Page(TAG . DS . $_slug . '.page', [
+        $_tag = Page::_(TAG . DS . $_slug . '.page', [
             'i' => $_v
         ], 'tag');
         echo '<li>' . HTML::a($_tag->title, $_tag->url) . ' (' . $_tag->i . ')</li>';
