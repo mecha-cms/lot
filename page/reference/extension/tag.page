@@ -174,7 +174,7 @@ foreach ((array) $page->tags as $v) {
 echo implode(', ', $tags);
 ~~~
 
- - [link:../../snippet/tag]
+ - [link:../../snippet/list-tag]
  - [link:../../snippet/page-tag]
 
 _To be continued._
