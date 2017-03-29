@@ -13,3 +13,11 @@ Hook::set('shield.before', function() use($site) {
     }
 });
 ~~~
+
+The default [shield][link:../reference/file/shield] uses `$page->update` to show the current date which will outputs the file modification time as the page date. To show the current page date created by this snippet, you can use `$page->time` or `$page->date->{$format}`. Example:
+
+~~~ .php
+<p><?php echo $page->date->en_us; ?></p>
+~~~
+
+[connect:../reference/class/date#reference:extract]

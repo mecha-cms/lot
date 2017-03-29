@@ -85,19 +85,3 @@ $test_3 = false;
 ~~~ .php
 $test_4 = 1;
 ~~~
-
-### Instance Counter
-
-Try to use `Blastula::_()` instead of `new Blastula()` to create a class instance. This method will trigger the `new` operator to the `Blastula` class and will also store the class instance to the internal storage of the `Genome` class:
-
-~~~ .php
-$test = Blastula::_();
-~~~
-
-To count the instance of `Blastula`:
-
-~~~ .php
-__test__(Blastula::__instance__());
-~~~
-
-[connect:../../article/instance-counter]

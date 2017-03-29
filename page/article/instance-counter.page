@@ -1,24 +1,41 @@
 ---
-title: The `Genome::_()` and `Genome::__instance__()` Methods
+title: Instance Counter
 description: Counting the class instances.
 ...
 
-I have just added this method to the [`Genome`][link:../reference/class/genome] class. Applying the `_` static method will trigger the `new` operator to the current class, and will store the class instance to the `Genome::$_instance[ … ][]` array. This internal ability is currently no use, but may be in the future:
+I have just added `$__instance__` property to the [`Genome`][link:../reference/class/genome] class, which will automatically store the class instances.
+
+### Before
 
 ~~~ .php
-class Foo extends Genome {}
+class Foo {}
 
 $foo_1 = new Foo();
 $foo_2 = new Foo();
 
-// Problem: How to count the number of `Foo`’s instance?
+// problem: how to count the number of `Foo`’s instance?
 ~~~
 
+### After
+
 ~~~ .php
 class Foo extends Genome {}
 
 $foo_1 = new Foo();
 $foo_2 = new Foo();
 
-__test__(Foo::__instance__()); // → 2
+echo count(Foo::$__instance__); // → 2
+~~~
+
+This internal ability can be used in the future, for example, to create _singletones_ from dynamic classes like this:
+
+~~~ .php
+class Bar extends Genome {
+    public function __construct() {
+        if (!self::$__instance__) {
+            // trigger once!
+        }
+        parent::__construct();
+    }
+}
 ~~~

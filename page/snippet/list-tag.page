@@ -5,8 +5,45 @@ description: List all of the available tags from the current page folder.
 
 Requires [tags][link:../reference/extension/tag] extension.
 
+### Tag List 1
+
 ~~~ .php
+$_location = 'article';
+
+Hook::set('tag.url', function($s) use($url, $_location) {
+    $t = Extend::state('tag', 'path', 'tag');
+    return $url . '/' . To::url($_location) . '/' . $t . '/' . Path::B($s);
+}, 11);
+
 echo '<h3>Tags</h3>';
+if ($_kinds = glob(PAGE . DS . $_location . DS . '*' . DS . 'kind.data', GLOB_NOSORT)) {
+    echo '<ul>';
+    $_data = [];
+    foreach ($_kinds as $_kind) {
+        $_kind = e(file_get_contents($_kind));
+        if (!is_array($_kind)) continue;
+        foreach ($_kind as $_k) {
+            $_data[] = $_k;
+        }
+    }
+    foreach (array_count_values($_data) as $_k => $_v) {
+        if (($_slug = To::tag($_k)) === false) continue;
+        $_tag = new Page(TAG . DS . $_slug . '.page', [
+            'i' => $_v
+        ], 'tag');
+        echo '<li>' . HTML::a($_tag->title, $_tag->url) . ' (' . $_tag->i . ')</li>';
+    }
+    echo '</ul>';
+} else {
+    echo '<p>No tags yet.</p>';
+}
+~~~
+
+ - `$_location` → select from which page folder the tags you want to list (relative to `.\lot\page` folder).
+
+### Tag List 2
+
+~~~ .php
 $_path = $url->path;
 if ($site->tag) { // → `blog/tag/tag-slug`
     $_path = URL::I($url->path); // remove page offset in URL path
@@ -14,6 +51,8 @@ if ($site->tag) { // → `blog/tag/tag-slug`
 } else if ($site->is === 'page') { // → `blog/page-slug`
     $_path = Path::D($_path);
 }
+
+echo '<h3>Tags</h3>';
 if ($_kinds = glob(PAGE . DS . $_path . DS . '*' . DS . 'kind.data', GLOB_NOSORT)) {
     echo '<ul>';
     $_data = [];

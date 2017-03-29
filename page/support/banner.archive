@@ -1,0 +1,24 @@
+---
+title: Banners
+description: Use these banners to tell people about Mecha.
+type: HTML
+...
+
+[[e]]
+Hook::set('page.images', function($content, $lot) {
+    if (preg_match_all('#\!\[.*?\]\((.*?)(?: +".*?")?\)#', file_get_contents($lot['path']), $m)) {
+        return $m[1];
+    }
+    return [];
+}, 2.1);
+foreach (Get::pages(PAGE . DS . 'support' . DS . 'banner', 'page', [1, 'slug'], 'path') as $v) {
+    $_page = new Page($v);
+    $_images = $_page->images;
+    shuffle($_images);
+    if (!isset($_images[0])) continue;
+    echo '<figure class="image-container">';
+    echo '<img class="align-center" alt="" src="' . $_images[0] . '">';
+    echo '<figcaption><a href="' . $_page->url . '">More by ' . $_page->author . '&hellip;</a></figcaption>';
+    echo '</figure>';
+}
+[[/e]]
