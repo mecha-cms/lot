@@ -1,0 +1,51 @@
+---
+title: Get Page
+description: How to get the page?
+...
+
+### Method 1
+
+~~~ .php
+$page = new Page('.\lot\page\test-page.page');
+
+// get the title
+echo $page->title;
+
+// get the content
+echo $page->content;
+
+// get the title if any, otherwise, return `Untitled` (1)
+echo $page->title ?: 'Untitled';
+
+// get the title if any, otherwise, return `Untitled` (2)
+echo $page->title('Untitled');
+
+// custom callback (1)
+echo $page->title(function($text) {
+    return '<h2>' . $text . '</h2>';
+});
+
+// custom callback (2)
+function fn_test($text) {
+    return '<h2>' . $text . '</h2>';
+}
+echo $page->title('~fn_test');
+~~~
+
+### Method 2
+
+~~~ .php
+// get the title
+echo Page::open('.\lot\page\test-page.page')->get('title');
+
+// get the title and the content
+$page = Page::open('.\lot\page\test-page.page')->get([
+    'title' => null,
+    'content' => null
+]);
+echo $page['title'];
+echo $page['content'];
+
+// get the title if any, otherwise, return `Untitled`
+echo Page::open('.\lot\page\test-page.page')->get('title', 'Untitled');
+~~~

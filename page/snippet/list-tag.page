@@ -8,15 +8,15 @@ Requires [tags][link:../reference/extension/tag] extension.
 ### Tag List 1
 
 ~~~ .php
-$_location = 'article';
+$_base = 'article';
 
-Hook::set('tag.url', function($s) use($url, $_location) {
+Hook::set('tag.url', function($s) use($url, $_base) {
     $t = Extend::state('tag', 'path', 'tag');
-    return $url . '/' . To::url($_location) . '/' . $t . '/' . Path::B($s);
+    return $url . '/' . To::url($_base) . '/' . $t . '/' . Path::B($s);
 }, 11);
 
 echo '<h3>Tags</h3>';
-if ($_kinds = glob(PAGE . DS . $_location . DS . '*' . DS . 'kind.data', GLOB_NOSORT)) {
+if ($_kinds = glob(PAGE . DS . $_base . DS . '*' . DS . 'kind.data', GLOB_NOSORT)) {
     echo '<ul>';
     $_data = [];
     foreach ($_kinds as $_kind) {
@@ -39,7 +39,7 @@ if ($_kinds = glob(PAGE . DS . $_location . DS . '*' . DS . 'kind.data', GLOB_NO
 }
 ~~~
 
- - `$_location` → select from which page folder the tags you want to list (relative to `.\lot\page` folder).
+ - `$_base` → select from which page folder the tags you want to list (relative to `.\lot\page` folder).
 
 ### Tag List 2
 

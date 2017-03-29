@@ -1,0 +1,16 @@
+---
+title: Custom Page Hooks
+description: Custom hook _namespace_ for your custom pages.
+...
+
+~~~ .php
+$page = new Page('.\lot\page\test-page.page', [], 'my_page_hook');
+~~~
+
+Now you can set your own custom hooks using `my_page_hook` _namespace_ to affect the `$page` output:
+
+~~~ .php
+Hook::set('my_page_hook.title', function($text) { … });
+Hook::set('my_page_hook.description', function($text) { … });
+Hook::set('my_page_hook.content', function($text) { … });
+~~~

@@ -1,0 +1,52 @@
+---
+title: Page Conditional Statements
+description: Detect page types.
+...
+
+### Item Page
+
+~~~ .php
+if ($site->is === 'page') { … }
+~~~
+
+### Index Page
+
+~~~ .php
+if ($site->is === 'pages') { … }
+~~~
+
+### Home Page
+
+~~~ .php
+if ($site->is === "") { … }
+~~~
+
+### Error Page
+
+~~~ .php
+if ($site->is === '404') { … }
+~~~
+
+### Search Page
+
+~~~ .php
+if ($site->search) { … }
+~~~
+
+~~~ .php
+if (Request::get($config->q)) { … }
+~~~
+
+### Next Page
+
+[connect:../../reference/class/u-r-l]
+
+~~~ .php
+if (URL::I($url->current) !== $url->current) { … }
+~~~
+
+### Specific Page
+
+~~~ .php
+if ($url->path === 'foo/bar') { … }
+~~~

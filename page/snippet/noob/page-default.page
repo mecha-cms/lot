@@ -1,0 +1,11 @@
+---
+title: Pre–Defined Page Properties
+description: Set pre–defined page properties as an alternate value if the desired page properties does not exist.
+...
+
+~~~ .php
+$page = new Page('.\lot\page\test-page.page', [
+    'author' => 'Taufik Nurrohman',
+    'type' => 'Markdown'
+]);
+~~~
