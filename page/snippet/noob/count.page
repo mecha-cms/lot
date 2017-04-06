@@ -1,0 +1,32 @@
+---
+title: Count Labels
+description: Handle plural and singular label for data length.
+...
+
+### Comment Counts
+
+#### Manual
+
+~~~ .php
+$i = $page->comments->i; // or `count($comments)`
+echo $i . ' ' . $language->{$i === 1 ? 'comment' : 'comments'};
+~~~
+
+Label for zero comments:
+
+~~~ .php
+$i = $page->comments->i;
+if ($i === 0) {
+    echo $language->message_info_void($language->comments);
+} else {
+    echo $i . ' ' . $language->{$i === 1 ? 'comment' : 'comments'};
+}
+~~~
+
+#### Built–In
+
+~~~ .php
+echo $page->comments->text;
+~~~
+
+[connect:../../reference/extension/comment]

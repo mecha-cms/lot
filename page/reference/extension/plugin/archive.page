@@ -1,6 +1,7 @@
 ---
 title: Archive
 description: Archive page generator.
+dependency: {"extension":["block","page"]}
 ...
 
 Use this plugin to show all of the visible pages in a single page content as a link list.
@@ -10,12 +11,3 @@ Put this block in the desired page content you want to show the link list to:
 ~~~ .txt
 [‌[‌archive‌]‌]
 ~~~
-
-### Dependency
-
-#### Extension
-
- - [link:../block]
- - [link:../page]
-
-[Download Latest Version]([[url]]/2016/d/mecha-cms/extend.plugin.archive/archive/master.zip) {.button}

@@ -1,21 +1,7 @@
 ---
 title: Control Panel
 description: GUI extension for Mecha.
+dependency: {"extension":["asset","page","tag","user"],"plugin":["markdown"]}
 ...
 
 Coming soon.
-
-### Dependency
-
-#### Extension
-
- - [link:asset]
- - [link:page]
- - [link:tag]
- - [link:user]
-
-#### Plugin
-
- - [link:plugin/markdown]
-
-[Download Latest Version]([[url]]/2016/d/mecha-cms/extend.panel/archive/master.zip) {.button}

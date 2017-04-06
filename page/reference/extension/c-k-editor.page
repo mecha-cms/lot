@@ -1,16 +1,9 @@
 ---
 title: CKEditor
 description: CKEditor is a free, open-source HTML text editor designed to simplify website content creation. It’s a WYSIWYG editor that brings common word processor features directly to your web pages.
+dependency: {"extension":["panel"]}
 ...
 
 ![CKEditor]([[asset]]/png/reference/extension/c-k-editor.png)
 
 This extension works only for pages with `type` of `HTML`.
-
-### Dependency
-
-#### Extension
-
- - [link:panel]
-
-[Download Latest Version]([[url]]/2016/d/mecha-cms/extend.c-k-editor/archive/master.zip) {.button}

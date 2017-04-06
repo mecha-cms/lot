@@ -1,0 +1,17 @@
+---
+title: Comment Notify
+description: Notification of a new comment via email.
+dependency: {"extension":["comment"]}
+...
+
+This plugin will notify you by email if there was a new comment added to a page. Open `lot\extend\plugin\lot\worker\comment-notify\lot\state\config.php` to configure:
+
+~~~ .php
+[
+    'page' => [
+        'title' => '%{site.title}% &#x00B7; New Comment', // email subject
+        'email' => 'email@domain.com', // your email address
+        'content' => '<p>A new comment has been added to <a href="%{comment.url}%">%{page.title}%</a>.</p>' // email message
+    ]
+];
+~~~

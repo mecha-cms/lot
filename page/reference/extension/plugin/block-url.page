@@ -1,6 +1,7 @@
 ---
 title: URL Blocks
 description: Insert URL data to the page content.
+dependency: {"extension":["block"]}
 ...
 
 Support these block patterns:
@@ -15,13 +16,3 @@ Support these block patterns:
  - `[‌[‌url.path‌]‌]` → `foo/bar`
  - `[‌[‌url.query‌]‌]` → `?foo=bar&baz=qux`
  - `[‌[‌url.current‌]‌]` → `http://localhost/a/foo/bar`
-
-### Dependency
-
-#### Extension
-
- - [link:../block]
-
-[Download Latest Version]([[url]]/2016/d/mecha-cms/extend.plugin.block-url/archive/master.zip) {.button}
-
-<!-- block:donate -->

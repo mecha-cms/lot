@@ -50,3 +50,11 @@ if (URL::I($url->current) !== $url->current) { … }
 ~~~ .php
 if ($url->path === 'foo/bar') { … }
 ~~~
+
+### Static Page
+
+Pages that is relative to the root URL like `http://example.com/about`.
+
+~~~ .php
+if (strpos($url->path, '/') === false) { … }
+~~~

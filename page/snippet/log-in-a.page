@@ -3,7 +3,7 @@ title: Add Log In/Out Link
 description: Show log in/out link if we have panel extension.
 ...
 
-~~~ .php
+~~~ .html
 <!-- if we have `panel` extension -->
 <?php if (Extend::exist('panel')): ?>
 <!-- if user is logged in, add log out link -->

@@ -19,7 +19,7 @@ If you want to make something that is super huge with Mecha, it would be possibl
  - Custom fields.
  - Extensible as hell.
  - Create unique design for each blog posts by adding special CSS and JavaScript files using the [art][link:reference/extension/plugin/art] plugin.
- - Built–in commenting system using the [response][link:reference/extension/response] extension.
+ - Built–in commenting system using the [comment][link:reference/extension/comment] extension.
  - Almost everything are optional. [^1]
  - RSS and Sitemap using the [feed][link:reference/extension/feed] extension.
  - Easy to use and [well documented][link:reference] API.

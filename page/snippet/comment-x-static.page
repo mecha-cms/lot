@@ -1,0 +1,12 @@
+---
+title: Disable Comments on Static Pages
+description: Disable comments on pages that is relative to the root URL like `http://example.com/about`.
+...
+
+Requires [comment][link:../reference/extension/comment] extension.
+
+~~~ .php
+<?php if (strpos($url->path, '/') !== false): ?>
+<?php Shield::get('comments'); ?>
+<?php endif; ?>
+~~~

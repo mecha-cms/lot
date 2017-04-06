@@ -181,7 +181,7 @@ echo $union->dent(3) . 'test title' . N;
 
 Result:
 
-~~~ .php
+~~~ .html
 <!DOCTYPE html>
 <html dir="ltr">
   <head>
@@ -208,7 +208,7 @@ echo $union->end('title', 0);
 
 Result:
 
-~~~ .php
+~~~ .html
 <!DOCTYPE html>
 <html dir="ltr">
   <head>
@@ -217,7 +217,7 @@ Result:
     </title>
 ~~~
 
-~~~ .php
+~~~ .html
 <!DOCTYPE html>
 <html dir="ltr">
   <head>
@@ -234,7 +234,7 @@ echo $union->end(true);
 
 Result:
 
-~~~ .php
+~~~ .html
 <!DOCTYPE html>
 <html dir="ltr">
   <head>
@@ -253,7 +253,7 @@ echo $union->end('foo');
 
 Result:
 
-~~~ .php
+~~~ .html
 <!DOCTYPE html>
 <html dir="ltr">
   <head>

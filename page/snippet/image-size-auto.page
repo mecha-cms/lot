@@ -1,0 +1,28 @@
+---
+title: Automatic Image Width & Height Attribute
+description: Applies only for local images.
+...
+
+~~~ .php
+Hook::set('page.content', function($content) {
+    if (stripos($content, '<img ') === false) return $content;
+    return preg_replace_callback('#<img .*?>#', function($m) {
+        $apart = HTML::apart($m[0], false);
+        if (isset($apart[2]['width']) && isset($apart[2]['height'])) {
+            return $m[0]; // image width and height already exist
+        }
+        if (isset($apart[2]['src'])) {
+            $src = URL::long($apart[2]['src']); // convert relative URL to full URL
+            $src = To::path($src); // convert public URL to private file path
+            if ($path = File::exist($src)) {
+                $s = getimagesize($path); // inspect local image data
+                $apart[2]['width'] = $s[0]; // set image width
+                $apart[2]['height'] = $s[1]; // set image height
+                return call_user_func_array('HTML::unite', $apart); // output the result!
+            }
+            return $m[0]; // external image `src` or invalid image `src` value
+        }
+        return $m[0]; // --ibid
+    }, $content);
+}, 2.1);
+~~~

@@ -3,7 +3,7 @@ title: Search Form
 description: Basic search form.
 ...
 
-~~~ .php
+~~~ .html
 <form action="<?php echo $site->is === 'page' ? Path::D($url->current) : $url->current; ?>" method="get">
   <?php echo Form::text($config->q, Request::get($config->q)) . ' ' . Form::submit(null, null, 'Search'); ?>
 </form>

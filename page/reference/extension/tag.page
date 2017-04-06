@@ -1,6 +1,7 @@
 ---
 title: Tags
 description: Adds `query` and `tags` property to the page based on the `kind` property.
+dependency: {"extension":["page"]}
 ...
 
 This extension enables tags feature on any pages by utilizing the `kind` property value as the tag ID. This extension also adds a new route definition like ` [[url]]/blog/tag/slug ` on every pages to make it possible to list all pages in the current folder by tags.
@@ -186,11 +187,3 @@ _To be continued._
 ### Hooks
 
  - `tag.*` → Behaves like `page.*` hooks, but its target is only for the rich tags output.
-
-### Dependency
-
-#### Extension
-
- - [link:page]
-
-[Download Latest Version]([[url]]/2016/d/mecha-cms/extend.tag/archive/master.zip) {.button}

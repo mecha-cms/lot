@@ -8,7 +8,7 @@ description: Parse block patterns in page content.
 ### Set
 
 ~~~ .xmp.php
-Block::set($id, $fn);
+Block::set($id, $fn, $stack = null);
 ~~~
 
 Define a new block:

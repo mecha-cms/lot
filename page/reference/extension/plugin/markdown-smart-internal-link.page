@@ -1,6 +1,7 @@
 ---
 title: Markdown Smart Internal Links
 description: Automatically search for internal links.
+dependency: {"plugin":["markdown"]}
 ...
 
 This plugin will generate automatic link text and title attribute based on the page path provided. If the page file you are trying to provide does not exist, this plugin will mark the automatic link with a red strikethrough text effect.
@@ -20,11 +21,3 @@ All of the page path provided will be parsed relative to in which the page is st
 ~~~ .markdown
 [‌link:../blog/page-one‌] → will be replaced into `[Page Title](/directory/blog/page-one "Page Title")`
 ~~~
-
-### Dependency
-
-#### Plugin
-
- - [link:markdown]
-
-[Download Latest Version]([[url]]/2016/d/mecha-cms/extend.plugin.markdown-smart-internal-link/archive/master.zip) {.button}

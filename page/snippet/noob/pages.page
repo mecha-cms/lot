@@ -1,0 +1,14 @@
+---
+title: Basic Pages Loop
+description: Loop pages in `pages.php`
+...
+
+~~~ .php
+echo '<ul>';
+foreach ($pages as $page) {
+    echo '<li><a href="' . $page->url . '">' . $page->title . '</a></li>';
+}
+echo '</ul>';
+~~~
+
+[connect:../../reference/extension/page]

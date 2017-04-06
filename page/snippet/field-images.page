@@ -1,0 +1,19 @@
+---
+title: Images Field
+description: Extract images URL from page content.
+...
+
+Extract images URL from page content and put them in `$page->images` as array:
+
+~~~ .php
+Hook::set('page.images', function($content, $lot) {
+    $s = Page::open($lot['path'])->get('content');
+    if (!$s || stripos($s, '<img ') === false) {
+        return [];
+    }
+    if (preg_match_all('#<img(?: .+?)? src=(["\'])(.*?)\1#i', $s, $m)) {
+        return $m[2];
+    }
+    return [];
+});
+~~~

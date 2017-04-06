@@ -1,0 +1,14 @@
+---
+title: Basic Comments Loop
+description: Loop comments in `page.php`
+...
+
+~~~ .php
+echo '<ul>';
+foreach ($comments as $comment) {
+    echo '<li><a href="' . $comment->url . '">' . $comment->author . '</a></li>';
+}
+echo '</ul>';
+~~~
+
+[connect:../../reference/extension/comment]

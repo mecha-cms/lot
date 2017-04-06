@@ -1,6 +1,7 @@
 ---
 title: Markdown Parser
 description: Convert Markdown syntax to HTML.
+dependency: false
 ...
 
 **Markdown** is two things: a plain text markup syntax, and a software tool that converts plain text markup to HTML for publishing on the web.

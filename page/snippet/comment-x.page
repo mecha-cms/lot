@@ -1,0 +1,16 @@
+---
+title: Disable Comments
+description: Disable comments on specific page.
+...
+
+Any existing comments will be kept visible, but not with the comment form. Comments section including the comment header will be hidden if comments is empty.
+
+~~~ .yaml
+---
+title: Test Page Title
+description: Test page description.
+comments: {"x":true}
+...
+
+Test page content.
+~~~

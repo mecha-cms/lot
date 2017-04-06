@@ -1,10 +1,24 @@
 ---
 title: Minify
 description: Remove white–spaces and unused comments in HTML, CSS and JavaScript files.
+dependency: true
 ...
 
-There should be a `config.php` file in the `lot\state` folder of this extension. It contains some configuration data about the minifier.
+There should be a `config.php` file in the `lot\state` folder of this extension. It contains some configuration data about the minifier:
+
+~~~ .php
+// `Minify::{$any}($input, $comment, $quote)`
+return [
+    'css' => [2, 2], // `[$comment, $quote]`
+    'html' => [2, 1],
+    'js' => [2, 2]
+];
+~~~
+
+Code | Description
+---- | -----------
+0 | Remove
+1 | Keep
+2 | Remove if/but/when…
 
 [connect:../class/minify]
-
-[Download Latest Version]([[url]]/2016/d/mecha-cms/extend.minify/archive/master.zip) {.button}

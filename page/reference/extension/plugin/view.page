@@ -12,5 +12,3 @@ To show the current page views, add this to the `page.php` file in your active s
 ~~~ .php
 <?php echo $page->view; ?>
 ~~~
-
-[Download Latest Version]([[url]]/2016/d/mecha-cms/extend.plugin.view/archive/master.zip) {.button}
