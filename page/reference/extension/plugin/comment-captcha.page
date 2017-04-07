@@ -1,0 +1,23 @@
+---
+title: Comment Captcha
+description: Comment form protection using captcha.
+dependency: {"extension":["captcha","comment"]}
+...
+
+Open `lot\extend\plugin\lot\worker\comment-captcha\lot\state\config.php` to configure:
+
+~~~ .php
+return [
+    'type' => 'math', // the captcha type
+    'types' => [
+        'math' => [1, 10], // function argument(s) for `Captcha::math()` after the `$id` parameter
+        'text' => [false, '000'], // function argument(s) for `Captcha::text()` after the `$id` parameter
+        'toggle' => [] // function argument(s) for `Captcha::toggle()` after the `$id` parameter
+    ]
+];
+~~~
+
+Option | Description
+------ | -----------
+`type` | The captcha type. Read more on the [captcha][link:../captcha] extension reference.
+`types` | Configuration for every captcha type.

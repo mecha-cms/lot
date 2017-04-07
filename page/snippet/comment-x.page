@@ -3,7 +3,7 @@ title: Disable Comments
 description: Disable comments on specific page.
 ...
 
-Any existing comments will be kept visible, but not with the comment form. Comments section including the comment header will be hidden if comments is empty.
+Any existing comments will be visible, but not with the comment form. Comments section including the comment header will be hidden if there aren’t any comments in the current page.
 
 ~~~ .yaml
 ---

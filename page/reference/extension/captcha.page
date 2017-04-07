@@ -1,0 +1,121 @@
+---
+title: Captcha
+description: Form protection using captcha.
+dependency: true
+...
+
+### Usage
+
+#### Input
+
+~~~ .html
+<form method="post">
+  <p><?php echo Captcha::math('foo'); ?></p>
+  <p><?php echo Form::text('captcha'); ?></p>
+  <p><?php echo Form::submit(null, null, 'Submit'); ?></p>
+</form>
+~~~
+
+#### Output
+
+~~~ .php.xmp
+Captcha::check($id, $input, $fail = false);
+~~~
+
+~~~ .php
+if (Captcha::check('foo', Request::post('captcha')) !== false) {
+    // Passed the test!
+}
+~~~
+
+### Features
+
+#### Math Captcha
+
+Form protection using math question.
+
+~~~ .php.xmp
+Captcha::math($id = null, $min = 1, $max = 10, $text = [], $format = '%{a}% %{?}% %{b}%');
+~~~
+
+Result:
+
+~~~ .html
+<span class="captcha captcha-math" id="captcha:foo">2 &#x002B; 5</span>
+~~~
+
+Parameter | Description
+--------- | -----------
+`$id` | The captcha ID.
+`$min` | Range minimum of the randomly generated number.
+`$max` | Range maximum of the randomly generated number.
+`$text` | List of text used to alter the output number.
+`$format` | `${a}%` for the first random number; `%{b}%` for the second random number; `%{?}%` for the math operator.
+
+Example of using the `$text` parameter:
+
+~~~ .php
+echo Captcha::math('foo', 1, 10, [
+    0 => 'zero',
+    1 => 'one',
+    2 => 'two',
+    3 => 'three',
+    4 => 'four',
+    5 => 'five',
+    '+' => 'plus',
+    '-' => 'minus'
+]);
+~~~
+
+Result will be something like:
+
+~~~ .html
+<span class="captcha captcha-math" id="captcha:foo">one plus five</span>
+~~~
+
+#### Text Captcha
+
+Form protection using text image question.
+
+~~~ .php.xmp
+Captcha::text($id = null, $background = false, $color = '000', $size = 16, $width = 6, $height = 2, $text = 7, $font = '0');
+~~~
+
+Result:
+
+~~~ .html
+<img src="[[url]]/captcha.png?id=foo" alt="foo" class="captcha captcha-text" id="captcha:foo" width="96" height="32">
+~~~
+
+Parameter | Description
+--------- | -----------
+`$id` | The captcha ID.
+`$background` | Text background color using HEX color code without the hash prefix or `false` for transparent background.
+`$color` | Text color using HEX color code without the hash prefix.
+`$size` | Font size in `px`.
+`$width` | Image width in `em` relative to `$size`.
+`$height` | Image height in `em` relative to `$size`.
+`$text` | Text length.
+`$font` | True type font file name without the file extension, stored in `lot\extend\captcha\lot\asset\ttf`.
+
+> **Note:** I have removed some of the glyphs in the font to make it only contains `[a-zA-Z0-9]` to reduce the file size.
+
+#### Toggle Captcha
+
+Form protection using a token hash that is not activated by default.
+
+~~~ .php.xmp
+Captcha::toggle($id = null, $text = null);
+~~~
+
+Result:
+
+~~~ .html
+<input name="captcha" value="…" type="checkbox" class="captcha captcha-toggle" id="captcha:foo">
+<label for="captcha:foo">I am not a robot.</label>
+~~~
+
+Parameter | Description
+--------- | -----------
+`$id` | The captcha ID.
+`$text` | The toggle label. If not defined, it will depends on the `$language->captcha_toggle` value.

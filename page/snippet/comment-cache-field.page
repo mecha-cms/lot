@@ -1,0 +1,19 @@
+---
+title: Store User Comment Data in the Comment Form
+description: Using session to store your visitor’s comment data in the comment form.
+...
+
+Requires [comment][link:../reference/extension/comment] extension.
+
+~~~ .php
+if (!Request::is('post')) {
+    $cache = [
+        'author' => Request::restore('post', 'author', Session::get('comment.author')),
+        'email' => Request::restore('post', 'email', Session::get('comment.email')),
+        'link' => Request::restore('post', 'link', Session::get('comment.link'))
+    ];
+    Request::save('post', $cache);
+}
+~~~
+
+So, the next time your visitor want to add a new comment, they will always see that the name, email and URL fields in the comment form are already filled in with their previous data.
