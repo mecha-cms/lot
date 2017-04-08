@@ -3,6 +3,8 @@ title: Grab User’s Comment IP and UA
 description: Store user’s IP and user’s UA string on every comment creation event.
 ...
 
+Requires [comment][link:../reference/extension/comment] extension.
+
 ~~~ .php
 Hook::set('on.comment.set', function($file) {
     $folder = Path::F($file);

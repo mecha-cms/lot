@@ -3,6 +3,10 @@ title: Post Format
 description: Add post format feature.
 ...
 
+> A _Post Format_ is a piece of meta information that can be used by a theme to customize its presentation of a post. The _Post Formats_ feature provides a standardized list of formats that are available to all themes that support the feature.
+>
+> —[WordPress](https://codex.wordpress.org/Post_Formats "Post Formats")
+
 It is possible to create a post format feature using Mecha by utilizing the `type` value:
 
 ~~~ .yaml
@@ -29,7 +33,7 @@ type: Quote
 Page content goes here.
 ~~~
 
-The custom `type` value in the example above will not give any effect unless you set a hook to the page content based on it:
+The custom `type` value in the example above will not give any effects unless you set a hook to the page content based on it:
 
 ~~~ .php
 Hook::set('page.content', function($content, $lot) {
