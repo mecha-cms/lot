@@ -1,6 +1,7 @@
 ---
 title: Pages
 description: This extension enables basic features of a website by utilizing the structure of the page files placement in the `lot\page` folder. This extension also adds some useful properties to the global `$site` variable.
+dependency: false
 ...
 
 ### Page

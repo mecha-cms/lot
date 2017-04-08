@@ -20,5 +20,5 @@ if ($_pages = Get::pages($_path, 'page')) {
 }
 ~~~
 
- - `$_path` → select which page folder you want to list.
- - `$_chunk` → how many pages you want to show in the list.
+ - `$_path` → Select which page folder you want to list.
+ - `$_chunk` → How many pages you want to show in the list.

@@ -4,7 +4,7 @@ Hook::set('page.content', function($content, $lot) {
     global $url;
     $b = Path::B($url->path);
     $NS = Path::B(Path::D($url->path)) === 'plugin' ? 'extend.plugin' : 'extend';
-    if (isset($lot['dependency']) && $lot['dependency'] !== false) {
+    if (!isset($lot['dependency']) || $lot['dependency'] !== false) {
         $content = '[Download Latest Version]([[url]]/2016/d/mecha-cms/' . $NS . '.' . $b . '/archive/master.zip) {.button}' . N . N . $content;
     }
     if (!empty($lot['dependency']) && $lot['dependency'] !== true) {

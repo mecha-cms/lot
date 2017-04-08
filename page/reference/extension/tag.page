@@ -1,6 +1,6 @@
 ---
 title: Tags
-description: Adds `query` and `tags` property to the page based on the `kind` property.
+description: Page tags.
 dependency: {"extension":["page"]}
 ...
 
@@ -8,7 +8,7 @@ This extension enables tags feature on any pages by utilizing the `kind` propert
 
 ### Constants
 
-This extension automatically adds a `tag` folder within the `lot` folder, which will also automatically set a new constant based on the folder name with a value as the folder path:
+This extension automatically adds a `tag` folder within the `lot` folder, which will also automatically set a new constant based on the folder name with a value of the folder path:
 
 ~~~ .php
 TAG

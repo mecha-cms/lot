@@ -22,7 +22,7 @@ Hook::set('page.content', function($content) {
             }
             return $m[0]; // external image `src` or invalid image `src` value
         }
-        return $m[0]; // --ibid
+        return $m[0]; // image with no `src` attribute
     }, $content);
 }, 2.1);
 ~~~

@@ -1,0 +1,14 @@
+---
+title: Block Users by IP Address
+description: Block users and visitors by their IP addresses.
+...
+
+~~~ .php
+$ip = Get::ip('unknown'); // Current IP address
+$ip_x = ['123.456.123.456', '456.789.456.789']; // List of IP address(es) you want to block
+
+if (Is::these($ip_x)->has($ip)) {
+    HTTP::status(403); // Forbidden
+    Guardian::abort('Blocked user with IP <code>' . $ip . '</code>.');
+}
+~~~

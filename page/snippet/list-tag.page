@@ -39,7 +39,7 @@ if ($_kinds = glob(PAGE . DS . $_base . DS . '*' . DS . 'kind.data', GLOB_NOSORT
 }
 ~~~
 
- - `$_base` → select from which page folder the tags you want to list (relative to `.\lot\page` folder).
+ - `$_base` → Select from which page folder the tags you want to list (relative to `.\lot\page` folder).
 
 ### Tag List 2
 

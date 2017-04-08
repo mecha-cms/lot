@@ -21,6 +21,10 @@ if ($site->is === 'pages') { … }
 if ($site->is === "") { … }
 ~~~
 
+~~~ .php
+if ($url->path === "") { … }
+~~~
+
 ### Error Page
 
 ~~~ .php
@@ -29,12 +33,22 @@ if ($site->is === '404') { … }
 
 ### Search Page
 
+[connect:../../reference/extension/page]
+
 ~~~ .php
 if ($site->search) { … }
 ~~~
 
 ~~~ .php
 if (Request::get($config->q)) { … }
+~~~
+
+### Tag Page
+
+[connect:../../reference/extension/tag]
+
+~~~ .php
+if ($site->tag) { … }
 ~~~
 
 ### Next Page
@@ -53,7 +67,7 @@ if ($url->path === 'foo/bar') { … }
 
 ### Static Page
 
-Pages that is relative to the root URL like `http://example.com/about`.
+Pages that are relative to the root URL like `http://example.com/about`.
 
 ~~~ .php
 if (strpos($url->path, '/') === false) { … }

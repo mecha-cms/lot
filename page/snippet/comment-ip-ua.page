@@ -1,0 +1,22 @@
+---
+title: Grab User’s Comment IP and UA
+description: Store user’s IP and user’s UA string on every comment creation event.
+...
+
+~~~ .php
+Hook::set('on.comment.set', function($file) {
+    $folder = Path::F($file);
+    if ($s = Get::ip()) File::write($s)->saveTo($folder . DS . 'ip.data', 0600);
+    if ($s = Get::ua()) File::write($s)->saveTo($folder . DS . 'ua.data', 0600);
+});
+~~~
+
+Then, you can call the stored comment IP and UA this way:
+
+~~~ .php
+echo $comment->ip;
+~~~
+
+~~~ .php
+echo $comment->ua;
+~~~
