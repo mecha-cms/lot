@@ -1,0 +1,77 @@
+---
+title: Automatic Custom Posts
+description: Change page color theme automatically based on the current URL.
+...
+
+Insert this snippet to the `index.php` file of your active shield:
+
+~~~ .php
+// <http://www.jonasjohn.de/snippets/php/color-inverse.htm>
+function fn_color_inv($color) {
+    $rgb = "";
+    for ($x = 0; $x < 3; ++$x) {
+        $c = 255 - hexdec(substr($color, (2 * $x), 2));
+        $c = ($c < 0) ? 0 : dechex($c);
+        $rgb .= (strlen($c) < 2) ? '0' . $c : $c;
+    }
+    return $rgb;
+}
+
+// <http://stackoverflow.com/a/3015242/1163000>
+function fn_color_yin_or_yang($color) {
+    $color = str_split($color, 2);
+    return $color[0] + $color[1] + $color[2] > 382 ? '000000' : 'ffffff';
+}
+
+// <http://stackoverflow.com/a/11951022/1163000>
+function fn_color_lev($color, $step) {
+    $step = max(-255, min(255, $step));
+    $rgb = "";
+    foreach (str_split($color, 2) as $v) {
+        $v = hexdec($v);
+        $v = max(0, min(255, $v + $step));
+        $rgb .= str_pad(dechex($v), 2, '0', STR_PAD_LEFT);
+    }
+    return $rgb;
+}
+
+Hook::set('asset.top', function($content) use($url) {
+    // Generate HEX color code from current URL
+    $background = substr(md5($url->path), 0, 6);
+    // Determine whether the text should be white or black
+    $color = fn_color_yin_or_yang($background);
+    // Set page background and text color
+    $css  = 'html,.toc li:after{background:#' . $background . ';color:#' . $color . '}';
+    // Set link text color
+    $css .= 'a{color:#' . fn_color_lev($background, 170) . '}';
+    $css .= 'a:focus,a:active{color:#' . fn_color_lev($background, 210) . '}';
+    // Set button background and text color
+    $css .= '.button{background:#' . fn_color_lev($background, 170) . ';color:#' . $color . '}';
+    $css .= '.button:focus,.button:active{background:#' . fn_color_lev($background, 210) . ';color:#' . $color . '}';
+    // Set form input background and text color
+    $css .= '.input,.select,.textarea{background:#' . $color . ';color:#' . $background . '}';
+    // Set code snippet background and text color
+    $css .= 'pre code{background:#' . fn_color_inv($color) . '}';
+    $css .= 'pre .xmp{background:#' . fn_color_lev($background, 70) . ';color:#' . $background . '}';
+    // Set quote and table border color
+    $css .= 'blockquote,.table th,.table td{border-color:#' . fn_color_lev($background, 30) . '}';
+    return $content . '<style media="screen">' . $css . '</style>';
+}, 11);
+~~~
+
+Here are some results of the _Document_ shield after customized by the code snippet above:
+
+![1]([[asset]]/png/snippet/page-css-auto/1.png)  
+![2]([[asset]]/png/snippet/page-css-auto/2.png)  
+![3]([[asset]]/png/snippet/page-css-auto/3.png)  
+![4]([[asset]]/png/snippet/page-css-auto/4.png)  
+![5]([[asset]]/png/snippet/page-css-auto/5.png)  
+![6]([[asset]]/png/snippet/page-css-auto/6.png) 
+
+> **TODO:** Need a better HEX color code generator based on current URL path other than this:
+>
+> ~~~ .php
+> substr(md5($url->path), 0, 6);
+> ~~~
+>
+> Why I don’t see any pages with black text color?

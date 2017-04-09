@@ -6,18 +6,18 @@ description: Show list of comments in reverse order by time.
 Requires [comment][link:../reference/extension/comment] extension.
 
 ~~~ .php
+$_path = COMMENT;
 $_chunk = 7;
 
 echo '<h3>Recent Comments</h3>';
 $_comments = [];
-if ($_files = File::explore(COMMENT, true, true)) {
+if ($_pages = File::explore($_path, true, true)) {
     echo '<ul>';
-    foreach ($_files as $_k => $_v) {
+    foreach ($_pages as $_k => $_v) {
         if ($_v === 0) continue; // is a folder, skip…
-        $_n = Path::N($_k);
-        $_x = Path::X($_k);
-        if ($_x !== 'page') continue; // is not published, skip…
-        $_comments[$_n] = $_k;
+        $_s = explode('.', Path::B($_k)); // `[$name, $x]`
+        if ($_s[1] !== 'page') continue; // is not published, skip…
+        $_comments[$_s[0]] = $_k;
     }
     krsort($_comments);
     foreach (Anemon::eat($_comments)->chunk($_chunk, 0) as $_comment) {

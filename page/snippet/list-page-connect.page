@@ -1,0 +1,40 @@
+---
+title: Basic Related Posts
+description: Show list of pages in random order, filtered by the similarities of the current page file name.
+...
+
+~~~ .php
+$_path = PAGE . DS . Path::D($url->path);
+$_chunk = 7;
+
+echo '<h3>Related Posts</h3>';
+if ($_current = Lot::get('page')) {
+    if ($_pages = Get::pages($_path, 'page')) {
+        $_slug = $_current->slug;
+        $_query = explode('-', $_slug);
+        $_relates = [];
+        foreach ($_pages as $_page) {
+            $_n = Path::N($_page['path']);
+            if ($_n === $_slug) continue; // is the same page, skip…
+            foreach ($_query as $_v) {
+                if (strpos($_n, $_v) !== false) {
+                    $_relates[] = $_page['path'];
+                }
+            }
+        }
+    }
+    if (!empty($_relates)) {
+        echo '<ul>';
+        foreach (Anemon::eat($_relates)->shake()->chunk($_chunk, 0) as $_relate) {
+            $_relate = new Page($_relate);
+            echo '<li>' . HTML::a($_relate->title, $_relate->url) . '</li>';
+        }
+        echo '</ul>';
+    } else {
+        echo '<p>This post has no relations with another posts.</p>';
+    }
+}
+~~~
+
+ - `$_path` → Automatic page folder selection based on the current URL path.
+ - `$_chunk` → How many pages you want to show in the list.
