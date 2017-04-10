@@ -1,6 +1,7 @@
 ---
 title: Banners
 description: Use these banners to tell people about Mecha.
+type: HTML
 comments: {"x":true}
 ...
 
@@ -10,12 +11,12 @@ Hook::set('page.images', function($content, $lot) {
         return $m[1];
     }
     return [];
-}, 2.1);
+}, 1.9);
 foreach (Get::pages(PAGE . DS . 'support' . DS . 'banner', 'page', [1, 'slug'], 'path') as $v) {
     $_page = new Page($v);
     $_images = $_page->images;
-    shuffle($_images);
     if (!isset($_images[0])) continue;
+    shuffle($_images);
     echo '<figure class="image-container">';
     echo '<img class="align-center" alt="" src="' . $_images[0] . '">';
     echo '<figcaption><a href="' . $_page->url . '">More by ' . $_page->author . '&hellip;</a></figcaption>';

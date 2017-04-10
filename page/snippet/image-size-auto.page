@@ -9,20 +9,20 @@ Hook::set('page.content', function($content) {
     return preg_replace_callback('#<img .*?>#', function($m) {
         $apart = HTML::apart($m[0], false);
         if (isset($apart[2]['width']) && isset($apart[2]['height'])) {
-            return $m[0]; // image width and height already exist
+            return $m[0]; // Image `width` and `height` attribute already exist
         }
         if (isset($apart[2]['src'])) {
-            $src = URL::long($apart[2]['src']); // convert relative URL to full URL
-            $src = To::path($src); // convert public URL to private file path
+            $src = URL::long($apart[2]['src']); // Convert relative URL to full URL
+            $src = To::path($src); // Convert public URL to private file path
             if ($path = File::exist($src)) {
-                $s = getimagesize($path); // inspect local image data
-                $apart[2]['width'] = $s[0]; // set image width
-                $apart[2]['height'] = $s[1]; // set image height
-                return call_user_func_array('HTML::unite', $apart); // output the result!
+                $s = getimagesize($path); // Inspect local image data
+                $apart[2]['width'] = $s[0]; // Set image `width` attribute
+                $apart[2]['height'] = $s[1]; // Set image `height` attribute
+                return call_user_func_array('HTML::unite', $apart); // Output the result!
             }
-            return $m[0]; // external image `src` or invalid image `src` value
+            return $m[0]; // External image `src` or invalid image `src` value
         }
-        return $m[0]; // image with no `src` attribute
+        return $m[0]; // Image with no `src` attribute
     }, $content);
 }, 2.1);
 ~~~

@@ -1,6 +1,6 @@
 ---
 title: Automatic Custom Posts
-description: Change page color theme automatically based on the current URL.
+description: Change page color theme automatically based on the current URL path.
 ...
 
 Insert this snippet to the `index.php` file of your active shield:

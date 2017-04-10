@@ -15,7 +15,7 @@ if ($_current = Lot::get('page')) {
         $_relates = [];
         foreach ($_pages as $_page) {
             $_n = Path::N($_page['path']);
-            if ($_n === $_slug) continue; // is the same page, skip…
+            if ($_n === $_slug) continue; // Is the same page, skip…
             foreach ($_query as $_v) {
                 if (strpos($_n, $_v) !== false) {
                     $_relates[] = $_page['path'];
@@ -31,7 +31,7 @@ if ($_current = Lot::get('page')) {
         }
         echo '</ul>';
     } else {
-        echo '<p>This post has no relations with another posts.</p>';
+        echo '<p>This post has no relations with other posts.</p>';
     }
 }
 ~~~

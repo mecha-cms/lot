@@ -38,7 +38,7 @@ Hook::set('page.images', function($content, $lot) {
         return $m[1];
     }
     return [];
-}, 2.1);
+}, 1.9);
 $_page = new Page(Anemon::eat(glob(PAGE . DS . 'support' . DS . 'banner' . DS . '*.page', GLOB_NOSORT))->shake(false)->vomit(0));
 $_images = $_page->images;
 shuffle($_images);

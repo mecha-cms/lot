@@ -29,7 +29,7 @@ echo Get::ua();
 
 ### Page
 
-Plugged by [page extension][link:../extension/page].
+Plugged by [page][link:../extension/page] extension.
 
 ~~~ .xmp.php
 Get::page($path, $key = null, $fail = false, $for = null);
@@ -37,7 +37,7 @@ Get::page($path, $key = null, $fail = false, $for = null);
 
 ### Pages
 
-Plugged by [page extension][link:../extension/page].
+Plugged by [page][link:../extension/page] extension.
 
 ~~~ .xmp.php
 Get::pages($folder = PAGE, $state = 'page', $sort = [-1, 'time'], $key = null);

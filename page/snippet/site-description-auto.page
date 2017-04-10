@@ -1,0 +1,16 @@
+---
+title: Dynamic Site Description/Slogan
+description: Automatically change the site slogan based on the current page description.
+...
+
+~~~ .php
+Hook::set('shield.before', function() use($site, $url) {
+    $path = PAGE . DS . ($site->is === 'pages' ? $url->path : Path::D($url->path));
+    if ($path = File::exist([
+        $path . '.page',
+        $path . '.archive'
+    ])) {
+        Config::set('description', Page::open($path)->get('description', $site->description));
+    }
+});
+~~~

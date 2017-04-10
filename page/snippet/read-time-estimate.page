@@ -1,0 +1,21 @@
+---
+title: Estimated Reading Time
+description: Gives the information needed to make a quick decision on whether to commit to reading an article or not.
+...
+
+~~~ .php
+// <http://www.binarymoon.co.uk/2013/10/wordpress-estimated-reading-time>
+if ($page = Lot::get('page')) {
+    $words = str_word_count(To::text($page->content));
+    $m = floor($words / 120);
+    $s = floor($words % 120 / (120 / 60));
+    $m_text = $language->{$m == 1 ? 'minute' : 'minutes'};
+    $s_text = $language->{$s == 1 ? 'second' : 'seconds'};
+    if ($m >= 1) {
+        $text = $m . ' ' . $m_text . ', ' . $s . ' ' . $s_text;
+    } else {
+        $text = $s . ' ' . $s_text;
+    }
+    echo '<p>Estimate time required to read this page: ' . $text . '</p>';
+}
+~~~

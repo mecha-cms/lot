@@ -56,7 +56,7 @@ You can also add the post format support by customizing the `page.php` file inst
 <?php Shield::get('header'); ?>
 <!-- quote page template -->
 <?php if ($page->type === 'Quote'): ?>
-<article class="page" id="post-<?php echo $page->id; ?>">
+<article class="page" id="page-<?php echo $page->id; ?>">
   <blockquote>
   <?php
 
@@ -70,7 +70,7 @@ You can also add the post format support by customizing the `page.php` file inst
 </article>
 <!-- default page template -->
 <?php else: ?>
-<article class="page" id="post-<?php echo $page->id; ?>">
+<article class="page" id="page-<?php echo $page->id; ?>">
   <header class="page-header">
     <h3 class="page-title">
       <?php echo $page->title; ?>

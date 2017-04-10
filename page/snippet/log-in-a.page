@@ -4,14 +4,14 @@ description: Show log in/out link if we have panel extension.
 ...
 
 ~~~ .html
-<!-- if we have `panel` extension -->
+<!-- If we have `panel` extension… -->
 <?php if (Extend::exist('panel')): ?>
-<!-- if user is logged in, add log out link -->
+<!-- If user is logged in, add log out link! -->
 <?php if (!empty($__user_enter)): ?>
 <a href="<?php echo $url . '/' . Extend::state('panel', 'path', 'panel') . '/::g::/exit'; ?>">
   <?php echo $language->log_out; ?>
 </a>
-<!-- if user is logged out, add log in link -->
+<!-- If user is logged out, add log in link! -->
 <?php else: ?>
 <a href="<?php echo $url . '/' . Extend::state('panel', 'path', 'panel') . '/::g::/enter'; ?>">
   <?php echo $language->log_in; ?>

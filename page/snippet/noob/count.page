@@ -1,6 +1,6 @@
 ---
 title: Count Labels
-description: Handle plural and singular label for data length.
+description: Create a proper plural and singular label for data length.
 ...
 
 ### Comment Counts
