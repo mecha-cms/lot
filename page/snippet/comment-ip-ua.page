@@ -10,6 +10,7 @@ Hook::set('on.comment.set', function($file) {
     $folder = Path::F($file);
     if ($s = Get::ip()) File::write($s)->saveTo($folder . DS . 'ip.data', 0600);
     if ($s = Get::ua()) File::write($s)->saveTo($folder . DS . 'ua.data', 0600);
+    return $file;
 });
 ~~~
 
