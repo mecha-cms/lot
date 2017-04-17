@@ -23,11 +23,9 @@ if ($_kinds = glob(PAGE . DS . $_base . DS . '*' . DS . 'kind.data', GLOB_NOSORT
     }
     foreach (array_count_values($_data) as $_k => $_v) {
         if (($_slug = To::tag($_k)) === false) continue;
-        $_tag = new Page(TAG . DS . $_slug . '.page', [
-            'i' => $_v
-        ], 'tag');
+        $_tag = new Page(TAG . DS . $_slug . '.page', [], 'tag');
         $_t = $url . '/' . To::url($_base) . '/' . Extend::state('tag', 'path', 'tag');
-        echo '<li>' . HTML::a($_tag->title, $_t . '/' . $_tag->slug) . ' (' . $_tag->i . ')</li>';
+        echo '<li>' . HTML::a($_tag->title, $_t . '/' . $_tag->slug) . ' (' . $_v . ')</li>';
     }
     echo '</ul>';
 } else {
@@ -61,10 +59,8 @@ if ($_kinds = glob(PAGE . DS . $_path . DS . '*' . DS . 'kind.data', GLOB_NOSORT
     }
     foreach (array_count_values($_data) as $_k => $_v) {
         if (($_slug = To::tag($_k)) === false) continue;
-        $_tag = new Page(TAG . DS . $_slug . '.page', [
-            'i' => $_v
-        ], 'tag');
-        echo '<li>' . HTML::a($_tag->title, $_tag->url) . ' (' . $_tag->i . ')</li>';
+        $_tag = new Page(TAG . DS . $_slug . '.page', [], 'tag');
+        echo '<li>' . HTML::a($_tag->title, $_tag->url) . ' (' . $_v . ')</li>';
     }
     echo '</ul>';
 } else {

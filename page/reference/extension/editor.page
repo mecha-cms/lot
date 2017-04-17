@@ -2,7 +2,7 @@
 title: Mecha Text Editor
 description: A text selection range API written in pure JavaScript, for modern browsers.
 dependency: {"extension":["panel"]}
-conflict: {"extension":["c-k-editor"]}
+dependency_x: {"extension":["c-k-editor"]}
 ...
 
 This is the official text editor extension for Mecha.

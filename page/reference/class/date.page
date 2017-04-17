@@ -140,7 +140,7 @@ Result:
 #### Set
 
 ~~~ .xmp.php
-Date::set($key = null, $fn = null ($output, $language));
+Date::set($key, $fn = null ($output, $language));
 ~~~
 
 Set custom date format:
@@ -161,6 +161,21 @@ echo $date->extract('my_format');
 
 // [2]
 echo $date->my_format;
+~~~
+
+#### Get
+
+~~~ .php.xmp
+Date::get($key = null, $fail = false);
+~~~
+
+Get custom date format:
+
+~~~ .php
+__test__(
+    Date::get('my_format'),
+    Date::get()
+);
 ~~~
 
 #### Remove
