@@ -84,8 +84,8 @@ $test_1 = [
         'file' => true,
         'folder' => false
     ],
-    '__update' => 1403355917,
-    '__size' => 21114
+    '_update' => 1403355917,
+    '_size' => 21114
 ];
 ~~~
 

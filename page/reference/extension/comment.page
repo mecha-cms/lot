@@ -10,7 +10,7 @@ Edit the `page.php` file in your active shield folder then put this snippet afte
 <?php Shield::get('comments'); ?>
 ~~~
 
-### Constants
+### Constant
 
 This extension automatically adds a `comment` folder within the `lot` folder, which will also automatically set a new constant based on the folder name with a value of the folder path:
 
@@ -18,7 +18,7 @@ This extension automatically adds a `comment` folder within the `lot` folder, wh
 COMMENT
 ~~~
 
-### Classes
+### Class
 
 We now have a `Comment` class which works the same as the [`Page`][link:../class/page] class, but with custom hook _namespace_:
 
@@ -29,5 +29,5 @@ Comment($input = null, $lot = [], $NS = 'comment');
 Example:
 
 ~~~ .php
-$comment = new Comment('.\lot\comment\article\test-page\2014-05-05-09-09-32.page');
+$comment = new Comment('.\www\lot\comment\article\test-page\2014-05-05-09-09-32.page');
 ~~~

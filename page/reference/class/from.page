@@ -3,6 +3,54 @@ title: Class `From`
 description: Convert back to X from Y.
 ...
 
+### Base64
+
+~~~ .xmp.php
+From::base64($input);
+~~~
+
+Decode Base64 string:
+
+~~~ .php
+$test = From::base64('aSBsb3ZlIHlvdQ==');
+~~~
+
+### Decimal
+
+~~~ .xmp.php
+From::dec($input);
+~~~
+
+Convert HTML decimal characters representation into their original characters:
+
+~~~ .php
+$test = From::dec('&#73;&#32;&#10084;&#32;&#85;');
+~~~
+
+### Hexagonal
+
+~~~ .xmp.php
+From::hex($input);
+~~~
+
+Convert HTML hexagonal characters representation into their original characters:
+
+~~~ .php
+$test = From::hex('&#x0049;&#x0020;&#x2764;&#x0020;&#x0055;');
+~~~
+
+### HTML
+
+~~~ .xmp.php
+From::html($input);
+~~~
+
+Encode HTML special characters:
+
+~~~ .php
+$test = From::html('<foo bar="baz">');
+~~~
+
 ### JSON
 
 ~~~ .xmp.php
@@ -15,16 +63,17 @@ Convert JSON into PHP object:
 $test = From::json('{"foo":"bar"}');
 ~~~
 
-### Base64
+### URL
 
-~~~ .xmp.php
-From::base64($input);
+~~~ .php.xmp
+From::url($input, $raw = false);
 ~~~
 
-Decode Base64 string:
+Encode URL special characters:
 
 ~~~ .php
-$test = From::base64('RHVhIGdhcmlzIHJlbCBpdHUgc2VwZXJ0aSBrYXUgZGFuIGFrdS4gSGFueWEgYmVyc2FtYSB0YXBpIHRhayBiZXJ0ZW11Lg==');
+$test_1 = From::url('foo bar+baz');
+$test_2 = From::url('foo bar+baz', true);
 ~~~
 
 ### YAML
@@ -37,28 +86,4 @@ Convert YAML string into array:
 
 ~~~ .php
 $test = From::yaml('foo: bar');
-~~~
-
-### Decimal
-
-~~~ .xmp.php
-From::html_dec($input);
-~~~
-
-Convert HTML decimal characters representation into their original characters:
-
-~~~ .php
-$test = From::html_dec('&#73;&#32;&#10084;&#32;&#85;');
-~~~
-
-### Hexagonal
-
-~~~ .xmp.php
-From::html_hex($input);
-~~~
-
-Convert HTML hexagonal characters representation into their original characters:
-
-~~~ .php
-$test = From::html_hex('&#x0049;&#x0020;&#x2764;&#x0020;&#x0055;');
 ~~~

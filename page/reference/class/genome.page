@@ -1,9 +1,9 @@
 ---
 title: Class `Genome`
-description: Make classes becomes pluggable.
+description: Dynamic methods.
 ...
 
-This is an abstract class, so you have to extend this class with another class:
+This class is purposed to be used as an extension to other classes so that the extended classes will be able to create their own dynamic methods. This is an abstract class, so you have to extend this class with another class:
 
 ~~~ .php
 class Blastula extends Genome {
@@ -33,22 +33,22 @@ Usage:
 echo Blastula::birth('Mocha'); // → `Hello world! My name is Mocha.`
 ~~~
 
-### Unplug
+### Eject
 
 ~~~ .xmp.php
-Genome::unplug($kin);
+Genome::eject($kin);
 ~~~
 
 Remove `birth` method from the `Blastula` class:
 
 ~~~ .php
-Blastula::unplug('birth');
+Blastula::eject('birth');
 ~~~
 
 Remove all custom methods from the `Blastula` class:
 
 ~~~ .php
-Blastula::unplug();
+Blastula::eject();
 ~~~
 
 ### Kin

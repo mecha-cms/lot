@@ -15,13 +15,13 @@ Initialize by opening a page file:
 Page::open('path\to\file.page');
 ~~~
 
-### Data
+#### Data
 
 ~~~ .xmp.php
 ->data($input, $fn = null);
 ~~~
 
-Set page headers:
+Set page header:
 
 ~~~ .php
 Page::open('path\to\file.page')->data([
@@ -60,6 +60,55 @@ Remove page content:
 
 ~~~ .php
 Page::open('path\to\file.page')->data(false);
+~~~
+
+#### Get
+
+~~~ .xmp.php
+->get($key = null, $fail = null, $NS = 'page');
+~~~
+
+Get `title` property from a page if available, otherwise, return `Untitled`:
+
+~~~ .php
+$test = Page::open('path\to\file.page')->get('title', 'Untitled');
+~~~
+
+Get `title` and `url` properties from a page:
+
+~~~ .php
+$test = Page::open('path\to\file.page')->get([
+    'title' => 'Untitled',
+    'url' => '#'
+]);
+~~~
+
+#### Save
+
+~~~ .xmp.pgp
+->save($consent = 0600);
+~~~
+
+Update page data:
+
+~~~ .php
+Page::open('path\to\file.page')->data(['title' => 'New Title'])->save();
+~~~
+
+#### Save To
+
+~~~ .xmp.php
+->saveTo($path, $consent = 0600);
+~~~
+
+Create a new page:
+
+~~~ .php
+Page::data([
+    'title' => 'Page Title',
+    'type' => 'HTML',
+    'content' => '<p>Page content.</p>'
+])->saveTo('path\to\file.page');
 ~~~
 
 ### Unite
@@ -124,55 +173,6 @@ $test = [
 ];
 ~~~
 
-### Get
-
-~~~ .xmp.php
-->get($key = null, $fail = null, $NS = 'page');
-~~~
-
-Get `title` property from a page if available, otherwise, return `Untitled`:
-
-~~~ .php
-$test = Page::open('path\to\file.page')->get('title', 'Untitled');
-~~~
-
-Get `title` and `url` properties from a page:
-
-~~~ .php
-$test = Page::open('path\to\file.page')->get([
-    'title' => 'Untitled',
-    'url' => '#'
-]);
-~~~
-
-### Save
-
-~~~ .xmp.pgp
-->save($consent = 0600);
-~~~
-
-Update page data:
-
-~~~ .php
-Page::open('path\to\file.page')->data(['title' => 'New Title'])->save();
-~~~
-
-### Save To
-
-~~~ .xmp.php
-->saveTo($path, $consent = 0600);
-~~~
-
-Create a new page:
-
-~~~ .php
-Page::data([
-    'title' => 'Page Title',
-    'type' => 'HTML',
-    'content' => '<p>Page content.</p>'
-])->saveTo('path\to\file.page');
-~~~
-
 ---
 
 ### Constructor
@@ -185,4 +185,4 @@ Page($input = null, $lot = [], $NS = 'page');
 $page = new Page('path\to\file.page');
 ~~~
 
-_To be continued._
+[connect:../../snippet/noob/page]

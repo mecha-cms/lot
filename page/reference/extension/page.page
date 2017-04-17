@@ -80,7 +80,7 @@ Users can store their miscellaneous data that has relationship with the page fil
 
 ### Data
 
-**Data** has a higher priority than the page headers. So, if you have a `title.data` stored in `lot\page\lorem-ipsum` folder, then the content of that file will overrides the `title` data that is embedded in the page headers.
+**Data** has a higher priority than the page header. So, if you have a `title.data` stored in `lot\page\lorem-ipsum` folder, then the content of that file will overrides the `title` data that is embedded in the page header.
 
 ~~~ .txt
 lot\

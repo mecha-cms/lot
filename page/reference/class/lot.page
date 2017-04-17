@@ -1,7 +1,9 @@
 ---
 title: Class `Lot`
-description: Register variables and makes them available globally in the shields.
+description: Variables.
 ...
+
+Register variables and makes them available globally in the shields.
 
 ### Set
 

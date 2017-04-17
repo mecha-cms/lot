@@ -6,13 +6,13 @@ description: Show list of pages in random order, filtered by the similarities of
 ~~~ .php
 $_path = PAGE . DS . Path::D($url->path);
 $_chunk = 7;
+$_relates = [];
 
 echo '<h3>Related Posts</h3>';
 if ($_current = Lot::get('page')) {
     if ($_pages = Get::pages($_path, 'page')) {
         $_slug = $_current->slug;
         $_query = explode('-', $_slug);
-        $_relates = [];
         foreach ($_pages as $_page) {
             $_n = Path::N($_page['path']);
             if ($_n === $_slug) continue; // Is the same page, skip…
@@ -23,6 +23,7 @@ if ($_current = Lot::get('page')) {
             }
         }
     }
+    $_relates = array_unique($_relates);
     if (!empty($_relates)) {
         echo '<ul>';
         foreach (Anemon::eat($_relates)->shake()->chunk($_chunk, 0) as $_relate) {

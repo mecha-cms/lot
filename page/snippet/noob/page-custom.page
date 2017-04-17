@@ -4,7 +4,7 @@ description: Custom hook _namespace_ for your custom pages.
 ...
 
 ~~~ .php
-$page = new Page('.\lot\page\test-page.page', [], 'my_page_hook');
+$page = new Page('.\www\lot\page\test-page.page', [], 'my_page_hook');
 ~~~
 
 Now you can set your own custom hooks by using `my_page_hook` _namespace_ to affect the `$page` output:

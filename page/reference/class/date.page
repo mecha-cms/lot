@@ -23,7 +23,13 @@ Get the current time zone:
 echo Date::zone();
 ~~~
 
-### Format
+### Constructor
+
+~~~ .php.xmp
+Date($date = null);
+~~~
+
+#### Format
 
 ~~~ .xmp.php
 ->format($format = DATE_WISE);
@@ -44,7 +50,7 @@ Result:
 
 Read more about date formatting patterns [here](http://php.net/manual/en/function.date.php "PHP date()").
 
-### Convert Time to Slug
+#### Slug
 
 ~~~ .php
 $date = new Date('2016/04/21 16:00:00');
@@ -57,7 +63,7 @@ Result:
 2016-04-21-16-00-00
 ~~~
 
-### Extract
+#### Extract
 
 ~~~ .xmp.php
 ->extract($key = null, $fail = false);
@@ -98,6 +104,32 @@ Result:
     'F2' => '2016/04/21 04:00:00 PM',
     'F3' => '16:00',
     'F4' => '04:00 PM',
+]
+~~~
+
+#### Ago
+
+~~~ .php.xmp
+->ago($key = null, $fail = false, $compact = true);
+~~~
+
+How long does `1992/04/21 16:00:00` from today date?
+
+~~~ .php
+$date = new Date('1992/04/21 16:00:00');
+__test__($date->ago());
+~~~
+
+Result:
+
+~~~ .php
+[
+    'year' => 24,
+    'month' => 11,
+    'day' => 24,
+    'hour' => 4,
+    'minute' => 3,
+    'second' => 6
 ]
 ~~~
 

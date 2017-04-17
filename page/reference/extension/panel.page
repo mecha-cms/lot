@@ -5,3 +5,5 @@ dependency: {"extension":["asset","page","tag","user"],"plugin":["markdown"]}
 ...
 
 Coming soon.
+
+![1]([[asset]]/png/reference/extension/panel/1.png) {.align-center}

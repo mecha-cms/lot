@@ -10,7 +10,9 @@ Hook::set('shield.before', function() use($site, $url) {
         $path . '.page',
         $path . '.archive'
     ])) {
-        Config::set('description', Page::open($path)->get('description', $site->description));
+        $description = Page::open($path)->get('description', $site->description);
+        $description = t($description, '<p>', '</p>');
+        Config::set('description', $description);
     }
 });
 ~~~

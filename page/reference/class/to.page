@@ -2,3 +2,258 @@
 title: Class `To`
 description: Convert from X to Y.
 ...
+
+### Anemon
+
+~~~ .php.xmp
+To::anemon($input);
+~~~
+
+Convert encoded JSON, PHP object or array into PHP array:
+
+~~~ .php
+$test_1 = To::anemon('{"foo":"bar"}');
+$test_2 = To::anemon(['foo' => 'bar']);
+$test_3 = To::anemon((object) ['foo' => 'bar']);
+~~~
+
+### Base64
+
+~~~ .xmp.php
+To::base64($input);
+~~~
+
+Encode string to Base64:
+
+~~~ .php
+$test = To::base64('i love you');
+~~~
+
+### Camel
+
+~~~ .php.xmp
+To::camel($input);
+~~~
+
+Convert string input into `camelCase`:
+
+~~~ .php
+$test = To::camel('foo bar baz');
+~~~
+
+### Decimal
+
+~~~ .xmp.php
+To::dec($input, $z = false, $f = ['&#', ';']);
+~~~
+
+Convert string into their HTML decimal characters representation:
+
+~~~ .php
+$test = To::dec('I ❤ U');
+~~~
+
+### File
+
+~~~ .php.xmp
+To::file($input);
+~~~
+
+Sanitize string input into safe file path:
+
+~~~ .php
+$test = To::file('foo / bar / baz .txt / abc $ def $ ghi .txt');
+~~~
+
+### Folder
+
+~~~ .php.xmp
+To::folder($input);
+~~~
+
+Sanitize string input into safe folder path:
+
+~~~ .php
+$test = To::folder('foo / bar / baz .txt / abc $ def $ ghi .txt');
+~~~
+
+### Hexagonal
+
+~~~ .xmp.php
+To::hex($input, $z = false, $f = ['&#x', ';']);
+~~~
+
+Convert string into their HTML hexagonal characters representation:
+
+~~~ .php
+$test = To::hex('I ❤ U');
+~~~
+
+### HTML
+
+~~~ .php.xmp
+To::html($input);
+~~~
+
+Decode HTML special characters:
+
+~~~ .php
+$test = To::html('&lt;foo bar=&quot;baz&quot;&gt;');
+~~~
+
+### JSON
+
+~~~ .xmp.php
+To::json($input);
+~~~
+
+Convert PHP array/object into JSON:
+
+~~~ .php
+$test = From::json(['foo' => 'bar']);
+~~~
+
+### Key
+
+~~~ .php.xmp
+To::key($input, $low = true);
+~~~
+
+Convert string input into a valid array key:
+
+~~~ .php
+$test_1 = To::key('foo bar baz');
+$test_2 = To::key('foo-bar-baz');
+$test_3 = To::key('123 foo bar baz');
+$test_4 = To::key('123-foo-bar-baz');
+~~~
+
+### Pascal
+
+~~~ .php.xmp
+To::pascal($input);
+~~~
+
+Convert string input into `PascalCase`:
+
+~~~ .php
+$test = To::pascal('foo bar baz');
+~~~
+
+### Path
+
+~~~ .php.xmp
+To::path($input);
+~~~
+
+Convert public URL into private file path:
+
+~~~ .php
+$test = To::path('[[url]]/path/to/file.html');
+~~~
+
+### Sentence
+
+~~~ .php.xmp
+To::sentence($input, $tail = '.');
+~~~
+
+Convert string input into `Sentence case.`:
+
+~~~ .php
+$test = To::sentence('foo bar baz', '?');
+~~~
+
+### Slug
+
+~~~ .php.xmp
+To::slug($x, $s = '-', $X = "");
+~~~
+
+Convert string input into `slug-case`:
+
+~~~ .php
+$test = To::slug('foo bar baz');
+~~~
+
+[connect:../function#reference:h]
+
+### Snake
+
+~~~ .php.xmp
+To::snake($input);
+~~~
+
+Convert string input into `snake_case`:
+
+~~~ .php
+$test_1 = To::snake('123 foo bar baz');
+$test_2 = To::key('123 foo bar baz');
+~~~
+
+### Snippet
+
+~~~ .php.xmp
+To::snippet($input, $html = true, $x = [200, '&#x2026;']);
+~~~
+
+Convert string input into snippet text:
+
+~~~ .php
+$test = To::snippet('foo bar baz qux');
+~~~
+
+### Text
+
+~~~ .php.xmp
+To::text($x, $c = [], $n = false);
+~~~
+
+Convert file name or HTML string into plain text:
+
+~~~ .php
+$test_1 = To::text('foo-bar-baz');
+$test_2 = To::text('<p><strong>Foo</strong> Bar <em>Baz</em></p>');
+~~~
+
+[connect:../function#reference:w]
+
+### Title
+
+~~~ .php.xmp
+To::title($input);
+~~~
+
+Convert file name, HTML string or plain text into `Title Case`:
+
+~~~ .php
+$test_1 = To::title('foo-bar-baz');
+$test_2 = To::title('<p><strong>foo</strong> bar <em>baz</em></p>');
+$test_3 = To::title('foo bar baz');
+~~~
+
+### URL
+
+~~~ .php.xmp
+To::url($input, $raw = false);
+~~~
+
+Convert private file path into public URL, or decode URL special characters:
+
+~~~ .php
+$test_1 = To::url('.\path\to\file.html');
+$test_2 = To::url('foo%20bar+baz');
+$test_3 = To::url('foo%20bar+baz', true);
+~~~
+
+### YAML
+
+~~~ .xmp.php
+To::yaml($input, $c = [], $in = '  ', $safe = false, $dent = 0);
+~~~
+
+Convert array into YAML string:
+
+~~~ .php
+$test = To::yaml(['foo' => 'bar']);
+~~~

@@ -6,7 +6,7 @@ description: How to get the page?
 ### Method 1
 
 ~~~ .php
-$page = new Page('.\lot\page\test-page.page');
+$page = new Page('.\www\lot\page\test-page.page');
 
 // get the title
 echo $page->title;
@@ -36,10 +36,10 @@ echo $page->title('~fn_test');
 
 ~~~ .php
 // get the title
-echo Page::open('.\lot\page\test-page.page')->get('title');
+echo Page::open('.\www\lot\page\test-page.page')->get('title');
 
 // get the title and the content
-$page = Page::open('.\lot\page\test-page.page')->get([
+$page = Page::open('.\www\lot\page\test-page.page')->get([
     'title' => null,
     'content' => null
 ]);
@@ -47,5 +47,5 @@ echo $page['title'];
 echo $page['content'];
 
 // get the title if any, otherwise, return `Untitled`
-echo Page::open('.\lot\page\test-page.page')->get('title', 'Untitled');
+echo Page::open('.\www\lot\page\test-page.page')->get('title', 'Untitled');
 ~~~

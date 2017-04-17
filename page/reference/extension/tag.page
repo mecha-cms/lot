@@ -6,7 +6,7 @@ dependency: {"extension":["page"]}
 
 This extension enables tags feature on any pages by utilizing the `kind` property value as the tag ID. This extension also adds a new route definition like ` [[url]]/blog/tag/slug ` on every pages to make it possible to list all pages in the current folder by tags.
 
-### Constants
+### Constant
 
 This extension automatically adds a `tag` folder within the `lot` folder, which will also automatically set a new constant based on the folder name with a value of the folder path:
 
@@ -14,7 +14,7 @@ This extension automatically adds a `tag` folder within the `lot` folder, which 
 TAG
 ~~~
 
-### Methods
+### Method
 
 There are some methods added to the default [classes][link:../class]:
 
@@ -147,7 +147,7 @@ Example content of `kind.data` file:
 [1,2,3]
 ~~~
 
-You can also embed the `kind` property to the page headers, but this way is a little bit [slower][link:../../article/migration] to be parsed than the separated file version:
+You can also embed the `kind` property to the page header, but this way is a little bit [slower][link:../../article/migration] to be parsed than the separated file version:
 
 ~~~ .yaml
 ---

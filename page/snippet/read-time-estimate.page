@@ -5,17 +5,17 @@ description: Gives the information needed to make a quick decision on whether to
 
 ~~~ .php
 // <http://www.binarymoon.co.uk/2013/10/wordpress-estimated-reading-time>
-if ($page = Lot::get('page')) {
-    $words = str_word_count(To::text($page->content));
-    $m = floor($words / 120);
-    $s = floor($words % 120 / (120 / 60));
-    $m_text = $language->{$m == 1 ? 'minute' : 'minutes'};
-    $s_text = $language->{$s == 1 ? 'second' : 'seconds'};
-    if ($m >= 1) {
-        $text = $m . ' ' . $m_text . ', ' . $s . ' ' . $s_text;
+if ($_page = Lot::get('page')) {
+    $_words = str_word_count(To::text($_page->content));
+    $_min = floor($_words / 120);
+    $_sec = floor($_words % 120 / (120 / 60));
+    $_min_text = $language->{$_min == 1 ? 'minute' : 'minutes'};
+    $_sec_text = $language->{$_sec == 1 ? 'second' : 'seconds'};
+    if ($_min >= 1) {
+        $_text = $_min . ' ' . $_min_text . ', ' . $_sec . ' ' . $_sec_text;
     } else {
-        $text = $s . ' ' . $s_text;
+        $_text = $_sec . ' ' . $_sec_text;
     }
-    echo '<p>Estimate time required to read this page: ' . $text . '</p>';
+    echo '<p>Estimate time required to read this page: ' . $_text . '</p>';
 }
 ~~~

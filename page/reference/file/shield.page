@@ -22,6 +22,7 @@ A standard shield should at least contains files that structured like this:
 ~~~ .txt
 document\
  ├── asset\
+ │   ├── .htaccess
  │   ├── css\
  │   │   ├── document.css
  │   │   └── document.min.css
@@ -38,6 +39,12 @@ document\
  ├── page.php
  └── pages.php
 ~~~
+
+> **Note:** The `.htaccess` file is required to enable access of the asset files publicly. It only contains this command:
+>
+> ~~~ .htaccess
+> allow from all
+> ~~~
 
 ### Error
 

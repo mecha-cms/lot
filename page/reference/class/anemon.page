@@ -893,21 +893,21 @@ bar
 bar
 ~~~
 
-Array keys prefixed by a `__` will be ignored by default:
+Array keys prefixed by a `_` will be ignored by default:
 
 ~~~ .php
 $test = new Anemon([
     'foo' => 0,
     'bar' => 1,
     'baz' => 2,
-    '__hidden' => '#'
+    '_hidden' => '#'
 ], ', ');
 
 echo $test;
 echo $test(' + ');
 echo $test->join(' + ');
 echo $test->foo;
-echo $test->__hidden;
+echo $test->_hidden;
 echo $test->vomit('foo');
 ~~~
 

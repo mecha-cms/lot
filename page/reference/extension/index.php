@@ -22,5 +22,20 @@ Hook::set('page.content', function($content, $lot) {
             }
         }
     }
+    if (!empty($lot['conflict'])) {
+        $content .= N . N . '### Conflict With';
+        if (!empty($lot['conflict']['extension'])) {
+            $content .= N . N . '#### Extension' . N;
+            foreach ($lot['conflict']['extension'] as $v) {
+                $content .= N . ' - [link:/reference/extension/' . $v . ']';
+            }
+        }
+        if (!empty($lot['conflict']['plugin'])) {
+            $content .= N . N . '#### Plugin' . N;
+            foreach ($lot['conflict']['plugin'] as $v) {
+                $content .= N . ' - [link:/reference/extension/plugin/' . $v . ']';
+            }
+        }
+    }
     return $content;
 }, .9);

@@ -224,13 +224,51 @@ bar'
 #### Escaping
 
 ~~~ .yaml
-foo\:bar: baz
+foo\: bar: baz
 foo: bar: baz
 ~~~
 
 ~~~ .json
 {
-  "foo:bar": "baz",
+  "foo: bar": "baz",
   "foo": "bar: baz"
+}
+~~~
+
+~~~ .yaml
+"foo: bar": baz
+foo: bar: baz
+~~~
+
+~~~ .json
+{
+  "foo: bar": "baz",
+  "foo": "bar: baz"
+}
+~~~
+
+~~~ .yaml
+'foo: bar': baz
+foo: bar: baz
+~~~
+
+~~~ .json
+{
+  "foo: bar": "baz",
+  "foo": "bar: baz"
+}
+~~~
+
+#### Compact Array
+
+Still experimental.
+
+~~~ .yaml
+foo: [bar, baz, 0, true]
+~~~
+
+~~~ .json
+{
+  "foo": ["bar", "baz", 0, true]
 }
 ~~~

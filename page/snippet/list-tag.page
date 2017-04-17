@@ -10,11 +10,6 @@ Requires [tags][link:../reference/extension/tag] extension.
 ~~~ .php
 $_base = 'article';
 
-Hook::set('tag.url', function($s) use($url, $_base) {
-    $t = Extend::state('tag', 'path', 'tag');
-    return $url . '/' . To::url($_base) . '/' . $t . '/' . Path::B($s);
-}, 11);
-
 echo '<h3>Tags</h3>';
 if ($_kinds = glob(PAGE . DS . $_base . DS . '*' . DS . 'kind.data', GLOB_NOSORT)) {
     echo '<ul>';
@@ -31,7 +26,8 @@ if ($_kinds = glob(PAGE . DS . $_base . DS . '*' . DS . 'kind.data', GLOB_NOSORT
         $_tag = new Page(TAG . DS . $_slug . '.page', [
             'i' => $_v
         ], 'tag');
-        echo '<li>' . HTML::a($_tag->title, $_tag->url) . ' (' . $_tag->i . ')</li>';
+        $_t = $url . '/' . To::url($_base) . '/' . Extend::state('tag', 'path', 'tag');
+        echo '<li>' . HTML::a($_tag->title, $_t . '/' . $_tag->slug) . ' (' . $_tag->i . ')</li>';
     }
     echo '</ul>';
 } else {
@@ -39,7 +35,7 @@ if ($_kinds = glob(PAGE . DS . $_base . DS . '*' . DS . 'kind.data', GLOB_NOSORT
 }
 ~~~
 
- - `$_base` → Select from which page folder the tags you want to list (relative to `.\lot\page` folder).
+ - `$_base` → Select from which page folder the tags you want to list (relative to `lot\page` folder).
 
 ### Tag List 2
 
