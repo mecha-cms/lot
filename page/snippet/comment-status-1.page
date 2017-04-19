@@ -1,0 +1,34 @@
+---
+title: Mark Site Author’s Comments
+description: Set a unique style on the site author’s comments.
+...
+
+Requires [comment][link:../reference/extension/comment] extension, [panel][link:../reference/extension/panel] extension, and requires you to be logged in when creating a new comment. This snippet will add a `status` data to the `$_POST` storage with value of `1`.
+
+~~~ .php
+// Mark site author’s comment (requires panel extension)
+if (Route::is('%*%/' . Extend::state('comment', 'path', '-comment')) && Request::is('post')) {
+    if (Extend::exist('panel') && User::current()) {
+        Request::set('post', 'status', 1);
+    }
+}
+~~~
+
+Then you can add this CSS to style the site author’s comments of the default `comments.php` template:
+
+~~~ .css
+.comment-status\:1 {
+  color:#f00;
+  border-left:4px solid #f00;
+  padding-left:1em;
+}
+~~~
+
+Which is based on this markup:
+
+~~~ .html
+<li class="comment comment-status:<?php echo $comment->status; ?>">
+  …
+  …
+</li>
+~~~

@@ -19,16 +19,20 @@ if ($_pages = File::explore($_path, true, true)) {
         if ($_s[1] !== 'page') continue; // Is not published, skip…
         $_comments[$_s[0]] = $_k;
     }
-    krsort($_comments);
-    foreach (Anemon::eat($_comments)->chunk($_chunk, 0) as $_comment) {
-        $_comment = new Comment($_comment);
-        echo '<li>';
-        echo '<p>' . HTML::a($_comment->author, $_comment->url, false, ['rel' => 'nofollow']) . '</p>';
-        echo '<p>' . To::snippet($_comment->content) . '</p>';
-        echo '<p><em>' . $_comment->date->F2 . '</em></p>';
-        echo '</li>';
+    if (!empty($_comments)) {
+        krsort($_comments);
+        foreach (Anemon::eat($_comments)->chunk($_chunk, 0) as $_comment) {
+            $_comment = new Comment($_comment);
+            echo '<li>';
+            echo '<p>' . HTML::a($_comment->author, $_comment->url, false, ['rel' => 'nofollow']) . '</p>';
+            echo '<p>' . To::snippet($_comment->content) . '</p>';
+            echo '<p><em>' . $_comment->date->F2 . '</em></p>';
+            echo '</li>';
+        }
+        echo '</ul>';
+    } else {
+        echo '<p>No comments yet.</p>';
     }
-    echo '</ul>';
 } else {
     echo '<p>No comments yet.</p>';
 }

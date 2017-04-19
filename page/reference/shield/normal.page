@@ -3,7 +3,7 @@ title: Normal
 description: Port of the normal shield in Mecha version `1.x.x`.
 ...
 
-This is the default shield used by Mecha version `1.x.x`. I recommend you to use this shield as the base framework if you want to create a new shield for Mecha.
+This is the default shield used by Mecha version `1.x.x`.
 
 ![1]([[asset]]/png/reference/shield/normal/1.png) {.align-center}
 
@@ -12,7 +12,15 @@ This is the default shield used by Mecha version `1.x.x`. I recommend you to use
  - Automatic menu navigation
  - Automatic breadcrumb navigation
  - Automatic set the home page view to `article`
- - Widgets: tags (requires [tag][link:../extension/tag] extension), recent posts, related posts
  - Comments (requires [comment][link:../extension/comment] extension)
- - Manual post excerpt (requires to add `<!-- cut -->` to the post content)
- - Post formats: _HTML_, _Markdown_, _Quote_.
+ - Page views counter (requires [view][link:../extension/plugin/view] plugin)
+ - Manual [post excerpt][link:../../snippet/field-excerpt-manual] (requires you to insert `<!-- cut -->` in the post content)
+ - Formats:
+   - HTML
+   - Markdown
+   - Quote
+ - Widgets:
+   - Tags (requires [tag][link:../extension/tag] extension)
+   - Recent Posts
+   - Related Posts
+   - Recent Comments (requires [comment][link:../extension/comment] extension).
