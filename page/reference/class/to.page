@@ -110,7 +110,7 @@ To::json($input);
 Convert PHP array/object into JSON:
 
 ~~~ .php
-$test = From::json(['foo' => 'bar']);
+$test = To::json(['foo' => 'bar']);
 ~~~
 
 ### Key

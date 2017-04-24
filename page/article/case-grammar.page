@@ -1,0 +1,252 @@
+---
+title: Grammar
+description: Forgive me about my perfections.
+...
+
+I’m really a strict person when talking about the grammar used in the API. Even, for trivial things like the page slug that you see in the address bar would also have to be arranged carefully. My background that was not originally be born from a native English speaker mother makes me to learn English a lot. Though, my English is really not as casual as native English people are, but at least I am concerned with the consistency of the API.
+
+### Command
+
+My first thought previously was trying to list all commands that possibly can be used globally by the [classes][link:../reference/class]. Then, I thought about the computer commands. In a computer, we have a common API that consists of three or four commands. They are _create_, _update_, _delete_, and _read_. Even, the PHP itself also has some built–in methods like `__set`, `__get`, `__isset` and `__unset`. From that, I can then make an overview of the verbs which possibly can be used as the API:
+
+Create | Delete | Read
+------ | ------ | ----
+‌ | clear | ‌
++ | - | =
+add | remove | has
+construct | destruct | ‌
+create | destroy | ‌
+install | uninstall | run
+launch | abort | ‌
+mount | unmount | ‌
+plug | eject | ‌
+plug | unplug | ‌
+post | ‌ | get
+push | ‌ | pull
+send | ‌ | retrieve
+set | unset | get
+submit | cancel | ‌
+upload | unload | download
+write | erase | read
+
+Some of the groups are missing their parts. But I have to use at least three verbs for perfect commands, so I cancel all of the incomplete groups.
+
+The next step is choosing the candidate. There are some rules:
+
+ - As short as possible
+ - Use single word where possible.
+
+Words like _upload_, _unload_ and _download_ are seemingly be constructed by two words with _load_ as the base command: _up_·_load_, _un_·_load_ and _down_·_load_. So I cancel this option. _add_, _remove_ and _has_ are good, but using _has_ to _read_ something seems improper. So I cancel this option too. _write_, _erase_ and _read_ are good and indeed look very standard for a file-based CMS, but they are not universal. What if we want to use this API for doing like creating or getting an image. We normally does not write and read images, but draw and capture.
+
+I need the universal one, and then decided to use _set_, _unset_ and _get_ because they are the shortest, and can be used as a valid object key.
+
+There is a problem with the _unset_ word. I can’t use that because it is constructed by two words: _un_·_set_. Then I try to choose another alternative and found _reset_. _reset_ also seems to be constructed by two words: _re_·_set_. But I can’t remember that I ever found another words that can be freely combined by the _re_ like these. Even if they can, they are uncommon:
+
+Create | Delete | Read
+------ | ------ | ----
+re·add ✔ | re·remove ✘ | re·has ✘
+re·launch ✔ | re·abort ✘ | ‌
+re·set ✔ | ‌ | re·get ✘
+re·write ✔ | re·erase ✘ | re·read ✔
+
+I can find _reset_ as a single word but not with _unset_:
+
+![1]([[asset]]/png/article/case-grammar/1.png) ![2]([[asset]]/png/article/case-grammar/2.png)
+
+The word _reset_ may can’t represent all of the _delete_ command but at least people can quickly understand with the meaning of _reset_ as _start over_, _back to zero_ or _back to initial_, which can also means _becomes null_, just like the default value of every variable with no values set. We can use, for example, _write_, _erase_ and _read_ if _set_, _reset_ and _get_ seems improper to be used just like what I did for the [`File`][link:../reference/class/file] API.
+
+~~~ .php
+class Common extends Genome {
+    public function set() {}
+    public function reset() {}
+    public function get() {}
+}
+~~~
+
+By standardizing the commands, I hope people can learn and understand faster because they can easily guess what methods are contained on every standard class.
+
+### Plural and Singular
+
+Other things that disturb me a lot is the plural and singular nouns. I can’t standardize these things because there are some words that simply can be suffixed with an _s_ to make it becomes the plural noun version, and some of them need to use _es_ or need to change the last _y_ part into an _i_ just before doing the _es_ thing. Some of them also cannot be pluralized because they already can be treated as a plural or singular noun by itself, or because they have their own plural word version. Here are some examples:
+
+Singular | Plural
+-------- | ------
+category | categor[y,ies]
+child | child[ren]
+data | data
+datum | data
+kin | kin
+page | page[s]
+person | people
+sibling | sibling[s]
+status | status[es]
+tag | tag[s]
+
+That’s why I stopped doing something like naming the folder or classes with plural noun:
+
+~~~ .txt
+.\
+ ├── engine\
+ │   ├── kernel\
+ │   │   ├── hook.php
+ │   │   ├── language.php
+ │   │   ├── message.php
+ │   │   ├── page.php
+ │   │   └── …
+ │   ├── plug\
+ │   │   └── …
+ │   ├── ignite.php
+ │   └── fire.php
+ ├── lot\
+ │   ├── asset\
+ │   │   └── …
+ │   ├── cache\
+ │   ├── extend\ 😕
+ │   │   ├── …
+ │   │   └── plugin\
+ │   │       ├── engine\
+ │   │       └── lot\
+ │   │           └── worker\
+ │   │               ├── …
+ │   │               ├── art\
+ │   │               └── markdown\
+ │   ├── language\
+ │   │   ├── …
+ │   │   └── en-us.page
+ │   ├── page\
+ │   │   └── …
+ │   ├── shield\
+ │   │   ├── …
+ │   │   └── document\
+ │   └── state\
+ │       └── config.php
+ ├── .htaccess
+ ├── favicon.ico
+ ├── index.php
+ └── LICENSE
+~~~
+
+[connect:../reference/file]
+
+In the file tree above, you can see that I have an `extend` folder which is still problematic for me. Why? Because _extend_ is actually a verb, not a noun!
+
+Then why don’t you use the word _extension_ from the start?
+
+That thing was a mistake, I think? But, the word _extend_ just stuck in there and looks familiar just the way it is, so maybe I will treat the word _extend_ as a noun in this case, so that we can say _extends_ in place of _extensions_ to represent _a group of extension_?
+
+Or… maybe I can replace the extension folder name with a word that has no meaning at all like _x_ to represent _extension_?
+
+But, but, we already have an automatic constant creation based on the folder name, and [`X`][link:../reference/constant] is already defined as a constant to represent universal placeholder character.
+
+Oh, oh, wait! But it will not redefine itself if it is already defined! So, we can hard–code the `.\lot\x` path value into an `EXTEND` constant. Yes, this is a GOOD idea!
+
+~~~ .txt
+.\
+ ├── engine\
+ └── lot\
+     ├── asset\
+     ├── cache\
+     ├── language\
+     ├── page\
+     ├── shield\
+     ├── state\
+     └── x\ 😍
+~~~
+
+OMG. No.
+
+And then, to overcome the limitation on distinguishing between the plural and singular, I have created the ability to use the thing as a plural or singular thing by using only the singular thing. For example, we can process a single hook or multiple hooks with a single [`Hook`][link:../reference/class/hook] class by detecting the given input whether it is singular or plural:
+
+~~~ .php
+Hook::set('foo', function($content) { … });
+Hook::set(['foo', 'bar', 'baz'], function($content) { … });
+
+Hook::reset('foo');
+Hook::reset(['foo', 'bar', 'baz']);
+
+Hook::fire('foo', $content);
+Hook::fire(['foo', 'bar', 'baz'], $content);
+~~~
+
+So that we can avoid on making the plural class name like this:
+
+~~~ .php
+Hook::set('foo', function($content) { … });
+Hook::reset('foo');
+Hook::fire('foo', $content);
+
+Hooks::set(['foo', 'bar', 'baz'], function($content) { … });
+Hooks::reset(['foo', 'bar', 'baz']);
+Hooks::fire(['foo', 'bar', 'baz'], $content);
+~~~
+
+### Tense
+
+Inspired by the AJAX thing, I divided the commands mostly into three states: present, continuous and past tense. This is what I mean:
+
+Present | Continuous | Past
+------- | ---------- | ----
+back up | backing up | backed up
+close | closing | closed
+create | creating | created
+delete | deleting | deleted
+log in | logging in | logged in
+open | opening | opened
+publish | publishing | published
+save | saving | saved
+send | sending | sent
+update | updating | updated
+
+But, as [the plural and singular things](#reference:plural-and-singular), they are also can’t be standardized. Some of the verb can be suffixed by an _ing_ and _ed_ but some of them can’t. Some of them need to remove the last _e_ and _i_ part just before doing the _ing_ and _ed_ thing. Some of them need to double the last part just before doing the _ing_ and _ed_ thing. Some of them are not a valid language form and thus can’t be appended with the _ing_ and _ed_ things anyway. Words like _backup_ and _login_ are two examples of invalid term, but they are already used globally on the web and actually constructed by two words: _back_·_up_ and _log_·_in_. That’s why we can’t say _backuping_ and _logining_. Instead, we have to say _backing up_ and _logging in_.
+
+But, for the sake of consistency, I have standardized these thing away into a broken English grammar only for the language key. You can then set the proper grammar in the value side. This also applies to the noun. The rules are:
+
+ - Append an _s_ to the key to make the plural version of the noun
+ - Append an _ing_ to the key to make the continuous version of the verb
+ - Append an _ed_ to the key to make the past version of the verb.
+
+~~~ .yaml
+backup: Back Up
+backuping: Backing Up
+backuped: Backed Up
+
+category: Category
+categorys: Categories
+
+child: Child
+childs: Children
+
+close: Close
+closeing: Closing
+closeed: Closed
+
+kin: Kin
+kins: Kin
+
+open: Open
+opening: Opening
+opened: Opened
+
+page: Page
+pages: Pages
+
+save: Save
+saveing: Saving
+saveed: Saved
+
+tag: Tag
+tags: Tags
+~~~
+
+This way, we can easily tell the engine which part is the singular, which part is the plural, or which part is the present command, which part is the continuous command and which part is the past command simply by detecting the end of a string:
+
+~~~ .php
+echo $i . ' ' . $language->{'comment' . ($i === 1 ? "" : 's')};
+~~~
+
+~~~ .php
+echo $language->{'save' . Anemon::alter($status, [
+    1 => 'ing',
+    2 => 'ed'
+], "")};
+~~~

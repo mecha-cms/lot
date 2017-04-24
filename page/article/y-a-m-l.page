@@ -159,7 +159,7 @@ c
 
 #### Data Types
 
-All data types will be converted automatically by [`e`][link:../reference/function#reference:e].
+All data types will be converted automatically by the [`e`][link:../reference/function#reference:e].
 
 ~~~ .yaml
 string: a
@@ -167,7 +167,7 @@ integer: 1
 float: 1.5
 boolean: true
 null: null
-JSON: {"foo":"bar","baz":"qux","integer":"1","boolean":"false"}
+JSON: {"foo":"bar","baz":"qux","string_integer":"1","string_boolean":"false"}
 string_integer: "1"
 string_float: "1.5"
 string_boolean: "true"
@@ -186,8 +186,8 @@ double_quote: "foo\nbar"
   "JSON": {
     "foo": "bar",
     "baz": "qux",
-    "integer": 1,
-    "boolean": false
+    "string_integer": "1",
+    "string_boolean": "false"
   },
   "string_integer": "1",
   "string_float": "1.5",

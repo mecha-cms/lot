@@ -28,6 +28,6 @@ Constant | Description | Example
 `DATE_WISE` | Return the standard PHP date format string. | `Y-m-d H:i:s`
 `FONT_X` | Return font file extensions. | `eot,otf,svg,ttf,woff,woff2`
 `IMAGE_X` | Return image file extensions. | `bmp,cur,gif,ico,jpeg,jpg,png,svg`
-`MEDIA_X` | Return resource file extensions. | `3gp,avi,flv,mov,mp3,mp4,ogg,swf,wav`
+`MEDIA_X` | Return media file extensions. | `3gp,avi,flv,mov,mp3,mp4,ogg,swf,wav`
 `PACKAGE_X` | Return package file extensions. | `gz,iso,rar,tar,zip,zipx`
 `SCRIPT_X` | Return plain text file extensions. | `css,html,js,log,php,txt,xml`

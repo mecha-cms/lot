@@ -2,6 +2,7 @@
 title: Comments
 description: Built–in commenting system.
 dependency: {"extension":["page"]}
+dependency_x: {"plugin":["block-e"]}
 ...
 
 Edit the `page.php` file in your active shield folder then put this snippet after the `</article>` tag:

@@ -1,0 +1,27 @@
+---
+title: Asset Block
+description: Maintainable asset URL in page content.
+...
+
+Using [blocks][link:../reference/extension/block] in place of the base URL will make the asset URL in page content becomes maintainable. So, if another day you want to migrate the asset files to a different domain, you can just replace the block value instead of editing the whole pages to update the old asset URL.
+
+~~~ .php
+// Set a block parser with ID `asset`
+Block::set('asset', function($content) {
+    // Replace `[‌[‌asset‌]‌]` with public asset URL
+    return Block::replace('asset', To::url(ASSET), $content);
+});
+~~~
+
+Usage:
+
+~~~ .yaml
+---
+title: Page Title
+description: Page description.
+author: Taufik Nurrohman
+type: HTML
+...
+
+<img alt="" src="[‌[‌asset‌]‌]/png/image.png" width="50" height="50">
+~~~
