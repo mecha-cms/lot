@@ -49,9 +49,11 @@ re·launch ✔ | re·abort ✘ | ‌
 re·set ✔ | ‌ | re·get ✘
 re·write ✔ | re·erase ✘ | re·read ✔
 
-I can find _reset_ as a single word but not with _unset_:
+I can find _reset_ as a word but not with _unset_:
 
 ![1]([[asset]]/png/article/case-grammar/1.png) ![2]([[asset]]/png/article/case-grammar/2.png)
+
+![3]([[asset]]/png/article/case-grammar/3.png) ![4]([[asset]]/png/article/case-grammar/4.png)
 
 The word _reset_ may can’t represent all of the _delete_ command but at least people can quickly understand with the meaning of _reset_ as _start over_, _back to zero_ or _back to initial_, which can also means _becomes null_, just like the default value of every variable with no values set. We can use, for example, _write_, _erase_ and _read_ if _set_, _reset_ and _get_ seems improper to be used just like what I did for the [`File`][link:../reference/class/file] API.
 
@@ -182,10 +184,10 @@ Hooks::fire(['foo', 'bar', 'baz'], $content);
 
 ### Tense
 
-Inspired by the AJAX thing, I divided the commands mostly into three states: present, continuous and past tense. This is what I mean:
+Inspired by the AJAX thing, I divided the commands mostly into three states: present, present continuous and past tense. This is what I mean:
 
-Present | Continuous | Past
-------- | ---------- | ----
+Present | Present Continuous | Past
+------- | ------------------ | ----
 back up | backing up | backed up
 close | closing | closed
 create | creating | created
@@ -202,7 +204,7 @@ But, as [the plural and singular things](#reference:plural-and-singular), they a
 But, for the sake of consistency, I have standardized these thing away into a broken English grammar only for the language key. You can then set the proper grammar in the value side. This also applies to the noun. The rules are:
 
  - Append an _s_ to the key to make the plural version of the noun
- - Append an _ing_ to the key to make the continuous version of the verb
+ - Append an _ing_ to the key to make the present continuous version of the verb
  - Append an _ed_ to the key to make the past version of the verb.
 
 ~~~ .yaml
@@ -238,7 +240,7 @@ tag: Tag
 tags: Tags
 ~~~
 
-This way, we can easily tell the engine which part is the singular, which part is the plural, or which part is the present command, which part is the continuous command and which part is the past command simply by detecting the end of a string:
+This way, we can easily tell the engine which part is the singular, which part is the plural, or which part is the present command, which part is the present continuous command and which part is the past command simply by detecting the end of a string:
 
 ~~~ .php
 echo $i . ' ' . $language->{'comment' . ($i === 1 ? "" : 's')};
