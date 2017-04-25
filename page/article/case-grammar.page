@@ -7,9 +7,9 @@ I’m really a strict person when talking about the grammar used in the API. Eve
 
 ### Command
 
-My first thought previously was trying to list all commands that possibly can be used globally by the [classes][link:../reference/class]. Then, I thought about the computer commands. In a computer, we have a common API that consists of three or four commands. They are _create_, _update_, _delete_, and _read_. Even, the PHP itself also has some built–in methods like `__set`, `__get`, `__isset` and `__unset`. From that, I can then make an overview of the verbs which possibly can be used as the API:
+My first thought previously was trying to list all commands that possibly can be used globally by the [classes][link:../reference/class]. Then, I thought about the computer commands. In a computer, we have a common API that consists of three or four commands. They are _create_, _update_, _delete_, and _open_. Even, the PHP itself also has some built–in methods like `__set`, `__get`, `__isset` and `__unset`. From that, I can then make an overview of the verbs which possibly can be used as the API:
 
-Create | Delete | Read
+Create | Delete | Open
 ------ | ------ | ----
 ‌ | clear | ‌
 + | - | =
@@ -36,13 +36,13 @@ The next step is choosing the candidate. There are some rules:
  - As short as possible
  - Use single word where possible.
 
-Words like _upload_, _unload_ and _download_ are seemingly be constructed by two words with _load_ as the base command: _up_·_load_, _un_·_load_ and _down_·_load_. So I cancel this option. _add_, _remove_ and _has_ are good, but using _has_ to _read_ something seems improper. So I cancel this option too. _write_, _erase_ and _read_ are good and indeed look very standard for a file-based CMS, but they are not universal. What if we want to use this API for doing like creating or getting an image. We normally does not write and read images, but draw and capture.
+Words like _upload_, _unload_ and _download_ are seemingly be constructed by two words with _load_ as the base command: _up_·_load_, _un_·_load_ and _down_·_load_. So I cancel this option. _add_, _remove_ and _has_ are good, but using _has_ to _open_ something seems improper. So I cancel this option too. _write_, _erase_ and _read_ are good and indeed look very standard for a file-based CMS, but they are not universal. What if we want to use this API for doing like creating or getting an image. We normally does not write and read images, but draw and capture.
 
 I need the universal one, and then decided to use _set_, _unset_ and _get_ because they are the shortest, and can be used as a valid object key.
 
-There is a problem with the _unset_ word. I can’t use that because it is constructed by two words: _un_·_set_. Then I try to choose another alternative and found _reset_. _reset_ also seems to be constructed by two words: _re_·_set_. But I can’t remember that I ever found another words that can be freely combined by the _re_ like these. Even if they can, they are uncommon:
+There is a problem with the _unset_ word. I can’t use that because it is constructed by two words: _un_·_set_. Then I try to choose another alternative and found _reset_. _reset_ also seems to be constructed by two words: _re_·_set_. But I can’t remember that I ever found other words that can be freely combined by the _re_ like these. Even if they can, they are uncommon:
 
-Create | Delete | Read
+Create | Delete | Open
 ------ | ------ | ----
 re·add ✔ | re·remove ✘ | re·has ✘
 re·launch ✔ | re·abort ✘ | ‌
@@ -103,7 +103,7 @@ That’s why I stopped doing something like naming the folder or classes with pl
  │   ├── asset\
  │   │   └── …
  │   ├── cache\
- │   ├── extend\ 😕
+ │   ├── extend\
  │   │   ├── …
  │   │   └── plugin\
  │   │       ├── engine\
@@ -152,7 +152,7 @@ Oh, oh, wait! But it will not redefine itself if it is already defined! So, we c
      ├── page\
      ├── shield\
      ├── state\
-     └── x\ 😍
+     └── x\
 ~~~
 
 OMG. No.
@@ -184,7 +184,7 @@ Hooks::fire(['foo', 'bar', 'baz'], $content);
 
 ### Tense
 
-Inspired by the AJAX thing, I divided the commands mostly into three states: present, present continuous and past tense. This is what I mean:
+Inspired by the AJAX things, I divided the commands mostly into three states: present, present continuous and past tense. This is what I mean:
 
 Present | Present Continuous | Past
 ------- | ------------------ | ----

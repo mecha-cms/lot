@@ -1,0 +1,26 @@
+---
+title: Automatic Keyword Links
+description: Automatically generate list of keyword links based on the current page slug.
+...
+
+This snippet will prepend a list of keyword links on top of your page content, just like [page tags][link:page-tag] but for the search:
+
+~~~ .php
+Hook::set('page.content', function($content, $lot) use($language, $site) {
+    $page = Page::open($lot['path'])->get([
+        'slug' => null,
+        'url' => null
+    ]);
+    $ss = [];
+    if (!empty($page['slug'])) {
+        $url = $site->is === 'page' ? Path::D($page['url']) : $page['url'];
+        foreach (explode('-', $page['slug']) as $v) {
+            $ss[] = HTML::a($v, $url . HTTP::query([$site->q => $v]), false, ['rel' => 'tag']); 
+        }
+    }
+    sort($ss);
+    $s  = '<p><strong>' . $language->{count($ss) === 1 ? 'keyword' : 'keywords'} . ':</strong>';
+    $s .= ' ' . implode(', ', $ss) . '</p>';
+    return $s . $content;
+}, 2.1);
+~~~
