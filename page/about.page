@@ -10,7 +10,7 @@ Mecha is a file–based CMS that survives on the principle that a database–les
 
 Mecha is as simple as files and folders. Yet, this doesn’t mean that Mecha is weak. Mecha has fairly flexible set of [API][link:reference] that you can use without having to make it bloated, keeping you happy focused on developing your own site, according to your personality.
 
-If you want to make something that is super huge with Mecha, it would be possible, but remember that Mecha wasn’t created to replace databases. Mecha is created to help people getting rid of various resources that are not needed from the start (such as databases). There will be times when you need a database, and when that time comes, just use a database. Mecha is fairly open to be extended with other database–based applications.
+If you want to make something that is super huge with Mecha, it would be possible, but remember that Mecha wasn’t created to replace databases. Mecha is created to help people getting rid of various resources that are not needed from the start (such as databases). There will be a time when you need a database, and when that time comes, just use a database. Mecha is fairly open to be extended with other database–based applications.
 
 ### Features
 

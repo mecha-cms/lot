@@ -7,7 +7,7 @@ I’m really a strict person when talking about the grammar used in the API. Eve
 
 ### Command
 
-My first thought previously was trying to list all commands that possibly can be used globally by the [classes][link:../reference/class]. Then, I thought about the computer commands. In a computer, we have a common API that consists of three or four commands. They are _create_, _update_, _delete_, and _open_. Even, the PHP itself also has some built–in methods like `__set`, `__get`, `__isset` and `__unset`. From that, I can then make an overview of the verbs which possibly can be used as the API:
+My first thought previously was trying to list all commands that possibly can be used globally by the [classes][link:../reference/class]. Then, I thought about the computer commands. In a computer, we have common API that consists of three or four commands. They are _create_, _update_, _delete_, and _open_. Even, the PHP itself also has some built–in methods like `__set`, `__get`, `__isset` and `__unset`. From that, I can then make an overview of the verbs which possibly can be used as the API:
 
 Create | Delete | Open
 ------ | ------ | ----
@@ -55,7 +55,7 @@ I can find _reset_ as a word but not with _unset_:
 
 ![3]([[asset]]/png/article/case-grammar/3.png) ![4]([[asset]]/png/article/case-grammar/4.png)
 
-The word _reset_ may can’t represent all of the _delete_ command but at least people can quickly understand with the meaning of _reset_ as _start over_, _back to zero_ or _back to initial_, which can also means _becomes null_, just like the default value of every variable with no values set. We can use, for example, _write_, _erase_ and _read_ if _set_, _reset_ and _get_ seems improper to be used just like what I did for the [`File`][link:../reference/class/file] API.
+The word _reset_ may can’t represent all of the _delete_ command but at least people can quickly understand with the meaning of _reset_ as _start over_, _back to zero_ or _back to initial_, which can also means _becomes null_, just like the default value of every variable with no values set. We can use, for example, _write_, _erase_ and _read_ if _set_, _reset_ and _get_ seem improper to be used just like what I did for the [`File`][link:../reference/class/file] API.
 
 ~~~ .php
 class Common extends Genome {
@@ -134,11 +134,11 @@ In the file tree above, you can see that I have an `extend` folder which is stil
 
 Then why don’t you use the word _extension_ from the start?
 
-That thing was a mistake, I think? But, the word _extend_ just stuck in there and looks familiar just the way it is, so maybe I will treat the word _extend_ as a noun in this case, so that we can say _extends_ in place of _extensions_ to represent _a group of extension_?
+That thing was a mistake, I think? But, the word _extend_ just stuck in there and looks familiar just the way it is, so maybe I will treat the word _extend_ as a noun in this case, so that we can say _extends_ in place of _extensions_ to represent _a group of extensions_?
 
-Or… maybe I can replace the extension folder name with a word that has no meaning at all like _x_ to represent _extension_?
+Or… maybe I can replace the extension folder name with a word that has no meaning at all like _x_ to represents _extension_?
 
-But, but, we already have an automatic constant creation based on the folder name, and [`X`][link:../reference/constant] is already defined as a constant to represent universal placeholder character.
+But, but, we already have an automatic constant creation based on the folder name, and [`X`][link:../reference/constant] is already defined as a constant to represents universal placeholder character.
 
 Oh, oh, wait! But it will not redefine itself if it is already defined! So, we can hard–code the `.\lot\x` path value into an `EXTEND` constant. Yes, this is a GOOD idea!
 
@@ -157,7 +157,7 @@ Oh, oh, wait! But it will not redefine itself if it is already defined! So, we c
 
 OMG. No.
 
-And then, to overcome the limitation on distinguishing between the plural and singular, I have created the ability to use the thing as a plural or singular thing by using only the singular thing. For example, we can process a single hook or multiple hooks with a single [`Hook`][link:../reference/class/hook] class by detecting the given input whether it is singular or plural:
+And, then, to overcome the limitation on distinguishing between the plural and singular, I have created the ability to use the thing as a plural or singular thing by using only the singular thing. For example, we can process single hook or multiple hooks with a single [`Hook`][link:../reference/class/hook] class by detecting the given input whether it is singular or plural:
 
 ~~~ .php
 Hook::set('foo', function($content) { … });
@@ -182,7 +182,7 @@ Hooks::reset(['foo', 'bar', 'baz']);
 Hooks::fire(['foo', 'bar', 'baz'], $content);
 ~~~
 
-### Tense
+### Tenses
 
 Inspired by the AJAX things, I divided the commands mostly into three states: present, present continuous and past tense. This is what I mean:
 
@@ -199,7 +199,7 @@ save | saving | saved
 send | sending | sent
 update | updating | updated
 
-But, as [the plural and singular things](#reference:plural-and-singular), they are also can’t be standardized. Some of the verb can be suffixed by an _ing_ and _ed_ but some of them can’t. Some of them need to remove the last _e_ and _i_ part just before doing the _ing_ and _ed_ thing. Some of them need to double the last part just before doing the _ing_ and _ed_ thing. Some of them are not a valid language form and thus can’t be appended with the _ing_ and _ed_ things anyway. Words like _backup_ and _login_ are two examples of invalid term, but they are already used globally on the web and actually constructed by two words: _back_·_up_ and _log_·_in_. That’s why we can’t say _backuping_ and _logining_. Instead, we have to say _backing up_ and _logging in_.
+But, as [the plural and singular things](#reference:plural-and-singular), they are also can’t be standardized. Some of the verbs can be suffixed by an _ing_ and _ed_ but some of them can’t. Some of them need to remove the last _e_ and _i_ part just before doing the _ing_ and _ed_ thing. Some of them need to double the last part just before doing the _ing_ and _ed_ thing. Some of them are not a valid language form and thus can’t be appended with the _ing_ and _ed_ things anyway. Words like _backup_ and _login_ are two examples of invalid term, but they are already used globally on the web and actually constructed by two words: _back_·_up_ and _log_·_in_. That’s why we can’t say _backuping_ and _logining_. Instead, we have to say _backing up_ and _logging in_.
 
 But, for the sake of consistency, I have standardized these thing away into a broken English grammar only for the language key. You can then set the proper grammar in the value side. This also applies to the noun. The rules are:
 

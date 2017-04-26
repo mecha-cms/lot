@@ -63,7 +63,7 @@ Most of the default data are just an empty string or `null`, which can also be e
 ]
 ~~~
 
-> **Note:** Current file modification time will becomes the page date by default.
+> **Note:** Current file modification time will become the page date by default.
 
 A page file can also has connection with a folder that is located in the same directory level, by setting the folder name with the same name as the page name, without the file extension (the page state).
 

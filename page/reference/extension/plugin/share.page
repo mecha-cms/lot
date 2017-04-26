@@ -1,0 +1,49 @@
+---
+title: Share
+description: Social sharing buttons.
+...
+
+The share counts are taken based on the number of visits to the social sharing links, and not based on the actual social sharing counter value from each service. This means that if you open the sharing link and then decide to cancel it, the counter value will still be incremented and not returned to the previous value.
+
+Add this snippet to the `page.php` file, usually just before the `<footer>` tag:
+
+~~~ .php
+<?php Shield::get('share'); ?>
+~~~
+
+### Customization
+
+The default appearance looks like this:
+
+![1]([[asset]]/png/reference/extension/plugin/share/1.png)
+
+Open `lot\extend\plugin\lot\worker\share\lot\state\config.php` then look at the `style` property:
+
+~~~ .php
+[
+    'path' => 'share/to:',
+    'counter' => true, // Enable sharing counter?
+    'list' => ['facebook', 'twitter', 'google'],
+    'style' => ['color'] // Modify the social sharing button(s) appearance
+]
+~~~
+
+#### Color
+
+Add `color` to the `style` array to colorize the widget.
+
+![2]([[asset]]/png/reference/extension/plugin/share/2.png)
+
+#### Icon
+
+Add `icon` to the `style` array to replace the text widget into a tooltip.
+
+![3]([[asset]]/png/reference/extension/plugin/share/3.png)
+
+#### Round
+
+Add `round` to the `style` array to make the button corner becomes rounded.
+
+![4]([[asset]]/png/reference/extension/plugin/share/4.png)
+
+![5]([[asset]]/png/reference/extension/plugin/share/5.png)
