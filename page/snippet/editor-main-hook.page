@@ -9,14 +9,14 @@ This would maps to the main text editor’s text selection range API that is cre
 
 ~~~ .js
 // `Panel.forms.TE.{$form_id}.{$textarea_name)`
-Panel.forms.TE['form.m.editor'].content;
+Panel.forms.TE['form.m.page'].content;
 ~~~
 
 From that, you can use the available API as described in [this documentation page](https://tovic.github.io/text-editor/text-editor/ui). Example:
 
 ~~~ .js
 // Show a prompt modal
-var editor = Panel.forms.TE['form.m.editor'].content;
+var editor = Panel.forms.TE['form.m.page'].content;
 editor.ui.prompt('What is your name?', "", false, function(e, $, v) {
     $.insert('Your name is: ' + v);
 });

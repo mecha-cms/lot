@@ -5,7 +5,7 @@ description: Social sharing buttons.
 
 The share counts are taken based on the number of visits to the social sharing links, and not based on the actual social sharing counter value from each service. This means that if you open the sharing link and then decide to cancel it, the counter value will still be incremented and not returned to the previous value.
 
-Add this snippet to the `page.php` file, usually just before the `<footer>` tag:
+Add this snippet to the `page.php` file, usually just before the `</article>` tag:
 
 ~~~ .php
 <?php Shield::get('share'); ?>

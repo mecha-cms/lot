@@ -3,7 +3,7 @@ title: How to Update to the Latest Version of Mecha
 description: How to update your site safely.
 ...
 
-There are some folders in the `lot` and `engine` folder, whose the contents will not change:
+There are some folders in the `lot` folder, whose the contents will not change:
 
 **lot:**
 
@@ -11,16 +11,14 @@ There are some folders in the `lot` and `engine` folder, whose the contents will
  - `comment` [^1]
  - `extend`
  - `page`
- - `shield` [^3]
+ - `shield` [^4]
  - `state`
  - `tag` [^2]
-
-**engine:**
-
- - `log`
+ - `user` [^3]
 
 You can change all of the existing files except the contents inside the folders above. Up to whether you want to update the rest of the folders by re–uploading them or by editing each files inside them one by one, or by downloading the static folders I have mentioned above, and then delete the entire site, replace it with the fresh version of Mecha, then put back the downloaded folders to the previous location.
 
 [^1]: [connect:../reference/extension/comment]
 [^2]: [connect:../reference/extension/tag]
-[^3]: Except the `document` shield folder.
+[^3]: [connect:../reference/extension/user]
+[^4]: Except the `document` shield folder.

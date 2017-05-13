@@ -17,3 +17,18 @@ Hook::set('page.images', function($content, $lot) {
     return [];
 });
 ~~~
+
+Extract the first image URL from page content and put them in `$page->image` as string:
+
+~~~ .php
+Hook::set('page.image', function($content, $lot) {
+    $s = Page::open($lot['path'])->get('content');
+    if (!$s || stripos($s, '<img ') === false) {
+        return $content;
+    }
+    if (preg_match('#<img(?: .+?)? src=(["\'])(.*?)\1#i', $s, $m)) {
+        return $m[2];
+    }
+    return $content;
+});
+~~~

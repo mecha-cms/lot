@@ -1,0 +1,69 @@
+---
+title: CKEditor’s SCAYT
+description: How to enable the web spell checker feature in CKEditor extension.
+...
+
+This is how to enable the web spell checker feature in [CKEditor][link:../reference/extension/c-k-editor] extension. Open `lot\extend\c-k-editor\lot\state\config.php` then add `spellchecker` to the default `toolbarGroups` data to insert the tool button:
+
+~~~ .php
+'toolbarGroups' => [
+    [
+        'name' => 'mecha',
+        'groups' => [
+            'styles',
+            'cleanup',
+            'basicstyles',
+            'links',
+            'insert',
+            'blocks',
+            'list',
+            'mode',
+            'undo',
+            'spellchecker' // ← this
+        ]
+    ]
+],
+'height' => '30em',
+…
+~~~
+
+Now load the plugin by adding `scayt` to a configuration property called `extraPlugins`:
+
+~~~ .php
+'toolbarGroups' => [
+    [
+        'name' => 'mecha',
+        'groups' => [
+            'styles',
+            'cleanup',
+            'basicstyles',
+            'links',
+            'insert',
+            'blocks',
+            'list',
+            'mode',
+            'undo',
+            'spellchecker'
+        ]
+    ]
+],
+'extraPlugins' => 'scayt', // ← this
+'height' => '30em',
+…
+~~~
+
+If the property is already there and already contains some plugins, just add it to the list and then separate with a comma:
+
+~~~ .php
+'extraPlugins' => 'foo,bar,baz,scayt'
+~~~
+
+Done.
+
+---
+
+If you have any questions related to this extension, you can write it in the comment form provided in [this page][link:../reference/extension/c-k-editor]. Use [GitHub Gist](https://gist.github.com) service to share your code snippet in the comment, just paste the link. Until I have updated the comment, you can then remove the gist.
+
+### Reference
+
+ - [CKEditor.config – CKEditor 4 Documentation](http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-scayt_autoStartup)

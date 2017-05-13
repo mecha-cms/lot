@@ -24,12 +24,12 @@ Stack | Hook | To | Source
 Stack | Hook | To | Source
 ----- | ---- | -- | ------
 `0` | `fn_block_x` | `*.content` | [link:../reference/extension/block]
+`.9` | `fn_block_replace_e` | `*.content` | [link:../reference/extension/plugin/block-e]
 `1` | `fn_block` | `*.content` | [link:../reference/extension/block]
 `1.9` | `fn_markdown_replace_link` | `*.content` | [link:../reference/extension/plugin/markdown-smart-internal-link]
 `2` | `fn_markdown` | `*.description`, `*.content` | [link:../reference/extension/plugin/markdown]
 `2` | `fn_markdown_span` | `*.title` | [link:../reference/extension/plugin/markdown]
 `3` | `fn_rapic_replace` | `*.content` | [link:../reference/extension/plugin/r-a-p-i-c]
-`fn_block:1` → `9` | `fn_block_replace_e` | `*.content` | [link:../reference/extension/plugin/block-e]
 `fn_block:1` → `10` | `fn_block_replace_url` | `*.content` | [link:../reference/extension/plugin/block-url]
 `fn_block:1` → `10` | `fn_archive_replace_archive` | `*.content` | [link:../reference/extension/plugin/archive]
 `fn_block:1` → `10` | `fn_toc_replace_toc` | `*.content` | [link:../reference/extension/plugin/t-o-c]

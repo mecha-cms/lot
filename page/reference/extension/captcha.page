@@ -194,5 +194,5 @@ As copy and paste captcha:
 As toggle captcha:
 
 ~~~ .php
-<?php echo Form::checkbox('captcha', Captcha::token(), false, 'I am not a robot.'); ?>
+<?php echo Form::checkbox('captcha', Captcha::token('foo', null, false), false, 'I am not a robot.'); ?>
 ~~~

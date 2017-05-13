@@ -166,8 +166,8 @@ Hook::set(['foo', 'bar', 'baz'], function($content) { … });
 Hook::reset('foo');
 Hook::reset(['foo', 'bar', 'baz']);
 
-Hook::fire('foo', $content);
-Hook::fire(['foo', 'bar', 'baz'], $content);
+Hook::fire('foo', [$content]);
+Hook::fire(['foo', 'bar', 'baz'], [$content]);
 ~~~
 
 So that we can avoid on making the plural class name like this:
@@ -175,11 +175,11 @@ So that we can avoid on making the plural class name like this:
 ~~~ .php
 Hook::set('foo', function($content) { … });
 Hook::reset('foo');
-Hook::fire('foo', $content);
+Hook::fire('foo', [$content]);
 
 Hooks::set(['foo', 'bar', 'baz'], function($content) { … });
 Hooks::reset(['foo', 'bar', 'baz']);
-Hooks::fire(['foo', 'bar', 'baz'], $content);
+Hooks::fire(['foo', 'bar', 'baz'], [$content]);
 ~~~
 
 ### Tenses

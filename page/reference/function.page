@@ -66,6 +66,22 @@ __is_anemon__($x);
 
 Return `true` if `$x` is array or object.
 
+### Is Numeric Anemon
+
+~~~ .xmp.php
+__is_anemon_0__($x);
+~~~
+
+Return `true` if the encoded JSON version of `$x` starts with `[` and ends with `]` (a JavaScript array).
+
+### Is Associative Anemon
+
+~~~ .xmp.php
+__is_anemon_a__($x);
+~~~
+
+Return `true` if the encoded JSON version of `$x` starts with `{` and ends with `}` (a JavaScript object).
+
 ### Is Instance
 
 ~~~ .xmp.php

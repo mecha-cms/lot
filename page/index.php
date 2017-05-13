@@ -5,7 +5,7 @@ Hook::set('page.content', function($content) {
         return $content;
     }
     return str_replace('[connect:', '**Related:** [link:', $content);
-}, .8);
+}, 1.8);
 
 if (Extend::exist('block')) {
     // add `[[asset]]` block
