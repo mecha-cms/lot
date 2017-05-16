@@ -28,7 +28,7 @@ Shield::get('poll', [
 
 ### Usage
 
-Put this snippet in your `page.php` file to add a vote up/down feature on your page. Usually just before the `</footer>` tag:
+Put this snippet in your `page.php` file to add a [vote up/down feature](#reference:vote) on your page. Usually just before the `</footer>` tag:
 
 ~~~ .php
 <?php Shield::get('poll/vote'); ?>
@@ -57,7 +57,7 @@ Shield::get('poll/love');
 ![3]([[asset]]/png/reference/extension/poll/3.png)
 
 ~~~ .php
-Shield::get('poll/reaction');
+Shield::get('poll/react');
 ~~~
 
 #### Response
@@ -65,7 +65,7 @@ Shield::get('poll/reaction');
 ![4]([[asset]]/png/reference/extension/poll/4.png)
 
 ~~~ .php
-Shield::get('poll/response', [
+Shield::get('poll/respond', [
     'q' => 'Was this article helpful?',
     'a' => ['Yes', 'No']
 ]);
@@ -82,7 +82,7 @@ Shield::get('poll/vote');
 #### Custom
 
 ~~~ .php
-Shield::get('poll/response', [
+Shield::get('poll/respond', [
     'q' => 'Is throwing your hair in the garbage safe?',
     'h' => 'I wanted to be sure because in biology we learned that it had DNA and stuff so is it safe?',
     'a' => [

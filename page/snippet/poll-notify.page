@@ -1,0 +1,38 @@
+---
+title: Poll Notification
+description: Send email notification on every user interaction to the poll widget.
+...
+
+Requires [poll][link:../reference/extension/poll] extension.
+
+~~~ .php
+Hook::set([
+    'on.poll.set',
+    'on.poll.reset'
+], function($key, $value, $data, $path, $request) {
+    if ($path = File::exist([
+        LOT . DS . $path . '.page',
+        LOT . DS . $path . '.archive'
+    ])) {
+        $a = new Page($path);
+        $a = HTML::a($a->title, $a->url);
+        $u = '<strong>' . Get::ip() . '</strong>';
+        $k = '<em>' . (isset($request['title']) ? $request['title'] : $key) . '</em>';
+        $from = 'user@from.com'; // site email address
+        $to = 'user@to.com'; // your email address
+        $subject = 'Poll Notification';
+        if (isset($request['value'])) {
+            if ($request['value'] === 1) {
+                $message = '<p>Poll value of ' . $k . ' was increased by ' . $u . '.</p>';
+            } else {
+                $message = '<p>' . $u . ' was cancelled the poll.</p>';
+            }
+            $message .= '<p><strong>Page:</strong> ' . $a . '</p>';
+            Message::send($from, $to, $subject, $message);
+        }
+    }
+    return $key;
+});
+~~~
+
+Replace `$from` and `$to` value with valid email addresses.
