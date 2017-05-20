@@ -21,7 +21,6 @@ Constant | Description | Example
 `PAGE` | Return the page folder path. | `.\www\lot\page`
 `SHIELD` | Return the shield folder path. | `.\www\lot\shield`
 `STATE` | Return the state folder path. | `.\www\lot\state`
-`USER` | Return the user folder path. | `.\www\lot\user`
 `PLUGIN` | Return the plugin folder path. | `.\www\lot\extend\plugin\lot\worker`
 `HTML_WISE_I` | Return inline HTML tag names allowed to be written in the page editor. | `b,code,i,u`
 `HTML_WISE_B` | Return block HTML tag names allowed to be written in the page editor. | `h1,h2,h3,h4,h5,h6,p`
