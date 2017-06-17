@@ -1,0 +1,26 @@
+---
+title: Default Page Data
+description: These page data will have their own default values.
+...
+
+I have updated the [`Page`][link:../reference/class/page] class recently so that now we can have more meaningful default page data.
+
+### Time
+
+The engine will first search for a hard–coded `time` data from the page file to be used. If it doesn’t exist, then it uses the page’s file modification time as the page time. But, if the page’s file name itself is formatted as a timestamp–like format, then the engine will try to parse the page’s file name into a valid `time` data. So now you can set a file name as `2017-04-21-14-25-02.page` to set the `time` data to `2017-04-21 14:25:02` or `2017-04-21.page` to set the `time` data to `2017-04-21 00:00:00`. If there is no `title` field provided in the page file, the `title` data will be set to `2017/04/21 02:25:02 PM` for the first example and `2017/04/21 12:00:00 AM` for the second example.
+
+### Title
+
+You can now create a page file without the `title` field but still can have it included to the page output. It is a [fake title][link:../reference/class/to#reference:title] that is generated from the page’s file name.
+
+### Description
+
+Exception for this. There are no plan for making the fake `description` data which is —you guess— created from the page’s `content` data. Consider to use the [excerpt][link:../reference/extension/plugin/excerpt] plugin instead.
+
+### URL
+
+The default `url` value will use the file path that is converted into a public URL by the [`To::url()`][link:../reference/class/to#reference:u-r-l] method.
+
+### ID
+
+The default `id` value will use the `time` value that is converted into _Unix_ time format as string.

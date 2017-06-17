@@ -1,0 +1,24 @@
+---
+title: Image Property
+description: Add `image` and `images` property to the page output.
+...
+
+This plugin adds `image` and `images` property to the current page output. The `image` property will contain the first image URL found in the current page content, and the `images` property will contain list of images URL found in the current page content.
+
+This plugin will skip the parsing process if you set `image` and `images` property explicitly to the page header.
+
+### Usage
+
+Show the first image URL in `pages.php` as the post thumbnail:
+
+~~~ .html.php
+<?php foreach ($pages as $page): ?>
+<article>
+  <?php if ($page->image): ?>
+  <?php echo HTML::img($page->image); ?>
+  <?php else: ?>
+  <?php echo HTML::img('no-image.png'); ?>
+  <?php endif; ?>
+</article>
+<?php endforeach; ?>
+~~~

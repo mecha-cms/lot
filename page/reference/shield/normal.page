@@ -17,6 +17,7 @@ This is the default shield used by Mecha version `1.x.x`.
  - Manual [post excerpt][link:../../snippet/field-excerpt-manual] (requires you to insert `<!-- cut -->` in the post content)
  - Formats:
    - HTML
+   - Log
    - Markdown
    - Quote
  - Widgets:

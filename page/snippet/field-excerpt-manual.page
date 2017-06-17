@@ -43,3 +43,5 @@ To show the manual post excerpt in your shield:
 ~~~ .php
 echo $page->excerpt;
 ~~~
+
+> **Info:** The plugin version of this snippet is now available as [excerpt][link:../reference/extension/plugin/excerpt] plugin.

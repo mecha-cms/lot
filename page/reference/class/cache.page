@@ -1,0 +1,83 @@
+---
+title: Class `Cache`
+description: Generate static data from a file.
+...
+
+### Set
+
+~~~ .php.xmp
+Cache::set($from, $content = null, $id = null);
+~~~
+
+> **Note:** If `$content` is defined, then the cache content will be set based on that value instead of the `$from` file content.
+
+### Get
+
+~~~ .php.xmp
+Cache::get($from, $fail = false);
+~~~
+
+Get static data of `path\to\file.php` file:
+
+~~~ .php
+$cache = Cache::get('path\to\file.php');
+~~~
+
+Example content of `path\to\file.php` file:
+
+~~~ .php
+<?php
+
+return (array) $_SERVER;
+~~~
+
+### Reset
+
+~~~ .php.xmp
+Cache::reset($from = null);
+~~~
+
+Delete cache file of `path\to\file.php`:
+
+~~~ .php
+Cache::reset('path\to\file.php');
+~~~
+
+Delete all cache:
+
+~~~ .php
+Cache::reset();
+~~~
+
+### Expire
+
+~~~ .php.xmp
+Cache::expire($from, $id = null);
+~~~
+
+Check if cache file of `path\to\file.php` already expired:
+
+~~~ .php
+if (Cache::expire('path\to\file.php')) {
+    // expired!
+}
+~~~
+
+### ID
+
+~~~ .php.xmp
+Cache::id($from, $fail = -1);
+~~~
+
+Get cache ID of `path\to\file.php`:
+
+~~~ .php
+$id = Cache::id('path\to\file.php');
+~~~
+
+~~~ .php
+$hash = md5(file_get_contents('path\to\file.php'));
+if (is_string($id) && $id !== $hash || $id < File::T('path\to\file.php')) {
+    // expired!
+}
+~~~
