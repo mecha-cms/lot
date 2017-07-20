@@ -1,0 +1,40 @@
+---
+title: Container
+description: Container API.
+...
+
+Wrap the whole container with a `<form>` element:
+
+~~~ .php
+Config::set('panel.c:f', 'f_name');
+~~~
+
+Result:
+
+~~~ .html
+<div class="c">
+  <form id="form.c.f_name" action="" method="post" enctype="multipart/form-data">
+    <main class="m">
+      …
+    </main>
+  </form>
+</div>
+~~~
+
+Wrap the main area with a `<form>` element:
+
+~~~ .php
+Config::set('panel.m:f', 'f_name');
+~~~
+
+Result:
+
+~~~ .html
+<div class="c">
+  <main class="m">
+    <form id="form.m.f_name" action="" method="post" enctype="multipart/form-data">
+      …
+    </form>
+  </main>
+</div>
+~~~

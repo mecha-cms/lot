@@ -6,7 +6,7 @@ description: The available constants.
 Constant | Description | Example
 -------- | ----------- | -------
 `DS` | Return the directory separator. | `\`
-`ROOT` | Return the private file path without the trailing directory separator | `.\www`
+`ROOT` | Return the private root path without the trailing directory separator. | `.\www`
 `DENT` | Return the standard indentation characters of HTML page. | <mark><code>&nbsp;&nbsp;</code></mark>
 `T` | Return a tab character. | `\t`
 `N` | Return a new line character. | `\n`

@@ -893,7 +893,7 @@ bar
 bar
 ~~~
 
-Array keys prefixed by a `_` will be ignored by default:
+Array with `null` value and array with keys prefixed by a `_` will be ignored by default:
 
 ~~~ .php
 $test = new Anemon([

@@ -1,22 +1,23 @@
 ---
-title: Main Editor API
+title: Main Text Editor API
 description: Accessing the main text editor’s text selection range API.
 ...
 
 Requires [text editor][link:../reference/extension/text-editor] extension.
 
-This would maps to the main text editor’s text selection range API that is created by the text editor extension:
+This would maps to the main text editor’s text selection range API in the _page_ manager that is created by the text editor extension:
 
 ~~~ .js
-// `PANEL.forms.TE.{$form_id}.{$textarea_name)`
-PANEL.forms.TE['form.m.editor'].content;
+// `$form_id = 'form.c.' . $id`
+// `PANEL.forms.TE.{$form_id}.{$textarea_name}`
+PANEL.forms.TE['form.c.page'].content;
 ~~~
 
 From that, you can use the available API as described in [this documentation page](https://tovic.github.io/text-editor/text-editor/ui). Example:
 
 ~~~ .js
 // Show a prompt modal
-var editor = PANEL.forms.TE['form.m.editor'].content;
+var editor = PANEL.forms.TE['form.c.page'].content;
 editor.ui.prompt('What is your name?', "", false, function(e, $, v) {
     $.insert('Your name is: ' + v);
 });

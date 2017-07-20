@@ -92,7 +92,7 @@ You can also add the post format support by customizing the `page.php` file inst
 If you have [panel][link:../reference/extension/panel] extension installed, you can also insert this snippet to enable _Quote_ option in the _Type_ field:
 
 ~~~ .php
-Config::set('panel.f.page.types.Quote', 'Quote');
+Config::set('panel.o.page.type.Quote', 'Quote');
 ~~~
 
 ![1]([[asset]]/png/article/page-format.png)

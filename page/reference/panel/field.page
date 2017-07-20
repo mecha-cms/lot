@@ -1,0 +1,445 @@
+---
+title: Fields
+description: Field API.
+...
+
+Syntax:
+
+~~~ .php.xmp
+Config::set('panel.f', [ … ]);
+~~~
+
+~~~ .php.xmp
+[
+    'title' => [
+        'type' => 'text',
+        'value' => 'Title Field',
+        …
+    ],
+    'url' => [
+        'type' => 'url',
+        'value' => '[[url]]',
+        …
+    ],
+    …
+]
+~~~
+
+Result:
+
+~~~ .html
+<p class="f f-title">
+  <label for="f-title">Title</label>
+  <span>
+    <input name="title" type="text" value="Title Field" class="input" id="f-title">
+  </span>
+</p>
+<p class="f f-url">
+  <label for="f-url">URL</label>
+  <span>
+    <input name="url" type="url" value="[[url]]" class="input" id="f-url">
+  </span>
+</p>
+~~~
+
+---
+
+### Title
+
+Determine the field’s title:
+
+~~~ .php
+[
+    'title' => 'Content'
+]
+~~~
+
+> **Note:** If `title` property is not set, the parser will try to find a language property that has the same key name as the field’s `name` property, otherwise, it will return the field’s `name`.
+
+### Description
+
+Determine the field’s description or hint:
+
+~~~ .php
+[
+    'description' => 'e.g. @user'
+]
+~~~
+
+### Key
+
+Determine custom key to be used for HTML class/ID prefix if the `name` data is written in a complicated form like: `page[date][unix]`
+
+~~~ .php
+'page[date][unix]' => [
+    'key' => 'page'
+]
+~~~
+
+Result:
+
+~~~ .html
+<p class="f f-page">
+  <label for="f-page">Page</label>
+  <span>
+    <textarea name="page[date][unix]" class="textarea" id="f-page"></textarea>
+  </span>
+</p>
+~~~
+
+### Type
+
+Determine the field type (default is `textarea`):
+
+ - `button`
+ - `button[]`
+ - `color`
+ - `content`
+ - `date`
+ - `editor`
+ - `email`
+ - `file`
+ - `hidden`
+ - `number`
+ - `pass(?:word)?`
+ - `query`
+ - `range`
+ - `reset`
+ - `reset[]`
+ - `search`
+ - `select`
+ - `select[]`
+ - `submit`
+ - `submit[]`
+ - `tel`
+ - `text`
+ - `textarea`
+ - `toggle`
+ - `toggle[]`
+ - `url`
+
+#### Button
+
+#### Color
+
+#### Content
+
+#### Date
+
+#### Editor
+
+#### Email
+
+#### File
+
+#### Hidden
+
+#### Number
+
+#### Pass
+
+#### Query
+
+#### Range
+
+#### Reset
+
+#### Search
+
+#### Select
+
+#### Submit
+
+#### Tel
+
+#### Text
+
+#### Text Area
+
+#### Toggle
+
+#### URL
+
+### Value
+
+Determine the field’s value:
+
+~~~ .php
+[
+    'value' => '4'
+]
+~~~
+
+### Values
+
+Determine the field’s values (result depends on the field type):
+
+For field type `select`, `values` property will be used as the option list:
+
+~~~ .php
+[
+    'type' => 'select',
+    'value' => 'red', // selected value
+    'values' => [ // option(s)
+        'red' => 'Red',
+        'green' => 'Green',
+        'blue' => 'Blue'
+    ]
+]
+~~~
+
+For field type `toggle[]`, `values` property will be used as the option list:
+
+~~~ .php
+[
+    'type' => 'toggle[]',
+    'value' => 'red', // selected value
+    'values' => [ // option(s)
+        'red' => 'Red',
+        'green' => 'Green',
+        'blue' => 'Blue'
+    ]
+]
+~~~
+
+For field type `button[]`, `reset[]` and `submit[]`, `values` property will be used as the button list; `value` property is not required for this field type:
+
+~~~ .php
+[
+    'type' => 'submit[]',
+    'values' => [ // button(s)
+        'red' => 'Red',
+        'green' => 'Green',
+        'blue' => 'Blue'
+    ]
+]
+~~~
+
+### Order
+
+Custom order for the `values` data of field type `(?:button|reset|submit)\[\]`:
+
+~~~ .php
+[
+    'type' => 'submit[]',
+    'values' => [
+        'red' => 'Red',
+        'green' => 'Green',
+        'blue' => 'Blue'
+    ],
+    'order' => ['blue', 'red', 'green']
+]
+~~~
+
+### Placeholder
+
+Determine the field placeholder:
+
+~~~ .php
+[
+    'placeholder' => 'Content goes here…'
+]
+~~~
+
+### Pattern
+
+Determine the field pattern:
+
+~~~ .php
+[
+    'pattern' => '^[a-z\\d]+$',
+    'description' => 'Letters and numbers only.'
+]
+~~~
+
+### Range
+
+Determine the minimum and maximum range for field type `range`:
+
+~~~ .php
+[
+    'type' => 'range',
+    'value' => 4,
+    'range' => [0, 10]
+]
+~~~
+
+### Step
+
+Determine the `step` property for field type `range`:
+
+~~~ .php
+[
+    'type' => 'range',
+    'value' => 4,
+    'range' => [0, 10],
+    'step' => 2
+]
+~~~
+
+### Union
+
+Arguments for [`Union::__construct()->unite()`][link:../../reference/class/union#reference:unite].
+
+~~~ .php
+'description' => [
+    'type' => 'textarea',
+    'union' => ['div']
+]
+~~~
+
+Result:
+
+~~~ .html
+<div class="f f-description p">
+  …
+</div>
+~~~
+
+### If
+
+Boolean to indicate that the field should be generated. This is a shortcut for `{is.visible}` and `!{is.hidden}`:
+
+~~~ .php
+[
+    'if' => $site->type !== '404'
+]
+~~~
+
+### Is
+
+Conditional statements.
+
+#### Block
+
+Determine if the field element should be expanded 100% wide of the current grid:
+
+~~~ .php
+'description' => [
+    'type' => 'text',
+    'is' => [
+        'block' => true
+    ]
+]
+~~~
+
+Result:
+
+~~~ .html
+<p class="f f-description">
+  <label for="f-description">Description</label>
+  <span>
+    <inpuy name="description" type="text" class="input block">
+  </span>
+</p>
+~~~
+
+#### Expand
+
+Will expand the `<textarea>` element vertically for field type `textarea` or `editor`:
+
+~~~ .php
+'description' => [
+    'type' => 'textarea',
+    'is' => [
+        'expand' => true
+    ]
+]
+~~~
+
+Result:
+
+~~~ .html
+<p class="f f-description">
+  <label for="f-description">Description</label>
+  <span>
+    <textarea name="description" class="textarea block expand"></textarea>
+  </span>
+</p>
+~~~
+
+#### Hidden
+
+Boolean to indicate that the field should not be generated:
+
+~~~ .php
+[
+    'is' => [
+        'hidden' => $site->type === '404'
+    ]
+]
+~~~
+
+#### Visible
+
+Boolean to indicate that the field should be generated:
+
+~~~ .php
+[
+    'is' => [
+        'visible' => $site->type !== '404'
+    ]
+]
+~~~
+
+### Attributes
+
+Extra HTML attributes for the field markup:
+
+~~~ .php
+[
+    'attributes' => [
+        'rel' => 'nofollow',
+        'target' => '_blank',
+        'data' => [
+            'user' => '@user'
+        ],
+        'css' => [
+            'color' => '#f00',
+            'border' => '1px solid #000'
+        ]
+    ]
+]
+~~~
+
+### Expand
+
+Will hide the field label and expand the field element to be 100% wide of the current parent:
+
+~~~ .php
+'description' => [
+    'expand' => true
+]
+~~~
+
+Result:
+
+~~~ .html
+<p class="f f-description expand">
+  <label for="f-description">Description</label>
+  <span>
+    <textarea name="description" class="textarea block"></textarea>
+  </span>
+</p>
+~~~
+
+### Stack
+
+Field order in the set. This is required. If not set or has value other than numbers, the field will not be generated:
+
+~~~ .php
+[
+    'a' => [
+        'title' => 'Field A',
+        'stack' => 3
+    ],
+    'b' => [
+        'title' => 'Field B',
+        'stack' => 1
+    ],
+    'c' => [
+        'title' => 'Field C',
+        'stack' => 2
+    ]
+]
+~~~

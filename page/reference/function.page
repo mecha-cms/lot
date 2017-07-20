@@ -109,7 +109,7 @@ Return `true` if `$x` is a serialized string.
 ### Class to File
 
 ~~~ .xmp.php
-__c2f__($x);
+__c2f__($x, $s = '-');
 ~~~
 
 Convert class name into file name:
@@ -127,7 +127,7 @@ $test = 'foo.bar.baz-qux.abc.a-b-c';
 ### File to Class
 
 ~~~ .xmp.php
-__f2c__($x);
+__f2c__($x, $s = '-');
 ~~~
 
 Convert file name into class name:
