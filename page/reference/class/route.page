@@ -174,10 +174,10 @@ Execute specific route with pre–defined value:
 Route::fire('blog/%s%/%i%', ['archive', 4]);
 ~~~
 
-### Hook
+### Lot
 
 ~~~ .xmp.php
-Route::hook($id, $fn = null, $stack = null, $pattern = false);
+Route::lot($id, $fn = null, $stack = null, $pattern = false);
 ~~~
 
 Set custom actions before `blog/%s%` route execution:
@@ -187,19 +187,19 @@ function my_route_hook_fn($slug = "") {
     $_POST['foo'] = 'bar';
 }
 
-Route::hook('blog/%s%', 'my_hook_fn');
+Route::lot('blog/%s%', 'my_hook_fn');
 ~~~
 
 > **Note:** Default `$stack` value is `10`.
 
-### Hooked
+### Contain
 
 ~~~ .xmp.php
-Route::hooked($id = null, $stack = null | $fn = null, $fail = false);
+Route::contain($id = null, $stack = null | $fn = null, $fail = false);
 ~~~
 
 Check whether `my_route_hook_fn` already hooked to the `blog/%s%` route:
 
 ~~~ .php
-if (Route::hooked('blog/%s%', 'my_route_hook_fn')) { … }
+if (Route::contain('blog/%s%', 'my_route_hook_fn')) { … }
 ~~~

@@ -1,6 +1,9 @@
 <?php
 
 Hook::set('page.content', function($content, $lot) {
+    if (!isset($lot['path']) || strpos($lot['path'], PAGE) !== 0) {
+        return $content;
+    }
     global $url;
     $b = Path::B($url->path);
     $NS = 'shield';

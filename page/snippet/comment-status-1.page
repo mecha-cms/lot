@@ -14,7 +14,7 @@ if (Route::is('%*%/' . Extend::state('comment', 'path', '-comment')) && Request:
 }
 ~~~
 
-Then you can add this CSS to style the site author’s comments of the default `comments.php` template:
+Then you can add this CSS to style the site author’s comments based on the default `comments.php` template:
 
 ~~~ .css
 .comment-status\:1 {

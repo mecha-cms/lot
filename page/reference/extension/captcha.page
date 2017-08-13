@@ -1,6 +1,7 @@
 ---
 title: Captcha
 description: Form protection using captcha.
+dependency: {"extension":["asset"]}
 ...
 
 ### Usage

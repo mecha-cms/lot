@@ -6,7 +6,13 @@ description: Persistent storage using cookies.
 ### Set
 
 ~~~ .xmp.php
-Cookie::set($key, $value = "", $config = [] | $expire);
+Cookie::set($key, $value = "", $config = [
+    'expire' => 1,
+    'path' => '/',
+    'domain' => "",
+    'secure' => false,
+    'http_only' => false
+] | $expire);
 ~~~
 
 Set a cookie:
@@ -23,7 +29,7 @@ Cookie::set('my_cookie', 'the value', [
     'path' => '/',
     'domain' => "",
     'secure' => false,
-    'http_only' => false
+    'http_only' => true // not available in `document.cookie`
 ]);
 ~~~
 

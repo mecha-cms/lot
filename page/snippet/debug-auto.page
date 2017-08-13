@@ -1,0 +1,8 @@
+---
+title: Automatic Debug Mode
+description: Set `DEBUG` mode to `true` if offline, `false` if online.
+...
+
+~~~ .php
+define('DEBUG', $_SERVER['HTTP_HOST'] === 'localhost');
+~~~

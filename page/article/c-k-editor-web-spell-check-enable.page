@@ -3,25 +3,18 @@ title: CKEditor’s SCAYT
 description: How to enable the web spell checker feature in CKEditor extension.
 ...
 
-This is how to enable the web spell checker feature in [CKEditor][link:../reference/extension/c-k-editor] extension. Open `lot\extend\c-k-editor\lot\state\config.php` then add `spellchecker` to the default `toolbarGroups` data to insert the tool button:
+First, download the package [here](http://ckeditor.com/addon/scayt), then put the `scayt` foder to `lot\extend\c-k-editor\lot\worker\ckeditor\plugins`.
+
+Open `lot\extend\c-k-editor\lot\state\config.php` then add `Scayt` to the default `toolbar` data to insert the tool button:
 
 ~~~ .php
-'toolbarGroups' => [
-    [
-        'name' => 'mecha',
-        'groups' => [
-            'styles',
-            'cleanup',
-            'basicstyles',
-            'links',
-            'insert',
-            'blocks',
-            'list',
-            'mode',
-            'undo',
-            'spellchecker' // ← this
-        ]
-    ]
+'toolbar' => [
+    ['Undo', 'Redo'],
+    ['Bold', 'Italic', 'Underline', 'RemoveFormat'],
+    ['SpecialChar', 'Link', 'Image', 'Table', 'HorizontalRule'],
+    ['NumberedList', 'BulletedList', 'Blockquote', 'Indent', 'Outdent'],
+    ['Styles'],
+    ['Scayt'] // ← this
 ],
 'height' => '30em',
 …
@@ -30,23 +23,7 @@ This is how to enable the web spell checker feature in [CKEditor][link:../refere
 Now load the plugin by adding `scayt` to a configuration property called `extraPlugins`:
 
 ~~~ .php
-'toolbarGroups' => [
-    [
-        'name' => 'mecha',
-        'groups' => [
-            'styles',
-            'cleanup',
-            'basicstyles',
-            'links',
-            'insert',
-            'blocks',
-            'list',
-            'mode',
-            'undo',
-            'spellchecker'
-        ]
-    ]
-],
+'toolbar' => [ … ],
 'extraPlugins' => 'scayt', // ← this
 'height' => '30em',
 …

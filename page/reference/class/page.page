@@ -145,32 +145,41 @@ type: HTML
 ### Apart
 
 ~~~ .xmp.php
-Page::apart($input);
+Page::apart($input, $key = null, $fail = null);
 ~~~
 
 Convert page file content into array:
 
 ~~~ .php
-$test = Page::apart('---
+$input = '---
 title: Page Title
 description: Page description.
 author: Taufik Nurrohman
 type: HTML
+status: 1
 ...
 
-<p>Page content.</p>');
+<p>Page content.</p>';
+
+$test_1 = Page::apart($input);
+$test_2 = Page::apart($input, 'type');
 ~~~
 
 Result:
 
 ~~~ .php
-$test = [
+$test_1 = [
     'title' => 'Page Title',
     'description' => 'Page description.',
     'author' => 'Taufik Nurrohman',
     'type' => 'HTML',
+    'status' => '1', // a string
     'content' => '<p>Page content.</p>'
 ];
+~~~
+
+~~~ .php
+$test_2 = 'HTML';
 ~~~
 
 ---

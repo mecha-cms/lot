@@ -45,10 +45,14 @@ Shortcut:
 include File::exist('header.php', 'header.legacy.php');
 ~~~
 
-Loop through list of file path until it finds a file that is exists:
+Loop through list of file path until it finds a file that exists:
 
 ~~~ .php
-if ($test = File::exist(['page-post-2016.php', 'page-post.php', 'page.php'], false)) {
+if ($test = File::exist([
+    'page-post-2016.php',
+    'page-post.php',
+    'page.php'
+], false)) {
     echo $test . ' does exist.';
 } else {
     echo $test . ' is now `false`.';
@@ -82,7 +86,8 @@ $test_1 = [
     'is' => [
         'hidden' => false,
         'file' => true,
-        'folder' => false
+        'files' => false,
+        'folder' => false // alias for `files`
     ],
     '_update' => 1403355917,
     '_size' => 21114
@@ -100,7 +105,7 @@ $test_3 = false;
 ### Explore
 
 ~~~ .xmp.php
-File::explore($folder = ROOT, $deep = false, $flat = false, $fail = false);
+File::explore($folder = ROOT, $deep = false, $flat = false, $fail = []);
 ~~~
 
 Options:
@@ -365,6 +370,10 @@ File::open('path\to\file.txt')->write('test!')->save(0600);
 ~~~
 
 ### Upload
+
+~~~ .php.xmp
+File::upload($f, $path = ROOT, $fn = null, $fail = false, $c = []);
+~~~
 
 Upload a file:
 

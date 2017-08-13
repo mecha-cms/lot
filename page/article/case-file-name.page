@@ -55,7 +55,7 @@ page.php
 
 ### Hidden
 
-Prefix a file name with a `.` or a `_` characters to represent a hidden file:
+Prefix a file name with a `.` or a `_` character to represent a hidden file:
 
 ~~~ .txt
 .foo-bar.txt

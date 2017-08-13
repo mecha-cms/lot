@@ -81,6 +81,7 @@ echo $page->bar;
 > To call the custom fields:
 >
 > ~~~ .php
+> $page->fields = (object) $page->fields;
 > echo $page->fields->foo;
 > echo $page->fields->bar;
 > ~~~
@@ -271,9 +272,7 @@ lot\
      └── article\
          └── page-slug\
              ├── 2014-05-05-09-09-32\
-             │   ├── 2014-05-05-09-09-32\
-             │   │   └── parent.data
-             │   └── 2014-05-05-09-09-32.page
+             │   └── parent.data
              ├── 2014-05-04-06-04-22.page
              └── 2014-05-05-09-09-32.page
 ~~~

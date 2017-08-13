@@ -95,4 +95,13 @@ If you have [panel][link:../reference/extension/panel] extension installed, you 
 Config::set('panel.o.page.type.Quote', 'Quote');
 ~~~
 
+Or, add a `Quote` property to the `o_type` language item:
+
+~~~ .yaml
+o_type:
+  HTML: HTML
+  Markdown: Markdown
+  Quote: Quote # ← this
+~~~
+
 ![1]([[asset]]/png/article/page-format.png)

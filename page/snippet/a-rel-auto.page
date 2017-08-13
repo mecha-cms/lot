@@ -1,0 +1,56 @@
+---
+title: Detect External Links
+description: External links checker for `HTML` page type.
+...
+
+Automatically add `rel="nofollow"` and `target="_new"` attribute to the external links in page description and content. You don’t need this snippet if you are using [Markdown][link:../reference/extension/plugin/markdown].
+
+~~~ .php
+Hook::set([
+    'page.description',
+    'page.content'
+], function($content, $lot = []) use($url) {
+    // Page type is not set or has value other than “HTML”, skip!
+    if (!isset($lot['type']) || $lot['type'] !== 'HTML') {
+        return $content;
+    }
+    // No anchor(s) found, skip!
+    if (strpos($content, '</a>') === false) {
+        return $content;
+    }
+    // Get anchor element(s) from page content…
+    $union = new Union;
+    return preg_replace_callback('#<a(?:\s[^<>]*?)?>(?:[\s\S]*?)</a>#', function($m) use($union, $url) {
+        $a = $union->apart($m[0]);
+        // No `href` attribute, skip!
+        if (!isset($a[2]['href'])) {
+            return $m[0];
+        }
+        // Check for external link(s)…
+        // Based on <https://github.com/tovic/parsedown-extra-plugin>
+        $href = $a[2]['href'];
+        $if = strpos($href, 'https://' . $url->host) === 0 ||
+              strpos($href, 'http://' . $url->host) === 0 ||
+              strpos($href, '/') === 0 ||
+              strpos($href, '?') === 0 ||
+              strpos($href, '#') === 0 ||
+              strpos($href, 'javascript:') === 0 ||
+              strpos($href, '.') === 0 ||
+              strpos($href, '://') === false;
+        // Double check for relative protocol…
+        if (strpos($href, '//') === 0 && strpos($href, '//' . $url->host) !== 0) {
+            $if = false;
+        }
+        // If external link…
+        if (!$if) {
+            // Add `rel="nofollow"` attribute
+            $a[2]['rel'] = 'nofollow';
+            // Add `target="_new"` attribute
+            $a[2]['target'] = '_new';
+        }
+        // Re-unite the anchor…
+        return call_user_func_array([$union, 'unite'], $a);
+    }, $content);
+    return $content;
+}, 2.1);
+~~~

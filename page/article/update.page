@@ -3,6 +3,8 @@ title: How to Update to the Latest Version of Mecha
 description: How to update your site safely.
 ...
 
+> **Update:** See the real usage [here][link:update-view].
+
 There are some folders in the `lot` folder, whose the contents will not change:
 
 **lot:**

@@ -4,7 +4,7 @@ description: Automatically generates `time.data` file on the first page visit, s
 ...
 
 ~~~ .php
-Hook::set('shield.before', function() use($site) {
+Hook::set('route.enter', function() use($site) {
     if ($page = Lot::get('page')) {
         $time = Path::F($page->path) . DS . 'time.data';
         if ($site->is !== '404' && !File::exist($time)) {
