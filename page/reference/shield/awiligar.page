@@ -6,6 +6,6 @@ dependency: false
 
 Minimalist template for Mecha by [Bayu Handono](http://bayuhandono.cf/article/template-mecha-awiligar).
 
-![1]([[asset]]/png/reference/shield/awiligar/1.png) {.align-center}
+![1](%{asset}%/png/reference/shield/awiligar/1.png) {.align-center}
 
 [Download Here](https://github.com/bayuhandono/templates) {.button}

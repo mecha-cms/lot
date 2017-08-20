@@ -2,3 +2,30 @@
 title: Tabs
 description: Tabs API.
 ...
+
+### Main
+
+~~~ .php
+Config::set('panel.m.t', [
+    'foo' => [
+        'title' => 'Tab 1',
+        'list' => [
+            // @see `reference/panel/field`
+            'title' => [
+                'type' => 'text',
+                'is' => [
+                    'expand' => true
+                ],
+                'stack' => 10
+            ]
+        ],
+        'stack' => 10
+    ],
+    'bar' => [
+        'title' => 'Tab 2',
+        'content' => '<p>Lorem ipsum dolor sit amet.</p>',
+        'stack' => 10
+    ],
+    'baz' => false // remove the `baz` tab if any
+]);
+~~~

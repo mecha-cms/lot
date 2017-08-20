@@ -4,6 +4,6 @@ description: CKEditor is a free, open-source HTML text editor designed to simpli
 dependency: {"extension":["panel"]}
 ...
 
-![1]([[asset]]/png/reference/extension/c-k-editor/1.png)
+![1](%{asset}%/png/reference/extension/c-k-editor/1.png)
 
 This extension works only for pages with `type` of `HTML`. Go to the site’s state editor then change the value of _Editor_ field in the _Common_ tab with _CKEditor_.

@@ -6,4 +6,4 @@ dependency: {"extension":["asset","page","user"],"plugin":["markdown"]}
 
 Coming soon.
 
-![1]([[asset]]/png/reference/extension/panel/1.png) {.align-center}
+![1](%{asset}%/png/reference/extension/panel/1.png) {.align-center}

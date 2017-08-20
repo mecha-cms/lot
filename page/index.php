@@ -7,14 +7,15 @@ Hook::set('page.content', function($content) {
     return str_replace('[connect:', '**Related:** [link:', $content);
 }, 1.8);
 
-if (Extend::exist('block')) {
-    // add `[[asset]]` block
-    Block::set('asset', function($content) use($url) {
-        return Block::replace('asset', $url->host === 'localhost' ? To::url(ASSET) : 'https://mecha-cms.github.io/lot/asset', $content);
+if (Plugin::exist('candy')) {
+    // Add `%{asset}%` candy
+    Hook::set('plugin.state.candy', function($a) {
+        $a['v']['asset'] = $_SERVER['HTTP_HOST'] === 'localhost' ? To::url(ASSET) : 'https://mecha-cms.github.io/lot/asset';
+        return $a;
     });
 }
 
-// add static `time` field automatically
+// Add static `time` field automatically
 Hook::set('shield.enter', function() use($site) {
     if ($page = Lot::get('page')) {
         $time = Path::F($page->path) . DS . 'time.data';

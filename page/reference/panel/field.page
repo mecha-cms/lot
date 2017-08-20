@@ -18,7 +18,7 @@ Config::set('panel.f', [ … ]);
     ],
     'url' => [
         'type' => 'url',
-        'value' => '[[url]]',
+        'value' => '%{url}%',
         …
     ],
     …
@@ -28,16 +28,16 @@ Config::set('panel.f', [ … ]);
 Result:
 
 ~~~ .html
-<p class="f f-title">
+<p class="f f-title type:text">
   <label for="f-title">Title</label>
   <span>
     <input name="title" type="text" value="Title Field" class="input" id="f-title">
   </span>
 </p>
-<p class="f f-url">
+<p class="f f-url type:url">
   <label for="f-url">URL</label>
   <span>
-    <input name="url" type="url" value="[[url]]" class="input" id="f-url">
+    <input name="url" type="url" value="%{url}%" class="input" id="f-url">
   </span>
 </p>
 ~~~
@@ -79,7 +79,7 @@ Determine custom key to be used for HTML class/ID prefix if the `name` data is w
 Result:
 
 ~~~ .html
-<p class="f f-page">
+<p class="f f-page type:textarea">
   <label for="f-page">Page</label>
   <span>
     <textarea name="page[date][unix]" class="textarea" id="f-page"></textarea>
@@ -120,21 +120,134 @@ Determine the field type (default is `textarea`):
 
 #### Button
 
+~~~ .php
+'foo' => [
+    'type' => 'button',
+    'value' => 1,
+    'title' => 'Action',
+    'text' => 'Save'
+]
+~~~
+
+Result:
+
+~~~ .html
+<p class="f f-foo type:button">
+  <label for="f-foo">Action</label>
+  <span>
+    <button name="foo" value="1" type="button" class="button" id="f-foo">Save</button>
+  </span>
+</p>
+~~~
+
 #### Color
+
+~~~ .php
+'foo' => [
+    'type' => 'color',
+    'value' => '#bada55',
+    'title' => 'Color'
+]
+~~~
+
+Result:
+
+~~~ .html
+<p class="f f-foo type:color">
+  <label for="f-foo">Color</label>
+  <span>
+    <input name="foo" value="#bada55" type="color" class="input" id="f-foo">
+  </span>
+</p>
+~~~
 
 #### Content
 
+~~~ .php
+'foo' => [
+    'type' => 'content',
+    'value' => '<p>Lorem ipsum dolor sit amet.</p>',
+    'title' => 'Description'
+]
+~~~
+
+Result:
+
+~~~ .html
+<p class="f f-foo type:content">
+  <label for="f-foo">Description</label>
+  <span>
+    <p>Lorem ipsum dolor sit amet.</p>
+  </span>
+</p>
+~~~
+
 #### Date
+
+~~~ .php
+'foo' => [
+    'type' => 'date',
+    'value' => '[[e]]echo $date->format('Y/m/d H:i:s');[[/e]]',
+    'title' => 'Date'
+]
+~~~
+
+Result:
+
+~~~ .html
+<p class="f f-foo type:date">
+  <label for="f-foo">Date</label>
+  <span>
+    <input name="foo" value="[[e]]echo $date->format('Y/m/d H:i:s');[[/e]]" type="text" class="input date" id="f-date">
+  </span>
+</p>
+~~~
 
 #### Editor
 
 #### Email
+
+~~~ .php
+'foo' => [
+    'type' => 'email',
+    'title' => 'Email'
+]
+~~~
+
+Result:
+
+~~~ .html
+<p class="f f-foo type:email">
+  <label for="f-foo">Email</label>
+  <span>
+    <input name="foo" type="email" class="input" id="f-foo">
+  </span>
+</p>
+~~~
 
 #### File
 
 #### Hidden
 
 #### Number
+
+~~~ .php
+'foo' => [
+    'type' => 'number',
+    'title' => 'Chunk'
+]
+~~~
+
+Result:
+
+~~~ .html
+<p class="f f-foo type:number">
+  <label for="f-foo">Chunk</label>
+  <span>
+    <input name="foo" type="number" class="input" id="f-foo">
+  </span>
+</p>
+~~~
 
 #### Pass
 
@@ -172,7 +285,7 @@ Determine the field’s value:
 
 ### Values
 
-Determine the field’s values (result depends on the field type):
+Determine the field’s values (result depends on field type):
 
 For field type `select`, `values` property will be used as the option list:
 
@@ -279,7 +392,7 @@ Determine the `step` property for field type `range`:
 
 ### Union
 
-Arguments for [`Union::__construct()->unite()`][link:../../reference/class/union#reference:unite].
+Arguments for [`Union::__construct()`][link:../../reference/class/union#reference:constructor].
 
 ~~~ .php
 'description' => [
@@ -296,30 +409,24 @@ Result:
 </div>
 ~~~
 
-### If
+### Hidden
 
-Boolean to indicate that the field should be generated. This is a shortcut for `{is.visible}` and `!{is.hidden}`:
+Boolean to indicate that the field should be hidden:
 
 ~~~ .php
 [
-    'if' => $site->type !== '404'
+    'hidden' => $site->type === '404'
 ]
 ~~~
 
-### Is
+### Width
 
-Conditional statements.
-
-#### Block
-
-Determine if the field element should be expanded 100% wide of the current grid:
+Determine if the field element should be expanded 100% wide of the current grid. You can use integer and string type as the value to set inline CSS `width` value:
 
 ~~~ .php
 'description' => [
     'type' => 'text',
-    'is' => [
-        'block' => true
-    ]
+    'width' => true
 ]
 ~~~
 
@@ -334,16 +441,14 @@ Result:
 </p>
 ~~~
 
-#### Expand
+### Height
 
-Will expand the `<textarea>` element vertically for field type `textarea` or `editor`:
+Will expand the `<textarea>` element vertically for field type `textarea` or `editor`. You can use integer and string type as the value to set inline CSS `height` value:
 
 ~~~ .php
 'description' => [
     'type' => 'textarea',
-    'is' => [
-        'expand' => true
-    ]
+    'height' => true
 ]
 ~~~
 
@@ -356,30 +461,6 @@ Result:
     <textarea name="description" class="textarea block expand"></textarea>
   </span>
 </p>
-~~~
-
-#### Hidden
-
-Boolean to indicate that the field should not be generated:
-
-~~~ .php
-[
-    'is' => [
-        'hidden' => $site->type === '404'
-    ]
-]
-~~~
-
-#### Visible
-
-Boolean to indicate that the field should be generated:
-
-~~~ .php
-[
-    'is' => [
-        'visible' => $site->type !== '404'
-    ]
-]
 ~~~
 
 ### Attributes

@@ -1,6 +1,7 @@
 ---
 title: Page View
 description: Page views counter.
+dependency: {"extension":["page"]}
 ...
 
 This plugin adds a `view` property to the current page with dynamic value. Each page visits will increment the `view` property value by one.

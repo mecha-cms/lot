@@ -3,7 +3,7 @@ title: Typography
 description: Smart punctuation converter.
 ...
 
-![1]([[asset]]/png/reference/extension/plugin/typography.png)
+![1](%{asset}%/png/reference/extension/plugin/typography.png)
 
 This plugin will convert some plain ASCII punctuation characters into “smart” punctuation HTML entities:
 

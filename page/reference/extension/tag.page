@@ -4,7 +4,7 @@ description: Page tags.
 dependency: {"extension":["page"]}
 ...
 
-This extension enables tags feature on any pages by utilizing the `kind` property value as the tag ID. This extension also adds a new route definition like ` [[url]]/blog/tag/slug ` on every pages to make it possible to list all pages in the current folder by tags.
+This extension enables tags feature on any pages by utilizing the `kind` property value as the tag ID. This extension also adds a new route definition like ` %{url}%/blog/tag/slug ` on every pages to make it possible to list all pages in the current folder by tags.
 
 ### Constant
 
@@ -72,21 +72,21 @@ $page = [
             …
             'id' => 1,
             'slug' => 'foo',
-            'url' => '[[url]]/tag/foo'
+            'url' => '%{url}%/tag/foo'
         ],
         1 => [
             …
             …
             'id' => 2,
             'slug' => 'bar',
-            'url' => '[[url]]/tag/bar'
+            'url' => '%{url}%/tag/bar'
         ],
         2 => [
             …
             …
             'id' => 3,
             'slug' => 'baz',
-            'url' => '[[url]]/tag/baz'
+            'url' => '%{url}%/tag/baz'
         ]
     ]
 ];

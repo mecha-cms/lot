@@ -32,7 +32,7 @@ If you have to translate them into numbers, then:
 2: archive
 ~~~
 
-To read `lot\page\lorem-ipsum.page` from the site, visit ` [[url]]/lorem-ipsum `.
+To read `lot\page\lorem-ipsum.page` from the site, visit ` %{url}%/lorem-ipsum `.
 
 A minimal page file content consists of a text. Any text. With optional headers data written in a flat YAML syntax:
 

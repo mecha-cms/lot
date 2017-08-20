@@ -102,15 +102,15 @@ Hook::NS('foo.bar.baz', [$a, $b]);
 … is equal to this:
 
 ~~~ .php
-Hook::fire(['foo.bar.baz', 'foo.bar', 'foo'], [$a, $b]);
+Hook::fire(['foo.bar.baz', 'bar.baz', 'baz'], [$a, $b]);
 ~~~
 
 … is equal to these:
 
 ~~~ .php
 Hook::fire('foo.bar.baz', [$a, $b]);
-Hook::fire('foo.bar', [$a, $b]);
-Hook::fire('foo', [$a, $b]);
+Hook::fire('bar.baz', [$a, $b]);
+Hook::fire('baz', [$a, $b]);
 ~~~
 
 #### Arguments

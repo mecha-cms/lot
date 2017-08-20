@@ -4,4 +4,4 @@ author: Damar Zaky
 link: http://damzaky.blogspot.com
 ...
 
-![1]([[asset]]/-banner/damar-zaky/1.jpg)
+![1](%{asset}%/-banner/damar-zaky/1.jpg)

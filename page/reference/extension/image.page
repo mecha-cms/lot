@@ -7,7 +7,7 @@ description: Image manipulation using [GD](http://www.php.net/manual/en/book.ima
 
 The original image:
 
-![1]([[asset]]/jpg/reference/extension/image/1.jpg)
+![1](%{asset}%/jpg/reference/extension/image/1.jpg)
 
 ### Resize
 
@@ -23,7 +23,7 @@ Image::take('photo.jpg')->resize(200, 200)->saveAs('photo-2.jpg');
 
 Result:
 
-![2]([[asset]]/jpg/reference/extension/image/2.jpg)
+![2](%{asset}%/jpg/reference/extension/image/2.jpg)
 
 #### Stretch
 
@@ -33,7 +33,7 @@ Image::take('photo.jpg')->resize(200, 200, false)->saveAs('photo-2.jpg');
 
 Result:
 
-![3]([[asset]]/jpg/reference/extension/image/3.jpg)
+![3](%{asset}%/jpg/reference/extension/image/3.jpg)
 
 ### Crop
 
@@ -51,7 +51,7 @@ Image::take('photo.jpg')->crop(72, 72)->saveAs('photo-2.jpg');
 
 Result:
 
-![4]([[asset]]/jpg/reference/extension/image/4.jpg)
+![4](%{asset}%/jpg/reference/extension/image/4.jpg)
 
 #### Crop
 
@@ -70,7 +70,7 @@ Image::take('photo.jpg')->crop(130, 50, 100, 100)->saveAs('photo-2.jpg');
 
 Result:
 
-![5]([[asset]]/jpg/reference/extension/image/5.jpg)
+![5](%{asset}%/jpg/reference/extension/image/5.jpg)
 
 ### Color
 
@@ -86,7 +86,7 @@ Image::take('photo.jpg')->brightness(50)->saveAs('photo-2.jpg');
 
 Result:
 
-![6]([[asset]]/jpg/reference/extension/image/6.jpg)
+![6](%{asset}%/jpg/reference/extension/image/6.jpg)
 
 #### Contrast
 
@@ -100,7 +100,7 @@ Image::take('photo.jpg')->contrast(40)->saveAs('photo-2.jpg');
 
 Result:
 
-![7]([[asset]]/jpg/reference/extension/image/7.jpg)
+![7](%{asset}%/jpg/reference/extension/image/7.jpg)
 
 #### Colorize
 
@@ -140,7 +140,7 @@ Image::take('photo.jpg')->colorize('#FF0A14', .4)->saveAs('photo-2.jpg');
 
 Result:
 
-![8]([[asset]]/jpg/reference/extension/image/8.jpg)
+![8](%{asset}%/jpg/reference/extension/image/8.jpg)
 
 #### Grayscale
 
@@ -154,7 +154,7 @@ Image::take('photo.jpg')->grayscale()->saveAs('photo-2.jpg');
 
 Result:
 
-![9]([[asset]]/jpg/reference/extension/image/9.jpg)
+![9](%{asset}%/jpg/reference/extension/image/9.jpg)
 
 #### Negate
 
@@ -168,7 +168,7 @@ Image::take('photo.jpg')->negate()->saveAs('photo-2.jpg');
 
 Result:
 
-![10]([[asset]]/jpg/reference/extension/image/10.jpg)
+![10](%{asset}%/jpg/reference/extension/image/10.jpg)
 
 #### Emboss
 
@@ -182,7 +182,7 @@ Image::take('photo.jpg')->emboss(1)->saveAs('photo-2.jpg');
 
 Result:
 
-![11]([[asset]]/jpg/reference/extension/image/11.jpg)
+![11](%{asset}%/jpg/reference/extension/image/11.jpg)
 
 ### Effect
 
@@ -198,7 +198,7 @@ Image::take('photo.jpg')->blur(4)->saveAs('photo-2.jpg');
 
 Result:
 
-![12]([[asset]]/jpg/reference/extension/image/12.jpg)
+![12](%{asset}%/jpg/reference/extension/image/12.jpg)
 
 #### Sharpen
 
@@ -212,7 +212,7 @@ Image::take('photo.jpg')->sharpen(1)->saveAs('photo-2.jpg');
 
 Result:
 
-![13]([[asset]]/jpg/reference/extension/image/13.jpg)
+![13](%{asset}%/jpg/reference/extension/image/13.jpg)
 
 #### Pixelate
 
@@ -226,7 +226,7 @@ Image::take('photo.jpg')->pixelate(2)->saveAs('photo-2.jpg');
 
 Result:
 
-![14]([[asset]]/jpg/reference/extension/image/14.jpg)
+![14](%{asset}%/jpg/reference/extension/image/14.jpg)
 
 ~~~ .php
 Image::take('photo.jpg')->pixelate(2, true)->saveAs('photo-2.jpg');
@@ -234,7 +234,7 @@ Image::take('photo.jpg')->pixelate(2, true)->saveAs('photo-2.jpg');
 
 Result:
 
-![15]([[asset]]/jpg/reference/extension/image/15.jpg)
+![15](%{asset}%/jpg/reference/extension/image/15.jpg)
 
 ### Flip and Rotate
 
@@ -258,7 +258,7 @@ Image::take('photo.jpg')->flip('both')->saveAs('photo-2.jpg');
 
 Result for `horizontal`:
 
-![16]([[asset]]/jpg/reference/extension/image/16.jpg)
+![16](%{asset}%/jpg/reference/extension/image/16.jpg)
 
 #### Rotate
 
@@ -284,7 +284,7 @@ Image::take('photo.jpg')->rotate(90)->saveAs('photo-2.jpg');
 
 Result:
 
-![17]([[asset]]/jpg/reference/extension/image/17.jpg)
+![17](%{asset}%/jpg/reference/extension/image/17.jpg)
 
 Fill image holes with a solid background color (or transparent and semi-transparent background color for non JPG/JPEG images):
 
@@ -332,7 +332,7 @@ Image::take([
 
 Result:
 
-![18]([[asset]]/png/reference/extension/image/18.png)
+![18](%{asset}%/png/reference/extension/image/18.png)
 
 Add distance between images:
 
@@ -348,7 +348,7 @@ Image::take([
 
 Result:
 
-![19]([[asset]]/png/reference/extension/image/19.png)
+![19](%{asset}%/png/reference/extension/image/19.png)
 
 Horizontal image sprites:
 
@@ -364,7 +364,7 @@ Image::take([
 
 Result:
 
-![20]([[asset]]/png/reference/extension/image/20.png)
+![20](%{asset}%/png/reference/extension/image/20.png)
 
 Fill the gap between images with background color:
 

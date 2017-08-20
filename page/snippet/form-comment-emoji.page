@@ -3,7 +3,7 @@ title: Emoji in Comment Form
 description: Add minimalist native emoji insertion helper in the comment form.
 ...
 
-![1]([[asset]]/png/snippet/form-comment-emoji.png)
+![1](%{asset}%/png/snippet/form-comment-emoji.png)
 
 Requires [comment][link:../reference/extension/comment] extension.
 

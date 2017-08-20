@@ -4,7 +4,7 @@ description: A text selection range API written in pure JavaScript, for modern b
 dependency: {"extension":["panel"]}
 ...
 
-![1]([[asset]]/png/reference/extension/text-editor.png)
+![1](%{asset}%/png/reference/extension/text-editor.png)
 
 This is the official text editor extension for Mecha.
 

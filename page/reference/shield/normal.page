@@ -5,7 +5,7 @@ description: Port of the normal shield in Mecha version `1.x.x`.
 
 This is the default shield used by Mecha version `1.x.x`.
 
-![1]([[asset]]/png/reference/shield/normal/1.png) {.align-center}
+![1](%{asset}%/png/reference/shield/normal/1.png) {.align-center}
 
 ### Features
 

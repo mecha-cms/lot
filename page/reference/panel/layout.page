@@ -3,13 +3,15 @@ title: Layout
 description: Layout API.
 ...
 
-Consists of 4 layouts:
-
- - `0` → one grid, no menu bar
- - `1` → one grid, with menu bar
- - `2` → two grid, with menu bar
- - `3` → three grid, with menu bar
-
 ~~~ .php
-Config::set('panel.layout', 2);
+Config::set('panel.layout', 3);
 ~~~
+
+Options:
+
+ID | Layout
+-- | ------
+`0` | One column without navigation.
+`1` | One column with navigation.
+`2` | Two columns with navigation.
+`3` | Three columns with navigation.

@@ -1,0 +1,10 @@
+---
+title: Class `Are`
+description: Alias for `Is`.
+...
+
+### Has
+
+~~~ .php
+Are::these(['foo', 'bar', 'baz'])->has('foo');
+~~~

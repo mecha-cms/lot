@@ -5,28 +5,82 @@ description: Detector.
 
 ### Has
 
+[connect:are]
+
 ### Void
+
+~~~ .php
+Is::void($x);
+~~~
 
 ### IP
 
+~~~ .php
+Is::ip($x);
+~~~
+
 ### URL
+
+~~~ .php
+Is::url($x);
+~~~
 
 ### Path
 
+~~~ .php
+Is::path($x);
+~~~
+
 ### Email
+
+~~~ .php
+Is::email($x);
+~~~
 
 ### Toggle
 
+~~~ .php
+Is::toggle($x);
+~~~
+
 ### F
+
+~~~ .php
+Is::F($x);
+~~~
 
 ### D
 
+~~~ .php
+Is::D($x);
+~~~
+
 ### Equal
+
+~~~ .php
+Is::this($x)->eq(4);
+~~~
 
 ### Less
 
+~~~ .php
+Is::this($x)->lt(4);
+~~~
+
 ### Greater
+
+~~~ .php
+Is::this($x)->gt(4);
+~~~
 
 ### Less or Equal
 
+~~~ .php
+Is::this($x)->lte(4);
+~~~
+
 ### Greater or Equal
+
+~~~ .php
+Is::this($x)->gte(4);
+~~~

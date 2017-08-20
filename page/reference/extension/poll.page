@@ -39,7 +39,7 @@ Put this snippet in your `page.php` file to add a [vote up/down feature](#refere
 
 #### Like
 
-![1]([[asset]]/png/reference/extension/poll/1.png)
+![1](%{asset}%/png/reference/extension/poll/1.png)
 
 ~~~ .php
 Shield::get('poll/like');
@@ -47,7 +47,7 @@ Shield::get('poll/like');
 
 #### Love
 
-![2]([[asset]]/png/reference/extension/poll/2.png)
+![2](%{asset}%/png/reference/extension/poll/2.png)
 
 ~~~ .php
 Shield::get('poll/love');
@@ -55,7 +55,7 @@ Shield::get('poll/love');
 
 #### Reaction
 
-![3]([[asset]]/png/reference/extension/poll/3.png)
+![3](%{asset}%/png/reference/extension/poll/3.png)
 
 ~~~ .php
 Shield::get('poll/react');
@@ -63,7 +63,7 @@ Shield::get('poll/react');
 
 #### Response
 
-![4]([[asset]]/png/reference/extension/poll/4.png)
+![4](%{asset}%/png/reference/extension/poll/4.png)
 
 ~~~ .php
 Shield::get('poll/respond', [
@@ -74,7 +74,7 @@ Shield::get('poll/respond', [
 
 #### Vote
 
-![5]([[asset]]/png/reference/extension/poll/5.png)
+![5](%{asset}%/png/reference/extension/poll/5.png)
 
 ~~~ .php
 Shield::get('poll/vote');

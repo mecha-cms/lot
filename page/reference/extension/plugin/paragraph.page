@@ -3,7 +3,7 @@ title: Automatic Paragraph
 description: Convert line break to paragraph.
 ...
 
-![1]([[asset]]/png/reference/extension/plugin/paragraph.png)
+![1](%{asset}%/png/reference/extension/plugin/paragraph.png)
 
 This plugin works only for pages with `type` of `HTML`.
 

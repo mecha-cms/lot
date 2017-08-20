@@ -1,0 +1,82 @@
+---
+title: Variable Naming Best Practices
+description: Mecha has some disciplines in naming their variables.
+...
+
+### General
+
+[Reserved variables][link:../reference/variable] in _Mecha_ should match with `^[a-z]+(?:_[a-z\d]+)*$` pattern:
+
+~~~ .php
+$site
+~~~
+
+User variable style should be prefixed with a `_` to prevent overwriting the reserved variables:
+
+~~~ .php
+$_site
+~~~
+
+> **Note:** If for a reason, the reserved variables are overwritten, you can always restore the original variable value by accessing the global variables defined by the [`Lot`][link:../reference/class/lot] class:
+> ~~~ .php
+> $site = null; // :(
+> echo $site->title; // :'(
+>
+> $site = Lot::get('site'); // :)
+> echo $site->title; // :*
+> ~~~
+
+### Namespace
+
+Another way to safely writing variables is by _namespace_–ing your variable name:
+
+~~~ .php
+$my_site
+~~~
+
+### Back–End
+
+Back–end variables, as you can see them pretty much inside the source code of [Panel][link:../reference/extension/panel] extension, are prefixed with double `_` character:
+
+~~~ .php
+$__site
+~~~
+
+### Front–End
+
+Currently not specified. You can use this style if you want:
+
+~~~ .php
+$site__
+~~~
+
+### Others
+
+Common variable names using a single letter with their meaning:
+
+ - `$a` → array container
+ - `$b` → ?
+ - `$c` → class, configuration
+ - `$d` → directory
+ - `$e` → ?
+ - `$f` → file
+ - `$g` → results of the `glob` function
+ - `$h` → hint
+ - `$i` → increment, integer, number
+ - `$j` → length of the `$a` (used in `for` loop)
+ - `$k` → array key
+ - `$l` → ?
+ - `$m` → ?
+ - `$n` → ?
+ - `$o` → array container, output container
+ - `$p` → page, path
+ - `$q` → query
+ - `$r` → ?
+ - `$s` → placeholder, universal variable
+ - `$t` → title
+ - `$u` → URL or URL part
+ - `$v` → array value
+ - `$w` → ?
+ - `$x` → false test, file extension
+ - `$y` → ?
+ - `$z` → ?

@@ -5,17 +5,17 @@ description: Redirect user to custom destination after logged in.
 
 ### Method 1: URL
 
- - ` [[url]]/panel/::g::/enter?f[kick]=panel/::g::/page ` → go to the _Page_ manager on enter (default)
- - ` [[url]]/panel/::g::/enter?f[kick]=panel/::g::/state ` → go to the _State_ manager on enter
+ - ` %{url}%/panel/::g::/enter?f[kick]=panel/::g::/page ` → go to the _Page_ manager on enter (default)
+ - ` %{url}%/panel/::g::/enter?f[kick]=panel/::g::/state ` → go to the _State_ manager on enter
 
 ### Method 2: Hook
 
 Using [hooks][link:../reference/panel/field] to replace hidden `<input>` element with `<select>` element:
 
-![1]([[asset]]/png/snippet/panel-f-enter-kick.png)
+![1](%{asset}%/png/snippet/panel-f-enter-kick.png)
 
 ~~~ .php
-$_panel = Extend::state('panel', 'path', X);
+$_path = Extend::state('panel', 'path', X);
 
 // The select’s option(s)…
 $_select = [
@@ -24,7 +24,7 @@ $_select = [
     'state'
 ];
 
-if ($url->path === $_panel . '/::g::/enter') {
+if (Route::is($_path . '/::g::/enter')) {
     $_values = [];
     foreach ($_select as $_value) {
         $_text = $language->{$_value};

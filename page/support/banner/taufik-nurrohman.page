@@ -3,4 +3,4 @@ title: Banners by Mecha CMS
 author: @ta-tau-taufik
 ...
 
-![1]([[asset]]/-banner/taufik-nurrohman/1.jpg)
+![1](%{asset}%/-banner/taufik-nurrohman/1.jpg)

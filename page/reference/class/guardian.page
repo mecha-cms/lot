@@ -12,7 +12,13 @@ Guardian::hash($salt = "");
 ### Token
 
 ~~~ .xmp.php
-Guardian::token();
+Guardian::token($id = 0);
+~~~
+
+### Check Token
+
+~~~ .xmp.php
+Guardian::check($token $id = 0, $fail = false);
 ~~~
 
 ### Kick

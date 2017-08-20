@@ -1,0 +1,87 @@
+---
+title: Authors Field
+description: Single page with multiple authors.
+...
+
+This hook will automatically add `authors` property to the current page contains information about last time specific user updating the page on every page update event.
+
+### Page Event
+
+Requires [panel][link:../reference/extension/panel] extension:
+
+~~~ .php
+Hook::set('on.page.set', function($current, $previous) {
+    if (!$previous) {
+        // Is a new page, skip!
+        return $current;
+    }
+    if ($author = User::get(null, 'key')) {
+        $path = Path::F($current) . DS . 'authors.data';
+        $authors = From::json(File::open($path)->read('[]'));
+        $authors->{'@' . $author} = time();
+        File::write(To::json($authors))->saveTo($path, 0600);
+    }
+});
+~~~
+
+### Page Property
+
+#### Raw Information
+
+~~~ .php
+echo To::json($page->authors);
+~~~
+
+#### Last Update Information
+
+~~~ .php
+if ($page->authors) {
+
+    $_item = ["", 0];
+    foreach ((array) $page->authors as $_k => $_v) {
+        if ($_item[1] < $_v) {
+            $_item = [$_k, $_v];
+        }
+    }
+
+    if (Extend::exist('user')) {
+        $_item[0] = substr($_item[0], 1); // remove the `@` prefix
+        $_author = (new User($_item[0]))->author;
+    } else {
+        $_author = $_item[0];
+    }
+
+    $_date = (new Date($_item[1]))->F2;
+
+    echo '<p>Last updated by ' . $_author . ' on ' . $_date . '.';
+
+}
+~~~
+
+#### Last Updates Information
+
+~~~ .php
+if ($page->authors) {
+
+    $_authors = (array) $page->authors;
+    $_items = [];
+    $_is_rich = Extend::exist('user');
+
+    arsort($_authors);
+
+    foreach ($_authors as $_k => $_v) {
+        $_date = (new Date($_v))->F2;
+        if ($_is_rich) {
+            $_items[] = (new User(substr($_k, 1)))->author . ' was editing this page on ' . $_date;
+        } else {
+            $_items[] = $_k . ' was editing this page on ' . $_date;
+        }
+    }
+
+    echo '<h3>Contributors</h3>';
+    echo '<ul>';
+    echo '<li>' . implode('</li><li>', $_items) . '</li>';
+    echo '</ul>';
+
+}
+~~~

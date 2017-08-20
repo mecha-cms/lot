@@ -4,7 +4,7 @@ description: A rich text editor that is designed to accept limited set of inline
 dependency:{"extension":["asset"]}
 ...
 
-![1]([[asset]]/png/reference/extension/rich-text-editor.png)
+![1](%{asset}%/png/reference/extension/rich-text-editor.png)
 
 This is the official rich text editor extension for Mecha.
 

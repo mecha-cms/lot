@@ -4,11 +4,10 @@ Hook::set('page.content', function($content, $lot) {
     if (!isset($lot['path']) || strpos($lot['path'], PAGE) !== 0) {
         return $content;
     }
-    global $url;
-    $b = Path::B($url->path);
+    $N = isset($lot['name']) ? $lot['name'] : Path::N($lot['path']);
     $NS = 'shield';
     if (!isset($lot['dependency']) || $lot['dependency'] !== false) {
-        $content = '[Download Latest Version]([[url]]/2016/d/mecha-cms/' . $NS . '.' . $b . '/archive/master.zip) {.button}' . N . N . $content;
+        $content = '[Download Latest Version](%{url}%/2016/d/mecha-cms/' . $NS . '.' . $N . '/archive/master.zip) {.button}' . N . N . $content;
     }
     if (!empty($lot['dependency']) && $lot['dependency'] !== true) {
         $content .= N . N . '### Dependency';

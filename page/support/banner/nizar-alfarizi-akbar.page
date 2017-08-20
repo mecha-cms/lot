@@ -4,4 +4,4 @@ author: Nizar Alfarizi Akbar
 link: https://www.facebook.com/farizblogger
 ...
 
-![1]([[asset]]/-banner/nizar-alfarizi-akbar/1.jpg)
+![1](%{asset}%/-banner/nizar-alfarizi-akbar/1.jpg)

@@ -19,11 +19,11 @@ dependency: {"extension":["asset"]}
 #### Output
 
 ~~~ .php.xmp
-Captcha::check($id, $input, $fail = false);
+Captcha::check($input, $id, $fail = false);
 ~~~
 
 ~~~ .php
-if (Captcha::check('foo', Request::post('captcha')) !== false) {
+if (Captcha::check(Request::post('captcha'), 'foo') !== false) {
     // Passed the test!
 }
 ~~~
@@ -98,7 +98,7 @@ Captcha::text(
 Result:
 
 ~~~ .html
-<img src="[[url]]/captcha.png?id=foo" alt="foo" class="captcha captcha-text" id="captcha:foo" width="96" height="32">
+<img src="%{url}%/captcha.png?id=foo" alt="foo" class="captcha captcha-text" id="captcha:foo" width="96" height="32">
 ~~~
 
 Parameter | Description

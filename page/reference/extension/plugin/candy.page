@@ -1,0 +1,91 @@
+---
+title: Candies
+description: Embed global variables in page content.
+...
+
+Common patterns:
+
+### Configuration
+
+ - `%‌{‌config.title‌}‌%`
+ - `%‌{‌config.description‌}‌%`
+ - `%‌{‌config.page.title‌}‌%`
+ - `%‌{‌config.page.description‌}‌%`
+ - …
+
+### Date
+
+ - `%‌{‌date.year‌}‌%`
+ - `%‌{‌date.month‌}‌%`
+ - `%‌{‌date.en_us‌}‌%`
+ - `%‌{‌date.F2‌}‌%`
+ - …
+
+### Language
+
+ - `%‌{‌language.yes‌}‌%`
+ - `%‌{‌language.no‌}‌%`
+ - `%‌{‌language.submit‌}‌%`
+ - `%‌{‌language.cancel‌}‌%`
+ - …
+
+### Page
+
+ - `%‌{‌page.url‌}‌%`
+ - `%‌{‌page.title‌}‌%`
+ - `%‌{‌page.description‌}‌%`
+ - `%‌{‌page.link‌}‌%`
+ - `%‌{‌page.author‌}‌%`
+ - …
+
+### Site
+
+Alias for _$config_.
+
+ - `%‌{‌site.title‌}‌%`
+ - `%‌{‌site.description‌}‌%`
+ - `%‌{‌site.page.title‌}‌%`
+ - `%‌{‌site.page.description‌}‌%`
+ - …
+
+### This
+
+Alias for _$page_.
+
+ - `%‌{‌$.url‌}‌%`
+ - `%‌{‌$.title‌}‌%`
+ - `%‌{‌$.description‌}‌%`
+ - `%‌{‌$.link‌}‌%`
+ - `%‌{‌$.author‌}‌%`
+ - …
+
+### URL
+
+ - `%‌{‌url‌}‌%` → `http://localhost/a`
+ - `%‌{‌url.scheme‌}‌%` → `http`
+ - `%‌{‌url.protocol‌}‌%` → `http://`
+ - `%‌{‌url.host‌}‌%` → `localhost`
+ - `%‌{‌url.port‌}‌%` → `80`
+ - `%‌{‌url.directory‌}‌%` → `a`
+ - `%‌{‌url.url‌}‌%` → same as `%‌{‌url‌}‌%`
+ - `%‌{‌url.path‌}‌%` → `foo/bar`
+ - `%‌{‌url.query‌}‌%` → `?foo=bar&baz=qux`
+ - `%‌{‌url.current‌}‌%` → `http://localhost/a/foo/bar`
+
+[connect:../../variable]
+
+---
+
+### Custom
+
+Add your custom syntax or replace the default syntax in the `v` property, remove the default syntax in `x`:
+
+~~~ .php
+[
+    'v' => [
+        'asset' => '%{url}%/lot/asset'
+        …
+    ],
+    'x' => [ … ]
+]
+~~~

@@ -4,6 +4,6 @@ description: Rich text editor in comment form.
 dependency: {"extension":["comment","rich-text-editor"]}
 ...
 
-![1]([[asset]]/png/reference/extension/plugin/comment-editor.png)
+![1](%{asset}%/png/reference/extension/plugin/comment-editor.png)
 
 This plugin will add a simple rich text editor in the comment form.

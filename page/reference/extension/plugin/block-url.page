@@ -2,6 +2,7 @@
 title: URL Blocks
 description: Insert URL data to the page content.
 dependency: {"extension":["block"]}
+name: block.url
 ...
 
 Support these block patterns:

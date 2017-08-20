@@ -4,4 +4,4 @@ author: Salim Romadhon
 link: http://puruhita.com/salim
 ...
 
-![1]([[asset]]/-banner/salim-romadhon/1.jpg)
+![1](%{asset}%/-banner/salim-romadhon/1.jpg)

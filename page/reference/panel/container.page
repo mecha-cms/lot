@@ -14,9 +14,11 @@ Result:
 ~~~ .html
 <div class="c">
   <form id="form.c.f_name" action="" method="post" enctype="multipart/form-data">
+    <aside class="s s-1"> … </aside>
     <main class="m">
       …
     </main>
+    <aside class="s s-2"> … </aside>
   </form>
 </div>
 ~~~
@@ -31,10 +33,19 @@ Result:
 
 ~~~ .html
 <div class="c">
+  <aside class="s s-1"> … </aside>
   <main class="m">
     <form id="form.m.f_name" action="" method="post" enctype="multipart/form-data">
       …
     </form>
   </main>
+  <aside class="s s-2"> … </aside>
 </div>
+~~~
+
+Remove form elements:
+
+~~~ .php
+Config::set('panel.c:f', false);
+Config::set('panel.m:f', false);
 ~~~

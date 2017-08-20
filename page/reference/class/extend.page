@@ -36,3 +36,13 @@ $state = Extend::state('minify');
 >     'html' => [2, 1] // add `html` property to `$state` if missing
 > ]);
 > ~~~
+
+---
+
+### Hooks
+
+Key | Description
+--- | -----------
+`extend.state.{$id}` | Will affect the state output of extension with name `$id`.
+
+> **Note:** `.` characters in `$id` will be converted into `\`.

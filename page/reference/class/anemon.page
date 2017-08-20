@@ -6,22 +6,31 @@ description: Array workers.
 ### Step
 
 ~~~ .xmp.php
-Anemon::step($input, $NS = '.');
+Anemon::step($input, $NS = '.', $dir = 1);
 ~~~
 
 Create list of _namespace_ steps from a string:
 
 ~~~ .php
-$test = Anemon::step('foo.bar.baz');
+$test_1 = Anemon::step('foo.bar.baz');
+$test_2 = Anemon::step('foo.bar.baz', '.', -1);
 ~~~
 
 Result:
 
 ~~~ .php
-$test = [
+$test_1 = [
     'foo.bar.baz',
     'foo.bar',
     'foo'
+];
+~~~
+
+~~~ .php
+$test_2 = [
+    'foo.bar.baz',
+    'bar.baz',
+    'baz'
 ];
 ~~~
 

@@ -117,3 +117,11 @@ Name | Value
 `Elevator::SOUTH` | ▼
 `Elevator::WEST` | ◀
 `Elevator::EAST` | ▶
+
+### Hooks
+
+Key | Description
+--- | -----------
+`elevator.{$NS}` | ‌
+`elevator.{$NS}.links` | ‌
+`elevator.{$NS}.unit` | ‌

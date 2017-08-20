@@ -18,9 +18,9 @@ description: Common URL pattern used by this extension.
 Examples:
 
 ~~~ .txt
-[[url]]/panel/::s::/asset/css → create a file in `lot\asset\css`
-[[url]]/panel/::g::/asset/css/a.css → edit `a.css` file that is stored in `lot\asset\css` folder
-[[url]]/panel/::r::/asset/css/a.css → delete `a.css` file that is stored in `lot\asset\css` folder
+%{url}%/panel/::s::/asset/css → create a file in `lot\asset\css`
+%{url}%/panel/::g::/asset/css/a.css → edit `a.css` file that is stored in `lot\asset\css` folder
+%{url}%/panel/::r::/asset/css/a.css → delete `a.css` file that is stored in `lot\asset\css` folder
 ~~~
 
 ### Query
@@ -29,15 +29,15 @@ Name | Description
 ---- | -----------
 `f` | Base query to set pre-defined value in a form element by its name.
 `f[title]` | Set pre-defined value in a form element with name `title`.
-`l` | **TODO:** Define the layout option: `file`, or `page` (default to `file`).
 `layout` | Define the panel’s layout option: `0`, `1`, `2`, or `3`.
 `m[t:v]` | Base query to activate a tab in the main section by its name.
+`view` | Define the layout view: `file`, or `page` (default to `file`).
 
 Examples:
 
 ~~~ .txt
-[[url]]/panel/::s::/page?f[title]=Page%20Title&f[content]=Page%20content.
-[[url]]/panel/::g::/page?l=file
-[[url]]/panel/::g::/page?m[t:v]=css
-[[url]]/panel/::g::/asset?layout=0
+%{url}%/panel/::s::/page?f[title]=Page%20Title&f[content]=Page%20content.
+%{url}%/panel/::g::/page?view=file
+%{url}%/panel/::g::/page?m[t:v]=css
+%{url}%/panel/::g::/asset?layout=0
 ~~~
