@@ -54,29 +54,29 @@ $site__
 
 Common variable names using a single letter with their meaning:
 
- - `$a` → array container
- - `$b` → ?
- - `$c` → class, configuration
- - `$d` → directory
- - `$e` → ?
- - `$f` → file
+ - `$a` → [array][link:../reference/class/anemon] container
+ - `$b` → base
+ - `$c` → [class][link:../reference/class/h-t-m-l], [configuration][link:../reference/class/config]
+ - `$d` → [directory][link:../reference/class/path]
+ - `$e` → [evaluate][link:../reference/function#reference:e]
+ - `$f` → [file][link:../reference/class/file]
  - `$g` → results of the `glob` function
  - `$h` → hint
  - `$i` → increment, integer, number
  - `$j` → length of the `$a` (used in `for` loop)
  - `$k` → array key
  - `$l` → ?
- - `$m` → ?
- - `$n` → ?
+ - `$m` → matches
+ - `$n` → [name][link:../reference/class/path]
  - `$o` → array container, output container
- - `$p` → page, path
- - `$q` → query
+ - `$p` → [page][link:../reference/class/page], [path][link:../reference/class/path]
+ - `$q` → [query][link:../reference/class/h-t-t-p#reference:query]
  - `$r` → ?
  - `$s` → placeholder, universal variable
- - `$t` → title
- - `$u` → URL or URL part
+ - `$t` → title, text
+ - `$u` → [union][link:../reference/class/union], [URL][link:../reference/class/u-r-l], URL part
  - `$v` → array value
  - `$w` → ?
- - `$x` → false test, file extension
+ - `$x` → test, [file extension][link:../reference/class/path]
  - `$y` → ?
  - `$z` → ?

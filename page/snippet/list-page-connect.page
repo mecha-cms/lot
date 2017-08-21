@@ -4,6 +4,8 @@ description: Show list of pages in random order, filtered by the similarities of
 ...
 
 ~~~ .php
+<?php
+
 $_path = PAGE . DS . Path::D($url->path);
 $_chunk = 7;
 $_relates = [];
@@ -35,7 +37,9 @@ if ($_current = Lot::get('page')) {
         echo '<p>This post has no relations with other posts.</p>';
     }
 }
+
+?>
 ~~~
 
- - `$_path` → Automatic page folder selection based on the current URL path.
- - `$_chunk` → How many pages you want to show in the list.
+ - `$_path` → Automatic folder selection based on the current page path.
+ - `$_chunk` → How many pages you want to list.

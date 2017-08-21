@@ -5,11 +5,13 @@ description: Array workers.
 
 ### Step
 
+Create list of _namespace_ steps from a string.
+
 ~~~ .xmp.php
 Anemon::step($input, $NS = '.', $dir = 1);
 ~~~
 
-Create list of _namespace_ steps from a string:
+**Example:**
 
 ~~~ .php
 $test_1 = Anemon::step('foo.bar.baz');
@@ -24,9 +26,7 @@ $test_1 = [
     'foo.bar',
     'foo'
 ];
-~~~
 
-~~~ .php
 $test_2 = [
     'foo.bar.baz',
     'bar.baz',
@@ -36,11 +36,13 @@ $test_2 = [
 
 ### Edge
 
+Prevent input value exceeds the minimum and maximum value.
+
 ~~~ .xmp.php
 Anemon::edge($input, $min = null, $max = null);
 ~~~
 
-Prevent input value exceeds the minimum and maximum value:
+**Example:**
 
 ~~~ .php
 $min = 0;
@@ -57,23 +59,21 @@ Result:
 
 ~~~ .php
 4
-~~~
 
-~~~ .php
 0
-~~~
 
-~~~ .php
 100
 ~~~
 
 ### Set
 
+Set or replace array value recursively.
+
 ~~~ .xmp.php
-Anemon::set(&$input, $key, $value = null);
+Anemon::set(array &$input, $key, $value = null);
 ~~~
 
-Set or replace array value recursively:
+**Example:**
 
 ~~~ .php
 $array = [
@@ -101,11 +101,13 @@ $array = [
 
 ### Get
 
+Get array value recursively.
+
 ~~~ .xmp.php
-Anemon::get(&$input, $key = null, $fail = false);
+Anemon::get(array &$input, $key = null, $fail = false);
 ~~~
 
-Get array value recursively:
+**Example:**
 
 ~~~ .php
 $array = [
@@ -124,19 +126,18 @@ Result:
 
 ~~~ .php
 $test_1 = 2;
-~~~
-
-~~~ .php
 $test_2 = '#';
 ~~~
 
 ### Reset
 
+Remove array value recursively.
+
 ~~~ .xmp.php
-Anemon::reset(&$input, $key = null);
+Anemon::reset(array &$input, $key = null);
 ~~~
 
-Remove array value recursively:
+**Example:**
 
 ~~~ .php
 $array = [
@@ -163,11 +164,13 @@ $array = [
 
 ### Extend
 
+Extend two or more arrays.
+
 ~~~ .xmp.php
-Anemon::extend(&$input, $a[, $b[, $c[, ...]]]);
+Anemon::extend(array &$input, $a[, $b[, $c[, ...]]]);
 ~~~
 
-Extend arrays:
+**Example:**
 
 ~~~ .php
 $a = [
@@ -215,11 +218,13 @@ $a = [
 
 ### Concat
 
+Concatenate two or more arrays.
+
 ~~~ .xmp.php
-Anemon::concat(&$input, $a[, $b[, $c[, ...]]]);
+Anemon::concat(array &$input, $a[, $b[, $c[, ...]]]);
 ~~~
 
-Concatenate arrays:
+**Example:**
 
 ~~~ .php
 $a = [
@@ -299,7 +304,7 @@ $a = [
 
 ### Eat
 
-Array manipulation. Starts with eating or walking…
+Array walker. Starts with eating or walking…
 
 ~~~ .php
 $array = [
@@ -314,11 +319,13 @@ Anemon::eat($array); // …
 
 #### Vomit
 
+Output specific array data.
+
 ~~~ .xmp.php
 ->vomit($key = null, $fail = false);
 ~~~
 
-Output specific data:
+**Example:**
 
 ~~~ .php
 $test_1 = Anemon::eat($array)->vomit();
@@ -342,11 +349,13 @@ $test_3 = '#';
 
 #### Is
 
+Reduce array data to those that pass the function’s test.
+
 ~~~ .xmp.php
 ->is($fn ($value, $key));
 ~~~
 
-Reduce array data to those that pass the function’s test:
+**Example:**
 
 ~~~ .php
 $test = Anemon::eat($array)->is(function($value, $key) {
@@ -365,11 +374,13 @@ $test = [
 
 #### Not
 
+Reduce array data to those that does not pass the function’s test.
+
 ~~~ .xmp.php
 ->not($fn ($value, $key));
 ~~~
 
-Reduce array data to those that does not pass the function’s test:
+**Example:**
 
 ~~~ .php
 $test = Anemon::eat($array)->not(function($value, $key) {
@@ -388,11 +399,13 @@ $test = [
 
 #### Shake
 
+Shuffle array values.
+
 ~~~ .xmp.php
 ->shake($preserve_key = true);
 ~~~
 
-Shuffle array values:
+**Example:**
 
 ~~~ .php
 $test_1 = Anemon::eat($array)->shake()->vomit();
@@ -408,9 +421,7 @@ $test_1 = [
     'bar' => 1,
     'baz' => 2
 ];
-~~~
 
-~~~ .php
 $test_2 = [
     0 => 3,
     1 => 0,
@@ -421,11 +432,13 @@ $test_2 = [
 
 #### Sort
 
+Sort array values.
+
 ~~~ .xmp.php
 ->sort($sort = 1, $preserve_key = false);
 ~~~
 
-Sort array values:
+**Example:**
 
 ~~~ .php
 $array = [
@@ -489,9 +502,7 @@ $test_1 = [
         'id' => 1
     ]
 ];
-~~~
 
-~~~ .php
 $test_2 = [
     0 => [
         'size' => 'large',
@@ -509,9 +520,7 @@ $test_2 = [
         'id' => 1
     ]
 ];
-~~~
 
-~~~ .php
 $test_3 = [
     'qux' => [
         'size' => 'small',
@@ -529,9 +538,7 @@ $test_3 = [
         'id' => 3
     ]
 ];
-~~~
 
-~~~ .php
 $test_4 = [
     'qux' => [
         'size' => 'small',
@@ -557,11 +564,13 @@ $test_4 = [
 
 #### Chunk
 
+Chunk an array.
+
 ~~~ .xmp.php
 ->chunk($chunk = 5, $index = null, $fail = []);
 ~~~
 
-Chunk an array:
+**Example:**
 
 ~~~ .php
 $array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -600,11 +609,13 @@ Anemon::walk($array); // …
 
 #### Next
 
+Move to the next item.
+
 ~~~ .xmp.php
 ->next($skip = 0);
 ~~~
 
-Move to next item:
+**Example:**
 
 ~~~ .php
 Anemon::walk($array)->next()->current();
@@ -613,11 +624,13 @@ Anemon::walk($array)->next(1)->current(); // skip 1 item
 
 #### Previous
 
+Move to the previous item.
+
 ~~~ .xmp.php
 ->previous($skip = 0);
 ~~~
 
-Move to previous item:
+**Example:**
 
 ~~~ .php
 Anemon::walk($array)->previous()->current();
@@ -626,11 +639,13 @@ Anemon::walk($array)->previous(1)->current(); // skip 1 item
 
 #### To
 
+Move to the 2<sup>nd</sup> item.
+
 ~~~ .xmp.php
 ->to($index);
 ~~~
 
-Move to the 2<sup>nd</sup> item:
+**Example:**
 
 ~~~ .php
 Anemon::walk($array)->to(1)->current();
@@ -638,11 +653,13 @@ Anemon::walk($array)->to(1)->current();
 
 #### Before
 
+Insert before current item.
+
 ~~~ .xmp.php
 ->before($value, $key = null);
 ~~~
 
-Insert before:
+**Example:**
 
 ~~~ .php
 $test_1 = Anemon::walk($array)->to(2)->before('#')->vomit();
@@ -659,9 +676,7 @@ $test_1 = [
     'baz' => 2,
     'qux' => 3
 ];
-~~~
 
-~~~ .php
 $test_2 = [
     'foo' => 0,
     'bar' => 1,
@@ -673,11 +688,13 @@ $test_2 = [
 
 #### After
 
+Insert after current item.
+
 ~~~ .xmp.php
 ->after($value, $key = null);
 ~~~
 
-Insert after:
+**Example:**
 
 ~~~ .php
 $test_1 = Anemon::walk($array)->to(2)->after('#')->vomit();
@@ -694,9 +711,7 @@ $test_1 = [
     3 => '#',
     'qux' => 3
 ];
-~~~
 
-~~~ .php
 $test_2 = [
     'foo' => 0,
     'bar' => 1,
@@ -708,11 +723,13 @@ $test_2 = [
 
 #### Append
 
+Append an array item.
+
 ~~~ .xmp.php
 ->append($value, $key = null);
 ~~~
 
-Append an array item:
+**Example:**
 
 ~~~ .php
 $test_1 = Anemon::walk($array)->append('#')->vomit();
@@ -729,9 +746,7 @@ $test_1 = [
     'baz' => 2,
     'qux' => 3
 ];
-~~~
 
-~~~ .php
 $test_2 = [
     '#key' => '#',
     'foo' => 0,
@@ -743,11 +758,13 @@ $test_2 = [
 
 #### Prepend
 
+Prepend an array item.
+
 ~~~ .xmp.php
 ->prepend($value, $key = null);
 ~~~
 
-Prepend an array item:
+**Example:**
 
 ~~~ .php
 $test_1 = Anemon::walk($array)->prepend('#')->vomit();
@@ -764,9 +781,7 @@ $test_1 = [
     'qux' => 3,
     4 => '#'
 ];
-~~~
 
-~~~ .php
 $test_2 = [
     'foo' => 0,
     'bar' => 1,
@@ -778,11 +793,13 @@ $test_2 = [
 
 #### First
 
+Get the first item.
+
 ~~~ .xmp.php
 ->first();
 ~~~
 
-Get the first item:
+**Example:**
 
 ~~~ .php
 $test = Anemon::walk($array)->first();
@@ -790,11 +807,13 @@ $test = Anemon::walk($array)->first();
 
 #### Last
 
+Get the last item.
+
 ~~~ .xmp.php
 ->last();
 ~~~
 
-Get the last item:
+**Example:**
 
 ~~~ .php
 $test = Anemon::walk($array)->last();
@@ -802,11 +821,13 @@ $test = Anemon::walk($array)->last();
 
 #### Count
 
+Count items.
+
 ~~~ .xmp.php
 ->count($deep = false);
 ~~~
 
-Count items:
+**Example:**
 
 ~~~ .php
 $test = Anemon::walk($array)->count();
@@ -814,11 +835,13 @@ $test = Anemon::walk($array)->count();
 
 #### Key
 
+Get array key by index.
+
 ~~~ .xmp.php
 ->key($index, $fail = false);
 ~~~
 
-Get array key by index:
+**Example:**
 
 ~~~ .php
 $test = Anemon::walk($array)->key(1);
@@ -826,11 +849,13 @@ $test = Anemon::walk($array)->key(1);
 
 #### Index
 
+Get array index by key.
+
 ~~~ .xmp.php
 ->index($key, $fail = false);
 ~~~
 
-Get array index by key:
+**Example:**
 
 ~~~ .php
 $test = Anemon::walk($array)->index('foo');
@@ -838,11 +863,13 @@ $test = Anemon::walk($array)->index('foo');
 
 ### Alter
 
+This is just a shortcut for `switch` and `case` statements.
+
 ~~~ .xmp.php
 Anemon::alter($input, $replace = [], $fail = null);
 ~~~
 
-This is just a shortcut for `switch` and `case` statements:
+**Example:**
 
 ~~~ .php
 $input = 'bar';
@@ -864,11 +891,13 @@ $test = 2;
 
 ### Constructor
 
+Create flexible array variable. An instance of `Anemon` class can be used to make the array becomes possible to be accessed as string, object or function.
+
 ~~~ .xmp.php
 Anemon($array = [], $separator = ', ');
 ~~~
 
-Create flexible array variable. An instance of `Anemon` class can be used to make the array becomes possible to be accessed as string, object or function:
+**Example:**
 
 ~~~ .php
 $test = new Anemon(['foo', 'bar', 'baz']);
@@ -884,21 +913,13 @@ Result:
 
 ~~~ .php
 foo, bar, baz
-~~~
 
-~~~ .php
 foo + bar + baz
-~~~
 
-~~~ .php
 foo + bar + baz
-~~~
 
-~~~ .php
 bar
-~~~
 
-~~~ .php
 bar
 ~~~
 
@@ -924,24 +945,14 @@ Result:
 
 ~~~ .php
 0, 1, 2
-~~~
 
-~~~ .php
 0 + 1 + 2
-~~~
 
-~~~ .php
 0 + 1 + 2
-~~~
 
-~~~ .php
 0
-~~~
 
-~~~ .php
 #
-~~~
 
-~~~ .php
 0
 ~~~

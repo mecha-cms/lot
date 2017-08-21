@@ -31,7 +31,6 @@ Hook::set([
             Message::send($from, $to, $subject, $message);
         }
     }
-    return $key;
 });
 ~~~
 

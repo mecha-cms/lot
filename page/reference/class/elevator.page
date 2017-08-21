@@ -11,7 +11,7 @@ This class was inspired by a vertical transportation that moves people or goods 
 Elevator($input, $chunk = 5, $index = 0, $path = true, $config = [], $NS = "");
 ~~~
 
-Start by creating a new class construct:
+**Example:**
 
 ~~~ .php
 $elevator = new Elevator([0, 1, 2, 3, 4, 5, 6, 7], 3, 0, 'foo/bar');
@@ -37,13 +37,13 @@ To create horizontal elevator:
 ~~~ .php
 $elevator = new Elevator([0, 1, 2, 3, 4, 5, 6, 7], 3, 0, 'foo/bar', [
     'direction' => [
-        '-1' => 'previous', // ← default is `up`
+       '-1' => 'previous', // ← default is `up`
         '0' => "", // ← default is ``
         '1' => 'next' // ← default is `down`
     ],
     'union' => [
         // previous link
-        '-1' => [
+       '-1' => [
             1 => '&#x25C0;' // union content
         ],
         // next link

@@ -5,11 +5,15 @@ description: Configuration getter and setter.
 
 ### Set
 
+Set item.
+
 ~~~ .xmp.php
 Config::set($key, $value = null);
 ~~~
 
-Set an item:
+**Example:**
+
+Set a new item in `test` with value `#ok`:
 
 ~~~ .php
 Config::set('test', '#ok');
@@ -36,7 +40,7 @@ Or with dot notation:
 Config::set('author.name', '#test');
 ~~~
 
-There is also a shortcut variable called `$config` which also able to do the same:
+There is a shortcut variable called `$config` which also able to do the same:
 
 ~~~ .php
 $config->test = '#ok';
@@ -44,14 +48,24 @@ $config->test = '#ok';
 
 ### Get
 
+Get item.
+
 ~~~ .xmp.php
 Config::get($key = null, $fail = false);
 ~~~
+
+**Example:**
 
 Get item by key:
 
 ~~~ .php
 echo Config::get('title');
+~~~
+
+Using the shortcut:
+
+~~~ .php
+echo $config->title;
 ~~~
 
 With dot notation:
@@ -84,14 +98,24 @@ __test__(Config::get());
 
 ### Reset
 
+Remove item.
+
 ~~~ .xmp.php
 Config::reset($key = null);
 ~~~
+
+**Example:**
 
 Remove item by key:
 
 ~~~ .php
 Config::reset('title');
+~~~
+
+Using the shortcut:
+
+~~~ .php
+unset($config->title);
 ~~~
 
 With dot notation:

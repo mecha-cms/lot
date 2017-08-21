@@ -16,4 +16,4 @@ if (!Request::is('post')) {
 }
 ~~~
 
-So, the next time your visitor want to add a new comment, they will always see that the name, email and URL fields in the comment form are already filled in with their previous data.
+Next time your visitor want to add a new comment, they will always see that the name, email and URL fields in the comment form are already filled in with their previous data.

@@ -5,11 +5,13 @@ description: Convert back to X from Y.
 
 ### Base64
 
+Decode Base64 string.
+
 ~~~ .xmp.php
 From::base64($input);
 ~~~
 
-Decode Base64 string:
+**Example:**
 
 ~~~ .php
 $test = From::base64('aSBsb3ZlIHlvdQ==');
@@ -17,11 +19,13 @@ $test = From::base64('aSBsb3ZlIHlvdQ==');
 
 ### Decimal
 
+Convert HTML decimal characters representation into their original characters.
+
 ~~~ .xmp.php
 From::dec($input);
 ~~~
 
-Convert HTML decimal characters representation into their original characters:
+**Example:**
 
 ~~~ .php
 $test = From::dec('&#73;&#32;&#10084;&#32;&#85;');
@@ -29,11 +33,13 @@ $test = From::dec('&#73;&#32;&#10084;&#32;&#85;');
 
 ### Hexagonal
 
+Convert HTML hexagonal characters representation into their original characters.
+
 ~~~ .xmp.php
 From::hex($input);
 ~~~
 
-Convert HTML hexagonal characters representation into their original characters:
+**Example:**
 
 ~~~ .php
 $test = From::hex('&#x0049;&#x0020;&#x2764;&#x0020;&#x0055;');
@@ -41,11 +47,13 @@ $test = From::hex('&#x0049;&#x0020;&#x2764;&#x0020;&#x0055;');
 
 ### HTML
 
+Encode HTML special characters.
+
 ~~~ .xmp.php
 From::html($input);
 ~~~
 
-Encode HTML special characters:
+**Example:**
 
 ~~~ .php
 $test = From::html('<foo bar="baz">');
@@ -53,11 +61,13 @@ $test = From::html('<foo bar="baz">');
 
 ### JSON
 
+Convert JSON into PHP object.
+
 ~~~ .xmp.php
 From::json($input);
 ~~~
 
-Convert JSON into PHP object:
+**Example:**
 
 ~~~ .php
 $test = From::json('{"foo":"bar"}');
@@ -65,11 +75,13 @@ $test = From::json('{"foo":"bar"}');
 
 ### URL
 
+Encode URL special characters.
+
 ~~~ .php.xmp
 From::url($input, $raw = false);
 ~~~
 
-Encode URL special characters:
+**Example:**
 
 ~~~ .php
 $test_1 = From::url('foo bar+baz');
@@ -78,11 +90,13 @@ $test_2 = From::url('foo bar+baz', true);
 
 ### YAML
 
+Convert YAML string into array.
+
 ~~~ .xmp.php
 From::yaml($input, $c = [], $in = '  ');
 ~~~
 
-Convert YAML string into array:
+**Example:**
 
 ~~~ .php
 $test = From::yaml('foo: bar');

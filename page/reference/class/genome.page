@@ -13,9 +13,13 @@ class Blastula extends Genome {
 
 ### Plug
 
+Add a method.
+
 ~~~ .xmp.php
 Genome::plug($kin, $fn);
 ~~~
+
+**Example:**
 
 Add a `birth` method to the `Blastula` class:
 
@@ -57,9 +61,13 @@ echo $foo->bar(4)->baz(1)->bar(2)->x;
 
 ### Eject
 
+Remove a method.
+
 ~~~ .xmp.php
 Genome::eject($kin);
 ~~~
+
+**Example:**
 
 Remove `birth` method from the `Blastula` class:
 
@@ -75,11 +83,13 @@ Blastula::eject();
 
 ### Kin
 
+Get the available methods.
+
 ~~~ .xmp.php
 Genome::kin($kin = null, $fail = false, $origin = false);
 ~~~
 
-Get the available methods:
+**Example:**
 
 ~~~ .php
 $test_1 = Blastula::kin();
@@ -94,16 +104,10 @@ Result:
 $test_1 = [
     'birth' => function($name) { … }
 ];
-~~~
 
-~~~ .php
 $test_2 = function($name) { … };
-~~~
 
-~~~ .php
 $test_3 = false;
-~~~
 
-~~~ .php
 $test_4 = 1;
 ~~~

@@ -1,9 +1,9 @@
 ---
 title: Authors Field
-description: Single page with multiple authors.
+description: Handle single page with multiple authors.
 ...
 
-This hook will automatically add `authors` property to the current page contains information about last time specific user updating the page on every page update event.
+This hook will automatically add `authors` property to the current page, contains information about last time specific user updating the page on every page update event.
 
 ### Page Event
 
@@ -13,28 +13,32 @@ Requires [panel][link:../reference/extension/panel] extension:
 Hook::set('on.page.set', function($current, $previous) {
     if (!$previous) {
         // Is a new page, skip!
-        return $current;
-    }
-    if ($author = User::get(null, 'key')) {
-        $path = Path::F($current) . DS . 'authors.data';
-        $authors = From::json(File::open($path)->read('[]'));
-        $authors->{'@' . $author} = time();
-        File::write(To::json($authors))->saveTo($path, 0600);
+    } else {
+        if ($author = User::get(null, 'key')) {
+            $path = Path::F($current) . DS . 'authors.data';
+            $authors = From::json(File::open($path)->read('[]'));
+            $authors->{'@' . $author} = time();
+            File::write(To::json($authors))->saveTo($path, 0600);
+        }
     }
 });
 ~~~
 
 ### Page Property
 
+There are a lot of ways to work out with the generated page property. Here are some examples:
+
 #### Raw Information
 
 ~~~ .php
-echo To::json($page->authors);
+<?php echo To::json($page->authors); ?>
 ~~~
 
 #### Last Update Information
 
 ~~~ .php
+<?php
+
 if ($page->authors) {
 
     $_item = ["", 0];
@@ -56,11 +60,15 @@ if ($page->authors) {
     echo '<p>Last updated by ' . $_author . ' on ' . $_date . '.';
 
 }
+
+?>
 ~~~
 
 #### Last Updates Information
 
 ~~~ .php
+<?php
+
 if ($page->authors) {
 
     $_authors = (array) $page->authors;
@@ -84,4 +92,6 @@ if ($page->authors) {
     echo '</ul>';
 
 }
+
+?>
 ~~~

@@ -5,11 +5,13 @@ description: Working with date and time.
 
 ### Time Zone
 
+Set default date time zone.
+
 ~~~ .xmp.php
 Date::zone($zone = null);
 ~~~
 
-Set default date time zone:
+**Example:**
 
 ~~~ .php
 Date::zone('Asia/Jakarta');
@@ -23,6 +25,8 @@ Get the current time zone:
 echo Date::zone();
 ~~~
 
+---
+
 ### Constructor
 
 ~~~ .php.xmp
@@ -31,11 +35,13 @@ Date($date = null);
 
 #### Format
 
+Format a date input.
+
 ~~~ .xmp.php
 ->format($format = DATE_WISE);
 ~~~
 
-Date formatter:
+**Example:**
 
 ~~~ .php
 $date = new Date('2016/04/21 16:00:00');
@@ -48,9 +54,11 @@ Result:
 2016-04-21T16:00:00+07:00
 ~~~
 
-Read more about date formatting patterns [here](http://php.net/manual/en/function.date.php "PHP date()").
+Read more about date formatting pattern [here](http://php.net/manual/en/function.date.php "PHP date()").
 
 #### Slug
+
+Date format as safe file name.
 
 ~~~ .php
 $date = new Date('2016/04/21 16:00:00');
@@ -65,11 +73,13 @@ Result:
 
 #### Extract
 
+Extract date formats.
+
 ~~~ .xmp.php
 ->extract($key = null, $fail = false);
 ~~~
 
-Extract date formats:
+**Example:**
 
 ~~~ .php
 $date = new Date('2016/04/21 16:00:00');
@@ -109,9 +119,13 @@ Result:
 
 #### Ago
 
+Calculate distance from the date input to the current date.
+
 ~~~ .php.xmp
 ->ago($key = null, $fail = false, $compact = true);
 ~~~
+
+**Example:**
 
 How long does `1992/04/21 16:00:00` from today date?
 
@@ -139,15 +153,17 @@ Result:
 
 #### Set
 
+Create custom date format.
+
 ~~~ .xmp.php
 Date::set($key, $fn = null ($output, $language));
 ~~~
 
-Set custom date format:
+**Example:**
 
 ~~~ .php
-Date::set('my_format', function($output, $language) {
-    return $output['year'] . '/' . $output['month'] . '/' . $output['day'];
+Date::set('my_format', function($o, $language) {
+    return $o['year'] . '/' . $o['month'] . '/' . $o['day'];
 });
 ~~~
 
@@ -165,11 +181,13 @@ echo $date->my_format;
 
 #### Get
 
+Get custom date format.
+
 ~~~ .php.xmp
 Date::get($key = null, $fail = false);
 ~~~
 
-Get custom date format:
+**Example:**
 
 ~~~ .php
 __test__(
@@ -180,11 +198,13 @@ __test__(
 
 #### Remove
 
+Remove custom date format.
+
 ~~~ .xmp.php
 Date::reset($key = null);
 ~~~
 
-Remove custom date format:
+**Example:**
 
 ~~~ .php
 Date::reset('my_format');

@@ -8,10 +8,10 @@ Date formats contained in the [`Date`][link:../reference/class/date#reference:ex
  - `en-us` → _[[e]]echo $date->en_us;[[/e]]_
  - `id-id` → _[[e]]echo $date->id_id;[[/e]]_
 
-By replacing the `-` characters with a `_`, you can call the date format based on the current site language:
+By replacing the `-` character with `_`, you can call the date format based on the current site language:
 
 ~~~ .php
-echo $page->date->{str_replace('-', '_', $site->language)};
+<?php echo $page->date->{str_replace('-', '_', $site->language)}; ?>
 ~~~
 
 ### Missing Date Format
@@ -19,7 +19,7 @@ echo $page->date->{str_replace('-', '_', $site->language)};
 Add your own localized date format this way:
 
 ~~~ .php
-Date::set('ja_jp', function($output, $language) {
-    return $output['year'] . '/' . $output['month'] . '/' . $output['day'];
+Date::set('ja_jp', function($o, $language) {
+    return $o['year'] . '/' . $o['month'] . '/' . $o['day'];
 });
 ~~~

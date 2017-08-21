@@ -104,4 +104,4 @@ o_type:
   Quote: Quote # ← this
 ~~~
 
-![1]([[asset]]/png/article/page-format.png)
+![1](%{asset}%/png/article/page-format.png)

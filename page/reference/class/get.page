@@ -5,26 +5,18 @@ description: Data caller.
 
 ### Internet Protocol
 
+Get user’s IP.
+
 ~~~ .xmp.php
 Get::ip($fail = false);
 ~~~
 
-Get user’s IP:
-
-~~~ .php
-echo Get::ip();
-~~~
-
 ### User Agent
+
+Get user’s user agent
 
 ~~~ .xmp.php
 Get::ua($fail = false);
-~~~
-
-Get user’s user agent:
-
-~~~ .php
-echo Get::ua();
 ~~~
 
 ### Page

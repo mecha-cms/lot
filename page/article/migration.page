@@ -236,7 +236,7 @@ You can choose either to replace old syntax with the new syntax, or by setting c
 ~~~ .txt
 Name: Taufik Nurrohman
 Email: &#101;&#109;&#97;&#105;&#108;&#64;&#100;&#111;&#109;&#97;&#105;&#110;&#46;&#99;&#111;&#109;
-URL: [[url]]
+URL: %{url}%
 Status: 1
 Content Type: Markdown
 Fields: {"user_ip":"114.121.239.123","user_agent":"Mozilla\/5.0 (Windows NT 6.3; rv:43.0) Gecko\/20100101 Firefox\/43.0"}
@@ -257,7 +257,7 @@ Prior to version `2.x.x`, post ID, comment time and parent ID are stored in the 
 author: Taufik Nurrohman
 email: email@domain.com
 type: Markdown
-link: [[url]]
+link: %{url}%
 status: 1
 user_ip: 114.121.239.123
 user_agent: Mozilla/5.0 (Windows NT 6.3; rv:43.0) Gecko/20100101 Firefox/43.0

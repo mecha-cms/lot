@@ -1,4 +1,6 @@
 ---
 title: Snippet
-description: A collection of code snippets for developers.
+description: Code snippet collection for developers.
 ...
+
+In this page, we talk about what you can do with Mecha. We will talk about API and hooks, and how they can be extended with the default functionality from the core.

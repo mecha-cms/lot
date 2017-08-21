@@ -5,6 +5,8 @@ description: Generate static data from a file.
 
 ### Set
 
+Create a new cache file.
+
 ~~~ .php.xmp
 Cache::set($from, $content = null, $id = null);
 ~~~
@@ -13,9 +15,13 @@ Cache::set($from, $content = null, $id = null);
 
 ### Get
 
+Get the cache file.
+
 ~~~ .php.xmp
 Cache::get($from, $fail = false);
 ~~~
+
+**Example:**
 
 Get static data of `path\to\file.php` file:
 
@@ -33,9 +39,13 @@ return (array) $_SERVER;
 
 ### Reset
 
+Delete cache file.
+
 ~~~ .php.xmp
 Cache::reset($from = null);
 ~~~
+
+**Example:**
 
 Delete cache file of `path\to\file.php`:
 
@@ -51,9 +61,13 @@ Cache::reset();
 
 ### Expire
 
+Check if cache file already expired.
+
 ~~~ .php.xmp
 Cache::expire($from, $id = null);
 ~~~
+
+**Example:**
 
 Check if cache file of `path\to\file.php` already expired:
 
@@ -65,9 +79,13 @@ if (Cache::expire('path\to\file.php')) {
 
 ### ID
 
+Get cache ID.
+
 ~~~ .php.xmp
 Cache::id($from, $fail = -1);
 ~~~
+
+**Example:**
 
 Get cache ID of `path\to\file.php`:
 

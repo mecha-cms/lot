@@ -8,6 +8,8 @@ Requires [tags][link:../reference/extension/tag] extension.
 ### Tag List 1
 
 ~~~ .php
+<?php
+
 $_base = 'article';
 
 echo '<h3>Tags</h3>';
@@ -16,21 +18,26 @@ if ($_kinds = glob(PAGE . DS . $_base . DS . '*' . DS . 'kind.data', GLOB_NOSORT
     $_data = [];
     foreach ($_kinds as $_kind) {
         $_kind = e(file_get_contents($_kind));
-        if (!is_array($_kind)) continue;
+        if (!is_array($_kind)) {
+            continue;
+        }
         foreach ($_kind as $_k) {
             $_data[] = $_k;
         }
     }
+    $_slug = Extend::state('tag', 'path', 'tag');
     foreach (array_count_values($_data) as $_k => $_v) {
         if (($_slug = To::tag($_k)) === false) continue;
         $_tag = new Page(TAG . DS . $_slug . '.page', [], 'tag');
-        $_t = $url . '/' . To::url($_base) . '/' . Extend::state('tag', 'path', 'tag');
-        echo '<li>' . HTML::a($_tag->title, $_t . '/' . $_tag->slug) . ' (' . $_v . ')</li>';
+        $_u = $url . '/' . To::url($_base) . '/' . $_slug;
+        echo '<li>' . HTML::a($_tag->title, $_u . '/' . $_tag->slug) . ' (' . $_v . ')</li>';
     }
     echo '</ul>';
 } else {
     echo '<p>No tags yet.</p>';
 }
+
+?>
 ~~~
 
  - `$_base` → Select from which page folder the tags you want to list (relative to `lot\page` folder).
@@ -38,9 +45,12 @@ if ($_kinds = glob(PAGE . DS . $_base . DS . '*' . DS . 'kind.data', GLOB_NOSORT
 ### Tag List 2
 
 ~~~ .php
+<?php
+
 $_path = $url->path;
+
 if ($site->tag) { // → `blog/tag/tag-slug`
-    $_path = URL::I($url->path); // remove page offset in URL path
+    $_path = URL::I($url->path); // Remove page offset in URL path
     $_path = Path::D($_path, 2);
 } else if ($site->is === 'page') { // → `blog/page-slug`
     $_path = Path::D($_path);
@@ -52,13 +62,17 @@ if ($_kinds = glob(PAGE . DS . $_path . DS . '*' . DS . 'kind.data', GLOB_NOSORT
     $_data = [];
     foreach ($_kinds as $_kind) {
         $_kind = e(file_get_contents($_kind));
-        if (!is_array($_kind)) continue;
+        if (!is_array($_kind)) {
+            continue;
+        }
         foreach ($_kind as $_k) {
             $_data[] = $_k;
         }
     }
     foreach (array_count_values($_data) as $_k => $_v) {
-        if (($_slug = To::tag($_k)) === false) continue;
+        if (($_slug = To::tag($_k)) === false) {
+            continue;
+        }
         $_tag = new Page(TAG . DS . $_slug . '.page', [], 'tag');
         echo '<li>' . HTML::a($_tag->title, $_tag->url) . ' (' . $_v . ')</li>';
     }
@@ -66,4 +80,6 @@ if ($_kinds = glob(PAGE . DS . $_path . DS . '*' . DS . 'kind.data', GLOB_NOSORT
 } else {
     echo '<p>No tags yet.</p>';
 }
+
+?>
 ~~~

@@ -35,4 +35,4 @@ It’s just for the sake of aesthetics. By using invisible characters, your page
 
 Some good source code editor like [CodeMirror](http://codemirror.net "CodeMirror") can visualize them as [red dots](http://codemirror.net/doc/manual.html#option_specialCharPlaceholder):
 
-![1]([[asset]]/png/article/case-block-escape.png)
+![1](%{asset}%/png/article/case-block-escape.png)

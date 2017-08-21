@@ -3,7 +3,7 @@ title: State Hooks
 description: Force some values to the default states values.
 ...
 
-There will be a time when you want to force some configuration data of the extension and plugin to be specific to your custom shield. Here is an example on how to set the [comment captcha][link:../reference/extension/plugin/comment-captcha] type to `text` with black background and blue color using a hook:
+There will be a time when you want to force some configuration data of the extension and [plugin][link:../reference/extension/plugin] to be specific to your custom shield. Here is an example on how to force the [comment captcha][link:../reference/extension/plugin/comment-captcha] type to `text` with black background and blue color using a hook:
 
 ~~~ .php
 Hook::set('plugin.state.comment-captcha', function($lot) {

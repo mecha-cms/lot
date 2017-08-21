@@ -9,4 +9,4 @@ description: Basic search form.
 </form>
 ~~~
 
-The search functionality is a native feature of the [page][link:../reference/extension/page] extension. By appending a `?q=foo+bar` query string to the end of the URL, it will automatically search for pages that contains `foo` and `bar` in the file name. This feature does not have ability to search for text within the page file content due to the performance problem on every file–based CMS. This search functionality will also search only for files that is placed in the current directory. So, there is no such thing called recursive search.
+The search functionality is a native feature of the [page][link:../reference/extension/page] extension. By appending a `?q=foo+bar` query string to the end of a URL, it will automatically search for pages that contains `foo` and `bar` in the file name. This feature does not have ability to search for text within the page file content due to the performance problem on every file-based CMS. This search functionality will also search only for files that are placed within the current directory. So, there is no such thing called recursive search.

@@ -5,6 +5,8 @@ description: Persistent storage using cookies.
 
 ### Set
 
+Set a cookie.
+
 ~~~ .xmp.php
 Cookie::set($key, $value = "", $config = [
     'expire' => 1,
@@ -15,7 +17,7 @@ Cookie::set($key, $value = "", $config = [
 ] | $expire);
 ~~~
 
-Set a cookie:
+**Example:**
 
 ~~~ .php
 Cookie::set('my_cookie', 'the value', 1); // expired in a day
@@ -35,11 +37,13 @@ Cookie::set('my_cookie', 'the value', [
 
 ### Reset
 
+Remove a cookie.
+
 ~~~ .xmp.php
 Cookie::reset($key = null);
 ~~~
 
-Remove a cookie:
+**Example:**
 
 ~~~ .php
 Cookie::reset('my_cookie');
@@ -59,11 +63,13 @@ Cookie::reset();
 
 ### Get
 
+Get a cookie.
+
 ~~~ .xmp.php
 Cookie::get($key = null, $fail = null);
 ~~~
 
-Get a cookie:
+**Example:**
 
 ~~~ .php
 Cookie::get('my_cookie', '#');

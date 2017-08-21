@@ -149,7 +149,7 @@ To::path($input);
 Convert public URL into private file path:
 
 ~~~ .php
-$test = To::path('[[url]]/path/to/file.html');
+$test = To::path('%{url}%/path/to/file.html');
 ~~~
 
 ### Sentence

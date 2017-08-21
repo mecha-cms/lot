@@ -213,19 +213,19 @@ Remove the trailing page offset from URL:
 
 ~~~ .php
 __test__(
-    URL::I('[[url]]/blog'),
-    URL::I('[[url]]/blog/4')
+    URL::I('%{url}%/blog'),
+    URL::I('%{url}%/blog/4')
 );
 ~~~
 
 Result:
 
 ~~~ .txt
-[[url]]/blog
+%{url}%/blog
 ~~~
 
 ~~~ .txt
-[[url]]/blog
+%{url}%/blog
 ~~~
 
 ---

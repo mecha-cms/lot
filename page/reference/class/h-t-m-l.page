@@ -2,3 +2,43 @@
 title: Class `HTML`
 description: HTML markup constructor.
 ...
+
+### Anchor
+
+~~~ .xmp.php
+HTML::a($text = "", $href = null, $target = null, $attr = [], $dent = 0);
+~~~
+
+### Image
+
+~~~ .xmp.php
+HTML::img($src = null, $alt = null, $attr = [], $dent = 0);
+~~~
+
+### Break
+
+~~~ .xmp.php
+HTML::br($i = 1, $attr = [], $dent = 0);
+~~~
+
+### Horizontal Rule
+
+~~~ .xmp.php
+HTML::hr($i = 1, $attr = [], $dent = 0);
+~~~
+
+### List
+
+~~~ .xmp.php
+HTML::ol($list = [], $attr = [], $dent = 0);
+~~~
+
+~~~ .xmp.php
+HTML::ul($list = [], $attr = [], $dent = 0);
+~~~
+
+### Default
+
+~~~ .xmp.php
+HTML::{$any}($content = "", $attr = [], $dent = 0);
+~~~

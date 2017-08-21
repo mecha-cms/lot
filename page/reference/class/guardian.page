@@ -27,7 +27,7 @@ Guardian::check($token $id = 0, $fail = false);
 Guardian::kick($path = "");
 ~~~
 
-Redirect to ` [[url]]/foo/bar `:
+Redirect to ` %{url}%/foo/bar `:
 
 ~~~ .php
 Guardian::kick('foo/bar');

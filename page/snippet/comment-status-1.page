@@ -1,12 +1,11 @@
 ---
 title: Mark Site Author’s Comments
-description: Set a unique style on the site author’s comments.
+description: Set a unique style to the site author’s comments.
 ...
 
-Requires [comment][link:../reference/extension/comment] extension, [panel][link:../reference/extension/panel] extension, and requires you to be logged in when creating a new comment. This snippet will add a `status` data to the `$_POST` storage with value of `1`.
+Requires [comment][link:../reference/extension/comment] extension and [panel][link:../reference/extension/panel] extension, and requires you to be logged in when creating a new comment. This snippet will add a `status` data to the `$_POST` storage with value `1`.
 
 ~~~ .php
-// Mark site author’s comment (requires panel extension)
 if (Route::is('%*%/' . Extend::state('comment', 'path', '-comment')) && Request::is('post')) {
     if (Extend::exist('panel') && User::get()) {
         Request::set('post', 'status', 1);

@@ -1,9 +1,9 @@
 ---
 title: Detect External Links
-description: External links checker for `HTML` page type.
+description: External links checker for “HTML” page type.
 ...
 
-Automatically add `rel="nofollow"` and `target="_new"` attribute to the external links in page description and content. You don’t need this snippet if you are using [Markdown][link:../reference/extension/plugin/markdown].
+This snippet will automatically add `rel="nofollow"` and `target="_new"` attribute to the external links in the page description and content. You don’t need this snippet if you are using [Markdown][link:../reference/extension/plugin/markdown]. Markdown plugin already has this feature included.
 
 ~~~ .php
 Hook::set([

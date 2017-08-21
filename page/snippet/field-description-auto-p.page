@@ -1,6 +1,6 @@
 ---
 title: Automatic Paragraph
-description: Wrap `description` data with paragraph tags if it doesn’t have paragraph tags.
+description: Wrap description data with paragraph tags if it doesn’t have paragraph tags.
 ...
 
 ~~~ .php

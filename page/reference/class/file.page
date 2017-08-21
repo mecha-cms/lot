@@ -17,19 +17,21 @@ File::$config = [
 
 ### Exist
 
+Check the existence of a file/folder.
+
 ~~~ .xmp.php
 File::exist($input, $fail = false);
 ~~~
 
-Check the existence of a file/folder:
+**Example:**
 
 ~~~ .php
 if (File::exist('test.txt')) {
-    echo 'File `test.txt` is exists.';
+    echo 'File `test.txt` exists.';
 }
 ~~~
 
-Return the given path if file/folder is exists, return `false` if not:
+Return the given path if file/folder exists, return `false` if not:
 
 ~~~ .php
 if ($file = File::exist('header.php')) {
@@ -79,7 +81,7 @@ Result:
 $test_1 = [
     'path' => '.\path\to\file.txt',
     'name' => 'file',
-    'url' => '[[url]]/path/to/file.txt',
+    'url' => '%{url}%/path/to/file.txt',
     'extension' => 'txt',
     'update' => '2014-06-21 20:05:17',
     'size' => '20.62 KB',
@@ -92,13 +94,9 @@ $test_1 = [
     '_update' => 1403355917,
     '_size' => 21114
 ];
-~~~
 
-~~~ .php
-$test_2 = '[[url]]/path/to/file.txt';
-~~~
+$test_2 = '%{url}%/path/to/file.txt';
 
-~~~ .php
 $test_3 = false;
 ~~~
 
@@ -115,7 +113,9 @@ Parameter | Description
 `$folder` | The folder path to explore.
 `$deep` | Explore the folder contents recursively.
 
-List all files from a folder:
+**Example:**
+
+List all files and folders from a folder:
 
 ~~~ .php
 $tree_1 = File::explore('path\to\folder');
@@ -132,9 +132,7 @@ $tree_1
  ├── path\to\folder\folder-1: 0
  ├── path\to\folder\folder-2: 0
  └── path\to\folder\folder-3: 0
-~~~
 
-~~~ .txt
 $tree_2
  │
  ├── path\to\folder\file-1.txt: 1
@@ -165,7 +163,7 @@ $test_4 = File::explore(['path\to\folder', 'css,js'], true); // get file(s) only
 
 ### Write
 
-Create a file:
+Create a file.
 
 ~~~ .php
 File::write('some text')->saveTo('path\to\file.txt');
@@ -173,7 +171,7 @@ File::write('some text')->saveTo('path\to\file.txt');
 
 ### Save
 
-Update a file:
+Update a file.
 
 ~~~ .php
 File::open('path\to\file.txt')->write('some text')->save();
@@ -181,7 +179,7 @@ File::open('path\to\file.txt')->write('some text')->save();
 
 ### Append
 
-Append text to file:
+Append text to a file.
 
 ~~~ .php
 File::open('path\to\file.txt')->append('hey!')->save();
@@ -189,7 +187,7 @@ File::open('path\to\file.txt')->append('hey!')->save();
 
 ### Prepend
 
-Prepend text to file:
+Prepend text to a file.
 
 ~~~ .php
 File::open('path\to\file.txt')->prepend('hey!')->save();
@@ -197,7 +195,7 @@ File::open('path\to\file.txt')->prepend('hey!')->save();
 
 ### Read
 
-Output the file content:
+Output the file content.
 
 ~~~ .php
 echo File::open('path\to\file.txt')->read();
@@ -205,7 +203,9 @@ echo File::open('path\to\file.txt')->read();
 
 ### Get
 
-Reading file line by line. An alternative to the previous method which allows you to stop the reading process on a specific line/condition:
+Reading file line by line. An alternative to the previous method which allows you to stop the reading process on a specific line/condition.
+
+**Example:**
 
 ~~~ .php
 // stop reading at line 4
@@ -224,7 +224,7 @@ echo File::open('path\to\file.txt')->get(['$', 12]);
 
 ### Import
 
-Import a PHP file:
+Import a PHP file.
 
 ~~~ .php
 $test = File::open('path\to\file.php')->import();
@@ -232,7 +232,7 @@ $test = File::open('path\to\file.php')->import();
 
 ### Export
 
-Export data as a PHP file:
+Export data as a PHP file.
 
 ~~~ .php
 $test = File::export([
@@ -243,7 +243,7 @@ $test = File::export([
 
 ### Serialize
 
-This is just a shortcut for `File::write(serialize('test!'))->saveTo('path\to\file.txt')`
+This is just a shortcut for `File::write(serialize('test!'))->saveTo('path\to\file.txt')`.
 
 ~~~ .php
 File::serialize('test!')->saveTo('path\to\file.txt');
@@ -251,7 +251,7 @@ File::serialize('test!')->saveTo('path\to\file.txt');
 
 ### Unserialize
 
-This is just a shortcut for `unserialize(File::open('file.txt')->read())`
+This is just a shortcut for `unserialize(File::open('file.txt')->read())`.
 
 ~~~ .php
 File::open('file.txt')->unserialize();
@@ -259,7 +259,7 @@ File::open('file.txt')->unserialize();
 
 ### Move To
 
-Move a file or folder:
+Move a file or folder.
 
 ~~~ .php
 File::open('path\to\file.txt')->moveTo('path\to\folder');
@@ -277,7 +277,7 @@ File::open('path\to\file.txt')->moveTo('path\to\folder\file-1.txt');
 
 ### Rename To
 
-Rename a file:
+Rename a file or folder.
 
 ~~~ .php
 File::open('path\to\file.txt')->renameTo('file-1.txt');
@@ -285,7 +285,7 @@ File::open('path\to\file.txt')->renameTo('file-1.txt');
 
 ### Copy To
 
-Copy a file:
+Copy a file.
 
 ~~~ .php
 File::open('path\to\file.txt')->copyTo('path\to\file-2.txt');
@@ -320,7 +320,7 @@ File::open('path\to\file.txt')->copyTo([
 
 ### Delete
 
-Delete a file or folder:
+Delete a file or folder.
 
 ~~~ .php
 File::open('path\to\file.txt')->delete();
@@ -332,7 +332,7 @@ File::open('path\to\folder')->delete();
 
 ### T
 
-Get file modification time:
+Get file modification time.
 
 ~~~ .php
 echo File::T('path\to\file.txt');
@@ -340,7 +340,7 @@ echo File::T('path\to\file.txt');
 
 ### Consent
 
-Set file permission:
+Set file permission.
 
 ~~~ .php
 File::open('path\to\file.txt')->consent(0600);
@@ -358,11 +358,13 @@ File::open('path\to\file.txt')->write('test!')->save(0600);
 
 ### Upload
 
+Upload a file.
+
 ~~~ .php.xmp
 File::upload($f, $path = ROOT, $fn = null, $fail = false, $c = []);
 ~~~
 
-Upload a file:
+**Example:**
 
 ~~~ .php
 File::upload($_FILES['file'], 'path\to\folder');
@@ -378,11 +380,11 @@ File::upload($_FILES['file'], 'path\to\folder', function($file) {
 
 ### Size
 
+Convert file size.
+
 ~~~ .xmp.php
 File::size($file, $unit = null, $prec = 2);
 ~~~
-
-Convert file size.
 
 **Options:** `B`, `KB`, `MB`, `GB`, `TB`
 

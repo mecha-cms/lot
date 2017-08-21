@@ -3,7 +3,7 @@ title: Asset Block
 description: Maintainable asset URL in page content.
 ...
 
-Using [blocks][link:../reference/extension/block] in place of the base URL will make the asset URL in page content becomes maintainable. So, if another day you want to migrate the asset files to a different domain, you can just replace the block value instead of editing the whole pages to update the old asset URL.
+Using [blocks][link:../reference/extension/block] in place of the base URL will make the asset URL in your page content becomes maintainable. So that, if another day you want to migrate the asset files to a different domain, you can just replace this block value instead of editing the whole pages to update the old asset URL.
 
 ~~~ .php
 // Set a block parser with ID `asset`
@@ -24,4 +24,17 @@ type: HTML
 ...
 
 <img alt="" src="[‌[‌asset‌]‌]/png/image.png" width="50" height="50">
+~~~
+
+> **Tip:** You can also use this method to easily switch between offline and online site. In some cases, you may want to keep the asset files structured as they should in your local environment, but also want to use a CDN service for your online assets:
+>
+> ~~~ .php
+> Block::set('asset', function($content) use($url) {
+>     if ($url->host === 'localhost') {
+>         $base = To::url(ASSET);
+>     } else {
+>         $base = 'https://cdn.%{url.host}%/asset';
+>     }
+>     return Block::replace('asset', $base, $content);
+> });
 ~~~

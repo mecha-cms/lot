@@ -35,9 +35,7 @@ if (Route::is($_path . '/::g::/enter')) {
         'type' => 'select',
         'title' => $language->to,
         'values' => $_values,
-        'is' => [
-            'block' => true
-        ]
+        'width' => true
     ]);
 }
 ~~~

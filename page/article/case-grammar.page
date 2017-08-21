@@ -51,9 +51,9 @@ re·write ✔ | re·erase ✘ | re·read ✔
 
 I can find _reset_ as a word but not with _unset_:
 
-![1]([[asset]]/png/article/case-grammar/1.png) ![2]([[asset]]/png/article/case-grammar/2.png)
+![1](%{asset}%/png/article/case-grammar/1.png) ![2](%{asset}%/png/article/case-grammar/2.png)
 
-![3]([[asset]]/png/article/case-grammar/3.png) ![4]([[asset]]/png/article/case-grammar/4.png)
+![3](%{asset}%/png/article/case-grammar/3.png) ![4](%{asset}%/png/article/case-grammar/4.png)
 
 The word _reset_ may can’t represent all of the _delete_ command but at least people can quickly understand with the meaning of _reset_ as _start over_, _back to zero_ or _back to initial_, which can also means _becomes null_, just like the default value of every variable with no values set. We can use, for example, _write_, _erase_ and _read_ if _set_, _reset_ and _get_ seem improper to be used just like what I did for the [`File`][link:../reference/class/file] API.
 

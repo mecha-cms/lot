@@ -30,7 +30,7 @@ Thank you!
 
 #### Spread the World
 
-Random banner selection. Put this banner in your site to tell people about Mecha.
+Random banner selection. Put this banner on your site to tell people about Mecha.
 
 [[e]]
 Hook::set('page.images', function($content, $lot) {

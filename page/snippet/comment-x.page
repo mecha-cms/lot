@@ -7,10 +7,10 @@ Any existing comments will be visible, but not with the comment form. Comments s
 
 ~~~ .yaml
 ---
-title: Test Page Title
-description: Test page description.
+title: Page Title
+description: Page description.
 comments: {"x":true}
 ...
 
-Test page content.
+Page content.
 ~~~

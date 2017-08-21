@@ -5,20 +5,23 @@ description: Applies only for local images.
 
 ~~~ .php
 Hook::set('page.content', function($content) {
-    if (stripos($content, '<img ') === false) return $content;
+    if (stripos($content, '<img ') === false) {
+        return $content;
+    }
     return preg_replace_callback('#<img .*?>#', function($m) {
-        $apart = HTML::apart($m[0], false);
-        if (isset($apart[2]['width']) && isset($apart[2]['height'])) {
-            return $m[0]; // Image `width` and `height` attribute already exist
+        $union = new Union;
+        $img = $union->apart($m[0], false);
+        if (isset($img[2]['width']) && isset($img[2]['height'])) {
+            return $m[0]; // Image `width` and `height` attribute already set
         }
-        if (isset($apart[2]['src'])) {
-            $src = URL::long($apart[2]['src']); // Convert relative URL to full URL
+        if (isset($img[2]['src'])) {
+            $src = URL::long($img[2]['src']); // Convert relative URL to full URL
             $src = To::path($src); // Convert public URL to private file path
             if ($path = File::exist($src)) {
                 $s = getimagesize($path); // Inspect local image data
-                $apart[2]['width'] = $s[0]; // Set image `width` attribute
-                $apart[2]['height'] = $s[1]; // Set image `height` attribute
-                return call_user_func_array('HTML::unite', $apart); // Output the result!
+                $img[2]['width'] = $s[0]; // Set image `width` attribute
+                $img[2]['height'] = $s[1]; // Set image `height` attribute
+                return call_user_func_array([$union, 'unite'], $img); // Re-unite the image!
             }
             return $m[0]; // External image `src` or invalid image `src` value
         }

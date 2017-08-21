@@ -13,19 +13,19 @@ Before doing anything, make sure that you have created a local copy of your site
 
 Create a temporary folder in the root folder of your _Mecha_ site then name it as you like. Let’s say it `test`:
 
-![1]([[asset]]/png/article/update-view/1.png)
+![1](%{asset}%/png/article/update-view/1.png)
 
 ### Step 3: Install a Fresh Mecha Package
 
 Download the package from [here][link:../home] then put it in the `test` folder. Extract it!
 
-![2]([[asset]]/png/article/update-view/2.png)
+![2](%{asset}%/png/article/update-view/2.png)
 
 ### Step 4: Moving the Static Files
 
 Now go to the `lot` folder of the parent folder then select all folders that contain static files, including the `state` folder. Copy or cut them all then paste in `.\www\test\lot`:
 
-![3]([[asset]]/png/article/update-view/3.png)
+![3](%{asset}%/png/article/update-view/3.png)
 
 > **Note:** You may delete the `page` folder first, which contains some default pages as the site example.
 
@@ -33,9 +33,9 @@ Now go to the `lot` folder of the parent folder then select all folders that con
 
 Now visit `http://localhost/test` to make sure that the site is visible as expected even without any custom extensions and plugins at all:
 
-![4]([[asset]]/png/article/update-view/4.png)
+![4](%{asset}%/png/article/update-view/4.png)
 
-> **Note:** If you got a _red_ message like `Shield::attach(false)` in the page then it was caused by your `shield` property that has been set to a value other than `document`. This message will appear when the site is missing your custom shield folder. Open `.\www\test\lot\state\config.php` then make sure that the `shield` value is set to `document`.
+> **Note:** If you get a _red_ message like `Shield::attach(false)` in the page then it was caused by your `shield` property that has been set to a value other than `document`. This message will appear when the site is missing your custom shield folder. Open `.\www\test\lot\state\config.php` then make sure that the `shield` value is set to `document`.
 
 ### Step 6: Extensions, Plugins and Shields
 
@@ -55,25 +55,25 @@ You may need to configure back the shields, extensions and plugins to match with
 
 Delete or move all files in the parent folder (except the `test` folder) to a new folder, just in case:
 
-![6]([[asset]]/png/article/update-view/6.png)
+![6](%{asset}%/png/article/update-view/6.png)
 
 ### Step 9: Restore the File Locations
 
 Move all files that are now placed in the `test` folder to its parent folder:
 
-![7]([[asset]]/png/article/update-view/7.png)
+![7](%{asset}%/png/article/update-view/7.png)
 
-![8]([[asset]]/png/article/update-view/8.png)
+![8](%{asset}%/png/article/update-view/8.png)
 
 ### Step 10: Delete the Temporary Folder
 
 You can now delete the `test` folder!
 
-![9]([[asset]]/png/article/update-view/9.png)
+![9](%{asset}%/png/article/update-view/9.png)
 
 So that you will get only this:
 
-![10]([[asset]]/png/article/update-view/10.png)
+![10](%{asset}%/png/article/update-view/10.png)
 
 ### Step 11: Upload the Site
 

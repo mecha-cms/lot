@@ -5,11 +5,13 @@ description: Working with folders.
 
 ### Exist
 
+Check the existence of a folder.
+
 ~~~ .xmp.php
 Folder::exist($input, $fail = false);
 ~~~
 
-Check the existence of a folder:
+**Example:**
 
 ~~~ .php
 if (Folder::exist('path\to\folder')) {
@@ -36,7 +38,11 @@ define('THE_FOLDER', Folder::exist('path\to\folder', 'path\to\folder.legacy'));
 Loop through list of folder path until it finds a folder that is exists:
 
 ~~~ .php
-if ($test = Folder::exist(['page-post-2016', 'page-post', 'page'], false)) {
+if ($test = Folder::exist([
+    'page-post-2016',
+    'page-post',
+    'page'
+], false)) {
     echo $test . ' does exist.';
 } else {
     echo $test . ' is now `false`.';
@@ -45,11 +51,13 @@ if ($test = Folder::exist(['page-post-2016', 'page-post', 'page'], false)) {
 
 ### Set
 
+Create a folder.
+
 ~~~ .xmp.php
 Folder::set($input, $consent = 0777);
 ~~~
 
-Create a folder:
+**Example:**
 
 ~~~ .php
 Folder::set('foo\bar\baz');
@@ -63,7 +71,7 @@ Folder::set('foo\bar\baz', 0700);
 
 ### Consent
 
-Set folder permission:
+Set folder permission.
 
 ~~~ .php
 Folder::open('path\to\folder')->consent(0600);
@@ -71,11 +79,13 @@ Folder::open('path\to\folder')->consent(0600);
 
 ### Size
 
+Count the total sizes of files in a folder.
+
 ~~~ .xmp.php
 Folder::size($folder, $unit = null, $prec = 2);
 ~~~
 
-Count total size of files in a folder:
+**Example:**
 
 ~~~ .php
 echo Folder::size('path\to\folder');

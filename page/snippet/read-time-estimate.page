@@ -4,6 +4,8 @@ description: Gives the information needed to make a quick decision on whether to
 ...
 
 ~~~ .php
+<?php
+
 // <http://www.binarymoon.co.uk/2013/10/wordpress-estimated-reading-time>
 if ($_page = Lot::get('page')) {
     $_words = str_word_count(To::text($_page->content));
@@ -18,4 +20,6 @@ if ($_page = Lot::get('page')) {
     }
     echo '<p>Estimate time required to read this page: ' . $_text . '</p>';
 }
+
+?>
 ~~~

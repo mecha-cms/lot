@@ -5,11 +5,13 @@ description: Working with extensions.
 
 ### Exist
 
+Return the folder path of current extension folder if exists.
+
 ~~~ .xmp.php
 Extend::exist($input, $fail = false);
 ~~~
 
-Return the folder path of current extension folder if exists:
+**Example:**
 
 ~~~ .php
 if ($path = Extend::exist('minify')) {
@@ -19,11 +21,13 @@ if ($path = Extend::exist('minify')) {
 
 ### State
 
+Return the stored extension states if any, otherwise, return `$fail`.
+
 ~~~ .xmp.php
 Extend::state($id, $key = null, $fail = false);
 ~~~
 
-Return the stored extension states if any, otherwise, return `$fail`:
+**Example:**
 
 ~~~ .php
 $state = Extend::state('minify');

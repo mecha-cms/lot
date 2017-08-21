@@ -1,10 +1,10 @@
 ---
 title: Static Time Field
-description: Automatically generates `time.data` file on the first page visit, so that updating page files will not change the publication time.
+description: Automatically generate static time data on the first page visit, so that updating the page files will not change its publication time.
 ...
 
 ~~~ .php
-Hook::set('route.enter', function() use($site) {
+Hook::set('shield.enter', function() use($site) {
     if ($page = Lot::get('page')) {
         $time = Path::F($page->path) . DS . 'time.data';
         if ($site->is !== '404' && !File::exist($time)) {
@@ -14,10 +14,10 @@ Hook::set('route.enter', function() use($site) {
 });
 ~~~
 
-The default [shield][link:../reference/file/shield] uses `$page->update` to show the current date which will output the file modification time as the page date. To show the current page date created by this snippet, you can use `$page->time` or `$page->date->{$format}`. Example:
-
-~~~ .html
-<p><?php echo $page->date->en_us; ?></p>
-~~~
-
-[connect:../reference/class/date#reference:extract]
+> **Note:** The default [shield][link:../reference/file/shield] uses `$page->update` to show the current date which will output the file modification time as the page date. To show the current page date created by this snippet, you can use `$page->time` or `$page->date->{$format}`:
+>
+> ~~~ .html
+> <p><?php echo $page->date->en_us; ?></p>
+> ~~~
+>
+> [connect:../reference/class/date#reference:extract]

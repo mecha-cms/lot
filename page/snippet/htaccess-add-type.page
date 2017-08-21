@@ -1,12 +1,12 @@
 ---
 title: PHP in CSS and JavaScript Files
-description: Using `.htaccess` to parse PHP syntax in CSS and JavaScript files.
+description: Using HTACCESS to parse PHP syntax in CSS and JavaScript files.
 ...
 
-This snippet can be used for any other PHP CMS with `.htaccess` support. Open the `.htaccess` file that you see in the `asset` folder, then add this command to the next line:
+This snippet can be used for any other PHP CMS with `.htaccess` support. Open any `.htaccess` file that you see in the `asset` folder, then add this command to the next line:
 
 ~~~ .htaccess
 AddType application/x-httpd-php .css .js
 ~~~
 
-You can embed PHP syntax on any CSS and JavaScript files stored within the `asset` folder that stores this custom `.htaccess` file.
+You can now embed PHP syntax on any CSS and JavaScript files stored in the `asset` folder that stores this custom `.htaccess` file.

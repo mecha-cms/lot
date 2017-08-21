@@ -5,6 +5,8 @@ description: Working with HTTP headers.
 
 ### Status
 
+Set HTTP status.
+
 ~~~ .xmp.php
 HTTP::status($i = 200);
 ~~~
@@ -87,11 +89,13 @@ Code | Description
 
 ### Query
 
+Add, remove and update the current query string URL keys and values.
+
 ~~~ .xmp.php
 HTTP::query($query = [], $c = ['?', '&amp;', '=']);
 ~~~
 
-Add, remove and update the current query string URL keys and values:
+**Example:**
 
 ~~~ .php
 // → ?a=b&c=d&e=[f]=g
@@ -141,11 +145,13 @@ Result:
 
 ### Header
 
+Set HTTP headers.
+
 ~~~ .xmp.php
 HTTP::header($key, $value = null);
 ~~~
 
-Set HTTP headers:
+**Example:**
 
 ~~~ .php
 HTTP::header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');
@@ -164,11 +170,13 @@ HTTP::header([
 
 ### Mime
 
+Set mime type in HTTP headers.
+
 ~~~ .xmp.php
 HTTP::mime($mime, $charset = null);
 ~~~
 
-Set mime type in HTTP headers:
+**Example:**
 
 ~~~ .php
 HTTP::mime('text/xml');

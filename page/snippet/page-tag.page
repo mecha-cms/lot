@@ -1,11 +1,13 @@
 ---
 title: Basic Page Tags
-description: List all tags of the current page.
+description: List all tags from the current page.
 ...
 
 Requires [tags][link:../reference/extension/tag] extension.
 
 ~~~ .php
+<?php
+
 if (is_array($page->tags)) {
     $_tags = [];
     foreach ($page->tags as $v) {
@@ -14,4 +16,6 @@ if (is_array($page->tags)) {
     ksort($_tags); // sort by title…
     echo 'Tags: ' . implode(', ', $_tags);
 }
+
+?>
 ~~~
