@@ -159,7 +159,7 @@ Prior to version `2.x.x`, time and tags data are stored in the file name, follow
 
 #### Version `2.x.x`
 
-In this version, time and tags data are removed from the file name. However, the `time` data will remain attached to the page object with a value that is automatically created based on the current file modification time when you don’t set it explicitly. To set a hard–coded `time` data, you need to add `time` property to the page header. This also applies to `kind` (tags data):
+In this version, time and tags data are removed from the file name. However, the `time` data will remain attached to the page object with a value that is automatically created based on the current file modification time when you don’t set it explicitly. To set a hard-coded `time` data, you need to add `time` property to the page header. This also applies to `kind` (tags data):
 
 ~~~ .yaml
 ---

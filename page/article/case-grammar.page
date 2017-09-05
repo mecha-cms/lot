@@ -7,7 +7,7 @@ I’m really a strict person when talking about the grammar used in the API. Eve
 
 ### Command
 
-My first thought previously was trying to list all commands that possibly can be used globally by the [classes][link:../reference/class]. Then, I thought about the computer commands. In a computer, we have common API that consists of three or four commands. They are _create_, _update_, _delete_, and _open_. Even, the PHP itself also has some built–in methods like `__set`, `__get`, `__isset` and `__unset`. From that, I can then make an overview of the verbs which possibly can be used as the API:
+My first thought previously was trying to list all commands that possibly can be used globally by the [classes][link:../reference/class]. Then, I thought about the computer commands. In a computer, we have common API that consists of three or four commands. They are _create_, _update_, _delete_, and _open_. Even, the PHP itself also has some built-in methods like `__set`, `__get`, `__isset` and `__unset`. From that, I can then make an overview of the verbs which possibly can be used as the API:
 
 Create | Delete | Open
 ------ | ------ | ----
@@ -140,7 +140,7 @@ Or… maybe I can replace the extension folder name with a word that has no mean
 
 But, but, we already have an automatic constant creation based on the folder name, and [`X`][link:../reference/constant] is already defined as a constant to represents universal placeholder character.
 
-Oh, oh, wait! But it will not redefine itself if it is already defined! So, we can hard–code the `.\lot\x` path value into an `EXTEND` constant. Yes, this is a GOOD idea!
+Oh, oh, wait! But it will not redefine itself if it is already defined! So, we can hard-code the `.\lot\x` path value into an `EXTEND` constant. Yes, this is a GOOD idea!
 
 ~~~ .txt
 .\

@@ -1,6 +1,6 @@
 ---
-title: Comments
-description: Built–in commenting system.
+title: Comment
+description: Built-in commenting system.
 dependency: {"extension":["asset","page"]}
 dependency_x: {"plugin":["block-e"]}
 ...
@@ -24,7 +24,7 @@ COMMENT
 We now have a `Comment` class which works the same as the [`Page`][link:../class/page] class, but with custom hook _namespace_:
 
 ~~~ .php.xmp
-Comment($input = null, $lot = [], $NS = 'comment');
+Comment($input = null, $lot = [], $NS = ['*', 'comment']);
 ~~~
 
 Example:

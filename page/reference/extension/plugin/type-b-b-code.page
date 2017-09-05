@@ -1,0 +1,22 @@
+---
+title: Type: BBCode
+description: Add type “BBCode” support.
+name: type.b-b-code
+...
+
+Convert BBCode syntax to HTML.
+
+### Usage
+
+In your page header, add a `type` property with a value set to `BBCode`:
+
+~~~ .yaml
+---
+title: Page Title
+description: Page description.
+author: Taufik Nurrohman
+type: BBCode
+...
+
+This is a [‌b‌]bold[‌/‌b‌] text.
+~~~

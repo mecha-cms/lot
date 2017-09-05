@@ -9,25 +9,29 @@ Requires [poll][link:../reference/extension/poll] extension.
 Hook::set([
     'on.poll.set',
     'on.poll.reset'
-], function($key, $value, $data, $path, $request) {
+// $a: current data path
+// $b: previous data path
+// $c: [$key, $value, $data]
+], function($a, $b, $c) {
+    $d = Path::D($a);
     if ($path = File::exist([
-        LOT . DS . $path . '.page',
-        LOT . DS . $path . '.archive'
+        $d . '.page',
+        $d . '.archive'
     ])) {
-        $a = new Page($path);
-        $a = HTML::a($a->title, $a->url);
-        $u = '<strong>' . Get::ip() . '</strong>';
-        $k = '<em>' . (isset($request['title']) ? $request['title'] : $key) . '</em>';
+        $page = new Page($path);
+        $anchor = HTML::a($page->title, $page->url);
+        $user = '<strong>' . Get::ip() . '</strong>';
+        $key = '<em>' . Request::post('title', $c[0]) . '</em>';
         $from = 'user@from.com'; // site email address
         $to = 'user@to.com'; // your email address
         $subject = 'Poll Notification';
-        if (isset($request['value'])) {
-            if ($request['value'] === 1) {
-                $message = '<p>Poll value of ' . $k . ' was increased by ' . $u . '.</p>';
+        if ($c[1]) {
+            if ($c[1] === -1) {
+                $message = '<p>' . $user . ' was cancelled the poll.</p>';
             } else {
-                $message = '<p>' . $u . ' was cancelled the poll.</p>';
+                $message = '<p>Poll value of ' . $key . ' was increased by ' . $user . '.</p>';
             }
-            $message .= '<p><strong>Page:</strong> ' . $a . '</p>';
+            $message .= '<p><strong>Page:</strong> ' . $anchor . '</p>';
             Message::send($from, $to, $subject, $message);
         }
     }

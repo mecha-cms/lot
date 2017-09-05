@@ -1,0 +1,75 @@
+---
+title: Type: Image
+description: Add type “Image” support.
+name: type.image
+...
+
+This plugin will search for the first HTML `<img>` tag in the page content and tries to get the `src` value. If no image was found in the page content, this plugin will search for the first HTML `<a>` tag and tries to get the `href` value, then tries to guess whether it is an image URL or not by checking the file extension. If none was found, this plugin will search for the first URL text in the page content and use it as the image URL.
+
+### Usage
+
+#### Basic
+ 
+~~~ .yaml
+---
+title: City
+type: Image
+...
+
+%{url}%/lot/asset/png/city.png
+~~~
+
+Result:
+
+~~~ .html
+<figure class="image">
+  <img alt="city" src="%{url}%/lot/asset/png/city.png">
+</figure>
+~~~
+
+#### Caption
+
+Using `description` data as the image caption.
+
+~~~ .yaml
+---
+title: City
+description: There goes some description about this image.
+type: Image
+...
+
+%{url}%/lot/asset/png/city.png
+~~~
+
+Result:
+
+~~~ .html
+<figure class="image">
+  <img alt="city" src="%{url}%/lot/asset/png/city.png">
+  <figcaption>There goes some description about this image.</figcaption>
+</figure>
+~~~
+
+#### Backward Compatibility
+
+Use an `<img>` tag to store the image URL in its `src` attribute or use an `<a>` tag to store the image URL in its `href` attribute, so that when someday you decided to remove this plugin, the result will fall back to the raw HTML markup gracefully.
+
+Image `alt` attribute will becomes the caption if there is no `description` data provided. Link text will becomes the caption if there is no `description` data provided.
+
+~~~ .yaml
+---
+title: City
+type: Image
+...
+
+<img alt="city" src="%{url}%/lot/asset/png/city.png">
+~~~
+
+~~~ .yaml
+---
+title: City
+type: Image
+...
+
+<a href="%{url}%/lot/asset/png/city.png">City</a>
+~~~

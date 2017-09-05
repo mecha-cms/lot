@@ -23,7 +23,7 @@ if ($i === 0) {
 }
 ~~~
 
-#### Built–In
+#### Built-In
 
 ~~~ .php
 echo $page->comments->text;

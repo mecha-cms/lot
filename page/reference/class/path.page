@@ -3,13 +3,15 @@ title: Class `Path`
 description: File/URL path helpers.
 ...
 
-### B
+### Base {#reference-b}
+
+Convert file path to its base name.
 
 ~~~ .php.xmp
 Path::B($path, $step = 1, $s = null);
 ~~~
 
-Convert file path to its base name:
+**Example:**
 
 ~~~ .php
 $test_1 = Path::B('foo\bar\baz.qux');
@@ -18,7 +20,7 @@ $test_3 = Path::B('foo-bar-baz.qux', 1, '-');
 $test_4 = Path::B('foo.bar.baz.qux', 1, '.');
 ~~~
 
-Results:
+Result:
 
 ~~~ .php
 $test_1 = 'baz.qux';
@@ -27,13 +29,15 @@ $test_3 = 'baz.qux';
 $test_4 = 'qux';
 ~~~
 
-### D
+### Directory {#reference-d}
+
+Convert file path to its directory path.
 
 ~~~ .php.xmp
 Path::D($path, $step = 1, $s = null);
 ~~~
 
-Convert file path to its directory path:
+**Example:**
 
 ~~~ .php
 $test_1 = Path::D('foo\bar\baz.qux');
@@ -42,7 +46,7 @@ $test_3 = Path::D('foo-bar-baz.qux', 1, '-');
 $test_4 = Path::D('foo.bar.baz.qux', 1, '.');
 ~~~
 
-Results:
+Result:
 
 ~~~ .php
 $test_1 = 'foo\bar';
@@ -51,33 +55,37 @@ $test_3 = 'foo-bar';
 $test_4 = 'foo.bar.baz';
 ~~~
 
-### N
+### Name  {#reference-n}
+
+Convert file path to its name.
 
 ~~~ .php.xmp
 Path::N($path, $x = false);
 ~~~
 
-Convert file path to its name:
+**Example:**
 
 ~~~ .php
 $test_1 = Path::N('foo\bar\baz.qux');
 $test_2 = Path::N('foo\bar\baz.qux', true);
 ~~~
 
-Results:
+Result:
 
 ~~~ .php
 $test_1 = 'baz';
 $test_2 = 'baz.qux';
 ~~~
 
-### X
+### Extension  {#reference-x}
+
+Get file extension from a file path.
 
 ~~~ .php.xmp
 Path::X($path, $fail = false);
 ~~~
 
-Get file extension from a file path:
+**Example:**
 
 ~~~ .php
 $test_1 = Path::X('foo\bar\baz.qux');
@@ -85,7 +93,7 @@ $test_2 = Path::X('foo\bar\baz', 'txt');
 $test_3 = Path::X('foo\bar\baz.QUX');
 ~~~
 
-Results:
+Result:
 
 ~~~ .php
 $test_1 = 'qux';
@@ -93,13 +101,15 @@ $test_2 = 'txt';
 $test_3 = 'qux';
 ~~~
 
-### F
+### File/Folder {#reference-f}
+
+Convert file/folder path to a folder path.
 
 ~~~ .php.xmp
 Path::F($path, $root = null, $s = DS);
 ~~~
 
-Convert file/folder path to a folder path:
+**Example:**
 
 ~~~ .php
 $test_1 = Path::D('\a\b\c\foo\bar\baz.qux');
@@ -113,7 +123,7 @@ $test_5 = Path::F('\a\b\c\foo\bar\baz.qux', '\a\b\c');
 $test_6 = Path::F('\a\b\c\foo\bar\baz.qux', null, '/');
 ~~~
 
-Results:
+Result:
 
 ~~~ .php
 $test_1 = '\a\b\c\foo\bar';

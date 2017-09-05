@@ -18,7 +18,7 @@ Guardian::token($id = 0);
 ### Check Token
 
 ~~~ .xmp.php
-Guardian::check($token $id = 0, $fail = false);
+Guardian::check($token, $id = 0, $fail = false);
 ~~~
 
 ### Kick
@@ -26,6 +26,8 @@ Guardian::check($token $id = 0, $fail = false);
 ~~~ .xmp.php
 Guardian::kick($path = "");
 ~~~
+
+**Example:**
 
 Redirect to ` %{url}%/foo/bar `:
 

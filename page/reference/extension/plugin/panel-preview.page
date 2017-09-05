@@ -1,5 +1,5 @@
 ---
-title: Preview Tab
+title: Panel: Preview Tab
 description: Add quick preview tab to the page editor.
 name: panel.preview
 dependency: {"extension":["panel"]}

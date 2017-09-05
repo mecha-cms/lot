@@ -5,8 +5,91 @@ description: Messages.
 
 ### Set
 
+~~~ .xmp.php
+Message::set(...$lot [$kin, $text, $s, $k]);
+~~~
+
+**Example:**
+
+~~~ .php
+Message::set('test', 'This is a test message.');
+~~~
+
+> **Note:** The engine will first search for a `message_{$key}_*` language property that has the same suffix as the message text and return that property value:
+>
+> ~~~ .php
+> // Search for `$language->message_test_success`, otherwise return `success`
+> Message::set('test', 'success');
+> ~~~
+
 ### Get
+
+~~~ .xmp.php
+Message::get($session_x = true);
+~~~
 
 ### Reset
 
+~~~ .xmp.php
+Message::get($error_x = true);
+~~~
+
 ### Send
+
+Send a HTML email.
+
+~~~ .xmp.php
+Message::send($from, $to, $subject, $message);
+~~~
+
+**Example:**
+
+~~~ .php
+Message::send('from@mail.com', 'to@mail.com', 'Test Subject', '<p>Hello world!</p>');
+~~~
+
+~~~ .php
+Message::send('from@mail.com', [
+    'a@mail.com',
+    'b@mail.com',
+    'c@mail.com'
+], 'Test Subject', '<p>Hello world!</p>');
+~~~
+
+~~~ .php
+Message::send('from@mail.com', [
+    'a@mail.com' => 'Person A',
+    'b@mail.com' => 'Person B',
+    'c@mail.com' => 'Person C'
+], 'Test Subject', '<p>Hello world!</p>');
+~~~
+
+---
+
+### Static Call
+
+If no kin was defined, this method will function as a shortcut for [`Message::get()`][link:#reference:get].
+
+~~~ .xmp.php
+Message::{$any}($text, $vars = [], $preserve_case = false);
+~~~
+
+**Example:**
+
+~~~ .php
+Message::error('create');
+Message::info('create');
+Message::success('create');
+Message::warning('create');
+
+Message::foo('create');
+Message::bar('create');
+~~~
+
+> **Note:** Calling `Message::error()` and `Message::warning()` will increase the internal `Message::$x` value. This is useful to check for errors before doing something:
+>
+> ~~~ .php
+> if (!Message::$x) {
+>     File::write('test')->saveTo('success.log');
+> }
+> ~~~

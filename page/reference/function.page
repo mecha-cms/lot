@@ -1,5 +1,5 @@
 ---
-title: Functions
+title: Function
 description: Helper functions.
 ...
 
@@ -192,7 +192,7 @@ $test_4 = 0;
 
 ### Others
 
-#### `a`
+#### Array {#reference-a}
 
 ~~~ .xmp.php
 a($o, $safe = true);
@@ -231,11 +231,11 @@ $test = [
 
 > **Note:** Class instance will not be converted into array if `$safe` is set to `true`.
 
-#### `b`
+#### `b` {#reference-b}
 
 _Reserved._
 
-#### `c`
+#### Camel Case {#reference-c}
 
 ~~~ .xmp.php
 c($x, $s = "", $X = "");
@@ -247,7 +247,7 @@ Convert text to `camelCase`:
  
 ~~~
 
-#### `d`
+#### Declare {#reference-d}
 
 ~~~ .xmp.php
 d($f, $fn = null, $s__ = []);
@@ -259,19 +259,55 @@ Declare classes with callback:
  
 ~~~
 
-#### `e`
+#### Evaluate {#reference-e}
 
 ~~~ .xmp.php
-e($x);
+e($s, $x = []);
 ~~~
 
 Evaluate string data to their appropriate data type:
 
 ~~~ .php
- 
+$test_1 = e('true');
+$test_2 = e([
+    'true',
+    'false',
+    'null',
+    '1',
+    '1.5',
+    '"true"',
+    '"false"',
+    '"null"',
+    '"1"',
+    '"1.5"',
+    '{"foo":1,"bar":"1"}'
+]);
 ~~~
 
-#### `f`
+Result:
+
+~~~ .php
+$test_1 = true;
+
+$test_2 = [
+    true,
+    false,
+    null,
+    1,
+    1.5,
+    'true',
+    'false',
+    'null',
+    '1',
+    '1.5',
+    [
+        'foo' => 1,
+        'bar' => '1'
+    ]
+];
+~~~
+
+#### Filter {#reference-f}
 
 ~~~ .xmp.php
 f($x, $s = '-', $l = false, $X = 'a-zA-Z\d', $f = 1);
@@ -283,10 +319,10 @@ Filter/sanitize string:
  
 ~~~
 
-#### `g`
+#### Glob {#reference-g}
 
 ~~~ .xmp.php
-g($s = ROOT, $x = '*', $q = "", $o = true, $h = true);
+g($s = ROOT, $x = '*', $q = "", $o = false, $h = true);
 ~~~
 
 Advance PHP `glob` function:
@@ -295,7 +331,7 @@ Advance PHP `glob` function:
  
 ~~~
 
-#### `h`
+#### Hyphenate {#reference-h}
 
 ~~~ .xmp.php
 h($x, $s = '-', $X = "");
@@ -307,7 +343,7 @@ Convert text to `slug-case` with `-` (hyphen) as the default separator:
  
 ~~~
 
-#### `i`
+#### Include {#reference-i}
 
 ~~~ .xmp.php
 i($a, $b = [], $fn = [null, null], $s__ = []);
@@ -319,15 +355,15 @@ Include files with callback:
  
 ~~~
 
-#### `j`
+#### `j` {#reference-j}
 
 _Reserved._
 
-#### `k`
+#### `k` {#reference-k}
 
 _Reserved._
 
-#### `l`
+#### Lower Case {#reference-l}
 
 ~~~ .php.xmp
 l($x);
@@ -345,11 +381,11 @@ Result:
 $test = 'pokémon';
 ~~~
 
-#### `m`
+#### `m` {#reference-m}
 
 _Reserved._
 
-#### `n`
+#### Normalize {#reference-n}
 
 ~~~ .xmp.php
 n($x, $t = '    ');
@@ -361,7 +397,7 @@ Convert `\r\n` and `\r` to `\n` and `\t` to 4 spaces:
  
 ~~~
 
-#### `o`
+#### Object {#reference-o}
 
 ~~~ .xmp.php
 o($a, $safe = true);
@@ -405,7 +441,7 @@ $test = stdClass::__set_state([
 
 > **Note:** Array with numeric keys will not be converted into object if `$safe` is set to `true`.
 
-#### `p`
+#### Pascal Case {#reference-p}
 
 ~~~ .xmp.php
 p($x, $s = "", $X = "");
@@ -417,7 +453,7 @@ Convert text to `PascalCase`:
  
 ~~~
 
-#### `q`
+#### Quantity {#reference-q}
 
 ~~~ .xmp.php
 q($x, $deep = false);
@@ -429,7 +465,7 @@ Quantity counter (length of string, number or [anemon][link:class/anemon]):
  
 ~~~
 
-#### `r`
+#### Require {#reference-r}
 
 ~~~ .xmp.php
 r($a, $b = [], $fn = [null, null], $s__ = []);
@@ -441,7 +477,7 @@ Require files with callback:
  
 ~~~
 
-#### `s`
+#### String {#reference-s}
 
 ~~~ .xmp.php
 s($x);
@@ -453,7 +489,7 @@ Convert data type to their string format (this is the inverse version of [`e`][l
  
 ~~~
 
-#### `t`
+#### Trim {#reference-t}
 
 ~~~ .xmp.php
 t($x, $o = '"', $c = null);
@@ -471,7 +507,7 @@ Result:
 $test = '??abc!!';
 ~~~
 
-#### `u`
+#### Upper Case {#reference-u}
 
 ~~~ .xmp.php
 u($x);
@@ -489,19 +525,19 @@ Result:
 $test = 'POKÉMON';
 ~~~
 
-#### `v`
+#### Unescape {#reference-v}
 
 ~~~ .xmp.php
 v($x);
 ~~~
 
-Un–escape characters (this is the inverse version of [`x`][link:#reference:x]):
+Unescape characters (this is the inverse version of [`x`][link:#reference:x]):
 
 ~~~ .php
  
 ~~~
 
-#### `w`
+#### Word {#reference-w}
 
 ~~~ .xmp.php
 w($x, $c = [], $n = false);
@@ -513,7 +549,7 @@ Convert any data to plain words:
  
 ~~~
 
-#### `x`
+#### Escape {#reference-x}
 
 ~~~ .xmp.php
 x($x, $c = "'", $d = '-+*/=:()[]{}<>^$.?!|\\');
@@ -525,19 +561,19 @@ Escape characters:
  
 ~~~
 
-#### `y`
+#### Yield {#reference-y}
 
 ~~~ .xmp.php
 y($x, $a = []);
 ~~~
 
-Output/yield an echo–based function as normal return–based function:
+Output/yield an echo-based function as normal return-based function:
 
 ~~~ .php
  
 ~~~
 
-#### `z`
+#### Zip {#reference-z}
 
 ~~~ .xmp.php
 z($a, $b = true, $safe = true);

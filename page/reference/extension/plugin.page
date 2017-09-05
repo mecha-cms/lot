@@ -1,7 +1,9 @@
 ---
-title: Plugins
+title: Plugin
 description: A lower priority extensions.
 dependency: false
 ...
+
+Plugin files are stored in the `lot\worker` folder.
 
 [connect:../class/plugin]

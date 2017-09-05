@@ -1,0 +1,268 @@
+---
+title: Type: Poem
+description: Add type “Poem” support.
+name: type.poem
+...
+
+### Usage
+
+All HTML tags will be removed. Two line break will be treated as a paragraph. Single line break will be treated as a hard break if `layout` option is not set and has no default value defined in the configuration file.
+
+~~~ .yaml
+---
+title: Kuro
+type: Poem
+...
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+~~~
+
+Result:
+
+~~~ .html
+<p>abcd<br>abcd<br>abcd</p>
+<p>abcd<br>abcd<br>abcd</p>
+<p>abcd<br>abcd<br>abcd</p>
+~~~
+
+<div class="p" style="border:1px solid;padding:1em;">
+<p>abcd<br>abcd<br>abcd</p>
+<p>abcd<br>abcd<br>abcd</p>
+<p>abcd<br>abcd<br>abcd</p>
+</div>
+
+### Layout
+
+#### Left
+
+~~~ .yaml
+---
+title: Kuro
+type: Poem
+layout: "::left"
+...
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+~~~
+
+Result:
+
+~~~ .html
+<p><span style="display:block;text-align:left;">abcd</span><span style="display:block;text-align:left;">abcd</span><span style="display:block;text-align:left;">abcd</span></p>
+<p><span style="display:block;text-align:left;">abcd</span><span style="display:block;text-align:left;">abcd</span><span style="display:block;text-align:left;">abcd</span></p>
+<p><span style="display:block;text-align:left;">abcd</span><span style="display:block;text-align:left;">abcd</span><span style="display:block;text-align:left;">abcd</span></p>
+~~~
+
+<div class="p" style="border:1px solid;padding:1em;">
+<p><span style="display:block;text-align:left;">abcd</span><span style="display:block;text-align:left;">abcd</span><span style="display:block;text-align:left;">abcd</span></p>
+<p><span style="display:block;text-align:left;">abcd</span><span style="display:block;text-align:left;">abcd</span><span style="display:block;text-align:left;">abcd</span></p>
+<p><span style="display:block;text-align:left;">abcd</span><span style="display:block;text-align:left;">abcd</span><span style="display:block;text-align:left;">abcd</span></p>
+</div>
+
+#### Right
+
+~~~ .yaml
+---
+title: Kuro
+type: Poem
+layout: "::right"
+...
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+~~~
+
+Result:
+
+~~~ .html
+<p><span style="display:block;text-align:right;">abcd</span><span style="display:block;text-align:right;">abcd</span><span style="display:block;text-align:right;">abcd</span></p>
+<p><span style="display:block;text-align:right;">abcd</span><span style="display:block;text-align:right;">abcd</span><span style="display:block;text-align:right;">abcd</span></p>
+<p><span style="display:block;text-align:right;">abcd</span><span style="display:block;text-align:right;">abcd</span><span style="display:block;text-align:right;">abcd</span></p>
+~~~
+
+<div class="p" style="border:1px solid;padding:1em;">
+<p><span style="display:block;text-align:right;">abcd</span><span style="display:block;text-align:right;">abcd</span><span style="display:block;text-align:right;">abcd</span></p>
+<p><span style="display:block;text-align:right;">abcd</span><span style="display:block;text-align:right;">abcd</span><span style="display:block;text-align:right;">abcd</span></p>
+<p><span style="display:block;text-align:right;">abcd</span><span style="display:block;text-align:right;">abcd</span><span style="display:block;text-align:right;">abcd</span></p>
+</div>
+
+#### Center
+
+~~~ .yaml
+---
+title: Kuro
+type: Poem
+layout: "::center"
+...
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+~~~
+
+Result:
+
+~~~ .html
+<p><span style="display:block;text-align:center;">abcd</span><span style="display:block;text-align:center;">abcd</span><span style="display:block;text-align:center;">abcd</span></p>
+<p><span style="display:block;text-align:center;">abcd</span><span style="display:block;text-align:center;">abcd</span><span style="display:block;text-align:center;">abcd</span></p>
+<p><span style="display:block;text-align:center;">abcd</span><span style="display:block;text-align:center;">abcd</span><span style="display:block;text-align:center;">abcd</span></p>
+~~~
+
+<div class="p" style="border:1px solid;padding:1em;">
+<p><span style="display:block;text-align:center;">abcd</span><span style="display:block;text-align:center;">abcd</span><span style="display:block;text-align:center;">abcd</span></p>
+<p><span style="display:block;text-align:center;">abcd</span><span style="display:block;text-align:center;">abcd</span><span style="display:block;text-align:center;">abcd</span></p>
+<p><span style="display:block;text-align:center;">abcd</span><span style="display:block;text-align:center;">abcd</span><span style="display:block;text-align:center;">abcd</span></p>
+</div>
+
+#### Zig-Zag
+
+##### By Paragraph
+
+###### Start from Left
+
+~~~ .yaml
+---
+title: Kuro
+type: Poem
+layout: "::left_right"
+...
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+~~~
+
+###### Start from Right
+
+~~~ .yaml
+---
+title: Kuro
+type: Poem
+layout: "::right_left"
+...
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+~~~
+
+##### By Line
+
+###### Start from Left
+
+~~~ .yaml
+---
+title: Kuro
+type: Poem
+layout: "::zag_left"
+...
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+~~~
+
+###### Start from Right
+
+~~~ .yaml
+---
+title: Kuro
+type: Poem
+layout: "::zag_right"
+...
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+~~~
+
+###### Default
+
+~~~ .yaml
+---
+title: Kuro
+type: Poem
+layout: "::zig_zag"
+...
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+
+abcd
+abcd
+abcd
+~~~

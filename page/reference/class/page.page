@@ -6,8 +6,10 @@ description: Working with pages.
 ### Open
 
 ~~~ .xmp.php
-Page::open($path, $lot = [], $NS = 'page');
+Page::open($path, $lot = [], $NS = ['*', 'page']);
 ~~~
+
+**Example:**
 
 Initialize by opening a page file:
 
@@ -20,6 +22,8 @@ Page::open('path\to\file.page');
 ~~~ .xmp.php
 ->data($input, $fn = null);
 ~~~
+
+**Example:**
 
 Set page header:
 
@@ -65,8 +69,10 @@ Page::open('path\to\file.page')->data(false);
 #### Get
 
 ~~~ .xmp.php
-->get($key = null, $fail = null, $NS = 'page');
+->get($key = null, $fail = null, $NS = ['*', 'page']);
 ~~~
+
+**Example:**
 
 Get `title` property from a page if available, otherwise, return `Untitled`:
 
@@ -89,6 +95,8 @@ $test = Page::open('path\to\file.page')->get([
 ->save($consent = 0600);
 ~~~
 
+**Example:**
+
 Update page data:
 
 ~~~ .php
@@ -100,6 +108,8 @@ Page::open('path\to\file.page')->data(['title' => 'New Title'])->save();
 ~~~ .xmp.php
 ->saveTo($path, $consent = 0600);
 ~~~
+
+**Example:**
 
 Create a new page:
 
@@ -116,6 +126,8 @@ Page::data([
 ~~~ .xmp.php
 Page::unite($input);
 ~~~
+
+**Example:**
 
 Convert array input into page file content:
 
@@ -147,6 +159,8 @@ type: HTML
 ~~~ .xmp.php
 Page::apart($input, $key = null, $fail = null);
 ~~~
+
+**Example:**
 
 Convert page file content into array:
 
@@ -187,7 +201,7 @@ $test_2 = 'HTML';
 ### Constructor
 
 ~~~ .xmp.php
-Page($input = null, $lot = [], $NS = 'page');
+Page($input = null, $lot = [], $NS = ['*', 'page']);
 ~~~
 
 ~~~ .php

@@ -11,6 +11,8 @@ Register variables and makes them available globally in the shields.
 Lot::set($key, $value = null, $scope = null);
 ~~~
 
+**Example:**
+
 Set a `$test` variable for usage in the shields:
 
 ~~~ .php
@@ -23,6 +25,8 @@ Lot::set('test', 'Hello!');
 Lot::get($key, $fail = false, $scope = null);
 ~~~
 
+**Example:**
+
 Get `test` value from the `$GLOBALS` storage:
 
 ~~~ .php
@@ -34,6 +38,8 @@ echo Lot::get('test');
 ~~~ .xmp.php
 Lot::reset($key = null, $scope = null);
 ~~~
+
+**Example:**
 
 Remove `test` property from the `$GLOBALS` storage:
 
@@ -63,8 +69,8 @@ Here are list of variables that are available globally in the shields:
 
 Global variables created by [Page][link:../extension/page] extension:
 
- - `$pager`
  - `$page`
+ - `$pager`
  - `$pages`
 
 [connect:../variable]

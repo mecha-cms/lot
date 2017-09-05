@@ -28,21 +28,21 @@ $_site
 
 ### Namespace
 
-Another way to safely writing variables is by _namespace_–ing your variable name:
+Another way to safely writing variables is by _namespace_-ing your variable name:
 
 ~~~ .php
 $my_site
 ~~~
 
-### Back–End
+### Back-End
 
-Back–end variables, as you can see them pretty much inside the source code of [Panel][link:../reference/extension/panel] extension, are prefixed with double `_` character:
+Back-end variables, as you can see them pretty much inside the source code of [Panel][link:../reference/extension/panel] extension, are prefixed with double `_` character:
 
 ~~~ .php
 $__site
 ~~~
 
-### Front–End
+### Front-End
 
 Currently not specified. You can use this style if you want:
 

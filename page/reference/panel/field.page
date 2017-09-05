@@ -6,7 +6,7 @@ description: Field API.
 Syntax:
 
 ~~~ .php.xmp
-Config::set('panel.f', [ … ]);
+Config::set('panel.f.{$tab}', [ … ]);
 ~~~
 
 ~~~ .php.xmp
@@ -25,21 +25,16 @@ Config::set('panel.f', [ … ]);
 ]
 ~~~
 
-Result:
+**Example:**
 
-~~~ .html
-<p class="f f-title type:text">
-  <label for="f-title">Title</label>
-  <span>
-    <input name="title" type="text" value="Title Field" class="input" id="f-title">
-  </span>
-</p>
-<p class="f f-url type:url">
-  <label for="f-url">URL</label>
-  <span>
-    <input name="url" type="url" value="%{url}%" class="input" id="f-url">
-  </span>
-</p>
+~~~ .php
+Config::set('panel.f.page', [
+    'f_name' => [
+        'type' => 'text',
+        'value' => 'Title Field',
+        'stack' => 10
+    ]
+]);
 ~~~
 
 ---
@@ -421,7 +416,7 @@ Boolean to indicate that the field should be hidden:
 
 ### Width
 
-Determine if the field element should be expanded 100% wide of the current grid. You can use integer and string type as the value to set inline CSS `width` value:
+Determine if the field element should be expanded 100% wide of the current grid:
 
 ~~~ .php
 'description' => [
@@ -436,14 +431,34 @@ Result:
 <p class="f f-description">
   <label for="f-description">Description</label>
   <span>
-    <inpuy name="description" type="text" class="input block">
+    <inpuy name="description" type="text" class="input width">
+  </span>
+</p>
+~~~
+
+You can use integer and string type as the value to set inline CSS `width` value:
+
+~~~ .php
+'description' => [
+    'type' => 'text',
+    'width' => '4em'
+]
+~~~
+
+Result:
+
+~~~ .html
+<p class="f f-description">
+  <label for="f-description">Description</label>
+  <span>
+    <inpuy name="description" type="text" class="input width" style="width: 4em;">
   </span>
 </p>
 ~~~
 
 ### Height
 
-Will expand the `<textarea>` element vertically for field type `textarea` or `editor`. You can use integer and string type as the value to set inline CSS `height` value:
+Will expand the `<textarea>` element vertically for field type `textarea` or `editor`:
 
 ~~~ .php
 'description' => [
@@ -458,7 +473,27 @@ Result:
 <p class="f f-description">
   <label for="f-description">Description</label>
   <span>
-    <textarea name="description" class="textarea block expand"></textarea>
+    <textarea name="description" class="textarea width height"></textarea>
+  </span>
+</p>
+~~~
+
+You can use integer and string type as the value to set inline CSS `height` value:
+
+~~~ .php
+'description' => [
+    'type' => 'textarea',
+    'height' => '4em'
+]
+~~~
+
+Result:
+
+~~~ .html
+<p class="f f-description">
+  <label for="f-description">Description</label>
+  <span>
+    <textarea name="description" class="textarea width height" style="height: 4em;"></textarea>
   </span>
 </p>
 ~~~

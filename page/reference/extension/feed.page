@@ -1,5 +1,5 @@
 ---
-title: Feeds
+title: Feed
 description: Add RSS and JSON feeds format features.
 dependency: {"extension":["page"]}
 ...

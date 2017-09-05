@@ -1,5 +1,5 @@
 ---
-title: URL Blocks
+title: Block: URL
 description: Insert URL data to the page content.
 dependency: {"extension":["block"]}
 name: block.url

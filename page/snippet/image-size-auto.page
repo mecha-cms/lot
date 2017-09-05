@@ -9,8 +9,7 @@ Hook::set('page.content', function($content) {
         return $content;
     }
     return preg_replace_callback('#<img .*?>#', function($m) {
-        $union = new Union;
-        $img = $union->apart($m[0], false);
+        $img = HTML::apart($m[0], false);
         if (isset($img[2]['width']) && isset($img[2]['height'])) {
             return $m[0]; // Image `width` and `height` attribute already set
         }
@@ -21,7 +20,7 @@ Hook::set('page.content', function($content) {
                 $s = getimagesize($path); // Inspect local image data
                 $img[2]['width'] = $s[0]; // Set image `width` attribute
                 $img[2]['height'] = $s[1]; // Set image `height` attribute
-                return call_user_func_array([$union, 'unite'], $img); // Re-unite the image!
+                return call_user_func_array('HTML::unite', $img); // Re-unite the image!
             }
             return $m[0]; // External image `src` or invalid image `src` value
         }

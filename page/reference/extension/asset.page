@@ -1,10 +1,10 @@
 ---
-title: Assets
+title: Asset
 description: Add, remove, append, prepend and replace asset files from/to the HTML output without touching the shield files.
 dependency: false
 ...
 
-This extension works by looking for two special places in the HTML document, i.e. right before the `</head>` and `</body>` tag. This extension will process all assets that you were added to the hook storage and then spit them out into that places:
+This extension works by looking for two special places in the HTML document, i.e. right before the `</head>` and `</body>` tag, and process all assets that you were added to the hook storage and then spit them out into that places:
 
 ~~~ .html
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ This extension works by looking for two special places in the HTML document, i.e
 </html>
 ~~~
 
-The first place is generally used to insert CSS assets, while the second place is used to insert JavaScript assets.
+The first place is generally used to insert CSS assets, and the second place is used to insert JavaScript assets.
 
 ### Usage
 

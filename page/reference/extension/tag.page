@@ -1,5 +1,5 @@
 ---
-title: Tags
+title: Tag
 description: Page tags.
 dependency: {"extension":["page"]}
 ...
@@ -67,21 +67,21 @@ $page = [
     'kind' => [1, 2, 3], // [^1]
     'query' => ['foo', 'bar', 'baz'], // [^2]
     'tags' => [ // [^3]
-        0 => [
+        'foo' => [
             …
             …
             'id' => 1,
             'slug' => 'foo',
             'url' => '%{url}%/tag/foo'
         ],
-        1 => [
+        'bar' => [
             …
             …
             'id' => 2,
             'slug' => 'bar',
             'url' => '%{url}%/tag/bar'
         ],
-        2 => [
+        'baz' => [
             …
             …
             'id' => 3,

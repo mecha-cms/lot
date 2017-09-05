@@ -1,6 +1,6 @@
 ---
-title: Pre–Defined Page Properties
-description: Set pre–defined page properties as an alternate value if the desired page properties does not exist.
+title: Pre-Defined Page Properties
+description: Set pre-defined page properties as an alternate value if the desired page properties does not exist.
 ...
 
 ~~~ .php

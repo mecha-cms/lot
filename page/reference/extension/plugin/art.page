@@ -4,7 +4,7 @@ description: Create unique design for each blog posts by adding special CSS and 
 dependency: false
 ...
 
-To enable this feature, add `css.data` and `js.data` files to a folder that is named with the same name as the page slug and stored in the same directory level:
+To enable this feature, add `css.data` and `js.data` files to a folder that has the same name as the page slug and is stored in the same directory level:
 
 ~~~ .txt
 lot\

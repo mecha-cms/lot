@@ -7,7 +7,7 @@ description: Mecha has some disciplines in naming their files.
 
 In general, Mecha uses `^[a-z\d]+(?:-[a-z\d]+)*(?:\.[a-z\d]+)?$` pattern to name a file, which means:
 
- - All characters are in lower–case mode, including the file extension.
+ - All characters are in lower-case mode, including the file extension.
  - File name should only contains `a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `k`, `l`, `m`, `n`, `o`, `p`, `q`, `r`, `s`, `t`, `u`, `v`, `w`, `x`, `y`, `z`, `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9` and `-` characters.
  - Each word can be connected with a `-`, but you can’t repeat `-` character in a file name.
 
@@ -29,14 +29,14 @@ When converted by [`__f2c__`][link:../reference/function#reference:file-to-class
 Foo\BarBaz
 ~~~
 
-### Front–End and Back–End
+### Front-End and Back-End
 
-Mecha uses double `_` character to tell the engine that a file name should be treated as a front–end or back–end file:
+Mecha uses double `_` character to tell the engine that a file name should be treated as a front-end or back-end file:
 
 ~~~ .txt
-foo-bar-baz__.php ← front–end
-foo-bar-baz.php ← front–end & back–end
-__foo-bar-baz.php ← back–end
+foo-bar-baz__.php ← front-end
+foo-bar-baz.php ← front-end & back-end
+__foo-bar-baz.php ← back-end
 ~~~
 
 ### Partial

@@ -1,6 +1,6 @@
 ---
-title: Blocks
-description: Blocks are some kind of placeholders that are available within the page content, which is normally written just like normal HTML markup, but with custom enclosing characters. Each of the block patterns then can be replaced by another contents.
+title: Block
+description: Block is some kind of placeholder that is available within the page content, which is normally written just like normal HTML markup, but with custom enclosing characters. Each of the block patterns then can be replaced by another contents.
 ...
 
 By default, a block syntax can be defined as follow. It uses `‌[‌[‌` and `‌]‌]‌` as the enclosing characters:
@@ -24,7 +24,7 @@ Blocks are configurable. Even, you can create your own block markup by editing t
  - The `0` parts are configuration for the block tags.
  - The `1` parts are configuration for the block tags’ attributes.
  - The `2` parts are for the block comments markup.
- - The `3` parts are for the [escape marker][link:../../article/case-block-escape].
+ - The `3` parts are for the escape marker.
 
 Following is an example of configuring block patterns as regular HTML (custom HTML tags):
 
@@ -155,7 +155,7 @@ Block::set('mark', function($content) {
     return Block::replace('mark', function($a, $b) {
         $c = "";
         if (isset($b['color'])) {
-            $c = ' style="background-color:' . $b['color'] . ';";
+            $c = ' style="background-color:' . $b['color'] . ';"';
         }
         return '<mark' . $c . '>' . $a . '</mark>';
     }, $content);

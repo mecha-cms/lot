@@ -19,9 +19,8 @@ Hook::set([
         return $content;
     }
     // Get anchor element(s) from page content…
-    $union = new Union;
-    return preg_replace_callback('#<a(?:\s[^<>]*?)?>(?:[\s\S]*?)</a>#', function($m) use($union, $url) {
-        $a = $union->apart($m[0]);
+    return preg_replace_callback('#<a(?:\s[^<>]*?)?>(?:[\s\S]*?)</a>#', function($m) use($url) {
+        $a = HTML::apart($m[0]);
         // No `href` attribute, skip!
         if (!isset($a[2]['href'])) {
             return $m[0];
@@ -49,7 +48,7 @@ Hook::set([
             $a[2]['target'] = '_new';
         }
         // Re-unite the anchor…
-        return call_user_func_array([$union, 'unite'], $a);
+        return call_user_func_array('HTML::unite', $a);
     }, $content);
     return $content;
 }, 2.1);

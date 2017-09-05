@@ -168,7 +168,7 @@ Execute the added routes:
 Route::fire();
 ~~~
 
-Execute specific route with pre–defined value:
+Execute specific route with pre-defined value:
 
 ~~~ .php
 Route::fire('blog/%s%/%i%', ['archive', 4]);

@@ -3,13 +3,13 @@ title: Class `Language`
 description: Internationalization.
 ...
 
-<!-- TODO -->
-
 ### Constructor
 
 ~~~ .xmp.php
 Language($input = []);
 ~~~
+
+**Example:**
 
 Get language files from the `lot\language` folder then convert it into object:
 
@@ -70,6 +70,8 @@ Let’s say we have a language property called `test` like this:
 ~~~ .yaml
 test: Hello %{place}%! My name is %{object}%.
 ~~~
+
+Then:
 
 ~~~ .php
 echo Language::test([

@@ -1,6 +1,6 @@
 ---
 title: Class `Genome`
-description: Dynamic methods.
+description: Prototypes.
 ...
 
 This class is purposed to be used as an extension to other classes so that the extended classes will be able to create their own dynamic methods. This is an abstract class, so you have to extend this class with another class:
@@ -35,7 +35,7 @@ Usage:
 echo Blastula::birth('Mocha'); // → `Hello world! My name is Mocha.`
 ~~~
 
-Usage in object context:
+In object context:
 
 ~~~ .php
 class Foo extends Genome {

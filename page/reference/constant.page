@@ -1,5 +1,5 @@
 ---
-title: Constants
+title: Constant
 description: The available constants.
 ...
 
@@ -30,4 +30,4 @@ Constant | Description | Example
 `IMAGE_X` | Return image file extensions. | `bmp,cur,gif,ico,jpeg,jpg,png,svg`
 `MEDIA_X` | Return media file extensions. | `3gp,avi,flv,mov,mp3,mp4,ogg,swf,wav`
 `PACKAGE_X` | Return package file extensions. | `gz,iso,rar,tar,zip,zipx`
-`SCRIPT_X` | Return plain text file extensions. | `css,html,js,log,php,txt,xml`
+`TEXT_X` | Return plain text file extensions. | `css,html,js,log,php,txt,xml`

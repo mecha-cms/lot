@@ -1,9 +1,54 @@
 ---
-title: Control Panel
+title: Panel
 description: GUI extension for Mecha.
 dependency: {"extension":["asset","page","user"],"plugin":["markdown"]}
 ...
 
-Coming soon.
-
 ![1](%{asset}%/png/reference/extension/panel/1.png) {.align-center}
+
+### Usage
+
+ - Make sure you have uploaded the required extensions and plugins.
+ - Upload the `panel` folder to `lot\extend` folder.
+ - Now go to `%{url}%/panel/::g::/enter` to create a new user.
+
+### Reserved Variables
+
+ - `$__child`
+ - `$__childs`
+ - `$__chops`
+ - `$__command`
+ - `$__data`
+ - `$__datas`
+ - `$__file`
+ - `$__files`
+ - `$__folder`
+ - `$__folders`
+ - `$__hash`
+ - `$__is_has_step`
+ - `$__is_has_step_child`
+ - `$__is_has_step_data`
+ - `$__is_has_step_file`
+ - `$__is_has_step_kin`
+ - `$__is_has_step_page`
+ - `$__is_has_step_parent`
+ - `$__is_has_step_source`
+ - `$__kin`
+ - `$__kins`
+ - `$__message`
+ - `$__page`
+ - `$__pages`
+ - `$__parent`
+ - `$__parents`
+ - `$__path`
+ - `$__path_shield`
+ - `$__source`
+ - `$__sources`
+ - `$__state`
+ - `$__step`
+ - `$__token`
+ - `$__user`
+ - `$__user_enter`
+ - `$__user_key`
+ - `$__user_status`
+ - `$__user_token`

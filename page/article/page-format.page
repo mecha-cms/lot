@@ -41,9 +41,9 @@ Hook::set('page.content', function($content, $lot) {
     if (!isset($lot['type']) || $lot['type'] !== 'Quote') {
         return $content;
     }
-    // Remove all HTML block tag(s) and normalize line–break
+    // Remove all HTML block tag(s) and normalize line-break
     $content = n(To::text($content, HTML_WISE_I, true));
-    // Convert line–break into paragraph tag(s)
+    // Convert line-break into paragraph tag(s)
     $content = '<p>' . str_replace(["\n\n", "\n"], ['</p><p>', '<br>'], $content) . '</p>';
     // Surround the page content with `<blockquote>` tag
     return '<blockquote>' . $content . '</blockquote>';

@@ -4,3 +4,10 @@ description: Provides information about the system.
 ...
 
 ### Version
+
+Compare version.
+
+~~~ .php
+if (Mecha::version('<= 2.0.0')) { … }
+if (Mecha::version === '2.0.0') { … }
+~~~

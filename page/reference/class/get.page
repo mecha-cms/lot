@@ -13,7 +13,7 @@ Get::ip($fail = false);
 
 ### User Agent
 
-Get user’s user agent
+Get user’s user agent.
 
 ~~~ .xmp.php
 Get::ua($fail = false);
@@ -34,6 +34,8 @@ Plugged by [page][link:../extension/page] extension.
 ~~~ .xmp.php
 Get::pages($folder = PAGE, $state = 'page', $sort = [-1, 'time'], $key = null);
 ~~~
+
+**Example:**
 
 List all published and archived pages from `lot\page\blog` and sort them by `slug` ascending:
 

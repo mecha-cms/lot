@@ -9,14 +9,16 @@ description: Function hooks.
 Hook::set($id = null, $fn = null, $stack = null);
 ~~~
 
+**Example:**
+
 Set a `head.content` hook with named function as the ID:
 
 ~~~ .php
-function do_set_header() {
+function fn_meta() {
     echo '<meta name="generator" content="Mecha">';
 }
 
-Hook::set('head.content', 'do_set_header');
+Hook::set('head.content', 'fn_meta');
 ~~~
 
 Set a `head.content` hook with anonymous function:
@@ -30,14 +32,14 @@ Hook::set('head.content', function() {
 Using custom priority:
 
 ~~~ .php
-function do_set_header() {
+function fn_meta() {
     echo '<meta name="generator" content="Mecha">';
 }
 
-Hook::set('head.content', 'do_set_header', 1);
+Hook::set('head.content', 'fn_meta', 1);
 ~~~
 
-`1` is the function execution priority. The smaller the value, the earlier the function will be executed. And functions with the same priority are executed in the order in which they were added to the hook. Default is `10`.
+> **Note:** `1` is the function execution priority. The smaller the value, the earlier the function will be executed. And functions with the same priority are executed in the order in which they were added to the hook. Default is `10`.
 
 ### Get
 
@@ -45,13 +47,15 @@ Hook::set('head.content', 'do_set_header', 1);
 Hook::get($id = null, $fail = false);
 ~~~
 
+**Example:**
+
 Get all of the attached hooks:
 
 ~~~ .php
 __test__(Hook::get());
 ~~~
 
-Get all of the attached `the_header` hooks:
+Get all hooks attached to `head.content`:
 
 ~~~ .php
 __test__(Hook::get('head.content'));
@@ -63,10 +67,12 @@ __test__(Hook::get('head.content'));
 Hook::reset($id = null, $stack = null | $fn = null);
 ~~~
 
-Remove an attached `the_header` hook with ID `do_set_header` before execution, or prevent a `the_header` hook with ID `do_set_header` to be attached:
+**Example:**
+
+Remove an attached `head.content` hook with ID `fn_meta` before execution, or prevent a `head.content` hook with ID `fn_meta` to be attached:
 
 ~~~ .php
-Hook::reset('head.content', 'do_set_header');
+Hook::reset('head.content', 'fn_meta');
 ~~~
 
 > **Note:** You cannot remove hooks that are attached using anonymous function because they have no ID.
@@ -76,6 +82,8 @@ Hook::reset('head.content', 'do_set_header');
 ~~~ .xmp.php
 Hook::fire($id, array $lot = []);
 ~~~
+
+**Example:**
 
 Execute the `head.content` hook:
 
@@ -163,4 +171,16 @@ Hook::set('head.content', function($a, $b) {
 }, 3);
 
 Hook::fire('head.content', ['Taufik', 'Nurrohman']); // → `<meta name="author" content="({Taufik}) Nurrohman">`
+~~~
+
+Returning a `null` value or nothing at all will return the initial value of the first argument anyway. So, these tests will return `Taufik`:
+
+~~~ .php
+Hook::set('head.content', function($a, $b) {
+    return null;
+});
+
+Hook::set('head.content', function($a, $b) {
+    // Do nothing!
+});
 ~~~

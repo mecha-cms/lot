@@ -11,34 +11,34 @@ description: Detector.
 Is::this([1, 2, 3, 4])->contain(4);
 ~~~
 
-#### Equal
+#### Equal To {#reference-eq}
 
 ~~~ .php
 Is::this($x)->eq(4);
 ~~~
 
-#### Less
+#### Less Than {#reference-lt}
 
 ~~~ .php
 Is::this($x)->lt(4);
 ~~~
 
-#### Greater
+#### Greater Than {#reference-gt}
 
 ~~~ .php
 Is::this($x)->gt(4);
 ~~~
 
-#### Less or Equal
+#### Less Than or Equal To {#reference-le}
 
 ~~~ .php
-Is::this($x)->lte(4);
+Is::this($x)->le(4);
 ~~~
 
-#### Greater or Equal
+#### Greater Than or Equal To {#reference-ge}
 
 ~~~ .php
-Is::this($x)->gte(4);
+Is::this($x)->ge(4);
 ~~~
 
 ### Void
@@ -77,13 +77,13 @@ Is::email($x);
 Is::toggle($x);
 ~~~
 
-### F
+### File {#reference-f}
 
 ~~~ .php
 Is::F($x);
 ~~~
 
-### D
+### Directory {#reference-d}
 
 ~~~ .php
 Is::D($x);

@@ -1,5 +1,5 @@
 ---
-title: Eval Block
+title: Block: Eval
 description: Evaluate PHP syntax within the page content.
 dependency: {"extension":["block"]}
 name: block.e
