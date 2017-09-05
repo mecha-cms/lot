@@ -4,4 +4,4 @@ description: Launch!
 type: HTML
 ...
 
-Welcome to the official Mecha CMS site!
+<p>Welcome to the official Mecha CMS site!</p>

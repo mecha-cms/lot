@@ -29,10 +29,10 @@ Stack | Hook | To | Source
 `1.9` | `fn_markdown_link` | `*.content`, `*.description` | [link:../reference/extension/plugin/markdown-link]
 `2` | `fn_markdown` | `*.description`, `*.content` | [link:../reference/extension/plugin/markdown]
 `2` | `fn_markdown_span` | `*.title` | [link:../reference/extension/plugin/markdown]
-`3` | `fn_rapic` | `*.content` | [link:../reference/extension/plugin/r-a-p-i-c]
+`3` | `fn_rapic` | `page.content` | [link:../reference/extension/plugin/r-a-p-i-c]
 `fn_block:1` → `10` | `fn_block_url` | `*.content` | [link:../reference/extension/plugin/block-url]
-`fn_block:1` → `10` | `fn_archive` | `*.content` | [link:../reference/extension/plugin/archive]
-`fn_block:1` → `10` | `fn_toc` | `*.content` | [link:../reference/extension/plugin/t-o-c]
+`fn_block:1` → `10` | `fn_archive` | `page.content` | [link:../reference/extension/plugin/archive]
+`fn_block:1` → `10` | `fn_toc` | `page.content` | [link:../reference/extension/plugin/t-o-c]
 
 ### Examples
 

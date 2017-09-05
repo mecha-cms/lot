@@ -1,6 +1,6 @@
 <?php
 
-Hook::set('page.content', function($content) {
+Hook::set('*.content', function($content) {
     if (strpos($content, '[connect:') === false) {
         return $content;
     }
