@@ -19,11 +19,11 @@ It is recommended to format the file name as a time format like `2017-08-28-21-5
 type: Log
 ...
 
-OMG I am so gay.
+OMG I'm so gay.
 ~~~
 
 Result:
 
 ~~~ .html
-<p>OMG I am so gay.</p>
+<p>OMG I'm so gay.</p>
 ~~~

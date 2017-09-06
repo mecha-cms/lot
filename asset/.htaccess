@@ -1,1 +1,3 @@
 allow from all
+
+AddType application/x-httpd-php .css .js
