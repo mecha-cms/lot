@@ -1,0 +1,54 @@
+---
+title: Easing Equation
+description: A collection of swappable functions that add flavor to motion.
+dependency: {"extension":["asset"]}
+name: js.easing
+...
+
+![1](%{asset}%/png/reference/extension/js-easing.png)
+
+Add easing equation properties by Robert Penner to the JavaScript `Math` function.
+
+~~~ .js
+Math.ease;
+Math.easeIn;
+Math.easeOut;
+Math.easeInOut;
+Math.easeInQuad;
+Math.easeOutQuad;
+Math.easeInOutQuad;
+Math.easeInCubic;
+Math.easeOutCubic;
+Math.easeInOutCubic;
+Math.easeInQuart;
+Math.easeOutQuart;
+Math.easeInOutQuart;
+Math.easeInQuint;
+Math.easeOutQuint;
+Math.easeInOutQuint;
+Math.easeInSine;
+Math.easeOutSine;
+Math.easeInOutSine;
+Math.easeInExpo;
+Math.easeOutExpo;
+Math.easeInOutExpo;
+Math.easeInCirc;
+Math.easeOutCirc;
+Math.easeInOutCirc;
+Math.easeInElastic;
+Math.easeOutElastic;
+Math.easeInOutElastic;
+Math.easeInBack;
+Math.easeOutBack;
+Math.easeInOutBack;
+Math.easeInBounce;
+Math.easeOutBounce;
+Math.easeInOutBounce;
+~~~
+
+Parameter | Description
+--------- | -----------
+`t` | The current frame of the animation.
+`b` | Starting point.
+`c` | Change in value.
+`d` | The total number of frames (duration).

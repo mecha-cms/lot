@@ -1,0 +1,62 @@
+---
+title: Less
+description: Art direction with Less.
+dependency: {"extension":["less"],"plugin":["art"]}
+...
+
+Use this plugin to pre-process CSS syntax to Less syntax in the `css` data.
+
+### Before
+
+~~~ .css.less
+@nav-background: #000;
+@nav-color: #fff;
+@nav-color-hover: #999;
+
+nav {
+  background: @nav-background;
+  color: @nav-color;
+  a {
+    text-decoration: none;
+    color: inherit;
+    &:focus,
+    &:hover {
+      color: @nav-color-hover;
+    }
+  }
+}
+~~~
+
+### After
+
+#### Default
+
+~~~ .css
+nav {
+  background: #000000;
+  color: #ffffff;
+}
+nav a {
+  text-decoration: none;
+  color: inherit;
+}
+nav a:focus,
+nav a:hover {
+  color: #999999;
+}
+
+~~~
+
+#### Minified
+
+~~~ .css
+nav{background:#000;color:#fff}nav a{text-decoration:none;color:inherit}nav a:focus,nav a:hover{color:#999}
+~~~
+
+Caches are stored in the `CACHE` folder with the same structure as in the original file and folder structure, relative to the `ROOT` path. If for a reason you want to remove this plugin, you can use the cache files to override the `css.data` in the original directory to get the compiled CSS syntax:
+
+~~~ .txt
+.\www\lot\cache\lot\page\my-page\css.data → .\www\lot\page\my-page\css.data
+~~~
+
+Once replaced, you can safely remove this plugin.

@@ -9,4 +9,14 @@ This snippet can be used for any other PHP CMS with `.htaccess` support. Open an
 AddType application/x-httpd-php .css .js
 ~~~
 
-You can now embed PHP syntax on any CSS and JavaScript files stored in the `asset` folder that stores this custom `.htaccess` file.
+You can now embed PHP syntax on any CSS and JavaScript files stored in the `asset` folder that stores this custom `.htaccess` file. Don’t forget to tell the proper mime content type to header: `text/css` for CSS files and `application/javascript` for JavaScript files:
+
+~~~ .html
+<?php header('Content-Type: text/css'); ?>
+body {background:#<?php echo substr(md5($_SERVER['REQUEST_TIME']), 0, 6); ?>}
+~~~
+
+~~~ .html
+<?php header('Content-Type: application/javascript'); ?>
+window.$host = '<?php echo $_SERVER['HTTP_HOST']; ?>';
+~~~

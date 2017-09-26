@@ -3,7 +3,7 @@ title: Class `Path`
 description: File/URL path helpers.
 ...
 
-### Base {#reference-b}
+### Base {#reference:b}
 
 Convert file path to its base name.
 
@@ -29,7 +29,7 @@ $test_3 = 'baz.qux';
 $test_4 = 'qux';
 ~~~
 
-### Directory {#reference-d}
+### Directory {#reference:d}
 
 Convert file path to its directory path.
 
@@ -55,7 +55,7 @@ $test_3 = 'foo-bar';
 $test_4 = 'foo.bar.baz';
 ~~~
 
-### Name  {#reference-n}
+### Name  {#reference:n}
 
 Convert file path to its name.
 
@@ -77,7 +77,7 @@ $test_1 = 'baz';
 $test_2 = 'baz.qux';
 ~~~
 
-### Extension  {#reference-x}
+### Extension  {#reference:x}
 
 Get file extension from a file path.
 
@@ -101,7 +101,7 @@ $test_2 = 'txt';
 $test_3 = 'qux';
 ~~~
 
-### File/Folder {#reference-f}
+### File/Folder {#reference:f}
 
 Convert file/folder path to a folder path.
 

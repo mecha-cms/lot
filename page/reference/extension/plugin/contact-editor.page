@@ -1,0 +1,7 @@
+---
+title: Contact Editor
+description: Rich text editor in contact form.
+dependency: {"extension":["rich-text-editor"],"plugin":["contact"]}
+...
+
+This plugin will add a simple rich text editor in the contact form.
