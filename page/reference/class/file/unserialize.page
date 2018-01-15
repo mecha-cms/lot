@@ -1,0 +1,16 @@
+---
+title: `$file->unserialize()`
+description: Unserialize a file.
+...
+
+This is just a shortcut for `unserialize(File::open('file.txt')->read())`.
+
+~~~ .php.xmp
+->unserialize($fail = []);
+~~~
+
+**Example:**
+
+~~~ .php
+File::open('file.txt')->unserialize();
+~~~

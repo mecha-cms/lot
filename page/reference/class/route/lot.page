@@ -1,0 +1,22 @@
+---
+title: `$route::lot()`
+description: Set custom actions before specific route pattern execution.
+...
+
+~~~ .php.xmp
+Route::lot($id, $fn = null, $stack = null, $pattern = false);
+~~~
+
+**Example:**
+
+Set custom actions before `blog/%s%` route execution:
+
+~~~ .php
+function my_route_hook_fn($slug = "") {
+    $_POST['foo'] = 'bar';
+}
+
+Route::lot('blog/%s%', 'my_route_hook_fn');
+~~~
+
+> **Note:** Default `$stack` value is `10`.

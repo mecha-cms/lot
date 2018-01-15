@@ -1,0 +1,20 @@
+---
+title: `$route::fire()`
+description: Execute the added routes.
+...
+
+~~~ .php.xmp
+Route::fire($id = null, $lot = []);
+~~~
+
+**Example:**
+
+~~~ .php
+Route::fire();
+~~~
+
+Execute specific route with pre-defined value:
+
+~~~ .php
+Route::fire('blog/%s%/%i%', ['archive', 4]);
+~~~

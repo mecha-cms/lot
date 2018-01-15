@@ -1,0 +1,16 @@
+---
+title: `$lot::get()`
+description: Get variable.
+...
+
+~~~ .php.xmp
+Lot::get($key, $fail = false, $scope = null);
+~~~
+
+**Example:**
+
+Get `test` value from the `$GLOBALS` storage:
+
+~~~ .php
+echo Lot::get('test');
+~~~

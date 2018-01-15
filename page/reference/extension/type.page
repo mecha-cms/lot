@@ -1,0 +1,399 @@
+---
+title: Type
+description: Custom content types.
+
+dependency:
+  extension:
+    - asset
+    - page
+  plugin:
+    - thumbnail
+...
+
+### Supported Page Types
+
+ - Audio
+ - Comic
+ - Gallery
+ - Image
+ - Link
+ - Log
+ - Poem
+ - Quote
+ - Video
+
+#### Audio
+
+Convert audio links into native HTML5 audio player.
+
+##### Basic
+
+Set audio URL as the page content.
+
+~~~ .yaml
+---
+title: Non-Stop Nyan Cat!
+type: Audio
+...
+
+%{url}%/lot/asset/ogg/nyan.ogg
+%{url}%/lot/asset/mp3/nyan.mp3
+~~~
+
+##### Link
+
+Set audio link as the page content.
+
+~~~ .yaml
+---
+title: Non-Stop Nyan Cat!
+type: Audio
+...
+
+<a href="%{url}%/lot/asset/ogg/nyan.ogg">Nyan OGG</a>
+<a href="%{url}%/lot/asset/mp3/nyan.mp3">Nyan MP3</a>
+~~~
+
+##### HTML
+
+You can also use raw `<audio>` markup as the page content.
+
+~~~ .yaml
+---
+title: Non-Stop Nyan Cat!
+type: Audio
+...
+
+<audio controls>
+  <source src="%{url}%/lot/asset/ogg/nyan.ogg" type="audio/ogg">
+  <source src="%{url}%/lot/asset/mp3/nyan.mp3" type="audio/mpeg">
+</audio>
+~~~
+
+Result:
+
+~~~ .html
+<section class="audio p">
+  <audio controls>
+    <source src="%{url}%/lot/asset/ogg/nyan.ogg" type="audio/ogg">
+    <source src="%{url}%/lot/asset/mp3/nyan.mp3" type="audio/mpeg">
+  </audio>
+</section>
+~~~
+
+#### Comic
+
+TODO
+
+#### Gallery
+
+Like the _Image_ type, but it will show as multiple images.
+
+##### Basic
+
+~~~ .yaml
+---
+title: People
+type: Gallery
+...
+
+%{url}%/lot/asset/png/people/1.png
+%{url}%/lot/asset/png/people/2.png
+%{url}%/lot/asset/png/people/3.png
+~~~
+
+Result:
+
+~~~ .html
+<section class="gallery p">
+  <figure class="image image-1">
+    <img alt="1" src="%{url}%/lot/asset/png/people/1.png">
+  </figure>
+  <figure class="image image-2">
+    <img alt="2" src="%{url}%/lot/asset/png/people/2.png">
+  </figure>
+  <figure class="image image-3">
+    <img alt="3" src="%{url}%/lot/asset/png/people/3.png">
+  </figure>
+</section>
+~~~
+
+##### HTML
+
+Use an `<img>` tag to store the image URL in its `src` attribute or use an `<a>` tag to store the image URL in its `href` attribute, so that when someday you decided to remove this extension, the result will fall back to the raw HTML markup gracefully.
+
+Link text will becomes the image `alt` value.
+
+~~~ .yaml
+---
+title: People
+type: Gallery
+...
+
+<img alt="1" src="%{url}%/lot/asset/png/people/1.png">
+<img alt="2" src="%{url}%/lot/asset/png/people/2.png">
+<img alt="3" src="%{url}%/lot/asset/png/people/3.png">
+~~~
+
+~~~ .yaml
+---
+title: People
+type: Gallery
+...
+
+<a href="%{url}%/lot/asset/png/people/1.png">1</a>
+<a href="%{url}%/lot/asset/png/people/2.png">2</a>
+<a href="%{url}%/lot/asset/png/people/3.png">3</a>
+~~~
+
+#### Image
+
+This type will search for the first HTML `<img>` tag in the page content and tries to get the `src` value. If no image was found in the page content, this plugin will search for the first HTML `<a>` tag and tries to get the `href` value, then tries to guess whether it is an image URL or not by checking the file extension. If none was found, this plugin will search for the first URL text in the page content and use it as the image URL.
+
+##### Basic
+
+~~~ .yaml
+---
+title: Autumn
+type: Image
+...
+
+%{url}%/lot/asset/png/autumn.png
+~~~
+
+Result:
+
+~~~ .html
+<figure class="image">
+  <img alt="autumn" src="%{url}%/lot/asset/png/autumn.png">
+</figure>
+~~~
+
+##### Caption
+
+Using `description` data as the image caption.
+
+~~~ .yaml
+---
+title: Autumn
+description: There goes some description about this image.
+type: Image
+...
+
+%{url}%/lot/asset/png/autumn.png
+~~~
+
+Result:
+
+~~~ .html
+<figure class="image">
+  <img alt="autumn" src="%{url}%/lot/asset/png/autumn.png">
+  <figcaption>There goes some description about this image.</figcaption>
+</figure>
+~~~
+
+##### HTML
+
+Use an `<img>` tag to store the image URL in its `src` attribute or use an `<a>` tag to store the image URL in its `href` attribute, so that when someday you decided to remove this extension, the result will fall back to the raw HTML markup gracefully.
+
+Image `alt` attribute will becomes the caption if there is no `description` data provided. Link text will becomes the image `alt` value and the caption if there is no `description` data provided.
+
+~~~ .yaml
+---
+title: Autumn
+type: Image
+...
+
+<img alt="autumn" src="%{url}%/lot/asset/png/autumn.png">
+~~~
+
+~~~ .yaml
+---
+title: Autumn
+type: Image
+...
+
+<a href="%{url}%/lot/asset/png/autumn.png">autumn</a>
+~~~
+
+#### Link
+
+TODO
+
+#### Log
+
+Use this type to quickly publish a status message. All HTML tags will be removed. Two line break will be treated as a paragraph, single line break will be treated as a hard break. Text link will be converted into a clickable link. Image link will be converted into an image.
+
+It is recommended to format the file name as a time format like `2017-08-28-21-59-26.page`, or as a unique ID that has no meaning at all like `59a42ffbce123.page` or `96fc518719a1eb1924ef4cbd0bc6026a0fcdb332.page`.
+
+~~~ .yaml
+---
+type: Log
+...
+
+OMG I'm so gay.
+~~~
+
+Result:
+
+~~~ .html
+<p>OMG I'm so gay.</p>
+~~~
+
+#### Quote
+
+##### Basic
+
+All HTML tags will be removed except inline HTML tags listed in the `HTML_WISE_I` constant. Two line break will be treated as a paragraph, single line break will be treated as a hard break. A quote can contain text with a pair of straight double quotation mark for aesthetics or not at all. The first straight double quotation mark will be replaced by `&#x201C;` and the second straight double quotation mark will be replaced by `&#x201D;`. A pair of straight single quotation mark will be replaced by `&#x2018;` and `&#x2019;`, the rest will be replaced by `&#x2019;`.
+
+~~~ .yaml
+---
+type: Quote
+...
+
+I forgive people but that doesn't mean I accept their behavior or trust them. I forgive them for me. So, I can let go and move on with my life. Forgiveness doesn't always mean a second chance.
+~~~
+
+Result:
+
+~~~ .html
+<blockquote class="quote">
+  <p>&#x201C;I forgive people but that doesn&#x2019;t mean I accept their behavior or trust them. I forgive them for me. So, I can let go and move on with my life. Forgiveness doesn&#x2019;t always mean a second chance.&#x201D;</p>
+</blockquote>
+~~~
+
+##### Citation
+
+Cite the original author by adding a line of text at the top of your quote as the author name, followed by a colon.
+
+~~~ .yaml
+---
+type: Quote
+...
+
+Jason Dawg:
+
+"I forgive people but that doesn't mean I accept their behavior or trust them. I forgive them for me. So, I can let go and move on with my life. Forgiveness doesn't always mean a second chance."
+~~~
+
+Result:
+
+~~~ .html
+<blockquote class="quote">
+  <p>&#x201C;I forgive people but that doesn&#x2019;t mean I accept their behavior or trust them. I forgive them for me. So, I can let go and move on with my life. Forgiveness doesn&#x2019;t always mean a second chance.&#x201D;</p>
+  <p class="cite">&#x2014;Jason Dawg</p>
+</blockquote>
+~~~
+
+##### Link
+
+Convert author name into clickable link by adding `link` data to the page header.
+
+~~~ .yaml
+---
+type: Quote
+link: http://example.com
+...
+
+Jason Dawg:
+
+"I forgive people but that doesn't mean I accept their behavior or trust them. I forgive them for me. So, I can let go and move on with my life. Forgiveness doesn't always mean a second chance."
+~~~
+
+Result:
+
+~~~ .html
+<blockquote class="quote">
+  <p>&#x201C;I forgive people but that doesn&#x2019;t mean I accept their behavior or trust them. I forgive them for me. So, I can let go and move on with my life. Forgiveness doesn&#x2019;t always mean a second chance.&#x201D;</p>
+  <p class="cite">&#x2014;<a href="http://example.com" rel="nofollow" target="_blank">Jason Dawg</a></p>
+</blockquote>
+~~~
+
+##### HTML
+
+If there are some paragraph or block quote tags contained in the page content, no conversion will be attempted (a typical content generated by a WYSIWYG editor).
+
+*[WYSIWYG]: What You See Is What You Get
+
+~~~ .yaml
+---
+type: Quote
+...
+
+<blockquote class="test">
+  <p>"I forgive people but that doesn't mean I accept their behavior or trust them. I forgive them for me. So, I can let go and move on with my life. Forgiveness doesn't always mean a second chance."</p>
+</blockquote>
+~~~
+
+Result:
+
+~~~ .html
+<blockquote class="quote test">
+  <p>"I forgive people but that doesn't mean I accept their behavior or trust them. I forgive them for me. So, I can let go and move on with my life. Forgiveness doesn't always mean a second chance."</p>
+</blockquote>
+~~~
+
+#### Video
+
+Convert video links into native HTML5 video player.
+
+##### Basic
+
+Set video URL as the page content and put the poster image in the `image` property (optional).
+
+~~~ .yaml
+---
+title: Non-Stop Nyan Cat!
+type: Video
+image: %{url}%/lot/asset/jpg/nyan.jpg
+...
+
+%{url}%/lot/asset/mp4/nyan.mp4
+%{url}%/lot/asset/webm/nyan.webm
+%{url}%/lot/asset/ogv/nyan.ogv
+~~~
+
+##### Link
+
+Set video link as the page content.
+
+~~~ .yaml
+---
+title: Non-Stop Nyan Cat!
+type: Video
+image: %{url}%/lot/asset/jpg/nyan.jpg
+...
+
+<a href="%{url}%/lot/asset/mp4/nyan.mp4">Nyan MP4</a>
+<a href="%{url}%/lot/asset/webm/nyan.webm">Nyan WebM</a>
+<a href="%{url}%/lot/asset/ogv/nyan.ogv">Nyan OGG</a>
+~~~
+
+##### HTML
+
+You can also use raw `<video>` markup as the page content.
+
+~~~ .yaml
+---
+title: Non-Stop Nyan Cat!
+type: Video
+...
+
+<video poster="%{url}%/lot/asset/jpg/nyan.jpg" controls>
+  <source src="%{url}%/lot/asset/mp4/nyan.mp4" type="video/mp4">
+  <source src="%{url}%/lot/asset/webm/nyan.webm" type="video/webm">
+  <source src="%{url}%/lot/asset/ogv/nyan.ogv" type="video/ogg">
+</video>
+~~~
+
+Result:
+
+~~~ .html
+<section class="video p">
+  <video poster="%{url}%/lot/asset/jpg/nyan.jpg" controls>
+    <source src="%{url}%/lot/asset/mp4/nyan.mp4" type="video/mp4">
+    <source src="%{url}%/lot/asset/webm/nyan.webm" type="video/webm">
+    <source src="%{url}%/lot/asset/ogv/nyan.ogv" type="video/ogg">
+  </video>
+</section>
+~~~

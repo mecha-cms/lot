@@ -1,13 +1,5 @@
 ---
-title: Class `Mecha`
+title: `Mecha`
 description: Provides information about the system.
+parent: genome
 ...
-
-### Version
-
-Compare version.
-
-~~~ .php
-if (Mecha::version('<= 2.0.0')) { … }
-if (Mecha::version === '2.0.0') { … }
-~~~

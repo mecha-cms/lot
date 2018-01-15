@@ -1,0 +1,16 @@
+---
+title: `$to::slug()`
+description: Convert string input into `slug-case`.
+...
+
+~~~ .php.xmp
+To::slug($x, $s = '-', $X = "");
+~~~
+
+**Example:**
+
+~~~ .php
+$test = To::slug('foo bar baz');
+~~~
+
+[connect:../../function#reference:h]

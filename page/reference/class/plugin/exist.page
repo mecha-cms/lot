@@ -1,0 +1,16 @@
+---
+title: `$plugin::exist()`
+description: Check the existence of a plugin.
+...
+
+~~~ .php.xmp
+Plugin::exist($input, $fail = false);
+~~~
+
+Return the folder path of current plugin folder if exists:
+
+~~~ .php
+if ($path = Plugin::exist('markdown')) {
+    // Do something with `$path`…
+}
+~~~

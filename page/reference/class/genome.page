@@ -1,6 +1,6 @@
 ---
-title: Class `Genome`
-description: Prototypes.
+title: `Genome`
+description: Class extension.
 ...
 
 This class is purposed to be used as an extension to other classes so that the extended classes will be able to create their own dynamic methods. This is an abstract class, so you have to extend this class with another class:
@@ -15,8 +15,8 @@ class Blastula extends Genome {
 
 Add a method.
 
-~~~ .xmp.php
-Genome::plug($kin, $fn);
+~~~ .php.xmp
+Genome::_($kin, $fn);
 ~~~
 
 **Example:**
@@ -24,7 +24,7 @@ Genome::plug($kin, $fn);
 Add a `birth` method to the `Blastula` class:
 
 ~~~ .php
-Blastula::plug('birth', function($name) {
+Blastula::_('birth', function($name) {
     return 'Hello world! My name is ' . $name . '.';
 });
 ~~~
@@ -46,7 +46,7 @@ class Foo extends Genome {
     }
 }
 
-Foo::plug('baz', function($i) {
+Foo::_('baz', function($i) {
     $this->x += $i;
     return $this;
 });
@@ -59,43 +59,20 @@ $foo = new Foo;
 echo $foo->bar(4)->baz(1)->bar(2)->x;
 ~~~
 
-### Eject
-
-Remove a method.
-
-~~~ .xmp.php
-Genome::eject($kin);
-~~~
-
-**Example:**
-
-Remove `birth` method from the `Blastula` class:
-
-~~~ .php
-Blastula::eject('birth');
-~~~
-
-Remove all custom methods from the `Blastula` class:
-
-~~~ .php
-Blastula::eject();
-~~~
-
 ### Kin
 
 Get the available methods.
 
-~~~ .xmp.php
-Genome::kin($kin = null, $fail = false, $origin = false);
+~~~ .php.xmp
+Genome::_($kin);
 ~~~
 
 **Example:**
 
 ~~~ .php
-$test_1 = Blastula::kin();
-$test_2 = Blastula::kin('birth');
-$test_3 = Blastula::kin('test');
-$test_4 = Blastula::kin('test', false, true); // also, search for native method(s)
+$test_1 = Blastula::_();
+$test_2 = Blastula::_('birth');
+$test_3 = Blastula::_('test'); // check for native method?
 ~~~
 
 Result:
@@ -108,6 +85,20 @@ $test_1 = [
 $test_2 = function($name) { … };
 
 $test_3 = false;
+~~~
 
-$test_4 = 1;
+### Eject
+
+Remove a method.
+
+~~~ .php.xmp
+Genome::_($kin, null);
+~~~
+
+**Example:**
+
+Remove `birth` method from the `Blastula` class:
+
+~~~ .php
+Blastula::_('birth', null);
 ~~~

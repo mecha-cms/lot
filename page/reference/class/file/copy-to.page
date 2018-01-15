@@ -1,0 +1,41 @@
+---
+title: `$file->copyTo()`
+description: Copy a file.
+...
+
+~~~ .php.xmp
+->copyTo($path = ROOT, $s = '.%{0}%');
+~~~
+
+**Example:**
+
+~~~ .php
+File::open('path\to\file.txt')->copyTo('path\to\file-2.txt');
+~~~
+
+~~~ .php
+File::open('path\to\file.txt')->copyTo('path\to\folder');
+~~~
+
+~~~ .php
+File::open('path\to\file.txt')->copyTo([
+    'path\to\file-1.txt',
+    'path\to\file-2.txt',
+    'path\to\folder-1',
+    'path\to\folder-2',
+    …
+]);
+~~~
+
+Don’t be affraid to write the same file name multiple times:
+
+~~~ .php
+File::open('path\to\file.txt')->copyTo([
+    'path\to\file-copy.txt',
+    'path\to\file-copy.txt',
+    'path\to\file-copy.txt',
+    'path\to\file-copy.txt',
+    'path\to\file-copy.txt',
+    …
+]);
+~~~

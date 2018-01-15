@@ -31,7 +31,7 @@ Now go to the `lot` folder of the parent folder then select all folders that con
 
 ### Step 5: Make Sure That the Site is Running
 
-Now visit `http://localhost/test` to make sure that the site is visible as expected even without any custom extensions and plugins at all:
+Now visit `%{url}%/test` to make sure that the site is visible as expected even without any custom extensions and plugins at all:
 
 ![4](%{asset}%/png/article/update-view/4.png)
 

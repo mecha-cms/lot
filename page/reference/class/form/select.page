@@ -1,0 +1,54 @@
+---
+title: `$form::select()`
+description: Create a HTML `<select>` element.
+...
+
+~~~ .php.xmp
+Form::select($name = null, $option = [], $select = null, $attr = [], $dent = 0);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = Form::select('o', [
+    0 => 'red',
+    1 => 'green',
+    2 => 'blue'
+], 1);
+
+$test_2 = Form::select('o', [
+    'Color' => [
+        '0.0' => 'red',
+        '0.1' => 'green',
+        '0.2' => 'blue'
+    ],
+    'Size' => [
+        '1.0' => 'small',
+        '1.1' => 'medium',
+        '1.2' => 'large'
+    ]
+], '1.1');
+~~~
+
+Result:
+
+~~~ .php
+$test_1 = '<select name="o">
+  <option value="0">red</option>
+  <option value="1" selected>green</option>
+  <option value="2">blue</option>
+</select>';
+
+$test_2 = '<select name="o">
+  <optgroup label="Color">
+    <option value="0.0">red</option>
+    <option value="0.1">green</option>
+    <option value="0.2">blue</option>
+  </optgroup>
+  <optgroup label="Size">
+    <option value="1.0">small</option>
+    <option value="1.1">medium</option>
+    <option value="1.2">large</option>
+  </optgroup>
+</select>';
+~~~

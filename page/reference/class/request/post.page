@@ -1,0 +1,8 @@
+---
+title: `$request::post()`
+description: Return the `$_POST` data.
+...
+
+~~~ .php.xmp
+Request::post($key = null, $fail = null, $eval = true);
+~~~

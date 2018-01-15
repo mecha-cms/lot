@@ -1,0 +1,21 @@
+---
+title: `$path::N()`
+description: Convert file path to its name.
+
+~~~ .php.xmp
+Path::N($path, $x = false);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = Path::N('foo\bar\baz.qux');
+$test_2 = Path::N('foo\bar\baz.qux', true);
+~~~
+
+Result:
+
+~~~ .php
+$test_1 = 'baz';
+$test_2 = 'baz.qux';
+~~~

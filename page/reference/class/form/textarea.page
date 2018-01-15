@@ -1,0 +1,20 @@
+---
+title: `$form::textarea()`
+description: Create a HTML `<textarea>` element.
+...
+
+~~~ .php.xmp
+Form::textarea($name = null, $value = "", $placeholder = null, $attr = [], $dent = 0);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = Form::textarea('x', 'test value', 'some text…');
+~~~
+
+Result:
+
+~~~ .php
+$test = '<textarea name="x" placeholder="some text…">test value</textarea>';
+~~~

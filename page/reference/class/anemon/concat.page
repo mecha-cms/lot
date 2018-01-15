@@ -1,0 +1,86 @@
+---
+title: `$anemon::concat()`
+description: Concatenate two or more arrays.
+...
+
+~~~ .php.xmp
+Anemon::concat(array &$input, $a[, $b[, $c[, ...]]]);
+~~~
+
+**Example:**
+
+~~~ .php
+$a = [
+    0 => 'a',
+    1 => 'b',
+    2 => 'c'
+];
+
+$b = [
+    0 => 'd',
+    1 => 'e',
+    2 => 'f'
+];
+
+$test = Anemon::concat($a, $b);
+~~~
+
+Result:
+
+~~~ .php
+$test = [
+    0 => 'a',
+    1 => 'b',
+    2 => 'c',
+    3 => 'd',
+    4 => 'e',
+    5 => 'f'
+];
+~~~
+
+~~~ .php
+$a = [
+    0 => 'a',
+    1 => 'b',
+    2 => 'c',
+    3 => 'd',
+    4 => 'e',
+    5 => 'f'
+];
+~~~
+
+With [`Anemon::extend()`][link:extend], the result will be different:
+
+~~~ .php
+$a = [
+    0 => 'a',
+    1 => 'b',
+    2 => 'c'
+];
+
+$b = [
+    0 => 'd',
+    1 => 'e',
+    2 => 'f'
+];
+
+$test = Anemon::extend($a, $b);
+~~~
+
+Result:
+
+~~~ .php
+$test = [
+    0 => 'd',
+    1 => 'e',
+    2 => 'f'
+];
+~~~
+
+~~~ .php
+$a = [
+    0 => 'd',
+    1 => 'e',
+    2 => 'f'
+];
+~~~

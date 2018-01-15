@@ -1,0 +1,8 @@
+---
+title: `$guardian::check()`
+description: Check token.
+...
+
+~~~ .php.xmp
+Guardian::check($token, $id = 0, $fail = false);
+~~~

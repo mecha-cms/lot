@@ -1,0 +1,8 @@
+---
+title: `$h_t_m_l::ol()`
+description: Create a HTML `<ol>` element.
+...
+
+~~~ .php.xmp
+HTML::ol($list = [], $attr = [], $dent = 0);
+~~~

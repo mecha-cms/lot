@@ -1,0 +1,17 @@
+---
+title: `$to::key()`
+description: Convert string input into a valid array key.
+...
+
+~~~ .php.xmp
+To::key($in, $low = true);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = To::key('foo bar baz');
+$test_2 = To::key('foo-bar-baz');
+$test_3 = To::key('123 foo bar baz');
+$test_4 = To::key('123-foo-bar-baz');
+~~~

@@ -1,0 +1,26 @@
+---
+title: `$path::B()`
+description: Convert file path to its base name.
+...
+
+~~~ .php.xmp
+Path::B($path, $step = 1, $s = null);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = Path::B('foo\bar\baz.qux');
+$test_2 = Path::B('foo\bar\baz.qux', 2);
+$test_3 = Path::B('foo-bar-baz.qux', 1, '-');
+$test_4 = Path::B('foo.bar.baz.qux', 1, '.');
+~~~
+
+Result:
+
+~~~ .php
+$test_1 = 'baz.qux';
+$test_2 = 'bar\baz.qux';
+$test_3 = 'baz.qux';
+$test_4 = 'qux';
+~~~

@@ -387,7 +387,7 @@ Determine the `step` property for field type `range`:
 
 ### Union
 
-Arguments for [`Union::__construct()`][link:../../reference/class/union#reference:constructor].
+Arguments for [`Union::__construct()`][link:../../reference/class/union/__construct].
 
 ~~~ .php
 'description' => [
@@ -507,10 +507,10 @@ Extra HTML attributes for the field markup:
     'attributes' => [
         'rel' => 'nofollow',
         'target' => '_blank',
-        'data' => [
+        'data[]' => [
             'user' => '@user'
         ],
-        'css' => [
+        'style[]' => [
             'color' => '#f00',
             'border' => '1px solid #000'
         ]

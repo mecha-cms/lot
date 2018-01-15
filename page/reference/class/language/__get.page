@@ -1,0 +1,8 @@
+---
+title: `__get()`
+description: Dynamic properties.
+...
+
+~~~ .php
+echo $language->foo; // will trigger `Language::get('foo')`
+~~~

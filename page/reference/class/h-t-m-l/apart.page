@@ -1,0 +1,28 @@
+---
+title: `$h_t_m_l::apart()`
+description: Extract HTML markup into PHP array.
+...
+
+~~~ .php.xmp
+HTML::apart($input, $eval = true);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = HTML::apart('<div class="main p" id="main">Content goes here…</div>');
+~~~
+
+Result:
+
+~~~ .php
+$test = [
+    0 => 'div',
+    1 => 'Content goes here…',
+    2 => [
+        'class' => 'main p'
+        'class[]' => ['main', 'p'],
+        'id' => 'main'
+    ]
+];
+~~~

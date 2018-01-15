@@ -1,0 +1,8 @@
+---
+title: `$message::reset()`
+description: Clear all messages from session.
+...
+
+~~~ .php.xmp
+Message::reset($error_x = true);
+~~~

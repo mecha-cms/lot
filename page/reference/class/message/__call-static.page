@@ -1,0 +1,30 @@
+---
+title: `__callStatic()`
+description: Dynamic methods.
+...
+
+If no kin was defined, this method will function as a shortcut for [`Message::get()`][link:get].
+
+~~~ .php.xmp
+Message::{$any}($text, $vars = [], $preserve_case = false);
+~~~
+
+**Example:**
+
+~~~ .php
+Message::error('create');
+Message::info('create');
+Message::success('create');
+Message::warning('create');
+
+Message::foo('create');
+Message::bar('create');
+~~~
+
+> **Note:** Calling `Message::error()` and `Message::warning()` will increase the internal `Message::$x` value. This is useful for checking errors before doing something:
+>
+> ~~~ .php
+> if (!Message::$x) {
+>     File::write('test')->saveTo('success.log');
+> }
+> ~~~

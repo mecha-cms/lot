@@ -1,0 +1,14 @@
+---
+title: `$file->append()`
+description: Append text to a file.
+...
+
+~~~ .php.xmp
+->append($data);
+~~~
+
+**Example:**
+
+~~~ .php
+File::open('path\to\file.txt')->append('hey!')->save();
+~~~

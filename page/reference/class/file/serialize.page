@@ -1,0 +1,16 @@
+---
+title: `$file::serialize()`
+description: Serialize a file.
+...
+
+This is just a shortcut for `File::write(serialize('test!'))->saveTo('path\to\file.txt')`.
+
+~~~ .php.xmp
+File::serialize($data);
+~~~
+
+**Example:**
+
+~~~ .php
+File::serialize('test!')->saveTo('path\to\file.txt');
+~~~

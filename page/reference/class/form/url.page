@@ -1,0 +1,8 @@
+---
+title: `$form::url()`
+description: Create a HTML `<input type="url">` element.
+...
+
+~~~ .php.xmp
+Form::url($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~

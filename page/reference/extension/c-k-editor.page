@@ -1,7 +1,10 @@
 ---
 title: CKEditor
 description: CKEditor is a free, open-source HTML text editor designed to simplify website content creation. It’s a WYSIWYG editor that brings common word processor features directly to your web pages.
-dependency: {"extension":["panel"]}
+
+dependency:
+  extension:
+    - panel
 ...
 
 ![1](%{asset}%/png/reference/extension/c-k-editor/1.png)

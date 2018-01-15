@@ -1,0 +1,18 @@
+---
+title: `$to::{folder,files}()`
+description: Sanitize string input into safe folder path.
+...
+
+~~~ .php.xmp
+To::folder($in);
+~~~
+
+~~~ .php.xmp
+To::files($in); // alias
+~~~
+
+**Example:**
+
+~~~ .php
+$test = To::folder('foo / bar / baz .txt / abc $ def $ ghi .txt');
+~~~

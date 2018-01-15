@@ -1,127 +1,19 @@
 ---
-title: Class `Hook`
+title: `Hook`
 description: Function hooks.
+parent: genome
 ...
 
-### Set
-
-~~~ .xmp.php
-Hook::set($id = null, $fn = null, $stack = null);
-~~~
-
-**Example:**
-
-Set a `head.content` hook with named function as the ID:
-
-~~~ .php
-function fn_meta() {
-    echo '<meta name="generator" content="Mecha">';
+[[e]]
+echo "### Methods\n";
+foreach (glob(PAGE . DS . $url->path . DS . '*.page') as $v) {
+    if (basename($v, '.page') === basename(dirname($v))) continue;
+    $v = Page::open($v);
+    echo "\n - [" . $v->title . '](' . $v->url . ')';
 }
+[[/e]]
 
-Hook::set('head.content', 'fn_meta');
-~~~
-
-Set a `head.content` hook with anonymous function:
-
-~~~ .php
-Hook::set('head.content', function() {
-    echo '<meta name="generator" content="Mecha">';
-});
-~~~
-
-Using custom priority:
-
-~~~ .php
-function fn_meta() {
-    echo '<meta name="generator" content="Mecha">';
-}
-
-Hook::set('head.content', 'fn_meta', 1);
-~~~
-
-> **Note:** `1` is the function execution priority. The smaller the value, the earlier the function will be executed. And functions with the same priority are executed in the order in which they were added to the hook. Default is `10`.
-
-### Get
-
-~~~ .xmp.php
-Hook::get($id = null, $fail = false);
-~~~
-
-**Example:**
-
-Get all of the attached hooks:
-
-~~~ .php
-__test__(Hook::get());
-~~~
-
-Get all hooks attached to `head.content`:
-
-~~~ .php
-__test__(Hook::get('head.content'));
-~~~
-
-### Reset
-
-~~~ .xmp.php
-Hook::reset($id = null, $stack = null | $fn = null);
-~~~
-
-**Example:**
-
-Remove an attached `head.content` hook with ID `fn_meta` before execution, or prevent a `head.content` hook with ID `fn_meta` to be attached:
-
-~~~ .php
-Hook::reset('head.content', 'fn_meta');
-~~~
-
-> **Note:** You cannot remove hooks that are attached using anonymous function because they have no ID.
-
-### Fire
-
-~~~ .xmp.php
-Hook::fire($id, array $lot = []);
-~~~
-
-**Example:**
-
-Execute the `head.content` hook:
-
-~~~ .php
-Hook::fire('head.content'); // → `<meta name="generator" content="Mecha">`
-~~~
-
----
-
-### Advance
-
-#### Namespaces
-
-~~~ .xmp.php
-Hook::NS($id, array $lot = []);
-~~~
-
-This …
-
-~~~ .php
-Hook::NS('foo.bar.baz', [$a, $b]);
-~~~
-
-… is equal to this:
-
-~~~ .php
-Hook::fire(['foo.bar.baz', 'bar.baz', 'baz'], [$a, $b]);
-~~~
-
-… is equal to these:
-
-~~~ .php
-Hook::fire('foo.bar.baz', [$a, $b]);
-Hook::fire('bar.baz', [$a, $b]);
-Hook::fire('baz', [$a, $b]);
-~~~
-
-#### Arguments
+### Arguments
 
 With named function as the ID:
 
@@ -147,7 +39,7 @@ How to fire:
 Hook::fire('head.content', ['Taufik', 'Nurrohman']); // → `<meta name="author" content="Taufik Nurrohman">`
 ~~~
 
-#### As Filter
+### As Filter
 
 The first value of the available arguments will be returned. So, this test will return `Taufik`:
 

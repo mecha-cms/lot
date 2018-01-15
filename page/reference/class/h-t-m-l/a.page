@@ -1,0 +1,8 @@
+---
+title: `$h_t_m_l::a()`
+description: Create a HTML `<a>` element.
+...
+
+~~~ .php.xmp
+HTML::a($text = "", $href = null, $target = null, $attr = [], $dent = 0);
+~~~

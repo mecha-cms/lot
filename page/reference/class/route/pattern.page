@@ -1,0 +1,14 @@
+---
+title: `$route::pattern()`
+description: Set a route with plain regular expression pattern.
+...
+
+~~~ .php.xmp
+Route::pattern($pattern, $fn = false, $stack = null);
+~~~
+
+**Example:**
+
+~~~ .php
+Route::pattern('#^blog(?:\/([^\/]+))?(?:\/(\d+))?$#', function($slug = "", $step = 1) { … });
+~~~

@@ -1,7 +1,11 @@
 ---
 title: Comment Captcha
 description: Comment form protection using captcha.
-dependency: {"extension":["captcha","comment"]}
+
+dependency:
+  extension:
+    - captcha
+    - comment
 ...
 
 Open `lot\extend\plugin\lot\worker\comment-captcha\lot\state\config.php` to configure:

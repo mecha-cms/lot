@@ -1,0 +1,14 @@
+---
+title: `$to::hex()`
+description: Convert string into their HTML hexagonal characters representation.
+...
+
+~~~ .php.xmp
+To::hex($in, $z = false, $f = ['&#x', ';']);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = To::hex('I ❤ U');
+~~~

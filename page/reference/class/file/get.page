@@ -1,0 +1,30 @@
+---
+title: `$file->get()`
+description: Reading file line by line.
+...
+
+An alternative to the [`read()`][link:read] method which allow you to stop the reading process on a specific line/condition.
+
+~~~ .php.xmp
+->get($stop = null, $fail = false, $ch = 1024);
+~~~
+
+**Example:**
+
+Stop reading at line 4:
+
+~~~ .php
+echo File::open('path\to\file.txt')->get(3);
+~~~
+
+Stop reading at a line that contains `$`:
+
+~~~ .php
+echo File::open('path\to\file.txt')->get('$');
+~~~
+
+Stop reading at a line that contains `$` exactly at position `12`:
+
+~~~ .php
+echo File::open('path\to\file.txt')->get(['$', 12]);
+~~~

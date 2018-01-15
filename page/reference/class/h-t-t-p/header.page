@@ -1,0 +1,25 @@
+---
+title: `$h_t_t_p::header()`
+description: Set HTTP headers.
+...
+
+~~~ .php.xmp
+HTTP::header($key, $value = null);
+~~~
+
+**Example:**
+
+~~~ .php
+HTTP::header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');
+~~~
+
+~~~ .php
+HTTP::header('Expires', 'Sat, 26 Jul 1997 05:00:00 GMT');
+~~~
+
+~~~ .php
+HTTP::header([
+    'Expires' => 'Sat, 26 Jul 1997 05:00:00 GMT',
+    'Cache-Control' => 'no-cache, must-revalidate'
+]);
+~~~

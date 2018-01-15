@@ -1,0 +1,8 @@
+---
+title: `$h_t_t_p::get()`
+description: Send a `GET` request without a form or direct URL access.
+...
+
+~~~ .php.xmp
+HTTP::get($url, $fields = []);
+~~~

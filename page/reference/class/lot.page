@@ -1,61 +1,19 @@
 ---
-title: Class `Lot`
+title: `Lot`
 description: Variables.
+parent: genome
 ...
 
 Register variables and makes them available globally in the shields.
 
-### Set
-
-~~~ .xmp.php
-Lot::set($key, $value = null, $scope = null);
-~~~
-
-**Example:**
-
-Set a `$test` variable for usage in the shields:
-
-~~~ .php
-Lot::set('test', 'Hello!');
-~~~
-
-### Get
-
-~~~ .xmp.php
-Lot::get($key, $fail = false, $scope = null);
-~~~
-
-**Example:**
-
-Get `test` value from the `$GLOBALS` storage:
-
-~~~ .php
-echo Lot::get('test');
-~~~
-
-### Reset
-
-~~~ .xmp.php
-Lot::reset($key = null, $scope = null);
-~~~
-
-**Example:**
-
-Remove `test` property from the `$GLOBALS` storage:
-
-~~~ .php
-Lot::reset('test');
-~~~
-
-Remove all properties that has been set by the `Lot::set()` method:
-
-~~~ .php
-Lot::reset();
-~~~
-
----
-
-### Variables
+[[e]]
+echo "### Methods\n";
+foreach (glob(PAGE . DS . $url->path . DS . '*.page') as $v) {
+    if (basename($v, '.page') === basename(dirname($v))) continue;
+    $v = Page::open($v);
+    echo "\n - [" . $v->title . '](' . $v->url . ')';
+}
+[[/e]]
 
 Here are list of variables that are available globally in the shields:
 

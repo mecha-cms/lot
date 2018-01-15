@@ -1,0 +1,40 @@
+---
+title: `__callStatic()`
+description: Dynamic methods.
+...
+
+Default HTML parameters consist of `$content`, `$attr` and `$dent`:
+
+~~~ .php.xmp
+HTML::{$any}($content = "", $attr = [], $dent = 0);
+~~~
+
+**Example:**
+
+~~~ .php
+echo HTML::div('Content goes here…', [
+    'id' => 'main',
+    'class' => 'main'
+]);
+~~~
+
+Result:
+
+~~~ .html
+<div class="main" id="main"></div>
+~~~
+
+If `$content` parameter is `false`, then the result will become a self-closed HTML tag.
+
+~~~ .php
+echo HTML::input(false, [
+    'name' => 'author'
+    'type' => 'text'
+]);
+~~~
+
+Result:
+
+~~~ .html
+<input name="author" type="text">
+~~~

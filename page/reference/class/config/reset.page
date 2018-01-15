@@ -1,0 +1,40 @@
+---
+title: `$config::reset()`
+description: Remove item.
+...
+
+~~~ .php.xmp
+Config::reset($key = null);
+~~~
+
+**Example:**
+
+Remove item by key:
+
+~~~ .php
+Config::reset('title');
+~~~
+
+Using the shortcut:
+
+~~~ .php
+unset($config->title);
+~~~
+
+With dot notation:
+
+~~~ .php
+Config::reset('author.name');
+~~~
+
+Remove multiple item at once:
+
+~~~ .php
+Config::reset(['title', 'description', 'author']);
+~~~
+
+Remove all items:
+
+~~~ .php
+Config::reset();
+~~~

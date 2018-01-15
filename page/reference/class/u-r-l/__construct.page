@@ -1,0 +1,41 @@
+---
+title: `__construct()`
+description: Constructor.
+...
+
+~~~ .php.xmp
+URL();
+~~~
+
+Inspect URL properties:
+
+~~~ .php
+$url = new URL();
+
+echo $url->path; // return the URL path
+echo $url->path('#'); // return the URL path if any, otherwise, return `#`
+echo $url; // return `$url->url` (the base URL)
+~~~
+
+The available properties:
+
+~~~ .txt
+// %{url.protocol}%%{url.host}%/directory/foo/bar?foo=bar#foo
+
+$url → %{url.protocol}%%{url.host}%/directory
+ │
+ ├── scheme: %{url.scheme}%
+ ├── protocol: %{url.protocol}%
+ ├── host: %{url.host}%
+ ├── port: %{url.port}%
+ ├── user: null ← or depends on `$_SESSION['url']['user']`
+ ├── pass: null ← or depends on `$_SESSION['url']['pass']`
+ ├── directory: directory
+ ├── url: %{url.protocol}%%{url.host}%/directory
+ ├── path: foo/bar
+ ├── query: ?foo=bar
+ ├── previous: null ← or depends on `$_SESSION['url']['previous']`
+ ├── current: %{url.protocol}%%{url.host}%/directory/foo/bar
+ ├── next: null ← or depends on `$_SESSION['url']['next']`
+ └── hash: null ← or depends on `$_COOKIE['url']['hash']`
+~~~

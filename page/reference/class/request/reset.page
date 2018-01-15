@@ -1,0 +1,20 @@
+---
+title: `$request::reset()`
+description: Remove value from a request.
+...
+
+~~~ .php.xmp
+Request::reset($id, $key = null);
+~~~
+
+**Example:**
+
+~~~ .php
+Request::reset('post', 'time');
+~~~
+
+The code above is equal to:
+
+~~~ .php
+unset($_POST['time']);
+~~~

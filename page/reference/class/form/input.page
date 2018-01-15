@@ -1,0 +1,20 @@
+---
+title: `$form::input()`
+description: Create a HTML `<input>` element.
+...
+
+~~~ .php.xmp
+Form::input($name = null, $type = 'text', $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = Form::input('x', 'url', 'test value', 'http://');
+~~~
+
+Result:
+
+~~~ .php
+$test = '<input name="x" type="url" value="test value" placeholder="http://">';
+~~~

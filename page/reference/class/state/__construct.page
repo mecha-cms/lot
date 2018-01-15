@@ -1,0 +1,24 @@
+---
+title: `__construct()`
+description: Constructor.
+...
+
+~~~ .php.xmp
+$state = new State($x);
+~~~
+
+**Example:**
+
+Convert `$config` array into safe object:
+
+~~~ .php
+$config = State::config();
+$config = new State($config);
+~~~
+
+Result:
+
+~~~ .php
+echo $config->title; // key `title` does exist, return the `title` value
+echo $config->xyz; // key `xyz` does not exist, return `null`
+~~~

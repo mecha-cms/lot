@@ -1,0 +1,26 @@
+---
+title: `$form::radio()`
+description: Create list of HTML `<input type="radio">` elements with their labels.
+...
+
+~~~ .php.xmp
+Form::radio($name = null, $options = [], $select = null, $attr = [], $dent = 0);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = Form::radio('c', [
+    'red' => 'Red',
+    'green' => 'Green',
+    'blue' => 'Blue'
+], 'green');
+~~~
+
+Result:
+
+~~~ .php
+$test = '<label><input name="c" type="radio" value="red">&nbsp;<span>Red</span></label><br>
+<label><input name="c" type="radio" value="green" checked>&nbsp;<span>Green</span></label><br>
+<label><input name="c" type="radio" value="blue">&nbsp;<span>Blue</span></label>';
+~~~

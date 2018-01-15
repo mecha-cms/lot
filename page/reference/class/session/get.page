@@ -1,0 +1,20 @@
+---
+title: `$session::get()`
+description: Get a session.
+...
+
+~~~ .php.xmp
+Session::get($key = null, $fail = null);
+~~~
+
+**Example:**
+
+~~~ .php
+Session::get('my_session', '#');
+~~~
+
+To get all sessions:
+
+~~~ .php
+Session::get();
+~~~

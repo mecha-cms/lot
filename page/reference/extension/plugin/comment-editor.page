@@ -1,7 +1,11 @@
 ---
 title: Comment Editor
 description: Rich text editor in comment form.
-dependency: {"extension":["comment","rich-text-editor"]}
+
+dependency:
+  extension:
+    - comment
+    - rich-text-editor
 ...
 
 ![1](%{asset}%/png/reference/extension/plugin/comment-editor.png)

@@ -20,4 +20,4 @@ Hook::set('shield.enter', function() use($site) {
 > <p><?php echo $page->date->en_us; ?></p>
 > ~~~
 >
-> [connect:../reference/class/date#reference:extract]
+> [connect:../reference/class/date/extract]

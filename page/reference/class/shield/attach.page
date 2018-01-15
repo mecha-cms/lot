@@ -1,0 +1,8 @@
+---
+title: `$shield::attach()`
+description: Attach a shield file as the page.
+...
+
+~~~ .php.xmp
+Shield::attach($input, $fail = false, $buffer = true);
+~~~

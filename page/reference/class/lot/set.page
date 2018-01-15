@@ -1,0 +1,16 @@
+---
+title: `$lot::set()`
+description: Set variable.
+...
+
+~~~ .php.xmp
+Lot::set($key, $value = null, $scope = null);
+~~~
+
+**Example:**
+
+Set a `$test` variable for usage in the shields:
+
+~~~ .php
+Lot::set('test', 'Hello!');
+~~~

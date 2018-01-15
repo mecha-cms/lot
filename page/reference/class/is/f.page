@@ -1,0 +1,8 @@
+---
+title: `$is::F()`
+description: Check for valid file.
+...
+
+~~~ .php.xmp
+Is::F($x);
+~~~

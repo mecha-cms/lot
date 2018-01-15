@@ -1,7 +1,14 @@
 ---
 title: Panel
 description: GUI extension for Mecha.
-dependency: {"extension":["asset","page","user"],"plugin":["markdown"]}
+
+dependency:
+  extension:
+    - asset
+    - page
+    - user
+  plugin:
+    - markdown
 ...
 
 ![1](%{asset}%/png/reference/extension/panel/1.png) {.align-center}

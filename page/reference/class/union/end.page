@@ -1,0 +1,76 @@
+---
+title: `$union->end()`
+description: End the markup.
+...
+
+**Previous:** [link:begin]
+
+~~~ .php.xmp
+$union->end($unit = null, $dent = null);
+~~~
+
+Close the opened `<title>` tag:
+
+~~~ .php
+echo $union->end('title');
+~~~
+
+~~~ .php
+echo $union->end('title', 0);
+~~~
+
+Result:
+
+~~~ .html
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <title>
+      test title
+    </title>
+~~~
+
+~~~ .html
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <title>
+      test title
+</title>
+~~~
+
+Close all of the opened tags:
+
+~~~ .php
+echo $union->end(true);
+~~~
+
+Result:
+
+~~~ .html
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <title>
+      test title
+    </title>
+  </head>
+</html>
+~~~
+
+Close with broken tag:
+
+~~~ .php
+echo $union->end('foo');
+~~~
+
+Result:
+
+~~~ .html
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <title>
+      test title
+    </foo>
+~~~

@@ -1,0 +1,8 @@
+---
+title: `$form::search()`
+description: Create a HTML `<input type="search">` element.
+...
+
+~~~ .php.xmp
+Form::search($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~

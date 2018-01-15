@@ -1,0 +1,8 @@
+---
+title: `__set()`
+description: Dynamic properties.
+...
+
+~~~ .php
+$language->foo = 'bar'; // will trigger `Language::set('foo', 'bar')`
+~~~

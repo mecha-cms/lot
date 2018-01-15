@@ -1,7 +1,10 @@
 ---
 title: JavaScript Scroll
 description: Smooth scrolling system.
-dependency: {"extension":["asset"]}
+
+dependency:
+  extension:
+    - asset
 ...
 
 This plugin takes any HTML anchor elements that has `js:scroll` class in it and then will add a click event which when triggered, it will scroll the current page into specific section that has an ID as defined in the fragment identifier. Default action is scroll to the left and top of the page.
@@ -21,7 +24,6 @@ Option | Description
 `easing` | Requires [easing][link:../js-easing] extension.
 `hash-change` | Set to `false` to disable URL hash change/addition at the end of the scroll animation.
 `speed` | Determine the animation speed. Default is `400`.
-`step` | Determine the animation step. Default is `20`.
 
 Example:
 

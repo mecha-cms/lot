@@ -1,0 +1,14 @@
+---
+title: `$file->prepend()`
+description: Prepend text to a file.
+...
+
+~~~ .php.xmp
+->prepend($data);
+~~~
+
+**Example:**
+
+~~~ .php
+File::open('path\to\file.txt')->prepend('hey!')->save();
+~~~

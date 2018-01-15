@@ -1,8 +1,15 @@
 ---
 title: Comment
-description: Built-in commenting system.
-dependency: {"extension":["asset","page"]}
-dependency_x: {"plugin":["block-e"]}
+description: Built-in commenting system. Use this extension to enable comment feature on any page you want.
+
+dependency:
+  extension:
+    - asset
+    - page
+
+dependency_x:
+  plugin:
+    - block.e
 ...
 
 Edit the `page.php` file in your active shield folder then put this snippet after the `</article>` tag:

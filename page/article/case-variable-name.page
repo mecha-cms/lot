@@ -5,7 +5,7 @@ description: Mecha has some disciplines in naming their variables.
 
 ### General
 
-[Reserved variables][link:../reference/variable] in _Mecha_ should match with `^[a-z]+(?:_[a-z\d]+)*$` pattern:
+[Reserved variables][link:../reference/variable] in _Mecha_ should match to `^[a-z]+(?:_[a-z\d]+)*$` pattern:
 
 ~~~ .php
 $site
@@ -70,7 +70,7 @@ Common variable names using a single letter with their meaning:
  - `$n` → [name][link:../reference/class/path]
  - `$o` → array container, output container
  - `$p` → [page][link:../reference/class/page], [path][link:../reference/class/path]
- - `$q` → [query][link:../reference/class/h-t-t-p#reference:query]
+ - `$q` → [query][link:../reference/class/h-t-t-p/query]
  - `$r` → ?
  - `$s` → placeholder, universal variable
  - `$t` → title, text

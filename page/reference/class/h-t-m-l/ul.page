@@ -1,0 +1,8 @@
+---
+title: `$h_t_m_l::ul()`
+description: Create a HTML `<ul>` element.
+...
+
+~~~ .php.xmp
+HTML::ul($list = [], $attr = [], $dent = 0);
+~~~

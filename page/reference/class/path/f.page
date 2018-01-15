@@ -1,0 +1,38 @@
+---
+title: `$path::F()`
+description: Convert file/folder path to a folder path.
+...
+
+Remove file/folder extension.
+
+~~~ .php.xmp
+Path::F($path, $root = null, $s = DS);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = Path::D('\a\b\c\foo\bar\baz.qux');
+$test_2 = Path::D('\a\b\c\foo\bar\baz');
+$test_3 = Path::F('\a\b\c\foo\bar\baz.qux');
+$test_4 = Path::F('\a\b\c\foo\bar\baz');
+~~~
+
+~~~ .php
+$test_5 = Path::F('\a\b\c\foo\bar\baz.qux', '\a\b\c');
+$test_6 = Path::F('\a\b\c\foo\bar\baz.qux', null, '/');
+~~~
+
+Result:
+
+~~~ .php
+$test_1 = '\a\b\c\foo\bar';
+$test_2 = '\a\b\c\foo\bar';
+$test_3 = '\a\b\c\foo\bar\baz';
+$test_4 = '\a\b\c\foo\bar\baz';
+~~~
+
+~~~ .php
+$test_5 = 'foo\bar\baz';
+$test_6 = '/a/b/c/foo/bar/baz';
+~~~

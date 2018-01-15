@@ -1,0 +1,8 @@
+---
+title: `$form::number()`
+description: Create a HTML `<input type="number">` element.
+...
+
+~~~ .php.xmp
+Form::number($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~

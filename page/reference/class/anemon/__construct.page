@@ -1,0 +1,70 @@
+---
+title: `__construct()`
+description: Create flexible array variable.
+...
+
+An instance of `Anemon` class can be used to make the array becomes possible to be accessed as string, object or function.
+
+~~~ .php.xmp
+Anemon($array = [], $separator = ', ');
+~~~
+
+**Example:**
+
+~~~ .php
+$test = new Anemon(['foo', 'bar', 'baz']);
+
+echo $test;
+echo $test(' + ');
+echo $test->join(' + ');
+echo $test->{1};
+echo $test->vomit(1);
+~~~
+
+Result:
+
+~~~ .php
+foo, bar, baz
+
+foo + bar + baz
+
+foo + bar + baz
+
+bar
+
+bar
+~~~
+
+Array with `null` value and array with keys prefixed by a `_` will be ignored by default:
+
+~~~ .php
+$test = new Anemon([
+    'foo' => 0,
+    'bar' => 1,
+    'baz' => 2,
+    '_hidden' => '#'
+], ', ');
+
+echo $test;
+echo $test(' + ');
+echo $test->join(' + ');
+echo $test->foo;
+echo $test->_hidden;
+echo $test->vomit('foo');
+~~~
+
+Result:
+
+~~~ .php
+0, 1, 2
+
+0 + 1 + 2
+
+0 + 1 + 2
+
+0
+
+#
+
+0
+~~~

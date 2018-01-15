@@ -1,0 +1,8 @@
+---
+title: `$h_t_t_p::post()`
+description: Send a `POST` request without form.
+...
+
+~~~ .php.xmp
+HTTP::post($url, $fields = []);
+~~~

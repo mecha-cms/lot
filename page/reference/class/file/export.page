@@ -1,0 +1,17 @@
+---
+title: `$file::export()`
+description: Export data as a PHP file.
+...
+
+~~~ .php.xmp
+File::export($data, $format = '<?php return %{0}%;');
+~~~
+
+**Example:**
+
+~~~ .php
+$test = File::export([
+    'foo' => 'bar',
+    'baz' => 'qux'
+])->saveTo('path\to\file.php');
+~~~

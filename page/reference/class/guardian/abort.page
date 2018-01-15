@@ -1,0 +1,8 @@
+---
+title: `$guardian::abort()`
+description: Abort script execution.
+...
+
+~~~ .php.xmp
+Guardian::abort($message, $exit = true);
+~~~

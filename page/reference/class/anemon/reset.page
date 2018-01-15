@@ -1,0 +1,33 @@
+---
+title: `$anemon::reset()`
+description: Remove array value recursively.
+...
+
+~~~ .php.xmp
+Anemon::reset(array &$input, $key, $NS = '.');
+~~~
+
+**Example:**
+
+~~~ .php
+$array = [
+    'foo' => 1,
+    'bar' => [
+        'baz' => 2,
+        'qux' => 3
+    ]
+];
+
+Anemon::reset($array, 'bar.baz');
+~~~
+
+Result:
+
+~~~ .php
+$array = [
+    'foo' => 1,
+    'bar' => [
+        'qux' => 3
+    ]
+];
+~~~

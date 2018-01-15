@@ -1,0 +1,27 @@
+---
+title: `$u_r_l::I()`
+description: Remove the trailing page offset from URL.
+...
+
+~~~ .php.xmp
+URL::I($url);
+~~~
+
+**Example:**
+
+~~~ .php
+__test__(
+    URL::I('%{url}%/blog'),
+    URL::I('%{url}%/blog/4')
+);
+~~~
+
+Result:
+
+~~~ .txt
+%{url}%/blog
+~~~
+
+~~~ .txt
+%{url}%/blog
+~~~

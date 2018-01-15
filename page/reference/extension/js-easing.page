@@ -1,8 +1,11 @@
 ---
 title: Easing Equation
 description: A collection of swappable functions that add flavor to motion.
-dependency: {"extension":["asset"]}
 name: js.easing
+
+dependency:
+  extension:
+    - asset
 ...
 
 ![1](%{asset}%/png/reference/extension/js-easing.png)

@@ -1,0 +1,8 @@
+---
+title: `$h_t_m_l::img()`
+description: Create a HTML `<img>` element.
+...
+
+~~~ .php.xmp
+HTML::img($src = null, $alt = null, $attr = [], $dent = 0);
+~~~

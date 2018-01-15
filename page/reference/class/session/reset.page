@@ -1,0 +1,26 @@
+---
+title: `$session::reset()`
+description: Remove a session.
+...
+
+~~~ .php.xmp
+Session::reset($key = null);
+~~~
+
+**Example:**
+
+~~~ .php
+Session::reset('my_session');
+~~~
+
+To remove multiple sessions:
+
+~~~ .php
+Session::reset(['my_session', 'your_session', 'our_session']);
+~~~
+
+To remove all sessions:
+
+~~~ .php
+Session::reset();
+~~~

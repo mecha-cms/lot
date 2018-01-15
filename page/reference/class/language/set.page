@@ -1,0 +1,8 @@
+---
+title: `$language::set()`
+description: Set a language item.
+...
+
+~~~ .php.xmp
+Language::set($key, $value = null);
+~~~

@@ -1,0 +1,41 @@
+---
+title: `$shield::path()`
+description: Generate full path of a shield file from its ID.
+...
+
+~~~ .php.xmp
+Shield::path($input, $fail = false);
+~~~
+
+Search for PHP file from current active shield folder based on the given name, otherwise, return `$fail`:
+
+~~~ .php
+$test_1 = Shield::path('page');
+$test_2 = Shield::path('test');
+~~~
+
+Result:
+
+~~~ .php
+$test_1 = '.\www\lot\shield\document\page.php';
+$test_2 = false;
+~~~
+
+Search for PHP files from current active folder based on the given _namespace_. Otherwise, return the first available alternate file, otherwise, return `$fail`:
+
+~~~ .php
+$test = Shield::path('page/about/social');
+~~~
+
+Result:
+
+~~~ .php
+// can be
+$test = '.\www\lot\shield\document\page.about.social.php';
+// or
+$test = '.\www\lot\shield\document\page\about\social.php';
+// or
+$test = '.\www\lot\shield\document\page\about.php';
+// or
+$test = '.\www\lot\shield\document\page.php';
+~~~

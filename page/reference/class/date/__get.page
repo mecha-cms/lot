@@ -1,0 +1,9 @@
+---
+title: `__get()`
+description: Dynamic properties.
+...
+
+~~~ .php
+$date = new Date();
+echo $date->slug; // will trigger `$date->extract('slug');
+~~~

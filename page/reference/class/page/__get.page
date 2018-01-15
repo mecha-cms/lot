@@ -1,0 +1,12 @@
+---
+title: `__get()`
+description: Dynamic properties.
+...
+
+~~~ .php
+$page = new Page('path\to\lorem-ipsum.page');
+
+echo $page->test;
+~~~
+
+Here, `$page->test` will return the data if any, otherwise return `null`. A hook names as `page.test` will also be applied to the data output.

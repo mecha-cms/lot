@@ -1,0 +1,14 @@
+---
+title: Capture
+description: A minimal shield for images.
+...
+
+Some elements have their own classes to match with the shield appearance:
+
+~~~ .html
+<button class="button"></button>
+<input class="input">
+<select class="select"></select>
+<table class="table"></table>
+<textarea class="textarea"></textarea>
+~~~

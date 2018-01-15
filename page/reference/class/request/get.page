@@ -1,0 +1,8 @@
+---
+title: `$request::get()`
+description: Return the `$_GET` data.
+...
+
+~~~ .php.xmp
+Request::get($key = null, $fail = null, $eval = true);
+~~~

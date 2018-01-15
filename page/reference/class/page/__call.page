@@ -1,0 +1,29 @@
+---
+title: `__call()`
+description: Dynamic methods.
+...
+
+~~~ .php
+$page = new Page('path\to\lorem-ipsum.page');
+
+echo $page->test();
+~~~
+
+Here, `$page->test()` will return the data if any, otherwise return `null`. A hook names as `page.test` will also be applied to the data output.
+
+Set a value to the called method as alternative value if the called method return `null`:
+
+~~~ .php
+// Return the value of `$page->test` if any, otherwise return `Alternate value.`
+echo $page->test('Alternate value.');
+
+echo $page->test(function($text, $that) {
+    return $text . ': ' . $that->title;
+});
+~~~
+
+Alternatively, you can use `?:` operator to treat `""`, `0`, `'0'`, `null`, `false`, and `[]` as `false` so that the next value will be returned:
+
+~~~ .php
+echo $page->test ?: 'Alternate value.';
+~~~

@@ -1,0 +1,14 @@
+---
+title: `$from::base64()`
+description: Decode Base64 string.
+...
+
+~~~ .php.xmp
+From::base64($in);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = From::base64('aSBsb3ZlIHlvdQ==');
+~~~

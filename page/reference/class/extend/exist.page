@@ -1,0 +1,16 @@
+---
+title: `$extend::exist()`
+description: Return the folder path of current extension folder if exists.
+...
+
+~~~ .php.xmp
+Extend::exist($input, $fail = false);
+~~~
+
+**Example:**
+
+~~~ .php
+if ($path = Extend::exist('minify')) {
+    // do something with `$path`…
+}
+~~~

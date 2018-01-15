@@ -1,7 +1,10 @@
 ---
 title: Text Editor
 description: A text selection range API written in pure JavaScript, for modern browsers.
-dependency: {"extension":["panel"]}
+
+dependency:
+  extension:
+    - panel
 ...
 
 ![1](%{asset}%/png/reference/extension/text-editor.png)

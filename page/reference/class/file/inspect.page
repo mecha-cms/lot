@@ -1,0 +1,41 @@
+---
+title: `$file::inspect()`
+description: Inspect file details.
+...
+
+~~~ .php.xmp
+File::inspect($input, $key = null, $fail = false);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = File::inspect('.\path\to\file.txt');
+$test_2 = File::inspect('.\path\to\file.txt', 'url');
+$test_3 = File::inspect('.\path\to\file.txt', 'wow');
+~~~
+
+Result:
+
+~~~ .php
+$test_1 = [
+    'path' => '.\path\to\file.txt',
+    'name' => 'file',
+    'url' => '%{url}%/path/to/file.txt',
+    'extension' => 'txt',
+    'update' => '2014-06-21 20:05:17',
+    'size' => '20.62 KB',
+    'is' => [
+        'hidden' => false,
+        'file' => true,
+        'files' => false,
+        'folder' => false // alias for `files`
+    ],
+    '_update' => 1403355917,
+    '_size' => 21114
+];
+
+$test_2 = '%{url}%/path/to/file.txt';
+
+$test_3 = false;
+~~~

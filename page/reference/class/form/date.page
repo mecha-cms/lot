@@ -1,0 +1,8 @@
+---
+title: `$form::date()`
+description: Create a HTML `<input type="date">` element.
+...
+
+~~~ .php.xmp
+Form::date($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~

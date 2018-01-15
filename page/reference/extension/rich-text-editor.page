@@ -1,7 +1,10 @@
 ---
 title: Rich Text Editor
 description: A rich text editor that is designed to accept limited set of inline HTML tags only.
-dependency:{"extension":["asset"]}
+
+dependency:
+  extension:
+    - asset
 ...
 
 ![1](%{asset}%/png/reference/extension/rich-text-editor.png)

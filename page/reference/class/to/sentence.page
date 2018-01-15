@@ -1,0 +1,14 @@
+---
+title: `$to::sentence()`
+description: Convert string input into `Sentence case.`.
+...
+
+~~~ .php.xmp
+To::sentence($in, $tail = '.');
+~~~
+
+**Example:**
+
+~~~ .php
+$test = To::sentence('foo bar baz', '?');
+~~~

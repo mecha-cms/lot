@@ -1,0 +1,24 @@
+---
+title: `$file->moveTo()`
+description: Move a file or folder.
+...
+
+~~~ .php.xmp
+->moveTo($path = ROOT);
+~~~
+
+**Example:**
+
+~~~ .php
+File::open('path\to\file.txt')->moveTo('path\to\folder');
+~~~
+
+~~~ .php
+File::open('path\to\folder')->moveTo('path\to\another-folder');
+~~~
+
+Move a file or folder, then rename it:
+
+~~~ .php
+File::open('path\to\file.txt')->moveTo('path\to\folder\file-1.txt');
+~~~

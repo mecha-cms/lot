@@ -1,0 +1,8 @@
+---
+title: `$form::text()`
+description: Create a HTML `<input type="text">` element.
+...
+
+~~~ .php.xmp
+Form::text($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~

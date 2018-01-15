@@ -1,44 +1,17 @@
 ---
-title: Class `Plugin`
+title: `Plugin`
 description: Working with plugins.
 ...
 
-<!-- TODO -->
-
 > **Info:** This class is located in `lot\extend\plugin\engine\kernel` folder.
 
-### Exist
-
-~~~ .xmp.php
-Plugin::exist($input, $fail = false);
-~~~
-
-Return the folder path of current plugin folder if exists:
-
-~~~ .php
-if ($path = Plugin::exist('markdown')) {
-    // do something with `$path`…
-}
-~~~
-
-### State
-
-~~~ .xmp.php
-Plugin::state($id, $key = null, $fail = false);
-~~~
-
-Return the stored plugin states if any, otherwise, return `$fail`:
-
-~~~ .php
-$state = Plugin::state('markdown');
-~~~
-
-> **Note:** If `$key` is array, then it will going to be the alternate values of the `$state` output if some data are not available:
->
-> ~~~ .php
-> $state = Plugin::state('markdown', [
->     'table_class' => 1 // add `table_class` property to `$state` if missing
-> ]);
-> ~~~
-
 [connect:../extension/plugin]
+
+[[e]]
+echo "### Methods\n";
+foreach (glob(PAGE . DS . $url->path . DS . '*.page') as $v) {
+    if (basename($v, '.page') === basename(dirname($v))) continue;
+    $v = Page::open($v);
+    echo "\n - [" . $v->title . '](' . $v->url . ')';
+}
+[[/e]]

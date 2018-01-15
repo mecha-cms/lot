@@ -1,0 +1,21 @@
+---
+title: `$message::set()`
+description: Save a message to session.
+...
+
+~~~ .php.xmp
+Message::set(...$lot [$kin, $text, $s, $k]);
+~~~
+
+**Example:**
+
+~~~ .php
+Message::set('test', 'This is a test message.');
+~~~
+
+> **Note:** The engine will first search for a `message_{$key}_*` language property that has the same suffix as the message text and return that property value:
+>
+> ~~~ .php
+> // Search for `$language->message_test_success`, otherwise return `success`
+> Message::set('test', 'success');
+> ~~~

@@ -1,0 +1,10 @@
+---
+title: `$cache::set()`
+description: Create a new cache file.
+...
+
+~~~ .php.xmp
+Cache::set($from, $content = null, $id = null);
+~~~
+
+> **Note:** If `$content` is defined, then the cache content will be set based on that value instead of the `$from` file content.

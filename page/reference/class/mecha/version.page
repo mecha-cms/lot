@@ -1,0 +1,9 @@
+---
+title: `$mecha::version()`
+description: Compare version.
+...
+
+~~~ .php
+if (Mecha::version('<= 2.0.0')) { … }
+if (Mecha::version === '2.0.0') { … }
+~~~

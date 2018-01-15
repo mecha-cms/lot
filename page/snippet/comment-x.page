@@ -9,7 +9,8 @@ Any existing comments will be visible, but not with the comment form. Comments s
 ---
 title: Page Title
 description: Page description.
-comments: {"x":true}
+comments:
+  x: true
 ...
 
 Page content.

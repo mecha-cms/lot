@@ -1,0 +1,61 @@
+---
+title: `$file::explore()`
+description: List all files and folders from a folder.
+...
+
+~~~ .php.xmp
+File::explore($folder = ROOT, $deep = false, $fail = []);
+~~~
+
+Options:
+
+Parameter | Description
+--------- | -----------
+`$folder` | The folder path to explore.
+`$deep` | Explore the folder contents recursively.
+
+**Example:**
+
+~~~ .php
+$tree_1 = File::explore('path\to\folder');
+$tree_2 = File::explore('path\to\folder', true);
+~~~
+
+Result:
+
+~~~ .txt
+$tree_1
+ │
+ ├── path\to\folder\file-1.txt: 1
+ ├── path\to\folder\file-2.txt: 1
+ ├── path\to\folder\folder-1: 0
+ ├── path\to\folder\folder-2: 0
+ └── path\to\folder\folder-3: 0
+
+$tree_2
+ │
+ ├── path\to\folder\file-1.txt: 1
+ ├── path\to\folder\file-2.txt: 1
+ ├── path\to\folder\folder-1: 0
+ ├── path\to\folder\folder-1\file-1.txt: 1
+ ├── path\to\folder\folder-1\file-2.txt: 1
+ ├── path\to\folder\folder-1\file-3.txt: 1
+ ├── path\to\folder\folder-2: 0
+ ├── path\to\folder\folder-2\file-1.txt: 1
+ ├── path\to\folder\folder-3: 0
+ ├── path\to\folder\folder-3\file-1.txt: 1
+ ├── path\to\folder\folder-3\file-3.txt: 1
+ ├── path\to\folder\folder-3\folder-1: 0
+ ├── path\to\folder\folder-3\folder-1\file-1.txt: 1
+ ├── path\to\folder\folder-3\folder-1\file-2.txt: 1
+ └── path\to\folder\folder-3\folder-1\file-3.txt: 1
+~~~
+
+`$folder` options:
+
+~~~ .php
+$test_1 = File::explore(['path\to\folder', 1], true); // get file(s) only
+$test_2 = File::explore(['path\to\folder', 0], true); // get folder(s) only
+$test_3 = File::explore(['path\to\folder', 'css'], true); // get file(s) only with extension `css`
+$test_4 = File::explore(['path\to\folder', 'css,js'], true); // get file(s) only with extension `css` and `js`
+~~~

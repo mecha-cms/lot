@@ -1,0 +1,39 @@
+---
+title: `$union::__()`
+description: Create comment markup.
+...
+
+~~~ .php.xmp
+Union::__($content, $dent = 0, $block = N);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = Union::__('test comment');
+$test_2 = Union::__('test comment', 1);
+$test_3 = Union::__('test comment', 0, ' ');
+$test_4 = Union::__('test comment', 1, ' ');
+~~~
+
+Result:
+
+~~~ .php
+$test_1 = '<!--
+test comment
+-->';
+~~~
+
+~~~ .php
+$test_2 = '  <!--
+test comment
+  -->';
+~~~
+
+~~~ .php
+$test_3 = '<!-- test comment -->';
+~~~
+
+~~~ .php
+$test_4 = '  <!-- test comment -->';
+~~~

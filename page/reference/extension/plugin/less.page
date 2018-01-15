@@ -1,7 +1,12 @@
 ---
 title: Less
 description: Art direction with Less.
-dependency: {"extension":["less"],"plugin":["art"]}
+
+dependency:
+  extension:
+    - less
+  plugin:
+    - art
 ...
 
 Use this plugin to pre-process CSS syntax to Less syntax in the `css` data.

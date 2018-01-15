@@ -1,0 +1,14 @@
+---
+title: `$to::snippet()`
+description: Convert string input into snippet text.
+...
+
+~~~ .php.xmp
+To::snippet($in, $html = true, $x = [200, '&#x2026;']);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = To::snippet('foo bar baz qux');
+~~~

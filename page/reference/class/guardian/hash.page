@@ -1,0 +1,8 @@
+---
+title: `$guardian::hash()`
+description: Generate random hash.
+...
+
+~~~ .php.xmp
+Guardian::hash($salt = "");
+~~~

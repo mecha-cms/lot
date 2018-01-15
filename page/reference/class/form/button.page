@@ -1,0 +1,20 @@
+---
+title: `$form::button()`
+description: Create a HTML `<button>` element.
+...
+
+~~~ .php.xmp
+Form::button($name = null, $value = null, $text = "", $attr = [], $dent = 0);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = Form::button('x', 'on', 'Activate');
+~~~
+
+Result:
+
+~~~ .php
+$test = '<button name="x" type="button" value="on">Activate</button>';
+~~~

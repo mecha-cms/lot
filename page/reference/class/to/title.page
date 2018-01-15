@@ -1,0 +1,16 @@
+---
+title: `$to::title()`
+description: Convert file name, HTML string or plain text into `Title Case`.
+...
+
+~~~ .php.xmp
+To::title($in);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = To::title('foo-bar-baz');
+$test_2 = To::title('<p><strong>foo</strong> bar <em>baz</em></p>');
+$test_3 = To::title('foo bar baz');
+~~~

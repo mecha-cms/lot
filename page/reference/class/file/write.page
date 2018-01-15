@@ -1,0 +1,14 @@
+---
+title: `$file::write()`
+description: Create a file.
+...
+
+~~~ .php.xmp
+File::write($data);
+~~~
+
+**Example:**
+
+~~~ .php
+File::write('some text');
+~~~

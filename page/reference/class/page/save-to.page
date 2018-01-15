@@ -1,0 +1,20 @@
+---
+title: `$page->saveTo()`
+description: Save a page.
+...
+
+~~~ .php.xmp
+->saveTo($path, $consent = 0600);
+~~~
+
+**Example:**
+
+Create a new page:
+
+~~~ .php
+Page::data([
+    'title' => 'Page Title',
+    'type' => 'HTML',
+    'content' => '<p>Page content.</p>'
+])->saveTo('path\to\file.page');
+~~~

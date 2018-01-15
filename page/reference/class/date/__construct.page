@@ -1,0 +1,8 @@
+---
+title: `__construct()`
+description: Constructor.
+...
+
+~~~ .php.xmp
+Date($date = null);
+~~~

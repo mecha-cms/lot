@@ -1,7 +1,10 @@
 ---
 title: Feed
 description: Add RSS and JSON feeds format features.
-dependency: {"extension":["page"]}
+
+dependency:
+  extension:
+    - page
 ...
 
 ### Usage

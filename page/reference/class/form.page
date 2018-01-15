@@ -1,281 +1,55 @@
 ---
-title: Class `Form`
+title: `Form`
 description: HTML forms.
+parent: h-t-m-l
 ...
 
-### Button
+[[e]]
+echo "### Methods\n";
+foreach (glob(PAGE . DS . $url->path . DS . '*.page') as $v) {
+    if (basename($v, '.page') === basename(dirname($v))) continue;
+    $v = Page::open($v);
+    echo "\n - [" . $v->title . '](' . $v->url . ')';
+}
+[[/e]]
 
-Create a HTML `<button>` element.
+> **Note:** All string in the text area content and HTML attribute values will be HTML encoded.
 
-~~~ .xmp.php
-Form::button($name = null, $value = null, $text = "", $attr = [], $dent = 0);
-~~~
-
-**Example:**
-
-~~~ .php
-$test = Form::button('x', 'on', 'Activate');
-~~~
-
-Result:
+To disable the form field, prepend a `.` to the form name. For `<select>` elements, to disable some option fields, prepend a `.` to the array key in the option list.
 
 ~~~ .php
-$test = '<button name="x" type="button" value="on">Activate</button>';
+$test_1 = Form::button('.x'); // disabled button
+$test_2 = Form::input('.x'); // disabled input
+$test_3 = Form::select('.x'); // disabled select
+$test_4 = Form::textarea('.x'); // disabled textarea
+$test_5 = Form::textarea('\.x'); // not disabled, this will create `<textarea name=".x">`
 ~~~
-
-#### Reset Button
-
-~~~ .xmp.php
-Form::reset($name = null, $value = null, $text = "", $attr = [], $dent = 0);
-~~~
-
-#### Submit Button
-
-~~~ .xmp.php
-Form::submit($name = null, $value = null, $text = "", $attr = [], $dent = 0);
-~~~
-
-### Input
-
-Create a HTML `<input>` element.
-
-~~~ .xmp.php
-Form::input($name = null, $type = 'text', $value = null, $placeholder = null, $attr = [], $dent = 0);
-~~~
-
-**Example:**
 
 ~~~ .php
-$test = Form::input('x', 'url', 'test value', 'http://');
-~~~
+$test_1 = Form::select('x', [
+    '.0' => 'red', // disabled
+    '1' => 'green',
+    '2' => 'blue'
+]);
 
-Result:
-
-~~~ .php
-$test = '<input name="x" type="url" value="test value" placeholder="http://">';
-~~~
-
-#### Checkbox Input
-
-Create a HTML `<input type="checkbox">` element.
-
-~~~ .xmp.php
-Form::checkbox($name = null, $value = null, $check = false, $text = "", $attr = [], $dent = 0);
-~~~
-
-**Example:**
-
-Create a HTML `<input type="checkbox">` element with a label that reads _I agree to the Term of Service_:
-
-~~~ .php
-$test = Form::checkbox('x', 1, false, 'I agree to the Term of Service');
-~~~
-
-Result:
-
-~~~ .php
-$test = '<label>
-  <input name="x" type="checkbox" value="1">&nbsp;<span>I agree to the Term of Service</span>
-</label>';
-~~~
-
-#### Color Input
-
-~~~ .xmp.php
-Form::color($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
-~~~
-
-#### Date Input
-
-~~~ .xmp.php
-Form::date($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
-~~~
-
-#### Email Input
-
-~~~ .xmp.php
-Form::email($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
-~~~
-
-#### Number Input
-
-~~~ .xmp.php
-Form::number($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
-~~~
-
-#### Password Input
-
-~~~ .xmp.php
-Form::password($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
-~~~
-
-#### Radio Inputs
-
-Create list of HTML `<input type="radio">` elements with their labels.
-
-~~~ .xmp.php
-Form::radio($name = null, $options = [], $select = null, $attr = [], $dent = 0);
-~~~
-
-**Example:**
-
-~~~ .php
-$test = Form::radio('c', [
-    'red' => 'Red',
-    'green' => 'Green',
-    'blue' => 'Blue'
-], 'green');
-~~~
-
-Result:
-
-~~~ .php
-$test = '<label><input name="c" type="radio" value="red">&nbsp;<span>Red</span></label><br>
-<label><input name="c" type="radio" value="green" checked>&nbsp;<span>Green</span></label><br>
-<label><input name="c" type="radio" value="blue">&nbsp;<span>Blue</span></label>';
-~~~
-
-#### Range Input
-
-~~~ .xmp.php
-Form::range($name = null, $value = [0, 0, 10], $attr = [], $dent = 0);
-~~~
-
-#### Search Input
-
-~~~ .xmp.php
-Form::search($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
-~~~
-
-#### Tel Input
-
-~~~ .xmp.php
-Form::tel($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
-~~~
-
-#### Text Input
-
-~~~ .xmp.php
-Form::text($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
-~~~
-
-#### URL Input
-
-~~~ .xmp.php
-Form::url($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
-~~~
-
-### Select
-
-Create a HTML `<select>` element.
-
-~~~ .xmp.php
-Form::select($name = null, $option = [], $select = null, $attr = [], $dent = 0);
-~~~
-
-**Example:**
-
-~~~ .php
-$test_1 = Form::select('o', [
-    0 => 'red',
-    1 => 'green',
-    2 => 'blue'
-], 1);
-
-$test_2 = Form::select('o', [
-    'Color' => [
+$test_2 = Form::input('x', [
+    '.Color' => [ // disabled
         '0.0' => 'red',
         '0.1' => 'green',
         '0.2' => 'blue'
     ],
     'Size' => [
-        '1.0' => 'small',
+        '.1.0' => 'small', // disabled
         '1.1' => 'medium',
         '1.2' => 'large'
     ]
-], '1.1');
+]);
 ~~~
 
-Result:
+Other prefix:
 
-~~~ .php
-$test_1 = '<select name="o">
-  <option value="0">red</option>
-  <option value="1" selected>green</option>
-  <option value="2">blue</option>
-</select>';
-
-$test_2 = '<select name="o">
-  <optgroup label="Color">
-    <option value="0.0">red</option>
-    <option value="0.1">green</option>
-    <option value="0.2">blue</option>
-  </optgroup>
-  <optgroup label="Size">
-    <option value="1.0">small</option>
-    <option value="1.1">medium</option>
-    <option value="1.2">large</option>
-  </optgroup>
-</select>';
-~~~
-
-### Textarea
-
-Create a HTML `<textarea>` element.
-
-~~~ .xmp.php
-Form::textarea($name = null, $value = "", $placeholder = null, $attr = [], $dent = 0);
-~~~
-
-**Example:**
-
-~~~ .php
-$test = Form::textarea('x', 'test value', 'some text…');
-~~~
-
-Result:
-
-~~~ .php
-$test = '<textarea name="x" placeholder="some text…">test value</textarea>';
-~~~
-
-> **Note:** All string in the text area content and HTML attribute values will be HTML encoded.
-
-> To disable the form field, prepend a `.` to the form name. For `<select>` elements, to disable some option fields, prepend a `.` to the array key in the option list.
->
-> ~~~ .php
-> $test_1 = Form::button('.x'); // disabled button
-> $test_2 = Form::input('.x'); // disabled input
-> $test_3 = Form::select('.x'); // disabled select
-> $test_4 = Form::textarea('.x'); // disabled textarea
-> $test_5 = Form::textarea('\.x'); // not disabled, this will create `<textarea name=".x">`
-> ~~~
->
-> ~~~ .php
-> $test_1 = Form::select('x', [
->     '.0' => 'red', // disabled
->     '1' => 'green',
->     '2' => 'blue'
-> ]);
->
-> $test_2 = Form::input('x', [
->     '.Color' => [ // disabled
->         '0.0' => 'red',
->         '0.1' => 'green',
->         '0.2' => 'blue'
->     ],
->     'Size' => [
->         '.1.0' => 'small', // disabled
->         '1.1' => 'medium',
->         '1.2' => 'large'
->     ]
-> ]);
-> ~~~
->
-> Other prefix:
->
-> Prefix | Description
-> ------ | -----------
-> `.` | Disabled form elements.
-> `!` | Read-only form elements.
-> `*` | Required form elements.
+Prefix | Description
+------ | -----------
+`.` | Disabled form elements.
+`!` | Read-only form elements.
+`*` | Required form elements.

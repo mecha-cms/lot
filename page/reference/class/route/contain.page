@@ -1,0 +1,16 @@
+---
+title: `$route::contain()`
+description: Check whether specific actions already hooked to the given route pattern.
+...
+
+~~~ .php.xmp
+Route::contain($id = null, $stack = null | $fn = null, $fail = false);
+~~~
+
+**Example:**
+
+Check whether `my_route_hook_fn` already hooked to the `blog/%s%` route:
+
+~~~ .php
+if (Route::contain('blog/%s%', 'my_route_hook_fn')) { … }
+~~~

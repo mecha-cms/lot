@@ -1,0 +1,8 @@
+---
+title: `$is::toggle()`
+description: Check for valid boolean value.
+...
+
+~~~ .php.xmp
+Is::toggle($x);
+~~~

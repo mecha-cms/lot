@@ -1,0 +1,17 @@
+---
+title: `$to::text()`
+description: Convert file name or HTML string into plain text.
+...
+
+~~~ .php.xmp
+To::text($x, $c = [], $n = false);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = To::text('foo-bar-baz');
+$test_2 = To::text('<p><strong>Foo</strong> Bar <em>Baz</em></p>');
+~~~
+
+[connect:../../function#reference:w]

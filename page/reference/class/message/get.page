@@ -1,0 +1,14 @@
+---
+title: `$message::get()`
+description: Read the stored message from session.
+...
+
+~~~ .php.xmp
+Message::get($session_x = true);
+~~~
+
+**Example:**
+
+~~~ .php
+echo Message::get();
+~~~

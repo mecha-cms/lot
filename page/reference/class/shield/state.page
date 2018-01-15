@@ -1,0 +1,24 @@
+---
+title: `$shield::state()`
+description: Get shield state data.
+...
+
+~~~ .php.xmp
+Shield::state($id, $key = null, $fail = false);
+~~~
+
+**Example:**
+
+Return the stored shield states if any, otherwise, return `$fail`:
+
+~~~ .php
+$state = Shield::state('document');
+~~~
+
+> **Note:** If `$key` is array, then it will going to be the alternate values of the `$state` output if some data are not available; `$fail` data value will be ignored:
+>
+> ~~~ .php
+> $state = Shield::state('document', [
+>     'chunk' => 5 // add `chunk` property to `$state` if missing
+> ]);
+> ~~~

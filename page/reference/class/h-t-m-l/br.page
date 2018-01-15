@@ -1,0 +1,8 @@
+---
+title: `$h_t_m_l::br()`
+description: Create a HTML `<br>` element.
+...
+
+~~~ .php.xmp
+HTML::br($i = 1, $attr = [], $dent = 0);
+~~~

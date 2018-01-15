@@ -1,0 +1,14 @@
+---
+title: `$file->renameTo()`
+description: Rename a file or folder.
+...
+
+~~~ .php.xmp
+->renameTo($name);
+~~~
+
+**Example:**
+
+~~~ .php
+File::open('path\to\file.txt')->renameTo('file-1.txt');
+~~~

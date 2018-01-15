@@ -1,0 +1,8 @@
+---
+title: `$form::color()`
+description: Create a HTML `<input type="color">` element.
+...
+
+~~~ .php.xmp
+Form::color($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~

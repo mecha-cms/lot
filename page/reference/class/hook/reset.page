@@ -1,0 +1,18 @@
+---
+title: `$hook::reset()`
+description: Remove a hook.
+...
+
+~~~ .php.xmp
+Hook::reset($id = null, $stack = null | $fn = null);
+~~~
+
+**Example:**
+
+Remove an attached `head.content` hook with ID `fn_meta` before execution, or prevent a `head.content` hook with ID `fn_meta` to be attached:
+
+~~~ .php
+Hook::reset('head.content', 'fn_meta');
+~~~
+
+> **Note:** You cannot remove hooks that are attached using anonymous function because they have no ID.

@@ -1,0 +1,16 @@
+---
+title: `$page->save()`
+description: Save the updated page data.
+...
+
+~~~ .xmp.pgp
+->save($consent = 0600);
+~~~
+
+**Example:**
+
+Update page data:
+
+~~~ .php
+Page::open('path\to\file.page')->data(['title' => 'New Title'])->save();
+~~~

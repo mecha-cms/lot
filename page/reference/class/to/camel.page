@@ -1,0 +1,14 @@
+---
+title: `$to::camel()`
+description: Convert string input into `camelCase`.
+...
+
+~~~ .php.xmp
+To::camel($in);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = To::camel('foo bar baz');
+~~~

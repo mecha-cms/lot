@@ -1,0 +1,15 @@
+---
+title: `$to::snake()`
+description: Convert string input into `snake_case`.
+...
+
+~~~ .php.xmp
+To::snake($in);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = To::snake('123 foo bar baz');
+$test_2 = To::key('123 foo bar baz');
+~~~

@@ -1,13 +1,16 @@
 ---
 title: Block: URL
 description: Insert URL data to the page content.
-dependency: {"extension":["block"]}
 name: block.url
+
+dependency:
+  extension:
+    - block
 ...
 
 Support these block patterns:
 
- - `[‌[‌url‌]‌]` → `http://localhost/a`
+ - `[‌[‌url‌]‌]` → `%{url}%/a`
  - `[‌[‌url.scheme]‌]` → `http`
  - `[‌[‌url.protocol‌]‌]` → `http://`
  - `[‌[‌url.host‌]‌]` → `localhost`
@@ -16,4 +19,4 @@ Support these block patterns:
  - `[‌[‌url.url‌]‌]` → same as `[‌[‌url‌]‌]`
  - `[‌[‌url.path‌]‌]` → `foo/bar`
  - `[‌[‌url.query‌]‌]` → `?foo=bar&baz=qux`
- - `[‌[‌url.current‌]‌]` → `http://localhost/a/foo/bar`
+ - `[‌[‌url.current‌]‌]` → `%{url}%/a/foo/bar`

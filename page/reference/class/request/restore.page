@@ -1,0 +1,14 @@
+---
+title: `$request::restore()`
+description: Restore the saved request data from session.
+...
+
+~~~ .php.xmp
+Request::restore($id, $key, $fail = null);
+~~~
+
+**Example:**
+
+~~~ .php
+echo Request::restore('post', 'time', 'Not available!');
+~~~

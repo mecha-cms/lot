@@ -1,0 +1,20 @@
+---
+title: `$route::reset()`
+description: Remove a route.
+...
+
+~~~ .php.xmp
+Route::reset($id);
+~~~
+
+**Example:**
+
+~~~ .php
+Route::reset('blog/%s%');
+~~~
+
+To remove multiple routes:
+
+~~~ .php
+Route::reset(['blog/%s%/%i%', 'blog/%s%']);
+~~~

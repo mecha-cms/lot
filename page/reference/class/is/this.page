@@ -1,0 +1,40 @@
+---
+title: `$is::this()`
+description: Check.
+...
+
+### Contain
+
+~~~ .php
+Is::this([1, 2, 3, 4])->contain(4);
+~~~
+
+### Equal To {#reference:eq}
+
+~~~ .php
+Is::this($x)->eq(4);
+~~~
+
+### Less Than {#reference:lt}
+
+~~~ .php
+Is::this($x)->lt(4);
+~~~
+
+### Greater Than {#reference:gt}
+
+~~~ .php
+Is::this($x)->gt(4);
+~~~
+
+### Less Than or Equal To {#reference:le}
+
+~~~ .php
+Is::this($x)->le(4);
+~~~
+
+### Greater Than or Equal To {#reference:ge}
+
+~~~ .php
+Is::this($x)->ge(4);
+~~~

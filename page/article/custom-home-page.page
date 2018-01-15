@@ -13,4 +13,4 @@ The easiest way to replace the default home page appearance is to use the built-
 ]
 ~~~
 
-You should be automatically redirected to the home page when you go to `http://localhost/index`.
+You should be automatically redirected to the home page when you go to `%{url}%/index`.

@@ -1,0 +1,18 @@
+---
+title: `$from::{yaml,y_a_m_l}()`
+description: Convert YAML string into array.
+...
+
+~~~ .php.xmp
+From::yaml($in, $d = '  ', $ref = [], $e = true);
+~~~
+
+~~~ .php.xmp
+From::y_a_m_l($in, $d = '  ', $ref = [], $e = true); // alias
+~~~
+
+**Example:**
+
+~~~ .php
+$test = From::yaml('foo: bar');
+~~~

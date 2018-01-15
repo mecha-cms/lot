@@ -1,7 +1,10 @@
 ---
 title: Tag
 description: Page tags.
-dependency: {"extension":["page"]}
+
+dependency:
+  extension:
+    - page
 ...
 
 This extension enables tags feature on any pages by utilizing the `kind` property value as the tag ID. This extension also adds a new route definition like ` %{url}%/blog/tag/slug ` on every pages to make it possible to list all pages in the current folder by tags.
@@ -18,21 +21,13 @@ TAG
 
 There are some methods added to the default [classes][link:../class]:
 
-#### Tag
-
-~~~ .xmp.php
-Get::tag( … );
-~~~
-
-Arguments are the same with [`Get::page()`][link:../class/get#reference:page].
-
 #### Tags
 
 ~~~ .xmp.php
 Get::tags($folder = TAG, …, $sort = [1, 'id'], …);
 ~~~
 
-Arguments are the same with [`Get::pages()`][link:../class/get#reference:pages], except the `$folder` parameter that uses `TAG` [constant][link:../constant] value by default, and the `$sort` parameter that uses `id` as the default sort key instead of `time`.
+Arguments are the same with [`Get::pages()`][link:../class/get/pages], except the `$folder` parameter that uses `TAG` [constant][link:../constant] value by default, and the `$sort` parameter that uses `id` as the default sort key instead of `time`.
 
 #### From
 

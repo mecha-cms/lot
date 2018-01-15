@@ -1,7 +1,11 @@
 ---
 title: Comment Poll
 description: Add like button in comments.
-dependency: {"extension":["comment","poll"]}
+
+dependency:
+  extension:
+    - comment
+    - poll
 ...
 
 You can also change the poll type other than `poll/like` by editing the configuration data in `lot\extend\plugin\lot\worker\comment-poll\lot\state\config.php`. Read more on the [poll][link:../poll] extension reference.

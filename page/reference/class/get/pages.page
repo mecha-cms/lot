@@ -1,0 +1,22 @@
+---
+title: `$get::pages()`
+description: Plugged by [page][link:../../extension/page] extension.
+...
+
+~~~ .php.xmp
+Get::pages($folder = PAGE, $state = 'page', $sort = [-1, 'time'], $key = null);
+~~~
+
+**Example:**
+
+List all published and archived pages from `lot\page\blog` and sort them by `slug` ascending:
+
+~~~ .php
+$files = Get::pages('.\www\lot\page\blog', 'page,archive', [1, 'slug']);
+~~~
+
+List all published and archived pages from `lot\page\blog` and sort them ascending by `slug`, output only the `path` property of each item returned:
+
+~~~ .php
+$files = Get::pages('.\www\lot\page\blog', 'page,archive', [1, 'slug'], 'path');
+~~~

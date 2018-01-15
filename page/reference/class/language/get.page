@@ -1,0 +1,8 @@
+---
+title: `$language::get()`
+description: Get a language item.
+...
+
+~~~ .php.xmp
+Language::get($key = null, $vars = [], $preserve_case = false);
+~~~

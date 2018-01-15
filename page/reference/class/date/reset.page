@@ -1,0 +1,14 @@
+---
+title: `$date::reset()`
+description: Remove custom date format.
+...
+
+~~~ .php.xmp
+Date::reset($key = null);
+~~~
+
+**Example:**
+
+~~~ .php
+Date::reset('my_format');
+~~~

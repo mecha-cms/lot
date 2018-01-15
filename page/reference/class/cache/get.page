@@ -1,0 +1,24 @@
+---
+title: `$cache::get()`
+description: Get the cache file.
+...
+
+~~~ .php.xmp
+Cache::get($from, $fail = false);
+~~~
+
+**Example:**
+
+Get static data of `path\to\file.php` file:
+
+~~~ .php
+$cache = Cache::get('path\to\file.php');
+~~~
+
+Example content of `path\to\file.php` file:
+
+~~~ .php
+<?php
+
+return (array) $_SERVER;
+~~~

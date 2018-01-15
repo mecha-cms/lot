@@ -1,0 +1,32 @@
+---
+title: `$cookie::set()`
+description: Set a cookie.
+...
+
+~~~ .php.xmp
+Cookie::set($key, $value = "", $config = [
+    'expire' => 1,
+    'path' => '/',
+    'domain' => "",
+    'secure' => false,
+    'http_only' => false
+] | $expire);
+~~~
+
+**Example:**
+
+~~~ .php
+Cookie::set('my_cookie', 'the value', 1); // expired in a day
+~~~
+
+Set a cookie with advance configuration data:
+
+~~~ .php
+Cookie::set('my_cookie', 'the value', [
+    'expire' => 1,
+    'path' => '/',
+    'domain' => "",
+    'secure' => false,
+    'http_only' => true // not available in `document.cookie`
+]);
+~~~

@@ -1,6 +1,7 @@
 ---
 title: Asset
 description: Add, remove, append, prepend and replace asset files from/to the HTML output without touching the shield files.
+
 dependency: false
 ...
 

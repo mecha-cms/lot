@@ -109,7 +109,7 @@ Return `true` if `$x` is a serialized string.
 ### Class to File
 
 ~~~ .xmp.php
-__c2f__($x, $s = '-');
+__c2f__($x, $s = '-', $n = '.');
 ~~~
 
 Convert class name into file name:
@@ -127,7 +127,7 @@ $test = 'foo.bar.baz-qux.abc.a-b-c';
 ### File to Class
 
 ~~~ .xmp.php
-__f2c__($x, $s = '-');
+__f2c__($x, $s = '-', $n = '.');
 ~~~
 
 Convert file name into class name:
@@ -140,54 +140,6 @@ Result:
 
 ~~~ .php
 $test = 'Foo\Bar\BazQux\Abc\ABC';
-~~~
-
-### URL
-
-~~~ .xmp.php
-__url__($key = null, $fail = false);
-~~~
-
-Extract current URL data:
-
-~~~ .php
-$test_1 = __url__();
-$test_2 = __url__('protocol');
-$test_3 = __url__('wow');
-$test_4 = __url__('wow', 0);
-~~~
-
-Result:
-
-~~~ .php
-$test_1 = [
-    'scheme' => 'http',
-    'protocol' => 'http://',
-    'host' => 'localhost',
-    'port' => 80,
-    'user' => null,
-    'pass' => null,
-    'directory' => 'sub-directory',
-    'url' => '[[url.protocol]][[url.host]]/sub-directory',
-    'path' => 'foo/bar',
-    'query' => '?foo=bar',
-    'previous' => null,
-    'current' => '[[url.protocol]][[url.host]]/sub-directory/foo/bar',
-    'next' => null,
-    'hash' => null
-];
-~~~
-
-~~~ .php
-$test_2 = 'http://';
-~~~
-
-~~~ .php
-$test_3 = false;
-~~~
-
-~~~ .php
-$test_4 = 0;
 ~~~
 
 ### Others
@@ -231,9 +183,34 @@ $test = [
 
 > **Note:** Class instance will not be converted into array if `$safe` is set to `true`.
 
-#### `b` {#reference:b}
+#### Between {#reference:b}
 
-_Reserved._
+~~~ .xmp.php
+b($x, $a = 0, $b = null);
+~~~
+
+Keep value between `$a` and `$b`:
+
+~~~ .php
+$a = 0;
+$b = 100;
+
+__test__(
+    b(4, $a, $b),
+    b(-4, $a, $b)
+    b(104, $a, $b)
+);
+~~~
+
+Result:
+
+~~~ .php
+4
+
+0
+
+100
+~~~
 
 #### Camel Case {#reference:c}
 
@@ -250,7 +227,7 @@ Convert text to `camelCase`:
 #### Declare {#reference:d}
 
 ~~~ .xmp.php
-d($f, $fn = null, $s__ = []);
+d($f, $fn = [null, null], $s__ = []);
 ~~~
 
 Declare classes with callback:
@@ -300,10 +277,10 @@ $test_2 = [
     'null',
     '1',
     '1.5',
-    [
+    stdClass::__set_state([
         'foo' => 1,
         'bar' => '1'
-    ]
+    ])
 ];
 ~~~
 

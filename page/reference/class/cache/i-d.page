@@ -1,0 +1,27 @@
+---
+title: `$cache::{id,i_d}()`
+description: Get cache ID.
+...
+
+~~~ .php.xmp
+Cache::id($from, $fail = -1);
+~~~
+
+~~~ .php.xmp
+Cache::i_d($from, $fail = -1); // alias
+~~~
+
+**Example:**
+
+Get cache ID of `path\to\file.php`:
+
+~~~ .php
+$id = Cache::id('path\to\file.php');
+~~~
+
+~~~ .php
+$hash = md5(file_get_contents('path\to\file.php'));
+if (is_string($id) && $id !== $hash || $id < File::T('path\to\file.php')) {
+    // expired!
+}
+~~~

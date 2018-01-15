@@ -1,0 +1,26 @@
+---
+title: `$path::D()`
+description: Convert file path to its directory path.
+...
+
+~~~ .php.xmp
+Path::D($path, $step = 1, $s = null);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = Path::D('foo\bar\baz.qux');
+$test_2 = Path::D('foo\bar\baz.qux', 2);
+$test_3 = Path::D('foo-bar-baz.qux', 1, '-');
+$test_4 = Path::D('foo.bar.baz.qux', 1, '.');
+~~~
+
+Result:
+
+~~~ .php
+$test_1 = 'foo\bar';
+$test_2 = 'foo';
+$test_3 = 'foo-bar';
+$test_4 = 'foo.bar.baz';
+~~~

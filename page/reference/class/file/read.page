@@ -1,0 +1,14 @@
+---
+title: `$file->read()`
+description: Output the file content.
+...
+
+~~~ .php.xmp
+->read($fail = null);
+~~~
+
+**Example:**
+
+~~~ .php
+echo File::open('path\to\file.txt')->read();
+~~~

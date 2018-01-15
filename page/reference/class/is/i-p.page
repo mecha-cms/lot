@@ -1,0 +1,12 @@
+---
+title: `$is::{ip,i_p}()`
+description: Check for valid IP address.
+...
+
+~~~ .php.xmp
+Is::ip($x);
+~~~
+
+~~~ .php.xmp
+Is::i_p($x); // alias
+~~~

@@ -1,0 +1,24 @@
+---
+title: `$path::X()`
+description: Get file extension from a file path.
+...
+
+~~~ .php.xmp
+Path::X($path, $fail = false);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = Path::X('foo\bar\baz.qux');
+$test_2 = Path::X('foo\bar\baz', 'txt');
+$test_3 = Path::X('foo\bar\baz.QUX');
+~~~
+
+Result:
+
+~~~ .php
+$test_1 = 'qux';
+$test_2 = 'txt';
+$test_3 = 'qux';
+~~~

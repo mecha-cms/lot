@@ -1,6 +1,10 @@
 ---
 title: Emoticon
 description: Emoticon using icon fonts.
+
+dependency:
+  extension:
+    - asset
 ...
 
 ![1](%{asset}%/png/reference/extension/plugin/emoticon.png)

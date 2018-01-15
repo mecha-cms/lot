@@ -3,7 +3,7 @@ title: Automatic Date Format
 description: Automatically set date format based on user language.
 ...
 
-Date formats contained in the [`Date`][link:../reference/class/date#reference:extract] class only support for `en-us` and `id-id` format:
+Date formats contained in the [`Date`][link:../reference/class/date/extract] class only support for `en-us` and `id-id` format:
 
  - `en-us` → _[[e]]echo $date->en_us;[[/e]]_
  - `id-id` → _[[e]]echo $date->id_id;[[/e]]_

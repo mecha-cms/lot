@@ -1,0 +1,22 @@
+---
+title: `$file::size()`
+description: Convert file size.
+...
+
+~~~ .php.xmp
+File::size($file, $unit = null, $prec = 2);
+~~~
+
+**Options:** `B`, `KB`, `MB`, `GB`, `TB`
+
+~~~ .php
+echo File::size('path\to\file.txt'); // automatic (as short as possible)
+~~~
+
+~~~ .php
+echo File::size('path\to\file.txt', 'KB'); // force to `KB`
+~~~
+
+~~~ .php
+echo File::size(1000000, 'KB'); // as number(s) …
+~~~

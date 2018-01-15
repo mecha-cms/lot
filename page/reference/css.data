@@ -1,0 +1,2 @@
+@media (min-width:671px){article{float:left;width:50%;padding:1em;background:#eee;border:1px solid #fff}
+article h3{margin-top:0;font-size:120%}article p{font-size:80%}article+nav{display:none}main{overflow:hidden}main:after{content:"";display:table;clear:both}}

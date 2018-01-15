@@ -1,0 +1,14 @@
+---
+title: `__construct()`
+description: Constructor.
+...
+
+~~~ .php.xmp
+Page($input = null, $lot = [], $NS = ['*', 'page']);
+~~~
+
+~~~ .php
+$page = new Page('path\to\file.page');
+~~~
+
+[connect:../../../snippet/noob/page]

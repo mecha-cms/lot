@@ -1,0 +1,8 @@
+---
+title: `$folder->consent()`
+description: Set folder permission.
+...
+
+~~~ .php
+Folder::open('path\to\folder')->consent(0600);
+~~~

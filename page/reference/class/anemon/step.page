@@ -1,0 +1,40 @@
+---
+title: `$anemon::step()`
+description: Create list of _namespace_ steps from a string.
+...
+
+~~~ .php.xmp
+Anemon::step($input, $NS = '.', $dir = 1);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = Anemon::step('foo.bar.baz');
+~~~
+
+Result:
+
+~~~ .php
+$test_1 = [
+    'foo.bar.baz',
+    'foo.bar',
+    'foo'
+];
+~~~
+
+If `$dir` is set to `-1`, the steps will be ordered from the first part:
+
+~~~
+$test_2 = Anemon::step('foo.bar.baz', '.', -1);
+~~~
+
+Result:
+
+~~~ .php
+$test_2 = [
+    'foo.bar.baz',
+    'bar.baz',
+    'baz'
+];
+~~~

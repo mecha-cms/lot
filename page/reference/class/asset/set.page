@@ -1,0 +1,24 @@
+---
+title: `$asset::set()`
+description: Append an asset to the `<head>` or `<body>` section.
+...
+
+Add `style-2.css` file to the hooks storage.
+
+~~~ .php.xmp
+Asset::set($path, $stack = null);
+~~~
+
+**Example:**
+
+~~~ .php
+Asset::set('style-2.css');
+~~~
+
+Make sure to put `style-3.css` before `style-2.css` in the output:
+
+~~~ .php
+Asset::set('style-3.css', 9);
+~~~
+
+> **Note:** Default `$stack` value is `10`.

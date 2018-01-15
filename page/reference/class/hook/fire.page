@@ -1,0 +1,16 @@
+---
+title: `$hook::fire()`
+description: Execute a hook.
+...
+
+~~~ .php.xmp
+Hook::fire($id, array $lot = []);
+~~~
+
+**Example:**
+
+Execute the `head.content` hook:
+
+~~~ .php
+Hook::fire('head.content'); // → `<meta name="generator" content="Mecha">`
+~~~

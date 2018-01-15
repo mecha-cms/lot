@@ -1,6 +1,6 @@
 ---
 title: Block
-description: Block is some kind of placeholder that is available within the page content, which is normally written just like normal HTML markup, but with custom enclosing characters. Each of the block patterns then can be replaced by another contents.
+description: Block is a kind of placeholder that can be embedded within the page content, which is normally written just like normal HTML markup, but with custom enclosing characters. Each of the block patterns then can be replaced by another contents.
 ...
 
 By default, a block syntax can be defined as follow. It uses `‌[‌[‌` and `‌]‌]‌` as the enclosing characters:

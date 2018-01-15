@@ -1,0 +1,84 @@
+---
+title: `$h_t_t_p::status()`
+description: Set HTTP status by code.
+...
+
+~~~ .php.xmp
+HTTP::status($i = 200);
+~~~
+
+List of HTTP status code:
+
+Code | Description
+---- | -----------
+`100` | Continue
+`101` | Switching Protocols
+`102` | Processing [^1]
+`200` | OK
+`201` | Created
+`202` | Accepted
+`203` | Non-Authoritative Information
+`204` | No Content
+`205` | Reset Content
+`206` | Partial Content
+`207` | Multi-Status [^2]
+`208` | Already Reported [^7]
+`226` | IM Used [^9]
+`300` | Multiple Choices
+`301` | Moved Permanently
+`302` | Found
+`303` | See Other
+`304` | Not Modified
+`305` | Use Proxy
+`306` | Reserved
+`307` | Temporary Redirect
+`308` | Permanent Redirect [^10]
+`400` | Bad Request
+`401` | Unauthorized
+`402` | Payment Required
+`403` | Forbidden
+`404` | Not Found
+`405` | Method Not Allowed
+`406` | Not Acceptable
+`407` | Proxy Authentication Required
+`408` | Request Timeout
+`409` | Conflict
+`410` | Gone
+`411` | Length Required
+`412` | Precondition Failed
+`413` | Request Entity Too Large
+`414` | Request-URI Too Long
+`415` | Unsupported Media Type
+`416` | Requested Range Not Satisfiable
+`417` | Expectation Failed
+`418` | I'm a teapot [^3]
+`422` | Unprocessable Entity [^2]
+`423` | Locked [^2]
+`424` | Failed Dependency [^2]
+`425` | Reserved for WebDAV advanced collections expired proposal [^4]
+`426` | Upgrade Required [^4]
+`428` | Precondition Required [^5]
+`429` | Too Many Requests [^5]
+`431` | Request Header Fields Too Large [^5]
+`500` | Internal Server Error
+`501` | Not Implemented
+`502` | Bad Gateway
+`503` | Service Unavailable
+`504` | Gateway Timeout
+`505` | HTTP Version Not Supported
+`506` | Variant Also Negotiates (Experimental) [^6]
+`507` | Insufficient Storage [^2]
+`508` | Loop Detected [^7]
+`510` | Not Extended [^8]
+`511` | Network Authentication Required' [^5]
+
+[^1]: RFC2518
+[^2]: RFC4918
+[^3]: RFC2324
+[^4]: RFC2817
+[^5]: RFC6585
+[^6]: RFC2295
+[^7]: RFC5842
+[^8]: RFC2774
+[^9]: RFC3229
+[^10]: RFC-reschke-http-status-308-07

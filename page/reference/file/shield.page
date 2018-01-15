@@ -3,7 +3,7 @@ title: Shield
 description: WTF is shield?
 ...
 
-Shield is a term used by Mecha to express _theme_ in another CMS.
+Shield is a term used by Mecha to express _theme_ in other CMS.
 
 A shield is a folder with a unique name, stored in `lot\shield` folder:
 

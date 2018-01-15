@@ -11,7 +11,7 @@ The engine will first search for a hard-coded `time` data from the page file to 
 
 ### Title
 
-You can now create a page file without the `title` field but still can have it included to the page output. It is a [fake title][link:../reference/class/to#reference:title] that is generated from the page’s file name.
+You can now create a page file without the `title` field but still can have it included to the page output. It is a [fake title][link:../reference/class/to/title] that is generated from the page’s file name.
 
 ### Description
 
@@ -19,7 +19,7 @@ Exception for this. There are no plan for making the fake `description` data whi
 
 ### URL
 
-The default `url` value will use the file path that is converted into a public URL by the [`To::url()`][link:../reference/class/to#reference:u-r-l] method.
+The default `url` value will use the file path that is converted into a public URL by the [`To::url()`][link:../reference/class/to/u-r-l] method.
 
 ### ID
 

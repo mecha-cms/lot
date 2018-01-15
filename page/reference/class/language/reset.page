@@ -1,0 +1,8 @@
+---
+title: `$language::reset()`
+description: Remove a language item.
+...
+
+~~~ .php.xmp
+Language::reset($key = null);
+~~~

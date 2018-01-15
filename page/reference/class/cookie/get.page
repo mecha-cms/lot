@@ -1,0 +1,20 @@
+---
+title: `$cookie::get()`
+description: Get a cookie.
+...
+
+~~~ .php.xmp
+Cookie::get($key = null, $fail = null);
+~~~
+
+**Example:**
+
+~~~ .php
+Cookie::get('my_cookie', '#');
+~~~
+
+Get all cookies:
+
+~~~ .php
+Cookie::get();
+~~~

@@ -1,0 +1,22 @@
+---
+title: `$guardian::kick()`
+description: Redirect current page to different page.
+...
+
+~~~ .php.xmp
+Guardian::kick($path = "");
+~~~
+
+**Example:**
+
+Redirect to ` %{url}%/foo/bar `:
+
+~~~ .php
+Guardian::kick('foo/bar');
+~~~
+
+Redirect to `http://example.com`:
+
+~~~ .php
+Guardian::kick('http://example.com');
+~~~

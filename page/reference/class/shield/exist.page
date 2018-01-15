@@ -1,0 +1,8 @@
+---
+title: `$shield::exist()`
+description: Check the existence of a shield.
+...
+
+~~~ .php.xmp
+Shield::exist($input, $fail = false);
+~~~

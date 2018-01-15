@@ -1,0 +1,8 @@
+---
+title: `$form::submit()`
+description: Create a HTML `<button type="submit">` element.
+...
+
+~~~ .php.xmp
+Form::submit($name = null, $value = null, $text = "", $attr = [], $dent = 0);
+~~~

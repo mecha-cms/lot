@@ -1,0 +1,14 @@
+---
+title: `$to::dec()`
+description: Convert string into their HTML decimal characters representation.
+...
+
+~~~ .php.xmp
+To::dec($in, $z = false, $f = ['&#', ';']);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = To::dec('I ❤ U');
+~~~

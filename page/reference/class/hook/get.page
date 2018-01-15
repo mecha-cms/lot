@@ -1,0 +1,22 @@
+---
+title: `$hook::get()`
+description: Get a hook.
+...
+
+~~~ .php.xmp
+Hook::get($id = null, $fail = false);
+~~~
+
+**Example:**
+
+Get all of the attached hooks:
+
+~~~ .php
+__test__(Hook::get());
+~~~
+
+Get all hooks attached to `head.content`:
+
+~~~ .php
+__test__(Hook::get('head.content'));
+~~~

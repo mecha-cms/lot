@@ -16,7 +16,7 @@ Hook::set('on.page.set', function($current, $previous) {
     } else {
         if ($author = User::get(null, 'key')) {
             $path = Path::F($current) . DS . 'authors.data';
-            $authors = From::json(File::open($path)->read('[]'));
+            $authors = From::json(File::open($path)->read('{}'));
             $authors->{'@' . $author} = time();
             File::write(To::json($authors))->saveTo($path, 0600);
         }

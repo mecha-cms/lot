@@ -1,0 +1,18 @@
+---
+title: `$to::{yaml,y_a_m_l}()`
+description: Convert array into YAML string.
+...
+
+~~~ .php.xmp
+To::yaml($in, $d = '  ', $safe = false, $dent = 0);
+~~~
+
+~~~ .php.xmp
+To::y_a_m_l($in, $d = '  ', $safe = false, $dent = 0); // alias
+~~~
+
+**Example:**
+
+~~~ .php
+$test = To::yaml(['foo' => 'bar']);
+~~~

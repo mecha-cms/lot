@@ -1,0 +1,14 @@
+---
+title: `$session::set()`
+description: Set a session.
+...
+
+~~~ .php.xmp
+Session::set($key, $value = "");
+~~~
+
+**Example:**
+
+~~~ .php
+Session::set('my_session', 'the value');
+~~~

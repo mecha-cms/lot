@@ -1,0 +1,8 @@
+---
+title: `$is::path()`
+description: Check for valid path.
+...
+
+~~~ .php.xmp
+Is::path($x, $e = false);
+~~~

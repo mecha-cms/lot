@@ -1,0 +1,12 @@
+---
+title: `$form::{pass,password}()`
+description: Create a HTML `<input type="password">` element.
+...
+
+~~~ .php.xmp
+Form::pass($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~
+
+~~~ .php.xmp
+Form::password($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0); // alias
+~~~

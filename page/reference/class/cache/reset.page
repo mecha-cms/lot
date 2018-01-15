@@ -1,0 +1,22 @@
+---
+title: `$cache::reset()`
+description: Delete cache file.
+...
+
+~~~ .php.xmp
+Cache::reset($from = null);
+~~~
+
+**Example:**
+
+Delete cache file of `path\to\file.php`:
+
+~~~ .php
+Cache::reset('path\to\file.php');
+~~~
+
+Delete all cache:
+
+~~~ .php
+Cache::reset();
+~~~

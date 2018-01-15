@@ -1,0 +1,8 @@
+---
+title: `$form::tel()`
+description: Create a HTML `<input type="tel">` element.
+...
+
+~~~ .php.xmp
+Form::tel($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~

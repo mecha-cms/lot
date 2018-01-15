@@ -1,0 +1,21 @@
+---
+title: `$asset::path()`
+description: Generate full private file path of the `$path`.
+...
+
+First of all, this method will find out whether there is a `style.css` file relative to the asset directory [^1] of the current shield folder, if it does not exist, then this method will find out whether there is a `style.css` file relative to the main asset directory [^2]. If none was found, this method will return `$fail`.
+
+~~~ .php.xmp
+Asset::path($path, $fail = false);
+~~~
+
+**Example:**
+
+~~~ .php
+$path = Asset::path('style.css');
+~~~
+
+> **Note:** Setting external URL to the `$path` parameter will return to `$fail`.
+
+[^1]: `lot\sheild\{$shield}\asset`
+[^2]: `lot\asset`

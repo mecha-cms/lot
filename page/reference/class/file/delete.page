@@ -1,0 +1,18 @@
+---
+title: `$file->delete()`
+description: Delete a file or folder.
+...
+
+~~~ .php.xmp
+->delete();
+~~~
+
+**Example:**
+
+~~~ .php
+File::open('path\to\file.txt')->delete();
+~~~
+
+~~~ .php
+File::open('path\to\folder')->delete();
+~~~

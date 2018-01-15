@@ -1,7 +1,11 @@
 ---
 title: Share
 description: Social sharing buttons.
-dependency: {"extension":["asset","page"]}
+
+dependency:
+  extension:
+    - asset
+    - page
 ...
 
 The share counts are taken based on the number of visits to the social sharing links, and not based on the actual social sharing counter value from each service. This means that if you open the sharing link and then decide to cancel it, the counter value will still be incremented and not returned to the previous value.

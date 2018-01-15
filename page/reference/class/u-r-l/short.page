@@ -1,0 +1,109 @@
+---
+title: `$u_r_l::short()`
+description: Convert full URL into relative URL.
+...
+
+~~~ .php.xmp
+URL::short($url, $root = true);
+~~~
+
+**Example:**
+
+~~~ .php
+__test__(
+    URL::short('%{url.protocol}%%{url.host}%/directory'),
+    URL::short('%{url.protocol}%%{url.host}%/directory/foo'),
+    URL::short('%{url.protocol}%%{url.host}%/directory?foo'),
+    URL::short('%{url.protocol}%%{url.host}%/directory&foo'),
+    URL::short('%{url.protocol}%%{url.host}%/directory#foo'),
+    URL::short('%{url.protocol}%%{url.host}%/directory/javascript:;'),
+    URL::short('%{url.protocol}%%{url.host}%/directory/foo/bar'),
+    URL::short('//foo'),
+    URL::short('http://foo'),
+    URL::short('%{url.protocol}%%{url.host}%/directory', false),
+    URL::short('%{url.protocol}%%{url.host}%/directory/foo', false),
+    URL::short('%{url.protocol}%%{url.host}%/directory?foo', false),
+    URL::short('%{url.protocol}%%{url.host}%/directory&foo', false),
+    URL::short('%{url.protocol}%%{url.host}%/directory#foo', false),
+    URL::short('%{url.protocol}%%{url.host}%/directory/javascript:;', false),
+    URL::short('%{url.protocol}%%{url.host}%/directory/foo/bar', false),
+    URL::short('//foo', false),
+    URL::short('http://foo', false)
+);
+~~~
+
+> **Note:** If `$root` is `false`, then the sub-directory path where the CMS is being installed will be removed too, and the leading `/` will also be removed. The `$root` parameter changes makes sense only when Mecha is installed in a sub-directory.
+
+Result:
+
+~~~ .txt
+/directory
+~~~
+
+~~~ .txt
+/directory/foo
+~~~
+
+~~~ .txt
+/directory?foo
+~~~
+
+~~~ .txt
+/directory&foo
+~~~
+
+~~~ .txt
+/directory#foo
+~~~
+
+~~~ .txt
+/directory/javascript:;
+~~~
+
+~~~ .txt
+/directory/foo/bar
+~~~
+
+~~~ .txt
+//foo
+~~~
+
+~~~ .txt
+http://foo
+~~~
+
+~~~ .txt
+
+~~~
+
+~~~ .txt
+foo
+~~~
+
+~~~ .txt
+?foo
+~~~
+
+~~~ .txt
+&foo
+~~~
+
+~~~ .txt
+#foo
+~~~
+
+~~~ .txt
+javascript:;
+~~~
+
+~~~ .txt
+foo/bar
+~~~
+
+~~~ .txt
+//foo
+~~~
+
+~~~ .txt
+http://foo
+~~~

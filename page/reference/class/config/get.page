@@ -1,0 +1,50 @@
+---
+title: `$config::get()`
+description: Get item.
+...
+
+~~~ .php.xmp
+Config::get($key = null, $fail = false);
+~~~
+
+**Example:**
+
+Get item by key:
+
+~~~ .php
+echo Config::get('title');
+~~~
+
+Using the shortcut:
+
+~~~ .php
+echo $config->title;
+~~~
+
+With dot notation:
+
+~~~ .php
+echo Config::get('author.name');
+~~~
+
+This will return the value of `foo` if available, otherwise, return `false`:
+
+~~~ .php
+echo Config::get('foo', false);
+~~~
+
+Get multiple data at once:
+
+~~~ .php
+$data = Config::get([
+    'title' => false,
+    'description' => false,
+    'author' => false
+]);
+~~~
+
+Get all items:
+
+~~~ .php
+__test__(Config::get());
+~~~

@@ -1,0 +1,8 @@
+---
+title: `$request::server()`
+description: Return the `$_SERVER` data.
+...
+
+~~~ .php.xmp
+Request::server($key = null, $fail = null, $eval = true);
+~~~

@@ -1,6 +1,7 @@
 ---
 title: Plugin
 description: A lower priority extensions.
+
 dependency: false
 ...
 

@@ -1,0 +1,17 @@
+---
+title: `$from::{html,h_t_m_l}()`
+description: Encode HTML special characters.
+
+~~~ .php.xmp
+From::html($in);
+~~~
+
+~~~ .php.xmp
+From::h_t_m_l($in); // alias
+~~~
+
+**Example:**
+
+~~~ .php
+$test = From::html('<foo bar="baz">');
+~~~

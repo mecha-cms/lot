@@ -1,0 +1,8 @@
+---
+title: `$form::range()`
+description: Create a HTML `<input type="range">` element.
+...
+
+~~~ .php.xmp
+Form::range($name = null, $range = [0, 0, 10], $attr = [], $dent = 0);
+~~~

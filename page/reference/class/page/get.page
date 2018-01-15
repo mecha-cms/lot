@@ -1,0 +1,25 @@
+---
+title: `$page->get()`
+description: Get one or more data from the currently opened page file.
+...
+
+~~~ .php.xmp
+->get($key = null, $fail = null, $NS = ['*', 'page']);
+~~~
+
+**Example:**
+
+Get `title` property from a page if available, otherwise, return `Untitled`:
+
+~~~ .php
+$test = Page::open('path\to\file.page')->get('title', 'Untitled');
+~~~
+
+Get `title` and `url` properties from a page:
+
+~~~ .php
+$test = Page::open('path\to\file.page')->get([
+    'title' => 'Untitled',
+    'url' => '#'
+]);
+~~~

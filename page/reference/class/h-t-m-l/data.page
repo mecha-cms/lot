@@ -1,0 +1,70 @@
+---
+title: `$h_t_m_l::data()`
+description: Generate HTML attributes from PHP array.
+...
+
+Attributes are generated from an array and will be renderred as `key="value"` in the output:
+
+~~~ .php
+echo HTML::span("", [
+    'id' => 'color',
+    'class' => 'color black',
+    'style' => 'background-color:#000;',
+    'data-key' => 'offset',
+    'data-value' => 0
+]);
+~~~
+
+Result:
+
+~~~ .html
+<span class="color black" id="color" style="background-color:#000;" data-key="offset" data-value="0"></span>
+~~~
+
+There are some special attributes which the value must be set as array:
+
+~~~ .php
+echo HTML::span("", [
+    'class[]' => ['color', 'black'],
+    'style[]' => [
+        'background-color' => '#000'
+    ],
+    'data[]' => [
+        'key' => 'offset',
+        'value' => 0
+    ]
+]);
+~~~
+
+Result:
+
+~~~ .html
+<span class="color black" style="background-color:#000;" data-key="offset" data-value="0"></span>
+~~~
+
+Unlike the [`Union`][link:../union] class, `HTML` has its own attributes order:
+
+ - `class`
+ - `id`
+ - `src`
+ - `alt`
+ - `width`
+ - `height`
+ - `property`
+ - `name`
+ - `content`
+ - `href`
+ - `rel`
+ - `target`
+ - `type`
+ - `action`
+ - `method`
+ - `enctype`
+ - `value`
+ - `placeholder`
+ - `label`
+ - `selected`
+ - `checked`
+ - `disabled`
+ - `readonly`
+ - `style`

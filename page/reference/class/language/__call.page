@@ -1,0 +1,35 @@
+---
+title: `__call()`
+description: Dynamic methods.
+...
+
+~~~ .php.xmp
+->{$property}($vars = [], $preserve_case = false);
+~~~
+
+~~~ .php
+echo $language->home();
+~~~
+
+---
+
+Let’s say we have a language property called `test` like this:
+
+~~~ .yaml
+test: Hello %{place}%! My name is %{object}%.
+~~~
+
+Then:
+
+~~~ .php
+echo $language->test([
+    'place' => 'world',
+    'object' => 'Mocha'
+]);
+~~~
+
+The code above will return the `test` value into this:
+
+~~~ .txt
+Hello world! My name is Mocha.
+~~~

@@ -1,0 +1,14 @@
+---
+title: `$file->saveTo()`
+description: Save a file to.
+...
+
+~~~ .php.xmp
+->saveTo($path, $consent = null);
+~~~
+
+**Example:**
+
+~~~ .php
+File::write('some text')->saveTo('path\to\file.txt');
+~~~

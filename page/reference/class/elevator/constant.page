@@ -1,0 +1,12 @@
+---
+title: `$elevator::{HUB,NORTH,SOUTH,WEST,EAST}`
+description: Constants.
+...
+
+Name | Value
+---- | -----
+`Elevator::HUB` | ◆
+`Elevator::NORTH` | ▲
+`Elevator::SOUTH` | ▼
+`Elevator::WEST` | ◀
+`Elevator::EAST` | ▶

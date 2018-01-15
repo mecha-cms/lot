@@ -1,0 +1,18 @@
+---
+title: `$request::set()`
+description: Set custom value to a request.
+...
+
+~~~ .php.xmp
+Request::set($id, $key, $value = null);
+~~~
+
+**Example:**
+
+Force to set `$_POST['time']` value if missing:
+
+~~~ .php
+if (!Request::post('time')) {
+    Request::set('post', 'time', time());
+}
+~~~

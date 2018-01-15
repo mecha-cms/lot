@@ -1,0 +1,6 @@
+---
+title: Mecha Is Not For Everybody
+description: In some cases, yes!
+...
+
+Ekstensi Panel adalah salah satu bukti bahwa Mecha dapat dijadikan sebagai aplikasi web berbasis GUI. Namun API dari ekstensi kontrol panel tersebut sifatnya sangat individual dan tergantung dari pengembang ekstensi masing-masing. Oleh karena itu pengembang bebas untuk menentukan jalan untuk memungkinkan pengembang lain mengekstensikan aplikasinya dengan kontrol panel yang mereka buat.

@@ -19,7 +19,7 @@ This variable is an instance of the [`Language` class][link:class/language].
 
 ### `$lot`
 
-This variable exists on every file attached by the [`Shield::get()`][link:class/shield#reference:get] method when the second argument is defined and is an array:
+This variable exists on every file attached by the [`Shield::get()`][link:class/shield/get] method when the second argument is defined and is an array:
 
 ~~~ .php
 Shield::get('path/to/file.php', ['body' => 'Lorem ipsum dolor sit amet.']);
@@ -27,7 +27,7 @@ Shield::get('path/to/file.php', ['body' => 'Lorem ipsum dolor sit amet.']);
 
 ### `$message`
 
-This variable is the result of [`Message::get()`][link:class/message#reference:get]. [^1]
+This variable is the result of [`Message::get()`][link:class/message/get]. [^1]
 
 ### `$site`
 
@@ -39,7 +39,7 @@ This variable returns the state data of the current shield if available, and is 
 
 ### `$token`
 
-This variable is the result of [`Guardian::token()`][link:class/guardian#reference:token]. [^1]
+This variable is the result of [`Guardian::token()`][link:class/guardian/token]. [^1]
 
 ### `$url`
 

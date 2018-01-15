@@ -61,7 +61,7 @@ Alias for _$page_.
 
 ### URL
 
- - `%‌{‌url‌}‌%` → `http://localhost/a`
+ - `%‌{‌url‌}‌%` → `%{url}%/a`
  - `%‌{‌url.scheme‌}‌%` → `http`
  - `%‌{‌url.protocol‌}‌%` → `http://`
  - `%‌{‌url.host‌}‌%` → `localhost`
@@ -70,7 +70,7 @@ Alias for _$page_.
  - `%‌{‌url.url‌}‌%` → same as `%‌{‌url‌}‌%`
  - `%‌{‌url.path‌}‌%` → `foo/bar`
  - `%‌{‌url.query‌}‌%` → `?foo=bar&baz=qux`
- - `%‌{‌url.current‌}‌%` → `http://localhost/a/foo/bar`
+ - `%‌{‌url.current‌}‌%` → `%{url}%/a/foo/bar`
 
 [connect:../../variable]
 

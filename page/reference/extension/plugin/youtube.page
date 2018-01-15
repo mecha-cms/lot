@@ -1,0 +1,30 @@
+---
+title: YouTube
+description: Convert _YouTube_ link and URL into video.
+...
+
+This plugin will automatically convert these supported _YouTube_ link and URL in the page and comment content to _YouTube_ video player:
+
+ - `https://www.youtube.com/watch?v={$id}`
+ - `https://www.youtube.com/v/{$id}`
+ - `https://youtu.be/{$id}`
+ - `https://www.youtube.com/embed/{$id}`
+
+The _YouTube_ link and URL must be written on its own line by itself, with or without the `www`, with `http://` or `https://`.
+
+All of [the available _YouTube_ player parameters](https://developers.google.com/youtube/player_parameters) can be used normally and will be applied automatically to the generated video frames.
+
+### Additional Parameters
+
+Name | Description
+---- | -----------
+`width` | Set custom video width.
+`height` | Set custom video height.
+
+**Example:**
+
+~~~ .txt
+https://www.youtube.com/watch?v={$id}&width=600&height=250
+https://www.youtube.com/watch?v={$id}&width=600px&height=250px
+https://www.youtube.com/watch?v={$id}&height=25%
+~~~

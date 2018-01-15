@@ -1,0 +1,14 @@
+---
+title: `$file::open()`
+description: Open a file.
+...
+
+~~~ .php.xmp
+File::open(...$lot);
+~~~
+
+**Example:**
+
+~~~ .php
+File::open('path\to\file.txt');
+~~~

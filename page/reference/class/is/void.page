@@ -1,0 +1,40 @@
+---
+title: `$is::void()`
+description: Check for empty string, array and object.
+...
+
+~~~ .php.xmp
+Is::void($x);
+~~~
+
+**Example:**
+
+~~~ .php
+__test__(
+    Is::void('a'),
+    Is::void('0'),
+    Is::void('1'),
+    Is::void(' '),
+    Is::void(""),
+    Is::void([]),
+    Is::void((object) []),
+);
+~~~
+
+Result:
+
+~~~ .php
+false
+
+false
+
+false
+
+true
+
+true
+
+true
+
+true
+~~~

@@ -1,8 +1,11 @@
 ---
 title: Markdown Smart Internal Links
 description: Automatically search for internal links.
-dependency: {"plugin":["markdown"]}
 name: markdown.link
+
+dependency:
+  plugin:
+    - markdown
 ...
 
 This plugin will generate automatic link text and title attribute based on the page path provided. If the page file you are trying to provide does not exist, this plugin will mark the automatic link with a red strikethrough text effect.

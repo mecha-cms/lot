@@ -1,0 +1,8 @@
+---
+title: `$guardian::token()`
+description: Generate unique token and save it to session.
+...
+
+~~~ .php.xmp
+Guardian::token($id = 0);
+~~~

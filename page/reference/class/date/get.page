@@ -1,0 +1,17 @@
+---
+title: `$date::get()`
+description: Get custom date format.
+...
+
+~~~ .php.xmp
+Date::get($key = null, $fail = false);
+~~~
+
+**Example:**
+
+~~~ .php
+__test__(
+    Date::get('my_format'),
+    Date::get()
+);
+~~~

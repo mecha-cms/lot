@@ -1,0 +1,46 @@
+---
+title: `$file::exist()`
+description: Check the existence of a file/folder.
+...
+
+~~~ .php.xmp
+File::exist($input, $fail = false);
+~~~
+
+**Example:**
+
+~~~ .php
+if (File::exist('test.txt')) {
+    echo 'File `test.txt` exists.';
+}
+~~~
+
+Return the given path if file/folder exists, return `false` if not:
+
+~~~ .php
+if ($file = File::exist('header.php')) {
+    include $file;
+} else {
+    include 'header.legacy.php';
+}
+~~~
+
+Shortcut:
+
+~~~ .php
+include File::exist('header.php', 'header.legacy.php');
+~~~
+
+Loop through list of file path until it finds a file that exists:
+
+~~~ .php
+if ($test = File::exist([
+    'page-post-2016.php',
+    'page-post.php',
+    'page.php'
+], false)) {
+    echo $test . ' does exist.';
+} else {
+    echo $test . ' is now `false`.';
+}
+~~~

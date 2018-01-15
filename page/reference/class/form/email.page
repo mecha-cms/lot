@@ -1,0 +1,8 @@
+---
+title: `$form::email()`
+description: Create a HTML `<input type="email">` element.
+...
+
+~~~ .php.xmp
+Form::email($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
+~~~
