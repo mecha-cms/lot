@@ -39,8 +39,8 @@ The user file as `lot\user\ta-tau-taufik.page`:
 
 ~~~ .yaml
 ---
+$: Taufik Nurrohman
 link: http://example.com
-author: Taufik Nurrohman
 ...
 
 Page content.

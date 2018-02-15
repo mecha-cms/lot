@@ -4,17 +4,24 @@ description: Constructor.
 ...
 
 ~~~ .php.xmp
-URL();
+URL($input = null);
 ~~~
 
 Inspect URL properties:
 
 ~~~ .php
-$url = new URL();
+$url = new URL('%{url.protocol}%%{url.host}%/directory/foo/bar?foo=bar&baz=qux#foo');
 
-echo $url->path; // return the URL path
-echo $url->path('#'); // return the URL path if any, otherwise, return `#`
-echo $url; // return `$url->url` (the base URL)
+echo $url->path; // return the URL path `foo/bar`
+echo $url->path('.'); // return the URL path as `foo.bar`
+echo $url; // return `$url->{'$'}` (the base URL)
+
+echo $url->query; // return the URL query string `?foo=bar&baz=qux`
+echo $url->query('&amp;'); // return the URL query string as `?foo=bar&amp;baz=qux``
+echo $url->query(['{', ',', ':', '}']); // return the URL query string as `{foo:bar,baz:qux}`
+
+echo $url->hash; // return the URL hash string if any `#foo`
+echo $url->hash('$'); // return the URL hash string if any as `$foo`
 ~~~
 
 The available properties:
@@ -31,6 +38,7 @@ $url → %{url.protocol}%%{url.host}%/directory
  ├── user: null ← or depends on `$_SESSION['url']['user']`
  ├── pass: null ← or depends on `$_SESSION['url']['pass']`
  ├── directory: directory
+ ├── $: %{url.protocol}%%{url.host}%/directory
  ├── url: %{url.protocol}%%{url.host}%/directory
  ├── path: foo/bar
  ├── query: ?foo=bar

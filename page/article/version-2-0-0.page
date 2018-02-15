@@ -1,0 +1,128 @@
+---
+title: What’s New in Mecha 2.0.0
+description: Changes in version `2.0.0`.
+...
+
+### Unlimited Page Chlidren
+
+Mecha `2.0.0` comes with unlimited page children feature. All pages are now stored in `.\www\lot\page` folder. You can add as many pages as you want and add as many page children as you want to the parent page folder with rules and specifications defined in the [page extension reference][link:../reference/extension/page].
+
+~~~ .txt
+.\www\lot\page\about.page
+.\www\lot\page\article.page
+.\www\lot\page\article\post-1.page
+.\www\lot\page\article\post-2.page
+.\www\lot\page\article\post-3.page
+.\www\lot\page\contact.page
+.\www\lot\page\index.page
+~~~
+
+### Built as a Framework
+
+The blog and static page views that you see on this site are basically just the result of the [page][link:../reference/extension/page] extension. If you delete this extension, you can use Mecha as a PHP framework so that you can create your own page rendering logic. You can make any kind of site as you want using the available API.
+
+### Performance Improvement
+
+We try not to rely on automatic cache files as a method to accelerate the web page access because most of static files will only increase the web storage, which will also increase the web hosting cost. We use that method only for specific purposes like generating [page archive][link:../reference/extension/plugin/archive] which require you to load all of the page contents, recursively. It will only cache the archive list part and not the whole document, because we have [form token][link:../reference/class/guardian/token] and such that shouldn’t be cached forever. Instead, we use static arrays to store the data processed on every web page access, where the data then can be used multiple times in the same page without the need to repeat the complicated filter process on each called data.
+
+~~~ .php
+$cache = [];
+
+function run() {
+    global $cache;
+    if (!empty($cache['foo'])) {
+        return $cache['foo'];
+    }
+    return ($cache['foo'] = do_heavy_hook(get_heavy_input()));
+}
+
+run(); // Process data and cache!
+run(); // Load cache!
+run(); // Load cache!
+run(); // Load cache!
+~~~
+
+### Semantic Naming Convention
+
+As with the encoding methods, we need to have their decoding methods. Mecha `2.0.0` comes with some data [encoder][link:../reference/class/to] and [decoder][link:../reference/class/from] where the conversion results that you obtained later can be restored again into the previous form. For example, a file name that is created from the conversion result of a class name can be converted back to the previous class name.
+
+~~~ .txt
+This\Is\Mecha\CMS → this.is.mecha.c-m-s → This\Is\Mecha\CMS
+~~~
+
+### Page File Name
+
+As the semantic naming convention, the page file name also has different standards in the current version. In previous versions of Mecha, each page file name contains time, tags, slug and status data of the page. At that time, it was necessary to consider that filtering and sorting pages would be more efficient by reading file names than reading the file contents one by one.
+
+~~~ .txt
+2018-02-15-11-34-50_1,2,3_page-slug.page
+~~~
+
+But as time goes by and as the need for child page features increases, this method becomes less effective because to obtain the name of the parent page folder, we need to do a hard parsing process on a single file name just to get the slug property of a page.
+
+### Dynamic Property
+
+Mecha version `2.0.0` takes advantage of the [magic method feature in PHP](http://php.net/manual/en/language.oop5.magic.php) where it allows you to get or set a [property][link:page-property] from/to a class instance without triggering error messages when the desired property doesn’t exist. This way, we not only make every property work as a static data (fake class property) but also as a dynamic data returned from a function (fake class method).
+
+~~~ .php
+echo $url;
+echo $url->path;
+echo $url->path('.');
+~~~
+
+### Lazy Hook Execution
+
+Thanks to the PHP magic method we have used, any hook functions applied to each property are now can be executed on demands (asynchronously) as each property basically never existed before you decided to call it. This means that if no property is being called, then the hook system will remain in sleep mode.
+
+~~~ .php
+$page = new Page('path\to\file.page');
+
+Hook::set('page.trigger2', function() {
+    echo '<script>alert(":(")</script>';
+});
+
+echo $page->trigger1; // Nothing happen.
+echo $page->trigger2; // Alerts `:(`
+~~~
+
+### Extension
+
+[Extension][link:../reference/extension] is a core feature enhancer that has a higher level than [plugin][link:../reference/extension/plugin]. An extension doesn’t have to change the behavior of Mecha directly, it can also be used as an API enhancer that does nothing until you use it on a particular plugin or [shield][link:../reference/shield], or even in a private [function][link:../reference/function] file that you have. One example of the extension I mean here is the [image][link:../reference/extension/image] extension, and the use of the image extension can be seen in the [thumbnail][link:../reference/extension/plugin/thumbnail] plugin.
+
+The name _Genome_ was taken from an abstract class included in the core. What this class doing is simply making other classes become pluggable. We can add methods on every classes extended to the [`Genome`][link:../reference/class/genome] class dynamically.
+
+~~~ .php
+class Foo extends Genome {
+    public static function A() { … }
+}
+
+Foo::_('B', function() { … });
+
+echo Foo::A();
+echo Foo::B();
+~~~
+
+### Feature Simplification
+
+The previous Mecha version is more open and allows so many possible features to add that the file size and workload of Mecha becomes heavier time to time on every release date, and I personally feel that the previous Mecha-making goal is just to create a file-based CMS alternative that can be compared to a full-featured database-based CMS such as [WordPress][link:page-format]. The current version of Mecha is much more simpler when compared to the previous versions, but it’s still open.
+
+#### Simple
+
+Simple means that Mecha is designed to create web pages with the most minimal features but still sufficient for at least the simplest web page model in common like home page, blog page and static page model with features like page title, page content and page date.
+
+#### Open
+
+Open means that Mecha is extensible and can be improved so that it can have more features, that is, by utilizing the existing API so that you can enhance the system without having to change or modify the default features available in the core.
+
+By the way, here are some things that has been simplified in the current version of Mecha:
+
+ - Control panel feature has been removed by default and it can be added by installing the [panel][link:../reference/extension/panel] extension that is available separately. This feature also has different API and it stands alone. So, basically, you can create your own control panel feature with your own API that you can customize as you wish if you think that my control panel extension is not perfect.
+ - Comment feature has been removed by default and it can be added by installing the [comment][link:../reference/extension/comment] extension.
+ - RSS feature has been removed by default and it can be added by installing the [feed][link:../reference/extension/feed] extension.
+ - In the previous version, Mecha use hook and filter separately, but now you can use hook as a filter simply by returning the first function arguments.
+
+### What’s Next?
+
+ - Finish the [Mecha CMS reference in PDF format](https://github.com/mecha-cms/book) written in Indonesian and English.
+ - Finish the unfinished extensions and plugins.
+ - Create a page section contains description about donation-aware services such as a service to convert HTML template into Mecha CMS shield, a service to create private features such as sidebar widget that the appearance can be styled based on the shield appearance, a service to install and running a Mecha CMS site, a service to guide a user to create web page using Mecha, etc. All of them are donation-aware, so users can decide to give the donation with an amount of whatever they want, or even to give nothing. But of course, it should have a minimum amount of the donation for the sake of fairness, in order to distinguish the level of difficulty in the completion.

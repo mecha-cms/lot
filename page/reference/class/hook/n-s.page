@@ -1,6 +1,7 @@
 ---
 title: `$hook::NS()`
 description: Namespaces.
+...
 
 ~~~ .php.xmp
 Hook::NS($id, array $lot = []);

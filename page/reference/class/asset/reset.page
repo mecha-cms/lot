@@ -3,13 +3,13 @@ title: `$asset::reset()`
 description: Remove assets from the hooks storage.
 ...
 
-Remove `asset-2.css` from the hooks storage.
-
 ~~~ .php.xmp
 Asset::reset($path = null);
 ~~~
 
 **Example:**
+
+Remove `asset-2.css` from the hooks storage.
 
 ~~~ .php
 Asset::reset('style-2.css');

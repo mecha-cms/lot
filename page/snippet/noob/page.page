@@ -20,16 +20,10 @@ echo $page->title ?: 'Untitled';
 // get the title if any, otherwise, return `Untitled` (2)
 echo $page->title('Untitled');
 
-// custom callback (1)
+// custom callback
 echo $page->title(function($text) {
     return '<h2>' . $text . '</h2>';
 });
-
-// custom callback (2)
-function fn_test($text) {
-    return '<h2>' . $text . '</h2>';
-}
-echo $page->title('~fn_test');
 ~~~
 
 ### Method 2

@@ -17,7 +17,8 @@ Pattern | Description
 [[e]]
 echo "### Methods\n";
 foreach (glob(PAGE . DS . $url->path . DS . '*.page') as $v) {
-    if (basename($v, '.page') === basename(dirname($v))) continue;
+    $n = basename($v, '.page');
+    if ($n === '$' || $n === basename(dirname($v))) continue;
     $v = Page::open($v);
     echo "\n - [" . $v->title . '](' . $v->url . ')';
 }

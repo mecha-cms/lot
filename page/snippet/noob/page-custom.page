@@ -14,3 +14,11 @@ Hook::set('my_page_hook.title', function($text) { … });
 Hook::set('my_page_hook.description', function($text) { … });
 Hook::set('my_page_hook.content', function($text) { … });
 ~~~
+
+You can also set multiple hook prefix to a single page as an alias:
+
+~~~ .php
+$page = new Page('.\www\lot\page\test-page.page', [], ['foo', 'bar', 'baz']);
+~~~
+
+The code above will set the page hook prefix to `foo.title`, `bar.title` and `baz.title` to the `$page->title` output.

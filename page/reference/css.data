@@ -1,2 +1,1 @@
-@media (min-width:671px){article{float:left;width:50%;padding:1em;background:#eee;border:1px solid #fff}
-article h3{margin-top:0;font-size:120%}article p{font-size:80%}article+nav{display:none}main{overflow:hidden}main:after{content:"";display:table;clear:both}}
+@media (min-width:671px){.page-pages article{float:left;width:50%;padding:1em;background:#eee;border:1px solid #fff}.page-pages article h3{margin-top:0;font-size:120%}.page-pages article p{font-size:80%}.page-pages article>div{margin-bottom:0}main:after{content:"";display:table;clear:both}}

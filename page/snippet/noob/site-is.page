@@ -53,10 +53,8 @@ if ($site->tag) { … }
 
 ### Next Page
 
-[connect:../../reference/class/u-r-l]
-
 ~~~ .php
-if (URL::I($url->current) !== $url->current) { … }
+if ($site->step !== null) { … }
 ~~~
 
 ### Specific Page
