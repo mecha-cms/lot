@@ -1,6 +1,7 @@
 ---
 title: Art Direction
 description: Create unique design for each blog posts by adding special CSS and JavaScript files.
+icon: data:image/png;base64,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
 
 dependency: false
 ...
@@ -17,3 +18,23 @@ lot\
 ~~~
 
 Write custom CSS code in `css.data` file, and custom JavaScript code in `js.data` file.
+
+---
+
+### Condition
+
+These page conditional statements are available:
+
+ - `$site->has('css')` → Return `true` if current page has custom CSS.
+ - `$site->has('js')` → Return `true` if current page has custom JS.
+ - `$site->is('art')` → Return `true` if current page has custom CSS or JS.
+ - `$site->not('art')` → Return `true` if current page don’t have custom CSS and JS.
+
+### Class
+
+These HTML classes will be added automatically if your `<html>` element has `class` attribute:
+
+ - `has-css` → Will be added if custom CSS data of current page isn’t empty.
+ - `has-js` → Will be added if custom JS data of current page isn’t empty.
+ - `is-art` → Will be added if custom CSS or JS data of current page aren’t empty.
+ - `not-art` → Will be added if custom CSS and JS data of current page are empty.

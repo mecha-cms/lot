@@ -4,5 +4,5 @@ description: Attach a shield file as the page.
 ...
 
 ~~~ .php.xmp
-Shield::attach($input, $fail = false, $buffer = true);
+Shield::attach($input, $fail = false);
 ~~~

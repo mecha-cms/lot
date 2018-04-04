@@ -1,8 +1,0 @@
----
-title: `$is::D()`
-description: Check for valid directory.
-...
-
-~~~ .php.xmp
-Is::D($x);
-~~~

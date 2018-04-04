@@ -61,4 +61,8 @@ This variable is an instance of the [`Page` class][link:class/page] with current
 
 This variable is an instance of the [`Elevator` class][link:class/elevator]. [^1]
 
+### `$parent`
+
+This variable returns the parent page instance of the `$page`. [^1]
+
 [^1]: Added by the [page][link:extension/page] extension.

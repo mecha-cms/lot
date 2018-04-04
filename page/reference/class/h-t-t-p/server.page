@@ -1,0 +1,43 @@
+---
+title: `$h_t_t_p::server()`
+description: Return the `$_SERVER` data.
+...
+
+~~~ .php.xmp
+HTTP::server($key = null, $fail = null, $eval = true);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = HTTP::server();
+$test_2 = HTTP::server('SERVER_ADDR');
+$test_3 = HTTP::server('SERVER_PORT');
+$test_4 = HTTP::server('SERVER_PORT', null, false);
+$test_5 = HTTP::server('TEST');
+$test_6 = HTTP::server('TEST', 0);
+~~~
+
+Result:
+
+~~~ .php
+$test_1 = [
+    'REDIRECT_STATUS' => 200,
+    'HTTP_HOST' => '%{url.host}%',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; rv:59.0) Gecko/20100101 Firefox/59.0',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => 1,
+    …
+    …
+    'REQUEST_TIME_FLOAT' => 1522299323.8,
+    'REQUEST_TIME' => 1522299323
+];
+
+$test_2 = '::1';
+$test_3 = 80;
+$test_4 = '80';
+$test_5 = null;
+$test_6 = 0;
+~~~
+
+> **Note:** Values include `0`, `'0'`, and `' '` are considered not empty. So, returning a data contains these kind of value will not trigger the `$fail` value.

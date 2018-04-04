@@ -1,0 +1,8 @@
+---
+title: `$view::get()`
+description: Return the view content.
+...
+
+~~~ .php.xmp
+View::get($input, $fail = false, $print = true);
+~~~

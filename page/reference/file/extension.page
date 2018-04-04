@@ -2,3 +2,68 @@
 title: Extension
 description: WTF is extension?
 ...
+
+Extension is a core feature enhancer that has a higher level than plugin. An extension doesn’t have to change the behavior of your site directly, it can also be used as an API enhancer that does nothing until you use it on a particular [plugin][link:plugin] or [shield][link:shield], or even in a private function file that you have.
+
+An extension is a folder with a unique name, stored in `lot\extend` folder:
+
+~~~ .txt
+lot\
+ └── extend\
+     ├── asset\
+     ├── page\
+     ├── extension-1\
+     ├── extension-2\
+     ├── …
+     └── …
+~~~
+
+A standard extension should at least contains files that structured like this:
+
+~~~ .txt
+extension-1\
+ ├── engine\
+ │   ├── kernel\
+ │   │   └── extension-1.php
+ │   ├── plug\
+ │   │   └── extension-1.php
+ │   └── fire.php
+ ├── lot\
+ │   ├── asset\
+ │   │   ├── .htaccess
+ │   │   ├── css\
+ │   │   └── js\
+ │   ├── language\
+ │   │   ├── en-us.page
+ │   │   └── id-id.page
+ │   └── state\
+ │       └── config.php
+ ├── about.page
+ └── index.php
+~~~
+
+But the simplest one can be achieved as:
+
+~~~ .txt
+extension-1\
+ ├── about.page
+ └── index.php
+~~~
+
+> **Note:** The `.htaccess` file is required to enable access of the asset files publicly. It only contains this command:
+>
+> ~~~ .htaccess
+> allow from all
+> ~~~
+
+The most important part is the `index.php` file. The automatic extension loader will seek for `index.php` file and once it found, then the engine will include it before the shield is loaded. Some alternative name can be used like `__index.php` to make it loaded only if back-end mode is active, and `index__.php` that will be loaded only in the front-end.
+
+> **Note:** Mecha currently will load `index.php` away as this is the standard file format that works in both front-end and back-end mode. But, since the core version does not understand between back-end and front-end, so a file named `index__.php` will also be loaded away. The only file that will not be included automatically is `__index.php` because Mecha does not look for it by default. The front-end and back-end distinguisation is a feature that never existed until somebody create their own back-end feature. And in that feature, a function may load the `__index.php` file with their own conditional statement that works by distinguish whether we are currently in the front-end or back-end.
+
+### Engine
+
+### Lot
+
+### About
+
+### Index

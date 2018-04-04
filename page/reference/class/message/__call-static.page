@@ -25,6 +25,6 @@ Message::bar('create');
 >
 > ~~~ .php
 > if (!Message::$x) {
->     File::write('test')->saveTo('success.log');
+>     File::set('test')->saveTo('success.log');
 > }
 > ~~~

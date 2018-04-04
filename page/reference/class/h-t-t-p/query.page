@@ -1,6 +1,7 @@
 ---
 title: `$h_t_t_p::query()`
 description: Add, remove and update the current query string URL keys and values.
+...
 
 ~~~ .php.xmp
 HTTP::query($query = [], $c = ['?', '&amp;', '=', ""]);

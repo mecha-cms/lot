@@ -2,4 +2,5 @@
 title: `Anemon`
 description: Array and objects.
 parent: genome
+interface: .array-access
 ...

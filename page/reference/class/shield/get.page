@@ -1,8 +1,0 @@
----
-title: `$shield::get()`
-description: Embed shield parts to the main shield file to attach.
-...
-
-~~~ .php.xmp
-Shield::get($input, $fail = false, $buffer = true);
-~~~

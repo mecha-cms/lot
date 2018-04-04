@@ -20,7 +20,7 @@ Hook::set('page.content', function($content) {
                 $s = getimagesize($path); // Inspect local image data
                 $img[2]['width'] = $s[0]; // Set image `width` attribute
                 $img[2]['height'] = $s[1]; // Set image `height` attribute
-                return call_user_func_array('HTML::unite', $img); // Re-unite the image!
+                return HTML::unite($img); // Re-unite the image!
             }
             return $m[0]; // External image `src` or invalid image `src` value
         }

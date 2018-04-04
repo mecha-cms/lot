@@ -4,13 +4,14 @@ description: Constructor.
 ...
 
 ~~~ .php.xmp
-Elevator($input, $chunk = 5, $index = 0, $path = true, $config = [], $NS = "");
+Elevator($input = [], $chunk = [5, 0], $path = true, $config = []); // @pages mode
+Elevator($input = [], $current = "", $path = true, $config = []); // @page mode
 ~~~
 
 **Example:**
 
 ~~~ .php
-$elevator = new Elevator([0, 1, 2, 3, 4, 5, 6, 7], 3, 0, 'foo/bar');
+$elevator = new Elevator([0, 1, 2, 3, 4, 5, 6, 7], [3, 0], 'foo/bar');
 $elevator_str = $elevator . "";
 ~~~
 
@@ -31,7 +32,7 @@ $elevator_str = '<span>▲</span> <a href="foo/bar">◆</a> <a href="foo/bar/2">
 To create horizontal elevator:
 
 ~~~ .php
-$elevator = new Elevator([0, 1, 2, 3, 4, 5, 6, 7], 3, 0, 'foo/bar', [
+$elevator = new Elevator([0, 1, 2, 3, 4, 5, 6, 7], [3, 0], 'foo/bar', [
     'direction' => [
        '-1' => 'previous', // ← default is `up`
         '0' => "", // ← default is ``
@@ -66,8 +67,18 @@ $elevator = [
 $elevator_str = '<span>◀</span> <a href="foo/bar">◆</a> <a href="foo/bar/2">▶</a>';
 ~~~
 
-> **Info:** For item page elevator, set the `$chunk` parameter as `null` and `$index` parameter by array value you treat as the current item.
+> **Info:** For item page elevator, set the `$chunk` parameter to the array value you want treat as the current item.
 >
 > ~~~ .php
-> $elevator = new Elevator(['foo', 'bar', 'baz'], null, 'bar');
+> $elevator = new Elevator(['-foo', '-bar', '-baz'], '-bar', 'foo/bar');
+> ~~~
+>
+> Result:
+>
+> ~~~ .php
+> $elevator = [
+>     'up' => 'foo/bar/-foo',
+>     "" => 'foo/bar',
+>     'down' => 'foo/bar/-baz'
+> ];
 > ~~~

@@ -4,7 +4,7 @@ description: Constructor.
 ...
 
 ~~~ .php.xmp
-Page($input = null, $lot = [], $NS = ['*', 'page']);
+Page($input = [], $lot = [], $NS = ['*', 'page']);
 ~~~
 
 ~~~ .php

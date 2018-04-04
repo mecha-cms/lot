@@ -5,6 +5,7 @@ description: Set item.
 
 ~~~ .php.xmp
 Config::set($key, $value = null);
+Config::set($values = []);
 ~~~
 
 **Example:**

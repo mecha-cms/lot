@@ -1,0 +1,60 @@
+---
+title: Page Conditional Statement Concept
+description: Making a better page conditional mechanism.
+...
+
+I am currently working on a maintainable and extensible page conditional statement mechanism. Currently, we use the `is` property that is stored in the `$site` variable to indicate what type of page we are currently in:
+
+~~~ .php
+if ($site->is === 'page') {
+    // A single page.
+}
+~~~
+
+The problem here is that the `is` property can only store single state of the page condition, which will cause some problems if, for example, we want to check whether we are in a list of pages filtered by tag:
+
+~~~ .php
+if (
+    $site->is === 'pages' &&
+    strpos($url->path . '/', Extend::state('tag', 'path') . '/') === 0
+) {
+    // A tags page.
+}
+~~~
+
+I want to make something that is much simpler than setting up condition by detecting the current URL path manually. I want to do something like this:
+
+~~~ .php
+if ($site->is('pages') && $site->is('tag')) {
+    // A tags page.
+}
+~~~
+
+Or even simpler:
+
+~~~ .php
+if ($site->any(['tag', 'search'])) {
+    // A tags page or search page.
+}
+~~~
+
+So that calling an undetermined condition mechanism will not trigger any error messages and simply return a `false` or `null` value. What do you think?
+
+---
+
+Other alternatives:
+
+~~~ .php
+if (Is::pages() && Is::tag()) { … }
+~~~
+
+~~~ .php
+if (is('pages') && is('tag')) { … }
+~~~
+
+~~~ .php
+function is() { … }
+function not() { … }
+function any() { … }
+function has() { … }
+~~~

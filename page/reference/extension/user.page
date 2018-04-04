@@ -1,9 +1,12 @@
 ---
 title: User
 description: Rich user data.
+icon: data:image/png;base64,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
 ...
 
-### Without User Extension
+### File
+
+#### Without User Extension
 
 The page:
 
@@ -22,7 +25,7 @@ The property call:
 <?php echo $page->author; ?>
 ~~~
 
-### With User Extension
+#### With User Extension
 
 The page:
 
@@ -59,3 +62,59 @@ or:
 ~~~ .php
 <?php echo $page->author; ?>
 ~~~
+
+---
+
+### Page
+
+User page is accessible through `%{url}%/user/{$key}` where `{$key}` is the user key/name without the `@` prefix. Example:
+
+~~~ .txt
+%{url}%/user/ta-tau-taufik
+~~~
+
+To go to the log in page, remove the user key/name part from URL:
+
+~~~ .txt
+%{url}%/user
+~~~
+
+### Constant
+
+This extension automatically adds a `user` folder within the `lot` folder, which will also automatically set a new constant based on the folder name with a value of the folder path:
+
+~~~ .php
+USER
+~~~
+
+### Method
+
+There are some methods added to the default [classes][link:../class]:
+
+#### Is
+
+~~~ .xmp.php
+Is::user($key = null, $fail = false);
+~~~
+
+**Example:**
+
+Check whether a user is logged in:
+
+~~~ .php
+if (Is::user()) { … }
+~~~
+
+Check whether user `@ta-tau-taufik` is logged in:
+
+~~~ .php
+if (Is::user('ta-tau-taufik')) { … }
+~~~
+
+#### Users
+
+~~~ .xmp.php
+Get::users($folder = USER, …, $sort = [1, 'slug'], …);
+~~~
+
+Arguments are the same with [`Get::pages()`][link:../class/get/pages], except the `$folder` parameter that uses `USER` [constant][link:../constant] value by default, and the `$sort` parameter that uses `slug` as the default sort key instead of `time`.

@@ -1,0 +1,20 @@
+---
+title: `$to::{URL,url}()`
+description: Convert private file path into public URL, or decode URL special characters.
+...
+
+~~~ .php.xmp
+To::URL($in, $raw = false);
+~~~
+
+~~~ .php.xmp
+To::url($in, $raw = false);
+~~~
+
+**Example:**
+
+~~~ .php
+$test_1 = To::URL('.\path\to\file.html');
+$test_2 = To::URL('foo%20bar+baz');
+$test_3 = To::URL('foo%20bar+baz', true);
+~~~

@@ -12,7 +12,7 @@ description: Save a page.
 Create a new page:
 
 ~~~ .php
-Page::data([
+Page::set([
     'title' => 'Page Title',
     'type' => 'HTML',
     'content' => '<p>Page content.</p>'

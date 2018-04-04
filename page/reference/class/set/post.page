@@ -1,0 +1,22 @@
+---
+title: `$set::post()`
+description: Set value to `$_POST` array.
+...
+
+~~~ .php.xmp
+Set::post($key = null, $value = null);
+Set::post($value = []);
+~~~
+
+**Example:**
+
+~~~ .php
+Set::post('user', '@ta-tau-taufik');
+~~~
+
+~~~ .php
+Set::post([
+    'user' => '@ta-tau-taufik',
+    'pass' => 'b4d455'
+]);
+~~~

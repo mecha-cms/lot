@@ -4,7 +4,7 @@ description: Set HTTP status by code.
 ...
 
 ~~~ .php.xmp
-HTTP::status($i = 200);
+HTTP::status($i = null);
 ~~~
 
 List of HTTP status code:
@@ -82,3 +82,17 @@ Code | Description
 [^8]: RFC2774
 [^9]: RFC3229
 [^10]: RFC-reschke-http-status-308-07
+
+**Example:**
+
+Get current HTTP response status:
+
+~~~ .php
+echo HTTP::status();
+~~~
+
+Set HTTP response status:
+
+~~~ .php
+HTTP::status(404); // “Not Found”
+~~~

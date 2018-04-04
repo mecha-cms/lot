@@ -7,10 +7,17 @@ Hook::set('*.content', function($content) {
     return str_replace('[connect:', '**Related:** [link:', $content);
 }, 1.8);
 
+Hook::set('*.content', function($content) {
+    if (strpos($content, '[') === false) return $content;
+    return preg_replace_callback('#[‌]?\[[‌]?\[[‌]?/?[‌]?[^\n]+?[‌]?\][‌]?\][‌]?#', function($m) {
+        return str_replace('‌', "", $m[0]);
+    }, $content);
+}, 2.1);
+
 if (Plugin::exist('candy')) {
     // Add `%{asset}%` candy
     Hook::set('plugin.state.candy', function($a) {
-        $a['v']['asset'] = $_SERVER['HTTP_HOST'] === 'localhost' ? To::url(ASSET) : 'https://mecha-cms.github.io/lot/asset';
+        $a['v']['asset'] = $_SERVER['HTTP_HOST'] === 'localhost' ? To::URL(ASSET) : 'https://mecha-cms.github.io/lot/asset';
         return $a;
     });
 }
@@ -19,8 +26,8 @@ if (Plugin::exist('candy')) {
 Hook::set('shield.enter', function() use($site) {
     if ($page = Lot::get('page')) {
         $time = Path::F($page->path) . DS . 'time.data';
-        if ($site->is !== '404' && !File::exist($time)) {
-            File::write($page->time)->saveTo($time);
+        if (!$site->is('error') && !File::exist($time)) {
+            File::set($page->time)->saveTo($time);
         }
     }
 });

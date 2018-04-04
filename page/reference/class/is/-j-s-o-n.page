@@ -1,0 +1,12 @@
+---
+title: `$is::{JSON,json}()`
+description: Check for valid JSON string.
+...
+
+~~~ .php.xmp
+Is::JSON($x);
+~~~
+
+~~~ .php.xmp
+Is::json($x); // alias
+~~~

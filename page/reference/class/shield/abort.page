@@ -4,5 +4,5 @@ description: Generate an error page.
 ...
 
 ~~~ .php.xmp
-Shield::abort($code = 404, $fail = false, $buffer = true);
+Shield::abort($code = 404, $fail = false);
 ~~~

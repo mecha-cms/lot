@@ -5,6 +5,7 @@ description: Remove item.
 
 ~~~ .php.xmp
 Config::reset($key = null);
+Config::reset($keys = []);
 ~~~
 
 **Example:**

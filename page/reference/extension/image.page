@@ -1,6 +1,7 @@
 ---
 title: Image
 description: Image manipulation using [GD](http://www.php.net/manual/en/book.image.php "PHP – Image Processing and GD") library.
+icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUrSURBVHhe7Z3PixxVFIWrM3Z+ma1/hEkMYlQi6MKNLtyIMW5c6EYXIoqIovZA3AomBkxIojBqIBsXmgQSMBEloCAIbiYrIWqiKCKo9EyEQdvnu5VbsdNzqurVrVvS9pwPPmy6qk6F03bd7tdQkxFCCCGEEEIIIYQQQghBDF/Oti7PZ29cGWQX4n+Xr8xnYS2bdyBdDLL90o3W5E/Ym62PJ3kzOkL/EBpfjEH2p3QUnsz6WpsPUn58lc+ik1Jg7Eo60/raE99mB+GJaKnxnXBA62vH0ny2Lb4Af6GT0HLlcuQyE/KBC05A643d7dMa7ciER+E0yUWt0U4MGU6E0nSHWqMdEEobqDXaQaE0Xa3RDgql6WqNdlAoTVdrtINCZ9K9/bByak8YffNWCEsf58pjeU62wWMS1BrtoNBZ84/Xbgqjy++GsPIZdHTpnXwfdGydWqMdFDpTvtoPo+/fg8WPKy+Q7AszKtQa7aDQWVIuMahw5MrJh2FGlVqjHRQ6S+bXfFA2cnTxKMyoUmu0g0JnyXzggrKRfw/PwowqtUY7KPS/cvGxuVy0zUu+ACX+8nwvvH3rxlx5jPbxkJegEj+8d304uHVTrjxG+3gogxWVjVw5sRtmVKk12kGhXfvVozdcK79QnkP7tlY+hl5O+BgavwtYvpBpjXZQaJf+9FwvHN1xffmiPCfb0DFtzb+IxYJR8eLo0sLa+CK2PMjC+3dvWFV+oWyTfdCxrS2WIuJ1XoatOLp45OplZ60sRXzxyOpLz6SyDzp2WtUa7aDQLvzhmXXh8HZc+riyj+yLMqZRrdEOCvV2+EoWju8qv/RMKvvKMShr2tQa7aBQb88/2IdFVynHoKxpU2u0g0I9/fapdeHQNlxylXKMHIsyp0mt0Q4K9fL3l7Jw7I6NsOAU5VjJQNnTotZoB4V6ee6B5peeSSUDZVf53eP9XLTNW63RDgr18Osn5mChFiULnQP589Nz4fyuLbnyGO3jqdZoB4W29dcXe2Fhp/3SM6lkSSY617i/vdALn99zY/j0zi258lieQ/t6qTXaQaFtPXP/vwttXkomOlfhUvzY+uV9m66VXyjPyTZ0jIdaox0U2kZZ30cFelj128GFhzasKr9QtqFjPNQa7aBQq8UaPyrPw7LfDmTgouLH7Wooa412UKjV8TX+rpz87aAYuqj0cbsaylqjHRRqEa3xd2Xx28Hk0K2zi6GsNdpBoU0tW+PvSjnXj8/24NCt03soa412UGgT69b4u/LMXZthwSl6DmWt0Q4KbWLKGr+3x3fYyy/0Gspaox0UmmrqGr+nC7dsDp+AQpvqNZS1RjsoNMWma/weHokv9rnbcaEWPYay1mgHhaZoWeNv46Ho6Z3pn3hSbTuUtUY7KLRO6xp/Gz+4zb/8wjZDWWu0g0KrbLvGb9Fj6NZpHcpaox0UWqXHGn8TvYZundahrDXaQaFleq7xp+g9dOu0DGWt0Q4KRXqv8dfZ1dCts+lQ1hrtoFBkF2v8VXY5dOtsMpS1RjsolKarNdpBoTRdrdEOCqXpao12UChNV2u0g0JpulqjHRRK09Ua7aBQmq7WaAeF0nS1RjsolKarNdpBoTRdrdFODOFN++w63LSPt61sY/vbVvLGrS0cZK9rjXb0dvW8dXFD81sXz2c3a43tiGEH0ElouS63LS7g7esb+5Hr7esF+aME8k6QtxY4IY1KN/J/vvsfcBhHZ8K+eMLFKD+iXu1gUQZup3/ChBBCCCGEEEIIIYQQQv7HZNk/3TTTTaJMtm4AAAAASUVORK5CYII=
 ...
 
 ### Original
@@ -460,8 +461,8 @@ Then you will be able to use that PHP file in the HTML image like this:
 The code below can give you more ideas:
 
 ~~~ .php
-$w = Request::get('width');
-$h = Request::get('height');
+$w = HTTP::get('width');
+$h = HTTP::get('height');
 Image::take('photo.jpg')->resize($w, $h)->draw();
 ~~~
 

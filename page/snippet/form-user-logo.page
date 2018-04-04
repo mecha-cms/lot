@@ -1,0 +1,18 @@
+---
+title: Logo in the Log In Form
+description: Add logo to the [default log in system][link:../reference/extension/user] form.
+...
+
+~~~ .css
+.form-user:before {
+  content:"";
+  display:block;
+  width:80px;
+  height:80px;
+  margin:0 auto 1em;
+  background:transparent url('path/to/logo.png') no-repeat 50% 50%;
+  background-size:100% 100%;
+}
+~~~
+
+Replace `path/to/logo.png` with your logo image URL.

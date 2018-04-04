@@ -5,6 +5,7 @@ description: Generate string markup by input data.
 
 ~~~ .php.xmp
 Union::unite($unit, $content = "", $data = [], $dent = 0);
+Union::unite([$unit, $content = "", $data = []], $dent = 0);
 ~~~
 
 **Example:**

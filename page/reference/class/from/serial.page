@@ -1,0 +1,14 @@
+---
+title: `$from::serial()`
+description: Unserialize data.
+...
+
+~~~ .php.xmp
+From::serial($in);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = From::serial('a:3:{i:0;i:0;i:1;s:1:"a";i:2;a:0:{}}');
+~~~

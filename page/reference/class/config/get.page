@@ -5,6 +5,7 @@ description: Get item.
 
 ~~~ .php.xmp
 Config::get($key = null, $fail = false);
+Config::get($keys = []);
 ~~~
 
 **Example:**

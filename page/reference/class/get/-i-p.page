@@ -1,0 +1,12 @@
+---
+title: `$get::{ip,IP}()`
+description: Get user’s IP.
+...
+
+~~~ .php.xmp
+Get::IP($fail = false);
+~~~
+
+~~~ .php.xmp
+Get::ip($fail = false); // alias
+~~~

@@ -1,0 +1,8 @@
+---
+title: `$is::anemon()`
+description: Check if input is an array or object.
+...
+
+~~~ .php.xmp
+Is::anemon($x, $t = null);
+~~~

@@ -4,8 +4,8 @@ description: Basic search form.
 ...
 
 ~~~ .html
-<form action="<?php echo $site->is === 'page' ? Path::D($url->current) : $url->current; ?>" method="get">
-  <?php echo Form::text($config->q, Request::get($config->q)) . ' ' . Form::submit(null, null, 'Search'); ?>
+<form action="<?php echo $site->is('pages') ? $url->clean : Path::D($url->clean); ?>" method="get">
+  <?php echo Form::text($config->q, HTTP::get($config->q)) . ' ' . Form::submit(null, null, 'Search'); ?>
 </form>
 ~~~
 

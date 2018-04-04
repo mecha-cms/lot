@@ -10,7 +10,7 @@ Register variables and makes them available globally in the shields.
 echo "### Methods\n";
 foreach (glob(PAGE . DS . $url->path . DS . '*.page') as $v) {
     $n = basename($v, '.page');
-    if ($n === '$' || $n === basename(dirname($v))) continue;
+    if ($n === '$') continue;
     $v = Page::open($v);
     echo "\n - [" . $v->title . '](' . $v->url . ')';
 }

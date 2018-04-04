@@ -4,21 +4,26 @@ description: Constructor.
 ...
 
 ~~~ .php.xmp
-$state = new State($x);
+State($input = [], $lot = []);
 ~~~
 
 **Example:**
 
-Convert `$config` array into safe object:
+Convert `$config_a` array into safe object:
 
 ~~~ .php
-$config = State::config();
-$config = new State($config);
+$config_a = require STATE . DS . 'config.php';
+$config_o = new State($config_a);
 ~~~
 
 Result:
 
 ~~~ .php
-echo $config->title; // key `title` does exist, return the `title` value
-echo $config->xyz; // key `xyz` does not exist, return `null`
+echo $config_a['title']; // key `title` does exist, return the `title` value
+echo $config_a['xyz']; // key `xyz` does not exist, broken!
+~~~
+
+~~~ .php
+echo $config_o->title; // key `title` does exist, return the `title` value
+echo $config_o->xyz; // key `xyz` does not exist, return `null`
 ~~~

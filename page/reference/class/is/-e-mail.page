@@ -1,0 +1,12 @@
+---
+title: `$is::{EMail,email}()`
+description: Check for valid E-Mail address.
+...
+
+~~~ .php.xmp
+Is::EMail($x);
+~~~
+
+~~~ .php.xmp
+Is::email($x); // alias
+~~~

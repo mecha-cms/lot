@@ -10,5 +10,5 @@ description: Update a file.
 **Example:**
 
 ~~~ .php
-File::open('path\to\file.txt')->write('some text')->save();
+File::open('path\to\file.txt')->set('some text')->save();
 ~~~

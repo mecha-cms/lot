@@ -1,6 +1,19 @@
 ---
 title: `Shield`
 description: Page output.
+parent: view
 ...
 
 Shield is a term used by Mecha to express _theme_ in other CMS.
+
+> **Info:** This class is located in `lot\extend\shield\engine\kernel` folder.
+
+[[e]]
+echo "### Methods\n";
+foreach (glob(PAGE . DS . $url->path . DS . '*.page') as $v) {
+    $n = basename($v, '.page');
+    if ($n === '$') continue;
+    $v = Page::open($v);
+    echo "\n - [" . $v->title . '](' . $v->url . ')';
+}
+[[/e]]

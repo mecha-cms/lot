@@ -1,0 +1,12 @@
+---
+title: `$get::{ua,UA}()`
+description: Get user’s user agent.
+...
+
+~~~ .php.xmp
+Get::UA($fail = false);
+~~~
+
+~~~ .php.xmp
+Get::ua($fail = false); // alias
+~~~

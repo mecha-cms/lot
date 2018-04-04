@@ -7,10 +7,22 @@ Hook::set('*.content', function($content, $lot) {
     $N = isset($lot['name']) ? $lot['name'] : Path::N($lot['path']);
     $NS = 'shield';
     $stats = include ROOT . DS . 'stats.php';
+    $releases = include ROOT . DS . 'releases.php';
     $i = 'https://github.com/mecha-cms/' . $NS . '.' . $N . '/archive/master.zip';
     $i = isset($stats[$i]) ? $stats[$i] : 0;
+    $j = 0;
+    if (!empty($releases[$NS][$N])) {
+        $j = 'https://github.com/mecha-cms/' . $NS . '.' . $N . '/archive/v' . $releases[$NS][$N] . '.zip';
+        $j = isset($stats[$i]) ? $stats[$i] : 0;
+    }
+    // $i += $j;
     if (!isset($lot['dependency']) || $lot['dependency'] !== false) {
-        $content = '[Download Latest Version](%{url}%/r/git:mecha-cms/' . $NS . '.' . $N . '/archive/master.zip "' . $i . ' Downloads") {.button}' . N . N . $content;
+        $s = "";
+        if (!empty($releases[$NS][$N])) {
+            $s .= '[Download Version ' . $releases[$NS][$N] . '](%{url}%/r/git:mecha-cms/' . $NS . '.' . $N . '/archive/v' . $releases[$NS][$N] . '.zip "' . $j . ' Downloads") {.button} ';
+        }
+        $s .= '[Download Development Version](%{url}%/r/git:mecha-cms/' . $NS . '.' . $N . '/archive/master.zip "' . $i . ' Downloads") {.button}';
+        $content = $s . N . N . $content;
     }
     if (!empty($lot['dependency']) && $lot['dependency'] !== true) {
         $content .= N . N . '### Dependency';

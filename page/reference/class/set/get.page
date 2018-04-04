@@ -1,0 +1,22 @@
+---
+title: `$set::get()`
+description: Set value to `$_GET` array.
+...
+
+~~~ .php.xmp
+Set::get($key = null, $value = null);
+Set::get($value = []);
+~~~
+
+**Example:**
+
+~~~ .php
+Set::get('user', '@ta-tau-taufik');
+~~~
+
+~~~ .php
+Set::get([
+    'user' => '@ta-tau-taufik',
+    'pass' => 'b4d455'
+]);
+~~~

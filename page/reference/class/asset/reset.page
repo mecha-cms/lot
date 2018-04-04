@@ -12,5 +12,5 @@ Asset::reset($path = null);
 Remove `asset-2.css` from the hooks storage.
 
 ~~~ .php
-Asset::reset('style-2.css');
+Asset::reset('.\www\lot\asset\css\style-2.css');
 ~~~

@@ -12,13 +12,13 @@ Asset::set($path, $stack = null);
 **Example:**
 
 ~~~ .php
-Asset::set('style-2.css');
+Asset::set('.\www\lot\asset\css\style-2.css');
 ~~~
 
 Make sure to put `style-3.css` before `style-2.css` in the output:
 
 ~~~ .php
-Asset::set('style-3.css', 9);
+Asset::set('.\www\lot\asset\css\style-3.css', 9);
 ~~~
 
 > **Note:** Default `$stack` value is `10`.

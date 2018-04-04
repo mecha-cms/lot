@@ -5,6 +5,7 @@ description: Remove a cookie.
 
 ~~~ .php.xmp
 Cookie::reset($key = null);
+Cookie::reset($keys = []);
 ~~~
 
 **Example:**

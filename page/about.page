@@ -40,5 +40,9 @@ If you want to make something that is super huge with Mecha, that would be possi
  6. Read on how to add [pages][link:reference/extension/page] and [tags][link:reference/extension/tag]. Learn on how to create pages from the author by looking at the [source code](https://github.com/mecha-cms/lot "GitHub").
  7. Install the [panel][link:reference/extension/panel] extension if you are stuck by doing everything manually. You always have the full control to remove this extension without having to worry that your site will stop running after doing so.
 
+### Credits
+
+ - Icons by [Icons8](https://icons8.com)
+
 [^1]: Mecha started to rebuild itself through two main principles: 1) everything is a page, 2) everything is an extension.
 [^2]: Usually named as `public_html`, `www` or `htdocs`.

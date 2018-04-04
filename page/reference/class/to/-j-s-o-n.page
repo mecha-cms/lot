@@ -1,0 +1,18 @@
+---
+title: `$to::{JSON,json}()`
+description: Convert PHP array/object into JSON.
+...
+
+~~~ .php.xmp
+To::JSON($in);
+~~~
+
+~~~ .php.xmp
+To::JSON($in);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = To::JSON(['foo' => 'bar']);
+~~~

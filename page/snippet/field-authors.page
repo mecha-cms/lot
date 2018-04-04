@@ -16,9 +16,9 @@ Hook::set('on.page.set', function($current, $previous) {
     } else {
         if ($author = User::get(null, 'key')) {
             $path = Path::F($current) . DS . 'authors.data';
-            $authors = From::json(File::open($path)->read('{}'));
+            $authors = From::JSON(File::open($path)->read('{}'));
             $authors->{'@' . $author} = time();
-            File::write(To::json($authors))->saveTo($path, 0600);
+            File::set(To::JSON($authors))->saveTo($path, 0600);
         }
     }
 });
@@ -31,7 +31,7 @@ There are a lot of ways to work out with the generated page property. Here are s
 #### Raw Information
 
 ~~~ .php
-<?php echo To::json($page->authors); ?>
+<?php echo To::JSON($page->authors); ?>
 ~~~
 
 #### Last Update Information

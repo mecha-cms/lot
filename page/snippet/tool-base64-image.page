@@ -27,7 +27,7 @@ if (!empty($_FILES['_image'])) {
         echo '<p style="color:red;">Images only!</p>';
     } else {
         $base64 = To::base64(file_get_contents($_FILES['_image']['tmp_name']));
-        $base64 = From::html('data:' . $_FILES['_image']['type'] . ';base64,' . $base64);
+        $base64 = From::HTML('data:' . $_FILES['_image']['type'] . ';base64,' . $base64);
         echo '<p><img alt="" onclick="window.open(this.src);" title="View URL" src="' . $base64 . '"></p>';
     }
 }

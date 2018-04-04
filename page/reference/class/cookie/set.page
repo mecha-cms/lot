@@ -4,13 +4,14 @@ description: Set a cookie.
 ...
 
 ~~~ .php.xmp
+Cookie::set($key, $value = "", $expire);
 Cookie::set($key, $value = "", $config = [
     'expire' => 1,
     'path' => '/',
     'domain' => "",
     'secure' => false,
     'http_only' => false
-] | $expire);
+]);
 ~~~
 
 **Example:**

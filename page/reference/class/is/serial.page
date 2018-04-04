@@ -1,0 +1,8 @@
+---
+title: `$is::serial()`
+description: Check for valid string of serialized data.
+...
+
+~~~ .php.xmp
+Is::serial($x);
+~~~

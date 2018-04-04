@@ -5,6 +5,7 @@ description: Generate a HTML markup.
 
 ~~~ .php.xmp
 HTML::unite($unit, $content = "", $data = [], $dent = 0);
+HTML::unite([$unit, $content = "", $data = []], $dent = 0);
 ~~~
 
 **Example:**

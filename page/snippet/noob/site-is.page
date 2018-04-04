@@ -6,19 +6,23 @@ description: Detect page types.
 ### Item Page
 
 ~~~ .php
-if ($site->is === 'page') { … }
+if ($site->is('page') && !$site->has('pages')) { … }
 ~~~
 
 ### Index Page
 
 ~~~ .php
-if ($site->is === 'pages') { … }
+if ($site->is('pages')) { … }
 ~~~
 
 ### Home Page
 
 ~~~ .php
-if ($site->is === "") { … }
+if ($site->is('home')) { … }
+~~~
+
+~~~ .php
+if ($site->is('$')) { … }
 ~~~
 
 ~~~ .php
@@ -28,7 +32,7 @@ if ($url->path === "") { … }
 ### Error Page
 
 ~~~ .php
-if ($site->is === '404') { … }
+if ($site->is('error')) { … }
 ~~~
 
 ### Search Page
@@ -36,25 +40,31 @@ if ($site->is === '404') { … }
 [connect:../../reference/extension/page]
 
 ~~~ .php
-if ($site->search) { … }
+if ($site->is('search')) { … }
 ~~~
 
 ~~~ .php
-if (Request::get($config->q)) { … }
+if (HTTP::is('get', $config->q)) { … }
 ~~~
 
-### Tag Page
+### Tags Page
 
 [connect:../../reference/extension/tag]
 
 ~~~ .php
-if ($site->tag) { … }
+if ($site->is('tags')) { … }
 ~~~
 
-### Next Page
+### Has Next Page
 
 ~~~ .php
-if ($site->step !== null) { … }
+if ($site->has('next')) { … }
+~~~
+
+### Has Previous Page
+
+~~~ .php
+if ($site->has('previous')) { … }
 ~~~
 
 ### Specific Page
@@ -68,5 +78,5 @@ if ($url->path === 'foo/bar') { … }
 Pages that are relative to the root URL like `http://example.com/about`.
 
 ~~~ .php
-if (strpos($url->path, '/') === false) { … }
+if (!$site->has('parent')) { … }
 ~~~

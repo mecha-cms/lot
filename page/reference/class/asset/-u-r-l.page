@@ -1,0 +1,24 @@
+---
+title: `$asset::{URL,url}()`
+description: Generate full public URL path of the `$path`.
+...
+
+~~~ .php.xmp
+Asset::URL($url, $fail = false);
+~~~
+
+~~~ .php.xmp
+Asset::url($url, $fail = false); // alias
+~~~
+
+**Example:**
+
+~~~ .php
+$url = Asset::URL('.\www\lot\asset\css\style.css');
+~~~
+
+~~~ .php
+$url = Asset::URL('http://example.com/asset/icons.css');
+~~~
+
+> **Note:** Setting external URL to the `$url` parameter will return that `$url` anyway.

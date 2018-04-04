@@ -12,5 +12,5 @@ description: Save the updated page data.
 Update page data:
 
 ~~~ .php
-Page::open('path\to\file.page')->data(['title' => 'New Title'])->save();
+Page::open('path\to\file.page')->set(['title' => 'New Title'])->save();
 ~~~

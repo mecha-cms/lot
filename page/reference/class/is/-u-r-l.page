@@ -1,0 +1,12 @@
+---
+title: `$is:{URL,url}()`
+description: Check for valid URL address.
+...
+
+~~~ .php.xmp
+Is::URL($x);
+~~~
+
+~~~ .php.xmp
+Is::url($x); // alias
+~~~

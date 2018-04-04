@@ -1,0 +1,8 @@
+---
+title: `$view::fire()`
+description: Require a file as the page.
+...
+
+~~~ .php.xmp
+View::fire($input, $fail = false);
+~~~

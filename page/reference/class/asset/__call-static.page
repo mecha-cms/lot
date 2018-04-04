@@ -43,7 +43,7 @@ echo Asset::json(); // not yet defined by `Asset::_()`, calling this will return
 Calling a single asset path:
 
 ~~~ .php
-echo Asset::css('style-2.css'); // → return `<link href=" … /style-2.css" rel="stylesheet">`
+echo Asset::css('.\www\lot\asset\css\style-2.css'); // → return `<link href=" … /style-2.css" rel="stylesheet">`
 ~~~
 
 ~~~ .php

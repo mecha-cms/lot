@@ -8,8 +8,10 @@ The easiest way to replace the default home page appearance is to use the built-
 ~~~ .php
 [
     'path' => 'index', // ← this
-    'sort' => [-1, 'time'],
-    'chunk' => 3
+    'page' => [
+        'sort' => [-1, 'time'],
+        'chunk' => 5
+    ]
 ]
 ~~~
 

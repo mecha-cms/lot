@@ -7,8 +7,8 @@ description: Automatically generate static time data on the first page visit, so
 Hook::set('shield.enter', function() use($site) {
     if ($page = Lot::get('page')) {
         $time = Path::F($page->path) . DS . 'time.data';
-        if ($site->is !== '404' && !File::exist($time)) {
-            File::write($page->time)->saveTo($time);
+        if (!$site->is('error') && !File::exist($time)) {
+            File::set($page->time)->saveTo($time);
         }
     }
 });

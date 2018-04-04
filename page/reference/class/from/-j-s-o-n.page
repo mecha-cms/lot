@@ -1,0 +1,18 @@
+---
+title: `$from::{JSON,json}()`
+description: Convert JSON into PHP object.
+...
+
+~~~ .php.xmp
+From::JSON($in);
+~~~
+
+~~~ .php.xmp
+From::JSON($in); // alias
+~~~
+
+**Example:**
+
+~~~ .php
+$test = From::JSON('{"foo":"bar"}');
+~~~

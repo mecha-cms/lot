@@ -10,5 +10,5 @@ description: Save a file to.
 **Example:**
 
 ~~~ .php
-File::write('some text')->saveTo('path\to\file.txt');
+File::set('some text')->saveTo('path\to\file.txt');
 ~~~

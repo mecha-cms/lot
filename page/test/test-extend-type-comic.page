@@ -1,0 +1,12 @@
+---
+title: Air Gear: 279
+description: Testing page type extenson.
+type: Comic
+rapic: false
+...
+
+[[e]]
+foreach (glob(ASSET . '/ag-279/*.png') as $k => $v) {
+    echo To::URL($v) . "\n";
+}
+[[/e]]

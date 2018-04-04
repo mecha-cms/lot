@@ -49,10 +49,9 @@ if ($_kinds = glob(PAGE . DS . $_base . DS . '*' . DS . 'kind.data', GLOB_NOSORT
 
 $_path = $url->path;
 
-if ($site->tag) { // → `blog/tag/tag-slug`
-    $_path = URL::I($url->path); // Remove page offset in URL path
-    $_path = Path::D($_path, 2);
-} else if ($site->is === 'page') { // → `blog/page-slug`
+if ($site->is('tags')) { // → `blog/tag/tag-slug`
+    $_path = Path::D($url->path, 2);
+} else if ($site->is('page')) { // → `blog/page-slug`
     $_path = Path::D($_path);
 }
 

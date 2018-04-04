@@ -1,6 +1,7 @@
 ---
 title: Minify
 description: Remove white-spaces and unused comments in HTML, CSS and JavaScript files.
+icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIqSURBVHhe7dpLTsMwEIDh3oAjkHIHXhdDYgWHIAXOwg04DGpTIdhB3Y6rNExT22PHQvo/aSQaEi/+WbQ8ZgAAAAAAAACOa55W103b3clLTGkXf72cL9Y/zaJ7kMuYQj++H5YwES0+S5jIWHw/LKGQkPj7abt7eQw5xMR397n75VFYEb8i4ldE/IqIXxHxjSyfw4mfwTZOwhKIn8k+UsQSiJ/RQayAJRA/sz/RRpZA/ALUeMoSiF+IFtBNfwnEL0iL6MctgfiFaSEPpl1/qdcHQ/xEWszYIb6BFjRmiG+kRQ0d4meghQ0Z4meixT05mzdm4meiBg6YkF9bIIAWN3RYQgZa2JhhCUZa1NhhCQZa0JRhCYm0mKnDEhJoIS3DEiJpEa3DEgAA/9q8XT9qb3DWkeMRosQS5GiEyr0EORYxci5BjkSsXEuQ45AixxLkKKSyLkGOgYVlCXIELNwfxJu2+9YCnxo5Aql28cP+V1MbOQYprPHdyFGIdb5Y3Vjju5HjECNXfDdyJELFxA95Y5ZjESIu/ua+5+XVqY+ocjROSYkvj47+nCC3YIwlvndsCfJtHJMjvqctQb4FTc743nAJchlDJeJ7/SXIJfSVjO/5JchLeFPE99wS5Es4U8bHAPErOn9Z3RK/EuJXFB2//byUR2FF/MqatnvTYg+H+IVcvH6cNYvuXYvuh/iFjS2B+BPRlkD8ifWXQPxKtktwb8zEBwAAAAAAAEbMZr9SLlj/xlRbDgAAAABJRU5ErkJggg==
 ...
 
 There should be a `config.php` file in the `lot\state` folder of this extension. It contains some configuration data about the minifier:

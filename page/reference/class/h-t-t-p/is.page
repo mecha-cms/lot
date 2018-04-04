@@ -1,0 +1,28 @@
+---
+title: `$h_t_t_p::is()`
+description: Detect current request type.
+...
+
+~~~ .php.xmp
+HTTP::is($id = null, $key = null);
+~~~
+
+**Example:**
+
+~~~ .php
+if (HTTP::is('post')) {
+    // Is a `POST` request!
+}
+~~~
+
+~~~ .php
+if (HTTP::is('post', 'time')) {
+    // Is has `time` key in `$_POST` array either it contains a value or not
+    // This is equal to `if (array_key_exists('time', $_POST ?? [])) {}`
+}
+
+if (HTTP::post('time')) {
+    // Is has `time` key in `$_POST` array and it contains a value
+    // This is equal to `if (!empty($_POST['time']) || empty($_POST['time']) && $_POST['time'] === 0 || $_POST['time'] === '0') {}`
+}
+~~~

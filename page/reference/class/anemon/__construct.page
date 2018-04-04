@@ -3,7 +3,7 @@ title: `__construct()`
 description: Create flexible array variable.
 ...
 
-An instance of `Anemon` class can be used to make the array becomes possible to be accessed as string, object or function.
+An instance of `Anemon` class can be used to make the array becomes possible to be accessed as string, array, object or function.
 
 ~~~ .php.xmp
 Anemon($array = [], $separator = ', ');
@@ -17,6 +17,7 @@ $test = new Anemon(['foo', 'bar', 'baz']);
 echo $test;
 echo $test(' + ');
 echo $test->join(' + ');
+echo $test[1];
 echo $test->{1};
 echo $test->vomit(1);
 ~~~
@@ -29,6 +30,8 @@ foo, bar, baz
 foo + bar + baz
 
 foo + bar + baz
+
+bar
 
 bar
 
@@ -49,7 +52,9 @@ echo $test;
 echo $test(' + ');
 echo $test->join(' + ');
 echo $test->foo;
+echo $test['foo'];
 echo $test->_hidden;
+echo $test['_hidden'];
 echo $test->vomit('foo');
 ~~~
 
@@ -63,6 +68,10 @@ Result:
 0 + 1 + 2
 
 0
+
+0
+
+#
 
 #
 

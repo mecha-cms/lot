@@ -1,8 +1,0 @@
----
-title: `$request::extend()`
-description: Extend some data to the current request.
-...
-
-~~~ .php.xmp
-Request::extend($id, $keys = []);
-~~~

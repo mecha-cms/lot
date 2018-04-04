@@ -1,0 +1,28 @@
+---
+title: Custom Title Separator
+description: Set your own document title separator.
+...
+
+### Before
+
+~~~ .html
+<title><?php echo $site->trace; ?></title>
+~~~
+
+Result:
+
+~~~ .html
+<title>Article Title · Site Title</title>
+~~~
+
+### After
+
+~~~ .html
+<title><?php echo $site->trace(' | '); ?></title>
+~~~
+
+Result:
+
+~~~ .html
+<title>Article Title | Site Title</title>
+~~~

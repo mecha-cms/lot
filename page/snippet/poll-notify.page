@@ -21,7 +21,7 @@ Hook::set([
         $page = new Page($path);
         $anchor = HTML::a($page->title, $page->url);
         $user = '<strong>' . Get::ip() . '</strong>';
-        $key = '<em>' . Request::post('title', $c[0]) . '</em>';
+        $key = '<em>' . HTTP::post('title', $c[0]) . '</em>';
         $from = 'user@from.com'; // site email address
         $to = 'user@to.com'; // your email address
         $subject = 'Poll Notification';

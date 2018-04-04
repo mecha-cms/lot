@@ -1,21 +1,42 @@
 ---
 title: Add Log In/Out Link
-description: Show log in/out link if we have panel extension.
+description: Show log in/out link.
 ...
+
+### Log In/Out Link for [User][link:../reference/extension/user] Extension
+
+~~~ .html
+<!-- If we have `user` extension… -->
+<?php if (Extend::exist('user')): ?>
+  <!-- If user is logged in, add log out link! -->
+  <?php if (Is::user()): ?>
+    <a href="<?php echo $url . '/' . Extend::state('user', 'path'); ?>">
+      <?php echo $language->log_out; ?>
+    </a>
+  <!-- If user is logged out, add log in link! -->
+  <?php else: ?>
+    <a href="<?php echo $url . '/' . Extend::state('user', 'path') . HTTP::query(['kick' => $url->path]); ?>">
+      <?php echo $language->log_in; ?>
+    </a>
+  <?php endif; ?>
+<?php endif; ?>
+~~~
+
+### Log In/Out Link for [Panel][link:../reference/extension/panel] Extension
 
 ~~~ .html
 <!-- If we have `panel` extension… -->
 <?php if (Extend::exist('panel')): ?>
-<!-- If user is logged in, add log out link! -->
-<?php if (User::get()): ?>
-<a href="<?php echo $url . '/' . Extend::state('panel', 'path', 'panel') . '/::g::/exit'; ?>">
-  <?php echo $language->log_out; ?>
-</a>
-<!-- If user is logged out, add log in link! -->
-<?php else: ?>
-<a href="<?php echo $url . '/' . Extend::state('panel', 'path', 'panel') . '/::g::/enter'; ?>">
-  <?php echo $language->log_in; ?>
-</a>
-<?php endif; ?>
+  <!-- If user is logged in, add log out link! -->
+  <?php if (Is::user()): ?>
+    <a href="<?php echo $url . '/' . Extend::state('panel', 'path') . '/::g::/exit'; ?>">
+      <?php echo $language->log_out; ?>
+    </a>
+  <!-- If user is logged out, add log in link! -->
+  <?php else: ?>
+    <a href="<?php echo $url . '/' . Extend::state('panel', 'path') . '/::g::/enter'; ?>">
+      <?php echo $language->log_in; ?>
+    </a>
+  <?php endif; ?>
 <?php endif; ?>
 ~~~

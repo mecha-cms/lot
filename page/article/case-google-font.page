@@ -1,0 +1,332 @@
+---
+title: Reinventing the Google Fonts API
+description: Making web fonts loader API like how Google Fonts does.
+...
+
+![1](%{asset}%/png/article/case-google-font/1.png)
+
+Google Fonts has a very simple yet effective [web font loading system](https://fonts.google.com "Google Fonts"). It uses a base URL with some parameters that allows you to change the response generated through that parameter. In this tutorial, we will discuss about how to create a copy of the Google Fonts API using the existing features of Mecha. But before that, I will first explain about how Google Fonts API works.
+
+### Syntax
+
+The syntax is very easy to understand. You write the base URL then you add a `family` URL parameter with the value of the desired font family name. Calling a font family name without any additional parameters will load the font file with its default weight.
+
+~~~ .txt
+https://fonts.googleapis.com/css?family=Roboto
+~~~
+
+The following is the response text generated (simplified):
+
+~~~ .css
+/* Regular */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('KFOmCnqEu92Fr1Mu4mxK.woff') format('woff');
+}
+~~~
+
+Google Fonts API provides the regular version of the requested fonts by default. To request other styles or weights, append a colon to the name of the font, followed by a list of styles or weights separated by commas. By setting the font weight after the font family, it will load the font file with the specified weight if available.
+
+In general, font weights are categorized as follows:
+
+Weight | Description
+------ | -----------
+`100` | Thin
+`300` | Light
+`400` | Regular (Normal)
+`500` | Medium
+`700` | Bold
+`900` | Black
+
+The following is an example of how to load Google’s fonts with weight of `400` and `700`:
+
+~~~ .txt
+https://fonts.googleapis.com/css?family=Roboto:400,700
+~~~
+
+Which will produce the following response:
+
+~~~ .css
+/* Regular */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('KFOmCnqEu92Fr1Mu4mxK.woff') format('woff');
+}
+/* Bold */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('KFOlCnqEu92Fr1MmWUlfBBc4.woff') format('woff');
+}
+~~~
+
+By adding the letter `i` at the end of the font weight, it will load the _italic_ version of each font weight if available.
+
+~~~ .txt
+https://fonts.googleapis.com/css?family=Roboto:400,700,400i,700i
+~~~
+
+The resulting response is a series of `@font-face` rules using _Roboto_ as the font family with its _normal_, _italic_, _bold_ and _bold-italic_ version.
+
+~~~ .css
+/* Regular */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('KFOmCnqEu92Fr1Mu4mxK.woff') format('woff');
+}
+/* Italic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('KFOkCnqEu92Fr1Mu51xIIzI.woff') format('woff');
+}
+/* Bold */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('KFOlCnqEu92Fr1MmWUlfBBc4.woff') format('woff');
+}
+/* Bold-Italic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('KFOjCnqEu92Fr1Mu51TzBic6CsQ.woff') format('woff');
+}
+~~~
+
+You can even load multiple font families at once by separating the `family` parameter values using pipe character:
+
+~~~ .txt
+https://fonts.googleapis.com/css?family=Roboto|Open+Sans
+~~~
+
+The resulting response would be something like this:
+
+~~~ .css
+/* Roboto: 400 */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('KFOmCnqEu92Fr1Mu4mxK.woff') format('woff');
+}
+/* Open Sans: 400 */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('mem8YaGs126MiZpBA-UFVZ0b.woff') format('woff');
+}
+~~~
+
+You can visit the official documentation page about the usage of Google Fonts API [here](https://developers.google.com/fonts/docs/getting_started "Get Started with the Google Fonts API").
+
+Now let’s try to create our own web font loading system using Mecha!
+
+---
+
+### Route
+
+First, we need to determine our base URL using the [route][link:../reference/class/route]. Here is a good example to get started:
+
+~~~ .php
+Route::set('fonts.css', function() {
+    echo 'It works!';
+    exit;
+});
+~~~
+
+Add the code snippet above to the `index.php` file of your active shield, then visit `http://127.0.0.1/fonts.css` (assuming you are in local mode), you should get a result like this:
+
+![2](%{asset}%/png/article/case-google-font/2.png)
+
+From here you should realize that if you change the ‘It works!’ text with some CSS code, then you will be able to use that URL as a dynamic CSS file, so you can load the CSS file like this:
+
+~~~ .html
+<link href="http://127.0.0.1/fonts.css" rel="stylesheet">
+~~~
+
+But it will not work because the MIME type of the file is still set to `text/html`:
+
+![3](%{asset}%/png/article/case-google-font/3.png)
+
+### MIME
+
+To make the CSS code work, you will need to specify the appropriate MIME type for the CSS file, that is `text/css`.
+
+~~~ .php
+Route::set('fonts.css', function() {
+    // Set proper MIME type for CSS file
+    HTTP::type('text/css', 'utf-8');
+    // echo 'It works!';
+    // Generate CSS code that will set a random color to the `<body>` text
+    echo 'body{color:#' . substr(md5($_SERVER['REQUEST_TIME']), 0, 6) . '}';
+    exit;
+});
+~~~
+
+![4](%{asset}%/png/article/case-google-font/4.png)
+
+With the CSS code I gave above, you should see that the text color on the page will change when this dynamic file is rendered each time the page is reloaded. Now let’s go to the next step!
+
+### File Structure
+
+Make sure that you have the font files with varying weight, then place them into `.\www\lot\asset\woff\{$family}` where `{$family}` is the font family name that you have set to the parameter URL. In this case, I demonstrate it using fonts named [Roboto](https://fonts.google.com/specimen/Roboto) and [Open Sans](https://fonts.google.com/specimen/Open+Sans).
+
+~~~ .txt
+.\
+ └── lot\
+     └── asset\
+         └── woff\
+             ├── Roboto\
+             │   ├── 400.woff
+             │   ├── 400i.woff
+             │   ├── 700.woff
+             │   └── 700i.woff
+             ├── Open Sans\
+             │   ├── 400.woff
+             │   ├── 400i.woff
+             │   ├── 700.woff
+             │   └── 700i.woff
+             └── …
+~~~
+
+![5](%{asset}%/png/article/case-google-font/5.png)
+
+Now let’s get back to the route. As I’ve said before, the Google Fonts API allows you to load multiple font families at once by separating them using pipe character. Here, we assume that the font family name is set to more than one in the `family` parameter:
+
+~~~ .php
+Route::set('fonts.css', function() {
+    // Set proper MIME type for CSS file
+    HTTP::type('text/css', 'utf-8');
+    // Example: `?family=Roboto|Open+Sans`
+    if ($fonts = HTTP::get('family')) {
+        $s = ""; // Prepare the output…
+        // Example: `Roboto:400,700,400i,700i|Open+Sans:400,700,400i,700i`
+        foreach (explode('|', $fonts) as $font) {
+            // Do something with `$font`…
+        }
+    }
+    exit;
+});
+~~~
+
+In the loop above, we should have each font family name stored in variable `$font`. Now, assume that each font family is followed by some custom weight and style. If there aren’t any custom weight and style specified in the font family name, then we assume its value to be `400`:
+
+~~~ .php
+Route::set('fonts.css', function() {
+    // Set proper MIME type for CSS file
+    HTTP::type('text/css', 'utf-8');
+    // Example: `?family=Roboto|Open+Sans`
+    if ($fonts = HTTP::get('family')) {
+        $s = ""; // Prepare the output…
+        // Example: `Roboto:400,700,400i,700i|Open+Sans:400,700,400i,700i`
+        foreach (explode('|', $fonts) as $font) {
+            // `$parts[0]` is `Roboto` and `$parts[1]` is `400,700,400i,700i`
+            $parts = explode(':', $font, 2);
+            // `Open+Sans` → `Open Sans`
+            $parts[0] = str_replace('+', ' ', $parts[0]);
+            // Font weight(s) aren’t defined, set to its default weight → `400`
+            if (empty($parts[1])) {
+                $parts[1] = '400';
+            }
+        }
+    }
+    exit;
+});
+~~~
+
+Now, assume that the existing style is set to more than one. All of the font files’ name that we have stored in the `asset` folder already followed the proper font weight and font style code, so we can easily check whether the font file is present or not before loading it:
+
+~~~ .php
+Route::set('fonts.css', function() {
+    // Set proper MIME type for CSS file
+    HTTP::type('text/css', 'utf-8');
+    // Example: `?family=Roboto|Open+Sans`
+    if ($fonts = HTTP::get('family')) {
+        $s = ""; // Prepare the output…
+        // Example: `Roboto:400,700,400i,700i|Open+Sans:400,700,400i,700i`
+        foreach (explode('|', $fonts) as $font) {
+            // `$parts[0]` is `Roboto` and `$parts[1]` is `400,700,400i,700i`
+            $parts = explode(':', $font, 2);
+            // `Open+Sans` → `Open Sans`
+            $parts[0] = str_replace('+', ' ', $parts[0]);
+            // Font weight(s) aren’t defined, set to its default weight → `400`
+            if (empty($parts[1])) {
+                $parts[1] = '400';
+            }
+            // Loop all the weight of the font specified in `$parts[1]`…
+            foreach (explode(',', $parts[1]) as $weight) {
+                // Check the existence of the file in `.\www\lot\asset\woff\Roboto`; e.g. `400.woff`
+                if (!$file = File::exist(ASSET . DS . 'woff' . DS . $parts[0] . DS . $weight . '.woff')) {
+                    continue; // File does not exist, skip!
+                }
+            }
+        }
+    }
+    exit;
+});
+~~~
+
+The last step is to create a `@font-face` rules based on the existing data, then output the result as plain text:
+
+~~~ .php
+Route::set('fonts.css', function() {
+    // Set proper MIME type for CSS file
+    HTTP::type('text/css', 'utf-8');
+    // Example: `?family=Roboto|Open+Sans`
+    if ($fonts = HTTP::get('family')) {
+        $s = ""; // Prepare the output…
+        // Example: `Roboto:400,700,400i,700i|Open+Sans:400,700,400i,700i`
+        foreach (explode('|', $fonts) as $font) {
+            // `$parts[0]` is `Roboto` and `$parts[1]` is `400,700,400i,700i`
+            $parts = explode(':', $font, 2);
+            // `Open+Sans` → `Open Sans`
+            $parts[0] = str_replace('+', ' ', $parts[0]);
+            // Font weight(s) aren’t defined, set to its default weight → `400`
+            if (empty($parts[1])) {
+                $parts[1] = '400';
+            }
+            // Loop all the weight of the font specified in `$parts[1]`…
+            foreach (explode(',', $parts[1]) as $weight) {
+                // Check the existence of the file in `.\www\lot\asset\woff\Roboto`; e.g. `400.woff`
+                if (!$file = File::exist(ASSET . DS . 'woff' . DS . $parts[0] . DS . $weight . '.woff')) {
+                    continue; // File does not exist, skip!
+                }
+                $style = 'normal'; // Set default `font-style` value
+                // Example: `400i`
+                if (substr($weight, -1) === 'i') {
+                    $style = 'italic'; // Set `font-style` value to `italic`
+                    $weight = rtrim($weight, 'i'); // Remove the letter `i` from the weight
+                }
+                // Generate the `@font-face` rule(s)…
+                $s .= "\n\n@font-face {\n";
+                $s .= "  font-family: '" . $parts[0] . "';\n";
+                $s .= "  src: url('" . To::URL($file) . "') format('woff');\n";
+                $s .= "  font-weight: " . $weight . ";\n";
+                $s .= "  font-style: " . $style . ";\n";
+                $s .= "}";
+            }
+        }
+        // Output the result and remove the first two line-break of the `@font-face`
+        echo substr($s, 2);
+    }
+    exit;
+});
+~~~
+
+Now try accessing the previous dynamic CSS file with different URL parameter value to load the font file as desired!
+
+![6](%{asset}%/png/article/case-google-font/6.png)
+
+This is just an example of how to use the hidden features of Mecha, and also to show that Mecha features are very likely to be developed towards wider cases because of its mechanism that is very possible to be manipulated without having to change or modify the default features of the core. Hopefully, this tutorial can inspire future developers to create something interesting with Mecha!

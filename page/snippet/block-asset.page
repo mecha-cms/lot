@@ -9,7 +9,7 @@ Using [blocks][link:../reference/extension/block] in place of the base URL will 
 // Set a block parser with ID `asset`
 Block::set('asset', function($content) {
     // Replace `[‌[‌asset‌]‌]` with public asset URL
-    return Block::replace('asset', To::url(ASSET), $content);
+    return Block::replace('asset', To::URL(ASSET), $content);
 });
 ~~~
 
@@ -31,7 +31,7 @@ type: HTML
 > ~~~ .php
 > Block::set('asset', function($content) use($url) {
 >     if ($url->host === 'localhost') {
->         $base = To::url(ASSET);
+>         $base = To::URL(ASSET);
 >     } else {
 >         $base = 'https://cdn.%{url.host}%/asset';
 >     }

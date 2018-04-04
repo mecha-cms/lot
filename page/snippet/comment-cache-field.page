@@ -6,13 +6,13 @@ description: Using session to store your visitor’s comment data in the comment
 Requires [comment][link:../reference/extension/comment] extension.
 
 ~~~ .php
-if (!Request::is('post')) {
+if (!HTTP::is('post')) {
     $cache = [
-        'author' => Request::restore('post', 'author', Session::get('comment.author')),
-        'email' => Request::restore('post', 'email', Session::get('comment.email')),
-        'link' => Request::restore('post', 'link', Session::get('comment.link'))
+        'author' => HTTP::restore('post', 'author', Session::get('comment.author')),
+        'email' => HTTP::restore('post', 'email', Session::get('comment.email')),
+        'link' => HTTP::restore('post', 'link', Session::get('comment.link'))
     ];
-    Request::save('post', $cache);
+    HTTP::save('post', $cache);
 }
 ~~~
 

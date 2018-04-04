@@ -1,0 +1,22 @@
+---
+title: `$file::push()`
+description: Upload a file.
+...
+
+~~~ .php.xmp
+File::push($f, $path = ROOT, $fn = null, $fail = false, $c = []);
+~~~
+
+**Example:**
+
+~~~ .php
+File::push($_FILES['file'], 'path\to\folder');
+~~~
+
+Custom callback function:
+
+~~~ .php
+File::push($_FILES['file'], 'path\to\folder', function($file) {
+    // do something…
+});
+~~~

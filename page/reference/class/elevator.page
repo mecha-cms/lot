@@ -10,7 +10,7 @@ This class was inspired by a vertical transportation that moves people or goods 
 echo "### Methods\n";
 foreach (glob(PAGE . DS . $url->path . DS . '*.page') as $v) {
     $n = basename($v, '.page');
-    if ($n === '$' || $n === basename(dirname($v))) continue;
+    if ($n === '$') continue;
     $v = Page::open($v);
     echo "\n - [" . $v->title . '](' . $v->url . ')';
 }

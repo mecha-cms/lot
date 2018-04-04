@@ -1,0 +1,14 @@
+---
+title: `$to::serial()`
+description: Serialize data.
+...
+
+~~~ .php.xmp
+To::serial($in);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = To::serial([0, 'a', []]);
+~~~

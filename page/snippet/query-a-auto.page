@@ -16,7 +16,7 @@ Hook::set('page.content', function($content, $lot) use($language, $site) {
     ]);
     $a = [];
     if (!empty($page['slug'])) {
-        $url = $site->is === 'page' ? Path::D($page['url']) : $page['url'];
+        $url = $site->is('pages') ? $page['url'] : Path::D($page['url']);
         foreach (explode('-', $page['slug']) as $v) {
             $a[] = HTML::a($v, $url . HTTP::query([$site->q => $v]), false, ['rel' => 'tag']); 
         }

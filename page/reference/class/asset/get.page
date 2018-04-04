@@ -5,23 +5,23 @@ description: Get data of the available assets.
 Get data of `style-2.css` path that has been added to the hooks storage if any, otherwise, return `$fail`.
 
 ~~~ .php.xmp
-Asset::get($path, $fail = false);
+Asset::get($path = null, $fail = false, $i = 1);
 ~~~
 
 **Example:**
 
 ~~~ .php
-$test_1 = Asset::get('style-2.css');
-$test_2 = Asset::get('style-4.css');
+$test_1 = Asset::get('.\www\lot\asset\css\style-2.css');
+$test_2 = Asset::get('.\www\lot\asset\css\style-4.css');
 ~~~
 
 Result:
 
 ~~~ .php
 $test_1 = [
-    'path' => '.\www\lot\asset\style-2.css',
-    'url' => '%{url}%/lot/asset/style-2.css',
-    'id' => 'style-2.css',
+    'path' => '.\www\lot\asset\css\style-2.css',
+    'url' => '%{url}%/lot/asset/css/style-2.css',
+    'id' => '.\www\lot\asset\css\style-2.css',
     'stack' => 10
 ];
 
