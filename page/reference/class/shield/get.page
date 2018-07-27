@@ -1,0 +1,10 @@
+---
+title: `$shield::get()`
+description: Return the shield content.
+...
+
+~~~ .php.xmp
+Shield::get($input, $fail = false, $print = true);
+~~~
+
+This method inherits [`View::get()`][link:../view/get] method.

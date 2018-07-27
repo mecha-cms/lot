@@ -24,7 +24,7 @@ Genome::_($kin, $fn);
 Add a `birth` method to the `Blastula` class:
 
 ~~~ .php
-Blastula::_('birth', function($name) {
+Blastula::_('birth', function($name = 'Mecha') {
     return 'Hello world! My name is ' . $name . '.';
 });
 ~~~
@@ -32,6 +32,7 @@ Blastula::_('birth', function($name) {
 Usage:
 
 ~~~ .php
+echo Blastula::birth(); // → `Hello world! My name is Mecha.`
 echo Blastula::birth('Mocha'); // → `Hello world! My name is Mocha.`
 ~~~
 
@@ -59,6 +60,38 @@ $foo = new Foo;
 echo $foo->bar(4)->baz(1)->bar(2)->x;
 ~~~
 
+Same function, different default arguments:
+
+~~~ .php
+function fn_birth($name = 'Mecha', $entity = 'world') {
+    return 'Hello ' . $entity . '! My name is ' . $name . '.';
+}
+
+Blastula::_('birth_1', 'fn_birth');
+Blastula::_('birth_2', ['fn_birth', ['Mocha']]);
+Blastula::_('birth_3', ['fn_birth', ['Mocha'], 1]);
+~~~
+
+Usage:
+
+~~~ .php
+/* Using the default method. */
+echo Blastula::birth_1(); // `Hello world! My name is Mecha.`
+echo Blastula::birth_1('Mocha'); // `Hello world! My name is Mocha.`
+echo Blastula::birth_1('Mocha', 'space'); // `Hello space! My name is Mocha.`
+
+/* Alter the first default argument value to `Mocha`. */
+echo Blastula::birth_2(); // `Hello world! My name is Mocha.`
+echo Blastula::birth_2('Machi'); // `Hello world! My name is Machi.`
+echo Blastula::birth_2('Machi', 'space'); // `Hello space! My name is Machi.`
+
+/* Alter the first default argument value to `Mocha`. */
+/* Limit arguments to `1` (changing the `$entity` parameter won’t give any effect here). */
+echo Blastula::birth_3(); // `Hello world! My name is Mocha.`
+echo Blastula::birth_3('Machi'); // `Hello world! My name is Machi.`
+echo Blastula::birth_3('Machi', 'space'); // `Hello world! My name is Machi.`
+~~~
+
 ### Kin
 
 Get the available methods.
@@ -79,10 +112,10 @@ Result:
 
 ~~~ .php
 $test_1 = [
-    'birth' => function($name) { … }
+    'birth' => [function($name = 'Mecha') { … }]
 ];
 
-$test_2 = function($name) { … };
+$test_2 = [function($name = 'Mecha') { … }];
 
 $test_3 = false;
 ~~~

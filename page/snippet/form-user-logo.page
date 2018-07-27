@@ -3,6 +3,8 @@ title: Logo in the Log In Form
 description: Add logo to the [default log in system][link:../reference/extension/user] form.
 ...
 
+Requires [user][link:../reference/extension/user] extension.
+
 ~~~ .css
 .form-user:before {
   content:"";

@@ -1,0 +1,16 @@
+---
+type: Document
+status: 404
+...
+
+<!DOCTYPE html>
+<html dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Test Document Type</title>
+  </head>
+  <body>
+    <h1>Test Document Type</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+  </body>
+</html>

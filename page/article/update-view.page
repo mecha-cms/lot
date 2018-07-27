@@ -35,7 +35,7 @@ Now visit `%{url}%/test` to make sure that the site is visible as expected even 
 
 ![4](%{asset}%/png/article/update-view/4.png)
 
-> **Note:** If you get a _red_ message like `View::fire("page/index")` in the page then it was caused by your `shield` property that has been set to a value other than `document`. This message will appear when the site is missing your custom shield folder. Open `.\www\test\lot\state\config.php` then make sure that the `shield` value is set to `document`.
+> **Note:** If you get a _red_ message like `View::load("page/index")` in the page then it was caused by your `shield` property that has been set to a value other than `document`. This message will appear when the site is missing your custom shield folder. Open `.\www\test\lot\state\config.php` then make sure that the `shield` value is set to `document`.
 
 ### Step 6: Extensions, Plugins and Shields
 

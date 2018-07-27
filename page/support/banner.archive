@@ -18,7 +18,7 @@ foreach (Get::pages(PAGE . DS . 'support' . DS . 'banner', 'page', [1, 'slug'], 
     if (!isset($_images[0])) continue;
     shuffle($_images);
     echo '<figure class="image-container">';
-    echo '<img class="align-center" alt="" src="' . $_images[0] . '">';
+    echo '<img alt="" src="' . $_images[0] . '">';
     echo '<figcaption><a href="' . $_page->url . '">More by ' . $_page->author . '&hellip;</a></figcaption>';
     echo '</figure>';
 }

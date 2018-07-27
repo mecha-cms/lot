@@ -1,0 +1,14 @@
+---
+title: `$get::cookie()`
+description: Get raw value of `$_COOKIE` array.
+...
+
+~~~ .php.xmp
+Get::cookie($key = null, $fail = null);
+~~~
+
+**Example:**
+
+~~~ .php
+Get::cookie('user');
+~~~

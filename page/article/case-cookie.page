@@ -1,0 +1,108 @@
+---
+title: About Cookies
+description: Dealing with cookies.
+...
+
+Since the first release of Mecha, I’ve been thinking about adding a special feature for the [Cookie API][link:../reference/class/cookie], that is, to allow users to store complex data including data in the form of string, integer, float, boolean and array. And it works well by converting the data into JSON and/or Base64 string before sending it as a cookie value:
+
+~~~ .php
+Cookie::set('foo', 'abc');
+Cookie::set('bar', 123);
+Cookie::set('baz', true);
+Cookie::set('qux', ['a', 'b', 'c']);
+~~~
+
+In the variable `$_COOKIE`, you will find that the data has been stored as an encrypted key and value pairs:
+
+~~~ .php
+$_COOKIE = [
+    '_72a32f1' => 'ImFiYyI=',
+    '_fda6db7a' => 'MTIz',
+    '_f37d5348' => 'dHJ1ZQ==',
+    '_2dbdf818' => 'WyJhIiwiYiIsImMiXQ==',
+    …
+    …
+];
+~~~
+
+All cookie names are encoded into short hash format prefixed by an underscore character to allow users to use characters that are not allowed to be stored in HTTP Cookies. Using the `Cookie::get()` method, we can get the decrypted version of the encrypted cookie data:
+
+~~~ .php
+$cookie = Cookie::get();
+$foo = Cookie::get('foo');
+~~~
+
+Result:
+
+~~~ .php
+$cookie = [
+    '_72a32f1' => 'abc',
+    '_fda6db7a' => 123,
+    '_f37d5348' => true,
+    '_2dbdf818' => ['a', 'b', 'c'],
+    …
+    …
+];
+
+$foo = 'abc';
+~~~
+
+The first problem has been resolved, but there are times where I want to apply the [Session API][link:../reference/class/session] feature to the [Cookie API][link:../reference/class/cookie] too. One of them is a feature that allows me to update the array data using the [Anemon’s dot notation syntax][link:../reference/class/anemon/set]. But, since each cookie data has its own property associated with expiration time, path, domain, and such, therefore, the nested data feature is impossible to be realized for cookies.
+
+Doing this will not change the value of item `1` in `qux` array to be `hello`:
+
+~~~ .php
+Cookie::set('qux.1', 'hello');
+~~~
+
+It will only add `qux.1` property to the `$_COOKIE` variable with value `hello`:
+
+~~~ .php
+// Expectation
+$cookie = [
+    '_72a32f1' => 'abc',
+    '_fda6db7a' => 123,
+    '_f37d5348' => true,
+    '_2dbdf818' => ['a', 'hello', 'c'],
+    …
+    …
+];
+
+// Reality
+$cookie = [
+    '_72a32f1' => 'abc', // `foo`
+    '_fda6db7a' => 123, // `bar`
+    '_f37d5348' => true, // `baz`
+    '_2dbdf818' => ['a', 'b', 'c'], // `qux`
+    '_5e4a5e32' => 'hello' // `qux.1`
+    …
+    …
+];
+~~~
+
+In the future, it may be possible to update cookie value recursively, but it will make the system more complicated, because one of the lacks of HTTP Cookies is that when we receive a cookie value, it doesn’t give us any information about its expiration time. Therefore, it is unlikely that we can update the cookie data without updating them as a whole, and to do so, we need to set the expiration time on the updated cookie data in accordance with the previous expiration time data that we need to hard-code it:
+
+~~~ .php
+// Set
+$expire = 1; // 1 day
+Cookie::set('qux', ['a', 'b', 'c'], $expire);
+
+// Get
+$cookie = Cookie::get('qux'); // → ['a', 'b', 'c']
+
+// Update
+$cookie[1] = 'hello';
+Cookie::set('qux', $cookie, $expire);
+
+// Get
+$cookie = Cookie::get('qux'); // → ['a', 'hello', 'c']
+~~~
+
+Some people are able to overcome this limitation [by storing the cookie property as another cookie](https://stackoverflow.com/a/4203261 "How to Get Cookie’s Expire Time"), but I decided to keep the [Cookie API][link:../reference/class/cookie] as simple as now. If you want more complex features, you can use the [Session API][link:../reference/class/session]. You can still use dot notation though, but this only serves as a cosmetic for cookies:
+
+~~~ .php
+Cookie::set('user', … );
+Cookie::set('user.key', … );
+Cookie::set('user.pass', … );
+Cookie::set('user.token', … );
+~~~

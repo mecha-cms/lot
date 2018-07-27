@@ -13,12 +13,14 @@ Asset::$lot = [
                 'path' => '.\www\lot\asset\foo.css',
                 'url' => '%{url}%/lot/asset/foo.css',
                 'id' => 'foo.css',
+                'data' => [],
                 'stack' => 10
             ],
             'bar.css' => [
                 'path' => '.\www\lot\asset\bar.css',
                 'url' => '%{url}%/lot/asset/bar.css',
                 'id' => 'bar.css',
+                'data' => [],
                 'stack' => 10
             ]
         ]

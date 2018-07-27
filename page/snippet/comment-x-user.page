@@ -1,0 +1,16 @@
+---
+title: Disable Comments on User Page
+description: Hide the comment form on user pages that are created automatically.
+...
+
+### Method 1
+
+Use this [method][link:comment-x].
+
+### Method 2
+
+~~~ .php
+<?php if (!$site->is('user')): ?>
+<?php Shield::get('comments'); ?>
+<?php endif; ?>
+~~~

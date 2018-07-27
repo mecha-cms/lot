@@ -35,7 +35,7 @@ function fn_color_lev($color, $step) {
     return $rgb;
 }
 
-Hook::set('asset.top', function($content) use($url) {
+Hook::set('asset:head', function($content) use($url) {
     // Generate HEX color code from current URL
     $background = substr(md5($url->path), 0, 6);
     // Determine whether the text should be white or black

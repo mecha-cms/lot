@@ -4,7 +4,7 @@ description: Convert string input into `camelCase`.
 ...
 
 ~~~ .php.xmp
-To::camel($in);
+To::camel($x, $a = false, $i = "");
 ~~~
 
 **Example:**

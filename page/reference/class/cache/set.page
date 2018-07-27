@@ -4,7 +4,7 @@ description: Create a new cache file.
 ...
 
 ~~~ .php.xmp
-Cache::set($from, $content = null, $id = null);
+Cache::set($from, $fn = null, $id = null);
 ~~~
 
-> **Note:** If `$content` is defined, then the cache content will be set based on that value instead of the `$from` file content.
+> **Note:** If `$fn` is not a function, then the cache content will be set based on the `$from` file content.

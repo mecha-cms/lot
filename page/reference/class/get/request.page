@@ -1,0 +1,14 @@
+---
+title: `$get::request()`
+description: Get raw value of `$_REQUEST` array.
+...
+
+~~~ .php.xmp
+Get::request($key = null, $fail = null);
+~~~
+
+**Example:**
+
+~~~ .php
+Get::request('user');
+~~~

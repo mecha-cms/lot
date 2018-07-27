@@ -25,6 +25,8 @@ This variable exists on every file attached by the [`Shield::get()`][link:class/
 Shield::get('path/to/file.php', ['body' => 'Lorem ipsum dolor sit amet.']);
 ~~~
 
+In the example above, variable `$lot['body']` will be available in `path\to\file.php`.
+
 ### `$message`
 
 This variable is the result of [`Message::get()`][link:class/message/get]. [^1]

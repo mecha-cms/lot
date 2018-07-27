@@ -15,13 +15,13 @@ Message::{$any}($text, $vars = [], $preserve_case = false);
 Message::error('create');
 Message::info('create');
 Message::success('create');
-Message::warning('create');
+Message::warn('create');
 
 Message::foo('create');
 Message::bar('create');
 ~~~
 
-> **Note:** Calling `Message::error()` and `Message::warning()` will increase the internal `Message::$x` value. This is useful for checking errors before doing something:
+> **Note:** Calling `Message::error()` and `Message::warn()` will increase the internal `Message::$x` value. This is useful for checking errors before doing something:
 >
 > ~~~ .php
 > if (!Message::$x) {

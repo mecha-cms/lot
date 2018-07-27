@@ -4,11 +4,11 @@ description: Convert PHP array/object into JSON.
 ...
 
 ~~~ .php.xmp
-To::JSON($in);
+To::JSON($in, $tidy = false);
 ~~~
 
 ~~~ .php.xmp
-To::JSON($in);
+To::json($in, $tidy = false); // alias
 ~~~
 
 **Example:**

@@ -4,7 +4,7 @@ description: Check whether specific actions already hooked to the given route pa
 ...
 
 ~~~ .php.xmp
-Route::contain($id = null, $stack = null | $fn = null, $fail = false);
+Route::has($id = null, $stack = null | $fn = null, $fail = false);
 ~~~
 
 **Example:**
@@ -12,5 +12,5 @@ Route::contain($id = null, $stack = null | $fn = null, $fail = false);
 Check whether `my_route_hook_fn` already hooked to the `blog/%s%` route:
 
 ~~~ .php
-if (Route::contain('blog/%s%', 'my_route_hook_fn')) { … }
+if (Route::has('blog/%s%', 'my_route_hook_fn')) { … }
 ~~~

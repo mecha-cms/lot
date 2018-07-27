@@ -56,9 +56,7 @@ extension-1\
 > allow from all
 > ~~~
 
-The most important part is the `index.php` file. The automatic extension loader will seek for `index.php` file and once it found, then the engine will include it before the shield is loaded. Some alternative name can be used like `__index.php` to make it loaded only if back-end mode is active, and `index__.php` that will be loaded only in the front-end.
-
-> **Note:** Mecha currently will load `index.php` away as this is the standard file format that works in both front-end and back-end mode. But, since the core version does not understand between back-end and front-end, so a file named `index__.php` will also be loaded away. The only file that will not be included automatically is `__index.php` because Mecha does not look for it by default. The front-end and back-end distinguisation is a feature that never existed until somebody create their own back-end feature. And in that feature, a function may load the `__index.php` file with their own conditional statement that works by distinguish whether we are currently in the front-end or back-end.
+The most important part is the `index.php` file. The automatic extension loader will seek for `index.php` file and once it found, then the engine will include it before the shield is loaded.
 
 ### Engine
 

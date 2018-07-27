@@ -34,7 +34,7 @@ if ($_current = Lot::get('page')) {
         }
         echo '</ul>';
     } else {
-        echo '<p>This post has no relations with other posts.</p>';
+        echo '<p>This post has no relation with other posts.</p>';
     }
 }
 

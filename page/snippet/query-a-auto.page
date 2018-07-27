@@ -6,11 +6,12 @@ description: Automatically generate list of keyword links based on the current p
 This snippet will prepend a list of keyword links on top of your page content, just like [page tags][link:page-tag] but for the search:
 
 ~~~ .php
-Hook::set('page.content', function($content, $lot) use($language, $site) {
-    if (!isset($lot['path']) || strpos($lot['path'], PAGE) !== 0) {
+Hook::set('*.content', function($content, $lot = [], $that) use($language, $site, $url) {
+    $path = $that->get('path');
+    if (!$path || strpos($path, PAGE . DS) !== 0) {
         return $content;
     }
-    $page = Page::open($lot['path'])->get([
+    $page = Page::open($path)->get([
         'slug' => null,
         'url' => null
     ]);
@@ -22,7 +23,7 @@ Hook::set('page.content', function($content, $lot) use($language, $site) {
         }
     }
     sort($a);
-    $s  = '<p><strong>' . $language->{count($ss) === 1 ? 'keyword' : 'keywords'} . ':</strong>';
+    $s  = '<p><strong>' . $language->{count($a) === 1 ? 'keyword' : 'keywords'} . ':</strong>';
     $s .= ' ' . implode(', ', $a) . '</p>';
     return $s . $content;
 }, 2.1);

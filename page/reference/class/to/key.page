@@ -4,7 +4,7 @@ description: Convert string input into a valid array key.
 ...
 
 ~~~ .php.xmp
-To::key($in, $low = true);
+To::key($in, $a = true);
 ~~~
 
 **Example:**

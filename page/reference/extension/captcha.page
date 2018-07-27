@@ -118,31 +118,6 @@ Parameter | Description
 
 > **Note:** I have removed some of the glyphs in the font to make it only contains `[a-zA-Z0-9]` to reduce the file size.
 
-#### Toggle Captcha
-
-Form protection using a hash value that is not included by default.
-
-~~~ .php.xmp
-Captcha::toggle(
-    $id = null,
-    $text = null
-);
-~~~
-
-Result:
-
-~~~ .html
-<input name="captcha" value="58e87c6947e7f" type="checkbox" class="captcha captcha-toggle" id="captcha:foo">
-<label for="captcha:foo">I am not a robot.</label>
-~~~
-
-Parameter | Description
---------- | -----------
-`$id` | The captcha ID.
-`$text` | The toggle label. If not defined, it will depends on the `$language->captcha_toggle` value.
-
-> **Note:** This is the only captcha type that has a form input included in the output. If you ever need the token hash only, try [Token Captcha](#reference:token-captcha).
-
 #### Token Captcha
 
 A type of captcha that will only return a token hash.

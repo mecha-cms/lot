@@ -29,16 +29,6 @@ When converted by [`__f2c__`][link:../reference/function#reference:file-to-class
 Foo\BarBaz
 ~~~
 
-### Front-End and Back-End
-
-Mecha uses double `_` character to tell the engine that a file name should be treated as a front-end or back-end file:
-
-~~~ .txt
-foo-bar-baz__.php ← front-end
-foo-bar-baz.php ← front-end & back-end
-__foo-bar-baz.php ← back-end
-~~~
-
 ### Partial
 
 Prefix a file name with a `-` to tell the engine that the file is a part of another file:

@@ -8,7 +8,7 @@ To::URL($in, $raw = false);
 ~~~
 
 ~~~ .php.xmp
-To::url($in, $raw = false);
+To::url($in, $raw = false); // alias
 ~~~
 
 **Example:**

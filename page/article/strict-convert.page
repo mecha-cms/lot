@@ -1,0 +1,265 @@
+---
+title: Strict Conversions
+description: Mecha has some disciplines in phrase writing styles.
+...
+
+### Styles
+
+There are several terms of phrase writing styles:
+
+ - *camelCase* (also _bumpy case_)
+ - *kebab-case* (also _spinal case_, _lisp case_)
+ - *lower case* (also _lowercase_, _small letters_, or _minuscule_)
+ - *PascalCase* (also _bumpy case_)
+ - *Sentence case*
+ - *snake_case* (also _pothole case_)
+ - *StUdLyCaPs*
+ - *Title Case* (also _capital case_, _headline style_)
+ - *Train-Case*
+ - *UPPER CASE* (also _uppercase_, _capital letters_, _capitals_, _caps_, _large letters_, or _majuscule_)
+
+But in Mecha, I only divide the phrase writing style of the API syntax into *camelCase*, *slug-case* (_kebab-case_ or *snake_case*) and *PascalCase*.
+
+**Camel Case** is the practice of writing compound words or phrases such that each word or abbreviation in the middle of the phrase begins with a capital letter, with no intervening spaces or punctuation. In Mecha, the _camelCase_ writing style is used for naming class methods. But as function, class and method names in PHP are case insensitive, there will be an exception of naming methods in the form of abreviation text, it will be preferred to keep using capital letters in all parts.
+
+~~~ .php
+<?php
+
+class Converter {
+    public function ClassName() {} // :(
+    public function className() {} // :)
+    public function getURL {} // :)
+    public function getUrl {} // :(
+    public function path() {} // camel case, one word :)
+    public function URL() {} // abbreviation, force capital letter :)
+    public function Url() {} // :(
+    public function url() {} // :(
+}
+~~~
+
+**Pascal Case** is distinct from title case, which capitalises all words but retains the spaces between them, similar to the camel case, but the first letter is always capital. In Mecha, the _PascalCase_ writing style is used for naming classes. Although that class names in PHP are case insensitive, the class name is very important to be matched with the file name to support the internal PHP class autoloading system.
+
+Each class name specifies the file name associated with that class, and vice-versa. The class name in the form of _PascalCase_ must be converted to _kebab-case_ in the file name; _namespace_ must be converted to a dot character.
+
+This class must be saved as `page.php`:
+
+~~~ .php
+<?php
+
+class Page {}
+~~~
+
+This class must be saved as `local-storage.php`:
+
+~~~ .php
+<?php
+
+class LocalStorage {}
+~~~
+
+This class must be saved as `page.article.php`:
+
+~~~ .php
+<?php namespace Page;
+
+class Article {}
+~~~
+
+This class must be saved as `page.article.event.php`:
+
+~~~ .php
+<?php namespace Page\Article;
+
+class Event {}
+~~~
+
+This class must be saved as `u-r-l.php`:
+
+~~~ .php
+<?php
+
+class URL {}
+~~~
+
+If class name is an abreviation, use capital letters in all parts! If class name is mixed with sentences, then the use of underscores is allowed for readability.
+
+~~~ .php
+// :)
+class CSS {}
+class JS {}
+class URL {}
+class YAML {}
+
+// :)
+class JavaScript {}
+class EncodeURIComponent {}
+class XMLHTTPRequest {}
+
+// :)
+class Encode_URI_Component {}
+class XML_HTTP_Request {}
+
+// :(
+class Javascript {}
+class javascript {}
+class JAVASCRIPT {}
+class Filesystem {}
+class encodeUriComponent {}
+class encodeURIComponent {}
+class XmlHttpRequest {}
+~~~
+
+**Slug Case** replaces any punctuation and space characters with a hyphen or underscore and force all letter to be in their lower-case style. In Mecha, the _slug-case_ writing style is used for naming functions, keys (array and object keys), files and folders. Files and folders use hyphen as word separator, whereas functions and keys use underscore as word separator.
+
+~~~ .txt
+path.log
+u-r-l.log
+mecha-c-m-s.log
+foo-bar.log
+~~~
+
+~~~ .php
+function path() {}
+function u_r_l() {}
+function mecha_c_m_s() {}
+function foo_bar() {}
+
+$vars = [
+    'path' => 1,
+    'u_r_l' => 2,
+    'mecha_c_m_s' => 3,
+    'foo_bar' => 4
+];
+~~~
+
+Why is that the case must be as specific as this? The reason for this specification is data minimization. When you look at the [page][link:../reference/class/page] class, you can define the page title as file name written in _kebab-case_ style and it will be converted into _Title Case_ by the [`To::title()`][link:../reference/class/to/title] method so that it can become the pre-defined page title before you decide to write your original title text in the `title` field within the page content. This means that you can omit the page title data if page file name text can be converted into a valid title text.
+
+#### Camel Case
+
+_camelCase_ will look for any non-alphanumeric character and will use that to tell the parser that the alpha character followed after it should be parsed into upper-case character.
+
+~~~ .txt
+a → a
+-a → A
+abc → abc
+abc-def → abcDef
+-abc-def → AbcDef
+a-b-c → aBC
+-a-b-c → ABC
+1abc → 1abc
+1-abc → 1Abc
+abc1 → abc1
+abc-1 → abc1
+~~~
+
+#### Pascal Case
+
+_PascalCase_ work as the same as _camelCase_ but it does not care about whether the string input is started by a non-alphanumeric character or not. It will parse the first alpha character to the upper-case character anyway.
+
+
+~~~ .txt
+a → A
+-a → A
+abc → Abc
+abc-def → AbcDef
+-abc-def → AbcDef
+a-b-c → ABC
+-a-b-c → ABC
+1abc → 1abc
+1-abc → 1Abc
+abc1 → Abc1
+abc-1 → Abc1
+~~~
+
+#### Slug Case
+
+_slug-case_ will look for any upper-case characters and will parse them to a lower-case character preceeded by a hyphen or an underscore.
+
+~~~ .txt
+a → a
+A → -a
+abc → abc
+Abc → -abc
+abcDef → abc-def
+AbcDef → -abc-def
+aBC → a-b-c
+ABC → -a-b-c
+1abc → 1abc
+1Abc → 1-abc
+abc1 → abc1
+Abc1 → -abc1
+~~~
+
+Some are reversible, some are not. And the safest method to make the data reversible is the combination of _camelCase_ and _slug-case_.
+
+**Camel Case → Slug Case → Camel Case**
+
+~~~ .txt
+abcDef → abc-def → abcDef
+ABC → -a-b-c → ABC
+aBC → a-b-c → aBC
+abc1 → abc1 → abc1
+1abc → 1abc → 1abc
+~~~
+
+**Pascal Case → Slug Case → Pascal Case**
+
+~~~ .txt
+AbcDef → -abc-def → AbcDef
+ABC → -a-b-c → ABC
+aBC → a-b-c → ABC ✘
+Abc1 → -abc1 → Abc1
+1Abc → 1-abc → 1Abc
+~~~
+
+**Slug Case → Camel Case → Slug Case**
+
+~~~ .txt
+abc-def → abcDef → abc-def
+a-b-c → aBC → a-b-c
+-a-b-c → ABC → -a-b-c
+abc1 → abc1 → abc1
+1abc → 1abc → 1abc
+abc-1 → abc1 → abc1 ✘
+1-abc → 1abc → 1abc ✘
+~~~
+
+**Slug Case → Pascal Case → Slug Case**
+
+~~~ .txt
+abc-def → AbcDef → -abc-def ✘
+a-b-c → ABC → -a-b-c ✘
+-a-b-c → ABC → -a-b-c
+abc1 → abc1 → abc1
+1abc → 1abc → 1abc
+abc-1 → Abc1 → -abc1 ✘
+1-abc → 1Abc → 1-abc
+~~~
+
+### Exceptions
+
+![1](%{asset}%/png/article/strict-convert.png)
+
+Some factors that affect our habits such as cognitive ease has been forced us to accept something that’s not right. For example, it would seem more ideal when we store the URL data in an item with property `url` (lower-case) than `URL` (upper-case) or `u_r_l`.
+
+This also seems to apply to other abbreviations. People just feel comfortable writing abbreviations in lower-case style when dealing with softwares. For example, the `http` and `www` parts in URL are actually abbreviations, but people are already familiar to write them as general text, written in lower-case letters. So, no can do. Nobody is perfect.
+
+~~~ .php
+// :)
+$page->css;
+$page->id;
+$page->js;
+$page->url;
+
+// :\
+$page->CSS;
+$page->ID;
+$page->JS;
+$page->URL;
+
+// :\
+$page->c_s_s;
+$page->i_d;
+$page->j_s;
+$page->u_r_l;
+~~~

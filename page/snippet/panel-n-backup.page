@@ -3,7 +3,7 @@ title: Site Backup System
 description: Simple backup system for the [panel][link:../reference/extension/panel] extension.
 ...
 
-Add this code snippet in an `__index.php` or `index.php` file of your active shield:
+Add this code snippet in an `index.php` file of your active shield:
 
 ~~~ .php
 // Get control panel path

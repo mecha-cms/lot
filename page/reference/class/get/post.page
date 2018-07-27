@@ -1,0 +1,14 @@
+---
+title: `$get::post()`
+description: Get raw value of `$_POST` array.
+...
+
+~~~ .php.xmp
+Get::post($key = null, $fail = null);
+~~~
+
+**Example:**
+
+~~~ .php
+Get::post('user');
+~~~

@@ -1,0 +1,26 @@
+---
+title: `$view::set()`
+description: Force to replace view ID or file path with new file path.
+...
+
+~~~ .php.xmp
+View::set($id, $path = null);
+~~~
+
+**Example:**
+
+~~~ .php
+View::get('foo.bar'); // return nothing
+
+View::set('foo.bar', '.\www\lot\asset\php\view.php');
+
+View::get('foo.bar'); // return the `.\www\lot\asset\php\view.php` value.
+~~~
+
+~~~ .php
+View::get('.\www\lot\asset\php\view.php'); // return the `.\www\lot\asset\php\view.php` value.
+
+View::set('.\www\lot\asset\php\view.php', '.\www\lot\asset\php\view-2.php');
+
+View::get('.\www\lot\asset\php\view.php'); // return the `.\www\lot\asset\php\view-2.php` value.
+~~~

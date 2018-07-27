@@ -1,0 +1,10 @@
+---
+title: `$shield::reset()`
+description: Force to disable shield ID or file path.
+...
+
+~~~ .php.xmp
+Shield::reset($id);
+~~~
+
+This method inherits [`View::reset()`][link:../view/reset] method.

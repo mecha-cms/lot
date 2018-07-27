@@ -116,7 +116,7 @@ Open means that Mecha is extensible and can be improved so that it can have more
 
 By the way, here are some things that has been simplified in the current version of Mecha:
 
- - Control panel feature has been removed by default and it can be added by installing the [panel][link:../reference/extension/panel] extension that is available separately. This feature also has different API and it stands alone. So, basically, you can create your own control panel feature with your own API that you can customize as you wish if you think that my control panel extension is not perfect.
+ - Control panel feature has been removed by default and it can be added by installing the [panel][link:../reference/extension/panel] extension that is available separately. This feature also has different API and it stands alone. So, basically, you can create your own control panel feature with your own API that you can customize it as you wish whenever you think that my control panel extension is not perfect.
  - Comment feature has been removed by default and it can be added by installing the [comment][link:../reference/extension/comment] extension.
  - RSS feature has been removed by default and it can be added by installing the [feed][link:../reference/extension/feed] extension.
  - In the previous version, Mecha use hook and filter separately, but now you can use hook as a filter simply by returning the first function arguments.

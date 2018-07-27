@@ -1,0 +1,14 @@
+---
+title: `$get::session()`
+description: Get raw value of `$_SESSION` array.
+...
+
+~~~ .php.xmp
+Get::session($key = null, $fail = null);
+~~~
+
+**Example:**
+
+~~~ .php
+Get::session('user');
+~~~

@@ -13,5 +13,3 @@ To::text($x, $c = [], $n = false);
 $test_1 = To::text('foo-bar-baz');
 $test_2 = To::text('<p><strong>Foo</strong> Bar <em>Baz</em></p>');
 ~~~
-
-[connect:../../function#reference:w]

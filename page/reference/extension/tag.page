@@ -6,6 +6,7 @@ icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNS
 dependency:
   extension:
     - page
+    - shield
 ...
 
 This extension enables tags feature on any pages by utilizing the `kind` property value as the tag ID. This extension also adds a new route definition like ` %{url}%/blog/tag/slug ` on every pages to make it possible to list all pages in the current folder by tags.
@@ -174,10 +175,18 @@ echo implode(', ', $tags);
  - [link:../../snippet/list-tag]
  - [link:../../snippet/page-tag]
 
-### Properties
+---
 
- - `$site->tag` → Return the current page tag when you are in the tags page. Default is `null`.
+### Condition
 
-### Hooks
+These page conditional statements are available:
 
- - `tag.*` → Behaves like `page.*` hooks, but its target is only for the rich tags output.
+ - `$site->has('tags')` → Return the `$page->kind` data from the current page.
+ - `$site->is('tags')` → Return list of tags ID found in the current results.
+
+### Class
+
+These HTML classes will be added automatically if your `<html>` element has `class` attribute:
+
+ - `has-tags` → Will be added if current page has at least one tag.
+ - `is-tags` → Will be added if there are pages to load in the tags page.

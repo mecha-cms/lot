@@ -6,3 +6,39 @@ description: Return the view content.
 ~~~ .php.xmp
 View::get($input, $fail = false, $print = true);
 ~~~
+
+**Example:**
+
+~~~ .php
+Route::set('foo/bar', function() {
+    View::get('foo/bar', [
+        'title' => 'Test Title',
+        'description' => 'Test description.'
+    ]);
+});
+~~~
+
+~~~ .php
+Route::set('foo/bar', function() {
+    echo View::get('foo/bar', [
+        'title' => 'Test Title',
+        'description' => 'Test description.'
+    ], false);
+});
+~~~
+
+Content of `foo.php`, `foo\bar.php` or any path defined by [`View::set()`][link:set] for the `foo/bar`:
+
+~~~ .html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><?php echo $lot['title']; ?></title>
+  </head>
+  <body>
+    <h1><?php echo $lot['title']; ?></h1>
+    <p><?php echo $lot['description']; ?></p>
+  </body>
+</html>
+~~~

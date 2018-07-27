@@ -8,7 +8,7 @@ To::YAML($in, $d = '  ', $safe = false, $dent = 0);
 ~~~
 
 ~~~ .php.xmp
-To::YAML($in, $d = '  ', $safe = false, $dent = 0); // alias
+To::yaml($in, $d = '  ', $safe = false, $dent = 0); // alias
 ~~~
 
 **Example:**

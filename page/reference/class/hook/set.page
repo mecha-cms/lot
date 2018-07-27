@@ -4,7 +4,7 @@ description: Set a hook.
 ...
 
 ~~~ .php.xmp
-Hook::set($id = null, $fn = null, $stack = null);
+Hook::set($id = null, $fn = null, $stack = null, $i = 100);
 ~~~
 
 **Example:**

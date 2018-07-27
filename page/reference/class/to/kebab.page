@@ -1,0 +1,14 @@
+---
+title: `$to::kebab()`
+description: Convert string input into `kebab-case`.
+...
+
+~~~ .php.xmp
+To::kebab($in, $a = true);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = To::kebab('foo bar baz');
+~~~

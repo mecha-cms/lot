@@ -4,7 +4,7 @@ description: Convert string input into `PascalCase`.
 ...
 
 ~~~ .php.xmp
-To::pascal($in);
+To::pascal($x, $a = false, $i = "");
 ~~~
 
 **Example:**

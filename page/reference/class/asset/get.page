@@ -22,6 +22,7 @@ $test_1 = [
     'path' => '.\www\lot\asset\css\style-2.css',
     'url' => '%{url}%/lot/asset/css/style-2.css',
     'id' => '.\www\lot\asset\css\style-2.css',
+    'data' => [],
     'stack' => 10
 ];
 

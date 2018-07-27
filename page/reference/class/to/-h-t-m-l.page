@@ -8,7 +8,7 @@ To::HTML($in);
 ~~~
 
 ~~~ .php.xmp
-To::HTML($in); // alias
+To::html($in); // alias
 ~~~
 
 **Example:**

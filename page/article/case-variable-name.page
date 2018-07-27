@@ -11,7 +11,7 @@ description: Mecha has some disciplines in naming their variables.
 $site
 ~~~
 
-User variable style should be prefixed with a `_` to prevent overwriting the reserved variables:
+User variable style should be prefixed by a `_` to prevent collision with the reserved variables:
 
 ~~~ .php
 $_site
@@ -34,25 +34,9 @@ Another way to safely writing variables is by _namespace_-ing your variable name
 $my_site
 ~~~
 
-### Back-End
-
-Back-end variables, as you can see them pretty much inside the source code of [Panel][link:../reference/extension/panel] extension, are prefixed with double `_` character:
-
-~~~ .php
-$__site
-~~~
-
-### Front-End
-
-Currently not specified. You can use this style if you want:
-
-~~~ .php
-$site__
-~~~
-
 ### Others
 
-Common variable names using a single letter with their meaning:
+Common variable names using a letter with their meaning:
 
  - `$a` → [array][link:../reference/class/anemon] container
  - `$b` → base

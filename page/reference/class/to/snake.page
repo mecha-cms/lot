@@ -4,7 +4,7 @@ description: Convert string input into `snake_case`.
 ...
 
 ~~~ .php.xmp
-To::snake($in);
+To::snake($in, $a = true);
 ~~~
 
 **Example:**
