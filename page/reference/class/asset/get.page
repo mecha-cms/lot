@@ -20,7 +20,7 @@ Result:
 ~~~ .php
 $test_1 = [
     'path' => '.\www\lot\asset\css\style-2.css',
-    'url' => '%{url}%/lot/asset/css/style-2.css',
+    'url' => 'http://127.0.0.1/lot/asset/css/style-2.css',
     'id' => '.\www\lot\asset\css\style-2.css',
     'data' => [],
     'stack' => 10

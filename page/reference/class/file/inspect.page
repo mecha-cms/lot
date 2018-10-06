@@ -21,7 +21,7 @@ Result:
 $test_1 = [
     'path' => '.\path\to\file.txt',
     'name' => 'file',
-    'url' => '%{url}%/path/to/file.txt',
+    'url' => 'http://127.0.0.1/path/to/file.txt',
     'extension' => 'txt',
     'update' => '2014-06-21 20:05:17',
     'size' => '20.62 KB',
@@ -35,7 +35,7 @@ $test_1 = [
     '_size' => 21114
 ];
 
-$test_2 = '%{url}%/path/to/file.txt';
+$test_2 = 'http://127.0.0.1/path/to/file.txt';
 
 $test_3 = false;
 ~~~

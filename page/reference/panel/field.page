@@ -18,7 +18,7 @@ Config::set('panel.f.{$tab}', [ … ]);
     ],
     'url' => [
         'type' => 'url',
-        'value' => '%{url}%',
+        'value' => 'http://127.0.0.1',
         …
     ],
     …

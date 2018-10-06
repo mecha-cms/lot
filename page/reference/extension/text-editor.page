@@ -1,7 +1,8 @@
 ---
 title: Text Editor
 description: A text selection range API written in pure JavaScript, for modern browsers.
-icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARSSURBVHhe7Z2/ixx1GMY3hcGIxEZRML2QQouAWtzNJEGDRXI7Y+5qf0FQtIpiY6Eg5B+wUCRtEO28mxkDghFrS4PENArGSmOhJwjB8/uuD8l7m2d358y+k+L7fODDHbvP+50vz+7Nzl6xOxJCCCGEEHeDompvlHV7Pf38uaibq2XVfpV+flzWzVtF3T575OTmfYjuGZtdrboTxbh9e7Lmf2tftWPhmDcQzZdUxM5cq/bvVNrXq3X7+jMbXz6AsZlYJs28kWa/sdnb1psSY/nCSpnjdnowPihPbj6I8ZvYbZP7qvYvMjdTjOcLK2WR6dT0eyr6VSwxKqvutcltJLtILJEvrJS+rtbNhaJqPmH39RXbyBdWypBiG/nCShlSbCNfWClDim3kjV06Hj/1+cPH6q0ninprLZ3X3ymrpt3rFc0Mt20tW9PWXjndPW7H6nNJmz3lxqX77fo/FfgLKXaR11LpZ2wNLCf+L/ZsTe9aL5KSZ9hsPvlcdxDjYhmUL1y6NxV7mRd+y/Ss/+7wxmf7MSaWydFxe5qVvstxWyEuls3k/zysdK/O+XEcOfPtPbR052i0sw9xEQEr3YuYiIKV7kVMRMFK9yImomClexETUbDSvYiJKFjpXsREFKx0L2IiCla6FzERBSvdi5iIgpXuRUxEwUr3IiaiYKV7ERNRsNK9iIkoWOlexEQUrHQvYiIKVroXMREFK92LmIiCle5FTETBSvciJqJgpXsRE1Gw0r2IiShY6V7ERBSsdC9ioi+sxCHFNvKFlTKk2Ea+sFKGFNvIF1bKkGIb+cJKGVJsI19YKUOKbeQLK2VIsY18YaUMKbYh+sJK9CImomClexETUbDSvYiJKFjpXsREFKx0L2IiCla6FzERBSvdi5iIgpXuRUxEwUr3IiaiYKV7ERNRsNK9iIkoWOlexEQUrHQvYiIKVroXMREFK92LmIiCle5FTETBSvciJqJgpXsRE1Gw0r2IiShY6V7ERBSsdC9iIgpWuhcxEQUr3YuYiGFnHyvdq4+tDMQ+/ZyV7i3G3SnExTIp6+5QKvjadOHElOkOYUwsg+PrW4/2+eDuWzaXbQbj4k5YWesOl1X7Ey96tkXV/mizWEbslafXPz1QPN++WdTNn6zgPhZV80d6IM7aWlhWTDP5XoCN5pFja188dnSteSoV91LyfFG3v/oy70Ssdb4cNy/aMexYdkw7NraRL9NlDS22kS+slD34T3rBTdL7eolt5AsrpY/2Tair4+YV035nmT5iG/nCSlmkvTDb15lgCXuPsJ5u357O9RFL5AsrZZ7p2f69fd8Yxm9it6XT0RU2M0+M5wsrhWnP+nQ18/68K5fJpWvdnEv53n8NGM0XVspumyvpev7dlfXuIYwsxLJp9r30Bu6H29fbLUbyBUVct2t1+w6wdIq5mJ7FHxZV9/Iy3snaGvZCnR6Mj2ztyb80quY3O6YeACGEEEKIu8No9C/KFRxJEw3QtAAAAABJRU5ErkJggg==
+icon: A rich text editor that is designed to accept limited set of inline HTML tags only.
+icon: M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z
 
 dependency:
   extension:
@@ -12,6 +13,6 @@ dependency:
 
 This is the official text editor extension for Mecha.
 
-Go to the site’s state editor then change the value of _Editor_ field in the _Site › Page_ group with _Text Editor_.
+Go to the site’s state editor then change the value of _Editor_ field with _Text Editor_.
 
 **Project:** <https://tovic.github.io/text-editor>

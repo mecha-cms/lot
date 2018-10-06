@@ -18,9 +18,9 @@ description: Common URL pattern used by this extension.
 Examples:
 
 ~~~ .txt
-%{url}%/panel/::s::/asset/css → create a file in `lot\asset\css`
-%{url}%/panel/::g::/asset/css/a.css → edit `a.css` file that is stored in `lot\asset\css` folder
-%{url}%/panel/::r::/asset/css/a.css → delete `a.css` file that is stored in `lot\asset\css` folder
+http://127.0.0.1/panel/::s::/asset/css → create a file in `lot\asset\css`
+http://127.0.0.1/panel/::g::/asset/css/a.css → edit `a.css` file that is stored in `lot\asset\css` folder
+http://127.0.0.1/panel/::r::/asset/css/a.css → delete `a.css` file that is stored in `lot\asset\css` folder
 ~~~
 
 ### Query
@@ -36,8 +36,8 @@ Name | Description
 Examples:
 
 ~~~ .txt
-%{url}%/panel/::s::/page?f[title]=Page%20Title&f[content]=Page%20content.
-%{url}%/panel/::g::/page?view=file
-%{url}%/panel/::g::/page?m[t:v]=css
-%{url}%/panel/::g::/asset?layout=0
+http://127.0.0.1/panel/::s::/page?f[title]=Page%20Title&f[content]=Page%20content.
+http://127.0.0.1/panel/::g::/page?view=file
+http://127.0.0.1/panel/::g::/page?m[t:v]=css
+http://127.0.0.1/panel/::g::/asset?layout=0
 ~~~

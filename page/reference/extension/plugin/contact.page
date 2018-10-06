@@ -26,7 +26,7 @@ Add this block to the page where you want the contact form to be visible:
 Set a `kick` attribute to determine custom destination page once the message successfully sent:
 
 ~~~ .txt
-[‌[‌contact kick="%{url}%/thank-you"‌]‌]
+[‌[‌contact kick="http://127.0.0.1/thank-you"‌]‌]
 ~~~
 
 Set a `topic` attribute to disallow users to set their own topic in the contact form. The value accept string or array of topic:

@@ -5,8 +5,8 @@ description: Redirect user to custom destination after logged in.
 
 ### Method 1: URL
 
- - ` %{url}%/panel/::g::/enter?f[kick]=panel/::g::/page ` → go to the _Page_ manager on enter (default)
- - ` %{url}%/panel/::g::/enter?f[kick]=panel/::g::/state ` → go to the _State_ manager on enter
+ - ` http://127.0.0.1/panel/::g::/enter?f[kick]=panel/::g::/page ` → go to the _Page_ manager on enter (default)
+ - ` http://127.0.0.1/panel/::g::/enter?f[kick]=panel/::g::/state ` → go to the _State_ manager on enter
 
 ### Method 2: Hook
 

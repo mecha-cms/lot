@@ -1,7 +1,7 @@
 ---
 title: Type
 description: Custom content types.
-icon: data:image/png;base64,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
+icon: M5,9.5L7.5,14H2.5L5,9.5M3,4H7V8H3V4M5,20A2,2 0 0,0 7,18A2,2 0 0,0 5,16A2,2 0 0,0 3,18A2,2 0 0,0 5,20M9,5V7H21V5H9M9,19H21V17H9V19M9,13H21V11H9V13Z
 
 dependency:
   extension:
@@ -36,8 +36,8 @@ title: Non-Stop Nyan Cat!
 type: Audio
 ...
 
-%{url}%/lot/asset/ogg/nyan.ogg
-%{url}%/lot/asset/mp3/nyan.mp3
+http://127.0.0.1/lot/asset/ogg/nyan.ogg
+http://127.0.0.1/lot/asset/mp3/nyan.mp3
 ~~~
 
 ##### Link
@@ -50,8 +50,8 @@ title: Non-Stop Nyan Cat!
 type: Audio
 ...
 
-<a href="%{url}%/lot/asset/ogg/nyan.ogg">Nyan OGG</a>
-<a href="%{url}%/lot/asset/mp3/nyan.mp3">Nyan MP3</a>
+<a href="http://127.0.0.1/lot/asset/ogg/nyan.ogg">Nyan OGG</a>
+<a href="http://127.0.0.1/lot/asset/mp3/nyan.mp3">Nyan MP3</a>
 ~~~
 
 ##### HTML
@@ -65,18 +65,59 @@ type: Audio
 ...
 
 <audio controls>
-  <source src="%{url}%/lot/asset/ogg/nyan.ogg" type="audio/ogg">
-  <source src="%{url}%/lot/asset/mp3/nyan.mp3" type="audio/mpeg">
+  <source src="http://127.0.0.1/lot/asset/ogg/nyan.ogg" type="audio/ogg">
+  <source src="http://127.0.0.1/lot/asset/mp3/nyan.mp3" type="audio/mpeg">
 </audio>
 ~~~
 
 #### Comic
 
-TODO
+Like the _Image_ type, but it has a pagination.
+
+##### Basic
+
+~~~ .yaml
+---
+title: Garfield & Friends
+type: Comic
+...
+
+http://127.0.0.1/lot/asset/png/garfield/1.png
+http://127.0.0.1/lot/asset/png/garfield/2.png
+http://127.0.0.1/lot/asset/png/garfield/3.png
+~~~
+
+##### HTML
+
+Use an `<img>` tag to store the image URL in its `src` attribute or use an `<a>` tag to store the image URL in its `href` attribute, so that when someday you decided to remove this extension, the result will fall back to the raw HTML markup gracefully.
+
+Link text will becomes the image `alt` value.
+
+~~~ .yaml
+---
+title: Garfield & Friends
+type: Comic
+...
+
+<img alt="1" src="http://127.0.0.1/lot/asset/png/people/1.png">
+<img alt="2" src="http://127.0.0.1/lot/asset/png/people/2.png">
+<img alt="3" src="http://127.0.0.1/lot/asset/png/people/3.png">
+~~~
+
+~~~ .yaml
+---
+title: Garfield & Friends
+type: Comic
+...
+
+<a href="http://127.0.0.1/lot/asset/png/people/1.png">1</a>
+<a href="http://127.0.0.1/lot/asset/png/people/2.png">2</a>
+<a href="http://127.0.0.1/lot/asset/png/people/3.png">3</a>
+~~~
 
 #### Gallery
 
-Like the _Image_ type, but it will show as multiple images.
+Like the _Comic_ type, but it will show as multiple images.
 
 ##### Basic
 
@@ -86,9 +127,9 @@ title: People
 type: Gallery
 ...
 
-%{url}%/lot/asset/png/people/1.png
-%{url}%/lot/asset/png/people/2.png
-%{url}%/lot/asset/png/people/3.png
+http://127.0.0.1/lot/asset/png/people/1.png
+http://127.0.0.1/lot/asset/png/people/2.png
+http://127.0.0.1/lot/asset/png/people/3.png
 ~~~
 
 ##### HTML
@@ -103,9 +144,9 @@ title: People
 type: Gallery
 ...
 
-<img alt="1" src="%{url}%/lot/asset/png/people/1.png">
-<img alt="2" src="%{url}%/lot/asset/png/people/2.png">
-<img alt="3" src="%{url}%/lot/asset/png/people/3.png">
+<img alt="1" src="http://127.0.0.1/lot/asset/png/people/1.png">
+<img alt="2" src="http://127.0.0.1/lot/asset/png/people/2.png">
+<img alt="3" src="http://127.0.0.1/lot/asset/png/people/3.png">
 ~~~
 
 ~~~ .yaml
@@ -114,9 +155,9 @@ title: People
 type: Gallery
 ...
 
-<a href="%{url}%/lot/asset/png/people/1.png">1</a>
-<a href="%{url}%/lot/asset/png/people/2.png">2</a>
-<a href="%{url}%/lot/asset/png/people/3.png">3</a>
+<a href="http://127.0.0.1/lot/asset/png/people/1.png">1</a>
+<a href="http://127.0.0.1/lot/asset/png/people/2.png">2</a>
+<a href="http://127.0.0.1/lot/asset/png/people/3.png">3</a>
 ~~~
 
 #### Image
@@ -131,14 +172,14 @@ title: Autumn
 type: Image
 ...
 
-%{url}%/lot/asset/png/autumn.png
+http://127.0.0.1/lot/asset/png/autumn.png
 ~~~
 
 Result:
 
 ~~~ .html
 <figure class="image">
-  <img alt="autumn" src="%{url}%/lot/asset/png/autumn.png">
+  <img alt="autumn" src="http://127.0.0.1/lot/asset/png/autumn.png">
 </figure>
 ~~~
 
@@ -153,7 +194,7 @@ description: There goes some description about this image.
 type: Image
 ...
 
-%{url}%/lot/asset/png/autumn.png
+http://127.0.0.1/lot/asset/png/autumn.png
 ~~~
 
 ##### HTML
@@ -168,7 +209,7 @@ title: Autumn
 type: Image
 ...
 
-<img alt="autumn" src="%{url}%/lot/asset/png/autumn.png">
+<img alt="autumn" src="http://127.0.0.1/lot/asset/png/autumn.png">
 ~~~
 
 ~~~ .yaml
@@ -177,7 +218,7 @@ title: Autumn
 type: Image
 ...
 
-<a href="%{url}%/lot/asset/png/autumn.png">autumn</a>
+<a href="http://127.0.0.1/lot/asset/png/autumn.png">autumn</a>
 ~~~
 
 #### Link
@@ -269,12 +310,12 @@ Set video URL as the page content and put the poster image in the `image` proper
 ---
 title: Non-Stop Nyan Cat!
 type: Video
-image: %{url}%/lot/asset/jpg/nyan.jpg
+image: http://127.0.0.1/lot/asset/jpg/nyan.jpg
 ...
 
-%{url}%/lot/asset/mp4/nyan.mp4
-%{url}%/lot/asset/webm/nyan.webm
-%{url}%/lot/asset/ogv/nyan.ogv
+http://127.0.0.1/lot/asset/mp4/nyan.mp4
+http://127.0.0.1/lot/asset/webm/nyan.webm
+http://127.0.0.1/lot/asset/ogv/nyan.ogv
 ~~~
 
 ##### Link
@@ -285,12 +326,12 @@ Set video link as the page content.
 ---
 title: Non-Stop Nyan Cat!
 type: Video
-image: %{url}%/lot/asset/jpg/nyan.jpg
+image: http://127.0.0.1/lot/asset/jpg/nyan.jpg
 ...
 
-<a href="%{url}%/lot/asset/mp4/nyan.mp4">Nyan MP4</a>
-<a href="%{url}%/lot/asset/webm/nyan.webm">Nyan WebM</a>
-<a href="%{url}%/lot/asset/ogv/nyan.ogv">Nyan OGG</a>
+<a href="http://127.0.0.1/lot/asset/mp4/nyan.mp4">Nyan MP4</a>
+<a href="http://127.0.0.1/lot/asset/webm/nyan.webm">Nyan WebM</a>
+<a href="http://127.0.0.1/lot/asset/ogv/nyan.ogv">Nyan OGG</a>
 ~~~
 
 ##### HTML
@@ -303,9 +344,9 @@ title: Non-Stop Nyan Cat!
 type: Video
 ...
 
-<video poster="%{url}%/lot/asset/jpg/nyan.jpg" controls>
-  <source src="%{url}%/lot/asset/mp4/nyan.mp4" type="video/mp4">
-  <source src="%{url}%/lot/asset/webm/nyan.webm" type="video/webm">
-  <source src="%{url}%/lot/asset/ogv/nyan.ogv" type="video/ogg">
+<video poster="http://127.0.0.1/lot/asset/jpg/nyan.jpg" controls>
+  <source src="http://127.0.0.1/lot/asset/mp4/nyan.mp4" type="video/mp4">
+  <source src="http://127.0.0.1/lot/asset/webm/nyan.webm" type="video/webm">
+  <source src="http://127.0.0.1/lot/asset/ogv/nyan.ogv" type="video/ogg">
 </video>
 ~~~

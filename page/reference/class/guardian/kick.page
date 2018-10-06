@@ -9,7 +9,7 @@ Guardian::kick($path = "");
 
 **Example:**
 
-Redirect to ` %{url}%/foo/bar `:
+Redirect to ` http://127.0.0.1/foo/bar `:
 
 ~~~ .php
 Guardian::kick('foo/bar');

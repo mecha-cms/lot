@@ -11,7 +11,7 @@ dependency:
 
 Support these block patterns:
 
- - `[‌[‌url‌]‌]` → `%{url}%/a`
+ - `[‌[‌url‌]‌]` → `http://127.0.0.1/a`
  - `[‌[‌url.scheme]‌]` → `http`
  - `[‌[‌url.protocol‌]‌]` → `http://`
  - `[‌[‌url.host‌]‌]` → `localhost`
@@ -20,4 +20,4 @@ Support these block patterns:
  - `[‌[‌url.url‌]‌]` → same as `[‌[‌url‌]‌]`
  - `[‌[‌url.path‌]‌]` → `foo/bar`
  - `[‌[‌url.query‌]‌]` → `?foo=bar&baz=qux`
- - `[‌[‌url.current‌]‌]` → `%{url}%/a/foo/bar`
+ - `[‌[‌url.current‌]‌]` → `http://127.0.0.1/a/foo/bar`

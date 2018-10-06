@@ -43,7 +43,7 @@ Then show the download link this way in `my-page.page`:
 Currently, there is no such native way to upload the files directly from the page editor, but you can always change the page manager view into a generic file manager by adding a page offset to the current page editor URL and then append `?view=file` query string to the URL:
 
 ~~~ .txt
-%{url}%/panel/::g::/page/my-page → %{url}%/panel/::g::/page/my-page/1?view=file
+http://127.0.0.1/panel/::g::/page/my-page → http://127.0.0.1/panel/::g::/page/my-page/1?view=file
 ~~~
 
 From there you should be able to access the basic file uploader.

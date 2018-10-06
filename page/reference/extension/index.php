@@ -20,9 +20,9 @@ Hook::set('*.content', function($content, $lot) {
     if (!isset($lot['dependency']) || $lot['dependency'] !== false) {
         $s = "";
         if (!empty($releases[$k][$N])) {
-            $s .= '[Download Version ' . $releases[$k][$N] . '](%{url}%/r/git:mecha-cms/' . $NS . '.' . $N . '/archive/v' . $releases[$k][$N] . '.zip "' . $j . ' Downloads") {.button} ';
+            $s .= '[Download Version ' . $releases[$k][$N] . '](http://127.0.0.1/r/git:mecha-cms/' . $NS . '.' . $N . '/archive/v' . $releases[$k][$N] . '.zip "' . $j . ' Downloads") {.button} ';
         }
-        $s .= '[Download Development Version](%{url}%/r/git:mecha-cms/' . $NS . '.' . $N . '/archive/master.zip "' . $i . ' Downloads") {.button}';
+        $s .= '[Download Development Version](http://127.0.0.1/r/git:mecha-cms/' . $NS . '.' . $N . '/archive/master.zip "' . $i . ' Downloads") {.button}';
         $content = $s . N . N . $content;
     }
     if (!empty($lot['dependency']) && $lot['dependency'] !== true) {

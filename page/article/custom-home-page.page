@@ -15,4 +15,4 @@ The easiest way to replace the default home page appearance is to use the built-
 ]
 ~~~
 
-You should be automatically redirected to the home page when you go to `%{url}%/index`.
+You should be automatically redirected to the home page when you go to `http://127.0.0.1/index`.

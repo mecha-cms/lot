@@ -10,5 +10,5 @@ To::path($in);
 **Example:**
 
 ~~~ .php
-$test = To::path('%{url}%/path/to/file.html');
+$test = To::path('http://127.0.0.1/path/to/file.html');
 ~~~

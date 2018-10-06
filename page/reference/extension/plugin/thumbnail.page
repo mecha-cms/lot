@@ -17,9 +17,9 @@ dependency:
 ### Example
 
 ~~~ .txt
-%{url}%/t/200/path/to/image.jpg
-%{url}%/t/200/200/path/to/image.jpg
-%{url}%/t/30/60/200/400/path/to/image.jpg
+http://127.0.0.1/t/200/path/to/image.jpg
+http://127.0.0.1/t/200/200/path/to/image.jpg
+http://127.0.0.1/t/30/60/200/400/path/to/image.jpg
 ~~~
 
 ### Description
@@ -43,7 +43,7 @@ To::thumbnail($in, $x, $y, $width, $height);
 **Example:**
 
 ~~~ .html
-<?php $path = '%{url}%/lot/asset/jpg/city.jpg'; ?>
+<?php $path = 'http://127.0.0.1/lot/asset/jpg/city.jpg'; ?>
 
 <img alt="" src="<?php echo To::thumbnail($path, 50); ?>">
 <img alt="" src="<?php echo To::thumbnail($path, 50, 50); ?>">

@@ -1,7 +1,7 @@
 ---
 title: Comment
-description: Built-in commenting system. Use this extension to enable comment feature on any page you want.
-icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMdSURBVHhe7Z0/j0xhHIVHJESj0tFqNLo1d6ZQSdSS+QAS7jRW+Ag6rco3kNgSee9EJxF/EvGvUSplG4VoJGLdy1m/F4fdsXNeyb3nSZ7Gzux57zO7ZqK4RsYYY4wxxhhjjDHG7MTsxMaBi1VzuZ6kp/MqfZxPmq1B2V1z1TzpGnQtkKUM8/Hdo3WVXtKDDdGqedE1QR4t62fTwXb09W+HGLjdD2TXBpl0dL9y7AC2fREmaR2ZdHR/77Fx2/0WNI+RSccg33B3a9V8QCYddNj+EJl0sFEbIpMONmpDZNLBRm2ITDrYqA2RSQcbtSEy6WCjNkQmHWzUhsikg43aEJl0sFEbIpMONpr76uFmr2XXnItMOthoLjt0n2TXnItMOthoLjt0n2TXnItMOthoLjt0n2TXnItMOtioDZFJBxu1ITLpYKM2RCYdbNSGyKSDjdoQmXSwURsikw42mss+uvVJds25yKSDjeayQ/dJds25yKSDjeayQ/dJds25yKSDjeayQ/dJds25yKSDjdoQmXSwURsikw42akNk0sFGbYhMOtioDZFJBxu1ITLpYKO57KNbSdmZSopMOthoLotSUnamkiKTDjaay6KUlJ2ppMikg43msiglZWcqKTLpYKM2RCYdbNSGyKSDjdoQmXSwURsikw42akNk0sFGbYhMOtioDZFJBxu1ITLpYKM2RCYdbNSGyKSDjVrom3X8X8vcroYMWzhdXEImHXTYfrtvXJGb99HxgVtPmufFbtrHDjBI2zfceZUedX/tFL1tJT3MUqYbo9HWPnw7syw86u5sPyVcw7cx/woLu7PpSz1OV/AtzF7ggf9i1Xyuq8V5PN3sFRr5z36qp805PNWsAhKZ291fdLo4g6eZVUFj/2L7Zvu+/Wxc4SlmlbDguW34d+1P/kk83KwaFn3bepLezk/dP46HGgUs/HfTmwtr6RgeZlSw+HWVntWn7xzBQ4wS8gI8WF9Lh/Flo+bn+One1fHtQ/iSKcF2/PYN91bx/7zG4AWo0s3ZbGM//siUpH0Brvufk40xxhhjjDHGGGOMWZbR6CvL66KIrCkasQAAAABJRU5ErkJggg==
+description: Built-in commenting system.
+icon: M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 22,4V16A2,2 0 0,1 20,18H13.9L10.2,21.71C10,21.9 9.75,22 9.5,22V22H9M5,5V7H19V5H5M5,9V11H13V9H5M5,13V15H15V13H5Z
 
 dependency:
   extension:
@@ -21,7 +21,7 @@ Edit the `page.php` file in your active shield folder then put this snippet afte
 
 ### Constant
 
-This extension automatically adds a `comment` folder within the `lot` folder, which will also automatically set a new constant based on the folder name with a value of the folder path:
+This extension will add a folder called `comment` in the `.\lot` folder, which will also automatically add a constant named `COMMENT`.
 
 ~~~ .php
 COMMENT
@@ -35,8 +35,8 @@ We now have a `Comment` class which works the same as the [`Page`][link:../class
 Comment($input = null, $lot = [], $NS = ['*', 'comment']);
 ~~~
 
-Example:
+**Example:**
 
 ~~~ .php
-$comment = new Comment('.\www\lot\comment\article\test-page\2014-05-05-09-09-32.page');
+$comment = new Comment('.\lot\comment\article\test-page\2014-05-05-09-09-32.page');
 ~~~

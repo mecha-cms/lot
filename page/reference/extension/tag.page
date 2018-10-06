@@ -1,19 +1,18 @@
 ---
 title: Tag
 description: Page tags.
-icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVMSURBVHhe7ZxNbxtVFIYvFYVSxKeQUAUk8TiiiscG0dDSdkEiViBVRVDbk6oS3XXFhn5QvvsX6AYhsWGJ+iPYRIINEgsECGI7ohABJaUpiipKmzucY86YwT40djz3Y+7cR3qVSB3nnvu8uRM7tSI8Ho/H4/F4PB6Px2ZkVDoZR0GsMrIZrMM6X8tm6bysl2q0tEeH/P5AGRtQxAfy+ek7aYxiYkJ+OrD+p3GjcgeNUyxMy0+CJ4FGKg62yMfIKLgJt6QqjeY+NslPAqfgfRrPbWyUj4G5vqIR3UWn/H9uK6W/uH/jArP9QWO6iS75IL4Dax2K5+Zuj8+JbXFUnsfvbu7a/tCo7qFPfuknWX/0QVq2R3x8cscwJdDlbqFLPkY2gqO07ACyPjXHPSYdutQddMrHyGMTu2jpAfB2tNnPBLrUDXTL76YRTNDyA8QnZrfjrx/Yx1Ho0vxjRD4E1n2VRhhALkwd5h6TDl2ab+CYn+I2pylrsl6eplF6xEcffwjmajHX/yd0eX4xLL8bmOEqnkD4obtbRuXHZLP8Ctx6lrlr+0PbyCc2yB83tJX84YJ8DG0nX7giH9MKxTXId+1QfNiuiH20RXtxST6mXRW9tKpCwsePL+4Xd9F27cI1+Zh0Ab2E4rOVWbGTtm0HLsrHsAVA4DR8RFs3j6vyMZx8DBSw8f2MeIoUmMNl+RhOfi+hOE8azOC6fAwrngKn4BtSoZ8iyMdw4pPA09N10qGXosjHcOLTISX6KJJ8DCc9HdKih6LJx3DS0yE16jH1+3zT4aSnQ3rUIheCl2QUSG5A18NJT4cUqUMem74Xbj2/ccMVIZz0dEiTOmQ0dZobrAhZnb9vjZOeDmlSB9z7F7nhXM/q3ObyMaRJHVDAJW5AlwPyWdlcSJM6oIAb3JCuZhT5GNKkDtkMVrhBXcyo8jGkSR0w2IX+QV3MVuRjSJM64qjU4AZ2KVuVjyFN6ui+fzIKvuQGdyHjyMeQJrXgO8ughCvcBvKcceVjSJF6ZFQ+CK+Ir3IbyWOykI8hPXpwpYSs5GNIjT7yXkKW8jGkRS9YAmxmrX9ztidr+RhSop+8laBCPoZ0mCEvJaiSjyEV5rC9BJXyMaTBLJefe+DsRmOKFWAyq/Nq5WNIgTm+3S3uaYfi15V9O2KbStAhH0MazNGuiNeSYWwpQZd8yEnSYI5WVSymhzJdQqHkI3D7udQ/nKkSNMo/Rds3DwxzvW+4bnSXUEj5CJyAH5khu9FVgi75nVCcpm3bQysUF7hhk6zsVVuC6uf5SayUj8AJOMINnI6qEnTJh2+yM7Rd+4AnwrdBCV9wg6eTdQlefoqlipiGQX/nNpBOViV4+QxLVXEATsKm7yYbtwSN8l+nreWH5ZrYr7IEbfKr4ixtKX+MVEJ9yBKaIP9ZL39oOjPimWFKuLhne/zni4/w0ik3j0zGPx/YyT4+6zghP2HYEto1Ef9y8O54/YWH4xsvT+Df9ulKv3ZoV/cF1vIT2/jHZZ83aHR3wL8uMlQJ5vMmjeweOSjBXfkJUMBeS0twX36CdSWE4i0arTjAs4ynrSihiPITjJcQirdplOKCJcBL/SusIJXx8v9Fdwmw1ju0tCehVROzOkrw8m+B6hLgpL1LS3n+Dyph0/9PGDVe/ghkXQLIf4++tGdYlmpiTxYlePljMG4JIP8cfSnPVumWUBWXOcG3ipefIVgCvHAaeNsjFxAv4dT4p5pZ05kRkyD2c056EjwpcM0CPcSTNfi+o05FHAbZn4DsH+DjdTwZ8PkiiD+z/KS4ny71eDwej8fj8ViKEH8DKV7ZB0fL3+EAAAAASUVORK5CYII=
+icon: M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z
 
 dependency:
   extension:
     - page
-    - shield
 ...
 
-This extension enables tags feature on any pages by utilizing the `kind` property value as the tag ID. This extension also adds a new route definition like ` %{url}%/blog/tag/slug ` on every pages to make it possible to list all pages in the current folder by tags.
+This extension activates the tagging feature by utilizing the `kind` property on the page. This extension will also add several new routes such as `http://127.0.0.1/blog/tag/slug` on every page to allow users to list all pages in the current folder by a tag.
 
 ### Constant
 
-This extension automatically adds a `tag` folder within the `lot` folder, which will also automatically set a new constant based on the folder name with a value of the folder path:
+This extension will add a folder called `tag` in the `.\lot` folder, which will also automatically add a constant named `TAG`.
 
 ~~~ .php
 TAG
@@ -29,7 +28,7 @@ There are some methods added to the default [classes][link:../class]:
 Get::tags($folder = TAG, …, $sort = [1, 'id'], …);
 ~~~
 
-Arguments are the same with [`Get::pages()`][link:../class/get/pages], except the `$folder` parameter that uses `TAG` [constant][link:../constant] value by default, and the `$sort` parameter that uses `id` as the default sort key instead of `time`.
+Function arguments are the same as function [`Get::pages()`][link:../class/get/pages], except the `$folder` parameter that uses `TAG` [constant][link:../constant] value by default, and the `$sort` parameter that uses `id` as the default sort key instead of `time`.
 
 #### From
 
@@ -49,13 +48,13 @@ Get tag slug from the tag ID.
 
 ### Working with Tags
 
-[Panel][link:panel] extension can help you to automate everything from the start. But, if you have to, you can still make this extension works without any _backend_ extensions at all. It is because the panel extension was created only to convert your generic files and folders interface into a rich graphical user interface. Just like a comparison between _Command Prompt_ appearance to the desktop _Windows_ appearance.
+[Panel][link:panel] extension can help you to automate everything. But, if you have to, you can still make this extension work without the GUI feature. As the panel extension was created just to convert the generic files and folders interface into a rich graphical user interface. Just like the comparison between _Command Prompt_ appearance to the desktop _Windows_ appearance.
 
-Before we get started, you need to understand about the way this extension works.
+Before we start, you need to understand how this extension works.
 
 #### Page Properties
 
-**First**, you have to know that this extension adds a `query` and `tags` property to the page if the page contains `kind` property that is not empty:
+**First**, know that this extension will add `query` and `tags` properties to the page only if the page contains `kind` property that is not empty.
 
 ~~~
 $page = [
@@ -69,21 +68,21 @@ $page = [
             …
             'id' => 1,
             'slug' => 'foo',
-            'url' => '%{url}%/tag/foo'
+            'url' => 'http://127.0.0.1/tag/foo'
         ],
         'bar' => [
             …
             …
             'id' => 2,
             'slug' => 'bar',
-            'url' => '%{url}%/tag/bar'
+            'url' => 'http://127.0.0.1/tag/bar'
         ],
         'baz' => [
             …
             …
             'id' => 3,
             'slug' => 'baz',
-            'url' => '%{url}%/tag/baz'
+            'url' => 'http://127.0.0.1/tag/baz'
         ]
     ]
 ];
@@ -95,7 +94,7 @@ $page = [
 
 #### File Structure
 
-**Second**, writing tag files is the same as writing regular page files. The only difference is that the `id` property must be stored in a separated file, not embedded in the page file content.
+**Second**, writing a tag file is no different than writing a page file. The only difference is that you must write the `id` property separately from the page.
 
 ~~~ .txt
 lot\
@@ -113,7 +112,7 @@ lot\
 
 #### File Content
 
-**Third**, make sure to set a unique integer number on each `id.data` files. These numbers, then will be used to connect between the `kind` data with the available tags.
+**Third**, make sure to specify a unique number for each `id.data` file. These numbers, then will be used to connect the tag file with the `kind` property on every page.
 
 Here’s an example of a tag file content:
 
@@ -128,7 +127,7 @@ Long description about this tag.
 
 #### Connections
 
-**Fourth**, to connect between tags and the current page, create a `kind.data` file in the related folder, contains list of tags ID written in a valid JSON format:
+**Fourth**, to connect between tags with the current page, create a `kind.data` file in the corresponding folder, containing a list of tag’s ID written in a valid JSON format:
 
 ~~~ .txt
 lot\
@@ -144,7 +143,7 @@ Example content of `kind.data` file:
 [1,2,3]
 ~~~
 
-You can also embed the `kind` property to the page header, but this way is a little bit [slower][link:../../article/migration] to be parsed than the separated file version:
+You can actually insert the `kind` property on the page header, but this method is a [little inefficient][link:../../article/migration] in terms of performance:
 
 ~~~ .yaml
 ---
@@ -158,7 +157,7 @@ kind: [1,2,3]
 Page content goes here.
 ~~~
 
-#### Tags Listing
+#### Tags List
 
 ~~~ .php
 echo implode(', ', $page->query);
@@ -182,11 +181,11 @@ echo implode(', ', $tags);
 These page conditional statements are available:
 
  - `$site->has('tags')` → Return the `$page->kind` data from the current page.
- - `$site->is('tags')` → Return list of tags ID found in the current results.
+ - `$site->is('tags')` → Return list of tag’s ID found in the current results.
 
 ### Class
 
-These HTML classes will be added automatically if your `<html>` element has `class` attribute:
+These HTML classes will be added to the `<html>` element that has a `class` attribute:
 
  - `has-tags` → Will be added if current page has at least one tag.
  - `is-tags` → Will be added if there are pages to load in the tags page.

@@ -1,16 +1,19 @@
 ---
 title: Page
-description: This extension enables basic features of a website by utilizing the structure of the page files placement in the `lot\page` folder. This extension also adds some useful properties to the global `$site` variable.
-icon: data:image/png;base64,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
+description: Convert file and folder structure into web pages.
+icon: M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V7.5L21,13V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V13L12,8.5V6.5C10.55,5.4 8.45,5 6.5,5V5Z"
+    shield: "M21,11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1L21,5V11M12,21C15.75,20 19,15.54 19,11.22V6.3L12,3.18V21Z
 
 dependency: false
 ...
+
+This extension activates the basic features of a website by utilizing the structure of the page file placement in the `.\lot\page` folder. This extension also adds some useful properties to the `$site` variable.
 
 ### Page
 
 What is a page?
 
-Page is a plain text file stored in the `lot\page` folder. The proper file name format for a page file is `*.page` where `*` is the page slug that accepts `a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `k`, `l`, `m`, `n`, `o`, `p`, `q`, `r`, `s`, `t`, `u`, `v`, `w`, `x`, `y`, `z`, `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9` and `-` characters.
+Page is a plain text file stored in the `.\lot\page` folder. The correct file name format for the page is composed of characters `a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `k`, `l`, `m`, `n`, `o`, `p`, `q`, `r`, `s`, `t`, `u`, `v`, `w`, `x`, `y`, `z`, `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9` and `-`. And the extension recommended for page files is `page`.
 
 ~~~ .txt
 lot\
@@ -20,11 +23,11 @@ lot\
      └── no-no-no.page
 ~~~
 
-`page` is the default file extension to tell the engine that the file is a page file; a _published_ page file. There are also some other page extensions that can be used:
+A `page` extension is the default extension for page files to state that the page is an active and publicly available page. There are several other page extensions that can also be used:
 
- - `page` → published, indexed
- - `archive` → published, not indexed (not visible in the page list, and optionally by the search engine)
- - `draft` → not published, not indexed, not visible.
+ - `page` → Pages with this extension mean that they are publicly available and will appear together in the page list.
+ - `archive` → Pages with this extension mean that they are publicly available but will not appear together in the page list.
+ - `draft` → Pages with this extension mean they are not publicly available and will not appear together in the public page list.
 
 If you have to translate them into numbers, then:
 
@@ -34,7 +37,7 @@ If you have to translate them into numbers, then:
 2: archive
 ~~~
 
-To read `lot\page\lorem-ipsum.page` from the site, visit ` %{url}%/lorem-ipsum `.
+To read `.\lot\page\lorem-ipsum.page` from the site, visit ` http://127.0.0.1/lorem-ipsum `.
 
 A minimal page file content consists of a text. Any text. With optional headers data written in a [YAML][link:../../article/y-a-m-l] syntax:
 
@@ -52,9 +55,9 @@ type: HTML
 <p>This page file is also valid.</p>
 ~~~
 
-Any missing header data will be replaced by [default data][link:../../article/case-page-data-default] generated by the engine. Let’s say that the default data will be loaded at first, then they will be overridden by the real data from the page file.
+Any missing header data be replaced by [default data][link:../../article/case-page-data-default] that is generated by the engine. Let’s say that the default data will be loaded first, then it will be overwritten by the header data from the page file.
 
-Most of the default data are just empty string or `null`, which can also be evaluated to `false` in most cases.
+Most of the default data is just an empty string or `null`, which can also be evaluated as boolean `false` in many cases.
 
 ~~~ .php
 [
@@ -65,9 +68,9 @@ Most of the default data are just empty string or `null`, which can also be eval
 ]
 ~~~
 
-> **Note:** Current file modification time will become the page date by default.
+> **Note:** Current file creation time will become the page time by default.
 
-A page file can also has connection with a folder that is located in the same directory level, by setting the folder name with the same name as the page name, without the file extension (the page state).
+A page file can also have connections with other files through a folder that has the same name as the page name.
 
 ~~~ .txt
 lot\
@@ -78,11 +81,11 @@ lot\
      └── no-no-no.page
 ~~~
 
-Users can store their miscellaneous data that has relationship with the page file in that folder with extension `data`. This is called **Data**.
+Users can store other data that has a relationship with the page file in that folder. If the file name ends with extension `data`, then this file will act as an external page property. This is called **Data**.
 
 ### Data
 
-**Data** has a higher priority than the page header. So, if you have a `title.data` stored in `lot\page\lorem-ipsum` folder, then the content of that file will overrides the `title` data that is embedded in the page header.
+**Data** has a higher priority than internal header data. So, if you have a `title.data` file in the `.\lot\page\lorem-ipsum` folder, then the contents of this file will overwrite the `title` property written in the page file.
 
 ~~~ .txt
 lot\
@@ -96,11 +99,11 @@ lot\
      └── no-no-no.page
 ~~~
 
-Users can also put other page files in that folder. This is called **Child**.
+Users can also add other page files in the folder. This, can then be named as **Child**.
 
 ### Child
 
-**Child** will overrides the item page view of current file that has relationship with the current folder —the `lot\lorem-ipsum.page` file— and will replace that item page view into an index page view, contain list of `lot\lorem-ipsum.page`’s page children.
+**Child** will overwrite the page view of the current file, and will change the page view to a list of page children.
 
 ~~~ .txt
 lot\
@@ -117,18 +120,18 @@ lot\
      └── no-no-no.page
 ~~~
 
-> **Note:** To tell the extension to disable the page listing on certain folder, put an empty page file named as `$.page` in that folder:
+> **Note:** To ask the engine to disable the page listing view in a particular folder, put an empty file with name `$.page` in the folder.
 >
 > ~~~ .txt
 > // before
-> lot\page\lorem-ipsum\
-> lot\page\lorem-ipsum.page
+> .\lot\page\lorem-ipsum\
+> .\lot\page\lorem-ipsum.page
 > ~~~
 >
 > ~~~ .txt
 > // after
-> lot\page\lorem-ipsum\$.page
-> lot\page\lorem-ipsum.page
+> .\lot\page\lorem-ipsum\$.page
+> .\lot\page\lorem-ipsum.page
 > ~~~
 
 And so on…
@@ -159,7 +162,7 @@ lot\
 
 ### Condition
 
-These page conditional statements are available to quickly indicate what type of page we are currently in:
+These page conditional statements are available to quickly determine the type of page we are currently in:
 
  - `$site->has('next')` → Return `true` if it is possible to go to the next page.
  - `$site->has('page')` → Return `1` if there is a page to load.

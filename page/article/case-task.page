@@ -1,0 +1,61 @@
+---
+title: Task File
+description: Disposable commands.
+...
+
+Mecha introduces `task.php` file functionality in the core version greater than `2.0.0`, which is just an includable file that functions exactly the same as the `index.php` file, but is intended to be used once. This file will be stored together with the `index.php` file and may or may not exist depending on the requirements. All `task.php` files will be loaded automatically as the `index.php` file. But, the special thing about this file is that it is always equipped with a command to destroy itself when a condition has been met.
+
+~~~ .php
+$f = LOT . DS . 'comment';
+if (!file_exists($f)) {
+    // create folder if not exists
+    mkdir($f, 0700, true);
+} else {
+    // self destruct
+    unlink(__FILE__);
+}
+~~~
+
+This file can be placed in any [extensions][link:../reference/extension], [plugins][link:../reference/extension/plugin], [shields][link:../reference/shield] and even in the core folder.
+
+~~~ .txt
+.\
+ ├── engine\
+ ├── lot\
+ │   ├── cache\
+ │   ├── extend\
+ │   │   ├── …
+ │   │   ├── comment\
+ │   │   │   ├── index.php
+ │   │   │   └── task.php ✔
+ │   │   └── plugin\
+ │   │       ├── engine\
+ │   │       └── lot\
+ │   │           └── worker\
+ │   │               ├── …
+ │   │               ├── example-plugin\
+ │   │               │   ├── index.php
+ │   │               │   └── task.php ✔
+ │   │               ├── art\
+ │   │               └── markdown\
+ │   ├── language\
+ │   │   ├── …
+ │   │   └── en-us.page
+ │   ├── page\
+ │   │   └── …
+ │   ├── shield\
+ │   │   ├── …
+ │   │   ├── example-shield\
+ │   │   │   ├── index.php
+ │   │   │   └── task.php ✔
+ │   │   └── document\
+ │   └── state\
+ │       └── config.php
+ ├── .htaccess
+ ├── favicon.ico
+ ├── index.php
+ ├── task.php ✔
+ └── LICENSE
+~~~
+
+In the future, I may add a `task.php` file to the root directory in other versions to perform automatic repair tasks before this file will eventually destroy itself. So that I don’t need to provide a step-by-step guide to users about how to fix here and there after some errors occured during core update.

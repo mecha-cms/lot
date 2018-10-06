@@ -1,7 +1,7 @@
 ---
 title: Rich Text Editor
 description: A rich text editor that is designed to accept limited set of inline HTML tags only.
-icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMrSURBVHhe7Zk9axRRFIYHxR0tYuMv8AsbG9lUQcEiIluoIC5CRAIaYhPQVBFjIYoQJZgUghu0EFMIqUJAmxTZZVEbW0v1B6idaJW53rPeA8tw92N2Z+bM3vs+8BYJYUOeJzuzMxMAAAAAAAAAgI9EL4IVmvkS5AmJV7VA0RAhZ9rlI0LO2OTzECFjusnnIUJG9COfhwgpk0Q+DxFSYhD5PEQYkmHk8xBhQNKQz0OEhKQpn4cIfZKFfB4i9CBL+TxE6EAe8nmIECNP+TxEMEjI53kfQVI+z9sIRZDP8y5CkeTzvIlQRPk85yMUWT7P2QijIJ/nXIRRkk9zKgDkCwL5gkC+IJAvCOQLAvmCQL4gkC8I5AsC+YJAviCQLwjkCwL5gkC+IJAvCOQLAvmCQL4gkC8I5AsC+YJAviCQLwjkCwL5gkC+IFEjPBxt7f1k+0OLOKfkE6oezqpGqEYhgnPyCS1/gwIUPYKb8lWwJ2qUfnKAokZwUj6hmvvK7fKLGMFZ+URULy3YAtCKEMFp+YQ+/Gzb5PMkI7gv/2NwIKqHf2zi2ycRwXn5hNoJJ23CbcszghfyCS12KS662/KI4I18Ql+AfbaJ7rYsI3glP9oeO6SP/7s2yb2WRQSv5BOqXqra5Pa7NCN4J5/QHz/XbGKTLI0IXson9AXYN5vUpBsmgrfyN2unxpuvj1uFDrJBIngrn3j++PTLyvUbSiqC1/KJxbuV7+emZpREBO/l0+3nqzNTuxQg7wjeyyferJarLD/PCJBvWH5wdiseIOsIkN/GnfkLP2wBaFlEgPw23q8fO3hxetoqnzdsBPN4c6P1oL8ZHjG/GhBrTybmbdLjSxIhaoR/6aFO68kaPd7UJ3nz60Cch/cnP9iE29YpQusG3v+7qEut5wk7wX7z8qAXt+Yu/7bJ7jSOoP+7v7buHdVLVbqLal4OJOHt04mj56/dtIqOj64T7umLNbpiflc7OW5eAgzDyqMzyzbZNDox06cj+oi6/qx8BcfxDFhcqHxh4fROmNWHIzon0Il589WJMfNjICvmbl/6RRHonUCHI/NtAAAAAAAAAAADEQT/AD4pF+UmhzhgAAAAAElFTkSuQmCC
+icon: M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z
 
 dependency:
   extension:
@@ -12,6 +12,6 @@ dependency:
 
 This is the official rich text editor extension for Mecha.
 
-This extension works only for pages with `type` of `HTML`. Go to the site’s state editor then change the value of _Editor_ field in the _Site › Page_ group with _Rich Text Editor_.
+This extension works only for pages with `type` of `HTML`. Go to the site’s state editor then change the value of _Editor_ field with _Rich Text Editor_.
 
 **Project:** <https://tovic.github.io/rich-text-editor>

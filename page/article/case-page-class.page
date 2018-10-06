@@ -1,0 +1,82 @@
+---
+title: Extending the `Page` Class
+description: Creating custom page constructor.
+...
+
+By default, the `Page` class will be equipped with dynamic property hooks prefixed by a `*` or `page`.
+
+~~~ .php
+<?php
+
+$page = new Page('.\lot\page\about.page');
+
+Hook::set('page.title', function($title) {
+    return '<mark>' . $title . '</mark>';
+});
+
+echo $page->title;
+~~~
+
+The `*` prefix is available globally to all classes that are extended to this class, while `page` prefix is specific, depending on where the page initiation comes from. Here, as we initiate a class named `Page`, then the hook prefix will be `page` (which is actually the [file name version][link:../reference/function#reference:class-to-file] of `Page`). But, if you make another class that is extended to this class, then the hook prefix will become the file name version of that class. Here are two examples:
+
+Without _namespace_:
+
+~~~ .php
+<?php
+
+// `article.php`
+class Article extends Page {}
+~~~
+
+~~~ .php
+<?php
+
+$article = new Article('.\lot\page\about.page');
+
+Hook::set('article.title', function($title) {
+    return '<mark>' . $title . '</mark>';
+});
+
+echo $article->title;
+~~~
+
+With _namespace_:
+
+~~~ .php
+<?php namespace Page;
+
+// `page.event.php`
+class Event extends Page {}
+~~~
+
+~~~ .php
+<?php
+
+$event = new Page\Event('.\lot\page\about.page');
+
+Hook::set('page/event.title', function($title) {
+    return '<mark>' . $title . '</mark>';
+});
+
+echo $event->title;
+~~~
+
+To make custom hook prefix without extending the `Page` class, you can also provide extra hook prefix to the third argument of the class instance. All three examples of the hooks below can work:
+
+~~~ .php
+<?php
+
+$page = new Page('.\lot\page\about.page', [], [
+    /*
+    0 => '*',
+    1 => 'page',
+    */
+    2 => 'my_hook_prefix'
+]);
+
+Hook::set('*.title', function($title) { … });
+Hook::set('page.title', function($title) { … });
+Hook::set('my_hook_prefix.title', function($title) { … });
+
+echo $page->title;
+~~~
