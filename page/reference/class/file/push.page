@@ -4,19 +4,20 @@ description: Upload a file.
 ...
 
 ~~~ .php.xmp
-File::push($f, $path = ROOT, $fn = null, $fail = false, $c = []);
+File::push($name, $path = ROOT, $fn = null);
 ~~~
 
 **Example:**
 
 ~~~ .php
-File::push($_FILES['file'], 'path\to\folder');
+File::push('blob', '.\path\to\folder'); // → for `<input name="blob" type="file">`
 ~~~
 
-Custom callback function:
+Custom callback function to [sanitize][link:../to/file] the file name:
 
 ~~~ .php
-File::push($_FILES['file'], 'path\to\folder', function($file) {
-    // do something…
+File::push('blob', '.\path\to\folder', function($data) {
+    $data['name'] = To::file($data['name']);
+    return $data;
 });
 ~~~
