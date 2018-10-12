@@ -15,9 +15,9 @@ For example, to create a filter that will be used to replace raw Markdown syntax
 
 Stack | Hook | To | Source
 ----- | ---- | -- | ------
-`0` | `fn_asset` | `shield.output` | [link:../reference/extension/asset]
-`1` | `fn_art` | `shield.output` | [link:../reference/extension/plugin/art]
-`2` | `fn_minify` | `shield.output` | [link:../reference/extension/minify]
+`0` | `fn_asset` | `shield.yield` | [link:../reference/extension/asset]
+`1` | `fn_art` | `shield.yield` | [link:../reference/extension/plugin/art]
+`2` | `fn_minify` | `shield.yield` | [link:../reference/extension/minify]
 
 #### Page
 

@@ -1,0 +1,99 @@
+---
+title: In the Name of PHP 7.1.x
+description: Is starting the process towards PHP `7.1.x` for better and shorter syntax.
+...
+
+![1](%{asset}%/png/article/p-h-p-7-1-0.png) {.align-left}
+
+[PHP](https://en.wikipedia.org/wiki/PHP "PHP · Wikipedia") development has occurred so fast and rapidly, especially in the last two years. This is also complemented by the addition of various features and bug fixes. I actually thought about this even before version `2.0.0` stable release, but I felt that the action I planned to do was too fast and rash because at that time I was not just working to update the PHP code but also to update the core CMS API.
+
+In the end, I’m just an ordinary man. I want to have a normal, happy, calm, and simple life, and so, I don’t want to be stressed out just because of my hobby. Because hobbies must be fun. If I get stressed out because of what I do, then maybe I have to change my working pattern.
+
+And today is 2018, I see that PHP development is so tempting that I can’t afford not to admit that I really really really really really really really want to try it and use it with all that new features offered, to make a _living thing_ with it, to contribute to the PHP community, personally, [as a user](http://latitudu.tk).
+
+Back to the topic. Most of the plans are simply to change all ternary operator syntax that previously used to handle missing array variables into the null coalescing operator syntax:
+
+~~~ .php
+// before
+$foo = isset($bar['baz']) ? $bar['baz'] : $qux;
+
+// after
+$foo = $bar['baz'] ?? $qux;
+~~~
+
+For moderate cases such as handling [falsy values](http://php.net/manual/en/language.types.boolean.php "Booleans · PHP"), I will remain consistent in using the elvis operator:
+
+~~~ .php
+class Foo {
+    public function __construct(...$bar) {
+        $baz = array_shift($bar) ?: 300;
+        $qux = array_shift($bar) ?: false;
+    }
+}
+~~~
+
+~~~ .php
+echo $page->url ?: 'javascript:void(0)';
+~~~
+
+I’m also planning to apply `$this` scope to the static functions. It is now possible to do this, but this only applies to anonymous functions:
+
+~~~ .php
+class Foo extends Genome {
+    private $bar = 1;
+}
+
+Foo::_('baz', function() {
+    echo $this->bar;
+});
+
+(new Foo)->baz(); // `1`
+~~~
+
+By using the [`Closure::fromCallable`](http://php.net/manual/en/closure.fromcallable.php) feature in PHP `7.1.0`, I can convert any function string from a —let’s say— function arguments to be a function closure so that I can then apply a class instance scope to any static function like this:
+
+~~~ .php
+class Foo extends Genome {
+    private $bar = 1;
+}
+
+function fn_genome_bar() {
+    echo $this->bar;
+}
+
+Foo::_('baz', 'fn_genome_bar');
+
+(new Foo)->baz(); // `1`
+~~~
+
+Named functions on [dynamic properties][link:../reference/class/genome] may not be that important but in many cases it will be very important for [hooks][link:../reference/class/hook], as function name can be used as an ID, which makes it possible for users to delete a hook by its ID:
+
+~~~ .php
+function fn_hook_title_1() {
+    return '1';
+}
+
+function fn_hook_title_2() {
+    return '2';
+}
+
+Hook::set('page.title', 'fn_hook_title_1');
+Hook::set('page.title', 'fn_hook_title_2');
+
+Hook::reset('page.title', 'fn_hook_title_1');
+
+echo $page->title; // `2`
+~~~
+
+In the future, I hope it will be possible for us to manipulate page properties by utilizing other property condition with this code pattern:
+
+~~~ .php
+Hook::set('page.content', function($content) {
+    if ($this->type === 'Markdown') {
+        return (new \Parsedown)->text($content);
+    }
+    return $content;
+});
+~~~
+
+The fewer function arguments needed by the hook, the better.
