@@ -5,16 +5,16 @@ description: Changes in version `2.0.0`.
 
 ### Unlimited Page Children
 
-Mecha `2.0.0` comes with unlimited page children feature. All pages are now stored in `.\www\lot\page` folder. You can add as many pages as you want and add as many page children as you want to the parent page folder with rules and specifications defined in the [page extension reference][link:../reference/extension/page].
+Mecha `2.0.0` comes with unlimited page children feature. All pages are now stored in `.\lot\page` folder. You can add as many pages as you want and add as many page children as you want to the parent page folder with rules and specifications defined in the [page extension reference][link:../reference/extension/page].
 
 ~~~ .txt
-.\www\lot\page\about.page
-.\www\lot\page\article.page
-.\www\lot\page\article\post-1.page
-.\www\lot\page\article\post-2.page
-.\www\lot\page\article\post-3.page
-.\www\lot\page\contact.page
-.\www\lot\page\index.page
+.\lot\page\about.page
+.\lot\page\article.page
+.\lot\page\article\post-1.page
+.\lot\page\article\post-2.page
+.\lot\page\article\post-3.page
+.\lot\page\contact.page
+.\lot\page\index.page
 ~~~
 
 ### Built as a Framework

@@ -1,0 +1,121 @@
+---
+@version: [2, current]
+@description: Sort all items.
+@lot: $sort = 1, $preserve_key = false
+@example: |
+  $array = [
+      'foo' => [
+          'size' => 'medium',
+          'color' => 'green',
+          'id' => 2
+      ],
+      'bar' => [
+          'id' => 4
+      ],
+      'baz' => [
+          'size' => 'large',
+          'color' => 'blue',
+          'id' => 3
+      ],
+      'qux' => [
+          'size' => 'small',
+          'color' => 'red',
+          'id' => 1
+      ]
+  ];
+
+
+  //  1: ASC
+  // -1: DESC
+
+  // Basic
+  $A = Anemon::eat($array)->sort(1)->vomit();
+
+  // Sort by value of the `color` property
+  $B = Anemon::eat($array)->sort([1, 'color'])->vomit();
+
+  // Preserve original array key
+  $C = Anemon::eat($array)->sort([-1, 'color'], true)->vomit();
+
+  // Set default value of array item with missing `color` property as `#black`
+  $D = Anemon::eat($array)->sort([-1, 'color'], '#black')->vomit();
+@result: |
+  $A = [
+      0 => [
+          'id' => 4
+      ],
+      1 => [
+          'size' => 'large',
+          'color' => 'blue',
+          'id' => 3
+      ],
+      2 => [
+          'size' => 'medium',
+          'color' => 'green',
+          'id' => 2
+      ],
+      3 => [
+          'size' => 'small',
+          'color' => 'red',
+          'id' => 1
+      ]
+  ];
+  
+  $B = [
+      0 => [
+          'size' => 'large',
+          'color' => 'blue',
+          'id' => 3
+      ],
+      1 => [
+          'size' => 'medium',
+          'color' => 'green',
+          'id' => 2
+      ],
+      2 => [
+          'size' => 'small',
+          'color' => 'red',
+          'id' => 1
+      ]
+  ];
+  
+  $C = [
+      'qux' => [
+          'size' => 'small',
+          'color' => 'red',
+          'id' => 1
+      ],
+      'foo' => [
+          'size' => 'medium',
+          'color' => 'green',
+          'id' => 2
+      ],
+      'baz' => [
+          'size' => 'large',
+          'color' => 'blue',
+          'id' => 3
+      ]
+  ];
+  
+  $D = [
+      'qux' => [
+          'size' => 'small',
+          'color' => 'red',
+          'id' => 1
+      ],
+      'foo' => [
+          'size' => 'medium',
+          'color' => 'green',
+          'id' => 2
+      ],
+      'baz' => [
+          'size' => 'large',
+          'color' => 'blue',
+          'id' => 3
+      ],
+      'bar' => [
+          'id' => 4,
+          'color' => '#black'
+      ]
+  ];
+...

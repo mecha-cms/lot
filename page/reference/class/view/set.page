@@ -12,15 +12,15 @@ View::set($id, $path = null);
 ~~~ .php
 View::get('foo.bar'); // return nothing
 
-View::set('foo.bar', '.\www\lot\asset\php\view.php');
+View::set('foo.bar', '.\lot\asset\php\view.php');
 
-View::get('foo.bar'); // return the `.\www\lot\asset\php\view.php` value.
+View::get('foo.bar'); // return the `.\lot\asset\php\view.php` value.
 ~~~
 
 ~~~ .php
-View::get('.\www\lot\asset\php\view.php'); // return the `.\www\lot\asset\php\view.php` value.
+View::get('.\lot\asset\php\view.php'); // return the `.\lot\asset\php\view.php` value.
 
-View::set('.\www\lot\asset\php\view.php', '.\www\lot\asset\php\view-2.php');
+View::set('.\lot\asset\php\view.php', '.\lot\asset\php\view-2.php');
 
-View::get('.\www\lot\asset\php\view.php'); // return the `.\www\lot\asset\php\view-2.php` value.
+View::get('.\lot\asset\php\view.php'); // return the `.\lot\asset\php\view-2.php` value.
 ~~~

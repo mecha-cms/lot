@@ -1,0 +1,71 @@
+---
+title: The Tale of Anemon
+description: The little anemon who likes to eat.
+...
+
+I am currently experimenting with the [`IteratorAggregate`](http://php.net/manual/en/class.iteratoraggregate.php "Itarator Aggregate · PHP") interface to allow [`Anemon`][link:../reference/class/anemon] instances to be used as ordinary arrays. This is interesting because we can shorten the API by implementing `IteratorAggregate` to the `Anemon` class. As in version `2.0.0`, we need to do this extra `vomit` thing to randomize an array before iterating it afterwards:
+
+~~~ .php
+$random = Anemon::eat([1, 2, 3, 4, 5, 6])->shake()->vomit();
+
+foreach ($random as $v) {
+    $color = '#' . substr(dechex(crc32($v)), 0, 6);
+    echo '<span style="background:' . $color . '">' . $color . '</span>';
+}
+~~~
+
+But now, we can simply do this:
+
+~~~ .php
+$random = Anemon::eat([1, 2, 3, 4, 5, 6])->shake();
+
+foreach ($random as $v) {
+    $color = '#' . substr(dechex(crc32($v)), 0, 6);
+    echo '<span style="background:' . $color . '">' . $color . '</span>';
+}
+~~~
+
+This also applies to other methods such as `sort`, `is`, `not`, [etc][link:../reference/class/anemon]:
+
+~~~ .php
+foreach (Anemon::eat([1, 2, 3])->sort(-1) as $v) { … }
+~~~
+
+My next plan is to convert the global [`$pages`][link:../reference/variable] variable into an `Anemon` instance, so that next time we can do more on this variable as follows:
+
+~~~ .php
+foreach ($pages as $page) { … }
+foreach ($pages->shake() as $page) { … }
+foreach ($pages->sort([1, 'title']) as $page) { … }
+~~~
+
+~~~ .php
+// Add sticky post
+if ($site->is('home') && $pages = Lot::get('pages')) {
+    $pages->prepend(new Page(PAGE . DS . 'sticky.page'));
+    Lot::set('pages', $pages->chunk($site->page('chunk'), $url->i ?: 1));
+}
+~~~
+
+~~~ .php
+// Conditionally load the asset
+if ($pages = Lot::get('pages')) {
+    if ($pages->any(function($page) {
+        return $page->type === 'Gallery';
+    })) {
+        Asset::set('.\lot\asset\css\type.gallery.css');
+    }
+} else if ($page = Lot::get('page')) {
+    if ($page->type === 'Gallery') {
+        Asset::set('.\lot\asset\css\type.gallery.css');
+    }
+}
+~~~
+
+We can even apply it to page properties:
+
+~~~ .php
+echo $page->tags->map(function($tag) {
+    return HTML::a($tag->title, $tag->url, false, ['rel' => 'tag']);
+});
+~~~

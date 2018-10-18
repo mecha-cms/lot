@@ -17,7 +17,7 @@ $test_2 = View::path('test');
 Result:
 
 ~~~ .php
-$test_1 = '.\www\page.php';
+$test_1 = '.\page.php';
 $test_2 = false;
 ~~~
 
@@ -31,11 +31,11 @@ Result:
 
 ~~~ .php
 // can be
-$test = '.\www\page.about.social.php';
+$test = '.\page.about.social.php';
 // or
-$test = '.\www\page\about\social.php';
+$test = '.\page\about\social.php';
 // or
-$test = '.\www\page\about.php';
+$test = '.\page\about.php';
 // or
-$test = '.\www\page.php';
+$test = '.\page.php';
 ~~~

@@ -1,0 +1,31 @@
+---
+@version: [2, current]
+@description: Insert element after current item.
+@lot: $value, $key = null
+@example: |
+  $array = [
+      'foo' => 0,
+      'bar' => 1,
+      'baz' => 2,
+      'qux' => 3
+  ];
+
+  $A = Anemon::eat($array)->next->after('#')->vomit();
+  $B = Anemon::eat($array)->next->after('#', 'a')->vomit();
+@result: |
+  $A = [
+      'foo' => 0,
+      'bar' => 1,
+      2 => '#',
+      'baz' => 2,
+      'qux' => 3
+  ];
+
+  $B = [
+      'foo' => 0,
+      'bar' => 1,
+      'a' => '#',
+      'baz' => 2,
+      'qux' => 3
+  ];
+...

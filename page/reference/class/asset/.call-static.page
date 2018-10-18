@@ -10,14 +10,14 @@ Asset::$lot = [
     'css' => [
         1 => [
             'foo.css' => [
-                'path' => '.\www\lot\asset\foo.css',
+                'path' => '.\lot\asset\foo.css',
                 'url' => 'http://127.0.0.1/lot/asset/foo.css',
                 'id' => 'foo.css',
                 'data' => [],
                 'stack' => 10
             ],
             'bar.css' => [
-                'path' => '.\www\lot\asset\bar.css',
+                'path' => '.\lot\asset\bar.css',
                 'url' => 'http://127.0.0.1/lot/asset/bar.css',
                 'id' => 'bar.css',
                 'data' => [],
@@ -45,7 +45,7 @@ echo Asset::json(); // not yet defined by `Asset::_()`, calling this will return
 Calling a single asset path:
 
 ~~~ .php
-echo Asset::css('.\www\lot\asset\css\style-2.css'); // → return `<link href=" … /style-2.css" rel="stylesheet">`
+echo Asset::css('.\lot\asset\css\style-2.css'); // → return `<link href=" … /style-2.css" rel="stylesheet">`
 ~~~
 
 ~~~ .php

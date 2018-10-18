@@ -1,0 +1,21 @@
+---
+@version: [2, current]
+@description: Replace current item in array with an element.
+@lot: $value
+@example: |
+  $array = [
+      'foo' => 0,
+      'bar' => 1,
+      'baz' => 2,
+      'qux' => 3
+  ];
+
+  $A = Anemon::eat($array)->next->replace('#')->vomit();
+@result: |
+  $A = [
+      'foo' => 0,
+      'bar' => '#',
+      'baz' => 2,
+      'qux' => 3
+  ];
+...

@@ -10,9 +10,9 @@ View::reset($id);
 **Example:**
 
 ~~~ .php
-View::set('foo.bar', '.\www\lot\asset\php\view.php');
+View::set('foo.bar', '.\lot\asset\php\view.php');
 
-View::get('foo.bar'); // return the `.\www\lot\asset\php\view.php` value.
+View::get('foo.bar'); // return the `.\lot\asset\php\view.php` value.
 
 View::reset('foo.bar');
 

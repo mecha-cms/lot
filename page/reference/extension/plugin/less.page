@@ -62,7 +62,7 @@ nav{background:#000;color:#fff}nav a{text-decoration:none;color:inherit}nav a:fo
 Caches are stored in the `CACHE` folder with the same structure as in the original file and folder structure, relative to the `ROOT` path. If for a reason you want to remove this plugin, you can use the cache files to override the `css.data` in the original directory to get the compiled CSS syntax:
 
 ~~~ .txt
-.\www\lot\cache\lot\page\my-page\css.data → .\www\lot\page\my-page\css.data
+.\lot\cache\lot\page\my-page\css.data → .\lot\page\my-page\css.data
 ~~~
 
 Once replaced, you can safely remove this plugin.

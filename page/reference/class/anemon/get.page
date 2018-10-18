@@ -1,30 +1,20 @@
 ---
-title: `$anemon::get()`
-description: Get array value recursively.
+@version: [2, current]
+@description: Get array value recursively.
+@lot: array &$array, string $key, $fail = false, string $NS = '.'
+@static: 1
+@example: |
+  $array = [
+      'foo' => 1,
+      'bar' => [
+          'baz' => 2,
+          'qux' => 3
+      ]
+  ];
+
+  $A = Anemon::get($array, 'bar.baz', '#');
+  $B = Anemon::get($array, 'bar.wut', '#');
+@result: |
+  $A = 2;
+  $B = '#';
 ...
-
-~~~ .php.xmp
-Anemon::get(array &$input, $key, $fail = false, $NS = '.');
-~~~
-
-**Example:**
-
-~~~ .php
-$array = [
-    'foo' => 1,
-    'bar' => [
-        'baz' => 2,
-        'qux' => 3
-    ]
-];
-
-$test_1 = Anemon::get($array, 'bar.baz', '#');
-$test_2 = Anemon::get($array, 'bar.foo', '#');
-~~~
-
-Result:
-
-~~~ .php
-$test_1 = 2;
-$test_2 = '#';
-~~~

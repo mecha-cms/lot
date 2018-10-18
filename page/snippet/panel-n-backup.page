@@ -57,6 +57,6 @@ Once added, the backup menu will be added in the dropdown like this:
 
 ![1](%{asset}%/png/snippet/panel-n-backup.png)
 
-A backup package will be created in `.\www\lot\asset\zip` folder named as `YYYY-MM-DD.site-title.zip`.
+A backup package will be created in `.\lot\asset\zip` folder named as `YYYY-MM-DD.site-title.zip`.
 
 > **Note:** The backup package is stored in the asset folder which is accessible by public. For safety reason, please remove the package after downloading!

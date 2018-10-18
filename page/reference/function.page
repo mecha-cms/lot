@@ -322,11 +322,11 @@ g($s = ROOT, $x = '*', $q = "", $o = false, $h = true);
 Advance PHP `glob` function:
 
 ~~~ .php
-$test_1 = g('.\www\path\to\folder');
-$test_2 = g('.\www\path\to\folder', 'css');
-$test_3 = g('.\www\path\to\folder', 'css,js');
-$test_4 = g('.\www\path\to\folder', 'css,js', '.min.');
-$test_5 = g('.\www\path\to\folder', 'mecha.min.{css,js}');
+$test_1 = g('.\path\to\folder');
+$test_2 = g('.\path\to\folder', 'css');
+$test_3 = g('.\path\to\folder', 'css,js');
+$test_4 = g('.\path\to\folder', 'css,js', '.min.');
+$test_5 = g('.\path\to\folder', 'mecha.min.{css,js}');
 ~~~
 
 #### Hyphenate {#reference:h}
@@ -356,7 +356,7 @@ i($a, $b = [], $fn = [null, null], $s__ = []);
 Include files with callback:
 
 ~~~ .php
-i('.\www\path\to\folder', [
+i('.\path\to\folder', [
     'file-0.php',
     'file-1.php',
     'file-2.php'
@@ -402,7 +402,7 @@ n($x, $t = '    ');
 Convert `\r\n` and `\r` to `\n` and `\t` to 4 spaces:
 
 ~~~ .php
-n(file_get_contents('.\www\path\to\file.txt'));
+n(file_get_contents('.\path\to\file.txt'));
 ~~~
 
 #### Object {#reference:o}
@@ -492,7 +492,7 @@ r($a, $b = [], $fn = [null, null], $s__ = []);
 Require files with callback:
 
 ~~~ .php
-r('.\www\path\to\folder', [
+r('.\path\to\folder', [
     'file-0.php',
     'file-1.php',
     'file-2.php'
@@ -617,7 +617,7 @@ y($x, $a = []);
 Output/yield an echo-based function as normal return-based function:
 
 ~~~ .php
-$test_1 = y('.\www\path\to\file.php');
+$test_1 = y('.\path\to\file.php');
 $test_2 = y(function() {
     echo 'test value';
 });

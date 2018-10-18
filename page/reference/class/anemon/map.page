@@ -1,0 +1,25 @@
+---
+@version: [current]
+@description: The OOP style of [link:../../function/map].
+@lot: callable $fn
+@example: |
+  $array = [
+      'foo' => 0,
+      'bar' => 1,
+      'baz' => 2,
+      'qux' => 3
+  ];
+
+  $anemon = Anemon::eat($array)->map(function($v) {
+      return 'i:' . $v;
+  });
+
+  $A = $anemon->vomit();
+@result: |
+  $A = [
+      'foo' => 'i:0',
+      'bar' => 'i:1',
+      'baz' => 'i:2',
+      'qux' => 'i:3'
+  ];
+...

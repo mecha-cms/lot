@@ -181,7 +181,7 @@ With the CSS code I gave above, you should see that the text color on the page w
 
 ### File Structure
 
-Make sure that you have the font files with varying weight, then place them into `.\www\lot\asset\woff\{$family}` where `{$family}` is the font family name that you have set to the parameter URL. In this case, I demonstrate it using fonts named [Roboto](https://fonts.google.com/specimen/Roboto) and [Open Sans](https://fonts.google.com/specimen/Open+Sans).
+Make sure that you have the font files with varying weight, then place them into `.\lot\asset\woff\{$family}` where `{$family}` is the font family name that you have set to the parameter URL. In this case, I demonstrate it using fonts named [Roboto](https://fonts.google.com/specimen/Roboto) and [Open Sans](https://fonts.google.com/specimen/Open+Sans).
 
 ~~~ .txt
 .\
@@ -267,7 +267,7 @@ Route::set('fonts.css', function() {
             }
             // Loop all the weight of the font specified in `$parts[1]`…
             foreach (explode(',', $parts[1]) as $weight) {
-                // Check the existence of the file in `.\www\lot\asset\woff\Roboto`; e.g. `400.woff`
+                // Check the existence of the file in `.\lot\asset\woff\Roboto`; e.g. `400.woff`
                 if (!$file = File::exist(ASSET . DS . 'woff' . DS . $parts[0] . DS . $weight . '.woff')) {
                     continue; // File does not exist, skip!
                 }
@@ -299,7 +299,7 @@ Route::set('fonts.css', function() {
             }
             // Loop all the weight of the font specified in `$parts[1]`…
             foreach (explode(',', $parts[1]) as $weight) {
-                // Check the existence of the file in `.\www\lot\asset\woff\Roboto`; e.g. `400.woff`
+                // Check the existence of the file in `.\lot\asset\woff\Roboto`; e.g. `400.woff`
                 if (!$file = File::exist(ASSET . DS . 'woff' . DS . $parts[0] . DS . $weight . '.woff')) {
                     continue; // File does not exist, skip!
                 }

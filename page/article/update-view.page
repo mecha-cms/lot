@@ -47,9 +47,9 @@ Double check the 5<sup>th</sup> step to make sure that everything is OK.
 
 You may need to configure back the shields, extensions and plugins to match with the previous configuration value. Most of them are stored in:
 
- - `.\www\lot\shield\{$shield}\state\config.php`
- - `.\www\lot\extend\{$extend}\lot\state\config.php`
- - `.\www\lot\extend\plugin\lot\worker\{$plugin}\lot\state\config.php`
+ - `.\lot\shield\{$shield}\state\config.php`
+ - `.\lot\extend\{$extend}\lot\state\config.php`
+ - `.\lot\extend\plugin\lot\worker\{$plugin}\lot\state\config.php`
 
 ### Step 8: Delete All Files in the Parent Folder
 

@@ -10,7 +10,7 @@ Asset::path($path, $fail = false);
 **Example:**
 
 ~~~ .php
-$path = Asset::path('.\www\lot\asset\css\style.css');
+$path = Asset::path('.\lot\asset\css\style.css');
 ~~~
 
 > **Note:** Setting external URL to the `$path` parameter will return to `$fail`.

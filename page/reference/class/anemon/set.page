@@ -1,34 +1,26 @@
 ---
-title: `$anemon::set()`
-description: Set or replace array value recursively.
+@version: [2, current]
+@description: Set or replace array values recursively.
+@lot: array &$array, string $key, $value = null, string $NS = '.'
+@static: 1
+@example: |
+  $array = [
+      'foo' => 1,
+      'bar' => [
+          'baz' => 2,
+          'qux' => 3
+      ]
+  ];
+
+  Anemon::set($array, 'bar.baz', '#');
+  Anemon::set($array, 'bar.wut', '#');
+@result: |
+  $array = [
+      'foo' => 1,
+      'bar' => [
+          'baz' => '#',
+          'qux' => 3,
+          'wut' => '#'
+      ]
+  ];
 ...
-
-~~~ .php.xmp
-Anemon::set(array &$input, $key, $value = null, $NS = '.');
-~~~
-
-**Example:**
-
-~~~ .php
-$array = [
-    'foo' => 1,
-    'bar' => [
-        'baz' => 2,
-        'qux' => 3
-    ]
-];
-
-Anemon::set($array, 'bar.baz', '#');
-~~~
-
-Result:
-
-~~~ .php
-$array = [
-    'foo' => 1,
-    'bar' => [
-        'baz' => '#',
-        'qux' => 3
-    ]
-];
-~~~

@@ -1,0 +1,15 @@
+---
+@version: [current]
+@description: Move to the end item.
+@example: |
+  $array = [
+      'foo' => 0,
+      'bar' => 1,
+      'baz' => 2,
+      'qux' => 3
+  ];
+
+  $A = Anemon::eat($array)->end->current();
+@result: |
+  $A = 3;
+...

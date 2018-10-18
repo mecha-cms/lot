@@ -1,0 +1,31 @@
+---
+@version: [2, current]
+@description: Insert element before current item.
+@lot: $value, $key = null
+@example: |
+  $array = [
+      'foo' => 0,
+      'bar' => 1,
+      'baz' => 2,
+      'qux' => 3
+  ];
+
+  $A = Anemon::eat($array)->next->before('#')->vomit();
+  $B = Anemon::eat($array)->next->before('#', 'a')->vomit();
+@result: |
+  $A = [
+      'foo' => 0,
+      1 => '#',
+      'bar' => 1,
+      'baz' => 2,
+      'qux' => 3
+  ];
+
+  $B = [
+      'foo' => 0,
+      'a' => '#',
+      'bar' => 1,
+      'baz' => 2,
+      'qux' => 3
+  ];
+...

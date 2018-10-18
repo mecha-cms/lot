@@ -50,7 +50,7 @@ Foo::_('baz', function() {
 (new Foo)->baz(); // `1`
 ~~~
 
-By using the [`Closure::fromCallable`](http://php.net/manual/en/closure.fromcallable.php) feature in PHP `7.1.0`, I can convert any function string from a —let’s say— function arguments to be a function closure so that I can then apply a class instance scope to any static function like this:
+By using the [`Closure::fromCallable`](http://php.net/manual/en/closure.fromcallable.php) feature in PHP `7.1.0`, I can convert any function string from a —let’s say— function argument to be a function closure so that I can then apply a class instance scope to any static function like this:
 
 ~~~ .php
 class Foo extends Genome {
@@ -66,7 +66,7 @@ Foo::_('baz', 'fn_genome_bar');
 (new Foo)->baz(); // `1`
 ~~~
 
-Named functions on [dynamic properties][link:../reference/class/genome] may not be that important but in many cases it will be very important for [hooks][link:../reference/class/hook], as function name can be used as an ID, which makes it possible for users to delete a hook by its ID:
+Named functions on [dynamic methods][link:../reference/class/genome] may not be that important but in many cases it will be very important for [hooks][link:../reference/class/hook], as function name can be used as an ID, which makes it possible for users to delete a hook by its ID:
 
 ~~~ .php
 function fn_hook_title_1() {

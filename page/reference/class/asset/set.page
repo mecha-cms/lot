@@ -12,19 +12,19 @@ Asset::set($path, $stack = null, $data = []);
 **Example:**
 
 ~~~ .php
-Asset::set('.\www\lot\asset\css\style-2.css');
+Asset::set('.\lot\asset\css\style-2.css');
 ~~~
 
 Make sure to put `style-3.css` before `style-2.css` in the output:
 
 ~~~ .php
-Asset::set('.\www\lot\asset\css\style-3.css', 9);
+Asset::set('.\lot\asset\css\style-3.css', 9);
 ~~~
 
 Add `id` attribute to the HTML output:
 
 ~~~ .php
-Asset::set('.\www\lot\asset\css\style-3.css', 9, ['id' => 'style-3']);
+Asset::set('.\lot\asset\css\style-3.css', 9, ['id' => 'style-3']);
 ~~~
 
 > **Note:** Default `$stack` value is `10`.

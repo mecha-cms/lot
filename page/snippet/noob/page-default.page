@@ -4,7 +4,7 @@ description: Set pre-defined page properties as an alternate value if the desire
 ...
 
 ~~~ .php
-$page = new Page('.\www\lot\page\test-page.page', [
+$page = new Page('.\lot\page\test-page.page', [
     'author' => 'Taufik Nurrohman',
     'type' => 'Markdown'
 ]);

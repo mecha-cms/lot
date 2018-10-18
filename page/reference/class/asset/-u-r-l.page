@@ -14,7 +14,7 @@ Asset::url($url, $fail = false); // alias
 **Example:**
 
 ~~~ .php
-$url = Asset::URL('.\www\lot\asset\css\style.css');
+$url = Asset::URL('.\lot\asset\css\style.css');
 ~~~
 
 ~~~ .php

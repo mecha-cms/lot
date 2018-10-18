@@ -1,0 +1,15 @@
+---
+@version: [current]
+@description: Reset current value to the initial array input.
+@example: |
+  $anemon = new Anemon(['foo', 'bar', 'baz']);
+
+  echo $anemon->shake()->map(function($v) {
+      return 'a:' . $v;
+  });
+
+  echo $anemon->lot();
+@result: |
+  'a:bar, a:baz, a:foo'
+  'foo, bar, baz'
+...
