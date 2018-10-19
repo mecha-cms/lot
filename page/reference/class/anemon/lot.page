@@ -1,6 +1,7 @@
 ---
 @version: [current]
 @description: Reset current value to the initial array input.
+@lot: array $lot = [], $over = false
 @example: |
   $anemon = new Anemon(['foo', 'bar', 'baz']);
 

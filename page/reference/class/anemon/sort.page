@@ -38,7 +38,18 @@
   $C = Anemon::eat($array)->sort([-1, 'color'], true)->vomit();
 
   // Set default value of array item with missing `color` property as `#black`
-  $D = Anemon::eat($array)->sort([-1, 'color'], '#black')->vomit();
+  $D = Anemon::eat($array)->sort([-1, 'color', '#black'])->vomit();
+
+  // Custom sort (sort by the third character of `size` value)
+  $E = Anemon::eat($array)->sort(function($a, $b) {
+      if (!isset($a['size'][2]) && !isset($b['size'][2]))
+          return 0;
+      if (!isset($a['size'][2]))
+          return 1;
+      if (!isset($b['size'][2]))
+          return -1;
+      return $a['size'][2] <=> $b['size'][2];
+  })->vomit();
 @result: |
   $A = [
       0 => [
@@ -76,10 +87,16 @@
           'size' => 'small',
           'color' => 'red',
           'id' => 1
+      ],
+      3 => [
+          'id' => 4
       ]
   ];
   
   $C = [
+      'bar' => [
+          'id' => 4
+      ],
       'qux' => [
           'size' => 'small',
           'color' => 'red',
@@ -98,24 +115,45 @@
   ];
   
   $D = [
-      'qux' => [
+      0 => [
           'size' => 'small',
           'color' => 'red',
           'id' => 1
       ],
-      'foo' => [
+      1 => [
           'size' => 'medium',
           'color' => 'green',
           'id' => 2
       ],
-      'baz' => [
+      2 => [
           'size' => 'large',
           'color' => 'blue',
           'id' => 3
       ],
-      'bar' => [
+      3 => [
           'id' => 4,
           'color' => '#black'
+      ]
+  ];
+
+  $E = [
+      0 => [
+          'size' => 'small',
+          'color' => 'red',
+          'id' => 1
+      ],
+      1 => [
+          'size' => 'medium',
+          'color' => 'green',
+          'id' => 2
+      ],
+      2 => [
+          'size' => 'large',
+          'color' => 'blue',
+          'id' => 3
+      ],
+      3 => [
+          'id' => 4
       ]
   ];
 ...

@@ -31,6 +31,10 @@ Hook::set('*.description', function($description) {
 }, 0);
 
 Hook::set('*.content', function($content) {
+    $parts = explode(DS, Path::F($this->path, PAGE));
+    $a = array_pop($parts);
+    $b = array_pop($parts);
+    $c = array_pop($parts);
     $tags = [];
     $static = $this->get('@static', false);
     if ($version = $this->get('@version', false)) {
@@ -63,11 +67,11 @@ Hook::set('*.content', function($content) {
     $s = "";
     foreach ((array) $lot as $v) {
         $s .= "~~~ .php.xmp\n";
-        $s .= $static ? f2c($parent->slug) . '::' : '$' . h($parent->slug, '_') . '->';
-        $m = strpos($this->slug, '.') === 0 ? '__' . c(substr($this->slug, 1)) : c($this->slug);
+        $s .= $static ? f2c($parent->get('slug', false)) . '::' : '$' . h($parent->get('slug', false), '_') . '->';
+        $m = strpos($this->get('slug', false), '.') === 0 ? '__' . c(substr($this->get('slug', false), 1)) : c($this->get('slug', false));
         $s .= $m . '(' . $v . ");\n";
         if ($static === 2) {
-            $s .= '$' . h($parent->slug, '_') . '->' . $m . '(' . $v . ");\n";
+            $s .= '$' . h($parent->get('slug', false), '_') . '->' . $m . '(' . $v . ");\n";
         }
         $s .= "~~~\n\n";
     }
@@ -77,6 +81,20 @@ Hook::set('*.content', function($content) {
     }
     if ($result = $this->get('@result', false)) {
         $content .= "\n\n**Result:**\n\n~~~ .php\n" . $result . "\n~~~";
+    }
+    if (count($parts)) {
+        $path = Path::F($this->path);
+        if ($c === 'class') {
+            $path = dirname($path);
+        }
+        if ($glob = glob($path . DS . '*.page')) {
+            $content .= "\n\n### Next&hellip;\n";
+            foreach ($glob as $v) {
+                $p = new Page($v);
+                $content .= "\n - ";
+                $content .= $v === $this->path ? $p->title : "[" . $p->title . '](' . $p->url . ')';
+            }
+        }
     }
     return $content;
 }, 0);
