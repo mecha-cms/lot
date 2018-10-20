@@ -1,9 +1,0 @@
----
-title: `__set()`
-description: Dynamic properties.
-...
-
-~~~ .php
-$date = new Date();
-$date->test = function() { … }; // will trigger `$date::set('test', function() { … })`
-~~~

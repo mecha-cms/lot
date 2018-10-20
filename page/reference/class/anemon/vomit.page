@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: Get the processed array data.
-@lot: $key = null, $fail = null
-@example: |
-  $A = Anemon::eat([1, 2, 3, 4, 5])->shake()->vomit();
-  $B = Anemon::eat([1, 2, 3, 4, 5])->shake()->vomit('0'); // Return the first item
-...
