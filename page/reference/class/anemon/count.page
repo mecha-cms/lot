@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Count all items.
+@lot: $deep = false
+@example: |
+  $A = Anemon::eat($_POST)->count;
+  $B = Anemon::eat($_POST)->count(true);
+...

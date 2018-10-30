@@ -1,0 +1,11 @@
+---
+@version: [2, current]
+@description: Format date input using native PHP date formatter.
+@lot: string $format = DATE_WISE
+@example: |
+  $date = (new Date('[[e]]echo date('Y-m-d H:i:s');[[/e]]'))->format('c');
+@result: |
+  $date = '[[e]]echo date('c');[[/e]]';
+...
+
+Read more about date formatting pattern [here](http://php.net/manual/en/function.date.php "PHP date()").

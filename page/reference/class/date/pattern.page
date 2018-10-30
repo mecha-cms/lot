@@ -1,0 +1,35 @@
+---
+@version: [current]
+@description: Format date input using custom formatter.
+@lot: string $pattern = '%Y%-%M%-%D% %~h%:%m%:%s%'
+@example: |
+  $date = (new Date('[[e]]echo date('Y-m-d H:i:s');[[/e]]'))->pattern('%Y%/%M%/%D%');
+@result: |
+  $date = '[[e]]echo (new Date(date('Y-m-d H:i:s')))->pattern('%Y%/%M%/%D%');[[/e]]';
+...
+
+Supported date pattern:
+
+Pattern | Description
+------- | -----------
+`%year%` | Get year number.
+`%month%` | Get month number (from 01 to 12).
+`%day%` | Get day number (from 01 to 31).
+`%hour%` | Get hour 24 number (from 00 to 24).
+`%minute%` | Get minute number (from 00 to 60).
+`%second%` | Get second number (from 00 to 60).
+`%noon%` | `AM` or `PM`.
+`%week%` | Get day number in a week (from 01 to 07).
+`%zone%` | Get current time zone.
+`%~M%` | Get month name.
+`%~D%` | Get day name.
+`%~h%` | Alias for `%hour%`.
+`%Y%` | Alias for `%year%`.
+`%M%` | Alias for `%month%`.
+`%D%` | Alias for `%day%`.
+`%h%` | Get hour 12 number (from 00 to 12).
+`%m%` | Alias for `%minute%`.
+`%s%` | Alias for `%second%`.
+`%N%` | Alias for `%noon%`.
+`%W%` | Alias for `%week%`.
+`%Z%` | Alias for `%zone%`.

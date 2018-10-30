@@ -1,0 +1,23 @@
+---
+@version: [2, current]
+@description: Create magic array.
+@lot: iterable $array = [], string $separator = ', '
+@example: |
+  $anemon = new Anemon(['foo', 'bar', 'baz']);
+
+  echo $anemon;
+  echo $anemon(' | ');
+  echo $anemon[0];
+  echo $anemon[999];
+  echo $anemon->vomit(1);
+  echo $anemon->last();
+@result: |
+  'foo, bar, baz'
+  'foo | bar | baz'
+  'foo'
+  null
+  'bar'
+  'baz'
+...
+
+An instance of `Anemon` class can be used to make the array becomes possible to be accessed as string, array, or function. Items with `null` and `false` value and items with key prefixed by a `_` will be ignored by default.

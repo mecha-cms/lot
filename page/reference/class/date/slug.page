@@ -1,0 +1,13 @@
+---
+@version: [2, current]
+@description: Convert date to slug.
+@lot: $separator = '-'
+@example: |
+  $date = new Date('[[e]]echo date('Y-m-d H:i:s');[[/e]]');
+
+  $A = $date->slug;
+  $B = $date->slug('.');
+@result: |
+  $A = '[[e]]echo (new Date(date('Y-m-d H:i:s')))->slug;[[/e]]';
+  $B = '[[e]]echo (new Date(date('Y-m-d H:i:s')))->slug('.');[[/e]]';
+...

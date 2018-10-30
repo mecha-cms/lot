@@ -11,7 +11,7 @@ Hook::set('*.content', function($content, $lot) {
     $i = 'https://github.com/mecha-cms/' . $NS . '.' . $N . '/archive/master.zip';
     $i = isset($stats[$i]) ? $stats[$i] : 0;
     $j = 0;
-    $k = basename(str_replace('.', '/', $NS));
+    $k = basename(strtr($NS, '.', '/'));
     if (!empty($releases[$k][$N])) {
         $j = 'https://github.com/mecha-cms/' . $NS . '.' . $N . '/archive/v' . $releases[$k][$N] . '.zip';
         $j = isset($stats[$i]) ? $stats[$i] : 0;

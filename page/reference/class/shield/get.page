@@ -1,10 +1,26 @@
 ---
-title: `$shield::get()`
-description: Return the shield content.
+@version: [2, current]
+@description: Return the shield content.
+@lot: $in, $fail = false, $print = true
+@static: 1
+@example: |
+  Route::set('foo/bar', function() {
+      return Shield::get('foo/bar', [
+          'title' => 'Test Title',
+          'description' => 'Test description.'
+      ]);
+  });
+@result: |
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title><?php echo $lot['title']; ?></title>
+    </head>
+    <body>
+      <h1><?php echo $lot['title']; ?></h1>
+      <p><?php echo $lot['description']; ?></p>
+    </body>
+  </html>
+@result-description: Content of `foo.php`, `foo\bar.php` or any path defined by [`Shield::set()`][link:set] for the `foo/bar`:
 ...
-
-~~~ .php.xmp
-Shield::get($input, $fail = false, $print = true);
-~~~
-
-This method inherits [`View::get()`][link:../view/get] method.

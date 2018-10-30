@@ -1,0 +1,7 @@
+---
+@version: [2]
+@description: Concatenate two or more arrays.
+@static: 1
+...
+
+[connect:../../function/concat]

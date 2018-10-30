@@ -1,0 +1,15 @@
+---
+@version: [2, current]
+@description: Get last item in array.
+@example: |
+  $array = [
+      'foo' => 0,
+      'bar' => 1,
+      'baz' => 2,
+      'qux' => 3
+  ];
+
+  $A = Anemon::eat($array)->last;
+@result: |
+  $A = 3;
+...

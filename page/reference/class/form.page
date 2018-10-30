@@ -1,40 +1,30 @@
 ---
-title: `Form`
-description: HTML forms.
-icon: M17,9H7V7H17M17,13H7V11H17M14,17H7V15H14M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z
-parent: h-t-m-l
+@version: [2, current]
+@description: HTML forms.
+@icon: M17,7H22V17H17V19A1,1 0 0,0 18,20H20V22H17.5C16.95,22 16,21.55 16,21C16,21.55 15.05,22 14.5,22H12V20H14A1,1 0 0,0 15,19V5A1,1 0 0,0 14,4H12V2H14.5C15.05,2 16,2.45 16,3C16,2.45 16.95,2 17.5,2H20V4H18A1,1 0 0,0 17,5V7M2,7H13V9H4V15H13V17H2V7M20,15V9H17V15H20Z
+@parent: h-t-m-l
 ...
 
-[[e]]
-echo "### Methods\n";
-foreach (glob(PAGE . DS . $url->path . DS . '*.page') as $v) {
-    $n = basename($v, '.page');
-    if ($n === '$') continue;
-    $v = Page::open($v);
-    echo "\n - [" . $v->title . '](' . $v->url . ')';
-}
-[[/e]]
-
-> **Note:** All string in the text area content and HTML attribute values will be HTML encoded.
+> **Note:** All string in the text area content and HTML attribute values will be HTML encoded. Special for the `$placeholder` variable, writing text in the form of HTML entity will escape the ampersand character so it will look like escaping the character two times. But this only applies to HTML entities that is not represented in HEX.
 
 To disable the form field, prepend a `.` to the form name. For `<select>` elements, to disable some option fields, prepend a `.` to the array key in the option list.
 
 ~~~ .php
-$test_1 = Form::button('.x'); // disabled button
-$test_2 = Form::input('.x'); // disabled input
-$test_3 = Form::select('.x'); // disabled select
-$test_4 = Form::textarea('.x'); // disabled textarea
-$test_5 = Form::textarea('\.x'); // not disabled, this will create `<textarea name=".x">`
+$A = Form::button('.x'); // disabled button
+$B = Form::input('.x'); // disabled input
+$C = Form::select('.x'); // disabled select
+$D = Form::textarea('.x'); // disabled textarea
+$E = Form::textarea('\.x'); // not disabled, this will create `<textarea name=".x">`
 ~~~
 
 ~~~ .php
-$test_1 = Form::select('x', [
+$A = Form::select('x', [
     '.0' => 'red', // disabled
     '1' => 'green',
     '2' => 'blue'
 ]);
 
-$test_2 = Form::input('x', [
+$B = Form::input('x', [
     '.Color' => [ // disabled
         '0.0' => 'red',
         '0.1' => 'green',

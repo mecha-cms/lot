@@ -1,0 +1,29 @@
+---
+@version: [2, current]
+@description: Generate possible shield path to be tested by [`$file::exist()`][link:../file/exist].
+@lot: $in, $fail = false
+@static: 1
+@example: |
+  // Search for PHP files relative to the root folder
+  // based on the given name, otherwise, return `$fail`
+  $A = Shield::path('page');
+  $B = Shield::path('foo');
+
+  // Search for PHP files relative to the root folder
+  // based on the given _namespace_. Otherwise, return
+  // the first available alternate file, otherwise,
+  // return `$fail`
+  $C = Shield::path('page/about/history')
+@result: |
+  $A = '.\page.php';
+  $B = false;
+
+  // can be
+  $C = '.\page.about.history.php';
+  // or
+  $C = '.\page\about\history.php';
+  // or
+  $C = '.\page\about.php';
+  // or
+  $C = '.\page.php';
+...

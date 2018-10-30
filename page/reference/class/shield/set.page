@@ -1,10 +1,14 @@
 ---
-title: `$shield::set()`
-description: Force to replace shield ID or file path with new file path.
+@version: [2, current]
+@description: Force to replace view ID or file path with new file path.
+@lot: $id, string $path = null
+@static: 1
+@example: |
+  Shield::get('foo.bar'); // [1]. Return nothing.
+  Shield::set('foo.bar', '.\lot\asset\php\view.php'); // [2]. Set!
+  Shield::get('foo.bar'); // [3]. Return the output buffer of `.\lot\asset\php\view.php` file.
+
+  Shield::get('.\lot\asset\php\view.php'); // [1]. Return the output buffer of `.\lot\asset\php\view.php` file.
+  Shield::set('.\lot\asset\php\view.php', '.\lot\asset\php\view-2.php'); // [2]. Set!
+  Shield::get('.\lot\asset\php\view.php'); // [3]. Return the output buffer of `.\lot\asset\php\view-2.php` file.
 ...
-
-~~~ .php.xmp
-Shield::set($id, $path = null);
-~~~
-
-This method inherits [`View::set()`][link:../view/set] method.

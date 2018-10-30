@@ -1,8 +1,8 @@
 ---
-title: `$shield::abort()`
-description: Generate an error page.
+@version: [2, current]
+@description: Generate an error page.
+@lot: $code = 404, $fail = false
+@static: 1
 ...
 
-~~~ .php.xmp
-Shield::abort($code = 404, $fail = false);
-~~~
+This method was added by the [shield][link:../../reference/extension/shield] extension.

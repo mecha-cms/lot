@@ -1,0 +1,11 @@
+---
+@version: [2, current]
+@description: Create a date instance.
+@lot: string $date = null
+@example: |
+  $A = new Date([[e]]echo time();[[/e]]);
+  $B = new Date('[[e]]echo time();[[/e]]');
+  $C = new Date('[[e]]echo date('Y-m-d H:i:s');[[/e]]');
+  $D = new Date('[[e]]echo date('Y-m-d-H-i-s');[[/e]]');
+  $E = new Date;
+...

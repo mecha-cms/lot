@@ -1,0 +1,43 @@
+---
+@version: [current]
+@description: The OOP style of [link:../../function/find].
+@lot: callable $fn = null, $fail = null
+@example: |
+  $array = [
+      [
+          'value' => 'A',
+          'id' => '41'
+      ],
+      [
+          'value' => 'B',
+          'id' => '42'
+      ],
+      [
+          'value' => 'C',
+          'id' => '43'
+      ],
+      [
+          'value' => 'D',
+          'id' => '44'
+      ],
+      [
+          'value' => 'E',
+          'id' => '45'
+      ],
+      [
+          'value' => 'F',
+          'id' => '46'
+      ],
+      [
+          'id' => '47'
+      ]
+  ];
+
+  $A = Anemon::eat($array)->find(function($v, $k) {
+      return $v['value'] === 'A';
+  });
+
+  echo '&#x' . $A['id'] . ';';
+@result: |
+  '&#x41;'
+...

@@ -1,0 +1,16 @@
+---
+@version: [2, current]
+@description: Get array key by position.
+@lot: int $index, $fail = null
+@example: |
+  $array = [
+      'foo' => 0,
+      'bar' => 1,
+      'baz' => 2,
+      'qux' => 3
+  ];
+
+  $A = Anemon::eat($array)->key(2);
+@result: |
+  $A = 'baz';
+...

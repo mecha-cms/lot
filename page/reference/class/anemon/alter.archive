@@ -1,0 +1,7 @@
+---
+@version: [2]
+@description: This is just a shortcut for `switch` and `case` statements.
+@static: 1
+...
+
+[connect:../../function/alt]

@@ -1,0 +1,45 @@
+---
+@version: [2, current]
+@description: Set default date time zone.
+@lot: string $zone = null
+@static: 1
+@example: |
+  // Set current time zone
+  Date::zone('Asia/Jakarta');
+  // Get current time zone
+  echo Date::zone();
+...
+
+Find the complete list of time zones supported by PHP [here](http://php.net/manual/en/timezones.php "List of Supported Timezones").
+
+[[e]]
+echo "Zone | Time Offset\n---- | -----------\n";
+call_user_func(function() {
+    $regions = [
+        DateTimeZone::AFRICA,
+        DateTimeZone::AMERICA,
+        DateTimeZone::ANTARCTICA,
+        DateTimeZone::ASIA,
+        DateTimeZone::ATLANTIC,
+        DateTimeZone::AUSTRALIA,
+        DateTimeZone::EUROPE,
+        DateTimeZone::INDIAN,
+        DateTimeZone::PACIFIC,
+    ];
+    $timezones = [];
+    $timezone_offsets = [];
+    foreach ($regions as $region) {
+        $timezones = array_merge($timezones, DateTimeZone::listIdentifiers($region));
+    }
+    foreach ($timezones as $timezone) {
+        $tz = new DateTimeZone($timezone);
+        $timezone_offsets[$timezone] = $tz->getOffset(new DateTime);
+    }
+    asort($timezone_offsets);
+    foreach($timezone_offsets as $zone => $offset) {
+        $offset_prefix = $offset < 0 ? '-' : '+';
+        $offset_formatted = gmdate('H:i', abs($offset));
+        echo $zone . ' | GMT' . $offset_prefix . $offset_formatted . "\n";
+    }
+});
+[[/e]]

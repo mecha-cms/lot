@@ -1,10 +1,11 @@
 ---
-title: `$shield::reset()`
-description: Force to disable shield ID or file path.
+@version: [2, current]
+@description: Force to disable view ID or file path.
+@lot: $id = null
+@static: 1
+@example: |
+  Shield::set('foo.bar', '.\lot\asset\php\view.php'); // [1]. Set!
+  Shield::get('foo.bar'); // [2]. Return the output buffer of `.\lot\asset\php\view.php` file.
+  Shield::reset('foo.bar'); // [3]. Reset!
+  Shield::get('foo.bar'); // [4]. Return nothing.
 ...
-
-~~~ .php.xmp
-Shield::reset($id);
-~~~
-
-This method inherits [`View::reset()`][link:../view/reset] method.

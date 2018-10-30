@@ -1,0 +1,15 @@
+---
+@version: [current]
+@description: Convert current date to other date based on time zone input.
+@lot: string $zone = 'UTC'
+@example: |
+  $date = new Date('[[e]]echo date('Y-m-d H:i:s');[[/e]]');
+
+  $A = $date->pattern('%h%:%m%:%s% %N%');
+  $B = $date->to('UTC')->pattern('%h%:%m%:%s% %N%');
+  $C = $B->parent->pattern('%h%:%m%:%s% %N%');
+@result: |
+  $A = '[[e]]echo (new Date(date('Y-m-d H:i:s')))->pattern('%h%:%m%:%s% %N%');[[/e]]';
+  $B = '[[e]]echo (new Date(date('Y-m-d H:i:s')))->to('UTC')->pattern('%h%:%m%:%s% %N%');[[/e]]';
+  $C = '[[e]]echo (new Date(date('Y-m-d H:i:s')))->to('UTC')->parent->pattern('%h%:%m%:%s% %N%');[[/e]]';
+...

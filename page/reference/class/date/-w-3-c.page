@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Get W3C date format.
+@example: |
+  $A = (new Date('[[e]]echo date('Y-m-d H:i:s');[[/e]]'))->W3C;
+@result: |
+  $A = '[[e]]echo (new Date(date('Y-m-d H:i:s')))->W3C;[[/e]]';
+...

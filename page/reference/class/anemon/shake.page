@@ -1,0 +1,41 @@
+---
+@version: [2, current]
+@description: The OOP style of [link:../../function/shake].
+@lot:
+  - $preserve_key = true
+  - callable $fn
+@example: |
+  $array = [
+      'foo' => 0,
+      'bar' => 1,
+      'baz' => 2,
+      'qux' => 3
+  ];
+
+  $A = Anemon::eat($array)->shake()->vomit();
+  $B = Anemon::eat($array)->shake(false)->vomit();
+  $C = Anemon::eat($array)->shake(function($a) {
+      return concat([array_pop($a), array_pop($a)], $a);
+  })->vomit();
+@result: |
+  $A = [
+      'baz' => 2,
+      'foo' => 0,
+      'bar' => 1,
+      'qux' => 3
+  ];
+
+  $B = [
+      0 => 2,
+      1 => 0,
+      2 => 1,
+      3 => 3
+  ];
+
+  $C = [
+      0 => 3,
+      1 => 2,
+      'foo' => 0,
+      'bar' => 1
+  ];
+...

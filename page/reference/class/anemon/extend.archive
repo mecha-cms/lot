@@ -1,0 +1,7 @@
+---
+@version: [2]
+@description: Extend two or more arrays.
+@static: 1
+...
+
+[connect:../../function/extend]

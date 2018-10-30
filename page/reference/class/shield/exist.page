@@ -1,8 +1,10 @@
 ---
-title: `$shield::exist()`
-description: Check the existence of a shield.
+@version: [2, current]
+@description: Check the existence of a shield.
+@lot: string $in, $fail = false
+@static: 1
+@example: |
+  if (Shield::exist('document')) { ... }
 ...
 
-~~~ .php.xmp
-Shield::exist($input, $fail = false);
-~~~
+This method was added by the [shield][link:../../reference/extension/shield] extension.

@@ -1,8 +1,10 @@
 ---
-title: `$shield::attach()`
-description: Attach a shield file as the page.
+@version: [2, current]
+@description: Attach a shield file as the overall page.
+@lot: $in, $fail = false
+@static: 1
+@example: |
+  Route::set('foo/bar', function() {
+      return Shield::attach('.\lot\asset\php\view.php');
+  });
 ...
-
-~~~ .php.xmp
-Shield::attach($input, $fail = false);
-~~~

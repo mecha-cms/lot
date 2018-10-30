@@ -1,0 +1,20 @@
+---
+@version: [2, current]
+@description: Move to the previous item.
+@lot: int $skip = 0
+@example: |
+  $array = [
+      'foo' => 0,
+      'bar' => 1,
+      'baz' => 2,
+      'qux' => 3
+  ];
+
+  $A = Anemon::eat($array)->end->previous->current();
+  $B = Anemon::eat($array)->end->previous->previous->current();
+  $C = Anemon::eat($array)->end->previous(1)->current();
+@result: |
+  $A = 2;
+  $B = 1;
+  $C = 1;
+...

@@ -1,0 +1,4 @@
+---
+@version: [2]
+@description: Convert current date to GMT date.
+...
