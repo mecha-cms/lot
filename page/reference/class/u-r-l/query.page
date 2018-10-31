@@ -1,0 +1,17 @@
+---
+@version: [current]
+@description: Return the URL query.
+@lot:
+  - string $var = null
+  - array $var = ['?', '&', '=', ""]
+@example: |
+  $A = $url->query;
+  $B = $url->query();
+  $C = $url->query('&amp;');
+  $D = $url->query(['{"', '","', '":"', '"}']);
+@result: |
+  $A = '[[e]]echo (new URL('?foo=bar&baz=qux'))->query;[[/e]]';
+  $B = '[[e]]echo (new URL('?foo=bar&baz=qux'))->query();[[/e]]';
+  $C = '[[e]]echo (new URL('?foo=bar&baz=qux'))->query('&amp;');[[/e]]';
+  $D = '[[e]]echo (new URL('?foo=bar&baz=qux'))->query(['{"', '","', '":"', '"}']);[[/e]]';
+...

@@ -1,109 +1,31 @@
 ---
-title: `$u_r_l::short()`
-description: Convert full URL into relative URL.
+@version: [2, current]
+@description: Convert full URL into relative URL.
+@lot: string $path = "", $root = true
+@static: 1
+@example: |
+  $A = URL::short('[[e]]echo $url;[[/e]]');
+  $B = URL::short('[[e]]echo $url . '/foo';[[/e]]');
+  $C = URL::short('[[e]]echo $url . '?foo';[[/e]]');
+  $D = URL::short('[[e]]echo $url . '&foo';[[/e]]');
+  $E = URL::short('[[e]]echo $url . '#foo';[[/e]]');
+  $F = URL::short('[[e]]echo $url . '/foo/bar';[[/e]]');
+  $G = URL::short('[[e]]echo $url . '?foo&bar';[[/e]]');
+  $H = URL::short('[[e]]echo $url . '&foo&bar';[[/e]]');
+  $I = URL::short('[[e]]echo '//' . rtrim($url->host . '/' . $url->directory, '/');[[/e]]');
+  $J = URL::short('http://example.com'); // External URL
+  $K = URL::short('//example.com'); // External URL with relative protocol
+@result: |
+  $A = '[[e]]echo URL::short($url);[[/e]]';
+  $B = '[[e]]echo URL::short($url . '/foo');[[/e]]';
+  $C = '[[e]]echo URL::short($url . '?foo');[[/e]]';
+  $D = '[[e]]echo URL::short($url . '&foo');[[/e]]';
+  $E = '[[e]]echo URL::short($url . '#foo');[[/e]]';
+  $F = '[[e]]echo URL::short($url . '/foo/bar');[[/e]]';
+  $G = '[[e]]echo URL::short($url . '?foo&bar');[[/e]]';
+  $H = '[[e]]echo URL::short($url . '&foo&bar');[[/e]]';
+  $I = '[[e]]echo URL::short('//' . rtrim($url->host . '/' . $url->directory, '/'));[[/e]]';
+  $J = '[[e]]echo URL::short('http://example.com');[[/e]]';
+  $K = '[[e]]echo URL::short('//example.com');[[/e]]';
+@result-note: If `$root` is `false`, then the sub-directory path where the CMS is being installed will be removed too, and the leading `/` will also be removed. The `$root` parameter changes makes sense only when Mecha is installed in a sub-directory.
 ...
-
-~~~ .php.xmp
-URL::short($url, $root = true);
-~~~
-
-**Example:**
-
-~~~ .php
-__test__(
-    URL::short('%{url.protocol}%%{url.host}%/directory'),
-    URL::short('%{url.protocol}%%{url.host}%/directory/foo'),
-    URL::short('%{url.protocol}%%{url.host}%/directory?foo'),
-    URL::short('%{url.protocol}%%{url.host}%/directory&foo'),
-    URL::short('%{url.protocol}%%{url.host}%/directory#foo'),
-    URL::short('%{url.protocol}%%{url.host}%/directory/javascript:;'),
-    URL::short('%{url.protocol}%%{url.host}%/directory/foo/bar'),
-    URL::short('//foo'),
-    URL::short('http://foo'),
-    URL::short('%{url.protocol}%%{url.host}%/directory', false),
-    URL::short('%{url.protocol}%%{url.host}%/directory/foo', false),
-    URL::short('%{url.protocol}%%{url.host}%/directory?foo', false),
-    URL::short('%{url.protocol}%%{url.host}%/directory&foo', false),
-    URL::short('%{url.protocol}%%{url.host}%/directory#foo', false),
-    URL::short('%{url.protocol}%%{url.host}%/directory/javascript:;', false),
-    URL::short('%{url.protocol}%%{url.host}%/directory/foo/bar', false),
-    URL::short('//foo', false),
-    URL::short('http://foo', false)
-);
-~~~
-
-> **Note:** If `$root` is `false`, then the sub-directory path where the CMS is being installed will be removed too, and the leading `/` will also be removed. The `$root` parameter changes makes sense only when Mecha is installed in a sub-directory.
-
-Result:
-
-~~~ .txt
-/directory
-~~~
-
-~~~ .txt
-/directory/foo
-~~~
-
-~~~ .txt
-/directory?foo
-~~~
-
-~~~ .txt
-/directory&foo
-~~~
-
-~~~ .txt
-/directory#foo
-~~~
-
-~~~ .txt
-/directory/javascript:;
-~~~
-
-~~~ .txt
-/directory/foo/bar
-~~~
-
-~~~ .txt
-//foo
-~~~
-
-~~~ .txt
-http://foo
-~~~
-
-~~~ .txt
-
-~~~
-
-~~~ .txt
-foo
-~~~
-
-~~~ .txt
-?foo
-~~~
-
-~~~ .txt
-&foo
-~~~
-
-~~~ .txt
-#foo
-~~~
-
-~~~ .txt
-javascript:;
-~~~
-
-~~~ .txt
-foo/bar
-~~~
-
-~~~ .txt
-//foo
-~~~
-
-~~~ .txt
-http://foo
-~~~

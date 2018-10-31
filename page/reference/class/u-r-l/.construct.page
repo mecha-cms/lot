@@ -1,49 +1,25 @@
 ---
-title: `__construct()`
-description: Constructor.
+@version: [2, current]
+@description: Constructor.
+@lot: string $in = null, string $self = '$'
+@example: |
+  $url = new URL('http://127.0.0.1/directory/foo/bar?foo=bar&baz=qux#foo');
+
+  echo $url; // Return the base URL
+  echo $url->scheme; // Return the URL protocol without the `://` suffix
+  echo $url->protocol; // Return the URL protocol with the `://` suffix
+  echo $url->host; // Return the URL host name
+  echo $url->port; // Return the URL port if any
+  echo $url->user; // Return the URL user if any or `$_SESSION['url']['user']` value if any
+  echo $url->pass; // Return the URL pass if any or `$_SESSION['url']['pass']` value if any
+  echo $url->directory; // Return the URL directory if CMS is installed in a sub-folder
+  echo $url->previous; // Return the previous URL or `$_SESSION['url']['previous']` value if any
+  echo $url->next; // Return the next URL or `$_SESSION['url']['next']` value if any
+  echo $url->current; // Return the current URL including the `i` property
+  echo $url->path; // Return the URL path without the `i` property
+  echo $url->i; // Return the pagination index if any
+  echo $url->query; // Return the URL query
+  echo $url->hash; // Return the URL hash
+@example-description: Inspect URL properties:
+@example-note: Most of numeric path value at the end of URL path will be moved from `path` property to `i` property. So, if we have `http://127.0.0.1/foo/bar/baz/1` then we would get `foo/bar/baz` in the `path` property and `1` in the `i` property.
 ...
-
-~~~ .php.xmp
-URL($input = null);
-~~~
-
-Inspect URL properties:
-
-~~~ .php
-$url = new URL('%{url.protocol}%%{url.host}%/directory/foo/bar?foo=bar&baz=qux#foo');
-
-echo $url->path; // return the URL path `foo/bar`
-echo $url->path('.'); // return the URL path as `foo.bar`
-echo $url; // return `$url->{'$'}` (the base URL)
-
-echo $url->query; // return the URL query string `?foo=bar&baz=qux`
-echo $url->query('&amp;'); // return the URL query string as `?foo=bar&amp;baz=qux``
-echo $url->query(['{', ',', ':', '}']); // return the URL query string as `{foo:bar,baz:qux}`
-
-echo $url->hash; // return the URL hash string if any `#foo`
-echo $url->hash('$'); // return the URL hash string if any as `$foo`
-~~~
-
-The available properties:
-
-~~~ .txt
-// %{url.protocol}%%{url.host}%/directory/foo/bar?foo=bar#foo
-
-$url → %{url.protocol}%%{url.host}%/directory
- │
- ├── scheme: %{url.scheme}%
- ├── protocol: %{url.protocol}%
- ├── host: %{url.host}%
- ├── port: %{url.port}%
- ├── user: null ← or depends on `$_SESSION['url']['user']`
- ├── pass: null ← or depends on `$_SESSION['url']['pass']`
- ├── directory: directory
- ├── $: %{url.protocol}%%{url.host}%/directory
- ├── url: %{url.protocol}%%{url.host}%/directory
- ├── path: foo/bar
- ├── query: ?foo=bar
- ├── previous: null ← or depends on `$_SESSION['url']['previous']`
- ├── current: %{url.protocol}%%{url.host}%/directory/foo/bar
- ├── next: null ← or depends on `$_SESSION['url']['next']`
- └── hash: null ← or depends on `$_COOKIE['url']['hash']`
-~~~

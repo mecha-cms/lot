@@ -1,0 +1,13 @@
+---
+@version: [current]
+@description: Return the URL hash.
+@lot: string $prefix = null
+@example: |
+  $A = $url->hash;
+  $B = $url->hash();
+  $C = $url->hash('#!');
+@result: |
+  $A = '[[e]]echo (new URL('#foo'))->hash;[[/e]]';
+  $B = '[[e]]echo (new URL('#foo'))->hash();[[/e]]';
+  $C = '[[e]]echo (new URL('#foo'))->hash('#!');[[/e]]';
+...
