@@ -49,3 +49,5 @@
 
   $C = [11, 12, 13, 14, 15];
 ...
+
+This method creates a [new instance][link:mitose].

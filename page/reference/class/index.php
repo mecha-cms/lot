@@ -1,7 +1,7 @@
 <?php
 
 Hook::set('*.title', function($title) use($site) {
-    $parts = explode(DS, Path::F($this->path, PAGE));
+    $parts = explode(DS, Path::R(Path::F($this->path), PAGE));
     $count = count($parts);
     $a = array_pop($parts);
     $b = array_pop($parts);
@@ -31,7 +31,7 @@ Hook::set('*.description', function($description) {
 }, 0);
 
 Hook::set('*.content', function($content) {
-    $parts = explode(DS, Path::F($this->path, PAGE));
+    $parts = explode(DS, Path::R(Path::F($this->path), PAGE));
     $count = count($parts);
     $a = array_pop($parts);
     $b = array_pop($parts);

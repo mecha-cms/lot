@@ -279,29 +279,3 @@ literal block: |
   "literal block": "lorem ipsum\ndolor sit amet\n  a b c"
 }
 ~~~
-
-#### Reference
-
-~~~ .yaml
-copy 1: &ref1 foo, bar, baz
-copy 2: &ref2
-  foo: bar
-  baz: qux
-paste 1: *ref1
-paste 2: *ref2
-~~~
-
-~~~ .json
-{
-  "copy 1": "foo, bar, baz",
-  "copy 2": {
-    "foo": "bar",
-    "baz": "qux"
-  },
-  "paste 1": "foo, bar, baz",
-  "paste 2": {
-    "foo": "bar",
-    "baz": "qux"
-  }
-}
-~~~

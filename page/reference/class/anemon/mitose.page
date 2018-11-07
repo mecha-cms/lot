@@ -2,31 +2,25 @@
 @version: [current]
 @description: Create new instance without reference it to a variable.
 @example: |
-  $anemon = new Anemon(['foo', 'bar', 'baz']);
+  $A = new Anemon(['foo', 'bar', 'baz']);
 
-  $A = $anemon->mitose()->map(function($v) {
-      return 'a:' . $v;
-  });
-  $B = $anemon->mitose()->map(function($v) {
-      return 'b:' . $v;
-  });
+  $B = $A->mitose()->sort(1);
 
   echo $A;
   echo $B;
 
-  echo $A->first . ', ' . $B->first . ', ' . $anemon->first;
-
-  test($A->parent, $anemon->parent);
+  test($A->parent, $B->parent);
 @result: |
-  'a:foo, a:bar, a:baz'
-  'b:foo, b:bar, b:baz'
+  'foo, bar, baz'
+  'bar, baz, foo'
 
-  'a:foo, b:foo, foo'
+  'foo'
+  'bar'
 
   [
-      Anemon::__set_state([ … ]),
-      null
+      null,
+      Anemon::__set_state([ … ])
   ]
 ...
 
-The cloned anemon instances will have a reference to their original instance in their `parent` property.
+The cloned anemon instances will have a reference to its original instance in it’s `parent` property.

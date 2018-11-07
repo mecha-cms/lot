@@ -39,3 +39,5 @@
   $A = ['A', 'B', 'C', 'D', 'E', 'F'];
   $B = ['A', 'B', 'C', 'D', 'E', 'F', '?'];
 ...
+
+This method creates a [new instance][link:mitose].

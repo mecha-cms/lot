@@ -24,3 +24,5 @@
       'qux' => 3
   ];
 ...
+
+This method creates a [new instance][link:mitose].
