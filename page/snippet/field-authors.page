@@ -18,7 +18,7 @@ Hook::set('on.page.set', function($current, $previous) {
             $path = Path::F($current) . DS . 'authors.data';
             $authors = From::JSON(File::open($path)->read('{}'));
             $authors->{'@' . $author} = time();
-            File::set(To::JSON($authors))->saveTo($path, 0600);
+            File::put(To::JSON($authors))->saveTo($path, 0600);
         }
     }
 });

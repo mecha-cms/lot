@@ -5,31 +5,32 @@ description: The available constants.
 
 Constant | Description | Example
 -------- | ----------- | -------
-`DS` | Return the directory separator. | `\`
-`ROOT` | Return the private root path without the trailing directory separator. | `.\www`
-`DENT` | Return the standard indentation characters of HTML page. | <mark><code>&nbsp;&nbsp;</code></mark>
-`T` | Return a tab character. | `\t`
-`N` | Return a new line character. | `\n`
-`X` | Return a placeholder character. | ␚
-`SESSION` | Return the custom `session_save_path` path. | `.\www\__session`
-`DEBUG` | Enable or disable debug mode. | `true`
-`ENGINE` | Return the engine folder path. | `.\www\engine`
-`LOT` | Return the lot folder path. | `.\www\lot`
-`ASSET` | Return the asset folder path. | `.\www\lot\asset`
-`EXTEND` | Return the extension folder path. | `.\www\lot\extend`
-`LANGUAGE` | Return the language folder path. | `.\www\lot\language`
-`PAGE` | Return the page folder path. | `.\www\lot\page`
-`SHIELD` | Return the shield folder path. | `.\www\lot\shield`
-`STATE` | Return the state folder path. | `.\www\lot\state`
-`PLUGIN` | Return the plugin folder path. | `.\www\lot\extend\plugin\lot\worker`
-`HTML_WISE_I` | Return inline HTML tag names allowed to be written in the page editor. | `b,code,i,u`
-`HTML_WISE_B` | Return block HTML tag names allowed to be written in the page editor. | `h1,h2,h3,h4,h5,h6,p`
-`HTML_WISE` | Combination of `HTML_WISE_I` and `HTML_WISE_B` | `b,code,i,u,h1,h2,h3,h4,h5,h6,p`
-`DATE_WISE` | Return the standard PHP date format string. | `Y-m-d H:i:s`
-`AUDIO_X` | Return audio file extensions. | `mp3,ogg,wav`
-`BINARY_X` | Return binary file extensions (any files that cannot be edited by text editor applications). | `mp3,pdf,swf,zip`
-`FONT_X` | Return font file extensions. | `eot,otf,svg,ttf,woff,woff2`
-`IMAGE_X` | Return image file extensions. | `bmp,cur,gif,ico,jpeg,jpg,png,svg`
-`PACKAGE_X` | Return package file extensions. | `gz,iso,rar,tar,zip,zipx`
-`TEXT_X` | Return plain text file extensions. | `css,html,js,log,php,txt,xml`
-`VIDEO_X` | Return video file extensions. | `mkv,mp4,ogv`
+`DS` <sup>2.0.0</sup> | Return the directory separator. | `\`
+`GROUND` <sup>2.2.0</sup> | Return the private server document root path without the trailing directory separator. | `.\www`
+`ROOT` <sup>2.0.0</sup> | Return the private root path without the trailing directory separator. | `.\www`
+`DENT` <sup>2.0.0</sup> | Return the standard indentation characters of HTML page. | <mark><code>&nbsp;&nbsp;</code></mark>
+`T` <sup>2.0.0</sup> | Return a tab character. | `\t`
+`N` <sup>2.0.0</sup> | Return a new line character. | `\n`
+`X` <sup>2.0.0</sup> | Return a placeholder character. | ␚
+`SESSION` <sup>2.0.0</sup> | Return the custom `session_save_path` path. | `.\www\__session`
+`DEBUG` <sup>2.0.0</sup> | Enable or disable debug mode. | `true`
+`ENGINE` <sup>2.0.0</sup> | Return the engine folder path. | `.\www\engine`
+`LOT` <sup>2.0.0</sup> | Return the lot folder path. | `.\www\lot`
+`ASSET` <sup>2.0.0</sup> | Return the asset folder path. | `.\www\lot\asset`
+`EXTEND` <sup>2.0.0</sup> | Return the extension folder path. | `.\www\lot\extend`
+`LANGUAGE` <sup>2.0.0</sup> | Return the language folder path. | `.\www\lot\language`
+`PAGE` <sup>2.0.0</sup> | Return the page folder path. | `.\www\lot\page`
+`SHIELD` <sup>2.0.0</sup> | Return the shield folder path. | `.\www\lot\shield`
+`STATE` <sup>2.0.0</sup> | Return the state folder path. | `.\www\lot\state`
+`PLUGIN` <sup>2.0.0</sup> | Return the plugin folder path. | `.\www\lot\extend\plugin\lot\worker`
+`HTML_WISE_I` <sup>2.0.0</sup> | Return inline HTML tag names allowed to be written in the page editor. | `b,code,i,u`
+`HTML_WISE_B` <sup>2.0.0</sup> | Return block HTML tag names allowed to be written in the page editor. | `h1,h2,h3,h4,h5,h6,p`
+`HTML_WISE` <sup>2.0.0</sup> | Combination of `HTML_WISE_I` and `HTML_WISE_B` | `b,code,i,u,h1,h2,h3,h4,h5,h6,p`
+`DATE_WISE` <sup>2.0.0</sup> | Return the standard PHP date format string. | `Y-m-d H:i:s`
+`AUDIO_X` <sup>2.0.0</sup> | Return audio file extensions. | `mp3,ogg,wav`
+`BINARY_X` <sup>2.0.0</sup> | Return binary file extensions (any files that cannot be edited by text editor applications). | `mp3,pdf,swf,zip`
+`FONT_X` <sup>2.0.0</sup> | Return font file extensions. | `eot,otf,svg,ttf,woff,woff2`
+`IMAGE_X` <sup>2.0.0</sup> | Return image file extensions. | `bmp,cur,gif,ico,jpeg,jpg,png,svg`
+`PACKAGE_X` <sup>2.0.0</sup> | Return package file extensions. | `gz,iso,rar,tar,zip,zipx`
+`TEXT_X` <sup>2.0.0</sup> | Return plain text file extensions. | `css,html,js,log,php,txt,xml`
+`VIDEO_X` <sup>2.0.0</sup> | Return video file extensions. | `mkv,mp4,ogv`

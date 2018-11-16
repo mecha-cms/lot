@@ -1,0 +1,17 @@
+---
+title: Layout
+description: Layout API.
+...
+
+~~~ .php
+Config::set('panel.layout', 3);
+~~~
+
+Options:
+
+ID | Layout
+-- | ------
+`0` | One column without navigation.
+`1` | One column with navigation.
+`2` | Two columns with navigation.
+`3` | Three columns with navigation.

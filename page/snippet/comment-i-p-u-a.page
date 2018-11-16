@@ -8,8 +8,8 @@ Requires [comment][link:../reference/extension/comment] extension.
 ~~~ .php
 Hook::set('on.comment.set', function() {
     $folder = Path::F($file);
-    if ($s = Get::IP()) File::set($s)->saveTo($folder . DS . 'ip.data', 0600);
-    if ($s = Get::UA()) File::set($s)->saveTo($folder . DS . 'ua.data', 0600);
+    if ($s = Get::IP()) File::put($s)->saveTo($folder . DS . 'ip.data', 0600);
+    if ($s = Get::UA()) File::put($s)->saveTo($folder . DS . 'ua.data', 0600);
 });
 ~~~
 

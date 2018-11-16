@@ -1,0 +1,37 @@
+---
+title: Users
+description: User grants.
+...
+
+### User Grants by Status
+
+Feature (TODO) | -1 | 0 | 1 | 2 | 3
+------- | -- | - | - | - | -
+Asset | n | n | y | ? | n
+Block | n | n | y | n | n
+Cache | n | n | y | n | n
+Comment | n | n | y | ? | ?
+Extend | n | n | y | n | n
+Language | n | n | y | n | n
+Page | n | n | y | ? | n
+Shield | n | n | y | n | n
+State | n | n | y | n | n
+Tag | n | n | y | ? | n
+Trash | n | n | y | n | n
+User | n | ? | y | ? | ?
+
+Action | -1 | 0 | 1 | 2 | 3
+------ | -- | - | - | - | -
+Create File | n | n | y | y | n
+Update File | n | n | y | y | n
+Delete File | n | n | y | n | n
+Create User File | n | n | y | n | n
+Update Own User File | n | y | y | y | y
+Delete Own User File | n | y (TODO) | y | y (TODO) | y (TODO)
+Update Other User File | n | n | y | n | n
+Delete Other User File | n | n | y | n | n
+Create Page File | n | n | y | y | n
+Update Own Page File | n | n | y | y | n
+Delete Own Page File | n | n | y | n | n
+Update Other Page File | n | n | y | n | n
+Delete Other Page File | n | n | y | n | n

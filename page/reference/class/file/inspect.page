@@ -1,41 +1,34 @@
 ---
-title: `$file::inspect()`
-description: Inspect file details.
+@version: [2, current]
+@description: Inspect file data.
+@lot: string $path, $key = null, $fail = false
+@static: 1
+@example: |
+  $A = File::inspect('.\path\to\file.txt');
+  $B = File::inspect('.\path\to\file.txt', 'type');
+  $C = File::inspect('.\path\to\file.txt', 'wow');
+@result: |
+  $A = [
+      'path' => '.\path\to\file.txt',
+      'name' => 'file',
+      'url' => 'http://127.0.0.1/path/to/file.txt',
+      'extension' => 'txt',
+      'type' => 'text/plain',
+      'create' => '2014-06-21 20:05:17',
+      'update' => '2014-06-21 20:05:17',
+      'size' => '20.62 KB',
+      'is' => [
+          'hidden' => false,
+          'file' => true,
+          'files' => false,
+          'folder' => false // alias for `files`
+      ],
+      '_create' => 1403355917,
+      '_update' => 1403355917,
+      '_size' => 21114
+  ];
+
+  $B = 'text/plain';
+
+  $C = false;
 ...
-
-~~~ .php.xmp
-File::inspect($input, $key = null, $fail = false);
-~~~
-
-**Example:**
-
-~~~ .php
-$test_1 = File::inspect('.\path\to\file.txt');
-$test_2 = File::inspect('.\path\to\file.txt', 'url');
-$test_3 = File::inspect('.\path\to\file.txt', 'wow');
-~~~
-
-Result:
-
-~~~ .php
-$test_1 = [
-    'path' => '.\path\to\file.txt',
-    'name' => 'file',
-    'url' => 'http://127.0.0.1/path/to/file.txt',
-    'extension' => 'txt',
-    'update' => '2014-06-21 20:05:17',
-    'size' => '20.62 KB',
-    'is' => [
-        'hidden' => false,
-        'file' => true,
-        'files' => false,
-        'folder' => false // alias for `files`
-    ],
-    '_update' => 1403355917,
-    '_size' => 21114
-];
-
-$test_2 = 'http://127.0.0.1/path/to/file.txt';
-
-$test_3 = false;
-~~~

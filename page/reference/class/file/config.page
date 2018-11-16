@@ -1,6 +1,7 @@
 ---
+@version [2, current]
+@description: Static configuration.
 title: `$file::config`
-description: Static configurations.
 ...
 
 ~~~ .php
@@ -8,7 +9,7 @@ File::$config = [
     // `$min` is for the minimum file size allowed in byte(s)
     // `$max` is for the maximum file size allowed in byte(s)
     'size' => [$min, $max],
-    // list of allowed file extension(s)
+    // List of allowed file extension(s)
     'extension' = ['txt']
 ];
 ~~~

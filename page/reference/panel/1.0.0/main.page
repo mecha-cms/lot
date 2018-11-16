@@ -1,0 +1,46 @@
+---
+title: Main
+description: Main API.
+...
+
+### Add
+
+~~~ .php
+Config::set('panel.m.t.my_tab', [
+    'title' => 'My Tab',
+    'legend' => 'Content of My Tab',
+    'list' => [
+        // @see `reference/panel/field`
+        'title' => [
+            'type' => 'text',
+            'is' => [
+                'expand' => true
+            ],
+            'stack' => 10
+        ]
+    ],
+    'stack' => 20
+]);
+~~~
+
+### Remove
+
+Remove the `page` tab:
+
+~~~ .php
+Config::reset('panel.m.t.page');
+~~~
+
+or…
+
+~~~ .php
+Config::set('panel.m.t.page', false);
+~~~
+
+### Update
+
+Change the `page` tab order from `10` to `30`:
+
+~~~ .php
+Config::set('panel.m.t.page.stack', 30);
+~~~

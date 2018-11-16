@@ -1,46 +1,30 @@
 ---
-title: `$file::exist()`
-description: Check the existence of a file/folder.
+@version: [2, current]
+@description: Check the existence of a file/folder.
+@lot: $path, $fail = false
+@static: 1
+@example: |
+  // Generic
+  if (File::exist('.\path\to\file.txt')) { … }
+
+  // Return the given path if file/folder exists, return `false` if not
+  if ($file = File::exist('.\path\to\header.php')) {
+      require $file;
+  } else {
+      require '.\path\to\header.alt.php';
+  }
+
+  // Shortcut for above example
+  require File::exist('.\path\to\header.php', '.\path\to\header.alt.php');
+
+  // Loop through list of file path until it finds a file that exists
+  if ($test = File::exist([
+      'page-post-2016.php',
+      'page-post.php',
+      'page.php'
+  ], false)) {
+      echo 'File: ' . $test;
+  } else {
+      echo 'File: false';
+  }
 ...
-
-~~~ .php.xmp
-File::exist($input, $fail = false);
-~~~
-
-**Example:**
-
-~~~ .php
-if (File::exist('test.txt')) {
-    echo 'File `test.txt` exists.';
-}
-~~~
-
-Return the given path if file/folder exists, return `false` if not:
-
-~~~ .php
-if ($file = File::exist('header.php')) {
-    include $file;
-} else {
-    include 'header.legacy.php';
-}
-~~~
-
-Shortcut:
-
-~~~ .php
-include File::exist('header.php', 'header.legacy.php');
-~~~
-
-Loop through list of file path until it finds a file that exists:
-
-~~~ .php
-if ($test = File::exist([
-    'page-post-2016.php',
-    'page-post.php',
-    'page.php'
-], false)) {
-    echo $test . ' does exist.';
-} else {
-    echo $test . ' is now `false`.';
-}
-~~~

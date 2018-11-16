@@ -8,7 +8,7 @@ Hook::set('shield.enter', function() use($site) {
     if ($page = Lot::get('page')) {
         $time = Path::F($page->path) . DS . 'time.data';
         if (!$site->is('error') && !File::exist($time)) {
-            File::set($page->time)->saveTo($time);
+            File::put($page->time)->saveTo($time);
         }
     }
 });

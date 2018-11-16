@@ -1,0 +1,15 @@
+---
+title: View
+description: View mode.
+...
+
+~~~ .php
+Config::set('panel.view', 'page');
+~~~
+
+Options:
+
+ID | Layout
+-- | ------
+`file` | Files view (default).
+`page` | Pages view.
