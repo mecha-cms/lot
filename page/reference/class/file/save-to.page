@@ -1,14 +1,7 @@
 ---
-title: `$file->saveTo()`
-description: Save a file to.
+@version: [2, current]
+@description: Save a file to …
+@lot: string $path, $consent = null
+@example: |
+  File::put('some text')->saveTo('.\path\to\file.txt');
 ...
-
-~~~ .php.xmp
-->saveTo($path, $consent = null);
-~~~
-
-**Example:**
-
-~~~ .php
-File::set('some text')->saveTo('path\to\file.txt');
-~~~

@@ -1,14 +1,7 @@
 ---
-title: `$file->read()`
-description: Output the file content.
+@version: [2, current]
+@description: Read the file content as string.
+@lot: $fail = null
+@example: |
+  echo File::open('.\path\to\file.txt')->read();
 ...
-
-~~~ .php.xmp
-->read($fail = null);
-~~~
-
-**Example:**
-
-~~~ .php
-echo File::open('path\to\file.txt')->read();
-~~~

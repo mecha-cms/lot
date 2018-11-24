@@ -1,14 +1,5 @@
 ---
-title: `$file::set()`
-description: Create a file.
+@version: [current]
+@description: Alias for [`put`][link:put].
+@static: 2
 ...
-
-~~~ .php.xmp
-File::set($data);
-~~~
-
-**Example:**
-
-~~~ .php
-File::set('some text');
-~~~

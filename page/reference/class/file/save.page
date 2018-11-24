@@ -1,14 +1,7 @@
 ---
-title: `$file->save()`
-description: Update a file.
+@version: [2, current]
+@description: Update a file.
+@lot: $consent = null
+@example: |
+  File::open('.\path\to\file.txt')->put('some text')->save();
 ...
-
-~~~ .php.xmp
-->save($consent = null);
-~~~
-
-**Example:**
-
-~~~ .php
-File::open('path\to\file.txt')->set('some text')->save();
-~~~
