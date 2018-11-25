@@ -1,0 +1,7 @@
+---
+@version: [current]
+@description: Save a file to …
+@lot: string $name, $consent = null
+@example: |
+  File::open('.\path\to\file.txt')->put('some text')->saveAs('file-copy.txt');
+...

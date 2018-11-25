@@ -1,16 +1,12 @@
 ---
-title: `$asset::_()`
-description: Define how the asset data should be outputted.
+@version: [2, current]
+@description: Define how the asset data should be outputted.
+@static: 1
+@lot: string $kin, callable $fn
+@parent: genome
+@example: |
+  Asset::_('.css', function($value, $key, $attr) {
+      return '<link href="' . $value['url'] . '" rel="stylesheet">';
+  });
+@example-description: 'To make it specific to the [`Asset`][link:] class, make sure to add a dot character just before the method name you want to add. Other than that, the results will inherit to [`Genome::_()`][link:../genome#reference:plug].'
 ...
-
-~~~ .php.xmp
-Asset::_($kin, $fn);
-~~~
-
-To make it specific to the [`Asset`][link:] class, make sure to add a dot character just before the method name you want to add. Other than that, the results will inherit to [`Genome::_()`][link:../genome#reference:plug]:
-
-~~~ .php
-Asset::_('.css', function($value, $key, $attr) {
-    return '<link href="' . $value['url'] . '" rel="stylesheet">';
-});
-~~~

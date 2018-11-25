@@ -1,7 +1,7 @@
 <?php
 
 Hook::set('*.title', function($title) use($site) {
-    $parts = explode(DS, Path::R(Path::F($this->path), PAGE));
+    $parts = explode(DS, Path::R(Path::F($this->path . ""), PAGE));
     $count = count($parts);
     $a = array_pop($parts);
     $b = array_pop($parts);
@@ -11,7 +11,7 @@ Hook::set('*.title', function($title) use($site) {
             $static = $this->get('@static', false);
             $title = '<code>$' . h($b, '_');
             $title .= $static ? ($static === 2 ? '{::,-&gt;}' : '::') : '-&gt;';
-            $title .= (strpos($a, '.') === 0 ? '__' . c(substr($a, 1)) : c($a)) . '()</code>';
+            $title .= strtr(strpos($a, '.') === 0 ? '__' . c(substr($a, 1)) : c($a), ' ', '_') . '()</code>';
         } else {
             // TODO
             $title = '<code>' . f2c($a) . '</code>';
@@ -31,7 +31,7 @@ Hook::set('*.description', function($description) {
 }, 0);
 
 Hook::set('*.content', function($content) {
-    $parts = explode(DS, Path::R(Path::F($this->path), PAGE));
+    $parts = explode(DS, Path::R(Path::F($this->path . ""), PAGE));
     $count = count($parts);
     $a = array_pop($parts);
     $b = array_pop($parts);
@@ -70,7 +70,7 @@ Hook::set('*.content', function($content) {
         foreach ((array) $lot as $v) {
             $s .= "~~~ .php.xmp\n";
             $s .= $static ? f2c($parent->get('slug', false)) . '::' : '$' . h($parent->get('slug', false), '_') . '->';
-            $m = strpos($this->get('slug', false), '.') === 0 ? '__' . c(substr($this->get('slug', false), 1)) : c($this->get('slug', false));
+            $m = strtr(strpos($this->get('slug', false), '.') === 0 ? '__' . c(substr($this->get('slug', false), 1)) : c($this->get('slug', false)), ' ', '_');
             $s .= $m . '(' . $v . ");\n";
             if ($static === 2) {
                 $s .= '$' . h($parent->get('slug', false), '_') . '->' . $m . '(' . $v . ");\n";
@@ -100,7 +100,7 @@ Hook::set('*.content', function($content) {
         }
     }
     if ($count > 2) {
-        $path = Path::F($this->path);
+        $path = Path::F($this->path . "");
         if ($c === 'class') {
             $path = dirname($path);
         }

@@ -1,36 +1,20 @@
 ---
-title: `$asset::get()`
-description: Get data of the available assets.
+@version: [2, current]
+@description: Get data of the available assets.
+@lot: $path = null, $fail = false, int $i = 1
+@static: 1
+@example: |
+  $A = Asset::get('.\lot\asset\css\style-2.css');
+  $B = Asset::get('.\lot\asset\css\style-4.css');
+@example-description: Get data of `style-2.css` path that has been added to the hooks storage if any, otherwise, return `$fail`.
+@result: |
+  $A = [
+      'path' => '.\lot\asset\css\style-2.css',
+      'url' => 'http://127.0.0.1/lot/asset/css/style-2.css',
+      'id' => '.\lot\asset\css\style-2.css',
+      'data' => [],
+      'stack' => 10
+  ];
 
-Get data of `style-2.css` path that has been added to the hooks storage if any, otherwise, return `$fail`.
-
-~~~ .php.xmp
-Asset::get($path = null, $fail = false, $i = 1);
-~~~
-
-**Example:**
-
-~~~ .php
-$test_1 = Asset::get('.\lot\asset\css\style-2.css');
-$test_2 = Asset::get('.\lot\asset\css\style-4.css');
-~~~
-
-Result:
-
-~~~ .php
-$test_1 = [
-    'path' => '.\lot\asset\css\style-2.css',
-    'url' => 'http://127.0.0.1/lot/asset/css/style-2.css',
-    'id' => '.\lot\asset\css\style-2.css',
-    'data' => [],
-    'stack' => 10
-];
-
-$test_2 = false;
-~~~
-
-Inspect all of the assets data that has been added to the hooks storage:
-
-~~~ .php
-__test__(Asset::get());
-~~~
+  $B = false;
+...

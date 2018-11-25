@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: [1, 2, current]
 @description: Save a file to …
 @lot: string $path, $consent = null
 @example: |

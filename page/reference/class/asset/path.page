@@ -1,16 +1,9 @@
 ---
-title: `$asset::path()`
-description: Generate full private file path of the `$path`.
+@version: [2, current]
+@description: Generate full private file path of the `$path`.
+@lot: string $path, $fail = false
+@static: 1
+@example: |
+  $A = Asset::path('.\lot\asset\css\style.css');
+@example-note: Setting external URL to the `$path` parameter will return to `$fail`.
 ...
-
-~~~ .php.xmp
-Asset::path($path, $fail = false);
-~~~
-
-**Example:**
-
-~~~ .php
-$path = Asset::path('.\lot\asset\css\style.css');
-~~~
-
-> **Note:** Setting external URL to the `$path` parameter will return to `$fail`.

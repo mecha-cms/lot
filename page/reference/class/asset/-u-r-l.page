@@ -1,24 +1,10 @@
 ---
-title: `$asset::{URL,url}()`
-description: Generate full public URL path of the `$path`.
+@version: [2, current]
+@description: Generate full public URL path of the `$path`.
+@lot: string $url, $fail = false
+@static: 1
+@example: |
+  $A = Asset::URL('.\lot\asset\css\style.css');
+  $B = Asset::URL('http://example.com/asset/icons.css');
+@example-note: Setting external URL to the `$url` parameter will return that `$url` anyway.
 ...
-
-~~~ .php.xmp
-Asset::URL($url, $fail = false);
-~~~
-
-~~~ .php.xmp
-Asset::url($url, $fail = false); // alias
-~~~
-
-**Example:**
-
-~~~ .php
-$url = Asset::URL('.\lot\asset\css\style.css');
-~~~
-
-~~~ .php
-$url = Asset::URL('http://example.com/asset/icons.css');
-~~~
-
-> **Note:** Setting external URL to the `$url` parameter will return that `$url` anyway.

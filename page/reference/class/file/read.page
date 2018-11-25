@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: [1, 2, current]
 @description: Read the file content as string.
 @lot: $fail = null
 @example: |
