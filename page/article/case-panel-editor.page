@@ -1,0 +1,37 @@
+---
+title: Editor Specification for Panel Extension
+description: Make the editor API accessible to developers.
+...
+
+Applying a custom editor to the control panel fields is as easy as reading the installation documentation page for each editor package. But, for compatibility with other editors, I decided to make some specifications about applying a JavaScript editor to the control panel fields.
+
+ 1. First, the instance results of each editor on the DOM element must be attached to the DOM itself in the `editor` property.
+ 2. The `editor` object must support at least two methods: `set` and `reset`. The `set` method is used to set or refresh the current editor instance with new configuration data, and the `reset` method will be used to destroy the overall appearance of the editor (e.g. turning it back to the generic `<textarea>` element).
+
+~~~ .js.xmp
+HTMLTextAreaElement.editor.set(config: object): CodeMirror
+~~~
+
+~~~ .js.xmp
+HTMLTextAreaElement.editor.get(): HTMLTextAreaElement
+~~~
+
+~~~ .js.xmp
+HTMLTextAreaElement.editor.reset(): void
+~~~
+
+As of the current development stage, we have [_CodeMirror_](https://codemirror.net) as our default source code editor, and [_CKEditor_](https://ckeditor.com) as custom page content editor that has been packaged separately as [`c-k-editor`][link:../reference/extension/c-k-editor] extension.
+
+This is what I mean about attaching editor instances to the DOM node. Each DOM node that has been changed to a custom editor view will be provided with an `editor` property that you can use to manipulate the existing editor instance:
+
+### Example Usage for CodeMirror
+
+![CodeMirror](%{asset}%/gif/article/case-panel-editor/code-mirror.gif)
+
+### Example Usage for CKEditor
+
+![CKEditor](%{asset}%/gif/article/case-panel-editor/c-k-editor.gif)
+
+It’s up to you whether you want to access the DOM node through the native JavaScript `document.forms` property, or maybe via a _jQuery_ selector like `$('textarea[name="page[content]"]').get(0)`, or maybe with `document.getElementById('f:content.2')`, or … whatever. Just take the DOM and use its `editor` property to do something! 😉
+
+*[DOM]: Document Object Model

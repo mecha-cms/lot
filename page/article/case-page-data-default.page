@@ -23,17 +23,17 @@ The default `url` value will use the file path that is converted into a public U
 
 ### ID
 
-The default `id` value will use the `time` value that is converted into _Unix_ time format as string.
+The default `id` value will use the `time` value that is converted into unsigned _Unix_ time format as string.
 
 ### Type
 
- The default `type` value wil use the page’s file extension that is converted into upper-case words.
+The default `type` value wil use the page’s file extension that is converted into upper-case words.
  
- > **Note:** If you set some default values explicitly in `page` configuration property, then those data will be replaced by them. Example:
+> **Note:** If you set some default values explicitly in `page` configuration property, then those data will be replaced by them. Example:
  
- ~~~ .php
- Config::set('page', [
-     'title' => 'My Default Title',
-     'type' => 'HTML'
- ]);
- ~~~
+~~~ .php
+Config::set('page', [
+    'title' => 'My Default Title',
+    'type' => 'HTML'
+]);
+~~~

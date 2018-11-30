@@ -19,7 +19,6 @@ Common patterns:
  - `%‌{‌date.year‌}‌%`
  - `%‌{‌date.month‌}‌%`
  - `%‌{‌date.en_us‌}‌%`
- - `%‌{‌date.F2‌}‌%`
  - …
 
 ### Language
@@ -62,18 +61,16 @@ Alias for _$page_.
 
 ### URL
 
- - `%‌{‌url‌}‌%` → `http://127.0.0.1/a`
+ - `%‌{‌url‌}‌%` → `http://localhost/a`
  - `%‌{‌url.scheme‌}‌%` → `http`
  - `%‌{‌url.protocol‌}‌%` → `http://`
  - `%‌{‌url.host‌}‌%` → `localhost`
  - `%‌{‌url.port‌}‌%` → `80`
  - `%‌{‌url.directory‌}‌%` → `a`
- - `%‌{‌url.url‌}‌%` → same as `%‌{‌url‌}‌%`
+ - `%‌{‌url.$}‌%` → same as `%‌{‌url‌}‌%`
  - `%‌{‌url.path‌}‌%` → `foo/bar`
  - `%‌{‌url.query‌}‌%` → `?foo=bar&baz=qux`
- - `%‌{‌url.current‌}‌%` → `http://127.0.0.1/a/foo/bar`
-
-[connect:../../variable]
+ - `%‌{‌url.current‌}‌%` → `http://localhost/a/foo/bar`
 
 ---
 

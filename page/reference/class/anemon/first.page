@@ -1,6 +1,7 @@
 ---
 @version: [2, current]
 @description: Get first item in array.
+@lot: $take = false
 @example: |
   $array = [
       'foo' => 0,
