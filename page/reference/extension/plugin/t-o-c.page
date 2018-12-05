@@ -12,7 +12,7 @@ This plugin will automatically create table of content within the page content t
 
 ### Usage
 
-Configuration data are available in `lot\extend\plugin\lot\worker\t-o-c\lot\state\config.php`.
+Configuration data are available in `.\lot\extend\plugin\lot\worker\t-o-c\lot\state\config.php`.
 
 #### Custom Header ID
 

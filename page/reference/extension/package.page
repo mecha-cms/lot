@@ -1,0 +1,159 @@
+---
+title: Package
+description: File packer and package extractor.
+icon: M14,17H12V15H10V13H12V15H14M14,9H12V11H14V13H12V11H10V9H12V7H10V5H12V7H14M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z
+...
+
+### Packing
+
+#### Basic Packing
+
+Take a folder, then create a package for that folder, then save it in the same directory where the folder is located:
+
+~~~ .php
+Folder::open('.\path\to\folder')->pack();
+~~~
+
+The code above will generate a Zip file named as `directory.zip`. You can also add a wrapper folder in the package file:
+
+~~~ .php
+Folder::open('.\path\to\folder-1')->pack('foo');
+Folder::open('.\path\to\folder-2')->pack('foo\bar');
+~~~
+
+#### Selective Packing
+
+Take a file then create a package for that file:
+
+~~~ .php
+File::open('.\path\to\file.txt')->pack();
+~~~
+
+The code above will generate a Zip file named as `file.zip`.
+
+Take some files then create a package for that files. Use array key to determine the original file path and array value to determine the file destination path in the package:
+
+~~~ .php
+File::open([
+    '.\path\to\file.css' => 'css\asset.css',
+    '.\path\to\file.js' => 'js\asset.js',
+    '.\path\to\file.html' => 'index.html'
+])->pack();
+~~~
+
+#### Specify the Name of the Zip File
+
+Same with all of the methods above, but with custom package name:
+
+~~~ .php
+Folder::open('.\path\to\folder')->packAs('package.zip');
+~~~
+
+~~~ .php
+File::open('.\path\to\file.txt')->packAs('package.zip');
+~~~
+
+~~~ .php
+File::open([
+    '.\path\to\file.css' => 'css\asset.css',
+    '.\path\to\file.js' => 'js\asset.js',
+    '.\path\to\file.html' => 'index.html'
+])->packAs('package.zip');
+~~~
+
+Use the second argument to set a wrapper folder in the package:
+
+~~~ .php
+Folder::open('.\path\to\folder')->packAs('package.zip', 'foo');
+~~~
+
+#### Pack and Move
+
+Pack it, then move it to another location:
+
+~~~ .php
+Folder::open('.\path\to\folder')->packTo('.\path\to\package.zip');
+~~~
+
+Use the second argument to set a wrapper folder in the package:
+
+~~~ .php
+Folder::open('.\path\to\folder')->packTo('.\path\to\package.zip', 'foo');
+~~~
+
+### Extracting
+
+#### Basic Extracting
+
+Take a Zip file, extract it, then put the results to the same directory where the Zip file is located:
+
+~~~ .php
+Package::open('.\path\to\package.zip')->extract();
+~~~
+
+#### Extract to Folder
+
+Take a Zip file, extract it, then put the results into the same directory where the Zip file is located, wrapped in a folder named as `foo`:
+
+~~~ .php
+Package::open('.\path\to\package.zip')->extractAs('foo');
+~~~
+
+#### Extract and Move
+
+Extract it, then move it to another location:
+
+~~~ .php
+Package::open('.\path\to\package.zip')->extractTo('.\path\to\folder');
+~~~
+
+### Adding and Removing
+
+#### Add a File to the Package
+
+Add a file to the package without extraction process. Use the first argument to determine the file destination path in the package and second argument to determine the original file path:
+
+~~~ .php
+Package::open('.\path\to\package.zip')->set('foo.txt', '.\path\to\file.txt');
+~~~
+
+#### Add Multiple Files to the Package
+
+Add multiple files to the package without extraction process. Use array value to determine the original file path and array key to determine the file destination path in the package:
+
+~~~ .php
+Package::open('.\path\to\package.zip')->set([
+    'css\asset.css' => '.\path\to\file.css',
+    'js\asset.js' => '.\path\to\file.js',
+    'index.html' => '.\path\to\file.html'
+]);
+~~~
+
+#### Remove a File from the Package
+
+Remove a file from the package without extraction process:
+
+~~~ .php
+Package::open('.\path\to\package.zip')->reset('css\asset.css');
+~~~
+
+#### Remove Multiple Files from the Package
+
+Remove multiple files from the package without extraction process:
+
+~~~ .php
+Package::open('.\path\to\package.zip')->reset([
+    'css\asset.css',
+    'js\asset.js'
+]);
+~~~
+
+> **Note:** You cannot create an empty package. There will always be at least one file in the package even if you have tried to remove all.
+
+### Inspecting
+
+Get info of a Zip file.
+
+~~~ .php
+$info = Package::inspect('.\path\to\package.zip');
+~~~

@@ -9,9 +9,9 @@ This snippet will automatically add `rel="nofollow"` and `target="_blank"` attri
 Hook::set([
     'page.description',
     'page.content'
-], function($content, $lot = [], $that) use($url) {
+], function($content, array $lot = []) use($url) {
     // Page type is not set or has value other than “HTML”, skip!
-    if ($that->get('type') !== 'HTML') {
+    if ($this->type !== 'HTML') {
         return $content;
     }
     // No anchor(s) found, skip!
@@ -33,9 +33,13 @@ Hook::set([
               strpos($href, '/') === 0 ||
               strpos($href, '?') === 0 ||
               strpos($href, '#') === 0 ||
+              strpos($href, 'data:') === 0 ||
               strpos($href, 'javascript:') === 0 ||
               strpos($href, '.') === 0 ||
-              strpos($href, '://') === false;
+              (
+                  strpos($href, '://') === false &&
+                  strpos($href, 'data:') === false
+              );
         // Double check for relative protocol…
         if (strpos($href, '//') === 0 && strpos($href, '//' . $url->host) !== 0) {
             $if = false;
