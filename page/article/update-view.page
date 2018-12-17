@@ -17,7 +17,7 @@ Create a temporary folder in the root folder of your _Mecha_ site then name it a
 
 ### Step 3: Install a Fresh Mecha Package
 
-Download the package from [here][link:../home] then put it in the `test` folder. Extract it!
+Download the package from [here][link:../index] then put it in the `test` folder. Extract it!
 
 ![2](%{asset}%/png/article/update-view/2.png)
 
@@ -35,7 +35,7 @@ Now visit `http://127.0.0.1/test` to make sure that the site is visible as expec
 
 ![4](%{asset}%/png/article/update-view/4.png)
 
-> **Note:** If you get a _red_ message like `View::load("page/index")` in the page then it was caused by your `shield` property that has been set to a value other than `document`. This message will appear when the site is missing your custom shield folder. Open `.\www\test\lot\state\config.php` then make sure that the `shield` value is set to `document`.
+> **Note:** If you get a _red_ message like `Shield::attach("page/index")` in the page then it was caused by your `shield` property that has been set to a value other than `document`. This message will appear when the site is missing your custom shield folder. Open `.\www\test\lot\state\config.php` then make sure that the `shield` value is set to `document`.
 
 ### Step 6: Extensions, Plugins and Shields
 

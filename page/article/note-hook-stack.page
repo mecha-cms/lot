@@ -5,7 +5,7 @@ description: Just some notes.
 
 I’m started to think that it is important to standardize the hook stack order to make sure that everything can be executed in the proper order. These tables will help you to set your own filter stack properly and to make sure that your custom filters will run before or after these filters.
 
-For example, to create a filter that will be used to replace raw Markdown syntax, you have to set the `$stack` value to be less than `2` because `fn_markdown` runs in level `2`; to create a filter that will be used to replace HTML code or HTML version of Markdown, you have to set the `$stack` value to be greater than `2`, so that your filter will run after `fn_markdown`.
+For example, to create a filter that will be used to replace raw Markdown syntax, you have to set the `$stack` value to be less than `2` because `fn\markdown` runs in level `2`; to create a filter that will be used to replace HTML code or HTML version of Markdown, you have to set the `$stack` value to be greater than `2`, so that your filter will run after `fn\markdown`.
 
 [connect:../reference/class/hook]
 
@@ -15,24 +15,20 @@ For example, to create a filter that will be used to replace raw Markdown syntax
 
 Stack | Hook | To | Source
 ----- | ---- | -- | ------
-`0` | `fn_asset` | `shield.yield` | [link:../reference/extension/asset]
-`1` | `fn_art` | `shield.yield` | [link:../reference/extension/plugin/art]
-`2` | `fn_minify` | `shield.yield` | [link:../reference/extension/minify]
+`0` | `fn\asset` | `shield.yield` | [link:../reference/extension/asset]
+`1` | `fn\art` | `shield.yield` | [link:../reference/extension/plugin/art]
+`2` | `fn\minify` | `shield.yield` | [link:../reference/extension/minify]
 
 #### Page
 
 Stack | Hook | To | Source
 ----- | ---- | -- | ------
-`0` | `fn_block_x` | `*.content` | [link:../reference/extension/block]
-`.9` | `fn_block_e` | `*.content` | [link:../reference/extension/plugin/block-e]
-`1` | `fn_block` | `*.content` | [link:../reference/extension/block]
-`1.9` | `fn_markdown_link` | `*.content`, `*.description` | [link:../reference/extension/plugin/markdown-link]
-`2` | `fn_markdown` | `*.description`, `*.content` | [link:../reference/extension/plugin/markdown]
-`2` | `fn_markdown_span` | `*.title` | [link:../reference/extension/plugin/markdown]
-`3` | `fn_rapic` | `page.content` | [link:../reference/extension/plugin/r-a-p-i-c]
-`fn_block:1` → `10` | `fn_block_url` | `*.content` | [link:../reference/extension/plugin/block-url]
-`fn_block:1` → `10` | `fn_archive` | `page.content` | [link:../reference/extension/plugin/archive]
-`fn_block:1` → `10` | `fn_toc` | `page.content` | [link:../reference/extension/plugin/t-o-c]
+`0` | `fn\block\_x` | `*.content` | [link:../reference/extension/block]
+`.9` | `fn\block\e` | `*.content` | [link:../reference/extension/plugin/block-e]
+`1` | `fn\block` | `*.content` | [link:../reference/extension/block]
+`1.9` | `fn\markdown\link` | `*.content`, `*.description` | [link:../reference/extension/plugin/markdown-link]
+`2` | `fn\markdown` | `*.description`, `*.content` | [link:../reference/extension/plugin/markdown]
+`3` | `fn\rapic` | `page.content` | [link:../reference/extension/plugin/r-a-p-i-c]
 
 ### Examples
 

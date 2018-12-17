@@ -2,4 +2,8 @@
 type: Video
 ...
 
-http://localhost/video.mp4
+[[e]]
+if ($videos = glob(ASSET . DS . 'mp4' . DS . '*.mp4', GLOB_NOSORT)) {
+    echo To::URL($videos[0]);
+}
+[[/e]]

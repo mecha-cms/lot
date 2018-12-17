@@ -33,7 +33,7 @@ If you want to make something that is super huge with Mecha, that would be possi
 ### Preparations
 
  1. Make sure that you already have the required components.
- 2. Download the available package from the [home page][link:home].
+ 2. Download the available package from the [home page][link:index].
  3. Upload Mecha through your FTP/SFTP to the public folder/directory [^2] on your site, then extract it!
  4. Take a look on the available [extensions][link:reference/extension] and [plugins][link:reference/extension/plugin] that you might be interested.
  5. Upload your extension folders to `.\lot\extend` and your plugin folders to `.\lot\extend\plugin\lot\worker`. They’re auto-loaded.

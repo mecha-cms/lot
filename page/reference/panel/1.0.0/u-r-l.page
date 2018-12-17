@@ -10,7 +10,7 @@ description: Common URL pattern used by this extension.
 ~~~
 
  - `$url` → the base URL
- - `$slug` → the `path` value as defined in `lot\extend\panel\lot\state\config.php`
+ - `$slug` → the `path` value as defined in `.\lot\extend\panel\lot\state\config.php`
  - `$command` → in general, it can be `s`, `g` or `r` ([info][link:../../article/case-grammar])
  - `$directory` → the base folder name relative to [`LOT`][link:../constant]
  - `$path` → any path that maps to the file/folder in `$directory`
@@ -18,9 +18,9 @@ description: Common URL pattern used by this extension.
 Examples:
 
 ~~~ .txt
-http://127.0.0.1/panel/::s::/asset/css → create a file in `lot\asset\css`
-http://127.0.0.1/panel/::g::/asset/css/a.css → edit `a.css` file that is stored in `lot\asset\css` folder
-http://127.0.0.1/panel/::r::/asset/css/a.css → delete `a.css` file that is stored in `lot\asset\css` folder
+http://127.0.0.1/panel/::s::/asset/css → create a file in `.\lot\asset\css`
+http://127.0.0.1/panel/::g::/asset/css/a.css → edit `a.css` file that is stored in `.\lot\asset\css` folder
+http://127.0.0.1/panel/::r::/asset/css/a.css → delete `a.css` file that is stored in `.\lot\asset\css` folder
 ~~~
 
 ### Query

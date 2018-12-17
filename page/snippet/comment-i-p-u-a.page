@@ -7,7 +7,7 @@ Requires [comment][link:../reference/extension/comment] extension.
 
 ~~~ .php
 Hook::set('on.comment.set', function() {
-    $folder = Path::F($file);
+    $folder = Path::F($this->path);
     if ($s = Get::IP()) File::put($s)->saveTo($folder . DS . 'ip.data', 0600);
     if ($s = Get::UA()) File::put($s)->saveTo($folder . DS . 'ua.data', 0600);
 });
@@ -16,9 +16,8 @@ Hook::set('on.comment.set', function() {
 Then, you can call the stored comment IP and UA this way:
 
 ~~~ .php
-<?php echo $comment->ip; ?>
-~~~
-
-~~~ .php
-<?php echo $comment->ua; ?>
+foreach ($page->comments as $comment) {
+    echo '<p><strong>IP:</strong> ' . $comment->ip . '</p>';
+    echo '<p><strong>UA:</strong> ' . $comment->ua . '</p>';
+}
 ~~~

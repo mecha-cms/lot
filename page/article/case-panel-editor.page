@@ -36,6 +36,6 @@ This is what I mean about attaching editor instances to the DOM node. Each DOM n
 
 ![CKEditor](%{asset}%/gif/article/case-panel-editor/c-k-editor.gif)
 
-Itâ€™s up to you whether you want to access the DOM node through the native JavaScript `document.forms` property, or maybe via a _jQuery_ selector like `$('textarea[name="page[content]"]').get(0)`, or maybe with `document.getElementById('f:content.2')`, or â€¦ whatever. Just take the DOM and use its `editor` property to do something! ðŸ˜‰
+It’s up to you whether you want to access the DOM node through the native JavaScript `document.forms` property, or maybe via a _jQuery_ selector like `$('textarea[name="page[content]"]').get(0)`, or maybe with `document.getElementById('f:content.2')`, or … whatever. Just take the DOM and use its `editor` property to do something! 😉
 
 *[DOM]: Document Object Model

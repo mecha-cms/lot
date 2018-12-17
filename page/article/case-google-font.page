@@ -142,7 +142,7 @@ First, we need to determine our base URL using the [route][link:../reference/cla
 ~~~ .php
 Route::set('fonts.css', function() {
     echo 'It works!';
-    exit;
+    return;
 });
 ~~~
 
@@ -171,13 +171,13 @@ Route::set('fonts.css', function() {
     // echo 'It works!';
     // Generate CSS code that will set a random color to the `<body>` text
     echo 'body{color:#' . substr(md5($_SERVER['REQUEST_TIME']), 0, 6) . '}';
-    exit;
+    return;
 });
 ~~~
 
 ![4](%{asset}%/png/article/case-google-font/4.png)
 
-With the CSS code I gave above, you should see that the text color on the page will change when this dynamic file is rendered each time the page is reloaded. Now let’s go to the next step!
+With the dynamic CSS code above, you should see that the text color of the page will change when this dynamic file is rendered each time the page is reloaded. Now let’s go to the next step!
 
 ### File Structure
 
@@ -217,7 +217,7 @@ Route::set('fonts.css', function() {
             // Do something with `$font`…
         }
     }
-    exit;
+    return;
 });
 ~~~
 
@@ -235,14 +235,14 @@ Route::set('fonts.css', function() {
             // `$parts[0]` is `Roboto` and `$parts[1]` is `400,700,400i,700i`
             $parts = explode(':', $font, 2);
             // `Open+Sans` → `Open Sans`
-            $parts[0] = str_replace('+', ' ', $parts[0]);
+            $parts[0] = strtr($parts[0], '+', ' ');
             // Font weight(s) aren’t defined, set to its default weight → `400`
             if (empty($parts[1])) {
                 $parts[1] = '400';
             }
         }
     }
-    exit;
+    return;
 });
 ~~~
 
@@ -260,7 +260,7 @@ Route::set('fonts.css', function() {
             // `$parts[0]` is `Roboto` and `$parts[1]` is `400,700,400i,700i`
             $parts = explode(':', $font, 2);
             // `Open+Sans` → `Open Sans`
-            $parts[0] = str_replace('+', ' ', $parts[0]);
+            $parts[0] = strtr($parts[0], '+', ' ');
             // Font weight(s) aren’t defined, set to its default weight → `400`
             if (empty($parts[1])) {
                 $parts[1] = '400';
@@ -274,7 +274,7 @@ Route::set('fonts.css', function() {
             }
         }
     }
-    exit;
+    return;
 });
 ~~~
 
@@ -292,7 +292,7 @@ Route::set('fonts.css', function() {
             // `$parts[0]` is `Roboto` and `$parts[1]` is `400,700,400i,700i`
             $parts = explode(':', $font, 2);
             // `Open+Sans` → `Open Sans`
-            $parts[0] = str_replace('+', ' ', $parts[0]);
+            $parts[0] = strtr($parts[0], '+', ' ');
             // Font weight(s) aren’t defined, set to its default weight → `400`
             if (empty($parts[1])) {
                 $parts[1] = '400';
@@ -321,7 +321,7 @@ Route::set('fonts.css', function() {
         // Output the result and remove the first two line-break of the `@font-face`
         echo substr($s, 2);
     }
-    exit;
+    return;
 });
 ~~~
 

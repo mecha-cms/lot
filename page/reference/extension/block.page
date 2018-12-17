@@ -96,7 +96,8 @@ As of Mecha version `1.x.x` _shortcodes_:
 #### Set
 
 ~~~ .xmp.php
-Block::set($id, $fn, $stack = null);
+Block::set(string $id, callable $fn, float $stack = null);
+Block::set(string $id, string $text, float $stack = null);
 ~~~
 
 Define a new block:
@@ -122,7 +123,7 @@ Lorem ipsum <‌mark‌>dolor<‌/‌mark‌> [‌[‌mark‌]‌]sit[‌[‌/�
 #### Get
 
 ~~~ .xmp.php
-Block::get($id, $fail = false);
+Block::get(string $id = null, $fail = false);
 ~~~
 
 Return the `mark` block data if any, otherwise, return `$fail`:
@@ -136,7 +137,7 @@ if ($fn = Block::get('mark')) {
 #### Reset
 
 ~~~ .xmp.php
-Block::reset($id);
+Block::reset(string $id);
 ~~~
 
 Disable the `mark` block pattern:
@@ -148,7 +149,8 @@ Block::reset('mark');
 #### Replace
 
 ~~~ .xmp.php
-Block::replace($id, $fn | $text, $content);
+Block::replace(string $id, callable $fn, string $content);
+Block::replace(string $id, string $text, string $content);
 ~~~
 
 Replace `mark` block in `$content` with advance pattern:

@@ -6,7 +6,7 @@ icon: M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16
 
 ### File
 
-All you have to do after installing this extension is to create a page file in the `.\lot\user` folder. Name the page according to the user name you want. For example, here I will create user data with the name `@ta-tau-taufik`:
+All you have to do after installing this extension is to create a page file in the `.\lot\user` folder. Name the page according to the user name you want. For example, here I will create user data with the name `@‌ta-tau-taufik`:
 
 ~~~ .txt
 .\
@@ -63,7 +63,7 @@ Check whether a user is logged in:
 if (Is::user()) { … }
 ~~~
 
-Check whether user `@ta-tau-taufik` is logged in:
+Check whether user `@‌ta-tau-taufik` is logged in:
 
 ~~~ .php
 if (Is::user('ta-tau-taufik')) { … }
@@ -107,7 +107,7 @@ The page in `.\lot\page\test-page.page`:
 ~~~ .yaml
 ---
 title: Page Title
-author: @ta-tau-taufik
+author: @‌ta-tau-taufik
 ...
 
 Page content.
