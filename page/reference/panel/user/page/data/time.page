@@ -1,0 +1,13 @@
+---
+title: Update Publication Time of a Page
+...
+
+To update the current publication time of a page, navigate to the [page editor][link:../get] then click the _Data_ tab.
+
+![]()
+
+Change the value of the _Time_ field to suit your desired publication time. The time format must conform to the pattern below:
+
+~~~ .txt
+YYYY-MM-DD hh:mm:ss
+~~~

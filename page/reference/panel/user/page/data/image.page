@@ -1,0 +1,23 @@
+---
+title: Add Featured Image to a Page
+...
+
+To add featured image to a page, you need to install the [link:/reference/extension/image] extension and [link:/reference/extension/plugin/image] plugin.
+
+ - Navigate to the [page editor][link:../set] then click the _Image_ tab.
+ - Click the _Image_ field to select an image file.
+ - Determine the exact image width and height in the _Width_ and _Height_ field to automatically resize and crop the uploaded image. Leave it empty to keep the original image width and height.
+
+![]()
+
+The image data will be available in `$page->image` object so you can add this data to the template like so:
+
+~~~ .php
+<?php if ($page->image): ?>
+<img alt="" src="<?php echo $page->image; ?>">
+<?php endif; ?>
+~~~
+
+To delete the uploaded image, go to the [page editor][link:../get] then click the _Image_ tab. Select the _Remove_ field then click the _Update_ button at the bottom of your page editor.
+
+![]()

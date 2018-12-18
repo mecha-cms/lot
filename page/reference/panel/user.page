@@ -1,37 +1,40 @@
 ---
-title: Users
-description: User grants.
+title: User Guide
 ...
 
-### User Grants by Status
+### Frequently Asked Questions
 
-Feature (TODO) | -1 | 0 | 1 | 2 | 3
-------- | -- | - | - | - | -
-Asset | n | n | y | ? | n
-Block | n | n | y | n | n
-Cache | n | n | y | n | n
-Comment | n | n | y | ? | ?
-Extend | n | n | y | n | n
-Language | n | n | y | n | n
-Page | n | n | y | ? | n
-Shield | n | n | y | n | n
-State | n | n | y | n | n
-Tag | n | n | y | ? | n
-Trash | n | n | y | n | n
-User | n | ? | y | ? | ?
+[[e]]
+$faq = [
+    'How to create a page?' => 'page/set',
+    'How to create a user?' => 'user/set',
+    'How to delete a page?' => 'page/reset',
+    'How to delete a user?' => 'user/reset',
+    'How to force log-out a user?' => 'user/exit',
+    'How to delete a comment?' => '',
+    'How to reply a comment?' => '',
+    'How to add tags to a page?' => '',
+    'How to create a block?' => '',
+    'How to use a block?' => '',
+    'How to install a theme?' => '',
+    'How to change theme?' => '',
+    'How to change language?' => '',
+    'How to create an asset?' => '',
+    'How to upload an asset?' => '',
+    'How to create custom field for page?' => '',
+    'How to delete custom field from page?' => '',
+    'How to add external link to a page?' => 'page/data/link',
+    'How to add featured image to a page?' => 'page/data/image',
+    'How to change the publication time of a page?' => 'page/data/time',
+    'How to add page children?' => 'page/child/set',
+    'How to create a blog?' => '',
+    'How to change or hide the log-in link?' => '',
+    'How to change or hide the control panel&rsquo;s base path?' => ''
+];
 
-Action | -1 | 0 | 1 | 2 | 3
------- | -- | - | - | - | -
-Create File | n | n | y | y | n
-Update File | n | n | y | y | n
-Delete File | n | n | y | n | n
-Create User File | n | n | y | n | n
-Update Own User File | n | y | y | y | y
-Delete Own User File | n | y (TODO) | y | y (TODO) | y (TODO)
-Update Other User File | n | n | y | n | n
-Delete Other User File | n | n | y | n | n
-Create Page File | n | n | y | y | n
-Update Own Page File | n | n | y | y | n
-Delete Own Page File | n | n | y | n | n
-Update Other Page File | n | n | y | n | n
-Delete Other Page File | n | n | y | n | n
+ksort($faq);
+
+foreach ($faq as $k => $v) {
+    echo ' - ' . ($v ? '[' . $k . '][link:user/' . $v . ']' : $k) . N;
+}
+[[/e]]

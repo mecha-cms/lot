@@ -1,0 +1,9 @@
+---
+title: Create an Asset
+...
+
+**Option 1:** Navigate to `http://127.0.0.1/panel/::s::/asset` to create a new asset relative to the asset folder. To create a new asset relative to another folder, please refer to the [link:folder/set] reference.
+
+**Option 2:** In the [link:assets] view, click on the _File_ button.
+
+![]()

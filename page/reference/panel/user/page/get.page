@@ -1,0 +1,9 @@
+---
+title: Edit a Page
+...
+
+**Option 1:** Navigate to `http://127.0.0.1/panel/::g::/page/about.page` to edit a page named `about.page`. Navigate to `http://127.0.0.1/panel/::g::/page/article/hello-world.page` to edit a page named `hello-world.page` stored in the `article` folder. You get the idea here.
+
+**Option 2:** In the [link:pages] view, choose the page you want to edit, then click on the pencil tool to edit that page.
+
+![]()
