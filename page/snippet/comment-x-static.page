@@ -7,6 +7,6 @@ Disable comments on pages that are relative to the root URL like `http://example
 
 ~~~ .php
 <?php if ($site->has('parent')): ?>
-<?php Shield::get('comments'); ?>
+<?php static::comments(); ?>
 <?php endif; ?>
 ~~~

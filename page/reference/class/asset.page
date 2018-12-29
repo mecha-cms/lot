@@ -5,4 +5,4 @@
 @parent: genome
 ...
 
-> **Info:** This class is located in `lot\extend\asset\engine\kernel` folder.
+> **Info:** This class is located in `.\lot\extend\asset\engine\kernel` folder.

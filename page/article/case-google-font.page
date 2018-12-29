@@ -185,20 +185,20 @@ Make sure that you have the font files with varying weight, then place them into
 
 ~~~ .txt
 .\
- └── lot\
-     └── asset\
-         └── woff\
-             ├── Roboto\
-             │   ├── 400.woff
-             │   ├── 400i.woff
-             │   ├── 700.woff
-             │   └── 700i.woff
-             ├── Open Sans\
-             │   ├── 400.woff
-             │   ├── 400i.woff
-             │   ├── 700.woff
-             │   └── 700i.woff
-             └── …
+└── lot\
+    └── asset\
+        └── woff\
+            ├── Roboto\
+            │   ├── 400.woff
+            │   ├── 400i.woff
+            │   ├── 700.woff
+            │   └── 700i.woff
+            ├── Open Sans\
+            │   ├── 400.woff
+            │   ├── 400i.woff
+            │   ├── 700.woff
+            │   └── 700i.woff
+            └── …
 ~~~
 
 ![5](%{asset}%/png/article/case-google-font/5.png)

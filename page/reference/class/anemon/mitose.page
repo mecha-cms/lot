@@ -14,9 +14,6 @@
   'foo, bar, baz'
   'bar, baz, foo'
 
-  'foo'
-  'bar'
-
   [
       null,
       Anemon::__set_state([ … ])

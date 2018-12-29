@@ -38,6 +38,7 @@ Hook::set('*.content', function($content) {
     $c = array_pop($parts);
     $tags = [];
     $static = $this->get('@static', false);
+    $abstract = $this->get('@abstract', false);
     if ($version = $this->get('@version', false)) {
         foreach ($version as &$v) {
             $v = explode('.', $v === 'current' ? Mecha::version : $v);
@@ -48,6 +49,9 @@ Hook::set('*.content', function($content) {
     }
     if ($static) {
         $tags[] = '<mark class="tag tag-static" title="method">static</mark>';
+    }
+    if ($abstract) {
+        $tags[] = '<mark class="tag tag-abstract" title="class">abstract</mark>';
     }
     $parent = dirname($this->path) . '.';
     $parent = File::exist([
@@ -78,7 +82,7 @@ Hook::set('*.content', function($content) {
             $s .= "~~~\n\n";
         }
     }
-    $content = implode(' ', $tags) . "\n\n" . $s . $content;
+    $content = '<span class="tags">' . implode(' ', $tags) . "</span>\n\n" . $s . $content;
     if ($count > 3) {
         if ($example_description = $this->get('@example-description', false)) {
             $content .= "\n\n" . $example_description;

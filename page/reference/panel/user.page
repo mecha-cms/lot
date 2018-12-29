@@ -6,6 +6,7 @@ title: User Guide
 
 [[e]]
 $faq = [
+    'How to enable the control panel feature?' => '',
     'How to create a page?' => 'page/set',
     'How to create a user?' => 'user/set',
     'How to delete a page?' => 'page/reset',

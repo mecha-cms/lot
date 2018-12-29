@@ -1,0 +1,11 @@
+---
+title: Force HTTPS
+description: Redirect from HTTP to HTTPS.
+...
+
+~~~ .php
+// Redirect from `http://example.com` to `https://example.com`
+if ($url->scheme === 'http') {
+    Guardian::kick('https://' . explode('://', $url->current)[1] . $url->query);
+}
+~~~

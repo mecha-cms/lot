@@ -22,26 +22,18 @@ This variable is an instance of the [`Language` class][link:class/language].
 This variable exists on every file attached by the [`Shield::get()`][link:class/shield/get] method when the second argument is defined and is an array:
 
 ~~~ .php
-Shield::get('path/to/file.php', ['body' => 'Lorem ipsum dolor sit amet.']);
+Shield::get('.\path\to\file.php', ['body' => 'Lorem ipsum dolor sit amet.']);
 ~~~
 
-In the example above, variable `$lot['body']` will be available in `path\to\file.php`.
-
-### `$message`
-
-This variable is the result of [`Message::get()`][link:class/message/get]. [^1]
+In the example above, variable `$lot['body']` will be available in `.\path\to\file.php`.
 
 ### `$site`
 
-This is an alias for `$config`.
+This is an alias for `$config`. [^2]
 
 ### `$state`
 
 This variable returns the state data of the current shield if available, and is an instance of the [`State` class][link:class/state].
-
-### `$token`
-
-This variable is the result of [`Guardian::token()`][link:class/guardian/token]. [^1]
 
 ### `$url`
 
@@ -68,3 +60,4 @@ This variable is an instance of the [`Elevator` class][link:class/elevator]. [^1
 This variable returns the parent page instance of the `$page`. [^1]
 
 [^1]: Added by the [page][link:extension/page] extension.
+[^1]: Added by the [shield][link:extension/shield] extension.

@@ -18,11 +18,11 @@ To enable the numbered page navigation style, open your `pages.php` file then fi
 ~~~
 
 ~~~ .php
-<?php Shield::get('pager'); ?>
+<?php static::pager(); ?>
 ~~~
 
 Replace with this:
 
 ~~~ .php
-<?php Shield::get('pager/step'); ?>
+<?php static::pager('step'); ?>
 ~~~

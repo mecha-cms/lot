@@ -37,11 +37,11 @@ In version `2.x.x`, you can create custom fields as separate files named as the 
 
 ~~~ .txt
 lot\
- └── page\
-     ├── page-slug\
-     │   ├── foo.data ← contains `bar`
-     │   └── bar.data ← contains `1`
-     └── page-slug.page
+└── page\
+    ├── page-slug\
+    │   ├── foo.data ← contains `bar`
+    │   └── bar.data ← contains `1`
+    └── page-slug.page
 ~~~
 
 ### Custom Fields
@@ -66,10 +66,10 @@ echo $page->bar;
 >
 > ~~~ .txt
 > lot\
->  └── page\
->      ├── page-slug\
->      │   └── fields.data
->      └── page-slug.page
+> └── page\
+>     ├── page-slug\
+>     │   └── fields.data
+>     └── page-slug.page
 > ~~~
 >
 > Contents of `fields.data`:
@@ -139,11 +139,11 @@ Store them in folder that has relationship with the page:
 
 ~~~ .txt
 lot\
- └── page\
-     ├── page-slug\
-     │   ├── css.data ← contains the first part
-     │   └── js.data ← contains the second part
-     └── page-slug.page
+└── page\
+    ├── page-slug\
+    │   ├── css.data ← contains the first part
+    │   └── js.data ← contains the second part
+    └── page-slug.page
 ~~~
 
 ### Time and Tags
@@ -177,11 +177,11 @@ kind: [1,2,3,11]
 >
 > ~~~ .txt
 > lot\
->  └── page\
->      ├── page-slug\
->      │   ├── kind.data
->      │   └── time.data
->      └── page-slug.page
+> └── page\
+>     ├── page-slug\
+>     │   ├── kind.data
+>     │   └── time.data
+>     └── page-slug.page
 > ~~~
 >
 > > **Info:** The default [shield][link:../reference/file/shield] uses `slug` to set the `$key` value in the `sort()` method of [`Anemon` class][link:../reference/class/anemon#reference:order], and they are sorted ascending. To sort the page listing descending by time, go to `lot\shield\document\state\config.php` then replace the `sort` value like this:
@@ -267,13 +267,13 @@ In this version, only the comment time that is stored in the file name. Post ID 
 
 ~~~ .txt
 lot\
- └── comment\
-     └── article\
-         └── page-slug\
-             ├── 2014-05-05-09-09-32\
-             │   └── parent.data
-             ├── 2014-05-04-06-04-22.page
-             └── 2014-05-05-09-09-32.page
+└── comment\
+    └── article\
+        └── page-slug\
+            ├── 2014-05-05-09-09-32\
+            │   └── parent.data
+            ├── 2014-05-04-06-04-22.page
+            └── 2014-05-05-09-09-32.page
 ~~~
 
 _To be continued…_

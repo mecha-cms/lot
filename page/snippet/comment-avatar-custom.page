@@ -23,28 +23,28 @@ Lorem ipsum dolor sit amet.
 
 ### Local Avatars
 
-Using email address as the avatar ID, you can create local avatars for each users by storing them in the `lot\asset` folder.
+Using email address as the avatar ID, you can create local avatar for each users by storing them in the `.\lot\asset` folder.
 
 ~~~ .txt
 lot\
- └── asset\
-     └── png\
-         └── -avatar
-             ├── 7328fddefd53de471baeb6e2b764f78a.png ← email@domain.com
-             ├── ac1514317918b7810594431832d3adae.png ← …
-             └── 459b9511a7f650ebd327889c45cc4e9b.png ← …
+└── asset\
+    └── png\
+        └── -avatar
+            ├── 7328fddefd53de471baeb6e2b764f78a.png ← email@domain.com
+            ├── ac1514317918b7810594431832d3adae.png ← …
+            └── 459b9511a7f650ebd327889c45cc4e9b.png ← …
 ~~~
 
 The hook:
 
 ~~~ .php
-Hook::set('comment.avatar', function($avatar, $lot) {
-    if (!isset($lot['email'])) { // No email data, skip…
+Hook::set('comment.avatar', function($avatar) {
+    if (!$this->email) { // No email data, skip…
         return $content;
     }
-    $id = md5($lot['email']);
+    $id = md5($this->email);
     if ($path = File::exist(ASSET . DS . 'png' . DS . '-avatar' . DS . $id . '.png')) {
-        return To::URL($path) . '?v=' . File::inspect($path, 'update');
+        return To::URL($path) . '?v=' . File::inspect($path, '_update');
     }
     // Local avatar image does not exist, return the initial value…
     return $avatar;

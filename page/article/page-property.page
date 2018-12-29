@@ -24,14 +24,14 @@ foo_bar: Test property value of `foo_bar`.
 Lorem ipsum dolor sit amet.
 ~~~
 
-To set a value to the `foo_bar` property from a separated file, add a file named as `foo_bar.data` to the related folder:
+To set a value to the `foo_bar` property from a separated file, add a file named as `foo-bar.data` to the related folder:
 
 ~~~ .txt
 lot\
- └── page\
-     ├── test-page\
-     │   └── foo_bar.data
-     └── test-page.page
+└── page\
+    ├── test-page\
+    │   └── foo-bar.data
+    └── test-page.page
 ~~~
 
 To set a value to the `foo_bar` property with a hook, do this:

@@ -16,10 +16,10 @@ Page is a plain text file stored in the `.\lot\page` folder. The correct file na
 
 ~~~ .txt
 lot\
- └── page\
-     ├── lorem-ipsum.page
-     ├── dolor-sit.page
-     └── no-no-no.page
+└── page\
+    ├── lorem-ipsum.page
+    ├── dolor-sit.page
+    └── no-no-no.page
 ~~~
 
 A `page` extension is the default extension for page files to state that the page is an active and publicly available page. There are several other page extensions that can also be used:
@@ -73,11 +73,11 @@ A page file can also have connections with other files through a folder that has
 
 ~~~ .txt
 lot\
- └── page\
-     ├── lorem-ipsum\
-     ├── lorem-ipsum.page
-     ├── dolor-sit.page
-     └── no-no-no.page
+└── page\
+    ├── lorem-ipsum\
+    ├── lorem-ipsum.page
+    ├── dolor-sit.page
+    └── no-no-no.page
 ~~~
 
 Users can store other data that has a relationship with the page file in that folder. If the file name ends with extension `data`, then this file will act as an external page property. This is called **Data**.
@@ -88,14 +88,14 @@ Users can store other data that has a relationship with the page file in that fo
 
 ~~~ .txt
 lot\
- └── page\
-     ├── lorem-ipsum\
-     │   ├── title.data
-     │   ├── description.data
-     │   └── author.data
-     ├── lorem-ipsum.page
-     ├── dolor-sit.page
-     └── no-no-no.page
+└── page\
+    ├── lorem-ipsum\
+    │   ├── title.data
+    │   ├── description.data
+    │   └── author.data
+    ├── lorem-ipsum.page
+    ├── dolor-sit.page
+    └── no-no-no.page
 ~~~
 
 Users can also add other page files in the folder. This, can then be named as **Child**.
@@ -106,17 +106,17 @@ Users can also add other page files in the folder. This, can then be named as **
 
 ~~~ .txt
 lot\
- └── page\
-     ├── lorem-ipsum\
-     │   ├── title.data
-     │   ├── description.data
-     │   ├── author.data
-     │   ├── lorem-ipsum-child-1.page
-     │   ├── lorem-ipsum-child-2.page
-     │   └── lorem-ipsum-child-3.page
-     ├── lorem-ipsum.page
-     ├── dolor-sit.page
-     └── no-no-no.page
+└── page\
+    ├── lorem-ipsum\
+    │   ├── title.data
+    │   ├── description.data
+    │   ├── author.data
+    │   ├── lorem-ipsum-child-1.page
+    │   ├── lorem-ipsum-child-2.page
+    │   └── lorem-ipsum-child-3.page
+    ├── lorem-ipsum.page
+    ├── dolor-sit.page
+    └── no-no-no.page
 ~~~
 
 > **Note:** To ask the engine to disable the page listing view in a particular folder, put an empty file with name `$.page` in the folder.
@@ -137,24 +137,24 @@ And so on…
 
 ~~~ .txt
 lot\
- └── page\
-     ├── lorem-ipsum\
-     │   ├── lorem-ipsum-child-1\
-     │   │   ├── title.data
-     │   │   ├── description.data
-     │   │   ├── author.data
-     │   │   ├── lorem-ipsum-child-1-1.page
-     │   │   ├── lorem-ipsum-child-1-2.page
-     │   │   └── lorem-ipsum-child-1-3.page
-     │   ├── title.data
-     │   ├── description.data
-     │   ├── author.data
-     │   ├── lorem-ipsum-child-1.page
-     │   ├── lorem-ipsum-child-2.page
-     │   └── lorem-ipsum-child-3.page
-     ├── lorem-ipsum.page
-     ├── dolor-sit.page
-     └── no-no-no.page
+└── page\
+    ├── lorem-ipsum\
+    │   ├── lorem-ipsum-child-1\
+    │   │   ├── title.data
+    │   │   ├── description.data
+    │   │   ├── author.data
+    │   │   ├── lorem-ipsum-child-1-1.page
+    │   │   ├── lorem-ipsum-child-1-2.page
+    │   │   └── lorem-ipsum-child-1-3.page
+    │   ├── title.data
+    │   ├── description.data
+    │   ├── author.data
+    │   ├── lorem-ipsum-child-1.page
+    │   ├── lorem-ipsum-child-2.page
+    │   └── lorem-ipsum-child-3.page
+    ├── lorem-ipsum.page
+    ├── dolor-sit.page
+    └── no-no-no.page
 ~~~
 
 ---
@@ -172,6 +172,6 @@ These page conditional statements are available to quickly determine the type of
  - `$site->is('$')` → Return the home page’s file path on home page.
  - `$site->is('error')` → Return `404` if there is no page or pages to load.
  - `$site->is('home')` → Return the home page’s file path on home page.
- - `$site->is('page')` → Return the current page’s file path if page is available.
- - `$site->is('pages')` → Return the current page’s files path if current page contains children.
+ - `$site->is('page')` → Return the current page’s file path on item view.
+ - `$site->is('pages')` → Return the current page’s files path on items view.
  - `$site->is('search')` → Return `true` on search results page.

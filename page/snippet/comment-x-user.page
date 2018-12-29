@@ -11,6 +11,6 @@ Use this [method][link:comment-x].
 
 ~~~ .php
 <?php if (!$site->is('user')): ?>
-<?php Shield::get('comments'); ?>
+<?php static::comments(); ?>
 <?php endif; ?>
 ~~~

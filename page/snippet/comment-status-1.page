@@ -8,11 +8,11 @@ Requires [comment][link:../reference/extension/comment] extension and [user][lin
 Add this CSS code to style the site author’s comments based on the default `comments.php` template:
 
 ~~~ .css
-li.comment-status\:1 {
+li.comment.comment-status\:1 {
   background:#def;
   padding:1em;
 }
-li.comment-status\:1 .comment-figure {margin-left:1em}
+li.comment.comment-status\:1 .comment-figure {margin-left:1em}
 ~~~
 
 Which is based on this markup:

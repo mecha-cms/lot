@@ -16,13 +16,13 @@ Surely you’ve seen features such as _like_ and _reaction_ buttons on Facebook 
 ~~~ .php
 <?php
 
-Shield::get('poll', [
-    'q' => 'Your Title', // optional
-    'h' => 'Hints.', // optional
-    'a' => [ // optional for `poll` with namespace(s)
+static::poll([
+    'q' => 'Your Title', // Optional
+    'h' => 'Hints.', // Optional
+    'a' => [ // Optional for `poll` with namespace(s)
         'key_1' => [
-            'i' => '&#x2764;', // button text (usually an icon)
-            'title' => 'Love this!' // button title (usually used to describe about the icon)
+            'i' => '&#x2764;', // Button text (usually an icon)
+            'title' => 'Love this!' // Button title (usually used to describe about the icon)
         ],
         'key_2' => [ … ],
         'key_3' => [ … ],
@@ -39,7 +39,7 @@ Shield::get('poll', [
 Put this snippet in your `page.php` file to add a [vote up/down feature](#reference:vote) on your page. Usually just before the `</footer>` tag:
 
 ~~~ .php
-<?php Shield::get('poll/vote'); ?>
+<?php static::poll('vote'); ?>
 ~~~
 
 ### Features
@@ -49,7 +49,7 @@ Put this snippet in your `page.php` file to add a [vote up/down feature](#refere
 ![1](%{asset}%/png/reference/extension/poll/1.png)
 
 ~~~ .php
-Shield::get('poll/like');
+static::poll('like');
 ~~~
 
 #### Love
@@ -57,7 +57,7 @@ Shield::get('poll/like');
 ![2](%{asset}%/png/reference/extension/poll/2.png)
 
 ~~~ .php
-Shield::get('poll/love');
+static::poll('love');
 ~~~
 
 #### Reaction
@@ -65,7 +65,7 @@ Shield::get('poll/love');
 ![3](%{asset}%/png/reference/extension/poll/3.png)
 
 ~~~ .php
-Shield::get('poll/react');
+static::poll('react');
 ~~~
 
 #### Response
@@ -73,7 +73,7 @@ Shield::get('poll/react');
 ![4](%{asset}%/png/reference/extension/poll/4.png)
 
 ~~~ .php
-Shield::get('poll/respond', [
+static::poll('respond', [
     'q' => 'Was this article helpful?',
     'a' => ['Yes', 'No']
 ]);
@@ -84,19 +84,19 @@ Shield::get('poll/respond', [
 ![5](%{asset}%/png/reference/extension/poll/5.png)
 
 ~~~ .php
-Shield::get('poll/vote');
+static::poll('vote');
 ~~~
 
 #### Custom
 
 ~~~ .php
-Shield::get('poll/respond', [
+static::poll('respond', [
     'q' => 'Is throwing your hair in the garbage safe?',
     'h' => 'I wanted to be sure because in biology we learned that it had DNA and stuff so is it safe?',
     'a' => [
         'yes' => 'Yes it is.',
         'no' => 'No. I don’t think so.'
     ],
-    'path' => 'my-poll' // path relative to `LOT` folder to store the polling data
+    'path' => 'my-poll' // Path relative to `LOT` folder to store the polling data
 ]);
 ~~~

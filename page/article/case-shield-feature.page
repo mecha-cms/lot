@@ -1,0 +1,117 @@
+---
+title: The Principle of Emptiness
+description: It is the developer’s right to improve the CMS feature.
+...
+
+I really need to update the documentation about future [shield][link:../reference/class/shield] API, but to give a general picture for beginners, I decided to publish this article. I guess you never know that you can make parts of the theme to be specifically loaded only on certain pages. That’s reasonable, because until now I still don’t have the opportunity to document it.
+
+The most basic specification of the theme files loading system is dependent on `page.php` and `pages.php` files only. We, in fact don’t even need the `index.php` file. The `index.php` file is basically just a free space to make it easier for developers to add theme features without having to touch the core CMS feature. Because in principle, our web pages only consist of two forms: _item_ and _items_. And here, we call _item_ as _page_ and _items_ as _pages_.
+
+The following is the most minimal shield file structure you can make:
+
+~~~ .txt
+theme-1\
+├── page.php
+└── pages.php
+~~~
+
+Yep. That is all. The `header.php`, `footer.php` and `nav.php` files, for example, they are actually just additional files that are not mandatory and are only made to help us reduce in writing the same code over and over again. We usually use `header.php` file to display the top of the page that doesn’t change everywhere such as page header and page navigation, and then we will use `footer.php` file to display the bottom of the page that doesn’t change like footnotes and copyright statements:
+
+~~~ .txt
+theme-1\
+├── footer.php
+├── header.php
+├── page.php
+└── pages.php
+~~~
+
+Inside `page.php` and/or `pages.php` files, we include those parts like this:
+
+~~~ .html
+<?php Shield::get('header'); ?>
+<!-- Your content goes here -->
+<?php Shield::get('footer'); ?>
+~~~
+
+Good news for future Mecha CMS users! Because you can call parts of shields in a neater way. As basically the theme file is called inside a class method, then we can actually call other parts of it using the generic `self` and `static` keyword. Just think of that files as part of the class method:
+
+~~~ .html
+<?php static::get('header'); ?>
+<!-- Your content goes here -->
+<?php static::get('footer'); ?>
+~~~
+
+But wait! We can even simplify it like this:
+
+~~~ .html
+<?php static::header(); ?>
+<!-- Your content goes here -->
+<?php static::footer(); ?>
+~~~
+
+Mecha uses PHP’s magic method named `__callStatic` to add that default behavior, that is, to load `header.php` and `footer.php` files if exists, as long as you haven’t created custom methods named `header` and `footer` through the [`Genome`][link:../reference/class/genome] class feature.
+
+That means you can call any method through it without having to worry about error messages that will appear as when you declare a function that never existed. That’s the reason I prefer classes with a bunch of static methods rather than static functions like `shield_header()` and `shield_footer()`. Mecha will try to find `foo.php` file when you declare `static::foo()`, and if the file does not exist, nothing will be returned. As simple as creating a `widget.php` file, we have added `widget` method to the system automatically!
+
+~~~ .php
+<?php static::widget(); ?>
+~~~
+
+The next advantage is the _namespace_. `static::header()` and `static::get('header')` will try to load `header.php` file, but with _namespace_ defined in the first argument, we can load other files located in the `header` folder. For example, if we declare `static::header('art')` or `static::get('header/art')`, then we will get `header\art.php` loaded into the page if we have it, otherwise, it will load the `header.php` file, otherwise, it will return nothing:
+
+~~~ .html
+<?php static::header('art'); ?>
+<!-- Your content goes here -->
+<?php static::footer(); ?>
+~~~
+
+~~~ .txt
+theme-1\
+├── header\
+│   └── art.php
+├── footer.php
+├── header.php
+├── page.php
+└── pages.php
+~~~
+
+These capabilities are unlimited, and the system will prioritize the longest _namespace_ to load. With [page][link:../reference/extension/page] extension, this feature is also available automatically for the current page based on the URL path. For example, we can create a special home page template by creating an `index.php` file in the `page` folder (because the default home page  view is constructed via `index.page` file). Or, we can also create special articles view template by creating `article.php` file in the `pages` folder:
+
+~~~ .txt
+theme-1\
+├── page\
+│   └── index.php
+├── pages\
+│   └── article.php
+├── footer.php
+├── header.php
+├── page.php
+└── pages.php
+~~~
+
+The next advantage is the `Genome` feature itself. We can change the way `static::header()` works simply by creating a new method called `header` to the `Shield` class:
+
+~~~ .php
+Shield::_('header', function(string $path = null, array $lot = [], $print = true) {
+    if (!$print) {
+        return 'Custom header!';
+    }
+    echo 'Custom header!';
+});
+~~~
+
+We can also add certain features that you can use in the theme with this capability. In `index.php` file, we add this declaration:
+
+~~~ .php
+Shield::_('hasPlugin', function(string $name) {
+    return Plugin::exist($name);
+});
+~~~
+
+And in the theme file, we could call it this way:
+
+~~~ .html
+<?php if (static::hasPlugin('art')): ?>
+<style><?php echo $page->css; ?></style>
+<?php endif; ?>
+~~~

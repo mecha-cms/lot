@@ -98,16 +98,16 @@ $page = [
 
 ~~~ .txt
 lot\
- └── tag\
-     ├── bar\
-     │   └── id.data
-     ├── baz\
-     │   └── id.data
-     ├── foo\
-     │   └── id.data
-     ├── bar.page
-     ├── baz.page
-     └── foo.page
+└── tag\
+    ├── bar\
+    │   └── id.data
+    ├── baz\
+    │   └── id.data
+    ├── foo\
+    │   └── id.data
+    ├── bar.page
+    ├── baz.page
+    └── foo.page
 ~~~
 
 #### File Content
@@ -131,10 +131,10 @@ Long description about this tag.
 
 ~~~ .txt
 lot\
- └── page\
-     ├── test-page\
-     │   └── kind.data
-     └── test-page.page
+└── page\
+    ├── test-page\
+    │   └── kind.data
+    └── test-page.page
 ~~~
 
 Example content of `kind.data` file:

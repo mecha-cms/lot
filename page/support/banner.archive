@@ -7,7 +7,7 @@ comments: {"x":true}
 
 [[e]]
 Hook::set('page.images', function($content, $lot) {
-    if (preg_match_all('#\!\[.*?\]\((.*?)(?: +".*?")?\)#', file_get_contents($lot['path']), $m)) {
+    if (preg_match_all('#\!\[.*?\]\((.*?)(?: +".*?")?\)#', file_get_contents($this->path), $m)) {
         return $m[1];
     }
     return [];
@@ -17,7 +17,7 @@ foreach (Get::pages(PAGE . DS . 'support' . DS . 'banner', 'page', [1, 'slug'], 
     $_images = $_page->images;
     if (!isset($_images[0])) continue;
     shuffle($_images);
-    echo '<figure class="image-container">';
+    echo '<figure class="image">';
     echo '<img alt="" src="' . $_images[0] . '">';
     echo '<figcaption><a href="' . $_page->url . '">More by ' . $_page->author . '&hellip;</a></figcaption>';
     echo '</figure>';

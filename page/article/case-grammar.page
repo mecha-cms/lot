@@ -88,44 +88,44 @@ That’s why I stopped doing something like naming the folder or classes with pl
 
 ~~~ .txt
 .\
- ├── engine\
- │   ├── kernel\
- │   │   ├── hook.php
- │   │   ├── language.php
- │   │   ├── message.php
- │   │   ├── page.php
- │   │   └── …
- │   ├── plug\
- │   │   └── …
- │   ├── ignite.php
- │   └── fire.php
- ├── lot\
- │   ├── asset\
- │   │   └── …
- │   ├── cache\
- │   ├── extend\
- │   │   ├── …
- │   │   └── plugin\
- │   │       ├── engine\
- │   │       └── lot\
- │   │           └── worker\
- │   │               ├── …
- │   │               ├── art\
- │   │               └── markdown\
- │   ├── language\
- │   │   ├── …
- │   │   └── en-us.page
- │   ├── page\
- │   │   └── …
- │   ├── shield\
- │   │   ├── …
- │   │   └── document\
- │   └── state\
- │       └── config.php
- ├── .htaccess
- ├── favicon.ico
- ├── index.php
- └── LICENSE
+├── engine\
+│   ├── kernel\
+│   │   ├── hook.php
+│   │   ├── language.php
+│   │   ├── message.php
+│   │   ├── page.php
+│   │   └── …
+│   ├── plug\
+│   │   └── …
+│   ├── ignite.php
+│   └── fire.php
+├── lot\
+│   ├── asset\
+│   │   └── …
+│   ├── cache\
+│   ├── extend\
+│   │   ├── …
+│   │   └── plugin\
+│   │       ├── engine\
+│   │       └── lot\
+│   │           └── worker\
+│   │               ├── …
+│   │               ├── art\
+│   │               └── markdown\
+│   ├── language\
+│   │   ├── …
+│   │   └── en-us.page
+│   ├── page\
+│   │   └── …
+│   ├── shield\
+│   │   ├── …
+│   │   └── document\
+│   └── state\
+│       └── config.php
+├── .htaccess
+├── favicon.ico
+├── index.php
+└── LICENSE
 ~~~
 
 [connect:../reference/file]
@@ -144,15 +144,15 @@ Oh, oh, wait! But it will not redefine itself if it is already defined! So, we c
 
 ~~~ .txt
 .\
- ├── engine\
- └── lot\
-     ├── asset\
-     ├── cache\
-     ├── language\
-     ├── page\
-     ├── shield\
-     ├── state\
-     └── x\
+├── engine\
+└── lot\
+    ├── asset\
+    ├── cache\
+    ├── language\
+    ├── page\
+    ├── shield\
+    ├── state\
+    └── x\
 ~~~
 
 OMG. No.

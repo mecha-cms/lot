@@ -399,11 +399,11 @@ Result:
 
 ~~~ .txt
 $test
- ├── … ← from `File::inspect()`
- ├── width: 320
- ├── height: 240
- ├── bit: 8
- └── mime: image/jpeg
+├── … ← from `File::inspect()`
+├── width: 320
+├── height: 240
+├── bit: 8
+└── mime: image/jpeg
 ~~~
 
 Optionally to output only single part of the generated data:

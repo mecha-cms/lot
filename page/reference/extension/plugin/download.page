@@ -20,14 +20,14 @@ Store your files in the folder related to your download page:
 
 ~~~ .txt
 lot\
- └── page\
-     ├── my-page\
-     │   ├── file-1.zip
-     │   ├── file-2.zip
-     │   └── folder-1\
-     │       ├── file-1-1.zip
-     │       └── file-1-2.zip
-     └── my-page.page
+└── page\
+    ├── my-page\
+    │   ├── file-1.zip
+    │   ├── file-2.zip
+    │   └── folder-1\
+    │       ├── file-1-1.zip
+    │       └── file-1-2.zip
+    └── my-page.page
 ~~~
 
 Then show the download link this way in `my-page.page`:

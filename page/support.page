@@ -36,7 +36,7 @@ Random banner selection. Put this banner on your site to tell people about Mecha
 
 [[e]]
 Hook::set('page.images', function($content, $lot) {
-    if (preg_match_all('#\!\[.*?\]\((.*?)(?: +".*?")?\)#', file_get_contents($lot['path']), $m)) {
+    if (preg_match_all('#\!\[.*?\]\((.*?)(?: +".*?")?\)#', file_get_contents($this->path), $m)) {
         return $m[1];
     }
     return [];
@@ -45,7 +45,7 @@ $_page = new Page(Anemon::eat(glob(PAGE . DS . 'support' . DS . 'banner' . DS . 
 $_images = $_page->images;
 shuffle($_images);
 if (isset($_images[0])) {
-    echo '<figure class="image-container text-left">';
+    echo '<figure class="image text-left">';
     echo '<img alt="" src="' . $_images[0] . '">';
     echo '<figcaption><a href="' . $_page->url . '">More by ' . $_page->author . '&hellip;</a></figcaption>';
     echo '</figure>';

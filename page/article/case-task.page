@@ -20,42 +20,42 @@ This file can be placed in any [extensions][link:../reference/extension], [plugi
 
 ~~~ .txt
 .\
- ├── engine\
- ├── lot\
- │   ├── cache\
- │   ├── extend\
- │   │   ├── …
- │   │   ├── comment\
- │   │   │   ├── index.php
- │   │   │   └── task.php ✔
- │   │   └── plugin\
- │   │       ├── engine\
- │   │       └── lot\
- │   │           └── worker\
- │   │               ├── …
- │   │               ├── example-plugin\
- │   │               │   ├── index.php
- │   │               │   └── task.php ✔
- │   │               ├── art\
- │   │               └── markdown\
- │   ├── language\
- │   │   ├── …
- │   │   └── en-us.page
- │   ├── page\
- │   │   └── …
- │   ├── shield\
- │   │   ├── …
- │   │   ├── example-shield\
- │   │   │   ├── index.php
- │   │   │   └── task.php ✔
- │   │   └── document\
- │   └── state\
- │       └── config.php
- ├── .htaccess
- ├── favicon.ico
- ├── index.php
- ├── task.php ✔
- └── LICENSE
+├── engine\
+├── lot\
+│   ├── cache\
+│   ├── extend\
+│   │   ├── …
+│   │   ├── comment\
+│   │   │   ├── index.php
+│   │   │   └── task.php ✔
+│   │   └── plugin\
+│   │       ├── engine\
+│   │       └── lot\
+│   │           └── worker\
+│   │               ├── …
+│   │               ├── example-plugin\
+│   │               │   ├── index.php
+│   │               │   └── task.php ✔
+│   │               ├── art\
+│   │               └── markdown\
+│   ├── language\
+│   │   ├── …
+│   │   └── en-us.page
+│   ├── page\
+│   │   └── …
+│   ├── shield\
+│   │   ├── …
+│   │   ├── example-shield\
+│   │   │   ├── index.php
+│   │   │   └── task.php ✔
+│   │   └── document\
+│   └── state\
+│       └── config.php
+├── .htaccess
+├── favicon.ico
+├── index.php
+├── task.php ✔
+└── LICENSE
 ~~~
 
 In the future, I may add a `task.php` file to the root directory in other versions to perform automatic repair tasks before this file will eventually destroy itself. So that I don’t need to provide a step-by-step guide to users about how to fix here and there after some errors occured during core update.

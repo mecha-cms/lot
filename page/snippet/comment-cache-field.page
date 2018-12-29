@@ -8,11 +8,11 @@ Requires [comment][link:../reference/extension/comment] extension.
 ~~~ .php
 if (!HTTP::is('post')) {
     $cache = [
-        'author' => HTTP::restore('post', 'author', Session::get('comment.author')),
-        'email' => HTTP::restore('post', 'email', Session::get('comment.email')),
-        'link' => HTTP::restore('post', 'link', Session::get('comment.link'))
+        'author' => HTTP::restore('author', Session::get('comment.author')),
+        'email' => HTTP::restore('email', Session::get('comment.email')),
+        'link' => HTTP::restore('link', Session::get('comment.link'))
     ];
-    HTTP::save('post', $cache);
+    HTTP::save($cache);
 }
 ~~~
 

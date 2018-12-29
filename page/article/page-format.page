@@ -53,7 +53,7 @@ Hook::set('page.content', function($content, $lot) {
 You can also add the post format support by customizing the `page.php` file instead of hooking the page content:
 
 ~~~ .html
-<?php Shield::get('header'); ?>
+<?php static::header(); ?>
 <!-- quote page template -->
 <?php if ($page->type === 'Quote'): ?>
 <article class="page" id="page-<?php echo $page->id; ?>">
@@ -84,7 +84,7 @@ You can also add the post format support by customizing the `page.php` file inst
   </footer>
 </article>
 <?php endif; ?>
-<?php Shield::get('footer'); ?>
+<?php static::footer(); ?>
 ~~~
 
 ---

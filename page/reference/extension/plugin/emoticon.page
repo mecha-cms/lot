@@ -1,7 +1,6 @@
 ---
 title: Emoticon
 description: Emoticon using icon fonts.
-icon: data:image/png;base64,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
 
 dependency:
   extension:
@@ -12,7 +11,7 @@ dependency:
 
 This plugin will recognize smiley patterns (which you can also set it yourself) into graphical smiley icons. Icon font credit to [Icomoon](http://icomoon.io "IcoMoon – Custom Built and Crisp Icon Fonts").
 
-Open `lot\extend\plugin\lot\worker\emot\lot\state\config.php` to configure:
+Open `lot\state\config.php` to configure:
 
 ~~~ .php
 return [
@@ -44,7 +43,7 @@ return [
 
 Any pattern defined in the array value, plus a `:‌array_key‌:`, will be replaced by HTML `<i class="emoticon:array_key"></i>` element. Any pattern found in the HTML element (as a tag name, attribute name or value) will be ignored. Any pattern found in the content of HTML `<code>`, `<kbd>`, `<pre>`, `<script>`, `<style>`, `<textarea>` will be ignored.
 
-You might also be interested to these links:
+You might also interested with these links:
 
  - [Wikipedia – List of Emoticons](http://en.wikipedia.org/wiki/List_of_emoticons "List of Emoticons")
  - [All Japanese Emoticons](http://japaneseemoticons.net/all-japanese-emoticons "Over 2,500 Japanese Emoticons All on One Page!")

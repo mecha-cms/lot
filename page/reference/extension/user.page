@@ -10,9 +10,9 @@ All you have to do after installing this extension is to create a page file in t
 
 ~~~ .txt
 .\
- └── lot\
-     └── user\
-         └── ta-tau-taufik.page
+└── lot\
+    └── user\
+        └── ta-tau-taufik.page
 ~~~
 
 And the following is the content of the file:

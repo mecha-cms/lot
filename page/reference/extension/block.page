@@ -185,10 +185,10 @@ Block names can be defined as plain text file with extension `data` stored in `.
 
 ~~~ .txt
 .\
- └── lot\
-     └── block\
-         ├── mark.data
-         └── …
+└── lot\
+    └── block\
+        ├── mark.data
+        └── …
 ~~~
 
 The following is an example of the `mark.data` file content:

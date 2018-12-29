@@ -16,7 +16,7 @@ dependency_x:
 Edit the `page.php` file in your active shield folder then put this snippet after the `</article>` tag:
 
 ~~~ .php
-<?php Shield::get('comments'); ?>
+<?php static::comments(); ?>
 ~~~
 
 ### Constant

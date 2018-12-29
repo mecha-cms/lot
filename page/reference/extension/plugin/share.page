@@ -14,7 +14,7 @@ The share counts are taken based on the number of visits to the social sharing l
 Add this snippet to the `page.php` file, usually just before the `</article>` tag:
 
 ~~~ .php
-<?php Shield::get('share'); ?>
+<?php static::share(); ?>
 ~~~
 
 ### Customization
@@ -23,7 +23,7 @@ The default appearance looks like this:
 
 ![1](%{asset}%/png/reference/extension/plugin/share/1.png)
 
-Open `lot\extend\plugin\lot\worker\share\lot\state\config.php` then look at the `style` property:
+Open `.\lot\extend\plugin\lot\worker\share\lot\state\config.php` then look at the `style` property:
 
 ~~~ .php
 [
