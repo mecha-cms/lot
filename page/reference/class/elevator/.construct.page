@@ -1,85 +1,26 @@
 ---
-title: `__construct()`
-description: Constructor.
+@version: [2, current]
+@description: Constructor.
+@lot:
+  - "array $in = [], array $chunk = [5, 0], string $path = null, $config = [\n    \/\/ <: previous\n    \/\/ =: parent or current\n    \/\/ >: next\n    'direction' => [\n        '<' => 'up',\n        '=' => 'hub',\n        '>' => 'down'\n    ],\n    'union' => [\n        '!' => [ \/\/ not active\n            0 => 'span',\n            2 => ['href' => null]\n        ],\n        '<' => [\n            0 => 'a',\n            1 => Elevator::NORTH\n        ],\n        '=' => [\n            0 => 'a',\n            1 => Elevator::HUB\n        ],\n        '>' => [\n            0 => 'a',\n            1 => Elevator::SOUTH\n        ]\n    ]\n]"
+  - "array $in = [], string $current = \"\", string $path = null, $config = [\n    \/\/ <: previous\n    \/\/ =: parent or current\n    \/\/ >: next\n    'direction' => [\n        '<' => 'up',\n        '=' => 'hub',\n        '>' => 'down'\n    ],\n    'union' => [\n        '!' => [ \/\/ not active\n            0 => 'span',\n            2 => ['href' => null]\n        ],\n        '<' => [\n            0 => 'a',\n            1 => Elevator::NORTH\n        ],\n        '=' => [\n            0 => 'a',\n            1 => Elevator::HUB\n        ],\n        '>' => [\n            0 => 'a',\n            1 => Elevator::SOUTH\n        ]\n    ]\n]"
+@example: |
+  $elevator = new Elevator([0, 1, 2, 3, 4, 5, 6, 7], [3, 0], 'foo/bar');
+  $elevator_up = $elevator->up;
+  $elevator_hub = $elevator->hub;
+  $elevator_down = $elevator->down;
+  $elevator .= "";
+@result: |
+  $elevator = '<span>▲</span> <a href="foo/bar">◆</a> <a href="foo/bar/2">▼</a>';
+  $elevator_up = null;
+  $elevator_hub = 'foo/bar';
+  $elevator_down = 'foo/bar/2';
 ...
 
-~~~ .php.xmp
-Elevator($input = [], $chunk = [5, 0], $path = true, $config = []); // @pages mode
-Elevator($input = [], $current = "", $path = true, $config = []); // @page mode
-~~~
-
-**Example:**
-
-~~~ .php
-$elevator = new Elevator([0, 1, 2, 3, 4, 5, 6, 7], [3, 0], 'foo/bar');
-$elevator_str = $elevator . "";
-~~~
-
-Result:
-
-~~~ .php
-$elevator = [
-    'up' => null,
-    'hub' => 'foo/bar',
-    'down' => 'foo/bar/2'
-];
-~~~
-
-~~~ .php
-$elevator_str = '<span>▲</span> <a href="foo/bar">◆</a> <a href="foo/bar/2">▼</a>';
-~~~
-
-To create horizontal elevator:
-
-~~~ .php
-$elevator = new Elevator([0, 1, 2, 3, 4, 5, 6, 7], [3, 0], 'foo/bar', [
-    'direction' => [
-        '<' => 'previous', // ← default is `up`
-        '>' => 'next' // ← default is `down`
-    ],
-    'union' => [
-        // previous link
-        '<' => [
-            1 => '&#x25C0;' // union content
-        ],
-        // next link
-        '>' => [
-            1 => '&#x25B6;'
-        ]
-    ]
-]);
-
-$elevator_str = $elevator . "";
-~~~
-
-Result:
-
-~~~ .php
-$elevator = [
-    'previous' => null,
-    'hub' => 'foo/bar',
-    'next' => 'foo/bar/2'
-];
-~~~
-
-~~~ .php
-$elevator_str = '<span>◀</span> <a href="foo/bar">◆</a> <a href="foo/bar/2">▶</a>';
-~~~
-
-[connect:../pager/__construct]
-
-> **Info:** For item page elevator, set the `$chunk` parameter to the array value you want treat as the current item.
+> **Info:** For item page elevator, set the `$chunk` parameter to the array value you want to treat as the current item.
 >
 > ~~~ .php
 > $elevator = new Elevator(['-foo', '-bar', '-baz'], '-bar', 'foo/bar');
 > ~~~
->
-> Result:
->
-> ~~~ .php
-> $elevator = [
->     'up' => 'foo/bar/-foo',
->     'hub' => 'foo/bar',
->     'down' => 'foo/bar/-baz'
-> ];
-> ~~~
+
+[connect:../pager]

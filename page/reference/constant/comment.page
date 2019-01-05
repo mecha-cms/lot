@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Return the comment folder path.
+@example: |
+  echo COMMENT;
+@result: |
+  '.\www\directory\lot\comment'
+...

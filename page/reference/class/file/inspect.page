@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: [1, 2, current]
 @description: Inspect file data.
 @lot: string $path, $key = null, $fail = false
 @static: 1
@@ -17,15 +17,18 @@
       'create' => '2014-06-21 20:05:17',
       'update' => '2014-06-21 20:05:17',
       'size' => '20.62 KB',
+      'consent' => '0666',
       'is' => [
+          'exist' => true,
           'hidden' => false,
           'file' => true,
           'files' => false,
-          'folder' => false // alias for `files`
+          'folder' => false // alias for `is.files`
       ],
       '_create' => 1403355917,
       '_update' => 1403355917,
-      '_size' => 21114
+      '_size' => 21114,
+      '_consent' => 33206
   ];
 
   $B = 'text/plain';

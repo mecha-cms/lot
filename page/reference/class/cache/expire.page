@@ -1,18 +1,11 @@
 ---
-title: `$cache::expire()`
-description: Check if cache file already expired.
+@version: [2, current]
+@description: Check if cache file already expired.
+@lot: string $from, $id = null
+@static: 1
+@example: |
+  if (Cache::expire('.\path\to\file.php')) {
+      // Expired!
+  }
+@example-description: Check if cache file of `.\path\to\file.php` already expired.
 ...
-
-~~~ .php.xmp
-Cache::expire($from, $id = null);
-~~~
-
-**Example:**
-
-Check if cache file of `path\to\file.php` already expired:
-
-~~~ .php
-if (Cache::expire('path\to\file.php')) {
-    // expired!
-}
-~~~

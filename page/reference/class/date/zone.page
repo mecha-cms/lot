@@ -39,7 +39,7 @@ call_user_func(function() {
     foreach($timezone_offsets as $zone => $offset) {
         $offset_prefix = $offset < 0 ? '-' : '+';
         $offset_formatted = gmdate('H:i', abs($offset));
-        echo $zone . ' | GMT' . $offset_prefix . $offset_formatted . "\n";
+        echo '`' . $zone . '` | `GMT' . $offset_prefix . $offset_formatted . "`\n";
     }
 });
 [[/e]]

@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Return the state folder path.
+@example: |
+  echo STATE;
+@result: |
+  '.\www\directory\lot\state'
+...

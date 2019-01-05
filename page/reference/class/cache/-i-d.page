@@ -1,27 +1,17 @@
 ---
-title: `$cache::{ID,id}()`
-description: Get cache ID.
+@version: [2, current]
+@description: Get cache ID.
+@lot: string $from, $fail = -1
+@static: 1
+@example: |
+  // Get cache ID of `.\path\to\file.php`
+  $id = Cache::ID('.\path\to\file.php');
+
+  $hash = md5(File::open('.\path\to\file.php')->read());
+  if (
+      is_string($id) && $id !== $hash ||
+      $id < File::inspect('.\path\to\file.php', 'update')
+  ) {
+      // Expired!
+  }
 ...
-
-~~~ .php.xmp
-Cache::ID($from, $fail = -1);
-~~~
-
-~~~ .php.xmp
-Cache::id($from, $fail = -1); // alias
-~~~
-
-**Example:**
-
-Get cache ID of `path\to\file.php`:
-
-~~~ .php
-$id = Cache::ID('path\to\file.php');
-~~~
-
-~~~ .php
-$hash = md5(File::open('path\to\file.php')->read());
-if (is_string($id) && $id !== $hash || $id < File::inspect('path\to\file.php', 'update')) {
-    // expired!
-}
-~~~

@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Return block HTML tag names allowed to be written in the page editor.
+@example: |
+  echo HTML_WISE_B;
+@result: |
+  'address,blockquote,caption,dd,div,dl,dt,figcaption,figure,hr,h1,h2,h3,h4,h5,h6,li,ol,p,pre,table,tbody,tfoot,td,th,tr,ul'
+...

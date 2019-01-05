@@ -1,10 +1,16 @@
 ---
-title: `$cache::set()`
-description: Create a new cache file.
+@version: [2, current]
+@description: Create a new cache file.
+@lot: string $from, $fn = null, $id = null
+@static: 1
+@example: |
+  // Quick cache
+  Cache::set('.\path\to\file.php');
+
+  // Custom cache
+  Cache::set('.\path\to\file.php', function($path): array {
+      $data = require $path;
+      return do_stuff_with_data($data);
+  });
+@example-note: If `$fn` is not a function, then the cache content will be set based on the `$from` file content.
 ...
-
-~~~ .php.xmp
-Cache::set($from, $fn = null, $id = null);
-~~~
-
-> **Note:** If `$fn` is not a function, then the cache content will be set based on the `$from` file content.

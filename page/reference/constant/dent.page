@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Return the standard indentation characters of HTML page.
+@example: |
+  echo DENT;
+@result: |
+  '    '
+...

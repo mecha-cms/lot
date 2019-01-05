@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Return font file extensions.
+@example: |
+  echo FONT_X;
+@result: |
+  'eot,fnt,fon,otf,svg,ttf,woff,woff2'
+...

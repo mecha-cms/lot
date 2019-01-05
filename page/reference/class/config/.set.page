@@ -1,5 +1,10 @@
 ---
-title: `__set()`
-description: Dynamic properties.
+@version: [2, current]
+@description: Dynamic properties.
+@lot: string $key, $value = null
+@example: |
+  // This is …
+  $config->title = '#';
+  // … equal to this
+  $config->set('title', '#');
 ...
-

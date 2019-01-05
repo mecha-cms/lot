@@ -1,41 +1,16 @@
 ---
-title: `$config::reset()`
-description: Remove item.
+@version: [2, current]
+@description: Remove global state item.
+@lot:
+  - void
+  - string $key = null
+  - array $keys = []
+@static: 1
+@example: |
+  // Remove all items
+  Config::reset();
+  // Remove `foo` item
+  Config::reset('foo');
+  // Remove `foo` and `bar` item
+  Config::reset(['foo', 'bar']);
 ...
-
-~~~ .php.xmp
-Config::reset($key = null);
-Config::reset($keys = []);
-~~~
-
-**Example:**
-
-Remove item by key:
-
-~~~ .php
-Config::reset('title');
-~~~
-
-Using the shortcut:
-
-~~~ .php
-unset($config->title);
-~~~
-
-With dot notation:
-
-~~~ .php
-Config::reset('author.name');
-~~~
-
-Remove multiple item at once:
-
-~~~ .php
-Config::reset(['title', 'description', 'author']);
-~~~
-
-Remove all items:
-
-~~~ .php
-Config::reset();
-~~~

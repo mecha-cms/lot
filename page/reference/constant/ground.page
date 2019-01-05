@@ -1,0 +1,8 @@
+---
+@version: [current]
+@description: Return the private server document root path without the trailing directory separator.
+@example: |
+  echo GROUND;
+@result: |
+  '.\www'
+...

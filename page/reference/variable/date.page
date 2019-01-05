@@ -1,0 +1,6 @@
+---
+@version: [2, current]
+@description: This variable is an instance of the [`Date` class][link:../class/date] with current time as the input.
+@example: |
+  <?php echo $date->year; ?>
+...

@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Return a tab character.
+@example: |
+  echo T;
+@result: |
+  '\t'
+...

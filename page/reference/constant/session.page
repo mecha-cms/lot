@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Return your custom `session_save_path` path.
+@example: |
+  echo SESSION;
+@result: |
+  null
+...

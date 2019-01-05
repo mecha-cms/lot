@@ -1,0 +1,10 @@
+---
+@version: [2, current]
+@description: This variable is an instance of the [`Pager` class][link:../class/pager].
+@example: |
+  <?php echo $pager; ?>
+  <?php echo $pager->previous; ?>
+  <?php echo $pager->next; ?>
+...
+
+Added by the [page][link:../extension/page] extension.

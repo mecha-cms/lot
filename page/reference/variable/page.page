@@ -1,0 +1,8 @@
+---
+@version: [1, 2, current]
+@description: This variable is an instance of the [`Page` class][link:../class/page] with current page path as the input.
+@example: |
+  <?php echo $page->title; ?>
+...
+
+Added by the [page][link:../extension/page] extension.

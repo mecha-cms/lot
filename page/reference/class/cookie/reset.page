@@ -1,27 +1,16 @@
 ---
-title: `$cookie::reset()`
-description: Remove a cookie.
+@version: [2, current]
+@description: Remove a cookie.
+@lot:
+  - void
+  - string $key = null
+  - array $keys = []
+@static: 1
+@example: |
+  // Remove all cookies
+  Cookie::reset();
+  // Remove `foo` and `bar` cookie
+  Cookie::reset(['foo', 'bar']);
+  // Remove `foo` cookie
+  Cookie::reset('foo');
 ...
-
-~~~ .php.xmp
-Cookie::reset($key = null);
-Cookie::reset($keys = []);
-~~~
-
-**Example:**
-
-~~~ .php
-Cookie::reset('my_cookie');
-~~~
-
-Remove multiple cookies:
-
-~~~ .php
-Cookie::reset(['my_cookie', 'your_cookie', 'our_cookie']);
-~~~
-
-Remove all cookies:
-
-~~~ .php
-Cookie::reset();
-~~~

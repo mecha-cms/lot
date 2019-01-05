@@ -1,0 +1,6 @@
+---
+@version: [2, current]
+@description: This is an alias for [`$url`][link:url].
+@example: |
+  <?php if ($u_r_l->path === 'foo/bar') { … } ?>
+...

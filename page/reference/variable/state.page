@@ -1,0 +1,6 @@
+---
+@version: [2, current]
+@description: This variable returns the state data of the current shield if available, and is an instance of the [`State` class][link:../class/state].
+@example: |
+  <?php if ($state->path === 'index') { … } ?>
+...

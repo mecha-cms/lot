@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: This variable returns the parent page instance of the `$page`.
+@example: |
+  <?php echo $parent->title; ?>
+...
+
+Added by the [page][link:../extension/page] extension.

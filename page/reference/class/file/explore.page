@@ -1,9 +1,9 @@
 ---
-@version: [2, current]
+@version: [1, 2, current]
 @description: List files and folders from a folder.
 @lot:
   - $folder = ROOT, $deep = false, $fail = []
-  - [$folder = ROOT, $x = null], $deep = false, $fail = []
+  - "[$folder = ROOT, $x = null], $deep = false, $fail = []"
 @static: 1
 @example: |
   $A = File::explore('.\path\to\folder');

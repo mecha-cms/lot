@@ -1,33 +1,19 @@
 ---
-title: `$cookie::set()`
-description: Set a cookie.
+@version: [2, current]
+@description: Set a cookie.
+@lot:
+  - string $key, $value = "", int $expire
+  - "string $key, $value = \"\", array $config = [\n    'expire' => 1,\n    'path' => '\/',\n    'domain' => \"\",\n    'secure' => false,\n    'http_only' => false\n]"
+@static: 1
+@example: |
+  // Quick cookie
+  Cookie::set('foo', 'bar', 1); // expired in a day
+  // Advance cookie
+  Cookie::set('foo', 'bar', [
+      'expire' => 1,
+      'path' => '/',
+      'domain' => "",
+      'secure' => false,
+      'http_only' => true // not available in `document.cookie`
+  ]);
 ...
-
-~~~ .php.xmp
-Cookie::set($key, $value = "", $expire);
-Cookie::set($key, $value = "", $config = [
-    'expire' => 1,
-    'path' => '/',
-    'domain' => "",
-    'secure' => false,
-    'http_only' => false
-]);
-~~~
-
-**Example:**
-
-~~~ .php
-Cookie::set('my_cookie', 'the value', 1); // expired in a day
-~~~
-
-Set a cookie with advance configuration data:
-
-~~~ .php
-Cookie::set('my_cookie', 'the value', [
-    'expire' => 1,
-    'path' => '/',
-    'domain' => "",
-    'secure' => false,
-    'http_only' => true // not available in `document.cookie`
-]);
-~~~

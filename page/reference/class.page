@@ -1,9 +1,4 @@
 ---
 title: Class
 description: Deep learning on using the API.
-foo: bar
-baz:
-  qux: 1
-  yo: 2
-wut: false
 ...

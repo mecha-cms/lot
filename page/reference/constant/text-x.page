@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Return plain text file extensions.
+@example: |
+  echo TEXT_X;
+@result: |
+  'archive,cache,cfg,css,csv,data,draft,htaccess,html,js,json,log,page,php,srt,stack,tex,trash,txt,xml,yaml,yml'
+...

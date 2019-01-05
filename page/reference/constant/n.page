@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Return a new line character.
+@example: |
+  echo N;
+@result: |
+  '\n'
+...

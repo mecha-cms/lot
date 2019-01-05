@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Return the trash folder path.
+@example: |
+  echo TRASH;
+@result: |
+  '.\www\directory\lot\trash'
+...

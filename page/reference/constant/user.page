@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Return the user folder path.
+@example: |
+  echo USER;
+@result: |
+  '.\www\directory\lot\user'
+...

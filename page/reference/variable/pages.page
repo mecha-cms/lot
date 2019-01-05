@@ -1,0 +1,8 @@
+---
+@version: [1, 2, current]
+@description: This variable contains list of the [`Page` class][link:../class/page] instances.
+@example: |
+  <?php foreach ($pages as $page) { … } ?>
+...
+
+Added by the [page][link:../extension/page] extension.

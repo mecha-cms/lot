@@ -1,0 +1,6 @@
+---
+@version: [2, current]
+@description: This variable is an instance of the [`URL` class][link:../class/u-r-l].
+@example: |
+  <?php if ($url->path === 'foo/bar') { … } ?>
+...

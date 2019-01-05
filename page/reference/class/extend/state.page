@@ -1,32 +1,25 @@
 ---
-title: `$extend::state()`
-description: Return the stored extension states if any, otherwise, return `$fail`.
+@version: [2, current]
+@description: Return the stored extension states if any, otherwise, return `$fail`.
+@lot:
+  - string $id, string $key = null, $fail = false
+  - string $id, array $alt = []
+@static: 1
+@example: |
+  $state = Extend::state('minify');
+
+  $A = Extend::state('minify', 'html');
+  $B = Extend::state('minify', 'json');
+
+  // If the second argument is an array, then it will become the
+  // alternate values of the `$C` output if some data are not available
+  $C = Extend::state('minify', [
+      'json' => [] // add `json` property to `$C` if missing
+  ]);
 ...
 
-~~~ .php.xmp
-Extend::state($id, $key = null, $fail = false);
-~~~
-
-**Example:**
+By default, this method will try to load `config.php` file stored in the extension’s `state` folder. Since version `2.2.0`, if you have custom state data included in the `state` folder, you can get its value by including the state name after the extension ID separated by a colon:
 
 ~~~ .php
-$state = Extend::state('minify');
+$editor_state = Extend::state('c-k-editor:editor');
 ~~~
-
-> **Note:** If `$key` is array, then it will become the alternate values of the `$state` output if some data are not available:
->
-> ~~~ .php
-> $state = Extend::state('minify', [
->     'html' => [2, 1] // add `html` property to `$state` if missing
-> ]);
-> ~~~
-
----
-
-### Hooks
-
-Key | Description
---- | -----------
-`extend.state.{$id}` | Will affect the state output of extension with name `$id`.
-
-> **Note:** `.` characters in `$id` will be converted into `\`.

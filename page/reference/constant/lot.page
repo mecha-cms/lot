@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Return the lot folder path.
+@example: |
+  echo LOT;
+@result: |
+  '.\www\directory\lot'
+...

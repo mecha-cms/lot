@@ -1,20 +1,9 @@
 ---
-title: `$cookie::get()`
-description: Get a cookie.
+@version: [2, current]
+@description: Get a cookie.
+@lot: string $key = null, $fail = null
+@static: 1
+@example: |
+  $A = Cookie::get('foo'); // Get `foo` cookie
+  $B = Cookie::get(); // Get all cookies
 ...
-
-~~~ .php.xmp
-Cookie::get($key = null, $fail = null);
-~~~
-
-**Example:**
-
-~~~ .php
-Cookie::get('my_cookie', '#');
-~~~
-
-Get all cookies:
-
-~~~ .php
-Cookie::get();
-~~~

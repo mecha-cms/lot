@@ -1,5 +1,15 @@
 ---
-title: `__call()`
-description: Dynamic methods.
-...
+@version: [2, current]
+@description: Dynamic methods.
+@lot: string $kin, array $lot = []
+@example: |
+  // This is …
+  $config->page('title');
+  // … equal to this
+  $config->get('page.title');
 
+  // This is …
+  $config->foo('bar.baz');
+  // … equal to this
+  $config->get('foo.bar.baz');
+...

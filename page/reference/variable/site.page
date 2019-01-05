@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: This is an alias for [`$config`][link:config].
+@example: |
+  <?php echo $site->title; ?>
+...
+
+Added by the [shield][link:../extension/shield] extension.

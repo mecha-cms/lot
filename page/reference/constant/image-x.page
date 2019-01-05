@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Return image file extensions.
+@example: |
+  echo IMAGE_X;
+@result: |
+  'bmp,cur,gif,ico,jpeg,jpg,png,svg'
+...

@@ -5,6 +5,6 @@
 @parent: extend
 ...
 
-> **Info:** This class is located in `lot\extend\plugin\engine\kernel` folder.
+> **Info:** This class is located in `.\lot\extend\plugin\engine\kernel` folder.
 
 [connect:../extension/plugin]

@@ -1,0 +1,16 @@
+---
+@version: [current]
+@description: Append inline JS to the `<body>` section.
+@lot: string $content, float $stack = null, array $data = []
+@static: 1
+@example: |
+  $content = <<<JS
+  (function() {
+    document.documentElement.className += ' js';
+  })(document);
+  JS;
+
+  Asset::script($content);
+  Asset::script($content, 20, ['id' => 'script-3']);
+@example-note: Default `$stack` value is `10`.
+...

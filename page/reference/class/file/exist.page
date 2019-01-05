@@ -1,13 +1,15 @@
 ---
 @version: [1, 2, current]
-@description: Check the existence of a file/folder.
-@lot: $path, $fail = false
+@description: Check the existence of a file or folder.
+@lot:
+  - string $path, $fail = false
+  - array $path, $fail = false
 @static: 1
 @example: |
   // Generic
   if (File::exist('.\path\to\file.txt')) { … }
 
-  // Return the given path if file/folder exists, return `false` if not
+  // Return the given path if file or folder exists, return `false` if not
   if ($file = File::exist('.\path\to\header.php')) {
       require $file;
   } else {
@@ -19,12 +21,12 @@
 
   // Loop through list of file path until it finds a file that exists
   if ($test = File::exist([
-      'page-post-2016.php',
-      'page-post.php',
-      'page.php'
+      '.\path\to\page-post-2016.php',
+      '.\path\to\page-post.php',
+      '.\path\to\page.php'
   ], false)) {
-      echo 'File: ' . $test;
+      echo 'Current file: ' . $test;
   } else {
-      echo 'File: false';
+      echo 'Current file: false';
   }
 ...

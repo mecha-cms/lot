@@ -1,51 +1,47 @@
 ---
-title: `$config::get()`
-description: Get item.
+@version: [2, current]
+@description: Get global state item.
+@lot:
+  - void
+  - string $key = null, $fail = false, $array = false
+  - array $keys = [], $array = false
+@static: 1
+@example: |
+  $A = Config::get('page');
+  $B = Config::get('page', false, true);
+  $C = Config::get('page.type');
+  $D = Config::get('page')->type;
+  $E = Config::get('page', false, true)['type'];
+
+  $F = Config::get([
+      'title' => false,
+      'page.title' => false
+  ]);
+  $G = Config::get([
+      'title' => false,
+      'page.title' => false
+  ], true);
+@result: |
+  $A = stdClass::__set_state([
+      'title' => 'Default Page Title',
+      'description' => 'Default page description.',
+      'type' => 'HTML'
+  ]);
+  $B = [
+      'title' => 'Default Page Title',
+      'description' => 'Default page description.',
+      'type' => 'HTML'
+  ];
+  $C = 'HTML';
+  $D = 'HTML';
+  $E = 'HTML';
+
+  $F = stdClass::__set_state([
+      'title' => 'Site Title',
+      'page.title' => 'Default Page Title'
+  ]);
+  $G = [
+      'title' => 'Site Title',
+      'page.title' => 'Default Page Title'
+  ];
 ...
-
-~~~ .php.xmp
-Config::get($key = null, $fail = false);
-Config::get($keys = []);
-~~~
-
-**Example:**
-
-Get item by key:
-
-~~~ .php
-echo Config::get('title');
-~~~
-
-Using the shortcut:
-
-~~~ .php
-echo $config->title;
-~~~
-
-With dot notation:
-
-~~~ .php
-echo Config::get('author.name');
-~~~
-
-This will return the value of `foo` if available, otherwise, return `false`:
-
-~~~ .php
-echo Config::get('foo', false);
-~~~
-
-Get multiple data at once:
-
-~~~ .php
-$data = Config::get([
-    'title' => false,
-    'description' => false,
-    'author' => false
-]);
-~~~
-
-Get all items:
-
-~~~ .php
-__test__(Config::get());
-~~~

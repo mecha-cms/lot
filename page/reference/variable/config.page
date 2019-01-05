@@ -1,0 +1,6 @@
+---
+@version: [1, 2, current]
+@description: This variable is an instance of the [`Config` class][link:../class/config].
+@example: |
+  <?php echo $config->title; ?>
+...

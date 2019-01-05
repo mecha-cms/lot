@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Return the shield folder path.
+@example: |
+  echo SHIELD;
+@result: |
+  '.\www\directory\lot\shield'
+...

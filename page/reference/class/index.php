@@ -1,5 +1,5 @@
 <?php
-
+/*
 Hook::set('*.title', function($title) use($site) {
     $parts = explode(DS, Path::R(Path::F($this->path . ""), PAGE));
     $count = count($parts);
@@ -122,3 +122,4 @@ Hook::set('*.content', function($content) {
     }
     return $content;
 }, 0);
+*/

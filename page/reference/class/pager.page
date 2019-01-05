@@ -5,6 +5,6 @@
 @parent: elevator
 ...
 
-> **Info:** This class is located in `lot\extend\page\engine\kernel` folder and is created to simplify the creation of horizontal [elevator][link:elevator].
+> **Info:** This class is located in `.\lot\extend\page\engine\kernel` folder and is created to simplify the creation of horizontal [elevator][link:elevator].
 
 [connect:../extension/page]
