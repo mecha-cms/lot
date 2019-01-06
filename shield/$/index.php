@@ -1,11 +1,19 @@
 <?php
 
-Asset::set(__DIR__ . DS . 'asset' . DS . 'css' . DS . 'site.css', 20);
-Asset::set('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/nord.min.css', 20.1);
+$chops = explode('/', $url->path);
 
-Asset::set('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js', 20);
-Asset::set('//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.6.0/highlightjs-line-numbers.min.js', 20.1);
-Asset::script('document.querySelectorAll("pre code:not(.txt)").forEach(function(v){hljs.highlightBlock(v),hljs.lineNumbersBlock(v,{singleLine:true})})', 20);
+if ($chops) {
+    Config::set('is.' . $chops[0], true);
+}
+
+Asset::set(__DIR__ . DS . 'asset' . DS . 'css' . DS . 'site.css', 20);
+
+if ($site->is('page')) {
+    Asset::set('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/nord.min.css', 20.1);
+    Asset::set('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js', 20);
+    Asset::set('//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.6.0/highlightjs-line-numbers.min.js', 20.1);
+    Asset::script('!function(e){var o="querySelectorAll",l="forEach";e[o]("pre code:not(.txt)")[l](function(e){hljs.highlightBlock(e)}),e[o]("pre code")[l](function(e){hljs.lineNumbersBlock(e,{singleLine:!0})})}(document);', 20);
+}
 
 function a_if($path, $t) {
     if (is_current($path)) {
@@ -19,34 +27,38 @@ function is_current($path) {
 }
 
 function get_version($name) {
-    return HTTP::fetch('http://mecha-cms.com/git/version/mecha-cms/' . $name);
+    return HTTP::fetch($GLOBALS['URL']['$'] . '/git/version/mecha-cms/' . $name);
 }
 
 Hook::set('*.title', function($title) {
-    $path = $this->path;
-    if ($path && strpos($path, PAGE . DS . 'reference' . DS . 'class' . DS) === 0) {
-        $name = Path::N($path);
-        $class = f2c($name);
-        $chops = explode(DS, Path::R($path, PAGE . DS . 'reference' . DS . 'class'));
-        if (count($chops) > 1) {
-            $class = f2c(basename(dirname($path)));
-            $method = strpos($name, '.') === 0 ? '__' . c(substr($name, 1)) : c($name);
-            $static = $this->get('@static', false);
-            return '`' . ($static ? $class : '$' . c2f($class, '/', '_')) . ($static ? ($static === 2 ? '{::,->}' : '::') : '->') . $method . '()`';
+    if ($this->get('type', false) === 'Markdown' && $path = $this->path) {
+        if (strpos($path, PAGE . DS . 'reference' . DS . 'class' . DS) === 0) {
+            $name = Path::N($path);
+            $class = f2c($name);
+            $chops = explode(DS, Path::R($path, PAGE . DS . 'reference' . DS . 'class'));
+            if (count($chops) > 1) {
+                $class = f2c(basename(dirname($path)));
+                $method = strpos($name, '.') === 0 ? '__' . c(substr($name, 1)) : c($name);
+                $static = $this->get('@static', false);
+                return '`' . ($static ? $class : '$' . c2f($class, '/', '_')) . ($static ? ($static === 2 ? '{::,->}' : '::') : '->') . $method . '()`';
+            }
+            return '`' . $class . '`';
+        } else if (strpos($path, PAGE . DS . 'reference' . DS . 'constant' . DS) === 0) {
+            return '`' . strtoupper(strtr(Path::N($path), '.-', "\\_")) . '`';
+        } else if (strpos($path, PAGE . DS . 'reference' . DS . 'function' . DS) === 0) {
+            return '`' . strtr(Path::N($path), '.-', "\\_") . '`';
+        } else if (strpos($path, PAGE . DS . 'reference' . DS . 'variable' . DS) === 0) {
+            return '`$' . strtr(Path::N($path), '.-', "\\_") . '`';
         }
-        return '`' . $class . '`';
-    } else if ($path && strpos($path, PAGE . DS . 'reference' . DS . 'constant' . DS) === 0) {
-        return '`' . strtoupper(strtr(Path::N($path), '.-', "\\_")) . '`';
-    } else if ($path && strpos($path, PAGE . DS . 'reference' . DS . 'function' . DS) === 0) {
-        return '`' . strtr(Path::N($path), '.-', "\\_") . '`';
-    } else if ($path && strpos($path, PAGE . DS . 'reference' . DS . 'variable' . DS) === 0) {
-        return '`$' . strtr(Path::N($path), '.-', "\\_") . '`';
     }
     return $title;
 }, 0);
 
 Hook::set('*.content', function($content) {
     $path = $this->path;
+    if ($this->get('type', false) !== 'Markdown') {
+        return $content;
+    }
     $prefix = "";
     if ($description = $this->get('@description', false)) {
         $prefix .= '> ' . $description . "\n\n";
@@ -234,7 +246,3 @@ Hook::set('route.enter', function() use($site, $url) {
         Config::set('description', $description);
     }
 });
-
-if (strpos($url->path . '/', 'reference/') === 0) {
-    Asset::style('body>header{display:none}');
-}

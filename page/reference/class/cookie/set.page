@@ -8,6 +8,7 @@
 @example: |
   // Quick cookie
   Cookie::set('foo', 'bar', 1); // expired in a day
+
   // Advance cookie
   Cookie::set('foo', 'bar', [
       'expire' => 1,

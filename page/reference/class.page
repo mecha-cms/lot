@@ -2,3 +2,17 @@
 title: Class
 description: Deep learning on using the API.
 ...
+
+### Pattern
+
+#### Class
+
+~~~ .txt
+^[A-Z][a-zA-Z0-9]*(?:[\\\_][A-Z0-9][a-zA-Z0-9]*)*$
+~~~
+
+#### Property
+
+~~~ .txt
+^[a-z][a-zA-Z0-9]*(?:_[a-zA-Z0-9]+)*$
+~~~

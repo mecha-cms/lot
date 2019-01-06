@@ -16,15 +16,15 @@
     <link href="<?php echo $url->clean; ?>" rel="canonical">
   </head>
   <body>
-    <nav><?php static::nav(); ?></nav>
     <header>
       <h1>
         <?php if ($site->is('home')): ?>
         <span><?php echo $site->title; ?></span>
         <?php else: ?>
-        <?php if ($site->is('page')): ?><?php if ($site->has('parent')): ?><a href="<?php echo $parent->url; ?>"><?php echo To::text($parent->title); ?></a> &#x00B7; <?php endif; ?><?php elseif (!$site->is('error')): ?><a href="<?php echo $page->url; ?>"><?php echo To::text($page->title); ?></a> &#x00B7; <?php endif; ?><a href="<?php echo $url; ?>"><?php echo $site->title; ?></a>
+        <a href="<?php echo $url; ?>"><?php echo $site->title; ?></a>
         <?php endif; ?>
       </h1>
       <p><?php echo $site->description; ?></p>
+      <nav><?php static::nav(); ?></nav>
     </header>
     <main>
