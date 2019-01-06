@@ -184,9 +184,9 @@ if (is_current('reference/extension')) {
             $s = "";
             $s .= N . '<div class="buttons">';
             if (!empty($releases[$k][$N])) {
-                $s .= '<a class="button" href="http://127.0.0.1/r/git:mecha-cms/' . $NS . '.' . $N . '/archive/v' . $releases[$k][$N] . '.zip" title="' . $j . ' Downloads">Download Version ' . $releases[$k][$N] . '</a> ';
+                $s .= '<a class="button" href="http://127.0.0.1/r/git:mecha-cms/' . $NS . '.' . $N . '/archive/v' . $releases[$k][$N] . '.zip" title="' . $j . ' Downloads"><svg class="icon" viewBox="0 0 24 24"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"></path></svg> Download Version ' . $releases[$k][$N] . '</a> ';
             }
-            $s .= '<a class="button" href="http://127.0.0.1/r/git:mecha-cms/' . $NS . '.' . $N . '/archive/master.zip" title="' . $i . ' Downloads">Download Development Version</a>';
+            $s .= '<a class="button" href="http://127.0.0.1/r/git:mecha-cms/' . $NS . '.' . $N . '/archive/master.zip" title="' . $i . ' Downloads"><svg class="icon" viewBox="0 0 24 24"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"></path></svg> Download Development Version</a>';
             $s .= '</div>';
             $content = $s . N . N . $content;
         }

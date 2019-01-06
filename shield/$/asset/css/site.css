@@ -11,7 +11,7 @@ a:focus,a:hover {
  color:#36556A;
  text-decoration:underline
 }
-abbr {
+abbr,.abbr {
  text-decoration:none;
  border:0;
  cursor:help
@@ -54,7 +54,7 @@ fieldset{border:1px solid #ddd;padding:1em}legend{padding:0 .5em;text-transform:
 hr {
  border:0;
  background:0 0;
- color:inherit;
+ color:#aaa;
  height:auto;
  margin:2em 0;
  text-align:center
@@ -118,12 +118,12 @@ pre code.xmp .hljs-ln-numbers{color:#818BA5;border-color:#818BA5}
  padding:.5em .75em;
  box-shadow:inset 0 1px 2px rgba(0,0,0,.125)
 }.textarea{height:auto;min-height:6em}
-.button,.button:hover{background:#369BCE;width:auto;text-decoration:none;
+.button,.button:hover{background:#369BCE;width:auto;text-decoration:none;padding-right:1em;padding-left:1em;
  color:#fff;
  box-shadow:0 1px 1px rgba(0,0,0,.25);cursor:pointer}
 .button:focus {
  background:#3690BF;color:#fff;text-decoration:none;
-}label,.select{cursor:pointer}form p>label,form .p>label{padding:.5em 0}
+}.button .icon{margin:0 0 0 -.25em}label,.select{cursor:pointer}form p>label,form .p>label{padding:.5em 0}
 .input[type=checkbox],.input[type=radio]{padding:0;background:none;box-shadow:none;width:auto;height:auto;cursor:pointer}
 .input[type=color]{width:2.5em;height:2.5em;padding:0;box-shadow:none;cursor:pointer}.input[type=range]{background:none;padding:0;box-shadow:none;cursor:pointer}
 .buttons {
@@ -145,16 +145,16 @@ html {
  border-top:4px solid #333
 }
 body {
- padding:3.5em 2em 2em;margin-right:auto;margin-left:0;
+ padding:2em;margin-right:auto;margin-left:0;
 }
-body>header{display:block;margin:0 auto 2em;padding:0 0 2em;max-width:45em;border-bottom:1px solid #ddd}
+body>header{display:block;margin:0 auto 2em;max-width:45em;border-bottom:1px solid #ddd}
 body>header p{margin:0}
-body>header>nav{background:#333;color:#fff;border-bottom:1px solid #111;position:absolute;top:0;right:0;left:0;height:2em;line-height:2em;text-transform:uppercase}
+body>header>nav{display:block;margin:1.5em 0 0;height:2em;line-height:2em;text-transform:uppercase}
 body>header>nav ul,body>header>nav li{margin:0;padding:0;list-style:none}
-body>header>nav li{float:left;font-size:86%}
-body>header>nav a,body>header>nav span{display:block;padding:0 1em}
-body>header>nav a,body>header>nav a:focus,body>header>nav a:hover{color:#aaa;text-decoration:none}
-body>header>nav a:focus{color:#fff}
+body>header>nav li{float:left;font-size:86%;margin-right:2em}
+body>header>nav li:last-child{margin-right:0}
+body>header>nav a,body>header>nav span{display:block}
+body>header>nav a,body>header>nav a:focus,body>header>nav a:hover{text-decoration:none}
 main {
   display:block;
   max-width:45em;
@@ -216,22 +216,20 @@ article>div>.toc+blockquote,article>div>.buttons+blockquote{margin-top:2em}
 .metas a:focus,.metas a:hover{color:#666;text-decoration:none}
 .metas .nav{float:right;overflow:hidden}
 .metas .nav a,.metas .nav span{float:left}
-.metas .nav a:first-child,.metas .nav span:first-child{margin-right:.5em}
+.metas .nav a:first-child,.metas .nav span:first-child{margin-right:1em}
 .icon{display:inline-block;width:1em;height:1em;vertical-align:middle;fill:currentColor}
 
 .comments,.comments-body{margin:2em 0 0}
 
+.is-reference body{padding-top:3.5em;max-width:70em;margin-right:auto;margin-left:0}
 .is-reference body>header{max-width:100%;height:0;margin:0;padding:0;border:0}
 .is-reference body>header h1,
 .is-reference body>header p{display:none}
+.is-reference body>header>nav{margin:0;position:absolute;top:0;right:0;left:0;background:#333;color:#ddd;border-bottom:1px solid #222}
+.is-reference body>header>nav li{margin:0}
+.is-reference body>header>nav a,.is-reference body>header>nav span{padding:0 1em}
+.is-reference body>header>nav a{color:#999}
+.is-reference body>header>nav a:focus{color:#aaa}
 .is-reference main{display:table;width:100%;max-width:100%;direction:rtl}
 .is-reference article,.is-reference aside{display:table-cell;direction:ltr;text-align:left;vertical-align:top}
-.is-article body{padding-top:2em}
-.is-article body>header{padding-bottom:0}
-.is-article body>header>nav{position:static;background:none;border:0;color:inherit;margin:1em 0 0}
-.is-article body>header>nav li{margin:0 2em 0 0}
-.is-article body>header>nav li:last-child{margin-right:0}
-.is-article body>header>nav a,.is-article body>header>nav span{padding:0}
-.is-article body>header>nav a{color:#365F86}
-.is-article body>header>nav a:focus{color:#36556A}
 @media (max-width:800px){.is-reference article,.is-reference aside{display:block;width:auto}.is-reference aside{margin-top:2em}}

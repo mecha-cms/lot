@@ -4,6 +4,7 @@
   <div><?php echo $page->content; ?></div>
   <footer>
     <ul class="metas">
+      <li><svg class="icon" viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"></path></svg> <span class="abbr" title="<?php echo $page->time->format('Y/m/d H:i:s') . ' &ndash; ' . $page->update->format('Y/m/d H:i:s'); ?>"><?php echo $page->time->format('H:i A'); ?></span></li>
       <?php if (Plugin::exist('view')): ?>
       <li><svg class="icon" viewBox="0 0 24 24"><path d="M3,22V8H7V22H3M10,22V2H14V22H10M17,22V14H21V22H17Z"></path></svg> <span><?php echo $page->view; ?></span></li>
       <?php endif; ?>
@@ -16,14 +17,14 @@
       <?php endif; ?>
       <li class="nav">
         <?php if ($s = $pager->previous): ?>
-        <a href="<?php echo $s; ?>" rel="prev"><svg class="icon" viewBox="0 0 24 24"><path d="M 15.4135,16.5841L 10.8275,11.9981L 15.4135,7.41207L 13.9995,5.99807L 7.99951,11.9981L 13.9995,17.9981L 15.4135,16.5841 Z"></path></svg></a>
+        <a href="<?php echo $s; ?>" rel="prev"><svg class="icon" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg></a>
         <?php else: ?>
-        <span><svg class="icon" viewBox="0 0 24 24"><path d="M 15.4135,16.5841L 10.8275,11.9981L 15.4135,7.41207L 13.9995,5.99807L 7.99951,11.9981L 13.9995,17.9981L 15.4135,16.5841 Z"></path></svg></span>
+        <span><svg class="icon" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg></span>
         <?php endif; ?>
         <?php if ($s = $pager->next): ?>
-        <a href="<?php echo $s; ?>" rel="next"><svg class="icon" viewBox="0 0 24 24"><path d="M 8.58527,16.584L 13.1713,11.998L 8.58527,7.41198L 9.99927,5.99798L 15.9993,11.998L 9.99927,17.998L 8.58527,16.584 Z"></path></svg></a>
+        <a href="<?php echo $s; ?>" rel="next"><svg class="icon" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg></a>
         <?php else: ?>
-        <span><svg class="icon" viewBox="0 0 24 24"><path d="M 8.58527,16.584L 13.1713,11.998L 8.58527,7.41198L 9.99927,5.99798L 15.9993,11.998L 9.99927,17.998L 8.58527,16.584 Z"></path></svg></span>
+        <span><svg class="icon" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg></span>
         <?php endif; ?>
       </li>
     </ul>
