@@ -1,0 +1,8 @@
+---
+@version: [current]
+@description: Force download a file.
+@lot: string $file, $type = null
+@static: 1
+@example: |
+  File::pull('.\path\to\file.txt');
+...

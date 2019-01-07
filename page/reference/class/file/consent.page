@@ -1,24 +1,11 @@
 ---
-title: `$file->consent()`
-description: Set file permission.
+@version: [2, current]
+@description: Set file permission.
+@lot: $consent
+@example: |
+  File::open('.\path\to\file.txt')->consent(0600);
+
+  // Shortcut to set file permission during saving
+  File::put('test!')->saveTo('.\path\to\file.txt', 0600);
+  File::open('.\path\to\file.txt')->put('test!')->save(0600);
 ...
-
-~~~ .php.xmp
-->consent($consent);
-~~~
-
-**Example:**
-
-~~~ .php
-File::open('path\to\file.txt')->consent(0600);
-~~~
-
-Shortcut to set file permission during saving:
-
-~~~ .php
-File::set('test!')->saveTo('path\to\file.txt', 0600);
-~~~
-
-~~~ .php
-File::open('path\to\file.txt')->set('test!')->save(0600);
-~~~

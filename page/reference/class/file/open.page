@@ -1,14 +1,8 @@
 ---
-title: `$file::open()`
-description: Open a file.
+@version: [1, 2, current]
+@description: Open a file.
+@lot: ...$lot
+@static: 1
+@example: |
+  File::open('.\path\to\file.txt');
 ...
-
-~~~ .php.xmp
-File::open(...$lot);
-~~~
-
-**Example:**
-
-~~~ .php
-File::open('path\to\file.txt');
-~~~

@@ -1,14 +1,7 @@
 ---
-title: `$file->import()`
-description: Import a PHP file.
+@version: [2, current]
+@description: Import a PHP file.
+@lot: $fail = []
+@example: |
+  $A = File::open('.\path\to\file.php')->import();
 ...
-
-~~~ .php.xmp
-->import($fail = []);
-~~~
-
-**Example:**
-
-~~~ .php
-$test = File::open('path\to\file.php')->import();
-~~~

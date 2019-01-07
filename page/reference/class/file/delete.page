@@ -1,18 +1,17 @@
 ---
-title: `$file->delete()`
-description: Delete a file or folder.
+@version: [1, 2, current]
+@description: Delete a file or folder.
+@lot: void
+@example: |
+  $A = File::open('.\path\to\file.txt')->delete();
+  $B = File::open('.\path\to\folder')->delete();
+@result: |
+  $A = ['.\path\to\file.txt'];
+  $B = [
+      '.\path\to\folder\file-1.txt',
+      '.\path\to\folder\file-2.txt',
+      '.\path\to\folder\file-3.txt',
+      …
+      '.\path\to\folder'
+  ];
 ...
-
-~~~ .php.xmp
-->delete();
-~~~
-
-**Example:**
-
-~~~ .php
-File::open('path\to\file.txt')->delete();
-~~~
-
-~~~ .php
-File::open('path\to\folder')->delete();
-~~~

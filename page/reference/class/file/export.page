@@ -1,17 +1,11 @@
 ---
-title: `$file::export()`
-description: Export data as a PHP file.
+@version: [2, current]
+@description: Export data as a PHP file.
+@lot: array $data, string $format = '<?php return %{0}%;'
+@static: 1
+@example: |
+  File::export([
+      'foo' => 'bar',
+      'baz' => 'qux'
+  ])->saveTo('.\path\to\file.php');
 ...
-
-~~~ .php.xmp
-File::export($data, $format = '<?php return %{0}%;');
-~~~
-
-**Example:**
-
-~~~ .php
-$test = File::export([
-    'foo' => 'bar',
-    'baz' => 'qux'
-])->saveTo('path\to\file.php');
-~~~

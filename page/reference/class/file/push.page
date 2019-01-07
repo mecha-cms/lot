@@ -1,23 +1,27 @@
 ---
-title: `$file::push()`
-description: Upload a file.
+@version: [current]
+@description: Upload a file.
+@lot: array $blob, string $path = ROOT
+@static: 1
+@example: |
+  if ($blob = HTTP::files('foo')) { // → for `<input name="foo" type="file">`
+      $response = File::push($blob, '.\path\to\folder');
+  }
 ...
 
-~~~ .php.xmp
-File::push($name, $path = ROOT, $fn = null);
-~~~
+This method will return the uploaded file path on success, return `false` if file already exists, and return number that represents error code if there is an error during file uploading.
 
-**Example:**
+### Error Codes
 
-~~~ .php
-File::push('blob', '.\path\to\folder'); // → for `<input name="blob" type="file">`
-~~~
+As described in PHP manual about [handling file uploads](http://php.net/manual/en/features.file-upload.errors.php).
 
-Custom callback function to [sanitize][link:../to/file] the file name:
-
-~~~ .php
-File::push('blob', '.\path\to\folder', function($data) {
-    $data['name'] = To::file($data['name']);
-    return $data;
-});
-~~~
+Code | Description
+---- | -----------
+`1` | The uploaded file exceeds the `upload_max_filesize` directive in `php.ini`.
+`2` | The uploaded file exceeds the `MAX_FILE_SIZE` directive that was specified in the HTML form.
+`3` | The uploaded file was only partially uploaded.
+`4` | No file was uploaded.
+`5` | ?
+`6` | Missing a temporary folder.
+`7` | Failed to write file to disk.
+`8` | A PHP extension stopped the file upload.

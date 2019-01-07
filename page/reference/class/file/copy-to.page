@@ -1,34 +1,46 @@
 ---
-title: `$file->copyTo()`
-description: Copy a file or folder to folder.
+@version: [1, 2, current]
+@description: Copy a file or folder to a folder.
+@lot:
+  - string $folder = ROOT, string $pattern = '%{name}%.%{i}%.%{extension}%'
+  - array $folders = [ROOT], string $pattern = '%{name}%.%{i}%.%{extension}%'
+@example: |
+  $A = File::open('.\path\to\file.txt')->copyTo('.\path\to\folder');
+  $B = File::open('.\path\to\file.txt')->copyTo([
+      '.\path\to\folder-1',
+      '.\path\to\folder-2',
+      …
+  ]);
+
+  // Don’t be affraid to call the same folder name multiple times
+  $C = File::open('.\path\to\file.txt')->copyTo([
+      '.\path\to\folder',
+      '.\path\to\folder',
+      '.\path\to\folder',
+      '.\path\to\folder',
+      …
+  ]);
+@result: |
+  $A = [
+      0 => '.\path\to\file.txt',
+      1 => [
+          0 => '.\path\to\folder\file.txt'
+      ]
+  ];
+  $B = [
+      0 => '.\path\to\file.txt',
+      1 => [
+          0 => '.\path\to\folder-1\file.txt',
+          1 => '.\path\to\folder-2\file.txt'
+      ]
+  ];
+  $C = [
+      0 => '.\path\to\file.txt',
+      1 => [
+          0 => '.\path\to\folder\file.txt',
+          1 => '.\path\to\folder\file.1.txt',
+          2 => '.\path\to\folder\file.2.txt',
+          3 => '.\path\to\folder\file.3.txt'
+      ]
+  ];
 ...
-
-~~~ .php.xmp
-->copyTo($folder = ROOT, $pattern = '%‌{‌name‌}‌%.%‌{‌i‌}‌%.%‌{‌extension‌}‌%');
-~~~
-
-**Example:**
-
-~~~ .php
-File::open('.\path\to\file.txt')->copyTo('.\path\to\folder');
-~~~
-
-~~~ .php
-File::open('.\path\to\file.txt')->copyTo([
-    '.\path\to\folder-1',
-    '.\path\to\folder-2',
-    …
-]);
-~~~
-
-Don’t be affraid to call the same folder name multiple times:
-
-~~~ .php
-File::open('.\path\to\file.txt')->copyTo([
-    '.\path\to\folder',
-    '.\path\to\folder',
-    '.\path\to\folder',
-    '.\path\to\folder',
-    …
-]);
-~~~
