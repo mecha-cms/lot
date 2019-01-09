@@ -1,8 +1,11 @@
 ---
-title: `$form::text()`
-description: Create a HTML `<input type="text">` element.
+@version: [2, current]
+@description: Create a HTML `<input type="text">` element
+@lot: string $name = null, $value = null, string $placeholder = null, array $attr = [], $dent = 0
+@static: 1
+@example: |
+  echo Form::text('name', 'Taufik Nurrohman');
+@result: |
+  [[e]]echo Form::text('name', 'Taufik Nurrohman');
+@result-language: 'html'
 ...
-
-~~~ .php.xmp
-Form::text($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
-~~~

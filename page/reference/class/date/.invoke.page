@@ -1,6 +1,6 @@
 ---
 @version: [current]
-@description: Maps to `->pattern()`.
+@description: Maps to [link:pattern].
 @example: |
   $date = new Date('[[e]]echo date('Y-m-d H:i:s');[[/e]]');
   echo $date('%~h%:%m%:%s%');

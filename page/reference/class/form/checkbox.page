@@ -1,24 +1,11 @@
 ---
-title: `$form::checkbox()`
-description: Create a HTML `<input type="checkbox">` element.
+@version: [2, current]
+@description: Create a HTML `<input type="checkbox">` element.
+@lot: string $name = null, $value = null, $check = false, string $text = null, array $attr = [], $dent = 0
+@static: 1
+@example: |
+  echo Form::checkbox('x', 1, false, 'I agree to the Term of Service.');
+@result: |
+  [[e]]echo Form::checkbox('x', 1, false, 'I agree to the Term of Service.');[[/e]]
+@result-language: 'html'
 ...
-
-~~~ .php.xmp
-Form::checkbox($name = null, $value = null, $check = false, $text = "", $attr = [], $dent = 0);
-~~~
-
-**Example:**
-
-Create a HTML `<input type="checkbox">` element with a label that reads _I agree to the Term of Service_:
-
-~~~ .php
-$test = Form::checkbox('x', 1, false, 'I agree to the Term of Service');
-~~~
-
-Result:
-
-~~~ .php
-$test = '<label>
-  <input name="x" type="checkbox" value="1">&nbsp;<span>I agree to the Term of Service</span>
-</label>';
-~~~

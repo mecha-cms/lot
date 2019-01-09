@@ -1,8 +1,6 @@
 ---
-title: `$folder->consent()`
-description: Set folder permission.
+@version: [2, current]
+@description: Set folder permission.
 ...
 
-~~~ .php
-Folder::open('path\to\folder')->consent(0600);
-~~~
+Inherit to [link:../file/consent].

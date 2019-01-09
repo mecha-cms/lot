@@ -5,9 +5,9 @@
 @parent: h-t-m-l
 ...
 
-> **Note:** All string in the text area content and HTML attribute values will be HTML encoded. Special for the `$placeholder` variable, writing text in the form of HTML entity will escape the ampersand character so it will look like escaping the character two times. But this only applies to HTML entities that is not represented in HEX.
+> **Note:** All string in the text area content and HTML attribute values will be HTML-encoded. Special for the `$placeholder` variable, when writing text in the form of HTML entity, this class will also escape the ampersand character so it will look like escaping the character two times. But this only applies to HTML entities that is not represented in HEX.
 
-To disable the form field, prepend a `.` to the form name. For `<select>` elements, to disable some option fields, prepend a `.` to the array key in the option list.
+To quickly disable the form field, prepend a `.` to the form name. For `<select>` elements, to disable some option fields, prepend a `.` to the array key in the option list.
 
 ~~~ .php
 $A = Form::button('.x'); // disabled button
@@ -38,7 +38,7 @@ $B = Form::input('x', [
 ]);
 ~~~
 
-Other prefix:
+Other prefixes:
 
 Prefix | Description
 ------ | -----------

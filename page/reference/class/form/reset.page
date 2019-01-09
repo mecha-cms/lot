@@ -1,8 +1,11 @@
 ---
-title: `$form::reset()`
-description: Create a HTML `<button type="reset">` element.
+@version: [2, current]
+@description: Create a HTML `<button type="reset">` element.
+@lot: string $name = null, $value = null, string $text = null, array $attr = [], $dent = 0
+@static: 1
+@example: |
+  echo Form::reset('reset', null, 'Clear');
+@result: |
+  [[e]]echo Form::reset('reset', null, 'Clear');[[/e]]
+@result-language: 'html'
 ...
-
-~~~ .php.xmp
-Form::reset($name = null, $value = null, $text = "", $attr = [], $dent = 0);
-~~~

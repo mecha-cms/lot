@@ -1,0 +1,9 @@
+---
+@version: [current]
+@description: Create a folder.
+@lot: $path, $consent = 0775
+@static: 1
+@example: |
+  Folder::create('.\path\to\folder');
+  Folder::create('.\path\to\folder', 0777); // Set custom folder permission
+...

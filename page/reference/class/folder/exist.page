@@ -1,46 +1,22 @@
 ---
-title: `$folder::exist()`
-description: Check the existence of a folder.
+@version: [2, current]
+@description: Check the existence of a folder.
+@lot:
+  - string $path, $fail = false
+  - array $path, $fail = false
+@static: 1
+@example: |
+  if (Folder::exist('.\path\to\folder')) {
+      echo 'Folder `.\path\to\folder` does exist.';
+  }
+
+  // Return the given path if folder is exists, return `false` if not
+  if ($folder = Folder::exist('.\path\to\folder')) {
+      define('THE_FOLDER', $folder);
+  } else {
+      define('THE_FOLDER', '.\path\to\folder.alt');
+  }
+
+  // Shortcut for above example
+  define('THE_FOLDER', Folder::exist('.\path\to\folder', '.\path\to\folder.alt'));
 ...
-
-~~~ .php.xmp
-Folder::exist($input, $fail = false);
-~~~
-
-**Example:**
-
-~~~ .php
-if (Folder::exist('path\to\folder')) {
-    echo 'Folder `path\to\folder` is exists.';
-}
-~~~
-
-Return the given path if folder is exists, return `false` if not:
-
-~~~ .php
-if ($folder = Folder::exist('path\to\folder')) {
-    define('THE_FOLDER', $folder);
-} else {
-    define('THE_FOLDER', 'path\to\folder.legacy');
-}
-~~~
-
-Shortcut:
-
-~~~ .php
-define('THE_FOLDER', Folder::exist('path\to\folder', 'path\to\folder.legacy'));
-~~~
-
-Loop through list of folder path until it finds a folder that is exists:
-
-~~~ .php
-if ($test = Folder::exist([
-    'page-post-2016',
-    'page-post',
-    'page'
-], false)) {
-    echo $test . ' does exist.';
-} else {
-    echo $test . ' is now `false`.';
-}
-~~~

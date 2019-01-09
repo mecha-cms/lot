@@ -1,16 +1,10 @@
 ---
-title: `$folder::size()`
-description: Count the total sizes of files in a folder.
+@version: [2, current]
+@description: Get total sizes of files contained in a folder.
+@lot: string $folder, $unit = null, $prec = 2
+@static: 1
+@example: |
+  Folder::size('.\path\to\folder');
 ...
-
-~~~ .php.xmp
-Folder::size($folder, $unit = null, $prec = 2);
-~~~
-
-**Example:**
-
-~~~ .php
-echo Folder::size('path\to\folder');
-~~~
 
 [connect:../file/size]

@@ -1,0 +1,4 @@
+---
+@version: [current]
+@description: Alias for [`delete`][link:delete].
+...

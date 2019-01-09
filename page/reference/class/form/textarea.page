@@ -1,20 +1,13 @@
 ---
-title: `$form::textarea()`
-description: Create a HTML `<textarea>` element.
+@version: [2, current]
+@description: Create a HTML `<textarea>` element.
+@lot: string $name = null, $value = null, string $placeholder = null, array $attr = [], $dent = 0
+@static: 1
+@example: |
+  echo Form::textarea('x', 'test value', 'some text…');
+  echo Form::textarea('x', 'test value', 'some text&hellip;');
+  echo Form::textarea('x', 'test value', 'some text&#x2026;');
+@result: |
+  [[e]]echo Form::textarea('x', 'test value', 'some text…') . "\n" . Form::textarea('x', 'test value', 'some text&hellip;') . "\n" . Form::textarea('x', 'test value', 'some text&#x2026;');[[/e]]
+@result-language: 'html'
 ...
-
-~~~ .php.xmp
-Form::textarea($name = null, $value = "", $placeholder = null, $attr = [], $dent = 0);
-~~~
-
-**Example:**
-
-~~~ .php
-$test = Form::textarea('x', 'test value', 'some text…');
-~~~
-
-Result:
-
-~~~ .php
-$test = '<textarea name="x" placeholder="some text…">test value</textarea>';
-~~~

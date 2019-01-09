@@ -1,8 +1,11 @@
 ---
-title: `$form::email()`
-description: Create a HTML `<input type="email">` element.
+@version: [2, current]
+@description: Create a HTML `<input type="email">` element.
+@lot: string $name = null, $value = null, string $placeholder = null, array $attr = [], $dent = 0
+@static: 1
+@example: |
+  echo Form::email('mail', 'you@example.com');
+@result: |
+  [[e]]echo Form::email('mail', 'you@example.com');[[/e]]
+@result-language: 'html'
 ...
-
-~~~ .php.xmp
-Form::email($name = null, $value = null, $placeholder = null, $attr = [], $dent = 0);
-~~~

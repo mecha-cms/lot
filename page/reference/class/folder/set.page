@@ -1,20 +1,4 @@
 ---
-title: `$folder::set()`
-description: Create a folder.
+@version: [2, current]
+@description: Alias for [`create`][link:create].
 ...
-
-~~~ .php.xmp
-Folder::set($input, $consent = 0777);
-~~~
-
-**Example:**
-
-~~~ .php
-Folder::set('foo\bar\baz');
-~~~
-
-Set custom folder permission:
-
-~~~ .php
-Folder::set('foo\bar\baz', 0700);
-~~~

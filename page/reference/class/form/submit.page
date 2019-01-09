@@ -1,8 +1,11 @@
 ---
-title: `$form::submit()`
-description: Create a HTML `<button type="submit">` element.
+@version: [2, current]
+@description: Create a HTML `<button type="submit">` element.
+@lot: string $name = null, $value = null, string $text = null, array $attr = [], $dent = 0
+@static: 1
+@example: |
+  echo Form::submit('save', 1, 'Save');
+@result: |
+  [[e]]echo Form::submit('save', 1, 'Save');[[/e]]
+@result-language: 'html'
 ...
-
-~~~ .php.xmp
-Form::submit($name = null, $value = null, $text = "", $attr = [], $dent = 0);
-~~~
