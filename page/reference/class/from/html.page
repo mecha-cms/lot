@@ -1,0 +1,5 @@
+---
+@version: [2, current]
+@description: Alias for [`HTML`][link:-h-t-m-l].
+@static: 1
+...

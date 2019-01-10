@@ -1,17 +1,10 @@
 ---
-title: `$from::{HTML,html}()`
-description: Encode HTML special characters.
-
-~~~ .php.xmp
-From::HTML($in);
-~~~
-
-~~~ .php.xmp
-From::HTML($in); // alias
-~~~
-
-**Example:**
-
-~~~ .php
-$test = From::HTML('<foo bar="baz">');
-~~~
+@version: [2, current]
+@description: Encode HTML special characters.
+@lot: string $in
+@static: 1
+@example: |
+  echo From::HTML('<foo bar="baz">');
+@result: |
+  '[[e]]echo From::HTML('<foo bar="baz">');[[/e]]'
+...

@@ -107,13 +107,15 @@ Hook::set('*.content', function($content) {
             $class = f2c(basename(dirname($path)));
             $method = Path::N($path);
             $method = strtr(strpos($method, '.') === 0 ? '__' . c(substr($method, 1)) : c($method), ' ', '_');
+            $return = $this->get('@return', false);
+            $return = $return ? ': ' . $return : "";
             foreach ((array) $param as $v) {
-                $prefix .= ($static ? $class : '$' . c2f($class, '/', '_')) . ($static ? '::' : '->') . $method . '(' . $v . ");\n";
+                $prefix .= ($static ? $class : '$' . c2f($class, '/', '_')) . ($static ? '::' : '->') . $method . '(' . $v . ')' . $return . ";\n";
             }
             if ($static === 2) {
                 $prefix .= "~~~\n\n~~~ .php.xmp\n";
                 foreach ((array) $param as $v) {
-                    $prefix .= '$' . c2f($class, '/', '_') . '->' . $method . '(' . $v . ");\n";
+                    $prefix .= '$' . c2f($class, '/', '_') . '->' . $method . '(' . $v . ')' . $return . ";\n";
                 }
             }
             $prefix .= "~~~\n\n";
@@ -184,7 +186,7 @@ if (is_current('reference/extension')) {
             $s = "";
             $s .= N . '<div class="buttons">';
             if (!empty($releases[$k][$N])) {
-                $s .= '<a class="button" href="http://127.0.0.1/r/git:mecha-cms/' . $NS . '.' . $N . '/archive/v' . $releases[$k][$N] . '.zip" title="' . $j . ' Downloads"><svg class="icon" viewBox="0 0 24 24"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"></path></svg> Download Version ' . $releases[$k][$N] . '</a> ';
+                $s .= '<a class="button stable" href="http://127.0.0.1/r/git:mecha-cms/' . $NS . '.' . $N . '/archive/v' . $releases[$k][$N] . '.zip" title="' . $j . ' Downloads"><svg class="icon" viewBox="0 0 24 24"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"></path></svg> Download Version ' . $releases[$k][$N] . '</a> ';
             }
             $s .= '<a class="button" href="http://127.0.0.1/r/git:mecha-cms/' . $NS . '.' . $N . '/archive/master.zip" title="' . $i . ' Downloads"><svg class="icon" viewBox="0 0 24 24"><path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"></path></svg> Download Development Version</a>';
             $s .= '</div>';

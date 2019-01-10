@@ -43,13 +43,13 @@ In object context:
 ~~~ .php
 class Foo extends Genome {
     public $x = 0;
-    public function bar($i) {
+    public function bar(int $i = 0) {
         $this->x += $i;
         return $this;
     }
 }
 
-Foo::_('baz', function($i) {
+Foo::_('baz', function(int $i = 0) {
     $this->x += $i;
     return $this;
 });
@@ -62,33 +62,42 @@ $foo = new Foo;
 echo $foo->bar(4)->baz(1)->bar(2)->x;
 ~~~
 
+It is also possible to omit parentheses if method arguments are not primary. (there are no method arguments or there are default values for each method argument):
+
+~~~ .php
+$foo = new Foo;
+echo $foo->bar->baz->bar->x;
+~~~
+
 Same function, different default arguments:
 
 ~~~ .php
-function fn_birth($name = 'Mecha', $entity = 'world') {
+function birth($name = 'Mecha', $entity = 'world') {
     return 'Hello ' . $entity . '! My name is ' . $name . '.';
 }
 
-Blastula::_('birth_1', 'fn_birth');
-Blastula::_('birth_2', ['fn_birth', ['Mocha']]);
-Blastula::_('birth_3', ['fn_birth', ['Mocha'], 1]);
+/* Using the default method. */
+Blastula::_('birth_1', 'birth');
+
+/* Alter the first default argument value to `Mocha`. */
+Blastula::_('birth_2', ['birth', ['Mocha']]);
+
+/* Alter the first default argument value to `Mocha`. */
+/* Limit arguments to `1` (changing the `$entity` parameter won’t give any effect here). */
+Blastula::_('birth_3', ['birth', ['Mocha'], 1]);
 ~~~
 
 Usage:
 
 ~~~ .php
-/* Using the default method. */
 echo Blastula::birth_1(); // `Hello world! My name is Mecha.`
 echo Blastula::birth_1('Mocha'); // `Hello world! My name is Mocha.`
 echo Blastula::birth_1('Mocha', 'space'); // `Hello space! My name is Mocha.`
 
-/* Alter the first default argument value to `Mocha`. */
 echo Blastula::birth_2(); // `Hello world! My name is Mocha.`
 echo Blastula::birth_2('Machi'); // `Hello world! My name is Machi.`
 echo Blastula::birth_2('Machi', 'space'); // `Hello space! My name is Machi.`
 
-/* Alter the first default argument value to `Mocha`. */
-/* Limit arguments to `1` (changing the `$entity` parameter won’t give any effect here). */
 echo Blastula::birth_3(); // `Hello world! My name is Mocha.`
 echo Blastula::birth_3('Machi'); // `Hello world! My name is Machi.`
 echo Blastula::birth_3('Machi', 'space'); // `Hello world! My name is Machi.`
@@ -105,21 +114,21 @@ Genome::_($kin);
 **Example:**
 
 ~~~ .php
-$test_1 = Blastula::_();
-$test_2 = Blastula::_('birth');
-$test_3 = Blastula::_('test'); // check for native method?
+$A = Blastula::_();
+$B = Blastula::_('birth');
+$C = Blastula::_('test'); // check for native method?
 ~~~
 
-Result:
+**Result:**
 
 ~~~ .php
-$test_1 = [
-    'birth' => [function($name = 'Mecha') { … }]
+$A = [
+    'birth' => ['birth']
 ];
 
-$test_2 = [function($name = 'Mecha') { … }];
+$B = ['birth'];
 
-$test_3 = false;
+$C = false;
 ~~~
 
 ### Eject

@@ -1,14 +1,10 @@
 ---
-title: `$from::dec()`
-description: Convert HTML decimal characters representation into their original characters.
+@version: [2, current]
+@description: Convert HTML decimal characters representation into their original characters.
+@lot: string $in
+@static: 1
+@example: |
+  echo From::dec('&#73;&#32;&#10084;&#32;&#85;');
+@result: |
+  '[[e]]echo From::dec('&#73;&#32;&#10084;&#32;&#85;');[[/e]]'
 ...
-
-~~~ .php.xmp
-From::dec($in);
-~~~
-
-**Example:**
-
-~~~ .php
-$test = From::dec('&#73;&#32;&#10084;&#32;&#85;');
-~~~

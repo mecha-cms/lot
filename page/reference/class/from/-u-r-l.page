@@ -1,19 +1,12 @@
 ---
-title: `$from::{URL,url}()`
-description: Encode URL special characters.
+@version: [2, current]
+@description: Encode URL special characters.
+@lot: string $in, $raw = false
+@static: 1
+@example: |
+  $A = From::URL('foo bar+baz');
+  $B = From::URL('foo bar+baz', true);
+@result: |
+  $A = '[[e]]echo From::URL('foo bar+baz');[[/e]]';
+  $B = '[[e]]echo From::URL('foo bar+baz', true);[[/e]]';
 ...
-
-~~~ .php.xmp
-From::URL($in, $raw = false);
-~~~
-
-~~~ .php.xmp
-From::url($in, $raw = false); // alias
-~~~
-
-**Example:**
-
-~~~ .php
-$test_1 = From::URL('foo bar+baz');
-$test_2 = From::URL('foo bar+baz', true);
-~~~

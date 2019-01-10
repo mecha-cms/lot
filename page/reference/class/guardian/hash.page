@@ -1,8 +1,10 @@
 ---
-title: `$guardian::hash()`
-description: Generate random hash.
+@version: [2, current]
+@description: Generate random hash.
+@lot: string $salt = ""
+@static: 1
+@example: |
+  echo Guardian::hash();
+@result: |
+  '[[e]]echo Guardian::hash();[[/e]]'
 ...
-
-~~~ .php.xmp
-Guardian::hash($salt = "");
-~~~

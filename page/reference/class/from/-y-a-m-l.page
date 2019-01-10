@@ -1,18 +1,40 @@
 ---
-title: `$from::{YAML,yaml}()`
-description: Convert YAML string into array.
+@version: [2, current]
+@description: Convert YAML string into array.
+@lot: string $in, string $d = '  ', $e = true
+@static: 1
+@example: |
+  $A = From::YAML('foo: bar');
+  $B = From::YAML(
+  <<<YAML
+  foo: bar
+  baz: qux
+  YAML
+  );
+  $C = From::YAML(
+  <<<YAML
+  ---
+  foo: bar
+  baz: qux
+  ---
+  foo: bar
+  baz: qux
+  YAML
+  );
+@result: |
+  $A = ['foo' => 'bar'];
+  $B = [
+      'foo' => 'bar',
+      'baz' => 'qux'
+  ];
+  $C = [
+      0 => [
+          'foo' => 'bar',
+          'baz' => 'qux'
+      ],
+      1 => [
+          'foo' => 'bar',
+          'baz' => 'qux'
+      ]
+  ];
 ...
-
-~~~ .php.xmp
-From::YAML($in, $d = '  ', $ref = [], $e = true);
-~~~
-
-~~~ .php.xmp
-From::yaml($in, $d = '  ', $ref = [], $e = true); // alias
-~~~
-
-**Example:**
-
-~~~ .php
-$test = From::YAML('foo: bar');
-~~~

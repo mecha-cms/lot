@@ -1,0 +1,5 @@
+---
+@version: [2, current]
+@description: Alias for [`IP`][link:-i-p].
+@static: 1
+...

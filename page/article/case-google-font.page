@@ -181,7 +181,7 @@ With the dynamic CSS code above, you should see that the text color of the page 
 
 ### File Structure
 
-Make sure that you have the font files with varying weight, then place them into `.\lot\asset\woff\{$family}` where `{$family}` is the font family name that you have set to the parameter URL. In this case, I demonstrate it using fonts named [Roboto](https://fonts.google.com/specimen/Roboto) and [Open Sans](https://fonts.google.com/specimen/Open+Sans).
+Make sure that you have the font files with varying weight, then place them into `.\lot\asset\woff\<family>` where `<family>` is the font family name that you have set to the parameter URL. In this case, I demonstrate it using fonts named [Roboto](https://fonts.google.com/specimen/Roboto) and [Open Sans](https://fonts.google.com/specimen/Open+Sans).
 
 ~~~ .txt
 .\
@@ -211,7 +211,7 @@ Route::set('fonts.css', function() {
     HTTP::type('text/css', 'utf-8');
     // Example: `?family=Roboto|Open+Sans`
     if ($fonts = HTTP::get('family')) {
-        $s = ""; // Prepare the output…
+        $out = ""; // Prepare the output…
         // Example: `Roboto:400,700,400i,700i|Open+Sans:400,700,400i,700i`
         foreach (explode('|', $fonts) as $font) {
             // Do something with `$font`…
@@ -229,7 +229,7 @@ Route::set('fonts.css', function() {
     HTTP::type('text/css', 'utf-8');
     // Example: `?family=Roboto|Open+Sans`
     if ($fonts = HTTP::get('family')) {
-        $s = ""; // Prepare the output…
+        $out = ""; // Prepare the output…
         // Example: `Roboto:400,700,400i,700i|Open+Sans:400,700,400i,700i`
         foreach (explode('|', $fonts) as $font) {
             // `$parts[0]` is `Roboto` and `$parts[1]` is `400,700,400i,700i`
@@ -254,7 +254,7 @@ Route::set('fonts.css', function() {
     HTTP::type('text/css', 'utf-8');
     // Example: `?family=Roboto|Open+Sans`
     if ($fonts = HTTP::get('family')) {
-        $s = ""; // Prepare the output…
+        $out = ""; // Prepare the output…
         // Example: `Roboto:400,700,400i,700i|Open+Sans:400,700,400i,700i`
         foreach (explode('|', $fonts) as $font) {
             // `$parts[0]` is `Roboto` and `$parts[1]` is `400,700,400i,700i`
@@ -286,7 +286,7 @@ Route::set('fonts.css', function() {
     HTTP::type('text/css', 'utf-8');
     // Example: `?family=Roboto|Open+Sans`
     if ($fonts = HTTP::get('family')) {
-        $s = ""; // Prepare the output…
+        $out = ""; // Prepare the output…
         // Example: `Roboto:400,700,400i,700i|Open+Sans:400,700,400i,700i`
         foreach (explode('|', $fonts) as $font) {
             // `$parts[0]` is `Roboto` and `$parts[1]` is `400,700,400i,700i`
@@ -310,16 +310,16 @@ Route::set('fonts.css', function() {
                     $weight = rtrim($weight, 'i'); // Remove the letter `i` from the weight
                 }
                 // Generate the `@font-face` rule(s)…
-                $s .= "\n\n@font-face {\n";
-                $s .= "  font-family: '" . $parts[0] . "';\n";
-                $s .= "  src: url('" . To::URL($file) . "') format('woff');\n";
-                $s .= "  font-weight: " . $weight . ";\n";
-                $s .= "  font-style: " . $style . ";\n";
-                $s .= "}";
+                $out .= "\n\n@font-face {\n";
+                $out .= "  font-family: '" . $parts[0] . "';\n";
+                $out .= "  src: url('" . To::URL($file) . "') format('woff');\n";
+                $out .= "  font-weight: " . $weight . ";\n";
+                $out .= "  font-style: " . $style . ";\n";
+                $out .= "}";
             }
         }
         // Output the result and remove the first two line-break of the `@font-face`
-        echo substr($s, 2);
+        echo substr($out, 2);
     }
     return;
 });

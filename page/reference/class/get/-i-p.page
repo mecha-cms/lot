@@ -1,12 +1,10 @@
 ---
-title: `$get::{ip,IP}()`
-description: Get user’s IP.
+@version: [2, current]
+@description: Get user’s IP.
+@lot: $fail = false
+@static: 1
+@example: |
+  echo Get::IP();
+@result: |
+  '127.0.0.1'
 ...
-
-~~~ .php.xmp
-Get::IP($fail = false);
-~~~
-
-~~~ .php.xmp
-Get::ip($fail = false); // alias
-~~~

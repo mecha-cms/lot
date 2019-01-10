@@ -1,18 +1,10 @@
 ---
-title: `$from::{JSON,json}()`
-description: Convert JSON into PHP object.
+@version: [2, current]
+@description: Convert JSON into PHP object.
+@lot: string $in
+@static: 1
+@example: |
+  $A = From::JSON('{"foo":"bar"}');
+@result: |
+  $A = stdClass::__set_state(['foo' => 'bar']);
 ...
-
-~~~ .php.xmp
-From::JSON($in);
-~~~
-
-~~~ .php.xmp
-From::JSON($in); // alias
-~~~
-
-**Example:**
-
-~~~ .php
-$test = From::JSON('{"foo":"bar"}');
-~~~

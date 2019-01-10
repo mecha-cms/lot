@@ -1,14 +1,10 @@
 ---
-title: `$from::hex()`
-description: Convert HTML hexagonal characters representation into their original characters.
+@version: [2, current]
+@description: Convert HTML hexa-decimal characters representation into their original characters.
+@lot: string $in
+@static: 1
+@example: |
+  echo From::hex('&#x0049;&#x0020;&#x2764;&#x0020;&#x0055;');
+@result: |
+  '[[e]]echo From::hex('&#x0049;&#x0020;&#x2764;&#x0020;&#x0055;');[[/e]]'
 ...
-
-~~~ .php.xmp
-From::hex($in);
-~~~
-
-**Example:**
-
-~~~ .php
-$test = From::hex('&#x0049;&#x0020;&#x2764;&#x0020;&#x0055;');
-~~~

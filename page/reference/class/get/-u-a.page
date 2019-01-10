@@ -1,12 +1,10 @@
 ---
-title: `$get::{ua,UA}()`
-description: Get user’s user agent.
+@version: [2, current]
+@description: Get user’s user agent.
+@lot: $fail = false
+@static: 1
+@example: |
+  echo Get::UA();
+@result: |
+  '[[e]]echo Get::ua();[[/e]]'
 ...
-
-~~~ .php.xmp
-Get::UA($fail = false);
-~~~
-
-~~~ .php.xmp
-Get::ua($fail = false); // alias
-~~~

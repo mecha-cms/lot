@@ -1,14 +1,10 @@
 ---
-title: `$from::base64()`
-description: Decode Base64 string.
+@version: [2, current]
+@description: Decode Base64 string.
+@lot: string $in
+@static: 1
+@example: |
+  echo From::base64('aSBsb3ZlIHlvdQ==');
+@result: |
+  '[[e]]echo From::base64('aSBsb3ZlIHlvdQ==');[[/e]]'
 ...
-
-~~~ .php.xmp
-From::base64($in);
-~~~
-
-**Example:**
-
-~~~ .php
-$test = From::base64('aSBsb3ZlIHlvdQ==');
-~~~

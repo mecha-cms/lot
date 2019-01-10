@@ -1,22 +1,15 @@
 ---
-title: `$get::pages()`
-description: Plugged by [page][link:../../extension/page] extension.
+@version: [2, current]
+@description: Plugged by [page][link:../../extension/page] extension.
+@lot: string $folder = PAGE, string $state = 'page', $sort = [-1, 'time'], string $key = null
+@return: Anemon
+@static: 1
+@example: |
+  // List all published and archived pages from `.\lot\page\article`
+  // and sort them by `slug` ascending and output only the `slug` property of each item returned
+  $A = Get::pages('.\lot\page\article', 'page,archive', [1, 'slug']);
+
+  // List all published and archived pages from `.\lot\page\article`
+  // and sort them by `slug` ascending and output only the `path` property of each item returned
+  $B = Get::pages('.\lot\page\article', 'page,archive', [1, 'slug'], 'path');
 ...
-
-~~~ .php.xmp
-Get::pages($folder = PAGE, $state = 'page', $sort = [-1, 'time'], $key = null);
-~~~
-
-**Example:**
-
-List all published and archived pages from `lot\page\blog` and sort them by `slug` ascending:
-
-~~~ .php
-$files = Get::pages('.\lot\page\blog', 'page,archive', [1, 'slug']);
-~~~
-
-List all published and archived pages from `lot\page\blog` and sort them ascending by `slug`, output only the `path` property of each item returned:
-
-~~~ .php
-$files = Get::pages('.\lot\page\blog', 'page,archive', [1, 'slug'], 'path');
-~~~
