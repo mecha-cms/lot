@@ -1,25 +1,37 @@
 ---
-title: `$h_t_t_p::header()`
-description: Set HTTP headers.
+@version: [2, current]
+@description: Set HTTP headers.
+@lot:
+  - void
+  - int $status
+  - string $key = null, string $value = null
+  - string $value
+  - array $values
+@static: 1
+@example: |
+  // Get current HTTP header(s)
+  test(HTTP::header());
+  // Set current HTTP status
+  HTTP::header(404);
+  // Set current HTTP header(s)
+  HTTP::header('Content-Type', 'text/html');
+  HTTP::header('Content-Type: text/html');
+  HTTP::header([
+      'Content-Type' => 'text/html',
+      'Content-Length' => 1024
+  ]);
 ...
 
-~~~ .php.xmp
-HTTP::header($key, $value = null);
-~~~
-
-**Example:**
+To remove one or more HTTP headers, set the header value to `false`:
 
 ~~~ .php
-HTTP::header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');
-~~~
-
-~~~ .php
-HTTP::header('Expires', 'Sat, 26 Jul 1997 05:00:00 GMT');
-~~~
-
-~~~ .php
+// Remove all HTTP header(s)
+HTTP::header(false);
+// Remove `Content-Type`
+HTTP::header('Content-Type', false);
+// Remove `Content-Type` and `Content-Length`
 HTTP::header([
-    'Expires' => 'Sat, 26 Jul 1997 05:00:00 GMT',
-    'Cache-Control' => 'no-cache, must-revalidate'
+    'Content-Type' => false,
+    'Content-Length' => false
 ]);
 ~~~

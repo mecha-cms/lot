@@ -8,4 +8,33 @@
   $date = '[[e]]echo date('c');[[/e]]';
 ...
 
+Common date formats:
+
+Format | Description | Example
+------ | ----------- | -------
+`d` | Day of the month, 2 digits with leading zeros. | _01_ to _31_
+`D` | A textual representation of a day, three letters. | _Mon_ through _Sun_
+`j` | Day of the month without leading zeros. | _1_ to _31_
+`l` | A full textual representation of the day of the week. | _Sunday_ through _Saturday_
+`F` | A full textual representation of a month. | _January_ through _December_
+`m` | Numeric representation of a month, with leading zeros. | _01_ through _12_
+`M` | A short textual representation of a month, three letters. | _Jan_ through _Dec_
+`n` | Numeric representation of a month, without leading zeros. | _1_ through _12_
+`t` | Number of days in the given month. | _28_ through _31_
+`Y` | A full numeric representation of a year, 4 digits. | _1999_ or _2003_
+`y` | A two digit representation of a year. | _99_ or _03_
+`a` | Lowercase ‘ante meridiem’ and ‘post meridiem’. | _am_ or _pm_
+`A` | Uppercase ‘ante meridiem’ and ‘post meridiem’. | _AM_ or _PM_
+`g` | 12-hour format of an hour without leading zeros. | _1_ through _12_
+`G` | 24-hour format of an hour without leading zeros. | _0_ through _23_
+`h` | 12-hour format of an hour with leading zeros. | _01_ through _12_
+`H` | 24-hour format of an hour with leading zeros. | _00_ through _23_
+`i` | Minutes with leading zeros. | _00_ to _59_
+`s` | Seconds, with leading zeros. | _00_ through _59_
+`u` | Microseconds. | _654321_
+`v` | Milliseconds. | _654_
+`c` | ISO 8601 date. | _2004-02-12T15:19:21+00:00_
+`r` | [RFC 2822](http://www.faqs.org/rfcs/rfc2822) formatted date. | _Thu, 21 Dec 2000 16:01:07 +0200_
+`U` | Seconds since the Unix Epoch (January 1 1970 00:00:00 GMT). | ‌
+
 Read more about date formatting pattern [here](http://php.net/manual/en/function.date.php "PHP date()").

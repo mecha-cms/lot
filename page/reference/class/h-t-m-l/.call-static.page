@@ -1,12 +1,14 @@
 ---
-title: `__callStatic()`
-description: Dynamic methods.
+@version: [2, current]
+@description: Dynamic methods.
+@lot: string $kin, array $lot = []
+@static: 1
 ...
 
-Default HTML parameters consist of `$content`, `$attr` and `$dent`:
+Default HTML parameters consist of `$content`, `$attr` and `$dent`.
 
 ~~~ .php.xmp
-HTML::{$any}($content = "", $attr = [], $dent = 0);
+HTML::{$any}(string $content = "", array $attr = [], $dent = 0);
 ~~~
 
 **Example:**
@@ -18,13 +20,15 @@ echo HTML::div('Content goes here…', [
 ]);
 ~~~
 
-Result:
+**Result:**
 
 ~~~ .html
 <div class="main" id="main"></div>
 ~~~
 
-If `$content` parameter is `false`, then the result will become a self-closed HTML tag.
+If `$content` value is `false`, then the result will become a self-closed HTML tag.
+
+**Example:**
 
 ~~~ .php
 echo HTML::input(false, [
@@ -33,7 +37,7 @@ echo HTML::input(false, [
 ]);
 ~~~
 
-Result:
+**Result:**
 
 ~~~ .html
 <input name="author" type="text">

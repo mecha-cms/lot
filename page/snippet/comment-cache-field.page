@@ -7,12 +7,10 @@ Requires [comment][link:../reference/extension/comment] extension.
 
 ~~~ .php
 if (!HTTP::is('post')) {
-    $cache = [
-        'author' => HTTP::restore('author', Session::get('comment.author')),
-        'email' => HTTP::restore('email', Session::get('comment.email')),
-        'link' => HTTP::restore('link', Session::get('comment.link'))
-    ];
-    HTTP::save($cache);
+    $previous = (array) Session::get('comment');
+    unset($previous['content']); // Remove `content` cache
+    $cache = extend($previous, (array) Session::get(Form::session));
+    Session::set(Form::session, $cache);
 }
 ~~~
 

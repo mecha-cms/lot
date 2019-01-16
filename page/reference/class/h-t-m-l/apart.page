@@ -1,28 +1,56 @@
 ---
-title: `$h_t_m_l::apart()`
-description: Extract HTML markup into PHP array.
+@version: [2, current]
+@description: Extract HTML markup into PHP array.
+@lot: string $in = "", $eval = true
+@static: 2
+@example: |
+  $A = HTML::apart('<div class="main p" id="main">Content goes here…</div>');
+  $B = HTML::apart('<input name="user" type="text">');
+
+  $C = HTML::apart('<foo>bar');
+  $D = HTML::apart('<foo>bar</baz>');
+  $E = HTML::apart('<foo>bar</foo>baz');
+  $F = HTML::apart('<foo bar="" baz qux>');
+  $G = HTML::apart('<foo bool="true" int="400" json="{&quot;foo&quot;:&quot;bar&quot;}">');
+  $H = HTML::apart('abcdef');
+@result: |
+  $A = [
+      0 => 'div',
+      1 => 'Content goes here…',
+      2 => [
+          'id' => 'main',
+          'class[]' => ['main', 'p'],
+      ]
+  ];
+  $B = [
+      0 => 'input',
+      1 => false,
+      2 => [
+          'name' => 'user',
+          'type' => 'text',
+      ]
+  ];
+
+  $C = false;
+  $D = false;
+  $E = false;
+  $F = [
+      0 => 'foo',
+      1 => false,
+      2 => [
+          'bar' => "",
+          'baz' => 'baz',
+          'qux' => 'qux',
+      ]
+  ];
+  $G = [
+      0 => 'foo',
+      1 => false,
+      2 => [
+          'bool' => true,
+          'int' => 400,
+          'json' => stdClass::__set_state(['foo' => 'bar']),
+      ]
+  ];
+  $H = false;
 ...
-
-~~~ .php.xmp
-HTML::apart($input, $eval = true);
-~~~
-
-**Example:**
-
-~~~ .php
-$test = HTML::apart('<div class="main p" id="main">Content goes here…</div>');
-~~~
-
-Result:
-
-~~~ .php
-$test = [
-    0 => 'div',
-    1 => 'Content goes here…',
-    2 => [
-        'class' => 'main p'
-        'class[]' => ['main', 'p'],
-        'id' => 'main'
-    ]
-];
-~~~

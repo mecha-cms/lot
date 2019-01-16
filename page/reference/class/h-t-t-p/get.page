@@ -1,38 +1,8 @@
 ---
-title: `$h_t_t_p::get()`
-description: Return the `$_GET` data.
+@version: [2, current]
+@description: Return the `$_GET` data.
+@lot: string $key = null, $fail = null, $eval = true
+@static: 1
 ...
-
-~~~ .php.xmp
-HTTP::get($key = null, $fail = null, $eval = true);
-~~~
-
-**Example:**
-
-~~~ .php
-// `$_GET = ['user' => '@ta-tau-taufik', 'status' => '1']`
-
-$test_1 = HTTP::get();
-$test_2 = HTTP::get('user');
-$test_3 = HTTP::get('status');
-$test_4 = HTTP::get('status', null, false);
-$test_5 = HTTP::get('pass');
-$test_6 = HTTP::get('pass', 0);
-~~~
-
-Result:
-
-~~~ .php
-$test_1 = [
-    'user' => '@ta-tau-taufik',
-    'status' => 1
-];
-
-$test_2 = '@ta-tau-taufik';
-$test_3 = 1;
-$test_4 = '1';
-$test_5 = null;
-$test_6 = 0;
-~~~
 
 > **Note:** Values include `0`, `'0'`, and `' '` are considered not empty. So, returning a data contains these kind of value will not trigger the `$fail` value.

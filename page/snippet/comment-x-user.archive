@@ -3,6 +3,8 @@ title: Disable Comments on User Page
 description: Hide the comment form on user pages that are created automatically.
 ...
 
+> **Update 2019/01/16:** Is now disabled by default.
+
 ### Method 1
 
 Use this [method][link:comment-x].

@@ -6,6 +6,7 @@ icon: M9,22A1,1 0 0,1 8,21V18H4A2,2 0 0,1 2,16V4C2,2.89 2.9,2 4,2H20A2,2 0 0,1 2
 dependency:
   extension:
     - asset
+    - form
     - page
 
 dependency_x:

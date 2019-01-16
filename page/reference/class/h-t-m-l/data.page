@@ -1,27 +1,43 @@
 ---
-title: `$h_t_m_l::data()`
-description: Generate HTML attributes from PHP array.
+@version: [2, current]
+@description: Generate HTML attributes from PHP array.
+@lot:
+  - array $a = []
+  - string $a = ""
+@static: 2
+@example: |
+  $A = HTML::data([
+      'id' => 'color',
+      'class' => 'color black',
+      'style' => 'background-color:#000;',
+      'data-key' => 'offset',
+      'data-value' => 0
+  ]);
+  $B = HTML::data('foo="bar" baz="qux"');
+@result: |
+  $A = '[[e]]
+  echo HTML::data([
+      'id' => 'color',
+      'class' => 'color black',
+      'style' => 'background-color:#000;',
+      'data-key' => 'offset',
+      'data-value' => 0
+  ]);
+  [[/e]]';
+  $B = '[[e]]echo HTML::data('foo="bar" baz="qux"');[[/e]]';
 ...
 
-Attributes are generated from an array and will be renderred as `key="value"` in the output:
-
-~~~ .php
-echo HTML::span("", [
-    'id' => 'color',
-    'class' => 'color black',
-    'style' => 'background-color:#000;',
-    'data-key' => 'offset',
-    'data-value' => 0
-]);
-~~~
-
-Result:
-
-~~~ .html
-<span class="color black" id="color" style="background-color:#000;" data-key="offset" data-value="0"></span>
-~~~
+### Special Attributes
 
 There are some special attributes which the value must be set as array:
+
+Name | Value
+---- | -----
+`class[]` | Contains array of HTML class names.
+`data[]` | Contains array of HTML5 `data-*` name as the array key and its value.
+`style[]` | Contains array of CSS property as the array key and its value.
+
+**Example:**
 
 ~~~ .php
 echo HTML::span("", [
@@ -35,36 +51,3 @@ echo HTML::span("", [
     ]
 ]);
 ~~~
-
-Result:
-
-~~~ .html
-<span class="color black" style="background-color:#000;" data-key="offset" data-value="0"></span>
-~~~
-
-Unlike the [`Union`][link:../union] class, `HTML` has its own attributes order:
-
- - `class`
- - `id`
- - `src`
- - `alt`
- - `width`
- - `height`
- - `property`
- - `name`
- - `content`
- - `href`
- - `rel`
- - `target`
- - `type`
- - `action`
- - `method`
- - `enctype`
- - `value`
- - `placeholder`
- - `label`
- - `selected`
- - `checked`
- - `disabled`
- - `readonly`
- - `style`

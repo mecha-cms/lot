@@ -1,24 +1,49 @@
 ---
-title: `$h_t_m_l::unite()`
-description: Generate a HTML markup.
+@version: [2, current]
+@description: Generate a HTML markup.
+@lot:
+  - string $unit, $content = "", array $data = [], $dent = 0
+  - [string $unit, $content = "", array $data = []], $dent = 0
+@static: 2
+@example: |
+  echo HTML::unite('div', 'Content goes here…', [
+      'class' => 'main',
+      'id' => 'main'
+  ]);
+
+  echo HTML::unite('div', 'Content goes here…', [
+      'class[]' => ['main', 'foo', 'bar'],
+      'data[]' => [
+          'a' => 'foo',
+          'b' => 'bar',
+          'c' => 'baz'
+      ],
+      'id' => 'main',
+      'style[]' => [
+          'background' => '#fff',
+          'color' => '#000',
+          'border' => '0'
+      ]
+  ]);
+@result: |
+  [[e]]
+  echo HTML::unite('div', 'Content goes here…', [
+      'class' => 'main',
+      'id' => 'main'
+  ]) . "\n" . HTML::unite('div', 'Content goes here…', [
+      'class[]' => ['main', 'foo', 'bar'],
+      'data[]' => [
+          'a' => 'foo',
+          'b' => 'bar',
+          'c' => 'baz'
+      ],
+      'id' => 'main',
+      'style[]' => [
+          'background' => '#fff',
+          'color' => '#000',
+          'border' => '0'
+      ]
+  ]);
+  [[/e]]
+@result-language: 'html'
 ...
-
-~~~ .php.xmp
-HTML::unite($unit, $content = "", $data = [], $dent = 0);
-HTML::unite([$unit, $content = "", $data = []], $dent = 0);
-~~~
-
-**Example:**
-
-~~~ .php
-echo HTML::unite('div', 'Content goes here…', [
-    'id' => 'main',
-    'class' => 'main'
-]);
-~~~
-
-Result:
-
-~~~ .html
-<div class="main" id="main">Content goes here…</div>
-~~~

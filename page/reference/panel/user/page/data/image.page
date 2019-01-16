@@ -12,7 +12,7 @@ To add featured image to a page, you need to install the [link:/reference/extens
 
 The image data will be available in `$page->image` object so you can add this data to the template like so:
 
-~~~ .php
+~~~ .html
 <?php if ($page->image): ?>
 <img alt="" src="<?php echo $page->image; ?>">
 <?php endif; ?>

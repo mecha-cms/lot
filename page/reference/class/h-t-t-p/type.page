@@ -1,14 +1,8 @@
 ---
-title: `$h_t_t_p::type()`
-description: Set MIME type in HTTP headers.
+@version: [2, current]
+@description: Set MIME type in HTTP headers.
+@lot: string $mime, string $charset = null
+@static: 1
+@example: |
+  HTTP::type('text/html');
 ...
-
-~~~ .php.xmp
-HTTP::type($mime, $charset = null);
-~~~
-
-**Example:**
-
-~~~ .php
-HTTP::type('text/xml');
-~~~

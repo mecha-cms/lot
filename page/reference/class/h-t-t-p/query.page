@@ -1,55 +1,44 @@
 ---
-title: `$h_t_t_p::query()`
-description: Add, remove and update the current query string URL keys and values.
+@version: [2, current]
+@description: Add, remove and update the current query string URL keys and values.
+@lot:
+  - array $query = null, array $c = ['?', '&amp;', '=', ""]
+  - array $query = null, string $separator = '&amp;'
+@static: 1
+@example: |
+  // → ?a=b&c=d&e=[f]=g
+  echo HTTP::query(['c' => 1000]);
+@result: |
+  '?a=b&amp;c=1000&amp;e=[f]=g'
 ...
 
-~~~ .php.xmp
-HTTP::query($query = [], $c = ['?', '&amp;', '=', ""]);
-~~~
-
-**Example:**
-
-~~~ .php
-// → ?a=b&c=d&e=[f]=g
-
-echo HTTP::query(['c' => 1000]);
-~~~
-
-Result:
-
-~~~ .txt
-?a=b&amp;c=1000&amp;e=[f]=g
-~~~
-
-> **Note:** Setting the property value to `true` will insert a query string without value, setting the property value to the string `"true"` will insert a query string with value `true`:
+> **Note:** Setting the property value to `true` will insert a query string without any value, setting the property value to the string `"true"` will insert a query string with value `true`:
 >
 > ~~~ .php
 > // → ?a=b
->
 > echo HTTP::query([
 >     'c' => true,
 >     'd' => 'true'
 > ]);
 > ~~~
 >
-> Result:
+> **Result:**
 >
 > ~~~ .txt
 > ?a=b&amp;c&amp;d=true
 > ~~~
 >
-> Setting the property value to `false` will remove the query string, setting the property value to the string `"false"` will insert a query string with value `false`:
+> Setting the property value to `false` or `null` will remove the query string, setting the property value to the string `"false"` will insert a query string with value `false`:
 >
 > ~~~ .php
 > // → ?a=b
->
 > echo HTTP::query([
 >     'a' => false,
 >     'c' => 'false'
 > ]);
 > ~~~
 >
-> Result:
+> **Result:**
 >
 > ~~~ .txt
 > ?c=false

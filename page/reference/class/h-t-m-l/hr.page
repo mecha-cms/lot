@@ -1,8 +1,12 @@
 ---
-title: `$h_t_m_l::hr()`
-description: Create a HTML `<hr>` element.
+@version: [2, current]
+@description: Create a HTML `<hr>` element.
+@lot: int $i = 1, array $attr = [], $dent = 0
+@static: 1
+@example: |
+  echo HTML::hr();
+  echo HTML::hr(4);
+@result: |
+  [[e]]echo HTML::hr() . "\n" . HTML::hr(4);[[/e]]
+@result-language: 'html'
 ...
-
-~~~ .php.xmp
-HTML::hr($i = 1, $attr = [], $dent = 0);
-~~~

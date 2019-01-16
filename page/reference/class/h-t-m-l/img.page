@@ -1,8 +1,11 @@
 ---
-title: `$h_t_m_l::img()`
-description: Create a HTML `<img>` element.
+@version: [2, current]
+@description: Create a HTML `<img>` element.
+@lot: string $src = null, string $alt = "", array $attr = [], $dent = 0
+@static: 1
+@example: |
+  echo HTML::img('%{url}%/lot/asset/jpg/image.jpg');
+@result: |
+  [[e]]echo HTML::img($url . '/lot/asset/jpg/image.jpg', "", ['width' => 120, 'height' => 120]);[[/e]]
+@result-language: 'html'
 ...
-
-~~~ .php.xmp
-HTML::img($src = null, $alt = null, $attr = [], $dent = 0);
-~~~

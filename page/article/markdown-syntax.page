@@ -136,7 +136,7 @@ title attribute.&lt;/p&gt;</code></pre><h4>Referenced Link</h4><p>Reference-styl
 
 &lt;address@example.com&gt;</code></pre><p>Markdown will turn the text into this:</p><pre><code class="html">&lt;a href="http://example.com"&gt;http://example.com&lt;/a&gt;
 
-&lt;a href="&amp;#109;&amp;#x61;&amp;#x69;&amp;#108;&amp;#x74;&amp;#x6f;&amp;#58;&amp;#x61;&amp;#x64;&amp;#100;&amp;#114;&amp;#x65;&amp;#115;&amp;#115;&amp;#x40;&amp;#101;&amp;#120;&amp;#x61;m&amp;#112;&amp;#x6c;e&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;"&gt;&amp;#x61;&amp;#x64;&amp;#100;&amp;#114;&amp;#x65;&amp;#115;&amp;#115;&amp;#x40;&amp;#101;&amp;#120;&amp;#x61;m&amp;#112;&amp;#x6c;e&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&lt;/a&gt;</code></pre><h3>Image</h3><p>Markdown uses an image syntax that is intended to resemble the syntax for links, allowing for two styles: <a href="#reference:inline-image">inline</a> and <a href="#reference:referenced-image">reference</a>.</p><h4>Inline Image</h4><pre><code class="markdown">![alt text](path/to/image.jpg)
+&lt;a href="mailto:address@example.com"&gt;address@example.com&lt;/a&gt;</code></pre><h3>Image</h3><p>Markdown uses an image syntax that is intended to resemble the syntax for links, allowing for two styles: <a href="#reference:inline-image">inline</a> and <a href="#reference:referenced-image">reference</a>.</p><h4>Inline Image</h4><pre><code class="markdown">![alt text](path/to/image.jpg)
 
 ![alt text](path/to/image.jpg "Optional Title")</code></pre><p>Result:</p><pre><code class="html">&lt;p&gt;&lt;img alt="alt text" src="path/to/image.jpg"&gt;&lt;/p&gt;
 
@@ -229,12 +229,12 @@ Title 2
 
 : Definition of Title 2 goes here.</code></pre><h3>Footnote</h3><p>A footnote is made of two things: 1). A marker in the text that will become a superscript number 2). A footnote definition that will be placed in a list of footnotes at the end of the document:</p><pre><code class="markdown">This is some text with a footnote. [^1]
 
-[^1]: And this is the footnote.</code></pre><p>Footnote definitions can be found anywhere in the document, but footnotes will always be listed in the order they are linked to in the text. You cannot make two links to the same footnotes:</p><pre><code class="html">&lt;p&gt;This is some text with a footnote. &lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+[^1]: And this is the footnote.</code></pre><p>Footnote definitions can be found anywhere in the document, but footnotes will always be listed in the order they are linked to in the text. You cannot make two links to the same footnotes:</p><pre><code class="html">&lt;p&gt;This is some text with a footnote. &lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="note-to"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;div class="notes"&gt;
   &lt;hr&gt;
   &lt;ol&gt;
     &lt;li id="fn:1"&gt;
-      &lt;p&gt;And this is the footnote. &lt;a href="#fnref:1" class="footnote-backref"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;And this is the footnote. &lt;a href="#fnref:1" class="note-of"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
     &lt;/li&gt;
   &lt;/ol&gt;
 &lt;/div&gt;</code></pre><h3>Abbreviation</h3><p>Abbreviations can be created by writing some definitions at the bottom of the document like this:

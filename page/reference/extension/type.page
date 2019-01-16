@@ -6,9 +6,10 @@ icon: M5,9.5L7.5,14H2.5L5,9.5M3,4H7V8H3V4M5,20A2,2 0 0,0 7,18A2,2 0 0,0 5,16A2,2
 dependency:
   extension:
     - asset
+    - image
     - page
   plugin:
-    - thumbnail
+    - image
 ...
 
 ### Supported Page Types

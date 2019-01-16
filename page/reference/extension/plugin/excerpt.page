@@ -18,7 +18,7 @@ type: Markdown
 
 This paragraph is going to be the post excerpt.
 
-<!-- cut -->
+<‌!-- cut --‌>
 
 Rest of the post content goes here.
 ~~~

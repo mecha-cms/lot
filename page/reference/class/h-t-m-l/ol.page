@@ -1,8 +1,11 @@
 ---
-title: `$h_t_m_l::ol()`
-description: Create a HTML `<ol>` element.
+@version: [2, current]
+@description: Create a HTML `<ol>` element.
+@lot: array $list = [], array $attr = [], $dent = 0
+@static: 1
+@example: |
+  echo HTML::ol([1, 2, 3 => [3.1, 3.2, 3.3], 4]);
+@result: |
+  [[e]]echo HTML::ol([1, 2, 3 => [3.1, 3.2, 3.3], 4]);[[/e]]
+@result-language: 'html'
 ...
-
-~~~ .php.xmp
-HTML::ol($list = [], $attr = [], $dent = 0);
-~~~
