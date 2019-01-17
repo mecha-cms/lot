@@ -7,11 +7,11 @@ if ($chops) {
 }
 
 Asset::set(__DIR__ . DS . 'asset' . DS . 'css' . DS . 'site.css', 20);
+Asset::set(__DIR__ . DS . 'asset' . DS . 'js' . DS . 'site.js', 20);
+
+Asset::reset(EXTEND . DS . 'pager' . DS . 'lot' . DS . 'asset' . DS . 'css' . DS . 'pager.min.css');
 
 if ($site->is('page')) {
-    Asset::set('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/nord.min.css', 20.1);
-    Asset::set('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js', 20);
-    Asset::set('//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.6.0/highlightjs-line-numbers.min.js', 20.1);
     Asset::script('!function(e){var o="querySelectorAll",l="forEach";e[o]("pre code:not(.txt)")[l](function(e){hljs.highlightBlock(e)}),e[o]("pre code")[l](function(e){hljs.lineNumbersBlock(e,{singleLine:!0})})}(document);', 20);
 }
 
@@ -40,7 +40,7 @@ Hook::set('*.title', function($title) {
                 $class = f2c(basename(dirname($path)));
                 $method = strpos($name, '.') === 0 ? '__' . c(substr($name, 1)) : c($name);
                 $static = $this->get('@static', false);
-                return '`' . ($static ? $class : '$' . c2f($class, '/', '_')) . ($static ? ($static === 2 ? '{::,->}' : '::') : '->') . $method . '()`';
+                return '`' . ($static ? $class : '$' . c2f($class, '_', '.')) . ($static ? ($static === 2 ? '{::,->}' : '::') : '->') . $method . '()`';
             }
             return '`' . $class . '`';
         } else if (strpos($path, PAGE . DS . 'reference' . DS . 'constant' . DS) === 0) {
@@ -52,6 +52,10 @@ Hook::set('*.title', function($title) {
         }
     }
     return $title;
+}, 0);
+
+Hook::set('*.description', function($description) {
+    return $this->get('@description', false) ?: $description;
 }, 0);
 
 Hook::set('*.content', function($content) {
@@ -110,12 +114,12 @@ Hook::set('*.content', function($content) {
             $return = $this->get('@return', false);
             $return = $return ? ': ' . $return : "";
             foreach ((array) $param as $v) {
-                $prefix .= ($static ? $class : '$' . c2f($class, '/', '_')) . ($static ? '::' : '->') . $method . '(' . $v . ')' . $return . ";\n";
+                $prefix .= ($static ? $class : '$' . c2f($class, '_', '/')) . ($static ? '::' : '->') . $method . '(' . $v . ')' . $return . ";\n";
             }
             if ($static === 2) {
                 $prefix .= "~~~\n\n~~~ .php.xmp\n";
                 foreach ((array) $param as $v) {
-                    $prefix .= '$' . c2f($class, '/', '_') . '->' . $method . '(' . $v . ')' . $return . ";\n";
+                    $prefix .= '$' . c2f($class, '_', '/') . '->' . $method . '(' . $v . ')' . $return . ";\n";
                 }
             }
             $prefix .= "~~~\n\n";

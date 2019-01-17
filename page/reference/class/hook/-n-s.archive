@@ -1,0 +1,25 @@
+---
+@version: [2]
+@description: Namespaces.
+@lot: $id, array $lot = []
+...
+
+This …
+
+~~~ .php
+Hook::NS('foo.bar.baz', [$a, $b]);
+~~~
+
+… is equal to this:
+
+~~~ .php
+Hook::fire(['foo.bar.baz', 'bar.baz', 'baz'], [$a, $b]);
+~~~
+
+… is equal to these:
+
+~~~ .php
+Hook::fire('foo.bar.baz', [$a, $b]);
+Hook::fire('bar.baz', [$a, $b]);
+Hook::fire('baz', [$a, $b]);
+~~~

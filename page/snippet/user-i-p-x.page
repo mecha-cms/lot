@@ -7,7 +7,7 @@ description: Block users and visitors by their IP addresses.
 $ip = Get::IP('unknown'); // Current IP address
 $ip_x = ['123.456.123.456', '456.789.456.789']; // List of IP address(es) you want to block
 
-if (Is::this($ip_x)->has($ip)) {
+if (has($ip_x, $ip)) {
     HTTP::status(403); // Forbidden
     Guardian::abort('Blocked user with IP <code>' . $ip . '</code>.');
 }

@@ -1,8 +1,8 @@
 ---
-title: `$is::serial()`
-description: Check for valid string of serialized data.
+@version: [2, current]
+@description: Check for valid string of serialized data.
+@lot: $x
+@static: 1
+@example: |
+  if (Is::serial('a:0:{}')) { … }
 ...
-
-~~~ .php.xmp
-Is::serial($x);
-~~~

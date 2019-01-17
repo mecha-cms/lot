@@ -1,8 +1,8 @@
 ---
-title: `$is::toggle()`
-description: Check for valid boolean value.
+@version: [2, current]
+@description: Check for valid boolean value.
+@lot: $x
+@static: 1
+@example: |
+  if (Is::toggle(true)) { … }
 ...
-
-~~~ .php.xmp
-Is::toggle($x);
-~~~

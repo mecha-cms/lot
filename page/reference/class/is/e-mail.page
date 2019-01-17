@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Check for valid E-Mail address.
+@lot: $x
+@static: 1
+@example: |
+  if (Is::eMail('foo@bar.baz')) { … }
+...

@@ -1,8 +1,8 @@
 ---
-title: `$is::anemon()`
-description: Check if input is an array or object.
+@version: [2, current]
+@description: Check if input is array or object.
+@lot: $x
+@static: 1
+@example: |
+  if (Is::anemon([1, 2, 3])) { … }
 ...
-
-~~~ .php.xmp
-Is::anemon($x, $t = null);
-~~~

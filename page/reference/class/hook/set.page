@@ -1,40 +1,23 @@
 ---
-title: `$hook::set()`
-description: Set a hook.
+@version: [2, current]
+@description: Set a hook.
+@lot:
+  - string $id = null, callable $fn, float $stack = null, int $i = 1
+  - array $id = [], callable $fn, float $stack = null, int $i = 1
+@static: 1
+@example: |
+  // Named function
+  function fn_route_enter() {
+      echo '<mark>test</mark>';
+  }
+  Hook::set('route.enter', 'fn_route_enter', 1);
+
+  // Un-named function
+  Hook::set('route.enter', function() {
+      echo '<mark>test</mark>';
+  }, 1);
+
+  // Multiple hook ID
+  Hook::set(['route.enter', 'route.exit'], function() { … }, 1);
+@example-note: `1` is the function execution priority. The smaller the value, the earlier the function will be executed. And functions with the same priority are executed in the order in which they were added to the hook. Default is `10`.
 ...
-
-~~~ .php.xmp
-Hook::set($id = null, $fn = null, $stack = null, $i = 100);
-~~~
-
-**Example:**
-
-Set a `head.content` hook with named function as the ID:
-
-~~~ .php
-function fn_meta() {
-    echo '<meta name="generator" content="Mecha">';
-}
-
-Hook::set('head.content', 'fn_meta');
-~~~
-
-Set a `head.content` hook with anonymous function:
-
-~~~ .php
-Hook::set('head.content', function() {
-    echo '<meta name="generator" content="Mecha">';
-});
-~~~
-
-Using custom priority:
-
-~~~ .php
-function fn_meta() {
-    echo '<meta name="generator" content="Mecha">';
-}
-
-Hook::set('head.content', 'fn_meta', 1);
-~~~
-
-> **Note:** `1` is the function execution priority. The smaller the value, the earlier the function will be executed. And functions with the same priority are executed in the order in which they were added to the hook. Default is `10`.

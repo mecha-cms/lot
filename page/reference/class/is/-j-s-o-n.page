@@ -1,12 +1,8 @@
 ---
-title: `$is::{JSON,json}()`
-description: Check for valid JSON string.
+@version: [2, current]
+@description: Check for valid JSON string.
+@lot: $x
+@static: 1
+@example: |
+  if (Is::JSON('{"foo":"bar"}')) { … }
 ...
-
-~~~ .php.xmp
-Is::JSON($x);
-~~~
-
-~~~ .php.xmp
-Is::json($x); // alias
-~~~

@@ -1,12 +1,8 @@
 ---
-title: `$is::{IP,ip}()`
-description: Check for valid IP address.
+@version: [2, current]
+@description: Check for valid IP address.
+@lot: $x
+@static: 1
+@example: |
+  if (Is::IP('127.0.0.1')) { … }
 ...
-
-~~~ .php.xmp
-Is::IP($x);
-~~~
-
-~~~ .php.xmp
-Is::ip($x); // alias
-~~~

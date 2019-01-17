@@ -1,12 +1,8 @@
 ---
-title: `$is:{URL,url}()`
-description: Check for valid URL address.
+@version: [2, current]
+@description: Check for valid URL address.
+@lot: $x
+@static: 1
+@example: |
+  if (Is::URL('http://example.com')) { … }
 ...
-
-~~~ .php.xmp
-Is::URL($x);
-~~~
-
-~~~ .php.xmp
-Is::url($x); // alias
-~~~

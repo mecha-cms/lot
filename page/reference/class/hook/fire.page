@@ -1,16 +1,11 @@
 ---
-title: `$hook::fire()`
-description: Execute a hook.
+@version: [2, current]
+@description: Execute a hook.
+@lot:
+  - string $id, array $lot = [], $that = null, string $scope = null
+  - array $id, array $lot = [], $that = null, string $scope = null
+@static: 1
+@example: |
+  // Execute the `head.content` hook
+  Hook::fire('head.content');
 ...
-
-~~~ .php.xmp
-Hook::fire($id, array $lot = []);
-~~~
-
-**Example:**
-
-Execute the `head.content` hook:
-
-~~~ .php
-Hook::fire('head.content'); // → `<meta name="generator" content="Mecha">`
-~~~

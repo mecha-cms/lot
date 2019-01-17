@@ -5,66 +5,6 @@
 @parent: genome
 ...
 
-### Arguments
+### In Depth
 
-With named function as the ID:
-
-~~~ .php
-function do_set_header($a, $b) {
-    echo '<meta name="author" content="' . $a . ' ' . $b . '">';
-}
-
-Hook::set('head.content', 'do_set_header');
-~~~
-
-With anonymous function:
-
-~~~ .php
-Hook::set('head.content', function($a, $b) {
-    echo '<meta name="generator" content="' . $a . ' ' . $b . '">';
-});
-~~~
-
-How to fire:
-
-~~~ .php
-Hook::fire('head.content', ['Taufik', 'Nurrohman']); // → `<meta name="author" content="Taufik Nurrohman">`
-~~~
-
-### As Filter
-
-The first value of the available arguments will be returned. So, this test will return `Taufik`:
-
-~~~ .php
-__test__(Hook::fire('head.content', ['Taufik', 'Nurrohman']));
-~~~
-
-And adding a new hook with arguments and returned its first parameter with custom value will return that custom value:
-
-~~~ .php
-Hook::set('head.content', function($a, $b) {
-    return '(' . $a . ')';
-}, 2);
-
-Hook::set('head.content', function($a, $b) {
-    return '{' . $a . '}';
-}, 1);
-
-Hook::set('head.content', function($a, $b) {
-    echo '<meta name="author" content="' . $a . ' ' . $b . '">';
-}, 3);
-
-Hook::fire('head.content', ['Taufik', 'Nurrohman']); // → `<meta name="author" content="({Taufik}) Nurrohman">`
-~~~
-
-Returning a `null` value or nothing at all will return the initial value of the first argument anyway. So, these tests will return `Taufik`:
-
-~~~ .php
-Hook::set('head.content', function($a, $b) {
-    return null;
-});
-
-Hook::set('head.content', function($a, $b) {
-    // Do nothing!
-});
-~~~
+ - _TODO_
