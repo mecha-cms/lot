@@ -263,11 +263,11 @@ foo: bar: baz
 #### Block
 
 ~~~ .yaml
-folded block: >
+'folded block': >
   lorem ipsum
   dolor sit amet
     a b c
-literal block: |
+'literal block': |
   lorem ipsum
   dolor sit amet
     a b c

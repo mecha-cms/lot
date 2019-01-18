@@ -1,29 +1,40 @@
 ---
 @version: [2, current]
-@description: Generate possible shield path to be tested by [`$file::exist()`][link:../file/exist].
+@description: Generate all possible shield’s file path to be tested by [link:../file/exist].
 @lot: $in, $fail = false
 @static: 1
 @example: |
-  // Search for PHP files relative to the root folder
-  // based on the given name, otherwise, return `$fail`
+  // Search for files relative to the current shield
+  // folder with extension `html` or `php` based on
+  // the given name. Otherwise, return `$fail`
   $A = Shield::path('page');
   $B = Shield::path('foo');
 
-  // Search for PHP files relative to the root folder
-  // based on the given _namespace_. Otherwise, return
-  // the first available alternate file, otherwise,
-  // return `$fail`
+  // Search for files relative to the current shield
+  // folder with extension `html` or `php` based on
+  // the given _namespace_. Otherwise, return `$fail`
   $C = Shield::path('page/about/history')
 @result: |
-  $A = '.\page.php';
+  $A = '.\lot\shield\<id>\page.html'; // or `.\lot\shield\<id>\page.php`
   $B = false;
 
-  // can be
-  $C = '.\page.about.history.php';
+  // Can be
+  $C = '.\lot\shield\<id>\page.about.history.html';
   // or
-  $C = '.\page\about\history.php';
+  $C = '.\lot\shield\<id>\page.about.history.php';
   // or
-  $C = '.\page\about.php';
+  $C = '.\lot\shield\<id>\page\about\history.html';
   // or
-  $C = '.\page.php';
+  $C = '.\lot\shield\<id>\page\about\history.php';
+  // or
+  $C = '.\lot\shield\<id>\page\about.html';
+  // or
+  $C = '.\lot\shield\<id>\page\about.php';
+  // or
+  $C = '.\lot\shield\<id>\page.html';
+  // or
+  $C = '.\lot\shield\<id>\page.php';
+  // or
+  $C = false;
+@result-note: `<id>` is based on `Shield::$config['id']` and file extension mapping is based on `Shield::$config['extension']`.
 ...

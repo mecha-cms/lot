@@ -1,11 +1,19 @@
 ---
 @version: [2, current]
 @description: Force to disable view ID or file path.
-@lot: $id = null
+@lot:
+  - void
+  - string $id = null
+  - array $id = []
 @static: 1
 @example: |
-  Shield::set('foo.bar', '.\lot\asset\php\view.php'); // [1]. Set!
-  Shield::get('foo.bar'); // [2]. Return the output buffer of `.\lot\asset\php\view.php` file.
-  Shield::reset('foo.bar'); // [3]. Reset!
-  Shield::get('foo.bar'); // [4]. Return nothing.
+  Shield::set('foo.bar', '.\lot\asset\php\view.php'); // [^1]
+  Shield::get('foo.bar'); // [^2]
+  Shield::reset('foo.bar'); // [^3]
+  Shield::get('foo.bar'); // [^4]
+
+  // [^1]: Set!
+  // [^2]: Return the output buffer of `.\lot\asset\php\view.php` file.
+  // [^3]: Reset!
+  // [^4]: Return nothing.
 ...

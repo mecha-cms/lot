@@ -14,7 +14,7 @@ Use this plugin to pre-process CSS syntax to Less syntax in the `css` data.
 
 ### Before
 
-~~~ .css.less
+~~~ .less
 @nav-background: #000;
 @nav-color: #fff;
 @nav-color-hover: #999;

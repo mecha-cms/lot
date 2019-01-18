@@ -1,10 +1,12 @@
 ---
 @version: [2, current]
 @description: Check the existence of a shield.
-@lot: string $in, $fail = false
+@lot: string $in, $active = true
 @static: 1
 @example: |
-  if (Shield::exist('document')) { ... }
+  if (Shield::exist('document')) {
+      // Shield `document` does exist and active …
+  } else if (Shield::exist('document', false)) {
+      // Folder `document` does exist …
+  }
 ...
-
-This method was added by the [shield][link:../../reference/extension/shield] extension.

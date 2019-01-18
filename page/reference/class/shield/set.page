@@ -2,15 +2,25 @@
 @version: [2, current]
 @description: Force to replace view ID or file path with new file path.
 @lot:
- - $id, string $path = null
- - $id, callable $path = null
+ - string $id, string $path = null
+ - array $id, string $path = null
+ - string $id, callable $fn = null
+ - array $id, callable $fn = null
 @static: 1
 @example: |
-  Shield::get('foo.bar'); // [1]. Return nothing.
-  Shield::set('foo.bar', '.\lot\asset\php\view.php'); // [2]. Set!
-  Shield::get('foo.bar'); // [3]. Return the output buffer of `.\lot\asset\php\view.php` file.
+  Shield::get('foo.bar'); // [^1]
+  Shield::set('foo.bar', '.\lot\asset\php\view.php'); // [^2]
+  Shield::get('foo.bar'); // [^3]
 
-  Shield::get('.\lot\asset\php\view.php'); // [1]. Return the output buffer of `.\lot\asset\php\view.php` file.
-  Shield::set('.\lot\asset\php\view.php', '.\lot\asset\php\view-2.php'); // [2]. Set!
-  Shield::get('.\lot\asset\php\view.php'); // [3]. Return the output buffer of `.\lot\asset\php\view-2.php` file.
+  // [^1]: Return nothing.
+  // [^2]: Set!
+  // [^3]: Return the output buffer of `.\lot\asset\php\view.php` file.
+
+  Shield::get('.\lot\asset\php\view.php'); // [^1]
+  Shield::set('.\lot\asset\php\view.php', '.\lot\asset\php\view-2.php'); // [^2]
+  Shield::get('.\lot\asset\php\view.php'); // [^3]
+
+  // [^1]: Return the output buffer of `.\lot\asset\php\view.php` file.
+  // [^2]: Set!
+  // [^3]: Return the output buffer of `.\lot\asset\php\view-2.php` file.
 ...

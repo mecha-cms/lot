@@ -11,8 +11,8 @@ dependency:
 This extension compiles Less code into CSS code by looking for files with extension `less` that are added through the `Asset::set()` method, storing the compiled results as a static file and then displaying it as a CSS file. The compiled file content will be updated automatically on every file modification changes on the Less file.
 
 ~~~ .txt
-path/to/file.less → path/to/file.css
-path/to/less/file.less → path/to/css/file.css
+.\path\to\file.less → .\path\to\file.css
+.\path\to\less\file.less → .\path\to\css\file.css
 ~~~
 
 ### Usage
@@ -20,13 +20,13 @@ path/to/less/file.less → path/to/css/file.css
 Dynamic loading:
 
 ~~~ .php
-Asset::set('path/to/file.less');
+Asset::set('.\path\to\file.less');
 ~~~
 
 Direct loading:
 
 ~~~ .php
-echo Asset::less('path/to/file.less');
+echo Asset::less('.\path\to\file.less');
 ~~~
 
 [connect:plugin/less]

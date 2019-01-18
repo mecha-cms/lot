@@ -3,6 +3,15 @@
 @description: Generate an error page.
 @lot: $code = 404, $fail = false
 @static: 1
+@example: |
+  Route::set('event/%s%', function($id) {
+      if (!$file = File::exist(".\\path\\to\\" . $id . '.page')) {
+          Lot::set('page', new Page(null, [
+              'title' => 'Error'
+          ]));
+          return Shield::abort(404);
+      }
+      Lot::set('page', new Page($file));
+      return Shield::attach('.\path\to\view.php');
+  });
 ...
-
-This method was added by the [shield][link:../../reference/extension/shield] extension.

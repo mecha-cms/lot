@@ -1,19 +1,25 @@
 ---
 @version: [2, current]
 @description: Get shield state data.
-@lot: $id, $key = null, $fail = false
+@lot:
+  - string $id, string $key = null, $fail = false
+  - string $id, array $alt = []
 @static: 1
 @example: |
-  // Return the stored shield states if any, otherwise, return `$fail`
   $state = Shield::state('document');
-@example-note: |
-  If `$key` is array, then it will going to be the alternate values of the `$state` output if some data are not available; `$fail` data value will be ignored:
 
-  ~~~ .php
-  $state = Shield::state('document', [
-      'chunk' => 5 // add `chunk` property to `$state` if missing
+  $A = Shield::state('document', 'page');
+  $B = Shield::state('document', 'query');
+
+  // If the second argument is an array, then it will become the
+  // alternate values of the `$C` output if some data are not available
+  $C = Shield::state('document', [
+      'query' => ['foo', 'bar', 'baz'] // add `query` property to `$C` if missing
   ]);
-  ~~~
 ...
 
-This method was added by the [shield][link:../../reference/extension/shield] extension.
+By default, this method will try to load `config.php` file stored in the shield’s `state` folder. Since version `2.2.0`, if you have custom state data included in the `state` folder, you can get its value by including the state name after the shield ID separated by a colon:
+
+~~~ .php
+$widget_state = Shield::state('document:widget');
+~~~

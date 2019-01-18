@@ -50,7 +50,7 @@ type: HTML
 <p>This page file is valid.</p>
 ~~~
 
-~~~ .yaml
+~~~ .html
 <p>This page file is also valid.</p>
 ~~~
 
