@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Treat `Anemon` object as string.
+@example: |
+  echo new Anemon(['foo', 'bar', 'baz']);
+@result: |
+  '[[e]]echo new Anemon(['foo', 'bar', 'baz']);[[/e]]'
+...

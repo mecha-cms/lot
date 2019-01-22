@@ -1,34 +1,37 @@
 ---
-title: `__callStatic()`
-description: Dynamic methods.
+@version: [2, current]
+@description: Dynamic methods.
+@lot: string $kin, array $lot = []
+@static: 1
+@example: |
+  echo Language::home();
+  echo Language::asdf();
+@example-description: This method will return the language property’s value if available, otherwise, return the language property name.
+@result: |
+  'Home'
+  'asdf'
 ...
-
-~~~ .php.xmp
-Language::{$property}($vars = [], $preserve_case = false);
-~~~
-
-~~~ .php
-echo Language::home();
-~~~
 
 ---
 
-Let’s say we have a language property called `test` like this:
+### Language Variable
+
+Let’s say we have a language property named `greet` with a value like this:
 
 ~~~ .yaml
-test: Hello %{place}%! My name is %{object}%.
+greet: Hello %{var_1}%! My name is %{var_2}%.
 ~~~
 
 Then:
 
 ~~~ .php
-echo Language::test([
-    'place' => 'world',
-    'object' => 'Mocha'
+echo Language::greet([
+    'var_1' => 'world',
+    'var_2' => 'Mocha'
 ]);
 ~~~
 
-The code above will return the `test` value into this:
+The code above will return the `greet` value into this:
 
 ~~~ .txt
 Hello world! My name is Mocha.

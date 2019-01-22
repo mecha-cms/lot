@@ -1,8 +1,25 @@
 ---
-title: `$language::reset()`
-description: Remove a language item.
-...
+@version: [2, current]
+@description: Remove language item.
+@lot:
+  - void
+  - string $key = null
+  - array $keys = []
+@static: 1
+@example: |
+  // Reset all items
+  Language::reset();
 
-~~~ .php.xmp
-Language::reset($key = null);
-~~~
+  $A = Language::get('next');
+
+  // Reset `next` item
+  Language::reset('next');
+
+  $B = Language::get('next');
+
+  // Reset `next` and `previous` item
+  Language::reset(['next', 'previous']);
+@result: |
+  $A = 'Next';
+  $B = 'next';
+...

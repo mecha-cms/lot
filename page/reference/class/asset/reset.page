@@ -1,7 +1,10 @@
 ---
 @version: [2, current]
 @description: Remove assets from the hooks storage.
-@lot: $path = null
+@lot:
+  - void
+  - string $path = null
+  - array $path = []
 @static: 1
 @example: |
   Asset::reset('.\lot\asset\css\style-2.css');

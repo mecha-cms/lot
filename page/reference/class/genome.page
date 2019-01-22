@@ -5,7 +5,7 @@
 @abstract: 1
 ...
 
-This class is purposed to be used as an extension to other classes so that the extended classes will be able to create their own dynamic methods. This is an abstract class, so you have to extend this class with another class:
+This class is purposed to be used as an extension to other classes so that the extended classes will be able to create their own dynamic methods. This is an abstract class, so you have to extend this class to another class:
 
 ~~~ .php
 class Blastula extends Genome {
@@ -18,7 +18,7 @@ class Blastula extends Genome {
 Add a method.
 
 ~~~ .php.xmp
-Genome::_($kin, $fn);
+static::_($kin, $fn);
 ~~~
 
 **Example:**
@@ -108,7 +108,7 @@ echo Blastula::birth_3('Machi', 'space'); // `Hello world! My name is Machi.`
 Get the available methods.
 
 ~~~ .php.xmp
-Genome::_($kin);
+static::_($kin);
 ~~~
 
 **Example:**
@@ -136,7 +136,7 @@ $C = false;
 Remove a method.
 
 ~~~ .php.xmp
-Genome::_($kin, null);
+static::_($kin, null);
 ~~~
 
 **Example:**

@@ -5,11 +5,11 @@
 @return: Anemon
 @static: 1
 @example: |
-  // List all published and archived pages from `.\lot\page\article`
+  // List all published and archived pages from `.\lot\page\article` folder
   // and sort them by `slug` ascending and output only the `slug` property of each item returned
   $A = Get::pages('.\lot\page\article', 'page,archive', [1, 'slug']);
 
-  // List all published and archived pages from `.\lot\page\article`
+  // List all published and archived pages from `.\lot\page\article` folder
   // and sort them by `slug` ascending and output only the `path` property of each item returned
   $B = Get::pages('.\lot\page\article', 'page,archive', [1, 'slug'], 'path');
 ...

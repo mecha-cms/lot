@@ -11,8 +11,8 @@
 File::$config = [
     // `$min` is for the minimum file size allowed in byte(s)
     // `$max` is for the maximum file size allowed in byte(s)
-    'size' => [$min, $max],
+    'size' => [0, 2097152],
     // List of allowed file extension(s)
-    'extension' = ['txt']
+    'extension' => ['txt']
 ];
 ~~~

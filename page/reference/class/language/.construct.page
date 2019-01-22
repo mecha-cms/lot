@@ -1,16 +1,8 @@
 ---
-title: `__construct()`
-description: Constructor.
+@version: [2, current]
+@description: Constructor.
+@lot: void
+@example: |
+  Language::$config['id'] = 'en-us';
+  $language = new Language; // Set global `$language` variable
 ...
-
-~~~ .php.xmp
-Language($input = []);
-~~~
-
-**Example:**
-
-Get language files from the `lot\language` folder then convert it into object:
-
-~~~ .php
-$language = new Language;
-~~~

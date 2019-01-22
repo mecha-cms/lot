@@ -1,8 +1,12 @@
 ---
-title: `$language::get()`
-description: Get a language item.
+@version: [2, current]
+@description: Get language item.
+@lot:
+  - void
+  - string $key = null, string $var_0 = null, $preserve_case = false
+  - string $key = null, array $vars = [], $preserve_case = false
+@static: 1
+@example: |
+  echo Language::get('home');
+  echo Language::get('greet', ['world', 'Mocha']);
 ...
-
-~~~ .php.xmp
-Language::get($key = null, $vars = [], $preserve_case = false);
-~~~

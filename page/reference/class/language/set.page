@@ -1,8 +1,11 @@
 ---
-title: `$language::set()`
-description: Set a language item.
+@version: [2, current]
+@description: Set language item.
+@lot:
+  - string $key, $value = null
+  - array $values = []
+@static: 1
+@example: |
+  Language::set('home', 'Beranda');
+  Language::set(From::YAML('.\path\to\language.yaml'));
 ...
-
-~~~ .php.xmp
-Language::set($key, $value = null);
-~~~

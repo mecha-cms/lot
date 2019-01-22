@@ -1,0 +1,7 @@
+---
+@version: [2, current]
+@description: Treat `Elevator` object as string.
+@example: |
+  $elevator = new Elevator;
+  echo $elevator;
+...

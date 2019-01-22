@@ -15,9 +15,9 @@
     text-decoration: none;
   }
   a:focus,
-  a:hover {
-    color: #00f;
-    text-decoration:underline;
+  a:active {
+    color: #f00;
+    text-decoration: underline;
   }
   CSS;
 

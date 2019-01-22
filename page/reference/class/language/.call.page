@@ -1,34 +1,29 @@
 ---
-title: `__call()`
-description: Dynamic methods.
+@version: [2, current]
+@description: Dynamic methods.
+@lot: string $kin, array $lot = []
+@example: |
+  echo $language->home();
 ...
 
-~~~ .php.xmp
-->{$property}($vars = [], $preserve_case = false);
-~~~
+### Language Variable
 
-~~~ .php
-echo $language->home();
-~~~
-
----
-
-Let’s say we have a language property called `test` like this:
+Let’s say we have a language property named `greet` with a value like this:
 
 ~~~ .yaml
-test: Hello %{place}%! My name is %{object}%.
+greet: Hello %{var_1}%! My name is %{var_2}%.
 ~~~
 
 Then:
 
 ~~~ .php
-echo $language->test([
-    'place' => 'world',
-    'object' => 'Mocha'
+echo $language->greet([
+    'var_1' => 'world',
+    'var_2' => 'Mocha'
 ]);
 ~~~
 
-The code above will return the `test` value into this:
+The code above will return the `greet` value into this:
 
 ~~~ .txt
 Hello world! My name is Mocha.

@@ -4,3 +4,9 @@ description: Reserved variables.
 ...
 
 These PHP variables are reserved. You shouldn’t redefine these PHP variables where possible. Please consider to choose other variable names other than these.
+
+### Pattern
+
+~~~ .txt
+^\$[a-z][a-z0-9]*(?:_[a-z0-9]+)*$
+~~~

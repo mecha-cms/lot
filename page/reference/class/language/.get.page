@@ -1,8 +1,8 @@
 ---
-title: `__get()`
-description: Dynamic properties.
+@version: [2, current]
+@description: Dynamic properties.
+@lot: string $key
+@example: |
+  echo $language->home;
+@example-description: This will trigger `Language::get('home')`.
 ...
-
-~~~ .php
-echo $language->foo; // will trigger `Language::get('foo')`
-~~~

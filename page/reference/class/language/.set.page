@@ -1,8 +1,8 @@
 ---
-title: `__set()`
-description: Dynamic properties.
+@version: [2, current]
+@description: Dynamic properties.
+@lot: string $key, $value = null
+@example: |
+  $language->home = 'Beranda';
+@example-description: This will trigger `Language::set('home', 'Beranda')`.
 ...
-
-~~~ .php
-$language->foo = 'bar'; // will trigger `Language::set('foo', 'bar')`
-~~~

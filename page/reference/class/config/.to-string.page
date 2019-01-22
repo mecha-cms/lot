@@ -1,0 +1,11 @@
+---
+@version: [2, current]
+@description: Treat `Config` object as string.
+@example: |
+  $config->reset();
+  $config->set('foo', 1);
+  $config->set('bar', 2);
+  echo $config;[[/e]]);
+@result: |
+  '[[e]]echo json_encode(['foo' => 1, 'bar' => 2]);[[/e]]'
+...
