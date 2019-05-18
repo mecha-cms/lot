@@ -1,16 +1,26 @@
 ---
 @version: [2, current]
 @description: Create a new cache file.
-@lot: string $from, $fn = null, $id = null
+@lot: string $id, callable $fn, array $lot = []
+@return: array
 @static: 1
 @example: |
-  // Quick cache
-  Cache::set('.\path\to\file.php');
-
-  // Custom cache
-  Cache::set('.\path\to\file.php', function($path): array {
-      $data = require $path;
-      return do_stuff_with_data($data);
+  $A = Cache::set('foo', function() {
+      return date('Y-m-d H:i:s');
   });
-@example-note: If `$fn` is not a function, then the cache content will be set based on the `$from` file content.
+
+  $B = Cache::set('.\lot\path\to\file.php', function($file) {
+      ob_start();
+      require $file;
+      return ob_get_clean();
+  });
+@result: |
+  $A = ['[[e]]echo date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']);[[/e]]', '.\lot\cache\8c736521.php', 1549080564];
+  $B = ['[[e]]echo date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']);[[/e]]', '.\lot\cache\path\to\file.php.php', 1549080564];
+@result-note: |
+  If `$id` is identified as a valid file, then the generated cache path will be structured like this:
+
+  ~~~ .txt
+  .\lot\foo\bar\baz.txt → .\lot\cache\foo\bar\baz.txt.php
+  ~~~
 ...

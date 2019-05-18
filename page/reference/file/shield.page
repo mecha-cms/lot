@@ -146,7 +146,7 @@ title: Shield Title
 description: Shield description.
 author: Shield Author
 type: Markdown
-link: http://example.com
+link: 'http://example.com'
 version: 1.0.0
 ...
 

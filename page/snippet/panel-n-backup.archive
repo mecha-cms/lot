@@ -1,0 +1,63 @@
+---
+title: Site Backup System
+description: Simple backup system for the [panel][link:../reference/extension/panel] extension.
+@version: [2]
+...
+
+Add this code snippet in an `index.php` file of your active shield:
+
+~~~ .php
+// Get control panel path
+$_path = Extend::state('panel', 'path');
+
+// Append menu item to the control panel navigation
+Config::set('panel.n.+.+.+/backup', [
+    'text' => 'Backup',
+    'url' => $_path . '/::g::/backup' . HTTP::query(['token' => Guard::token('backup')]),
+    'stack' => 30
+]);
+
+// Create the route
+Route::set($_path . '/::g::/backup', function() use($site) {
+    if (!Guard::check(HTTP::get('token'), 'backup')) {
+        HTTP::status(400); // Bad Request!
+        exit;
+    }
+    $directory = ASSET . DS . 'zip';
+    $path = $directory . DS . date('Y-m-d') . '.' . To::slug($site->title) . '.zip';
+    if (!File::exist($path)) {
+        if (!File::exist($directory)) {
+            Folder::set($directory, 0700);
+        }
+        $zip = new ZipArchive;
+        if ($zip->open($path, ZipArchive::CREATE)) {
+            foreach (File::explore(ROOT, true) as $k => $v) {
+                // Exclude extension folder(s), but the `config.php` file!
+                if (strpos($k, EXTEND . DS) === 0 && substr($k, -11) !== DS . 'config.php') {
+                    continue;
+                }
+                // Exclude `document` shield!
+                if (strpos($k . DS, SHIELD . DS . 'document' . DS) === 0) {
+                    continue;
+                }
+                // Else…
+                if ($v === 0) {
+                    $zip->addEmptyDir(str_replace(ROOT . DS, "", $k . DS));
+                } else if ($v === 1) {
+                    $zip->addFromString(str_replace(ROOT . DS, "", $k), file_get_contents($k));
+                }
+            }
+            $zip->close();
+        }
+    }
+    Guard::kick(To::URL($path));
+});
+~~~
+
+Once added, the backup menu will be added in the dropdown like this:
+
+![1](%{asset}%/png/snippet/panel-n-backup.png)
+
+A backup package will be created in `.\lot\asset\zip` folder named as `YYYY-MM-DD.site-title.zip`.
+
+> **Note:** The backup package is stored in the asset folder which is accessible by public. For safety reason, please remove the package after downloading!

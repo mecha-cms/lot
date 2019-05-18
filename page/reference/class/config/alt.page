@@ -2,8 +2,8 @@
 @version: [current]
 @description: Set item or items only when it is not set.
 @lot:
-  - string $key, $value = null
-  - array $values = []
+- string $key, $value
+- array $values
 @static: 1
 @example: |
   // Set a `test` item with value `#` if not set

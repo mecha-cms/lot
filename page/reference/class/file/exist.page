@@ -2,8 +2,8 @@
 @version: [1, 2, current]
 @description: Check the existence of a file or folder.
 @lot:
-  - string $path, $fail = false
-  - array $path, $fail = false
+- string $path
+- array $path
 @static: 1
 @example: |
   // Generic
@@ -16,15 +16,12 @@
       require '.\path\to\header.alt.php';
   }
 
-  // Shortcut for above example
-  require File::exist('.\path\to\header.php', '.\path\to\header.alt.php');
-
   // Loop through list of file path until it finds a file that exists
   if ($test = File::exist([
       '.\path\to\page-post-2016.php',
       '.\path\to\page-post.php',
       '.\path\to\page.php'
-  ], false)) {
+  ])) {
       echo 'Current file: ' . $test;
   } else {
       echo 'Current file: false';

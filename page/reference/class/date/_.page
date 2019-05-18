@@ -1,0 +1,16 @@
+---
+@version: [2, current]
+@description: Define custom date pattern.
+@static: 1
+@lot:
+- string $kin, string $pattern
+- string $kin, callable $fn
+@parent: genome
+@example: |
+  Date::_('en_us', '%~D%, %~M% %D%, %Y%');
+
+  $date = new Date('[[e]]echo date('Y-m-d H:i:s');[[/e]]');
+
+  echo $date->en_us;
+@example-description: 'The `_` method of the `Date` class can accept string value that represent [date pattern][link:pattern]. This can be used as a way to create a method that simply return a formatted date. Other than that, the results will inherit to [`Genome::_()`][link:../genome#reference:plug].'
+...

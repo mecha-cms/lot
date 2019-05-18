@@ -9,8 +9,8 @@ Requires [comment][link:../reference/extension/comment] extension.
 if (!HTTP::is('post')) {
     $previous = (array) Session::get('comment');
     unset($previous['content']); // Remove `content` cache
-    $cache = extend($previous, (array) Session::get(Form::session));
-    Session::set(Form::session, $cache);
+    $cache = extend($previous, (array) Session::get('form'));
+    Session::set('form', $cache);
 }
 ~~~
 

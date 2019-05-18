@@ -1,7 +1,7 @@
 ---
 @version: [current]
 @description: Append inline CSS to the `<head>` section.
-@lot: string $content, float $stack = null, array $data = []
+@lot: string $content, float $stack = 10, array $data = []
 @static: 1
 @example: |
   $content = <<<CSS
@@ -22,6 +22,6 @@
   CSS;
 
   Asset::style($content);
-  Asset::style($content, 20, ['id' => 'style-3']);
+  Asset::style($content, 20, ['id' => 'style-1']);
 @example-note: Default `$stack` value is `10`.
 ...

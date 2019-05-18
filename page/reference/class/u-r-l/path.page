@@ -1,13 +1,19 @@
 ---
 @version: [current]
 @description: Return the URL path.
-@lot: string $separator = null
+@lot:
+- void
+- string $separator = '/'
+- string $separator = '/', array $p = []
+@static: 2
 @example: |
   $A = $url->path;
   $B = $url->path();
   $C = $url->path('\\');
+  $D = $url->path('\\', [1 => '#']);
 @result: |
   $A = '[[e]]echo (new URL('foo/bar/baz'))->path;[[/e]]';
   $B = '[[e]]echo (new URL('foo/bar/baz'))->path();[[/e]]';
   $C = '[[e]]echo (new URL('foo/bar/baz'))->path('\\');[[/e]]';
+  $D = '[[e]]echo (new URL('foo/bar/baz'))->path('\\', [1 => '#']);[[/e]]';
 ...

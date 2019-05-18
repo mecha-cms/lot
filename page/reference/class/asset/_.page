@@ -5,8 +5,8 @@
 @lot: string $kin, callable $fn
 @parent: genome
 @example: |
-  Asset::_('.css', function($value, $key, $attr) {
+  Asset::_('.css', function($value, $key) {
       return '<link href="' . $value['url'] . '" rel="stylesheet">';
   });
-@example-description: 'To make it specific to the [`Asset`][link:] class, make sure to add a dot character just before the method name you want to add. Other than that, the results will inherit to [`Genome::_()`][link:../genome#reference:plug].'
+@example-description: 'To make it specific to the [`Asset`][link:] class, make sure to add a dot character just before the method name you want to add. Other than that, the result will inherit to [`Genome::_()`][link:../genome#reference:plug].'
 ...

@@ -1,22 +1,16 @@
 ---
-title: `$lot::reset()`
-description: Remove variable.
+@version: [2, current]
+@description: Remove global variable.
+@lot:
+- void
+- string $key
+- array $keys
+@static: 1
+@example: |
+  // Remove all global variable(s)
+  Lot::reset();
+  // Remove single global variable
+  Lot::reset('title');
+  // Remove multiple global variable(s)
+  Lot::reset(['title', 'content']);
 ...
-
-~~~ .php.xmp
-Lot::reset($key = null, $scope = null);
-~~~
-
-**Example:**
-
-Remove `test` property from the `$GLOBALS` storage:
-
-~~~ .php
-Lot::reset('test');
-~~~
-
-Remove all properties that has been set by the `Lot::set()` method:
-
-~~~ .php
-Lot::reset();
-~~~

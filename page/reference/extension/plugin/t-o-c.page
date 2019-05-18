@@ -1,22 +1,17 @@
 ---
 title: Table of Content
 description: Generate table of content automatically.
-icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMPSURBVHhe7ZaxrQVEEMR+H0R0RklEFEUF9EFE9EkcrJCDkebfC5a15Gw1Ojm6r+M4juM4juM4juM4juP4v/DrH39//6TMHikWsZHZI8UiNjJ7pFjERmaPFIvYyOyRYhEbmd3L73/+8/2TWsRGnrkXi9hoERt55l4sYqNFbOSZe7GIjRaxkWfuxSI2WsRGnrkXi9hoERt55l4sYqNFbOSZe7GIjRaxkWfuxSJOOYuxiI3M7sWiTzmLsYiNzO7Fok85i7GIjczuxaJPOYuxiI3M7sWiTzmLsYiNzO7Fok85i7GIjczuxaJPOTteYdGnnO3lr19++/5JmY2x6FPO9mIRG5mNsehTzvZiERuZjbHoU872YhEbmY2x6FPO9mIRG5mNsehTzmLsK9nI7DssYiOzMRZ9ylmMRWxk9h0WsZHZGIs+5SzGIjYy+w6L2MhsjEWfchZjERuZfYdFbGQ2xqJPOYuxiI3MvsMiNjIbY9GnnMVYxEZm32ERGy3iJ7WIjWR6h0VstCif1CI2kukdFrHRonxSi9hIpndYxEaL8kktYiOZ3mERGy3KJ7WIjWR6h0VstCif1CI2kukdFrHRonxSi9hIpndYxEaL8kktYiOZ3mERG5mNsYhTzmIsYiOz77CIjczGWPQpZzEWsZHZd1jERmZjLPqUsxiL2MjsOyxiI7MxFn3KWYxFbGT2HRaxkdkYiz7lLMYiNjL7DovYyGyMRZ9yFmMRG5l9h0VsZDbGok8524tFbGQ2xqJPOduLRWxkNsaiTznbi0VsZDbGok85O15h0aecHa+w6FPOjldY9ClnMfaVbGR2LxZ9ylmMRWxkdi8WfcpZjEVsZHYvFn3KWYxFbGR2LxZ9ylmMRWxkdi8WfcpZjEVsZHYvFr3RIjbyzL1YxEaL2Mgz92IRGy1iI8/ci0VstIiNPHMvFrHRIjbyzL1YxEaL2Mgz92IRGy1iI8/ci0VstIiNPPNIsYiNzB4pFrGR2SPFIjYye6RYxEZmjxSL2MjskWIRG5k9juM4juM4juM4juM4jv/w9fUvvxPB9aUjeuQAAAAASUVORK5CYII=
-
-dependency:
-  extension:
-    - asset
 ...
 
-This plugin will automatically create table of content within the page content that has several headers so that you can use it to navigate between page headers. If you set the `type` value to `2`, then the table of content will not be inserted into the page content, and this plugin will only serve as an automatic permanent link ID generator of headers in your page content.
+This plugin will automatically create a table of content within the page content that has several headers so that you can use it to navigate between page headers. If you set the `type` value to `2`, then the table of content will not be inserted into the page content, and this plugin will only serve as an automatic permanent link ID generator of headers in your page content.
 
-### Usage
+### Basic Usage
 
-Configuration data are available in `.\lot\extend\plugin\lot\worker\t-o-c\lot\state\config.php`.
+Configuration data are available in `.\lot\extend\plugin\lot\t-o-c\lot\state\config.php`.
 
 #### Custom Header ID
 
-You always have full control to determine your own header ID using the [Markdown Extra][link:../../../article/markdown-syntax#reference:special-attributes] syntax or with plain HTML markup. This plugin will not overwrite the specific ID that you have specified in the header:
+You have the full control to determine your own header ID using the [Markdown Extra][link:../../../article/markdown-syntax#reference:special-attributes] syntax or with plain HTML markup. This plugin will not overwrite the specific ID that you have specified in the header:
 
 ~~~ .markdown
 #### Header Special {#special}
@@ -26,33 +21,35 @@ You always have full control to determine your own header ID using the [Markdown
 <h3 id="special">Header Special</h3>
 ~~~
 
+### Advance Usage
+
 #### Exclude Headers from TOC
 
-Add a `not-toc-stage` or `not-toc-point` class to the desired headers to exclude them from the TOC tree and to disable the automatic permanent link ID creation:
+Add `x:t-o-c` class to the desired headers to exclude them from the TOC tree and to disable the automatic permanent link ID creation:
 
 ~~~ .markdown
-#### Example Header {.not-toc-stage}
+#### Example Header {.x:t-o-c}
 ~~~
 
 ~~~ .html
-<h3 class="not-toc-stage">Example Header</h3>
+<h3 class="x:t-o-c">Example Header</h3>
 ~~~
 
 #### Custom Placement
 
-If you have the [link:../block] extension installed, you can put `[‌[‌toc‌]‌]` block anywhere in the page content to mark the position you want to put the generated TOC tree to.
+If you have the [link:../block] extension installed, you can put `[‌[‌t-o-c‌]‌]` block anywhere in the page content to mark the position you want to put the generated TOC tree to.
 
 ~~~ .yaml
 ---
 title: Page Title
 description: Page description.
 author: Taufik Nurrohman
-type: HTML
+type: Markdown
 ...
 
 First paragraph goes here.
 
-[‌[‌toc title="Custom Title"‌]‌]
+[‌[‌t-o-c title="Custom Title"‌]‌]
 
 Second paragraph goes here.
 
@@ -61,15 +58,61 @@ Third paragraph goes here.
 
 #### Disable TOC
 
-To disable the automatic table of content placement on certain page, add a `toc` header property with a value that can be evaluated to `false`:
+There are several ways to disable the automatic table of content placement.
+
+The first way is through the plugin configuration, that is, by setting the value of the `type` property to `0` or `false` (alias for `0`). This will disable the table of content by default:
+
+~~~ .php
+<?php
+
+return [
+    'type' => 0,
+    'id' => [ … ],
+    'class' => [ … ]
+];
+~~~
+
+To re-enable the table of content, set the value of `t-o-c` property within your page’s `state` property as `1`, `2` or `true` (alias for `1`):
 
 ~~~ .yaml
 ---
 title: Page Title
 description: Page description.
 author: Taufik Nurrohman
-type: HTML
-toc: false
+type: Markdown
+state:
+  t-o-c: true
+...
+~~~
+
+The second way is through the page properties. To disable the automatic table of content placement on certain page, add a `t-o-c` property within your page’s `state` property with a value that can be evaluated to `false`:
+
+~~~ .yaml
+---
+title: Page Title
+description: Page description.
+author: Taufik Nurrohman
+type: Markdown
+state:
+  t-o-c: false
+...
+~~~
+
+#### Override TOC Configuration Data
+
+You can rewrite the TOC configuration data on the `t-o-c` property to override the initial configuration data:
+
+~~~ .yaml
+---
+title: Page Title
+description: Page description.
+author: Taufik Nurrohman
+type: Markdown
+state:
+  t-o-c:
+    type: 2
+    class:
+    - table-of-content
 ...
 ~~~
 

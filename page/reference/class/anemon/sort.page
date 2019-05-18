@@ -1,7 +1,9 @@
 ---
 @version: [2, current]
 @description: Sort all items.
-@lot: $sort = 1, $preserve_key = false
+@lot:
+- $sort = 1, $preserve_key = false
+- array $order = [$sort, $by], $preserve_key = false
 @example: |
   $array = [
       'foo' => [

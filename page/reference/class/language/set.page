@@ -2,8 +2,8 @@
 @version: [2, current]
 @description: Set language item.
 @lot:
-  - string $key, $value = null
-  - array $values = []
+- string $key, $value
+- array $values = []
 @static: 1
 @example: |
   Language::set('home', 'Beranda');

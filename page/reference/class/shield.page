@@ -1,8 +1,8 @@
 ---
 @version: [1, 2, current]
 @description: Output buffer.
-@icon: M12,12H19C18.47,16.11 15.72,19.78 12,20.92V12H5V6.3L12,3.19M12,1L3,5V11C3,16.55 6.84,21.73 12,23C17.16,21.73 21,16.55 21,11V5L12,1Z
-@parent: extend
+@final: 1
+@parent: genome
 ...
 
 Shield is a term used by Mecha to express _theme_ in other CMS.
@@ -13,15 +13,21 @@ Shield is a term used by Mecha to express _theme_ in other CMS.
 
 ~~~ .php
 Shield::$config = [
-    // Change the first value to `body` to insert the generated
-    // page classes to the `<body>` tag instead of `<html>` tag.
-    // Second and third values of this configuration item are currently not used
-    'union' => ['html', "", ['class' => true]],
-    // Set the name of the shield folder that you will use globally
-    'id' => 'document',
     // List of alternative file extensions used by the shield files.
     // Shield files with `html` extension are a priority for the best performance.
     // To change the priority order, re-order this file extensions placement.
-    'extension' = ['html', 'php']
+    'x' = ['html', 'php'],
+    // Set the name of the shield folder that you will use globally
+    'id' => 'document',
+    // Change the first value to `body` to insert the generated
+    // page classes to the `<body>` tag instead of `<html>` tag.
+    // Second and third values of this configuration item are currently not used
+    'union' => ['html', "", ['class' => true]]
 ];
 ~~~
+
+### In Depth
+
+ - [link:/reference/file/shield]
+ - [link:/reference/extension/shield]
+ - [link:/snippet/hook-state]

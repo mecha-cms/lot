@@ -1,6 +1,7 @@
 ---
-title: `$to::{YAML,yaml}()`
-description: Convert array into YAML string.
+@version: [2, current]
+@description: Convert array into YAML string.
+@static: 1
 ...
 
 ~~~ .php.xmp

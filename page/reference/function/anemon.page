@@ -1,0 +1,4 @@
+---
+@version: [current]
+@description: Short function for [`new Anemon()`][link:../class/anemon/.construct].
+...

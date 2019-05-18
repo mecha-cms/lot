@@ -1,7 +1,7 @@
 ---
 @version: [2, current]
 @description: Generate full public URL path of the `$url`.
-@lot: string $url, $fail = false
+@lot: string $url
 @static: 1
 @example: |
   $A = Asset::URL('.\lot\asset\css\style.css');

@@ -1,3 +1,24 @@
 ---
 @version: [current]
+@description: Convert class name to file name.
+@example: |
+  echo c2f('Foo');
+  echo c2f('\Foo');
+  echo c2f('_Foo');
+  echo c2f('FooBar');
+  echo c2f('Foo_Bar');
+  echo c2f('Foo\Bar');
+  echo c2f('Foo\_Bar');
+  echo c2f('Foo_\Bar');
+@result: |
+  [[e]]
+  echo c2f('Foo') . "\n";
+  echo c2f('\Foo') . "\n";
+  echo c2f('_Foo') . "\n";
+  echo c2f('FooBar') . "\n";
+  echo c2f('Foo_Bar') . "\n";
+  echo c2f('Foo\Bar') . "\n";
+  echo c2f('Foo\_Bar') . "\n";
+  echo c2f('Foo_\Bar');
+  [[/e]]
 ...

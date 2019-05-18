@@ -1,3 +1,26 @@
 ---
 @version: [current]
+@description: Convert file name to class name.
+@example: |
+  echo f2c('foo');
+  echo f2c('.foo');
+  echo f2c('_foo');
+  echo f2c('foo');
+  echo f2c('foo-bar');
+  echo f2c('foo_bar');
+  echo f2c('foo.bar');
+  echo f2c('foo._bar');
+  echo f2c('foo_.bar');
+@result: |
+  [[e]]
+  echo f2c('foo') . "\n";
+  echo f2c('.foo') . "\n";
+  echo f2c('_foo') . "\n";
+  echo f2c('foo') . "\n";
+  echo f2c('foo-bar') . "\n";
+  echo f2c('foo_bar') . "\n";
+  echo f2c('foo.bar') . "\n";
+  echo f2c('foo._bar') . "\n";
+  echo f2c('foo_.bar');
+  [[/e]]
 ...

@@ -1,0 +1,7 @@
+---
+@version: [current]
+@description: Get current public file URL.
+@lot: void
+@example: |
+  echo File::open('.\path\to\file.txt')->URL;
+...

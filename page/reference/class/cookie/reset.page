@@ -2,15 +2,15 @@
 @version: [2, current]
 @description: Remove a cookie.
 @lot:
-  - void
-  - string $key = null
-  - array $keys = []
+- void
+- string $key
+- array $keys
 @static: 1
 @example: |
-  // Remove all cookies
+  // Remove all cookie(s)
   Cookie::reset();
-  // Remove `foo` and `bar` cookie
-  Cookie::reset(['foo', 'bar']);
   // Remove `foo` cookie
   Cookie::reset('foo');
+  // Remove `foo` and `bar` cookie
+  Cookie::reset(['foo', 'bar']);
 ...

@@ -1,20 +1,11 @@
 ---
-title: `$session::get()`
-description: Get a session.
+@version: [2, current]
+@description: Get a session.
+@lot:
+- void
+- string $key
+@static: 1
+@example: |
+  $B = Session::get(); // Get all session(s)
+  $A = Session::get('foo'); // Get `foo` session
 ...
-
-~~~ .php.xmp
-Session::get($key = null, $fail = null);
-~~~
-
-**Example:**
-
-~~~ .php
-Session::get('my_session', '#');
-~~~
-
-To get all sessions:
-
-~~~ .php
-Session::get();
-~~~

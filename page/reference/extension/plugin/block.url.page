@@ -1,0 +1,19 @@
+---
+title: Block: URL
+description: Insert URL data to the page content.
+...
+
+Support these block patterns:
+
+ - `[‌[‌url‌]‌]` → `http://127.0.0.1/a`
+ - `[‌[‌url.scheme]‌]` → `http`
+ - `[‌[‌url.protocol‌]‌]` → `http://`
+ - `[‌[‌url.host‌]‌]` → `127.0.0.1`
+ - `[‌[‌url.port‌]‌]` → `80`
+ - `[‌[‌url.directory‌]‌]` → `a`
+ - `[‌[‌url.$‌]‌]` → same as `[‌[‌url‌]‌]`
+ - `[‌[‌url.i‌]‌]` → `1`
+ - `[‌[‌url.path‌]‌]` → `foo/bar`
+ - `[‌[‌url.query‌]‌]` → `?foo=bar&baz=qux`
+ - `[‌[‌url.clean‌]‌]` → `http://127.0.0.1/a/foo/bar`
+ - `[‌[‌url.current‌]‌]` → `http://127.0.0.1/a/foo/bar/1`

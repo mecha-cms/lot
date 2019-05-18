@@ -2,7 +2,8 @@
 title: Banners
 description: Use these banners to tell people about Mecha.
 type: HTML
-comments: {"x":true}
+state:
+  comment: false
 ...
 
 [[e]]

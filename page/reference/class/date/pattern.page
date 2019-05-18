@@ -12,24 +12,15 @@ Supported date pattern:
 
 Pattern | Description
 ------- | -----------
-`%year%` | Get year number.
-`%month%` | Get month number (from 01 to 12).
-`%day%` | Get day number (from 01 to 31).
-`%hour%` | Get hour 24 number (from 00 to 24).
-`%minute%` | Get minute number (from 00 to 60).
-`%second%` | Get second number (from 00 to 60).
-`%noon%` | `AM` or `PM`.
-`%week%` | Get day number in a week (from 01 to 07).
-`%zone%` | Get current time zone.
+`%Y%` | Get year number.
+`%M%` | Get month number (from 01 to 12).
+`%D%` | Get day number (from 01 to 31).
+`%h%` | Get hour 12 number (from 00 to 12).
+`%m%` | Get minute number (from 00 to 60).
+`%s%` | Get second number (from 00 to 60).
+`%N%` | `AM` or `PM`.
+`%W%` | Get day number in a week (from 01 to 07).
+`%Z%` | Get current time zone.
 `%~M%` | Get month name.
 `%~D%` | Get day name.
-`%~h%` | Alias for `%hour%`.
-`%Y%` | Alias for `%year%`.
-`%M%` | Alias for `%month%`.
-`%D%` | Alias for `%day%`.
-`%h%` | Get hour 12 number (from 00 to 12).
-`%m%` | Alias for `%minute%`.
-`%s%` | Alias for `%second%`.
-`%N%` | Alias for `%noon%`.
-`%W%` | Alias for `%week%`.
-`%Z%` | Alias for `%zone%`.
+`%~h%` | Get hour 24 number (from 00 to 24).

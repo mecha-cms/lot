@@ -1,3 +1,10 @@
 ---
 @version: [current]
+@description: Not equal to.
+@lot: $a, $b
+@example: |
+  if (ne('abcdef', 5)) { … }
+  if (ne(['a', 'b', 'c', 'd', 'e', 'f'], 5)) { … }
+  if (ne(6, 5)) { … }
+@example-note: The `$a` value will be passed through [`q`][link:q] function before being compared to the `$b` value.
 ...

@@ -1,34 +1,13 @@
 ---
-title: `$route::set()`
-description: Set a route.
+@version: [2, current]
+@description: Set a route.
+@lot:
+- string $id, callable $fn = null, float $stack = 10
+- array $id, callable $fn = null, float $stack = 10
+@static: 1
+@example: |
+  Route::set('blog/(\d+)', function($step = 1) {
+      // In this scope, `$step` variable will return `4` in `‌http://127.0.0.1‌/blog/4`
+      // and will return `1` if we are in `‌http://127.0.0.1‌/blog`
+  });
 ...
-
-~~~ .php.xmp
-Route::set($id = null, $fn = null, $stack = null, $pattern = false);
-~~~
-
-**Example:**
-
-~~~ .php
-Route::set('blog/%i%', function($step = 1) {
-    // here, `$step` will return `4` if we are in `‌http://127.0.0.1‌/blog/4`
-    // and will return `1` if we are in `‌http://127.0.0.1‌/blog`
-});
-~~~
-
-> **Note:** Default `$stack` value is `10`.
-
-To set multiple routes:
-
-~~~ .php
-Route::set(['blog/%s%/%i%', 'blog/%s%', 'blog/%i%', 'blog'], function($slug = "", $step = 1) { … });
-~~~
-
-The code above is equal to:
-
-~~~ .php
-Route::set('blog/%s%/%i%', function($slug = "", $step = 1) { … }, 10);
-Route::set('blog/%s%', function($slug = "", $step = 1) { … }, 10.1);
-Route::set('blog/%i%', function($slug = "", $step = 1) { … }, 10.2);
-Route::set('blog', function($slug = "", $step = 1) { … }, 10.3);
-~~~

@@ -1,0 +1,11 @@
+---
+@version: [current]
+@description: File size converter.
+@lot: int $size, string $unit = null, $prec = 2
+@static: 1
+@example: |
+  $size = filesize('.\path\to\file.txt');
+
+  $A = File::sizer($size); // Automatic (as short as possible)
+  $B = File::sizer($size, 'KB'); // Force to `KB`
+...

@@ -1,0 +1,4 @@
+---
+@version: [current]
+@description: Short function for [`new File()`][link:../class/file/.construct] or [`new Folder()`][link:../class/folder/.construct].
+...

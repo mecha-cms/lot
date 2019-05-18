@@ -1,0 +1,5 @@
+---
+@version: [current]
+@description: Get current file directory.
+@lot: int $i = 1
+...

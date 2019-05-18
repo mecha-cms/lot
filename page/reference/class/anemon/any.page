@@ -1,7 +1,7 @@
 ---
 @version: [current]
 @description: The OOP style of [link:../../function/any].
-@lot: $fn = null
+@lot: callable $fn
 @example: |
   if (Anemon::eat([1, 2, 3, 4, 5])->any(function($v) {
       return $v === 4;

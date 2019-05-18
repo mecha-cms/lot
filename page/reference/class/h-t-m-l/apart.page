@@ -39,8 +39,8 @@
       1 => false,
       2 => [
           'bar' => "",
-          'baz' => 'baz',
-          'qux' => 'qux',
+          'baz' => true,
+          'qux' => true,
       ]
   ];
   $G = [

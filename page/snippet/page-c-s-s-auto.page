@@ -74,4 +74,4 @@ Here are some results of the _Document_ shield after customized by the code snip
 > substr(md5($url->path), 0, 6);
 > ~~~
 >
-> Why I don’t see any pages with black text color?
+> Why don’t I see any pages with black text color?

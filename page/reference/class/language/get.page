@@ -2,9 +2,9 @@
 @version: [2, current]
 @description: Get language item.
 @lot:
-  - void
-  - string $key = null, string $var_0 = null, $preserve_case = false
-  - string $key = null, array $vars = [], $preserve_case = false
+- void
+- string $key = null, string $var_0 = null, $preserve_case = false
+- string $key = null, array $vars = [], $preserve_case = false
 @static: 1
 @example: |
   echo Language::get('home');

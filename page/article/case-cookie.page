@@ -84,7 +84,7 @@ In the future, it may be possible to update cookie value recursively, but it wil
 
 ~~~ .php
 // Set
-$expire = 1; // 1 day
+$expire = '1 day';
 Cookie::set('qux', ['a', 'b', 'c'], $expire);
 
 // Get

@@ -7,13 +7,14 @@ description: Helper functions.
 
 [[e]]
 $categories = [
-    'Array & Object' => 'a,alt,any,concat,extend,find,has,is,map,not,o,pluck,shake,z',
+    'Array & Object' => 'a,alt,any,concat,extend,find,get,has,is,let,map,not,o,pluck,set,shake,step,y,z',
     'Boolean' => 'eq,ge,gt,le,lt,ne',
-    'File' => 'd,g,i,r',
-    'Function' => 'fn,y',
+    'File' => 'content,d,exist,g,stream',
+    'Function' => 'fire',
     'Number' => 'b,m,q',
-    'String' => 'c,candy,c2f,e,f,format,f2c,h,l,n,p,s,t,u,v,w,x',
-    'Others' => 'fail,j,k,test'
+    'String' => 'c,c2f,e,f,f2c,f2p,h,l,n,p,p2f,r,s,t,u,v,w,x',
+    'Factory' => 'abort,anemon,cache,check,config,cookie,hook,kick,language,mecha,message,move,open,page,pages,put,route,session,take,token',
+    'Others' => 'i,j,k,test'
 ];
 
 foreach ($categories as $k => $v) {

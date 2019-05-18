@@ -2,12 +2,12 @@
 @version: [2, current]
 @description: Remove global state item.
 @lot:
-  - void
-  - string $key = null
-  - array $keys = []
+- void
+- string $key
+- array $keys
 @static: 1
 @example: |
-  // Remove all items
+  // Remove all item(s)
   Config::reset();
   // Remove `foo` item
   Config::reset('foo');

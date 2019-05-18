@@ -1,7 +1,0 @@
----
-@version: [1, 2, current]
-@description: Read the file content as string.
-@lot: $fail = null
-@example: |
-  echo File::open('.\path\to\file.txt')->read();
-...

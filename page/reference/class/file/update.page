@@ -1,0 +1,15 @@
+---
+@version: [current]
+@description: Get current file modification time.
+@lot:
+- void
+- string $format
+@example: |
+  $file = new File('.\path\to\file.txt');
+
+  $A = $file->update;
+  $B = $file->update('Y/m/d H:i:s');
+@result: |
+  $A = [[e]]echo $_SERVER['REQUEST_TIME'];[[/e]];
+  $B = '[[e]]echo date('Y/m/d H:i:s', $_SERVER['REQUEST_TIME']);[[/e]]';
+...

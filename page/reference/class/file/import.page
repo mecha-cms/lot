@@ -1,7 +1,0 @@
----
-@version: [2, current]
-@description: Import a PHP file.
-@lot: $fail = []
-@example: |
-  $A = File::open('.\path\to\file.php')->import();
-...

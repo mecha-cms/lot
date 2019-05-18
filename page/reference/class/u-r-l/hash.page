@@ -1,7 +1,10 @@
 ---
 @version: [current]
 @description: Return the URL hash.
-@lot: string $prefix = null
+@lot:
+- void
+- string $prefix = '#'
+@static: 2
 @example: |
   $A = $url->hash;
   $B = $url->hash();

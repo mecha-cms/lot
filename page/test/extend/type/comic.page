@@ -2,7 +2,8 @@
 title: Air Gear: 279
 description: Testing page type extenson.
 type: Comic
-rapic: false
+state:
+  r-a-p-i-c: false
 ...
 
 [[e]]

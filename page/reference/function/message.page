@@ -1,0 +1,4 @@
+---
+@version: [current]
+@description: Short function for [`Message::info()`][link:../class/message/info].
+...

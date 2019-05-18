@@ -1,7 +1,7 @@
 ---
 @version: [current]
 @description: Append inline JS to the `<body>` section.
-@lot: string $content, float $stack = null, array $data = []
+@lot: string $content, float $stack = 10, array $data = []
 @static: 1
 @example: |
   $content = <<<JS
@@ -11,6 +11,6 @@
   JS;
 
   Asset::script($content);
-  Asset::script($content, 20, ['id' => 'script-3']);
+  Asset::script($content, 20, ['id' => 'script-1']);
 @example-note: Default `$stack` value is `10`.
 ...

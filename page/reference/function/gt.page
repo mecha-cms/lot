@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Greater than.
+@lot: $a, $b
+@example: |
+  if (gt('abcdef', 5)) { … }
+  if (gt(['a', 'b', 'c', 'd', 'e', 'f'], 5)) { … }
+  if (gt(6, 5)) { … }
+@example-note: The `$a` value will be passed through [`q`][link:q] function before being compared to the `$b` value.
+...

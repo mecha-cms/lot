@@ -1,12 +1,14 @@
 ---
 @version: [2, current]
 @description: Get data of the available assets.
-@lot: $path = null, $fail = false, int $i = 1
+@lot:
+- void
+- string $path, int $i = 1
 @static: 1
 @example: |
   $A = Asset::get('.\lot\asset\css\style-2.css');
   $B = Asset::get('.\lot\asset\css\style-4.css');
-@example-description: Get data of `style-2.css` path that has been added to the hooks storage if any, otherwise, return `$fail`.
+@example-description: Get data of `style-2.css` path that has been added to the hooks storage if any, otherwise, return `null`.
 @result: |
   $A = [
       'path' => '.\lot\asset\css\style-2.css',
@@ -15,5 +17,5 @@
       'stack' => 10
   ];
 
-  $B = false;
+  $B = null;
 ...

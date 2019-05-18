@@ -14,4 +14,4 @@
   $session = HTTP::session(); // `$_SESSION`
 ...
 
-> **Note:** Values include `0`, `'0'`, and `' '` are considered not empty. So, returning a data contains these kind of value will not trigger the `$fail` value.
+> **Note:** Values include `0`, `'0'`, and `' '` are considered not empty. So, returning a data contains these kind of value will not trigger the default value.

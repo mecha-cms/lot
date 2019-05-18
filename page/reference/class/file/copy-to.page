@@ -2,8 +2,8 @@
 @version: [1, 2, current]
 @description: Copy a file or folder to a folder.
 @lot:
-  - string $folder = ROOT, string $pattern = '%{name}%.%{i}%.%{extension}%'
-  - array $folders = [ROOT], string $pattern = '%{name}%.%{i}%.%{extension}%'
+- string $folder = ROOT, string $pattern = '%{name}%.%{i}%.%{x}%'
+- array $folders = [ROOT], string $pattern = '%{name}%.%{i}%.%{x}%'
 @example: |
   $A = File::open('.\path\to\file.txt')->copyTo('.\path\to\folder');
   $B = File::open('.\path\to\file.txt')->copyTo([

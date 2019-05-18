@@ -24,9 +24,9 @@ Stack | Hook | To | Source
 Stack | Hook | To | Source
 ----- | ---- | -- | ------
 `0` | `fn\block\_x` | `*.content` | [link:../reference/extension/block]
-`.9` | `fn\block\e` | `*.content` | [link:../reference/extension/plugin/block-e]
+`.9` | `fn\block\e` | `*.content` | [link:../reference/extension/plugin/block.e]
 `1` | `fn\block` | `*.content` | [link:../reference/extension/block]
-`1.9` | `fn\markdown\link` | `*.content`, `*.description` | [link:../reference/extension/plugin/markdown-link]
+`1.9` | `fn\markdown\link` | `*.content`, `*.description` | [link:../reference/extension/plugin/markdown.link]
 `2` | `fn\markdown` | `*.description`, `*.content` | [link:../reference/extension/plugin/markdown]
 `3` | `fn\rapic` | `page.content` | [link:../reference/extension/plugin/r-a-p-i-c]
 

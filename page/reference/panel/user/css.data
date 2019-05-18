@@ -1,4 +1,0 @@
-article h3 + ul {
-  column-width:250px;
-  column-gap:3em;
-}

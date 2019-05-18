@@ -216,11 +216,9 @@ In this version, blocks are enclosed with square brackets:
 You can choose either to replace old syntax with the new syntax, or by setting custom configuration data of the [block][link:../reference/extension/block] extension to make it compatible with the old block syntax:
 
 ~~~ .php
-1 => [
+[
     0 => ['{‌{‌', '‌}‌}', '‌/‌'],
-    1 => ['=', '"', '"', ' '],
-    2 => ['{‌{‌!', '!‌}‌}'],
-    3 => ['`{‌{‌', '‌}‌}`']
+    1 => ['"', '"', '=']
 ]
 ~~~
 
@@ -256,7 +254,7 @@ Prior to version `2.x.x`, post ID, comment time and parent ID are stored in the 
 author: Taufik Nurrohman
 email: email@domain.com
 type: Markdown
-link: http://127.0.0.1
+link: 'http://127.0.0.1'
 status: 1
 user_ip: 114.121.239.123
 user_agent: Mozilla/5.0 (Windows NT 6.3; rv:43.0) Gecko/20100101 Firefox/43.0

@@ -13,7 +13,7 @@ To store array in [YAML](http://www.yaml.org "YAML Ain’t Markup Language (YAML
 $test = From::YAML('foo: bar');
 ~~~
 
-[connect:../reference/class/from]
+[connect:../reference/class/from/-y-a-m-l]
 
 #### Array to String
 
@@ -21,7 +21,7 @@ $test = From::YAML('foo: bar');
 $test = To::YAML(['foo' => 'bar']);
 ~~~
 
-[connect:../reference/class/to]
+[connect:../reference/class/to/-y-a-m-l]
 
 ### Syntax
 
@@ -33,10 +33,11 @@ baz: qux
 ~~~
 
 ~~~ .json
-{
-  "foo": "bar",
-  "baz": "qux"
-}
+[[e]]echo str_replace("    ", "  ", json_encode(From::YAML(<<<YAML
+foo: bar
+baz: qux
+YAML
+), JSON_PRETTY_PRINT));[[/e]]
 ~~~
 
 #### Empty Value
@@ -48,11 +49,12 @@ baz: ""
 ~~~
 
 ~~~ .json
-{
-  "foo": [],
-  "bar": "",
-  "baz": ""
-}
+[[e]]echo str_replace("    ", "  ", json_encode(From::YAML(<<<YAML
+foo:
+bar: ''
+baz: ""
+YAML
+), JSON_PRETTY_PRINT));[[/e]]
 ~~~
 
 #### Empty Data
@@ -62,7 +64,7 @@ baz: ""
 ~~~
 
 ~~~ .json
-[]
+[[e]]echo str_replace("    ", "  ", json_encode(From::YAML(""), JSON_PRETTY_PRINT));[[/e]]
 ~~~
 
 #### Comments
@@ -75,20 +77,32 @@ test_3: 'foo # comment' # comment
 test_4: "foo # comment" # comment
 test_5: # comment 'foo'
 test_6: # comment "foo"
+'test_7 #comment': foo
+test_8: #comment
+  foo: bar
+'test_9 #comment':
+  foo: bar
 ~~~
 
 ~~~ .json
-{
-  "test_1": "foo",
-  "test_2": "foo",
-  "test_3": "foo # comment",
-  "test_4": "foo # comment",
-  "test_5": [],
-  "test_6": []
-}
+[[e]]echo str_replace("    ", "  ", json_encode(From::YAML(<<<YAML
+# comment
+test_1: foo
+test_2: foo # comment
+test_3: 'foo # comment' # comment
+test_4: "foo # comment" # comment
+test_5: # comment 'foo'
+test_6: # comment "foo"
+'test_7 #comment': foo
+test_8: #comment
+  foo: bar
+'test_9 #comment':
+  foo: bar
+YAML
+), JSON_PRETTY_PRINT));[[/e]]
 ~~~
 
-#### Sequential Array
+#### Sequence
 
 Arrays with numeric keys.
 
@@ -101,7 +115,12 @@ Arrays with numeric keys.
 ~~~
 
 ~~~ .json
-["a", "b", "c"]
+[[e]]echo str_replace("    ", "  ", json_encode(From::YAML(<<<YAML
+0: a
+1: b
+2: c
+YAML
+), JSON_PRETTY_PRINT));[[/e]]
 ~~~
 
 ##### Automatic
@@ -113,28 +132,34 @@ Arrays with numeric keys.
 ~~~
 
 ~~~ .json
-["a", "b", "c"]
+[[e]]echo str_replace("    ", "  ", json_encode(From::YAML(<<<YAML
+- a
+- b
+- c
+YAML
+), JSON_PRETTY_PRINT));[[/e]]
 ~~~
 
 #### Compact Array
 
 ~~~ .yaml
 foo: [bar, baz, 0, true]
-bar: { baz: qux }
+bar: {baz: qux, 0: true}
+baz: [true, 'true', "true", 0, '0', "0"]
 ~~~
 
 ~~~ .json
-{
-  "foo": ["bar", "baz", 0, true],
-  "bar": {
-    "baz": "qux"
-  }
-}
+[[e]]echo str_replace("    ", "  ", json_encode(From::YAML(<<<YAML
+foo: [bar, baz, 0, true]
+bar: {baz: qux, 0: true}
+baz: [true, 'true', "true", 0, '0', "0"]
+YAML
+), JSON_PRETTY_PRINT));[[/e]]
 ~~~
 
 #### Data Type
 
-All data types will be converted automatically by the [`e`][link:../reference/function#reference:e].
+All data types will be converted automatically by the [link:../reference/function/e] function.
 
 ~~~ .yaml
 string: a
@@ -153,50 +178,22 @@ double_quote: "foo\nbar"
 ~~~
 
 ~~~ .json
-{
-  "string": "a",
-  "integer": 1,
-  "float": 1.5,
-  "boolean": true,
-  "null": null,
-  "YAML's null": null,
-  "JSON": {
-    "foo": "bar",
-    "baz": "qux",
-    "string_integer": "1",
-    "string_boolean": "false"
-  },
-  "string_integer": "1",
-  "string_float": "1.5",
-  "string_boolean": "true",
-  "string_null": "null",
-  "single_quote": "foo\\nbar",
-  "double_quote": "foo\nbar"
-}
-~~~
-
-~~~ .php
-[
-    'string' => 'a',
-    'integer' => 1,
-    'float' => 1.5,
-    'boolean' => true,
-    'null' => null,
-    'YAML\'s null' => null,
-    'JSON' => stdClass::__set_state([
-        'foo' => 'bar',
-        'baz' => 'qux',
-        'integer' => 1,
-        'boolean' => false
-    ]),
-    'string_integer' => '1',
-    'string_float' => '1.5',
-    'string_boolean' => 'true',
-    'string_null' => 'null',
-    'single_quote' => 'foo\nbar',
-    'double_quote' => 'foo
-bar'
-]
+[[e]]echo str_replace("    ", "  ", json_encode(From::YAML(<<<YAML
+string: a
+integer: 1
+float: 1.5
+boolean: true
+null: null
+"YAML's null": ~
+JSON: {"foo":"bar","baz":"qux","string_integer":"1","string_boolean":"false"}
+string_integer: "1"
+string_float: "1.5"
+string_boolean: "true"
+string_null: "null"
+single_quote: 'foo\\nbar'
+double_quote: "foo\\nbar"
+YAML
+), JSON_PRETTY_PRINT));[[/e]]
 ~~~
 
 #### Nesting
@@ -211,71 +208,112 @@ j: k
 ~~~
 
 ~~~ .json
-{
-  "a": "b",
-  "c": "d",
-  "e": {
-    "f": "g",
-    "h": "i"
-  },
-  "j": "k"
-}
+[[e]]echo str_replace("    ", "  ", json_encode(From::YAML(<<<YAML
+a: b
+c: d
+e:
+  f: g
+  h: i
+j: k
+YAML
+), JSON_PRETTY_PRINT));[[/e]]
 ~~~
 
 #### Escaping
 
+**Example:**
+
 ~~~ .yaml
-foo\: bar: baz
 foo: bar: baz
 ~~~
 
-~~~ .json
-{
-  "foo: bar": "baz",
-  "foo": "bar: baz"
-}
-~~~
-
 ~~~ .yaml
-"foo: bar": baz
-foo: bar: baz
-~~~
-
-~~~ .json
-{
-  "foo: bar": "baz",
-  "foo": "bar: baz"
-}
+foo: 'bar: baz'
 ~~~
 
 ~~~ .yaml
 'foo: bar': baz
+~~~
+
+**Result:**
+
+~~~ .json
+[[e]]echo str_replace("    ", "  ", json_encode(From::YAML(<<<YAML
 foo: bar: baz
+YAML
+), JSON_PRETTY_PRINT));[[/e]]
 ~~~
 
 ~~~ .json
-{
-  "foo: bar": "baz",
-  "foo": "bar: baz"
-}
+[[e]]echo str_replace("    ", "  ", json_encode(From::YAML(<<<YAML
+foo: 'bar: baz'
+YAML
+), JSON_PRETTY_PRINT));[[/e]]
+~~~
+
+~~~ .json
+[[e]]echo str_replace("    ", "  ", json_encode(From::YAML(<<<YAML
+'foo: bar': baz
+YAML
+), JSON_PRETTY_PRINT));[[/e]]
 ~~~
 
 #### Block
 
+**Example:**
+
 ~~~ .yaml
-'folded block': >
-  lorem ipsum
-  dolor sit amet
-    a b c
-'literal block': |
-  lorem ipsum
-  dolor sit amet
-    a b c
+folded-block-style: >
+  aaaaa bbbbb
+  ccccc ddddd eeeee
+    f g h
+  iiiii jjjjj
+
+  kkkkk
+
+  lllll mmmmm nnnnn
 ~~~
 
-~~~ .json
-{
-  "folded block": "lorem ipsum dolor sit amet\n  a b c",
-  "literal block": "lorem ipsum\ndolor sit amet\n  a b c"
-}
+~~~ .yaml
+literal-block-style: |
+  aaaaa bbbbb
+  ccccc ddddd eeeee
+    f g h
+  iiiii jjjjj
+
+  kkkkk
+
+  lllll mmmmm nnnnn
+~~~
+
+**Result:**
+
+~~~ .txt
+[[e]]echo From::YAML(<<<YAML
+folded-block-style: >
+  aaaaa bbbbb
+  ccccc ddddd eeeee
+    f g h
+  iiiii jjjjj
+
+  kkkkk
+
+  lllll mmmmm nnnnn
+YAML
+)['folded-block-style'];[[/e]]
+~~~
+
+~~~ .txt
+[[e]]echo From::YAML(<<<YAML
+literal-block-style: |
+  aaaaa bbbbb
+  ccccc ddddd eeeee
+    f g h
+  iiiii jjjjj
+
+  kkkkk
+
+  lllll mmmmm nnnnn
+YAML
+)['literal-block-style'];[[/e]]
 ~~~

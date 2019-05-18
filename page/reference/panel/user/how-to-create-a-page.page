@@ -1,0 +1,9 @@
+---
+title: Create a Page
+...
+
+**Option 1:** Navigate to `http://127.0.0.1/panel/::s::/page` to create a new page relative to the root domain. To create a new page relative to another page, please refer to the [link:how-to-create-a-page-children] reference.
+
+**Option 2:** In the [link:pages] view, click on the _Page_ button.
+
+![]()

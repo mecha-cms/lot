@@ -1,7 +1,8 @@
 ---
 title: About
 description: WTF is Mecha?
-rapic: false
+state:
+  r-a-p-i-c: 0
 ...
 
 ### Objective
@@ -12,7 +13,7 @@ Mecha is as simple as files and folders. Yet, that doesn’t mean that Mecha is 
 
 If you want to make something that is super huge with Mecha, that would be possible, but remember that Mecha wasn’t created to replace databases. Mecha was previously created simply to help people getting rid of various resources that are not needed from the start (such as databases). There will be a time when you need a database, and when that time comes, just use a database. Mecha is fairly open to be extended with other database-based applications.
 
-### Features
+### Feature
 
  - Writing pages with ease using [Markdown][link:article/markdown-syntax].
  - Unlimited page children.
@@ -25,24 +26,43 @@ If you want to make something that is super huge with Mecha, that would be possi
  - Easy to use and [well documented][link:reference] API.
  - [Control panel][link:reference/extension/panel] extension.
 
-### Dependencies
+### Dependency
 
  - PHP 7.1.0 and above, with enabled [`mbstring`](http://php.net/manual/en/book.mbstring.php "PHP Extension `mbstring`") extension.
  - Apache 2.4 and above, with enabled [`mod_rewrite`](http://httpd.apache.org/docs/current/mod/mod_rewrite.html "Apache Module `mod_rewrite`") module.
 
-### Preparations
+### Preparation
 
  1. Make sure that you already have the required components.
  2. Download the available package from the [home page][link:index].
  3. Upload Mecha through your FTP/SFTP to the public folder/directory [^2] on your site, then extract it!
  4. Take a look on the available [extensions][link:reference/extension] and [plugins][link:reference/extension/plugin] that you might be interested.
- 5. Upload your extension folders to `.\lot\extend` and your plugin folders to `.\lot\extend\plugin\lot\worker`. They’re auto-loaded.
+ 5. Upload your extension folders to `.\lot\extend` and your plugin folders to `.\lot\extend\plugin\lot`. They’re auto-loaded.
  6. Read on how to add [pages][link:reference/extension/page] and [tags][link:reference/extension/tag]. Learn on how to create pages from the author by looking at the [source code](https://github.com/mecha-cms/lot "GitHub").
  7. Install the [panel][link:reference/extension/panel] extension if you are stuck by doing everything manually. You always have the full control to remove this extension without having to worry that your site will stop running after doing so.
 
-### Credits
+### Credit
+
+© 2014 – [[e]]echo $date->year;[[/e]] Mecha CMS. Except where otherwise noted, content on this site is licensed under a [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
 
  - Icons by [Material Design Icons](http://materialdesignicons.com).
+
+### Site Theme
+
+[[e]]
+foreach (glob(SHIELD . DS . '$' . DS . 'asset' . DS . 'css' . DS . '$' . DS . '*.css') as $v) {
+    $content = file_get_contents($v);
+    if (strpos($content, '#') !== false && preg_match_all('/#(?:[a-z\d]{3}){1,2}\b/', strtolower($content), $colors)) {
+        echo '<p><a class="colors" href="?skin=' . ($name = basename($v, '.css')) . '" title="' . To::title($name) . '"><b>' . $name . '</b>';
+        $colors = array_unique($colors[0]);
+        sort($colors);
+        foreach ($colors as $color) {
+            echo '<span class="color" style="background:' . $color . ';">&zwnj;</span>';
+        }
+        echo "</a></p>\n";
+    }
+}
+[[/e]]
 
 [^1]: Mecha started to rebuild itself through two main principles: 1) everything is a page, 2) everything is an extension.
 [^2]: Usually named as `public_html`, `www` or `htdocs`.

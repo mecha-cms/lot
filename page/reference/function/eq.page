@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Equal to.
+@lot: $a, $b
+@example: |
+  if (eq('abcdef', 5)) { … }
+  if (eq(['a', 'b', 'c', 'd', 'e', 'f'], 5)) { … }
+  if (eq(6, 5)) { … }
+@example-note: The `$a` value will be passed through [`q`][link:q] function before being compared to the `$b` value.
+...

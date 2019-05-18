@@ -1,0 +1,14 @@
+---
+title: LESS and SCSS Library from the Same Author
+description: About the LESS and SCSS compiler in Mecha.
+...
+
+[In the beginning](http://mecha-cms.com/2016/article/less-plugin), Mecha used LESS compiler from `http://leafo.net/lessphp` and then decided to move it to `https://github.com/oyejorge/less.php` as the base framework for [link:../reference/extension/less] extension which was successfully running until the end of year 2018. But, as time goes by, I thought it would be good if I can provide other code compiler too to be present as the optional features for Mecha.
+
+I’m talking about HTML, CSS and JavaScript compiler. Because more and more days, developers think that writing these codes manually feels tiring, so various preprocessors appear to simplify their work such as:
+
+ - [HAML](http://haml.info) and [Pug](https://pugjs.org) for HTML
+ - [LESS](http://lesscss.org), [SCSS](http://sass-lang.com) and [Stylus](http://stylus-lang.com) for CSS and …
+ - [Babel](https://babeljs.io), [CoffeeScript](https://coffeescript.org), [LiveScript](http://livescript.net) and [TypeScript](https://www.typescriptlang.org) for JavaScript.
+
+That’s all a plan for the future. In this article I just want to announce that I have changed the LESS extension compiler back to the library from `http://leafo.net/lessphp`. The reason is very clear. It is because the creator of the library also make a compiler for SCSS language in `http://leafo.net/scssphp`. It will be easy for me to manage different extensions by focusing on libraries made by one person. And therefore, now we have SCSS compiler as a separate extension [here][link:../reference/extension/scss].

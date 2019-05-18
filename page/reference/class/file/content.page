@@ -1,0 +1,7 @@
+---
+@version: [current]
+@description: Read the file content as string.
+@lot: void
+@example: |
+  echo File::open('.\path\to\file.txt')->content();
+...

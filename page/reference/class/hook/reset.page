@@ -2,21 +2,18 @@
 @version: [2, current]
 @description: Remove a hook.
 @lot:
-  - string $id = null, string $x = null
-  - string $id = null, float $x = null
-  - array $id = [], string $x = null
-  - array $id = [], float $x = null
+- void
+- string $id
+- array $id
+- string $id, string $name
+- array $id, string $name
 @static: 1
 @example: |
-  // Remove an attached `head.content` hook with ID `fn_meta` before execution,
-  // or prevent a hook with ID `fn_meta` to be attached to the `head.content` container
-  Hook::reset('head.content', 'fn_meta');
+  // Remove an attached `content` hook with ID `fn_meta` before execution,
+  // or prevent a hook with ID `fn_meta` to be attached to the `content` container
+  Hook::reset('content', 'fn_meta');
 
-  // Remove an attached `head.content` hook with priority `10` before execution,
-  // or prevent a hook with priority `10` to be attached to the `head.content` container
-  Hook::reset('head.content', 10);
-
-  // Remove all hooks attached to the `head.content` container
-  Hook::reset('head.content');
+  // Remove all hook(s) attached to the `content` container
+  Hook::reset('content');
 @example-note: You cannot remove hooks that are attached using anonymous function because they have no ID.
 ...

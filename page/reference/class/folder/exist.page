@@ -2,8 +2,8 @@
 @version: [2, current]
 @description: Check the existence of a folder.
 @lot:
-  - string $path, $fail = false
-  - array $path, $fail = false
+- string $path
+- array $path
 @static: 1
 @example: |
   if (Folder::exist('.\path\to\folder')) {

@@ -1,16 +1,14 @@
 ---
-title: `$lot::get()`
-description: Get variable.
+@version: [2, current]
+@description: Get global variable.
+@lot:
+- void
+- string $key
+@static: 1
+@example: |
+  // Load single global variable
+  $title = Lot::get('title');
+
+  // Load all global variable(s)
+  extract(Lot::get());
 ...
-
-~~~ .php.xmp
-Lot::get($key, $fail = false, $scope = null);
-~~~
-
-**Example:**
-
-Get `test` value from the `$GLOBALS` storage:
-
-~~~ .php
-echo Lot::get('test');
-~~~

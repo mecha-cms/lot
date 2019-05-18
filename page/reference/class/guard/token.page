@@ -1,0 +1,9 @@
+---
+@version: [1, 2, current]
+@description: Generate unique token and save it to session.
+@lot: $id = 0
+@static: 1
+@example: |
+  <input name="token" type="hidden" value="<?php echo Guard::token(); ?>">
+@example-language: 'html'
+...

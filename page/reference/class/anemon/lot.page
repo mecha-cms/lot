@@ -1,11 +1,13 @@
 ---
 @version: [current]
 @description: Reset current value to the initial array input.
-@lot: array $lot = [], $over = false
+@lot:
+- void
+- array $lot, $over = false
 @example: |
   $anemon = new Anemon(['foo', 'bar', 'baz']);
 
-  echo $anemon->shake()->map(function($v) {
+  echo $anemon->shake->map(function($v) {
       return 'a:' . $v;
   });
 

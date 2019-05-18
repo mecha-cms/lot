@@ -2,22 +2,22 @@
 @version: [2, current]
 @description: Set a hook.
 @lot:
-  - string $id = null, callable $fn, float $stack = null, int $i = 1
-  - array $id = [], callable $fn, float $stack = null, int $i = 1
+- string $id, callable $fn, float $stack = 10
+- array $id, callable $fn, float $stack = 10
 @static: 1
 @example: |
   // Named function
-  function fn_route_enter() {
+  function fn_enter() {
       echo '<mark>test</mark>';
   }
-  Hook::set('route.enter', 'fn_route_enter', 1);
+  Hook::set('enter', 'fn_enter', 1);
 
   // Un-named function
-  Hook::set('route.enter', function() {
+  Hook::set('enter', function() {
       echo '<mark>test</mark>';
   }, 1);
 
   // Multiple hook ID
-  Hook::set(['route.enter', 'route.exit'], function() { … }, 1);
+  Hook::set(['enter', 'exit'], function() { … }, 1);
 @example-note: `1` is the function execution priority. The smaller the value, the earlier the function will be executed. And functions with the same priority are executed in the order in which they were added to the hook. Default is `10`.
 ...

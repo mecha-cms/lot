@@ -1,0 +1,4 @@
+---
+@version: [current]
+@description: Short function for [`Guard::token()`][link:../class/guard/token].
+...

@@ -2,19 +2,21 @@
 @version: [2, current]
 @description: Set a cookie.
 @lot:
-  - string $key, $value = "", int $expire
-  - "string $key, $value = \"\", array $config = [\n    'expire' => 1,\n    'path' => '\/',\n    'domain' => \"\",\n    'secure' => false,\n    'http_only' => false\n]"
+- string $key, $value = "", int $expires = 86400
+- string $key, $value = "", string $expires = '1 day'
+- "string $key, $value = \"\", array $config = [\n    'expires' => '1 day',\n    'path' => '\/',\n    'domain' => \"\",\n    'secure' => false,\n    'httponly' => false\n]"
 @static: 1
 @example: |
   // Quick cookie
-  Cookie::set('foo', 'bar', 1); // expired in a day
+  Cookie::set('foo', 'bar', '1 day'); // Expires in a day
+  Cookie::set('foo', 'bar', 86400); // Expires in a day too
 
   // Advance cookie
   Cookie::set('foo', 'bar', [
-      'expire' => 1,
+      'expires' => '1 day',
       'path' => '/',
       'domain' => "",
       'secure' => false,
-      'http_only' => true // not available in `document.cookie`
+      'httponly' => true // Not available in `document.cookie`
   ]);
 ...

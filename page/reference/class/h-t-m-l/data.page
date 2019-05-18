@@ -2,8 +2,8 @@
 @version: [2, current]
 @description: Generate HTML attributes from PHP array.
 @lot:
-  - array $a = []
-  - string $a = ""
+- array $a = []
+- string $a = ""
 @static: 2
 @example: |
   $A = HTML::data([

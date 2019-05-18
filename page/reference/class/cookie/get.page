@@ -1,7 +1,9 @@
 ---
 @version: [2, current]
 @description: Get a cookie.
-@lot: string $key = null, $fail = null
+@lot:
+- void
+- string $key
 @static: 1
 @example: |
   $A = Cookie::get('foo'); // Get `foo` cookie

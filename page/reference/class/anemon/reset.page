@@ -1,7 +1,7 @@
 ---
 @version: [2, current]
 @description: Remove array value recursively.
-@lot: array &$array, string $key, string $NS = '.'
+@lot: array &$array, string $key, string $separator = '.'
 @static: 1
 @example: |
   $array = [

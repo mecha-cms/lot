@@ -1,0 +1,4 @@
+---
+@version: [current]
+@description: Short function for [`Guard::abort()`][link:../class/guard/abort].
+...

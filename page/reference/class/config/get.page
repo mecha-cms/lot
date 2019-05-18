@@ -2,16 +2,16 @@
 @version: [2, current]
 @description: Get global state item.
 @lot:
-  - void
-  - string $key = null, $fail = false, $array = false
-  - array $keys = [], $array = false
+- void
+- string $key, $array = false
+- array $keys, $array = false
 @static: 1
 @example: |
   $A = Config::get('page');
-  $B = Config::get('page', false, true);
+  $B = Config::get('page', true);
   $C = Config::get('page.type');
   $D = Config::get('page')->type;
-  $E = Config::get('page', false, true)['type'];
+  $E = Config::get('page', true)['type'];
 
   $F = Config::get([
       'title' => false,

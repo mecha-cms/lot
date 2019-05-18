@@ -3,47 +3,78 @@ title: Fixed Smooth Scroll to Top Link
 description: Make scroll to top link becomes sticky.
 ...
 
-Requires [scroll][link:../reference/extension/plugin/js-scroll] plugin.
+Requires [scroll][link:../reference/extension/plugin/scroll] plugin.
 
+Add this snippet in an `index.php` file of your active shield:
 
-Add this just before the `</body>` tag:
-
-~~~ .html
-<a class="js:scroll to:top" href="#">Top</a>
-~~~
-
-Then add this just before the `</head>` tag:
-
-~~~ .html
-<style>
+~~~ .php
+$style = <<<CSS
 .js\:scroll.to\:top {
-  font:normal normal 0/0 a;
-  text-shadow:none;
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  z-index:9999;
-  width:30px;
-  height:30px;
-  background:black;
-  box-shadow:0 1px 5px rgba(0,0,0,.4);
+  font: normal normal 0/0 a;
+  text-shadow: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 30px;
+  height: 30px;
+  background: #000;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity .4s ease-out;
+  -moz-transition: opacity .4s ease-out;
+  transition: opacity .4s ease-out;
 }
-.js\:scroll.to\:top:hover {background:#f00}
-.js\:scroll.to\:top:before {
-  content:"";
-  width:10px;
-  height:10px;
-  border-top:1px solid #fff;
-  border-left:1px solid #fff;
-  position:absolute;
-  top:12px;
-  left:10px;
-  -webkit-transform:rotate(45deg);
-  -moz-transform:rotate(45deg);
-  transform:rotate(45deg);
-  -webkit-box-sizing:border-box;
-  -moz-box-sizing:border-box;
-  box-sizing:border-box;
+.js\:scroll.to\:top:hover {
+  background: #f00;
 }
-</style>
+.js\:scroll.to\:top::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.js\:scroll.to\:top.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+CSS;
+
+$script = <<<JS
+(function(win, doc) {
+    var a = doc.getElementsByClassName('to:top')[0], timer;
+    if (!a) return;
+    function doScroll() {
+        timer && win.clearTimeout(timer);
+        // Debounce
+        timer = win.setTimeout(function() {
+            var isMoved = win.pageXOffset > 0 || win.pageYOffset > 0;
+            // Show or hide the anchor
+            a.classList[isMoved ? 'remove' : 'add']('hidden');
+        }, 100);
+    }
+    doScroll.call(win);
+    win.addEventListener("scroll", doScroll, false);
+})(window, document);
+JS;
+
+Asset::style($style);
+Asset::script($script);
+
+Hook::set('asset:body', function($assets) {
+    $a = '<a class="js:scroll to:top" href="#">Top</a>';
+    // Make sure to put the anchor before anything else
+    return $a . $assets;
+});
 ~~~

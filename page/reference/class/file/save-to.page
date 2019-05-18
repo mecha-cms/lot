@@ -1,7 +1,10 @@
 ---
 @version: [1, 2, current]
 @description: Save a file to …
-@lot: string $path, $consent = null
+@lot:
+- string $path
+- string $path, string $consent
+- string $path, int $consent
 @example: |
   File::put('some text')->saveTo('.\path\to\file.txt');
 ...

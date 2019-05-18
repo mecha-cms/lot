@@ -1,0 +1,13 @@
+---
+@version: [current]
+@description: Execute the added routes.
+@lot: void
+@static: 1
+@example: |
+  Route::set( … );
+  Route::set( … );
+  Route::set( … );
+  Route::set( … );
+
+  Route::start();
+...

@@ -1,10 +1,10 @@
 ---
 @version: [2, current]
-@description: Force to disable view ID or file path.
+@description: Force to disable view output by ID.
 @lot:
-  - void
-  - string $id = null
-  - array $id = []
+- void
+- string $id
+- array $id
 @static: 1
 @example: |
   Shield::set('foo.bar', '.\lot\asset\php\view.php'); // [^1]

@@ -1,7 +1,9 @@
 ---
 @version: [2, current]
 @description: Set HTTP status by code.
-@lot: int $i = null
+@lot:
+- void
+- int $i
 @static: 1
 @example: |
   // Set

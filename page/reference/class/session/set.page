@@ -1,14 +1,8 @@
 ---
-title: `$session::set()`
-description: Set a session.
+@version: [2, current]
+@description: Set a session.
+@lot: string $key, $value
+@static: 1
+@example: |
+  Session::set('foo', 'bar');
 ...
-
-~~~ .php.xmp
-Session::set($key, $value = "");
-~~~
-
-**Example:**
-
-~~~ .php
-Session::set('my_session', 'the value');
-~~~

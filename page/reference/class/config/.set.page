@@ -1,7 +1,7 @@
 ---
 @version: [2, current]
 @description: Dynamic properties.
-@lot: string $key, $value = null
+@lot: string $key, $value
 @example: |
   // This is …
   $config->title = '#';

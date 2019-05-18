@@ -1,0 +1,4 @@
+---
+@version: [current]
+@description: Short function for [`Guard::kick()`][link:../class/guard/kick].
+...

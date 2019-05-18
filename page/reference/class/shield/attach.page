@@ -1,7 +1,7 @@
 ---
 @version: [2, current]
 @description: Attach a shield file as the overall page.
-@lot: $in, $fail = false
+@lot: $in
 @static: 1
 @example: |
   Route::set('foo/bar', function() {

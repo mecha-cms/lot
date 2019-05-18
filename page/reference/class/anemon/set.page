@@ -1,7 +1,7 @@
 ---
 @version: [2, current]
 @description: Set or replace array values recursively.
-@lot: array &$array, string $key, $value = null, string $NS = '.'
+@lot: array &$array, string $key, $value = null, string $separator = '.'
 @static: 1
 @example: |
   $array = [

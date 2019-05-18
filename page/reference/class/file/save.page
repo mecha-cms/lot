@@ -1,7 +1,10 @@
 ---
 @version: [1, 2, current]
 @description: Update a file.
-@lot: $consent = null
+@lot:
+- void
+- string $consent
+- int $consent
 @example: |
   File::open('.\path\to\file.txt')->put('some text')->save();
 ...

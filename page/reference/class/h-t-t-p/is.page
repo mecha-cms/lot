@@ -1,7 +1,10 @@
 ---
 @version: [2, current]
 @description: Detect current request type.
-@lot: string $id = null, string $key = null
+@lot:
+- void
+- string $id,
+- string $id, string $key
 @static: 1
 @example: |
   if (HTTP::is('post')) {

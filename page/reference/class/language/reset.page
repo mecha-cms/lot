@@ -2,9 +2,9 @@
 @version: [2, current]
 @description: Remove language item.
 @lot:
-  - void
-  - string $key = null
-  - array $keys = []
+- void
+- string $key
+- array $keys
 @static: 1
 @example: |
   // Reset all items

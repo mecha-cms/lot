@@ -1,11 +1,7 @@
 ---
 @version: [2, current]
-@description: Force to replace view ID or file path with new file path.
-@lot:
- - string $id, string $path = null
- - array $id, string $path = null
- - string $id, callable $fn = null
- - array $id, callable $fn = null
+@description: Disable automatic view path based on ID by specifying a file path to it.
+@lot: string $id, string $path
 @static: 1
 @example: |
   Shield::get('foo.bar'); // [^1]
@@ -15,12 +11,4 @@
   // [^1]: Return nothing.
   // [^2]: Set!
   // [^3]: Return the output buffer of `.\lot\asset\php\view.php` file.
-
-  Shield::get('.\lot\asset\php\view.php'); // [^1]
-  Shield::set('.\lot\asset\php\view.php', '.\lot\asset\php\view-2.php'); // [^2]
-  Shield::get('.\lot\asset\php\view.php'); // [^3]
-
-  // [^1]: Return the output buffer of `.\lot\asset\php\view.php` file.
-  // [^2]: Set!
-  // [^3]: Return the output buffer of `.\lot\asset\php\view-2.php` file.
 ...

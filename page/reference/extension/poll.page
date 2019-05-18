@@ -1,12 +1,6 @@
 ---
 title: Poll
 description: Poll is a unified extension used to handle all tasks related to documenting user’s input.
-icon: M3,22V8H7V22H3M10,22V2H14V22H10M17,22V14H21V22H17Z
-
-dependency:
-  extension:
-    - asset
-    - page
 ...
 
 Surely you’ve seen features such as _like_ and _reaction_ buttons on Facebook and on most portal websites, _plus one_ on Google+, _feedback_ on documentation/support websites. This extension brings them all together into a simpler yet more extensible system in a single folder.
@@ -42,7 +36,7 @@ Put this snippet in your `page.php` file to add a [vote up/down feature](#refere
 <?php static::poll('vote'); ?>
 ~~~
 
-### Features
+### Feature
 
 #### Like
 

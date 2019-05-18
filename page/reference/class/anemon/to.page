@@ -2,8 +2,8 @@
 @version: [2, current]
 @description: Move to the <var>N</var> item.
 @lot:
-  - $index
-  - $key
+- int $index
+- string $key
 @example: |
   $array = [
       'foo' => 0,

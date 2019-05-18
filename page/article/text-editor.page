@@ -1,7 +1,7 @@
 ---
 title: Mecha Text Editor
 description: A text selection range API written in pure JavaScript, for modern browsers.
-link: http://tovic.github.io/text-editor
+link: 'http://tovic.github.io/text-editor'
 ...
 
 This text editor project is going to be the official text editor for Mecha.

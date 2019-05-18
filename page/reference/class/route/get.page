@@ -1,46 +1,14 @@
 ---
-title: `$route::get()`
-description: Check the existence of a specific route and/or route pattern.
+@version: [2, current]
+@description: Check the existence of a specific route pattern.
+@lot:
+- void
+- string $id
+@static: 1
+@example: |
+  test(
+      Route::get('blog'),
+      Route::get('blog/(\d+)'),
+      Route::get('foo/bar')
+  );
 ...
-
-~~~ .php.xmp
-Route::get($id = null, $fail = false);
-~~~
-
-**Example:**
-
-Check whether `blog/%s%` route is exists:
-
-~~~ .php
-if (Route::get('blog/%s%')) { … }
-~~~
-
-This method will return the route data that has been set by [`Route::set()`][link:set]; or `false`:
-
-~~~ .php
-__test__(
-    Route::get('blog/%s%'),
-    Route::get('blog/$'),
-    Route::get('blog/$', 0)
-);
-~~~
-
-Result:
-
-~~~ .php
-[
-    'fn' => function($slug = "", $step = 1) { … },
-    'stack' => 10,
-    'is' => [
-        'pattern' => false
-    ]
-]
-~~~
-
-~~~ .php
-false
-~~~
-
-~~~ .php
-0
-~~~

@@ -1,9 +1,12 @@
 ---
-title: `$mecha::version()`
-description: Compare version.
+@version: [2, current]
+@description: Compare version.
+@lot:
+- void
+- string $version,
+- string $version, string $compare
+@static: 1
+@example: |
+  if (Mecha::version('<= [[e]]echo Mecha::version;[[/e]]')) { … }
+  if (Mecha::version === '[[e]]echo Mecha::version;[[/e]]') { … }
 ...
-
-~~~ .php
-if (Mecha::version('<= 2.0.0')) { … }
-if (Mecha::version === '2.0.0') { … }
-~~~

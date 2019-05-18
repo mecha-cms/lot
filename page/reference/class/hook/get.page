@@ -2,12 +2,12 @@
 @version: [2, current]
 @description: Get a hook.
 @lot:
-  - void
-  - string $id = null, $fail = false
+- void
+- string $id
 @static: 1
 @example: |
   // Get all of the attached hook(s)
   test(Hook::get());
-  // Get all hook(s) attached to `head.content`
-  test(Hook::get('head.content'));
+  // Get all hook(s) attached to `content`
+  test(Hook::get('content'));
 ...

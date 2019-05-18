@@ -1,7 +1,9 @@
 ---
 @version: [2, current]
 @description: Append an asset to the `<head>` or `<body>` section.
-@lot: $path, float $stack = null, array $data = []
+@lot:
+- string $path, float $stack = 10, array $data = []
+- array $path, float $stack = 10, array $data = []
 @static: 1
 @example: |
   // Add `style-2.css` file to the hooks storage

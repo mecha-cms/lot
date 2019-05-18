@@ -1,0 +1,18 @@
+---
+@version: [current]
+@description: Convert file name to class property name.
+@example: |
+  echo f2p('foo');
+  echo f2p('.foo');
+  echo f2p('foo-bar');
+  echo f2p('foo_bar');
+  echo f2p('foo_-bar');
+@result: |
+  [[e]]
+  echo f2p('foo') . "\n";
+  echo f2p('.foo') . "\n";
+  echo f2p('foo-bar') . "\n";
+  echo f2p('foo_bar') . "\n";
+  echo f2p('foo_-bar');
+  [[/e]]
+...

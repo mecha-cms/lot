@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: [current]
 @description: Pre-define configuration items from a file.
 @lot: string $path
 @static: 1

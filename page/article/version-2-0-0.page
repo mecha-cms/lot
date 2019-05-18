@@ -23,7 +23,7 @@ The blog and static page views that you see on this site are basically just the 
 
 ### Performance Improvement
 
-We try not to rely on automatic cache files as a method to accelerate the web page access because most of static files will only increase the web storage, which will also increase the web hosting cost. We use that method only for specific purposes like generating [page archive][link:../reference/extension/plugin/archive] which require you to load all of the page contents, recursively. It will only cache the archive list part and not the whole document, because we have [form token][link:../reference/class/guardian/token] and such that shouldn’t be cached forever. Instead, we use static arrays to store the data processed on every web page access, where the data then can be used multiple times in the same page without the need to repeat the complicated filter process on each called data.
+We try not to rely on automatic cache files as a method to accelerate the web page access because most of static files will only increase the web storage, which will also increase the web hosting cost. We use that method only for specific purposes like generating [page archive][link:../reference/extension/plugin/archive] which require you to load all of the page contents, recursively. It will only cache the archive list part and not the whole document, because we have [form token][link:../reference/class/guard/token] and such that shouldn’t be cached forever. Instead, we use static arrays to store the data processed on every web page access, where the data then can be used multiple times in the same page without the need to repeat the complicated filter process on each called data.
 
 ~~~ .php
 $cache = [];

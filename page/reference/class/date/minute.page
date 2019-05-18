@@ -1,0 +1,9 @@
+---
+@version: [current]
+@description: Get minute.
+@lot: void
+@example: |
+  echo (new Date('[[e]]echo date('Y-m-d H:i:s');[[/e]]'))->minute;
+@result: |
+  '[[e]]echo (new Date(date('Y-m-d H:i:s')))->minute;[[/e]]'
+...

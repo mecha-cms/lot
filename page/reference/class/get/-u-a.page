@@ -1,7 +1,7 @@
 ---
 @version: [2, current]
 @description: Get user’s user agent.
-@lot: $fail = false
+@lot: void
 @static: 1
 @example: |
   echo Get::UA();

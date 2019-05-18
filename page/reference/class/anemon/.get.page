@@ -1,7 +1,7 @@
 ---
 @version: [current]
 @description: Shortcut for calling methods without arguments.
-@lot: $key
+@lot: string $key
 @example: |
   Anemon::eat([1, 2, 3, 4, 5])->count;
   Anemon::eat([1, 2, 3, 4, 5])->next->current();

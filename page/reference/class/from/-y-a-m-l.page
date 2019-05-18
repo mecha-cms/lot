@@ -1,7 +1,7 @@
 ---
 @version: [2, current]
 @description: Convert YAML string into array.
-@lot: string $in, string $d = '  ', $e = true
+@lot: $in, string $dent = '  ', $docs = false, $e = true
 @static: 1
 @example: |
   $A = From::YAML('foo: bar');
@@ -19,8 +19,10 @@
   ---
   foo: bar
   baz: qux
+  ...
+  foo bar baz
   YAML
-  );
+  , '  ', true);
 @result: |
   $A = ['foo' => 'bar'];
   $B = [
@@ -35,6 +37,9 @@
       1 => [
           'foo' => 'bar',
           'baz' => 'qux'
-      ]
+      ],
+      "\t" => 'foo bar baz'
   ];
 ...
+
+[connect:/article/y-a-m-l]

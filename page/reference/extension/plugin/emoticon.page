@@ -1,17 +1,13 @@
 ---
 title: Emoticon
 description: Emoticon using icon fonts.
-
-dependency:
-  extension:
-    - asset
 ...
 
 ![1](%{asset}%/png/reference/extension/plugin/emoticon.png)
 
 This plugin will recognize smiley patterns (which you can also set it yourself) into graphical smiley icons. Icon font credit to [Icomoon](http://icomoon.io "IcoMoon – Custom Built and Crisp Icon Fonts").
 
-Open `lot\state\config.php` to configure:
+Open `.\lot\extend\plugin\lot\emoticon\lot\state\config.php` to configure:
 
 ~~~ .php
 return [

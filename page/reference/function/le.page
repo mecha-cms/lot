@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Less than or equal to.
+@lot: $a, $b
+@example: |
+  if (le('abcdef', 5)) { … }
+  if (le(['a', 'b', 'c', 'd', 'e', 'f'], 5)) { … }
+  if (le(6, 5)) { … }
+@example-note: The `$a` value will be passed through [`q`][link:q] function before being compared to the `$b` value.
+...

@@ -8,14 +8,14 @@ description: Create a proper plural and singular label for data length.
 #### Manual
 
 ~~~ .php
-$i = $page->comments->i; // or `count($comments)`
+$i = $page->comments->count; // or `count($page->comments)`
 echo $i . ' ' . $language->{$i === 1 ? 'comment' : 'comments'};
 ~~~
 
 Label for zero comments:
 
 ~~~ .php
-$i = $page->comments->i;
+$i = $page->comments->count;
 if ($i === 0) {
     echo $language->message_info_void($language->comments);
 } else {
@@ -26,7 +26,7 @@ if ($i === 0) {
 #### Built-In
 
 ~~~ .php
-echo $page->comments->text;
+echo $page->comments->title;
 ~~~
 
 [connect:../../reference/extension/comment]

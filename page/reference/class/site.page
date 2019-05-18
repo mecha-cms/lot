@@ -1,0 +1,5 @@
+---
+@version: [current]
+@description: Alias for [`Config`][link:config].
+@parent: genome
+...

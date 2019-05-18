@@ -1,0 +1,8 @@
+---
+@version: [current]
+@description: Start the session.
+@lot: string $path = SESSION
+@static: 1
+@example: |
+  Session::start('.\path\to\folder');
+...

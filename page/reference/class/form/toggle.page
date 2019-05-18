@@ -1,5 +1,0 @@
----
-@version: [2, current]
-@description: Alias for [`checkbox`][link:checkbox].
-@static: 1
-...

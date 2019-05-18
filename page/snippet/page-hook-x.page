@@ -5,8 +5,9 @@ description: Force to disable all hooks that should be applied to the given page
 
 Applies to Mecha version `2.0.1` and above. Previous versions will use the first argument as the default value of `$page->title` if `$page->title` value is `null`.
 
-~~~ .php
+~~~ .php.xmp
 echo $page->title(false);
+echo $page->get('title', false);
 ~~~
 
 **Example:**
@@ -20,7 +21,7 @@ $test_1 = $page->title;
 $test_2 = $page->title(false);
 ~~~
 
-Result:
+**Result:**
 
 ~~~ .php
 $test_1 = '<mark>Page Title</mark>';

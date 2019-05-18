@@ -1,7 +1,7 @@
 ---
 @version: [1, 2, current]
 @description: Do something if URL path matched with pattern.
-@icon: M14,4L16.29,6.29L13.41,9.17L14.83,10.59L17.71,7.71L20,10V4M10,4H4V10L6.29,7.71L11,12.41V20H13V11.59L7.71,6.29
+@final: 1
 @parent: genome
 ...
 
@@ -9,9 +9,9 @@
 
 Pattern | Description
 ------- | -----------
-`%s%` | Matched with any but `/`
-`%i%` | Matched with any numbers.
-`%f%` | Matched with any numbers and floats.
-`%*%` | Matched with any and `/`
-`%[foo,bar,baz\,qux]%` | Matched with `foo`, `bar` and `baz,qux`
-`%[foo,bar,%i%]%` | Matched with `foo`, `bar` and any numbers.
+`([^/]+)` | Matched with any but `/`
+`(\d+)` | Matched with any positive numbers.
+`((?:\d*\.)?\d+)` | Matched with any positive numbers and floats.
+`(.+)` | Matched with any and `/`
+`(foo|bar|baz\|qux)` | Matched with `foo`, `bar` and `baz|qux`
+`(foo|bar|\d+)` | Matched with `foo`, `bar` and any positive numbers.

@@ -1,6 +1,6 @@
 ---
 title: PHP in CSS and JavaScript Files
-description: Using HTACCESS to parse PHP syntax in CSS and JavaScript files.
+description: Using Apache to parse PHP syntax in CSS and JavaScript files.
 ...
 
 This snippet can be used for any other PHP CMS with `.htaccess` support. Open any `.htaccess` file that you see in the `asset` folder, then add this command to the next line:

@@ -1,0 +1,4 @@
+---
+@version: [current]
+@description: Short function for [`$file->set()`][link:../class/file/set] or [`$folder->set()`][link:../class/folder/set].
+...

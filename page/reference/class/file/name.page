@@ -1,0 +1,20 @@
+---
+@version: [current]
+@description: Get current file name with or without its extension.
+@lot:
+- void
+- bool $x
+- string $x
+@example: |
+  $file = new File('.\path\to\file.txt');
+
+  $A = $file->name;
+  $B = $file->name(true);
+  $C = $file->name('html');
+  $D = $file->name("");
+@result: |
+  $A = 'file';
+  $B = 'file.txt';
+  $C = 'file.html';
+  $D = 'file.';
+...

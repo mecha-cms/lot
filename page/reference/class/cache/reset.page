@@ -1,11 +1,16 @@
 ---
 @version: [2, current]
 @description: Delete cache file.
-@lot: string $from = null
+@lot:
+- void
+- string $id
+- array $id
 @static: 1
 @example: |
-  // Delete single cache
-  Cache::reset('.\path\to\file.php');
-  // Delete all cache
+  // Delete all cache(s)
   Cache::reset();
+  // Delete single cache
+  Cache::reset('foo');
+  // Delete multiple cache
+  Cache::reset(['foo', 'bar', 'baz']);
 ...

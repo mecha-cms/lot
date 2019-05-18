@@ -10,21 +10,21 @@ So, recently I made a number of API to quickly display my repository status on G
 ### Status
 
 ~~~ .txt.xmp
-%{url}%/git/status/<user>/<repository>
-%{url}%/git/status/<user>/<repository>/<output>
+http://127.0.0.1/git/status/<user>/<repository>
+http://127.0.0.1/git/status/<user>/<repository>/<output>
 ~~~
 
 **Example:**
 
 ~~~ .txt
-%{url}%/git/status/mecha-cms/mecha
-%{url}%/git/status/mecha-cms/mecha/star
+http://127.0.0.1/git/status/mecha-cms/mecha
+http://127.0.0.1/git/status/mecha-cms/mecha/star
 ~~~
 
 ### Tree
 
 ~~~ .txt.xmp
-%{url}%/git/tree/<user>/<repository>
+http://127.0.0.1/git/tree/<user>/<repository>
 ~~~
 
 Supported parameters:
@@ -39,23 +39,23 @@ Parameter | Description
 **Example:**
 
 ~~~ .txt
-%{url}%/git/tree/mecha-cms/mecha
-%{url}%/git/tree/mecha-cms/mecha?version=1.2.8
-%{url}%/git/tree/mecha-cms/mecha?version=362af652bc47f98ca0012bdad89625f180728695
+http://127.0.0.1/git/tree/mecha-cms/mecha
+http://127.0.0.1/git/tree/mecha-cms/mecha?version=1.2.8
+http://127.0.0.1/git/tree/mecha-cms/mecha?version=362af652bc47f98ca0012bdad89625f180728695
 ~~~
 
 ~~~ .txt
-%{url}%/git/tree/mecha-cms/genome/index.php?mark=30
-%{url}%/git/tree/mecha-cms/genome/index.php?mark=30,49,50
-%{url}%/git/tree/mecha-cms/genome/index.php?mark=3-9
-%{url}%/git/tree/mecha-cms/genome/index.php?mark=3-9,37-38
-%{url}%/git/tree/mecha-cms/genome/index.php?skin=monokai
+http://127.0.0.1/git/tree/mecha-cms/genome/index.php?mark=30
+http://127.0.0.1/git/tree/mecha-cms/genome/index.php?mark=30,49,50
+http://127.0.0.1/git/tree/mecha-cms/genome/index.php?mark=3-9
+http://127.0.0.1/git/tree/mecha-cms/genome/index.php?mark=3-9,37-38
+http://127.0.0.1/git/tree/mecha-cms/genome/index.php?skin=monokai
 ~~~
 
 ### Version
 
 ~~~ .txt.xmp
-%{url}%/git/version/<user>/<repository>
+http://127.0.0.1/git/version/<user>/<repository>
 ~~~
 
 Supported parameters:
@@ -67,6 +67,6 @@ Parameter | Description
 **Example:**
 
 ~~~ .txt
-%{url}%/git/version/mecha-cms/mecha
-%{url}%/git/version/mecha-cms/mecha?pull=zip
+http://127.0.0.1/git/version/mecha-cms/mecha
+http://127.0.0.1/git/version/mecha-cms/mecha?pull=zip
 ~~~

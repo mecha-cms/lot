@@ -2,8 +2,8 @@
 @version: [2, current]
 @description: Generate a HTML markup.
 @lot:
-  - string $unit, $content = "", array $data = [], $dent = 0
-  - [string $unit, $content = "", array $data = []], $dent = 0
+- string $unit, $content = "", array $data = [], $dent = 0
+- [string $unit, $content = "", array $data = []], $dent = 0
 @static: 2
 @example: |
   echo HTML::unite('div', 'Content goes here…', [

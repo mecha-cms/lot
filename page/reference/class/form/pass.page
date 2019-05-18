@@ -1,5 +1,0 @@
----
-@version: [2, current]
-@description: Alias for [`password`][link:password].
-@static: 1
-...

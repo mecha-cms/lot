@@ -1,0 +1,23 @@
+---
+title: Common Date Format
+description: Common date formats used by the web system.
+...
+
+~~~ .php
+define('DATE_ATOM', 'Y-m-d\TH:i:sP'); // [[e]]echo date('Y-m-d\TH:i:sP');[[/e]]
+define('DATE_COOKIE', 'l, d-M-y H:i:s \U\T\C'); // [[e]]echo date('l, d-M-y H:i:s \U\T\C');[[/e]]
+define('DATE_ISO8601', 'c'); // [[e]]echo date('c');[[/e]]
+define('DATE_RFC822', 'D, d M y H:i:s O'); // [[e]]echo date('D, d M y H:i:s O');[[/e]]
+define('DATE_RFC850', 'l, d-M-y H:i:s \U\T\C'); // [[e]]echo date('l, d-M-y H:i:s \U\T\C');[[/e]]
+define('DATE_RFC1036', 'D, d M y H:i:s O'); // [[e]]echo date('D, d M y H:i:s O');[[/e]]
+define('DATE_RFC1123', 'D, d M Y H:i:s O'); // [[e]]echo date('D, d M Y H:i:s O');[[/e]]
+define('DATE_RFC2822', 'D, d M Y H:i:s O'); // [[e]]echo date('D, d M Y H:i:s O');[[/e]]
+define('DATE_RSS', 'D, d M Y H:i:s O'); // [[e]]echo date('D, d M Y H:i:s O');[[/e]]
+define('DATE_W3C', 'c'); // [[e]]echo date('c');[[/e]]
+~~~
+
+### Usage
+
+~~~ .php
+echo $page->time->format(DATE_COOKIE);
+~~~

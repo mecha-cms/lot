@@ -1,12 +1,13 @@
 ---
 @version: [1, 2, current]
 @description: Convert file size.
-@lot:
-  - string $file, $unit = null, $prec = 2
-  - int $size, $unit = null, $prec = 2
-@static: 1
+@lot: string $unit = null, $prec = 2
 @example: |
-  echo File::size('.\path\to\file.txt'); // automatic (as short as possible)
-  echo File::size('.\path\to\file.txt', 'KB'); // force to `KB`
-  echo File::size(1000000, 'KB'); // as number(s) …
+  $file = new File('.\path\to\file.txt');
+
+  $A = $file->size; // Automatic (as short as possible)
+  $B = $file->size('KB'); // Force to `KB`
+@result: |
+  $A = '[[e]]echo (new File($this->path))->size;[[/e]]';
+  $B = '[[e]]echo (new File($this->path))->size('KB');[[/e]]';
 ...

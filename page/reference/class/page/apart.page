@@ -4,7 +4,7 @@ description: Convert page file content into array of page data.
 ...
 
 ~~~ .php.xmp
-Page::apart($input, $key = null, $fail = null, $eval = false);
+Page::apart($input, $key = null, $eval = false);
 ~~~
 
 **Example:**

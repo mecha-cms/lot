@@ -1,6 +1,0 @@
----
-@version: [2]
-@description: Check.
-@lot: $in
-@static: 1
-...

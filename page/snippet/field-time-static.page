@@ -4,8 +4,9 @@ description: Automatically generate static time data on the first page visit, so
 ...
 
 ~~~ .php
-Hook::set('shield.enter', function() use($site) {
-    if ($page = Lot::get('page')) {
+Hook::set('enter', function() use($site) {
+    $page = Lot::get('page');
+    if ($page && $page->exist) {
         $time = Path::F($page->path) . DS . 'time.data';
         if (!$site->is('error') && !File::exist($time)) {
             File::put($page->time)->saveTo($time);

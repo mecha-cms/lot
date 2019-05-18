@@ -2,8 +2,9 @@
 @version: [2, current]
 @description: The OOP style of [link:../../function/shake].
 @lot:
-  - $preserve_key = true
-  - callable $fn
+- void
+- $preserve_key = true
+- callable $fn
 @example: |
   $array = [
       'foo' => 0,

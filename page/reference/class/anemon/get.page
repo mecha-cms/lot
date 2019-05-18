@@ -1,7 +1,7 @@
 ---
 @version: [2, current]
 @description: Get array value recursively.
-@lot: array &$array, string $key, $fail = false, string $NS = '.'
+@lot: array &$array, string $key, string $separator = '.'
 @static: 1
 @example: |
   $array = [
@@ -12,8 +12,8 @@
       ]
   ];
 
-  $A = Anemon::get($array, 'bar.baz', '#');
-  $B = Anemon::get($array, 'bar.wut', '#');
+  $A = Anemon::get($array, 'bar.baz') ?? '#';
+  $B = Anemon::get($array, 'bar.wut') ?? '#';
 @result: |
   $A = 2;
   $B = '#';

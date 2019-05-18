@@ -1,0 +1,16 @@
+---
+@version: [current]
+@description: Append inline template to the `<body>` section.
+@lot: string $content, float $stack = 10, array $data = []
+@static: 1
+@example: |
+  $content = <<<HTML
+  <div id="container">
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+  HTML;
+
+  Asset::template($content);
+  Asset::template($content, 20, ['id' => 'template-1']);
+@example-note: Default `$stack` value is `10`.
+...

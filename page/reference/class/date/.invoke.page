@@ -5,5 +5,5 @@
   $date = new Date('[[e]]echo date('Y-m-d H:i:s');[[/e]]');
   echo $date('%~h%:%m%:%s%');
 @result: |
-  '[[e]]echo (new Date(date('Y-m-d H:i:s')))('%~h%:%m%:%s%');[[/e]]';
+  '[[e]]echo (new Date(date('Y-m-d H:i:s')))('%~h%:%m%:%s%');[[/e]]'
 ...

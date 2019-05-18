@@ -1,10 +1,10 @@
 ---
 @version: [2, current]
 @description: Generate an error page.
-@lot: $code = 404, $fail = false
+@lot: $code = 404
 @static: 1
 @example: |
-  Route::set('event/%s%', function($id) {
+  Route::set('event/([^/]+)', function($id) {
       if (!$file = File::exist(".\\path\\to\\" . $id . '.page')) {
           Lot::set('page', new Page(null, [
               'title' => 'Error'

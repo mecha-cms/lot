@@ -3,7 +3,7 @@ title: Inline Image to Base64 Converter
 description: Making simple online tool with Mecha.
 ...
 
-Requires [eval][link:../reference/extension/plugin/block-e] plugin.
+Requires [eval][link:../reference/extension/plugin/block.e] plugin.
 
 Create a new page then add this content:
 
@@ -19,17 +19,17 @@ type: HTML
   <p><button type="submit" class="button">Convert</button></p>
 </form>
 
-`[[e]]`
-if (!empty($_FILES['_image'])) {
-    if ($_FILES['_image']['error'] > 0) {
+[‌[‌e‌]‌]
+if ($blob = HTTP::files('_image')) {
+    if (!empty($blob['error'])) {
         echo '<p style="color:red;">Error.</p>';
-    } else if (strpos($_FILES['_image']['type'], 'image/') !== 0) {
+    } else if (strpos($blob['type'], 'image/') !== 0) {
         echo '<p style="color:red;">Images only!</p>';
     } else {
-        $base64 = To::base64(file_get_contents($_FILES['_image']['tmp_name']));
-        $base64 = From::HTML('data:' . $_FILES['_image']['type'] . ';base64,' . $base64);
+        $base64 = To::base64(File::open($blob['tmp_name'])->read());
+        $base64 = From::HTML('data:' . $blob['type'] . ';base64,' . $base64);
         echo '<p><img alt="" onclick="window.open(this.src);" title="View URL" src="' . $base64 . '"></p>';
     }
 }
-`[[/e]]`
+[‌[‌/‌e‌]‌]
 ~~~

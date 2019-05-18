@@ -1,0 +1,4 @@
+---
+@version: [current]
+@description: Short function for [`Guard::check()`][link:../class/guard/check].
+...

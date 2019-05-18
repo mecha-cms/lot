@@ -1,9 +1,9 @@
 ---
 @version: [2, current]
 @description: Generate full private file path of the `$path`.
-@lot: string $path, $fail = false
+@lot: string $path
 @static: 1
 @example: |
   $A = Asset::path('.\lot\asset\css\style.css');
-@example-note: Setting external URL to the `$path` parameter will return to `$fail`.
+@example-note: Setting external URL to the `$path` parameter will return `null`.
 ...

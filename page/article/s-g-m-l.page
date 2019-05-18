@@ -1,0 +1,126 @@
+---
+title: Standard Generalized Markup Language
+description: Because `DOMDocument` API isn’t enough for me.
+...
+
+There will be a plan to remove the `Union` class in the future because of its name which does not describe its function properly. The `Union` class will be replaced by a new class named `SGML` so that it will be easier for developers to create derived classes from that class. In the future, `HTML` and `Block` class functionality will be derived from this class too.
+
+~~~ .php
+class HTML extends SGML {}
+class Block extends SGML {}
+~~~
+
+This class doesn’t have any public methods and only serves as a helper to create [SGML](https://en.wikipedia.org/wiki/Standard_Generalized_Markup_Language "Standard Generalized Markup Language · Wikipedia") elements (which is very similar to the HTML writing style) from an array input, and vice versa, to convert SGML element string into array.
+
+~~~ .php
+$foo = new SGML;
+$foo[0] = 'foo';
+$foo[1] = 'bar';
+$foo['baz'] = 'qux';
+
+echo $foo; // `<foo baz="qux">bar</foo>`
+~~~
+
+~~~ .php
+$foo = new SGML('<foo baz="qux">bar</foo>');
+
+echo To::JSON($foo); // `["foo","bar",{"baz":"qux"}]`
+~~~
+
+There will be no such standard way to make SGML comments markup through the class constructor because this markup is too easy to be written by hand. The case will be different when we want to add or remove some HTML or [block][link:../reference/extension/block] attributes directly through its string representation. And that’s why I made this class. However, developers can still add their own custom methods dynamically through the [`Genome`][link:../reference/class/genome] class feature, or by defining those methods directly. For example, here, a developer can add a `comment` method to make it easier for users to write HTML comments:
+
+~~~ .php
+class HTML extends SGML {
+
+    public static function comment(string $text) {
+        return '<!-- ' . $text . ' -->';
+    }
+
+}
+
+SGML::_('comment', function(string $text) {
+    return '<!-- ' . $text . ' -->';
+});
+
+// Example
+echo HTML::comment('asdf');
+echo SGML::comment('asdf');
+~~~
+
+Perhaps, one interesting advantage of this class implementation is that we can create some methods to help us in manipulating the attributes and contents of the HTML string provided to the class constructor:
+
+~~~ .php
+class HTML extends SGML {
+
+    public function addClass(string $name) {
+        $class = $this->lot[2]['class'];
+        $class = $class === true ? [] : explode(' ', $class);
+        $class[] = $name;
+        $class = array_unique($class);
+        $this->lot[2]['class'] = implode(' ', $class);
+        return $this;
+    }
+
+    public function hasAttribute(string $name) {
+        return array_key_exists($name, $this->lot[2]);
+    }
+
+    public function hasClass(string $name) {
+        if (isset($this->lot[2]['class'])) {
+            $class = $this->lot[2]['class'];
+            if ($class === true) {
+                return false;
+            }
+            $class = ' ' . $class . ' ';
+            return strpos($class, ' ' . $name . ' ') !== false;
+        }
+        return false;
+    }
+
+    public function removeAttribute(string $name) {
+        unset($this->lot[2][$name]);
+        return $this;
+    }
+
+    public function removeClass(string $name) {
+        if (isset($this->lot[2]['class'])) {
+            $class = $this->lot[2]['class'];
+            if ($class === true) {
+                return $this;
+            }
+            $class = ' ' . $class . ' ';
+            $class = str_replace(' ' . $name . ' ', ' ', $class);
+            $this->lot[2]['class'] = trim($class);
+        }
+        return $this;
+    }
+
+    public function setAttribute(string $name, $value) {
+        $this->lot[2][$name] = $value;
+        return $this;
+    }
+
+    public function setContent(string $content) {
+        $this->lot[1] = $content;
+        return $this;
+    }
+
+    public function toggleClass(string $name) {
+        $toggle = $this->hasClass($name) ? 'removeClass' : 'addClass';
+        return $this->{$toggle}($name);
+    }
+
+}
+~~~
+
+**Example:**
+
+~~~ .php
+$html = new HTML('<div></div>');
+
+$html->setAttribute('title', 'Hello!');
+$html->setContent('Content goes here…');
+$html->addClass('foo')->addClass('bar');
+
+echo $html; // `<div class="foo bar" title="Hello!">Content goes here…</div>`
+~~~

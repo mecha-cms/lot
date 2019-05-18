@@ -2,10 +2,10 @@
 @version: [1, 2, current]
 @description: Reading file line by line.
 @lot:
-  - int $stop = null, $fail = false, $ch = 1024
-  - string $stop = null, $fail = false, $ch = 1024
-  - array $stop, $fail = false, $ch = 1024
-  - callable $stop, $fail = false, $ch = 1024
+- int $stop = null, $ch = 1024
+- string $stop = null, $ch = 1024
+- array $stop, $ch = 1024
+- callable $stop, $ch = 1024
 @example: |
   // Stop reading at line 4
   echo File::open('.\path\to\file.txt')->get(3);

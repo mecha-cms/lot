@@ -2,10 +2,12 @@
 @version: [2, current]
 @description: Execute a hook.
 @lot:
-  - string $id, array $lot = [], $that = null, string $scope = null
-  - array $id, array $lot = [], $that = null, string $scope = null
+- string $id, array $lot = [], $that = null, string $scope = null
+- array $id, array $lot = [], $that = null, string $scope = null
 @static: 1
 @example: |
-  // Execute the `head.content` hook
-  Hook::fire('head.content');
+  // Execute the `content` hook
+  Hook::fire('content');
+  // Execute the `content` hook to an input
+  Hook::fire('content', ['<!DOCTYPE html><html dir="ltr"> …']);
 ...

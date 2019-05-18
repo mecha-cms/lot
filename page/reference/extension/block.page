@@ -1,10 +1,9 @@
 ---
 title: Block
 description: Placeholder.
-icon: M4,3H5V5H3V4A1,1 0 0,1 4,3M20,3A1,1 0 0,1 21,4V5H19V3H20M15,5V3H17V5H15M11,5V3H13V5H11M7,5V3H9V5H7M21,20A1,1 0 0,1 20,21H19V19H21V20M15,21V19H17V21H15M11,21V19H13V21H11M7,21V19H9V21H7M4,21A1,1 0 0,1 3,20V19H5V21H4M3,15H5V17H3V15M21,15V17H19V15H21M3,11H5V13H3V11M21,11V13H19V11H21M3,7H5V9H3V7M21,7V9H19V7H21Z
 ...
 
-Block is a kind of placeholder that can be embedded in the page content which normally can be written like HTML code in general, but with custom enclosing characters. Each block pattern can then be converted into something more complex.
+Block is a kind of placeholder that can be embedded within the page content which normally can be written like HTML code in general, but with custom enclosing characters. Each block pattern can then be converted into something more complex.
 
 By default, a block syntax can be defined as follow. It uses `‌[‌[‌` and `‌]‌]‌` as the enclosing characters:
 
@@ -13,21 +12,17 @@ By default, a block syntax can be defined as follow. It uses `‌[‌[‌` and `
 
 Block attribute syntax is the same as the attribute syntax in HTML.
 
-Blocks are configurable. Even, you can specify your own block markup by editing the configuration file. From the position of this file, go to `lot\state\config.php` then look for the `union` part that looks like this:
+Blocks are configurable. Even, you can specify your own block markup by editing the configuration file:
 
 ~~~ .php
-1 => [
+[
     0 => ['[‌[‌', '‌]‌]', '‌/‌'],
-    1 => ['=', '"', '"', ' '],
-    2 => ['[‌[‌!', '!‌]‌]'],
-    3 => ['`[‌[‌', '‌]‌]`']
+    1 => ['"', '"', '=']
 ]
 ~~~
 
  - The `0` parts are configuration for the block tag.
  - The `1` parts are configuration for the block tag’s attribute.
- - The `2` parts are for the block comment markup.
- - The `3` parts are for the escape marker.
 
 Following is an example of configuring block pattern as regular HTML (custom HTML tags):
 
@@ -36,11 +31,9 @@ Following is an example of configuring block pattern as regular HTML (custom HTM
 ~~~
 
 ~~~ .php
-1 => [
+[
     0 => ['<‌', '‌>', '‌/‌'],
-    1 => ['=', '"', '"', ' '],
-    2 => ['<‌!--', '--‌>'],
-    3 => ['&lt;', '&gt;']
+    1 => ['"', '"', '=']
 ]
 ~~~
 
@@ -51,11 +44,9 @@ As [WordPress](https://developer.wordpress.org/reference/functions/do_shortcode 
 ~~~
 
 ~~~ .php
-1 => [
-    0 => ['[‌', '‌]', '‌/‌'],
-    1 => ['=', '"', '"', ' '],
-    2 => ['[‌!--', '--‌]'],
-    3 => ['[‌[‌', '‌]‌]']
+[
+    0 => ['[', '‌]', '‌/‌'],
+    1 => ['"', '"', '=']
 ]
 ~~~
 
@@ -66,11 +57,9 @@ As [Twig](http://twig.sensiolabs.org/doc/tags/embed.html "embed - Documentation 
 ~~~
 
 ~~~ .php
-1 => [
-    0 => ['{‌%‌ ', ' ‌%‌}', '‌end‌'],
-    1 => ['=', '"', '"', ' '],
-    2 => ['{‌# ', ' #‌}'],
-    3 => ["{‌{‌ '{‌%‌ ' ‌}‌}", "{‌{‌ ' ‌%‌}' ‌}‌}"]
+[
+    0 => ['{% ‌', '‌ %}', '‌end'],
+    1 => ['"', '"', '=']
 ]
 ~~~
 
@@ -81,11 +70,9 @@ As of Mecha version `1.x.x` _shortcodes_:
 ~~~
 
 ~~~ .php
-1 => [
-    0 => ['{‌{‌', '‌}‌}', '‌/‌'],
-    1 => ['=', '"', '"', ' '],
-    2 => ['{‌{‌!', '!‌}‌}'],
-    3 => ['`{‌{‌', '‌}‌}`']
+[
+    0 => ['{{‌', '‌}}', '‌/‌'],
+    1 => ['"', '"', '=']
 ]
 ~~~
 
@@ -96,15 +83,15 @@ As of Mecha version `1.x.x` _shortcodes_:
 #### Set
 
 ~~~ .xmp.php
-Block::set(string $id, callable $fn, float $stack = null);
-Block::set(string $id, string $text, float $stack = null);
+Block::set(string $id, callable $fn, float $stack = 10);
+Block::set(string $id, string $text, float $stack = 10);
 ~~~
 
 Define a new block:
 
 ~~~ .php
 Block::set('mark', function($content) {
-    return str_replace(['[[mark]]', '[[/mark]]'], ['<mark>', '</mark>'], $content);
+    return '<mark>' . $content . '</mark>';
 });
 ~~~
 
@@ -123,51 +110,50 @@ Lorem ipsum <‌mark‌>dolor<‌/‌mark‌> [‌[‌mark‌]‌]sit[‌[‌/�
 #### Get
 
 ~~~ .xmp.php
-Block::get(string $id = null, $fail = false);
+Block::get(string $id = null, $fail = false): array;
 ~~~
 
 Return the `mark` block data if any, otherwise, return `$fail`:
 
 ~~~ .php
-if ($fn = Block::get('mark')) {
-    // do something with `$fn`…
+if ($data = Block::get('mark')) {
+    // Do something with `$data`…
+    return call_user_func($data['fn'], $content);
 }
 ~~~
 
 #### Reset
 
 ~~~ .xmp.php
-Block::reset(string $id);
+Block::let(string $id): true;
 ~~~
 
 Disable the `mark` block pattern:
 
 ~~~ .php
-Block::reset('mark');
+Block::let('mark');
 ~~~
 
 #### Replace
 
 ~~~ .xmp.php
-Block::replace(string $id, callable $fn, string $content);
-Block::replace(string $id, string $text, string $content);
+Block::replace(string $id, callable $fn, string $content): string;
+Block::replace(string $id, string $text, string $content): string;
 ~~~
 
 Replace `mark` block in `$content` with advance pattern:
 
 ~~~ .php
-Block::set('mark', function($content) {
-    return Block::replace('mark', function($a, $b) {
-        $c = "";
-        if (isset($b['color'])) {
-            $c = ' style="background:' . $b['color'] . ';"';
-        }
-        return '<mark' . $c . '>' . $a . '</mark>';
-    }, $content);
-});
+$content = Block::replace('mark', function($a, $b) {
+    $c = "";
+    if (isset($b['color'])) {
+        $c = ' style="background:' . $b['color'] . ';"';
+    }
+    return '<mark' . $c . '>' . $a . '</mark>';
+}, $content);
 ~~~
 
-The code above will change this page content:
+The code above will change this `$content` value:
 
 ~~~ .html
 Lorem [‌[‌mark‌]‌]ipsum[‌[‌/‌mark‌]‌] [‌[‌mark color="#f00"‌]‌]dolor[‌[‌/‌mark‌]‌] `‌[‌[‌mark‌]‌]‌`sit`‌[‌[‌/‌mark‌]‌]‌` `‌[‌[‌mark color="#f00"‌]‌]‌`amet`‌[‌[‌/‌mark‌]‌]‌`.
@@ -194,12 +180,12 @@ Block names can be defined as plain text file with extension `data` stored in `.
 The following is an example of the `mark.data` file content:
 
 ~~~ .txt
-<mark style="background:%‌{‌color‌}‌%">%‌{‌1‌}‌%</mark>
+<mark style="background:%‌color">%‌1</mark>
 ~~~
 
-The `%‌{‌1‌}‌%` pattern is a parameter that will be converted into text that is inside the container block markup. Some other parameters include:
+The ‌`%‌1‌` pattern is a parameter that will be converted into text that is inside the container block markup. Some other parameters include:
 
- - `%‌{‌0‌}‌%` → Return the block name.
- - `%‌{‌1‌}‌%` → Return the block content.
- - `%‌{‌2‌}‌%` → Return the block attributes as literal JSON.
- - `%‌{‌color‌}‌%` → Return the block’s `color` attribute value.
+ - `%‌0` → Return the block name.
+ - `%‌1` → Return the block content.
+ - `%‌2` → Return the block attributes as literal JSON.
+ - `%‌color` → Return the block’s `color` attribute value.

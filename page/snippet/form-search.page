@@ -5,7 +5,10 @@ description: Basic search form.
 
 ~~~ .html
 <form action="<?php echo $site->is('pages') ? $url->clean : Path::D($url->clean); ?>" method="get">
-  <?php echo Form::text($config->q, HTTP::get($config->q)) . ' ' . Form::submit(null, null, 'Search'); ?>
+  <p>
+    <input name="<?php echo $config->q; ?>" value="<?php echo HTTP::get($config->q); ?>" type="text">
+    <button type="submit">Search</button>
+  </p>
 </form>
 ~~~
 

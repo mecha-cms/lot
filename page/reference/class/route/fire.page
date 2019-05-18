@@ -1,20 +1,14 @@
 ---
-title: `$route::fire()`
-description: Execute the added routes.
+@version: [2, current]
+@description: Execute the added routes.
+@lot:
+- string $id
+- string $id, array $lot
+@static: 1
+@example: |
+  // Execute specific route
+  Route::fire('blog');
+
+  // Execute specific route with pre-defined value
+  Route::fire('blog/([^/]+)/(\d+)', ['archive', 4]);
 ...
-
-~~~ .php.xmp
-Route::fire($id = null, $lot = []);
-~~~
-
-**Example:**
-
-~~~ .php
-Route::fire();
-~~~
-
-Execute specific route with pre-defined value:
-
-~~~ .php
-Route::fire('blog/%s%/%i%', ['archive', 4]);
-~~~

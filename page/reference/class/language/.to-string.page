@@ -5,6 +5,7 @@
   $language->reset();
   $language->set('foo', 'Foo');
   $language->set('bar', 'Bar');
+
   echo $language;
 @result: |
   'foo: Foo

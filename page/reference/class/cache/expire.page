@@ -1,11 +1,12 @@
 ---
 @version: [2, current]
 @description: Check if cache file already expired.
-@lot: string $from, $id = null
+@lot:
+- string $id, string $for = '1 day'
+- string $id, int $for = 86400
 @static: 1
 @example: |
-  if (Cache::expire('.\path\to\file.php')) {
+  if (Cache::expire('foo', '1 year')) {
       // Expired!
   }
-@example-description: Check if cache file of `.\path\to\file.php` already expired.
 ...

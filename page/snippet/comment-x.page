@@ -3,14 +3,12 @@ title: Disable Comments
 description: Disable comments on specific page.
 ...
 
-Any existing comments will be visible, but not with the comment form. Comments section including the comments header will be hidden if there aren’t any comments in the current page.
-
 ~~~ .yaml
 ---
 title: Page Title
 description: Page description.
-comments:
-  x: true
+state:
+  comment: false
 ...
 
 Page content.

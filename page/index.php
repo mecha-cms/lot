@@ -23,11 +23,12 @@ if (Plugin::exist('candy')) {
 }
 
 // Add static `time` field automatically
-Hook::set('shield.enter', function() use($site) {
-    if ($page = Lot::get('page')) {
+Hook::set('set', function() use($site) {
+    $page = $GLOBALS['page'];
+    if ($page && $page->exist) {
         $time = Path::F($page->path) . DS . 'time.data';
         if (!$site->is('error') && !File::exist($time)) {
-            File::put($page->time)->saveTo($time);
+            File::set($page->time)->saveTo($time);
         }
     }
 });

@@ -1,8 +1,8 @@
 ---
 @version: [2, current]
-@description: Get the cache file.
-@lot: string $from, $fail = false
+@description: Get the generated cache file.
+@lot: string $id
 @static: 1
 @example: |
-  Cache::get('.\path\to\file.php');
+  $cache = Cache::get('foo');
 ...

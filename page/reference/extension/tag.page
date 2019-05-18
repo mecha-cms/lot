@@ -1,11 +1,6 @@
 ---
 title: Tag
 description: Page tags.
-icon: M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z
-
-dependency:
-  extension:
-    - page
 ...
 
 This extension activates the tagging feature by utilizing the `kind` property on the page. This extension will also add several new routes such as `http://127.0.0.1/blog/tag/slug` on every page to allow users to list all pages in the current folder by a tag.
@@ -25,7 +20,7 @@ There are some methods added to the default [classes][link:../class]:
 #### Tags
 
 ~~~ .xmp.php
-Get::tags($folder = TAG, …, $sort = [1, 'id'], …);
+Get::tags(string $folder = TAG, …, $sort = [1, 'id'], …): Anemon;
 ~~~
 
 Function arguments are the same as function [`Get::pages()`][link:../class/get/pages], except the `$folder` parameter that uses `TAG` [constant][link:../constant] value by default, and the `$sort` parameter that uses `id` as the default sort key instead of `time`.
@@ -33,7 +28,7 @@ Function arguments are the same as function [`Get::pages()`][link:../class/get/p
 #### From
 
 ~~~ .xmp.php
-From::tag($slug, $fail = false);
+From::tag($slug, $fail = false): int | $fail;
 ~~~
 
 Get tag ID from the tag slug.
@@ -41,7 +36,7 @@ Get tag ID from the tag slug.
 #### To
 
 ~~~ .xmp.php
-To::tag($id, $fail = false);
+To::tag($id, $fail = false): string | $fail;
 ~~~
 
 Get tag slug from the tag ID.
@@ -56,7 +51,7 @@ Before we start, you need to understand how this extension works.
 
 **First**, know that this extension will add `query` and `tags` properties to the page only if the page contains `kind` property that is not empty.
 
-~~~
+~~~ .php
 $page = [
     …
     …
@@ -151,7 +146,7 @@ title: Page Title
 description: Page description.
 author: Taufik Nurrohman
 type: Markdown
-kind: [1,2,3]
+kind: [1, 2, 3]
 ...
 
 Page content goes here.
@@ -180,12 +175,12 @@ echo implode(', ', $tags);
 
 These page conditional statements are available:
 
- - `$site->has('tags')` → Return the `$page->kind` data from the current page.
- - `$site->is('tags')` → Return list of tag’s ID found in the current results.
+ - `$site->has('tags')` → Return `true` if current page has at least one tag.
+ - `$site->is('tags')` → `Return `true` if current items view is a tags view and is not empty.
 
 ### Class
 
 These HTML classes will be added to the `<html>` element that has a `class` attribute:
 
  - `has-tags` → Will be added if current page has at least one tag.
- - `is-tags` → Will be added if there are pages to load in the tags page.
+ - `is-tags` → Will be added if current items view is a tags view and is not empty.

@@ -1,12 +1,6 @@
 ---
 title: User
 description: Rich user data.
-icon: M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z
-
-dependency:
-  extension:
-    - form
-    - page
 ...
 
 ### File
@@ -24,7 +18,7 @@ And the following is the content of the file:
 
 ~~~ .yaml
 ---
-$: Taufik Nurrohman
+'$': Taufik Nurrohman
 type: Markdown
 status: 1
 ...
@@ -54,10 +48,10 @@ USER
 
 There are some methods added to the default [classes][link:../class]:
 
-#### Is → User
+#### Is User
 
 ~~~ .xmp.php
-Is::user($key = null, $fail = false);
+Is::user(string $key = null, $fail = false): User | $fail;
 ~~~
 
 **Example:**
@@ -74,13 +68,13 @@ Check whether user `@‌ta-tau-taufik` is logged in:
 if (Is::user('ta-tau-taufik')) { … }
 ~~~
 
-#### Get → Users
+#### Get Users
 
 ~~~ .xmp.php
-Get::users($folder = USER, …, $sort = [1, 'slug'], …);
+Get::users(string $folder = USER, …, $sort = [1, 'path'], …): Anemon;
 ~~~
 
-Function arguments are the same as function [`Get::pages()`][link:../class/get/pages], except the `$folder` parameter that uses `USER` [constant][link:../constant] value by default, and the `$sort` parameter that uses `slug` as the default sort key instead of `time`.
+Function arguments are the same as function [`Get::pages()`][link:../class/get/pages], except the `$folder` parameter that uses `USER` [constant][link:../constant] value by default, and the `$sort` parameter that uses `path` as the default sort key instead of `time`.
 
 ---
 
@@ -112,7 +106,7 @@ The page in `.\lot\page\test-page.page`:
 ~~~ .yaml
 ---
 title: Page Title
-author: @‌ta-tau-taufik
+author: '@‌ta-tau-taufik'
 ...
 
 Page content.
@@ -122,8 +116,8 @@ The user file in `.\lot\user\ta-tau-taufik.page`:
 
 ~~~ .yaml
 ---
-$: Taufik Nurrohman
-link: http://example.com
+'$': Taufik Nurrohman
+link: 'http://example.com'
 ...
 
 Page content.

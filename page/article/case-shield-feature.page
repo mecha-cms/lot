@@ -92,7 +92,7 @@ theme-1\
 The next advantage is the `Genome` feature itself. We can change the way `static::header()` works simply by creating a new method called `header` to the `Shield` class:
 
 ~~~ .php
-Shield::_('header', function(string $path = null, array $lot = [], $print = true) {
+Shield::_('header', function(string $path, $lot = [], $print = true) {
     if (!$print) {
         return 'Custom header!';
     }

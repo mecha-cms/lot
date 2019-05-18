@@ -1,7 +1,9 @@
 ---
 @version: [2, current]
 @description: Set default date time zone.
-@lot: string $zone = null
+@lot:
+- void
+- string $zone
 @static: 1
 @example: |
   // Set current time zone

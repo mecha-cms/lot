@@ -1,7 +1,7 @@
 ---
 @version: [2, current]
 @description: Convert full URL into relative URL.
-@lot: string $path = "", $root = true
+@lot: string $path, $root = true
 @static: 1
 @example: |
   $A = URL::short('[[e]]echo $url;[[/e]]');

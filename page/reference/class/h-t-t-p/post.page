@@ -1,8 +1,8 @@
 ---
 @version: [2, current]
 @description: Return the `$_POST` data.
-@lot: string $key = null, $fail = null, $eval = true
+@lot: string $key = null, $eval = true
 @static: 1
 ...
 
-> **Note:** Values include `0`, `'0'`, and `' '` are considered not empty. So, returning a data contains these kind of value will not trigger the `$fail` value.
+> **Note:** Values include `0`, `'0'`, and `' '` are considered not empty. So, returning a data contains these kind of value will not trigger the default value.

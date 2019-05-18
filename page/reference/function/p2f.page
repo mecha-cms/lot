@@ -1,0 +1,18 @@
+---
+@version: [current]
+@description: Convert class property name to file name.
+@example: |
+  echo p2f('foo');
+  echo p2f('__foo');
+  echo p2f('fooBar');
+  echo p2f('foo_bar');
+  echo p2f('foo_Bar');
+@result: |
+  [[e]]
+  echo p2f('foo') . "\n";
+  echo p2f('__foo') . "\n";
+  echo p2f('fooBar') . "\n";
+  echo p2f('foo_bar') . "\n";
+  echo p2f('foo_Bar');
+  [[/e]]
+...

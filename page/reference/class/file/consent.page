@@ -1,11 +1,29 @@
 ---
 @version: [2, current]
-@description: Set file permission.
-@lot: $consent
+@description: Set or get file permission.
+@lot:
+- void
+- int $consent
+- string $consent
 @example: |
+  // Set file permission
   File::open('.\path\to\file.txt')->consent(0600);
+  File::open('.\path\to\file.txt')->consent('0600');
 
   // Shortcut to set file permission during saving
   File::put('test!')->saveTo('.\path\to\file.txt', 0600);
   File::open('.\path\to\file.txt')->put('test!')->save(0600);
+  File::put('test!')->saveTo('.\path\to\file.txt', '0600');
+  File::open('.\path\to\file.txt')->put('test!')->save('0600');
+
+  // Get file permission
+  $A = File::open('.\path\to\file.txt')->consent;
+  $B = File::open('.\path\to\file.txt')->_consent;
+  $C = File::open('#')->consent;
+  $D = File::open('#')->_consent;
+@result: |
+  $A = '[[e]]echo File::open($this->path)->consent;[[/e]]';
+  $B = [[e]]echo File::open($this->path)->_consent;[[/e]];
+  $C = "";
+  $D = -1;
 ...

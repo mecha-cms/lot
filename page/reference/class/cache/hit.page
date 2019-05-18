@@ -1,0 +1,27 @@
+---
+@version: [current]
+@description: Update cache value automatically on every file update.
+@lot:
+- string $file, callable $fn
+- array $files, callable $fn
+@static: 1
+@example: |
+  $cache = Cache::hit('.\path\to\file.php', function($file) {
+      ob_start();
+      require $file;
+      return ob_get_clean();
+  });
+
+  $cache = Cache::hit([
+      '.\path\to\file-1.php',
+      '.\path\to\file-2.php',
+      '.\path\to\file-3.php',
+      '.\path\to\file-4.php'
+  ], function($files) {
+      $out = [];
+      foreach ($files as $file) {
+          $out = extend($out, require $file);
+      }
+      return $out;
+  });
+...

@@ -1,7 +1,7 @@
 ---
 @version: [current]
 @description: The OOP style of [link:../../function/find].
-@lot: callable $fn = null, $fail = null
+@lot: callable $fn
 @example: |
   $array = [
       [

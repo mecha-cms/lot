@@ -9,6 +9,6 @@ $ip_x = ['123.456.123.456', '456.789.456.789']; // List of IP address(es) you wa
 
 if (has($ip_x, $ip)) {
     HTTP::status(403); // Forbidden
-    Guardian::abort('Blocked user with IP <code>' . $ip . '</code>.');
+    Guard::abort('Blocked user with IP <code>' . $ip . '</code>.');
 }
 ~~~
