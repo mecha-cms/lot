@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Move folder with its contents to a folder.
+@lot: string $to
+@example: |
+  // Move folder to a folder
+  $A = (new Folder('.\path\to\folder'))->move('.\path\to\folder-1');
+@result: |
+  $A = [[ … ], [ … ]];
+...

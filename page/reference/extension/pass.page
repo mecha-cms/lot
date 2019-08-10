@@ -1,0 +1,37 @@
+---
+title: Pass
+description: Restrict page access using secret pass code.
+...
+
+![1](%{asset}%/png/reference/extension/pass.png)
+
+### Usage
+
+Create a page then add a `pass` property with pass code as the value:
+
+~~~ .yaml
+---
+title: My Secret Diary
+description: This is a long story about my life.
+type: Markdown
+pass: b4d455
+...
+
+Page content goes here.
+~~~
+
+Set custom question by putting it in the `q` property of the `pass` property, then put the answer in the `a` property:
+
+~~~ .yaml
+---
+title: My Secret Diary
+description: This is a long story about my life.
+type: Markdown
+pass:
+  q: What’s my sister’s name?  # question
+  a: alice  # answer
+  h: One word.  # hints
+...
+
+Page content goes here.
+~~~

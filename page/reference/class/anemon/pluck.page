@@ -33,8 +33,8 @@
       ]
   ];
 
-  $A = Anemon::eat($array)->pluck('value')->vomit();
-  $B = Anemon::eat($array)->pluck('value', '?')->vomit();
+  $A = Anemon::from($array)->pluck('value')->get();
+  $B = Anemon::from($array)->pluck('value', '?')->get();
 @result: |
   $A = ['A', 'B', 'C', 'D', 'E', 'F'];
   $B = ['A', 'B', 'C', 'D', 'E', 'F', '?'];

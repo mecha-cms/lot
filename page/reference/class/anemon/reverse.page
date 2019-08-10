@@ -1,0 +1,9 @@
+---
+@version: [current]
+@description: Reverse array values.
+@lot: void
+@example: |
+  $A = Anemon::from([1, 2, 3, 4, 5])->reverse()->get();
+@result: |
+  $A = [5, 4, 3, 2, 1];
+...

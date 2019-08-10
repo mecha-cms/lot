@@ -1,15 +1,6 @@
 ---
 @version: [2, current]
-@description: Internationalization.
+@description: Translation hooks.
 @final: 1
 @parent: config
 ...
-
-### Configuration
-
-~~~ .php
-Language::$config = [
-    // Set current language
-    'id' => 'en-us'
-];
-~~~

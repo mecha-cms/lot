@@ -3,7 +3,7 @@
 @description: This variable is an instance of the [`Pager` class][link:../class/pager].
 @example: |
   <?php echo $pager; ?>
-  <?php echo $pager->previous; ?>
+  <?php echo $pager->prev; ?>
   <?php echo $pager->next; ?>
 ...
 

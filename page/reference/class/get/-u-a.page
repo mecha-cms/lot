@@ -6,5 +6,5 @@
 @example: |
   echo Get::UA();
 @result: |
-  '[[e]]echo Get::ua();[[/e]]'
+  '[[e]]echo Get::UA();[[/e]]'
 ...

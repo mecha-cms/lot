@@ -1,9 +1,0 @@
----
-@version: [1, 2, current]
-@description: Rename a file or folder.
-@lot: string $name
-@example: |
-  $A = File::open('.\path\to\file.txt')->renameTo('file-1.txt');
-@result: |
-  $A = ['.\path\to\file.txt', '.\path\to\file-1.txt']
-...

@@ -1,9 +1,0 @@
----
-@version: [1, 2, current]
-@description: Append content to a file.
-@lot: string $data
-@static: 2
-@example: |
-  File::append('some text')->saveTo('.\path\to\file.txt');
-  File::open('.\path\to\file.txt')->append('some text')->save();
-...

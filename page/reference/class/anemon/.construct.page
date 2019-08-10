@@ -9,7 +9,7 @@
   echo $anemon(' | ');
   echo $anemon[0];
   echo $anemon[999];
-  echo $anemon->vomit(1);
+  echo $anemon->get(1);
   echo $anemon->last();
 @result: |
   'foo, bar, baz'

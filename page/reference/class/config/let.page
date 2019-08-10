@@ -1,0 +1,16 @@
+---
+@version: [2, current]
+@description: Remove global state item.
+@lot:
+- void
+- string $key
+- array $keys
+@static: 1
+@example: |
+  // Remove all item(s)
+  Config::let();
+  // Remove `foo` item
+  Config::let('foo');
+  // Remove `foo` and `bar` item
+  Config::let(['foo', 'bar']);
+...

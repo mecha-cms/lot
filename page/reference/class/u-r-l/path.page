@@ -5,7 +5,6 @@
 - void
 - string $separator = '/'
 - string $separator = '/', array $p = []
-@static: 2
 @example: |
   $A = $url->path;
   $B = $url->path();

@@ -1,12 +1,10 @@
 ---
 @version: [current]
-@description: Force download a file.
+@description: Download a file.
 @lot:
-- void
-- string $name
+- string $path
+- string $path, string $name
+@static: 1
 @example: |
-  $file = new File('.\path\to\file.txt');
-
-  $file->pull(); // Save as `file.txt`
-  $file->pull('file.' . date('Y-m-d') . '.txt'); // Save as `file.[[e]]echo date('Y-m-d');[[/e]].txt`
+  File::pull('.\path\to\image.jpg');
 ...

@@ -1,0 +1,19 @@
+---
+@version: [current]
+@description: Content output.
+@parent: genome
+@use:
+  '.\lot\x\content': 1
+...
+
+### Configuration
+
+~~~ .php
+Content::$config = [
+    'root' => ROOT,
+    // List of alternative file extensions used by the content files.
+    // Content with `html` extension is a priority for best performance.
+    // To change the priority order, re-order this file extensions placement.
+    'x' => ['html', 'php']
+];
+~~~

@@ -27,31 +27,35 @@
   ];
 
 
+
   //  1: ASC
   // -1: DESC
 
   // Basic
-  $A = Anemon::eat($array)->sort(1)->vomit();
+  $A = Anemon::from($array)->sort(1)->get();
 
   // Sort by value of the `color` property
-  $B = Anemon::eat($array)->sort([1, 'color'])->vomit();
+  $B = Anemon::from($array)->sort([1, 'color'])->get();
 
   // Preserve original array key
-  $C = Anemon::eat($array)->sort([-1, 'color'], true)->vomit();
+  $C = Anemon::from($array)->sort([-1, 'color'], true)->get();
 
   // Set default value of array item with missing `color` property as `#black`
-  $D = Anemon::eat($array)->sort([-1, 'color', '#black'])->vomit();
+  $D = Anemon::from($array)->sort([-1, 'color', '#black'])->get();
 
   // Custom sort (sort by the third character of `size` value)
-  $E = Anemon::eat($array)->sort(function($a, $b) {
-      if (!isset($a['size'][2]) && !isset($b['size'][2]))
+  $E = Anemon::from($array)->sort(function($a, $b) {
+      if (!isset($a['size'][2]) && !isset($b['size'][2])) {
           return 0;
-      if (!isset($a['size'][2]))
+      }
+      if (!isset($a['size'][2])) {
           return 1;
-      if (!isset($b['size'][2]))
+      }
+      if (!isset($b['size'][2])) {
           return -1;
+      }
       return $a['size'][2] <=> $b['size'][2];
-  })->vomit();
+  })->get();
 @result: |
   $A = [
       0 => [

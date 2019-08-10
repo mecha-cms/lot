@@ -4,21 +4,21 @@ description: Automatically generate static time data on the first page visit, so
 ...
 
 ~~~ .php
-Hook::set('enter', function() use($site) {
-    $page = Lot::get('page');
+Hook::set('set', function() use($site) {
+    $page = $GLOBALS['page'];
     if ($page && $page->exist) {
         $time = Path::F($page->path) . DS . 'time.data';
         if (!$site->is('error') && !File::exist($time)) {
-            File::put($page->time)->saveTo($time);
+            File::set($page->time)->saveTo($time);
         }
     }
 });
 ~~~
 
-> **Note:** The default [shield][link:../reference/file/shield] uses `$page->update` to show the current date which will output the file modification time as the page date. To show the current page date created by this snippet, you can use `$page->time` or `$page->date->{$format}`:
+> **Note:** The default [shield][link:../reference/file/shield] uses `$page->update` to show the current date which will output the file modification time as the page date. To show the current page date created by this snippet, use `$page->time` instead:
 >
 > ~~~ .html
-> <p><?php echo $page->date->en_us; ?></p>
+> <p><?php echo $page->time->en; ?></p>
 > ~~~
 >
-> [connect:../reference/class/date/extract]
+> [connect:../reference/class/date]

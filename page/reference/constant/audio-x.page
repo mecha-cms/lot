@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: Return audio file extensions.
-@example: |
-  echo AUDIO_X;
-@result: |
-  'aif,mid,mov,mpa,mp3,m3u,m4a,ogg,wav,wma'
-...

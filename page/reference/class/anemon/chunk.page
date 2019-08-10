@@ -5,9 +5,9 @@
 @example: |
   $array = range(1, 20);
 
-  $A = Anemon::eat($array)->chunk(5)->vomit();
-  $B = Anemon::eat($array)->chunk(5, -1, true)->vomit();
-  $C = Anemon::eat($array)->chunk(5, 2)->vomit();
+  $A = Anemon::from($array)->chunk(5)->get();
+  $B = Anemon::from($array)->chunk(5, -1, true)->get();
+  $C = Anemon::from($array)->chunk(5, 2)->get();
 @result: |
   $A = [
       [1, 2, 3, 4, 5],

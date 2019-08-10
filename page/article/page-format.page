@@ -42,7 +42,7 @@ Hook::set('page.content', function($content, $lot) {
         return $content;
     }
     // Remove all HTML block tag(s) and normalize line-break
-    $content = n(To::text($content, HTML_WISE_I, true));
+    $content = n(To::text($content, HTML_FORMAT_INLINE, true));
     // Convert line-break into paragraph tag(s)
     $content = '<p>' . str_replace(["\n\n", "\n"], ['</p><p>', '<br>'], $content) . '</p>';
     // Surround the page content with `<blockquote>` tag
@@ -60,7 +60,7 @@ You can also add the post format support by customizing the `page.php` file inst
   <blockquote>
   <?php
 
-  $content = n(To::text($page->content, HTML_WISE_I, true));
+  $content = n(To::text($page->content, HTML_FORMAT_INLINE, true));
   $content = '<p>' . str_replace(["\n\n", "\n"], ['</p><p>', '<br>'], $content) . '</p>';
 
   echo $content;

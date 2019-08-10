@@ -10,7 +10,7 @@
       'qux' => 3
   ];
 
-  $A = Anemon::eat($array)->first;
+  $A = Anemon::from($array)->first();
 @result: |
   $A = 0;
 ...

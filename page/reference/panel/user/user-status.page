@@ -13,14 +13,14 @@ Asset | n | n | y | ? | n
 Block | n | n | y | n | n
 Cache | n | n | y | n | n
 Comment | n | n | y | ? | ?
-Extend | n | n | y | n | n
 Language | n | n | y | n | n
 Page | n | n | y | ? | n
-Shield | n | n | y | n | n
+Content | n | n | y | n | n
 State | n | n | y | n | n
 Tag | n | n | y | ? | n
 Trash | n | n | y | n | n
 User | n | ? | y | ? | ?
+X | n | n | y | n | n
 
 Action | -1 | 0 | 1 | 2 | 3
 ------ | -- | - | - | - | -

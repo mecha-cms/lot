@@ -3,15 +3,63 @@
 @description: Do something if URL path matched with pattern.
 @final: 1
 @parent: genome
+@interface:
+- .array-access
+- .countable
+- .iterator-aggregate
 ...
 
 ### Patterns
 
 Pattern | Description
 ------- | -----------
-`([^/]+)` | Matched with any but `/`
-`(\d+)` | Matched with any positive numbers.
-`((?:\d*\.)?\d+)` | Matched with any positive numbers and floats.
-`(.+)` | Matched with any and `/`
-`(foo|bar|baz\|qux)` | Matched with `foo`, `bar` and `baz|qux`
-`(foo|bar|\d+)` | Matched with `foo`, `bar` and any positive numbers.
+`:key` | Matched with any but `/`
+`*` | Matched with any includes `/`
+
+All patterns available in the route path will be available within the function closure as an indexed array, and if the first pattern exists, it will also generates dynamic property which can be accessed as array or object.
+
+~~~ .php
+Route::set('docs/*/*/*', function() {
+    test(
+        $this[0],
+        $this[1],
+        $this[2],
+        $this[3] // does not exist, should returns `null`
+    );
+    exit;
+});
+~~~
+
+~~~ .php
+Route::set('docs/:foo/:bar-baz/*', function() {
+    test(
+        $this[0], // value of `:foo`
+        $this[1], // value of `:bar-baz`
+        $this[2], // value of `*`
+        $this[3], // does not exist, should returns `null`
+        $this->foo, // value of `:foo`
+        $this->barBaz, // value of `:bar-baz`
+        $this->qux, // does not exist, should returns `null`
+        $this['foo'], // value of `:foo`
+        $this['bar-baz'], // value of `:bar-baz`
+        $this['qux'] // does not exist, should returns `null`
+    );
+    exit;
+});
+~~~
+
+> **Note:** You can’t match page offset to the route path, so, this won’t work:
+>
+> ~~~ .php
+> Route::set('blog/2014/:i', function() {
+>     if ($this->i > 4) { … }
+> });
+> ~~~
+>
+> This will work:
+>
+> ~~~ .php
+> Route::set('blog/2014', function() use($url) {
+>     if ($url->i > 4) { … }
+> });
+> ~~~

@@ -1,0 +1,13 @@
+---
+@version: [current]
+@description: Alert messages.
+@final: 1
+@parent: genome
+@interface:
+- .countable
+- .iterator-aggregate
+- .json-serializable
+- .serializable
+@use:
+  '.\lot\x\alert': 1
+...

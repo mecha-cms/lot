@@ -24,7 +24,7 @@ if ($_pages = File::explore([$_path, 'page'], true)) {
             $_comment = new Comment($_comment);
             echo '<li>';
             echo '<p>' . HTML::a($_comment->author, $_comment->url, false, ['rel' => 'nofollow']) . '</p>';
-            echo '<p>' . To::snippet($_comment->content) . '</p>';
+            echo '<p>' . To::excerpt($_comment->content) . '</p>';
             echo '<p><em>' . $_comment->time->F2 . '</em></p>';
             echo '</li>';
         }

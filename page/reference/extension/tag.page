@@ -5,42 +5,6 @@ description: Page tags.
 
 This extension activates the tagging feature by utilizing the `kind` property on the page. This extension will also add several new routes such as `http://127.0.0.1/blog/tag/slug` on every page to allow users to list all pages in the current folder by a tag.
 
-### Constant
-
-This extension will add a folder called `tag` in the `.\lot` folder, which will also automatically add a constant named `TAG`.
-
-~~~ .php
-TAG
-~~~
-
-### Method
-
-There are some methods added to the default [classes][link:../class]:
-
-#### Tags
-
-~~~ .xmp.php
-Get::tags(string $folder = TAG, …, $sort = [1, 'id'], …): Anemon;
-~~~
-
-Function arguments are the same as function [`Get::pages()`][link:../class/get/pages], except the `$folder` parameter that uses `TAG` [constant][link:../constant] value by default, and the `$sort` parameter that uses `id` as the default sort key instead of `time`.
-
-#### From
-
-~~~ .xmp.php
-From::tag($slug, $fail = false): int | $fail;
-~~~
-
-Get tag ID from the tag slug.
-
-#### To
-
-~~~ .xmp.php
-To::tag($id, $fail = false): string | $fail;
-~~~
-
-Get tag slug from the tag ID.
-
 ### Working with Tags
 
 [Panel][link:panel] extension can help you to automate everything. But, if you have to, you can still make this extension work without the GUI feature. As the panel extension was created just to convert the generic files and folders interface into a rich graphical user interface. Just like the comparison between _Command Prompt_ appearance to the desktop _Windows_ appearance.
@@ -52,35 +16,35 @@ Before we start, you need to understand how this extension works.
 **First**, know that this extension will add `query` and `tags` properties to the page only if the page contains `kind` property that is not empty.
 
 ~~~ .php
-$page = [
+$page = Page::__set_state([
     …
     …
     'kind' => [1, 2, 3], // [^1]
     'query' => ['foo', 'bar', 'baz'], // [^2]
-    'tags' => [ // [^3]
-        'foo' => [
+    'tags' => Tags::__set_state([ // [^3]
+        'foo' => Tag::__set_state([
             …
             …
             'id' => 1,
             'slug' => 'foo',
             'url' => 'http://127.0.0.1/tag/foo'
-        ],
-        'bar' => [
+        ]),
+        'bar' => Tag::__set_state([
             …
             …
             'id' => 2,
             'slug' => 'bar',
             'url' => 'http://127.0.0.1/tag/bar'
-        ],
-        'baz' => [
+        ]),
+        'baz' => Tag::__set_state([
             …
             …
             'id' => 3,
             'slug' => 'baz',
             'url' => 'http://127.0.0.1/tag/baz'
-        ]
-    ]
-];
+        ])
+    ])
+]);
 
 // [^1]: These numbers will be used as the tag ID.
 // [^2]: These queries are generated automatically based on the available tags.
@@ -89,20 +53,21 @@ $page = [
 
 #### File Structure
 
-**Second**, writing a tag file is no different than writing a page file. The only difference is that you must write the `id` property separately from the page.
+**Second**, writing a tag file is the same as writing a page file. The only difference is that you must write the `id` property separately from the page.
 
 ~~~ .txt
-lot\
-└── tag\
-    ├── bar\
-    │   └── id.data
-    ├── baz\
-    │   └── id.data
-    ├── foo\
-    │   └── id.data
-    ├── bar.page
-    ├── baz.page
-    └── foo.page
+.\
+└── lot\
+    └── tag\
+        ├── bar\
+        │   └── id.data
+        ├── baz\
+        │   └── id.data
+        ├── foo\
+        │   └── id.data
+        ├── bar.page
+        ├── baz.page
+        └── foo.page
 ~~~
 
 #### File Content
@@ -125,17 +90,18 @@ Long description about this tag.
 **Fourth**, to connect between tags with the current page, create a `kind.data` file in the corresponding folder, containing a list of tag’s ID written in a valid JSON format:
 
 ~~~ .txt
-lot\
-└── page\
-    ├── test-page\
-    │   └── kind.data
-    └── test-page.page
+.\
+└── lot\
+    └── page\
+        ├── test-page\
+        │   └── kind.data
+        └── test-page.page
 ~~~
 
 Example content of `kind.data` file:
 
 ~~~ .json
-[1,2,3]
+[1, 2, 3]
 ~~~
 
 You can actually insert the `kind` property on the page header, but this method is a [little inefficient][link:../../article/migration] in terms of performance:
@@ -159,11 +125,9 @@ echo implode(', ', $page->query);
 ~~~
 
 ~~~ .php
-$tags = [];
-foreach ((array) $page->tags as $v) {
-    $tags[] = HTML::a($v->title, $v->url);
-}
-echo implode(', ', $tags);
+echo $page->tags->map(function($tag) {
+    return '<a href="' . $tag->url . '" rel="tag">' . $tag->title . '</a>';
+});
 ~~~
 
  - [link:../../snippet/list-tag]
@@ -175,12 +139,10 @@ echo implode(', ', $tags);
 
 These page conditional statements are available:
 
- - `$site->has('tags')` → Return `true` if current page has at least one tag.
  - `$site->is('tags')` → `Return `true` if current items view is a tags view and is not empty.
 
 ### Class
 
 These HTML classes will be added to the `<html>` element that has a `class` attribute:
 
- - `has-tags` → Will be added if current page has at least one tag.
  - `is-tags` → Will be added if current items view is a tags view and is not empty.

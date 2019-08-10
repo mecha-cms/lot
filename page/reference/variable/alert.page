@@ -1,0 +1,13 @@
+---
+@version: [current]
+@description: Return the stored alert messages if any.
+@example: |
+  <form>
+    <?php echo $alert; ?>
+    …
+    …
+  </form>
+@example-language: 'html'
+...
+
+Added by the [alert][link:../extension/alert] extension.

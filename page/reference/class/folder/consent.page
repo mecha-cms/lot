@@ -1,6 +1,0 @@
----
-@version: [2, current]
-@description: Set folder permission.
-...
-
-Inherit to [link:../file/consent].

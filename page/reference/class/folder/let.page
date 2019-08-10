@@ -1,0 +1,18 @@
+---
+@version: [2, current]
+@description: Delete a folder or files in a folder.
+@lot:
+- void
+- string $file
+- array $files
+@example: |
+  // Delete folder and it’s files and folders
+  (new Folder('.\path\to\folder'))->let();
+  // Delete `file-1.txt` in the folder
+  (new Folder('.\path\to\folder'))->let('file-1.txt');
+  // Delete `file-1.txt` and `file-2.txt` in the folder
+  (new Folder('.\path\to\folder'))->let([
+      'file-1.txt',
+      'file-2.txt'
+  ]);
+...

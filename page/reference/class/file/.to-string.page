@@ -2,8 +2,7 @@
 @version: [2, current]
 @description: Treat `File` object as string.
 @example: |
-  $file = new File('.\path\to\file.txt');
-  echo $file;
+  echo new File('.\path\to\file.txt');
 @result: |
   '.\path\to\file.txt'
 ...

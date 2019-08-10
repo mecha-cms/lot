@@ -1,4 +1,8 @@
 ---
-@version: [2, current]
+@version: [current]
 @description: This is an alias for [link:block].
+@source:
+  lot:
+    x:
+      block: 0
 ...

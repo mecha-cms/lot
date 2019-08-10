@@ -235,7 +235,7 @@ OMG I'm so gay.
 
 ##### Basic
 
-All HTML tags will be removed except inline HTML tags listed in the `HTML_WISE_I` constant. Two line break will be treated as a paragraph, single line break will be treated as a hard break. A quote can contain text with a pair of straight double quotation mark for aesthetics or not at all. The first straight double quotation mark will be replaced by `&#x201C;` and the second straight double quotation mark will be replaced by `&#x201D;`. A pair of straight single quotation mark will be replaced by `&#x2018;` and `&#x2019;`, the rest will be replaced by `&#x2019;`.
+All HTML tags will be removed except inline HTML tags listed in the `HTML_FORMAT_INLINE` constant. Two line break will be treated as a paragraph, single line break will be treated as a hard break. A quote can contain text with a pair of straight double quotation mark for aesthetics or not at all. The first straight double quotation mark will be replaced by `&#x201C;` and the second straight double quotation mark will be replaced by `&#x201D;`. A pair of straight single quotation mark will be replaced by `&#x2018;` and `&#x2019;`, the rest will be replaced by `&#x2019;`.
 
 ~~~ .yaml
 ---

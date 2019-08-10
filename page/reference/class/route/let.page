@@ -1,0 +1,16 @@
+---
+@version: [2, current]
+@description: Remove a route.
+@lot:
+- void
+- string $id
+- array $id
+@static: 1
+@example: |
+  // Remove all route(s)
+  Route::let();
+  // Remove `blog/:slug` route
+  Route::let('blog/:slug');
+  // Remove `blog` and `blog/:slug` route
+  Route::let(['blog', 'blog/:slug']);
+...

@@ -23,16 +23,17 @@ Lorem ipsum dolor sit amet.
 
 ### Local Avatars
 
-Using email address as the avatar ID, you can create local avatar for each users by storing them in the `.\lot\asset` folder.
+Using e-mail address as the avatar ID, you can create local avatar for each users by storing them in the `.\lot\asset` folder.
 
 ~~~ .txt
-lot\
-└── asset\
-    └── png\
-        └── -avatar
-            ├── 7328fddefd53de471baeb6e2b764f78a.png ← email@domain.com
-            ├── ac1514317918b7810594431832d3adae.png ← …
-            └── 459b9511a7f650ebd327889c45cc4e9b.png ← …
+.\
+└── lot\
+    └── asset\
+        └── png\
+            └── -avatar
+                ├── 7328fddefd53de471baeb6e2b764f78a.png ← email@domain.com
+                ├── ac1514317918b7810594431832d3adae.png ← …
+                └── 459b9511a7f650ebd327889c45cc4e9b.png ← …
 ~~~
 
 The hook:

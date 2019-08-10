@@ -1,0 +1,23 @@
+---
+@version: [2, current]
+@description: Remove array value recursively.
+@lot: string $key, string $separator = '.'
+@example: |
+  $array = new Anemon([
+      'foo' => 1,
+      'bar' => [
+          'baz' => 2,
+          'qux' => 3
+      ]
+  ]);
+
+  $array->let('bar.baz');
+  $array->let('bar.wut');
+@result: |
+  $array = Anemon::__set_state([
+      'foo' => 1,
+      'bar' => [
+          'qux' => 3
+      ]
+  ]);
+...

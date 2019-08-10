@@ -14,10 +14,10 @@ And today is 2018, I see that PHP development is so tempting that I can’t affo
 Back to the topic. Most of the plans are simply to change all ternary operator syntax that previously used to handle missing array variables into the null coalescing operator syntax:
 
 ~~~ .php
-// before
+// Before
 $foo = isset($bar['baz']) ? $bar['baz'] : $qux;
 
-// after
+// After
 $foo = $bar['baz'] ?? $qux;
 ~~~
 
@@ -40,7 +40,7 @@ I’m also planning to apply `$this` scope to the static functions. It is now po
 
 ~~~ .php
 class Foo extends Genome {
-    private $bar = 1;
+    protected $bar = 1;
 }
 
 Foo::_('baz', function() {
@@ -54,14 +54,14 @@ By using the [`Closure::fromCallable`](http://php.net/manual/en/closure.fromcall
 
 ~~~ .php
 class Foo extends Genome {
-    private $bar = 1;
+    protected $bar = 1;
 }
 
-function fn_genome_bar() {
+function get_bar() {
     echo $this->bar;
 }
 
-Foo::_('baz', 'fn_genome_bar');
+Foo::_('baz', 'get_bar');
 
 (new Foo)->baz(); // `1`
 ~~~

@@ -5,11 +5,11 @@
 @example: |
   $date = new Date('[[e]]echo date('Y-m-d H:i:s');[[/e]]');
 
-  $A = $date->pattern('%h%:%m%:%s% %N%');
-  $B = $date->to('UTC')->pattern('%h%:%m%:%s% %N%');
-  $C = $B->parent->pattern('%h%:%m%:%s% %N%');
+  $A = $date->format('h:i:s A');
+  $B = $date->to('UTC')->format('h:i:s A');
+  $C = $B->parent->format('h:i:s A');
 @result: |
-  $A = '[[e]]echo (new Date(date('Y-m-d H:i:s')))->pattern('%h%:%m%:%s% %N%');[[/e]]';
-  $B = '[[e]]echo (new Date(date('Y-m-d H:i:s')))->to('UTC')->pattern('%h%:%m%:%s% %N%');[[/e]]';
-  $C = '[[e]]echo (new Date(date('Y-m-d H:i:s')))->to('UTC')->parent->pattern('%h%:%m%:%s% %N%');[[/e]]';
+  $A = '[[e]]echo (new Date(date('Y-m-d H:i:s')))->format('h:i:s A');[[/e]]';
+  $B = '[[e]]echo (new Date(date('Y-m-d H:i:s')))->to('UTC')->format('h:i:s A');[[/e]]';
+  $C = '[[e]]echo (new Date(date('Y-m-d H:i:s')))->to('UTC')->parent->format('h:i:s A');[[/e]]';
 ...

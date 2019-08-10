@@ -1,0 +1,9 @@
+---
+@version: [current]
+@description: Get current folder extension.
+@lot: void
+@example: |
+  echo (new Folder('.\path\to\folder.a.b.c'))->x;
+@result: |
+  null
+...

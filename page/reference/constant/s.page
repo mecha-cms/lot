@@ -1,0 +1,12 @@
+---
+@version: [2, current]
+@description: Return an empty space character.
+@example: |
+  echo S;
+@result: |
+  '‌'
+...
+
+### In Depth
+
+ - [link:/article/case-block-escape]

@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Working with users.
+@parent: page
+
+@use:
+  '.\lot\x\user': 1
+...

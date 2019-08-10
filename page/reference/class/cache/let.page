@@ -1,0 +1,16 @@
+---
+@version: [current]
+@description: Delete cache file.
+@lot:
+- void
+- string $id
+- array $id
+@static: 1
+@example: |
+  // Delete all cache(s)
+  Cache::let();
+  // Delete single cache
+  Cache::let('foo');
+  // Delete multiple cache
+  Cache::let(['foo', 'bar', 'baz']);
+...

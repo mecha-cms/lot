@@ -142,11 +142,11 @@ First, we need to determine our base URL using the [route][link:../reference/cla
 ~~~ .php
 Route::set('fonts.css', function() {
     echo 'It works!';
-    return;
+    exit;
 });
 ~~~
 
-Add the code snippet above to the `index.php` file of your active shield, then visit `http://127.0.0.1/fonts.css` (assuming you are in local mode), you should get a result like this:
+Add the code snippet above to the `index.php` file of your active skin, then visit `http://127.0.0.1/fonts.css` (assuming you are in local mode), you should get a result like this:
 
 ![2](%{asset}%/png/article/case-google-font/2.png)
 
@@ -167,11 +167,11 @@ To make the CSS code work, you will need to specify the appropriate MIME type fo
 ~~~ .php
 Route::set('fonts.css', function() {
     // Set proper MIME type for CSS file
-    HTTP::type('text/css', 'utf-8');
+    $this->type('text/css', ['charset' => 'utf-8']);
     // echo 'It works!';
     // Generate CSS code that will set a random color to the `<body>` text
     echo 'body{color:#' . substr(md5($_SERVER['REQUEST_TIME']), 0, 6) . '}';
-    return;
+    exit;
 });
 ~~~
 
@@ -181,7 +181,7 @@ With the dynamic CSS code above, you should see that the text color of the page 
 
 ### File Structure
 
-Make sure that you have the font files with varying weight, then place them into `.\lot\asset\woff\<family>` where `<family>` is the font family name that you have set to the parameter URL. In this case, I demonstrate it using fonts named [Roboto](https://fonts.google.com/specimen/Roboto) and [Open Sans](https://fonts.google.com/specimen/Open+Sans).
+Make sure that you have the font files with varying weight, then place them into `.\lot\asset\woff\:font` where `:font` is the font family name that you have set to the parameter URL. In this case, I demonstrate it using fonts named [Roboto](https://fonts.google.com/specimen/Roboto) and [Open Sans](https://fonts.google.com/specimen/Open+Sans).
 
 ~~~ .txt
 .\
@@ -208,7 +208,7 @@ Now let’s get back to the route. As I’ve said before, the Google Fonts API a
 ~~~ .php
 Route::set('fonts.css', function() {
     // Set proper MIME type for CSS file
-    HTTP::type('text/css', 'utf-8');
+    $this->type('text/css', ['charset' => 'utf-8']);
     // Example: `?family=Roboto|Open+Sans`
     if ($fonts = HTTP::get('family')) {
         $out = ""; // Prepare the output…
@@ -217,7 +217,7 @@ Route::set('fonts.css', function() {
             // Do something with `$font`…
         }
     }
-    return;
+    exit;
 });
 ~~~
 
@@ -226,7 +226,7 @@ In the loop above, we should have each font family name stored in variable `$fon
 ~~~ .php
 Route::set('fonts.css', function() {
     // Set proper MIME type for CSS file
-    HTTP::type('text/css', 'utf-8');
+    $this->type('text/css', ['charset' => 'utf-8']);
     // Example: `?family=Roboto|Open+Sans`
     if ($fonts = HTTP::get('family')) {
         $out = ""; // Prepare the output…
@@ -242,7 +242,7 @@ Route::set('fonts.css', function() {
             }
         }
     }
-    return;
+    exit;
 });
 ~~~
 
@@ -251,7 +251,7 @@ Now, assume that the existing style is set to more than one. All of the font fil
 ~~~ .php
 Route::set('fonts.css', function() {
     // Set proper MIME type for CSS file
-    HTTP::type('text/css', 'utf-8');
+    $this->type('text/css', ['charset' => 'utf-8'])
     // Example: `?family=Roboto|Open+Sans`
     if ($fonts = HTTP::get('family')) {
         $out = ""; // Prepare the output…
@@ -274,7 +274,7 @@ Route::set('fonts.css', function() {
             }
         }
     }
-    return;
+    exit;
 });
 ~~~
 
@@ -283,7 +283,7 @@ The last step is to create a `@font-face` rules based on the existing data, then
 ~~~ .php
 Route::set('fonts.css', function() {
     // Set proper MIME type for CSS file
-    HTTP::type('text/css', 'utf-8');
+    $this->type('text/css', ['charset' => 'utf-8'])
     // Example: `?family=Roboto|Open+Sans`
     if ($fonts = HTTP::get('family')) {
         $out = ""; // Prepare the output…
@@ -320,8 +320,9 @@ Route::set('fonts.css', function() {
         }
         // Output the result and remove the first two line-break of the `@font-face`
         echo substr($out, 2);
+        exit;
     }
-    return;
+    exit;
 });
 ~~~
 

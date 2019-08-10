@@ -9,7 +9,7 @@ Did you know that our [CKEditor][link:../reference/extension/c-k-editor] extensi
 .\lot\asset\jpg\picture-copy-1.jpg
 ~~~
 
-The default image upload path setting can be found in the configuration file. Open `.\lot\extend\c-k-editor\lot\state\config.php` to customize:
+The default image upload path setting can be found in the configuration file. Open `.\lot\x\c-k-editor\lot\state\config.php` to customize:
 
 ~~~ .php
 <?php

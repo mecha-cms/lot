@@ -1,0 +1,4 @@
+---
+@version: [current]
+@description: Short function for [`Alert::info()`][link:../class/alert/.call-static].
+...

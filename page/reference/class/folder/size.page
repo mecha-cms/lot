@@ -4,7 +4,7 @@
 @lot: string $folder, $unit = null, $prec = 2
 @static: 1
 @example: |
-  Folder::size('.\path\to\folder');
+  (new Folder('.\path\to\folder'))->size;
 ...
 
 [connect:../file/size]

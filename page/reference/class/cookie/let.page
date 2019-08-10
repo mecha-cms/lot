@@ -1,0 +1,16 @@
+---
+@version: [current]
+@description: Remove a cookie.
+@lot:
+- void
+- string $key
+- array $keys
+@static: 1
+@example: |
+  // Remove all cookie(s)
+  Cookie::let();
+  // Remove `foo` cookie
+  Cookie::let('foo');
+  // Remove `foo` and `bar` cookie
+  Cookie::let(['foo', 'bar']);
+...

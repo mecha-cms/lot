@@ -1,0 +1,7 @@
+---
+@version: [current]
+@description: Get current public folder URL.
+@lot: void
+@example: |
+  echo (new Folder('.\path\to\folder'))->URL;
+...

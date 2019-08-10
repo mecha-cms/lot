@@ -1,0 +1,19 @@
+---
+@version: [2, current]
+@description: Join array value.
+@lot: string $separator = ', ', $filter = true
+@example: |
+  $array = Anemon::from([
+      'foo' => 0,
+      'bar' => 1,
+      'baz' => 2,
+      'qux' => 3
+  ]);
+
+  $A = $array('.');
+  $B = $array('/');
+@example-description: It is the same as [`join`][link:join] but it will filters out items with `null` and `false` value and items with key prefixed by an `_`.
+@result: |
+  $A = '0.1.2.3';
+  $B = '0/1/2/3';
+...

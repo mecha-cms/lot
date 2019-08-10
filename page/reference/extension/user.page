@@ -18,7 +18,7 @@ And the following is the content of the file:
 
 ~~~ .yaml
 ---
-'$': Taufik Nurrohman
+author: Taufik Nurrohman
 type: Markdown
 status: 1
 ...
@@ -36,53 +36,11 @@ http://127.0.0.1/user
 
 > **Note:** If `.\lot\user\ta-tau-taufik\pass.data` file does not exist, then the password field will function as a password generator. You can type any password in it and `pass.data` file will be created automatically.
 
-### Constant
-
-This extension will add a folder called `user` in the `.\lot` folder, which will also automatically add a constant named `USER`.
-
-~~~ .php
-USER
-~~~
-
-### Method
-
-There are some methods added to the default [classes][link:../class]:
-
-#### Is User
-
-~~~ .xmp.php
-Is::user(string $key = null, $fail = false): User | $fail;
-~~~
-
-**Example:**
-
-Check whether a user is logged in:
-
-~~~ .php
-if (Is::user()) { … }
-~~~
-
-Check whether user `@‌ta-tau-taufik` is logged in:
-
-~~~ .php
-if (Is::user('ta-tau-taufik')) { … }
-~~~
-
-#### Get Users
-
-~~~ .xmp.php
-Get::users(string $folder = USER, …, $sort = [1, 'path'], …): Anemon;
-~~~
-
-Function arguments are the same as function [`Get::pages()`][link:../class/get/pages], except the `$folder` parameter that uses `USER` [constant][link:../constant] value by default, and the `$sort` parameter that uses `path` as the default sort key instead of `time`.
-
----
-
 ### Result
 
 #### Without User Extension
 
-The page in `.\lot\page\test-page.page`:
+The page in `.\lot\page\lorem-ipsum.page`:
 
 ~~~ .yaml
 ---
@@ -101,7 +59,7 @@ To get the author data:
 
 #### With User Extension
 
-The page in `.\lot\page\test-page.page`:
+The page in `.\lot\page\lorem-ipsum.page`:
 
 ~~~ .yaml
 ---
@@ -116,7 +74,7 @@ The user file in `.\lot\user\ta-tau-taufik.page`:
 
 ~~~ .yaml
 ---
-'$': Taufik Nurrohman
+author: Taufik Nurrohman
 link: 'http://example.com'
 ...
 
@@ -126,7 +84,7 @@ Page content.
 To get the author data:
 
 ~~~ .html
-<a href="<?php echo $page->author->link; ?>" id="<?php echo $page->author->key; ?>">
+<a href="<?php echo $page->author->link; ?>">
   <?php echo $page->author; ?>
 </a>
 ~~~

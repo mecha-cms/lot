@@ -3,7 +3,7 @@ title: Asset Block
 description: Maintainable asset URL in page content.
 ...
 
-Using [blocks][link:../reference/extension/block] in place of the base URL will make the asset URL in your page content becomes maintainable. So that, if another day you want to migrate the asset files to a different domain, you can just replace this block value instead of editing the whole pages to update the old asset URL.
+Using [blocks][link:../reference/extension/block] in place of the base URL will make the asset URL in your page content becomes maintainable. So that, if the other day you want to migrate the asset files to a different domain, you can just replace this block value instead of editing the whole pages to update the old asset URL.
 
 ~~~ .php
 // Set a block parser with ID `asset`
@@ -30,9 +30,9 @@ type: HTML
 >
 > ~~~ .php
 > Block::set('asset', function() use($url) {
->     if ($url->host === 'localhost') {
+>     if ($url->host === '127.0.0.1') {
 >         return = To::URL(ASSET);
 >     }
->     return 'https://cdn.%{url.host}%/asset';
+>     return 'https://cdn.example.com/asset';
 > });
 ~~~

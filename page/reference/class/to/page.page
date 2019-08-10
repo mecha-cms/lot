@@ -1,0 +1,14 @@
+---
+@version: [current]
+@description: Convert array into page content.
+@lot: array $in
+@static: 1
+@example: |
+  echo To::page([
+      'title' => 'Page Title',
+      'description' => 'Page description.',
+      'content' => 'Page content.'
+  ]);
+@use:
+  '.\lot\x\page': 1
+...

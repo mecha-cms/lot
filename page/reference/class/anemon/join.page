@@ -1,0 +1,18 @@
+---
+@version: [current]
+@description: Join array values.
+@lot: string $separator = ', '
+@example: |
+  $array = Anemon::from([
+      'foo' => 0,
+      'bar' => 1,
+      'baz' => 2,
+      'qux' => 3
+  ]);
+
+  $A = $array->join('.');
+  $B = $array->join('/');
+@result: |
+  $A = '0.1.2.3';
+  $B = '0/1/2/3';
+...

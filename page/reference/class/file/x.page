@@ -2,4 +2,8 @@
 @version: [current]
 @description: Get current file extension.
 @lot: void
+@example: |
+  $A = (new File('.\path\to\file.txt'))->x;
+@result: |
+  $A = 'txt';
 ...

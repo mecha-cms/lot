@@ -13,11 +13,11 @@
       'qux' => 3
   ];
 
-  $A = Anemon::eat($array)->shake()->vomit();
-  $B = Anemon::eat($array)->shake(false)->vomit();
-  $C = Anemon::eat($array)->shake(function($a) {
+  $A = Anemon::from($array)->shake()->get();
+  $B = Anemon::from($array)->shake(false)->get();
+  $C = Anemon::from($array)->shake(function($a) {
       return concat([array_pop($a), array_pop($a)], $a);
-  })->vomit();
+  })->get();
 @result: |
   $A = [
       'baz' => 2,

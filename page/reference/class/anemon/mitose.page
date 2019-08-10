@@ -1,6 +1,6 @@
 ---
 @version: [current]
-@description: Create new instance without reference it to a variable.
+@description: Create a new instance without reference it to a variable.
 @example: |
   $A = new Anemon(['foo', 'bar', 'baz']);
 
@@ -20,4 +20,4 @@
   ]
 ...
 
-The cloned anemon instances will have a reference to its original instance in it’s `parent` property.
+The cloned instances will have a reference to its original instance through it’s `parent` property.

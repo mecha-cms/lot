@@ -33,7 +33,7 @@
       ]
   ];
 
-  $A = Anemon::eat($array)->find(function($v, $k) {
+  $A = Anemon::from($array)->find(function($v, $k) {
       return $v['value'] === 'A';
   });
 

@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: Return the plugin folder path.
-@example: |
-  echo PLUGIN;
-@result: |
-  '.\www\directory\lot\extend\plugin\lot\worker'
-...

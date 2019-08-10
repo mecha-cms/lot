@@ -7,4 +7,6 @@ Extension | Plugin
 --------- | ------
 Stand alone. | Is part of the extension.
 Add functionality. | Apply the added functionality.
-`lot\extend\:extension` | `lot\extend\plugin\lot\worker\:plugin`
+`.\lot\x\:name` | `.\lot\plugin\:name`
+
+> **Note:** Since version `2.2.0`, the _plugin_ term is removed and now they are simply named _extension_.

@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: Set MIME type in HTTP headers.
-@lot: string $mime, string $charset = null
-@static: 1
-@example: |
-  HTTP::type('text/html');
-...

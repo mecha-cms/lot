@@ -2,4 +2,8 @@
 @version: [current]
 @description: Get current file directory.
 @lot: int $i = 1
+@example: |
+  $A = (new File('.\path\to\file.txt'))->directory;
+@result: |
+  $A = '.\path\to';
 ...

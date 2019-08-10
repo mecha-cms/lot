@@ -8,7 +8,7 @@ description: Set your own document title separator.
 **Example:**
 
 ~~~ .html
-<title><?php echo $site->trace; ?></title>
+<title><?php echo $t->reverse; ?></title>
 ~~~
 
 **Result:**
@@ -22,7 +22,7 @@ description: Set your own document title separator.
 **Example:**
 
 ~~~ .html
-<title><?php echo $site->trace(' | '); ?></title>
+<title><?php echo $t->reverse->join(' | '); ?></title>
 ~~~
 
 **Result:**

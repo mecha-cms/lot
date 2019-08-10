@@ -1,10 +1,12 @@
 ---
 @version: [1, 2, current]
-@description: Update a file.
+@description: Save a file.
 @lot:
 - void
-- string $consent
-- int $consent
+- int $seal
+- string $seal
 @example: |
-  File::open('.\path\to\file.txt')->put('some text')->save();
+  $file = new File('.\path\to\file.txt');
+  $file->set('some text');
+  $file->save(0600);
 ...

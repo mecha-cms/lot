@@ -1,4 +1,4 @@
 ---
 @version: [current]
-@description: Short function for [`Get::pages()`][link:../class/get/pages].
+@description: Short function for [`Pages::from()`][link:../class/pages/from].
 ...

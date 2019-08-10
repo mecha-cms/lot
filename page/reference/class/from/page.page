@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Convert page file content into array.
+@lot: string $in
+@static: 1
+@example: |
+  $data = From::page(content(PAGE . DS . 'about.page'));
+@use:
+  '.\lot\x\page': 1
+...

@@ -3,9 +3,9 @@ title: CKEditor’s SCAYT
 description: How to enable the web spell checker feature in CKEditor extension.
 ...
 
-First, download the package [here](http://ckeditor.com/addon/scayt), then put the `scayt` foder to `lot\extend\c-k-editor\lot\worker\ckeditor\plugins`.
+First, download the package [here](http://ckeditor.com/addon/scayt), then put the `scayt` foder to `.\lot\x\c-k-editor\engine\r\ckeditor\plugins`.
 
-Open `lot\extend\c-k-editor\lot\state\config.php` then add `Scayt` to the default `toolbar` data to insert the tool button:
+Open `.\lot\x\c-k-editor\lot\state\config.php` then add `Scayt` to the default `toolbar` data to insert the tool button:
 
 ~~~ .php
 'toolbar' => [

@@ -1,5 +1,11 @@
 ---
 @version: [2, current]
 @description: Working with folders.
-@parent: file
+@parent: genome
 ...
+
+Create a new folder or open folder if it already exists:
+
+~~~ .php
+$folder = new Folder('.\path\to\folder');
+~~~

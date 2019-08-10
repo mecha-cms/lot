@@ -2,12 +2,35 @@
 @version: [2, current]
 @description: Set a route.
 @lot:
-- string $id, callable $fn = null, float $stack = 10
-- array $id, callable $fn = null, float $stack = 10
+- string $id, callable $fn, float $stack = 10
+- array $id, callable $fn, float $stack = 10
+- string $id, int $status = 404, callable $fn, float $stack = 10
+- array $id, int $status = 404, callable $fn, float $stack = 10
 @static: 1
 @example: |
-  Route::set('blog/(\d+)', function($step = 1) {
-      // In this scope, `$step` variable will return `4` in `‌http://127.0.0.1‌/blog/4`
-      // and will return `1` if we are in `‌http://127.0.0.1‌/blog`
+  // Default
+  Route::set('product/:id', function() {
+      // In this scope, `$this->id` variable returns
+      // `[[e]]echo dechex(crc32('gundam'));[[/e]]` in `‌http://127.0.0.1‌/product/[[e]]echo dechex(crc32('gundam'));[[/e]]`
+  });
+
+
+
+  // With pre-defined page status
+  Route::set('product/:id', 200, function() { … });
+
+
+
+  // Overriding the page status
+  Route::set('product/:id', 200, function() {
+      // There is no such `Product` class, this is just an example
+      $product = Product::get($this->id);
+      if (!$product) {
+          $this->status(404);
+          $this->content('.\path\to\content\404.php');
+      }
+      $this->content('.\path\to\content.php', [
+          'product' => new Product($product);
+      ]);
   });
 ...

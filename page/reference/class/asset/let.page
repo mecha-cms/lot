@@ -1,0 +1,12 @@
+---
+@version: [current]
+@description: Remove assets from the hooks storage.
+@lot:
+- void
+- string $path
+- array $path
+@static: 1
+@example: |
+  Asset::let('.\lot\asset\css\style-2.css');
+@example-description: Remove `asset-2.css` from the hooks storage.
+...

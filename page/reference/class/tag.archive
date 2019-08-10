@@ -1,0 +1,7 @@
+---
+@version: [2, current]
+@description: Working with tags.
+@parent: page
+@use:
+  '.\lot\x\tag': 1
+...

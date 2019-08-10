@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Get current folder name.
+@lot:
+- void
+@example: |
+  echo (new Folder('.\path\to\folder'))->name;
+@result: |
+  'folder'
+...

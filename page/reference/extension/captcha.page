@@ -111,7 +111,7 @@ Parameter | Description
 `$width` | Image width in `em` relative to `$size`.
 `$height` | Image height in `em` relative to `$size`.
 `$text` | Text length.
-`$font` | True type font file name without the file extension, stored in `lot\asset\ttf`.
+`$font` | True type font file name without the file extension, stored in `.\lot\x\captcha\lot\asset\ttf`.
 
 > **Note:** I have removed some of the glyphs in the font to make it only contains `[a-zA-Z0-9]` to reduce the file size.
 

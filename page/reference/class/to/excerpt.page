@@ -1,0 +1,14 @@
+---
+title: `$to::excerpt()`
+description: Convert string input into excerpt text.
+...
+
+~~~ .php.xmp
+To::excerpt($in, $html = true, $x = [200, '&#x2026;']);
+~~~
+
+**Example:**
+
+~~~ .php
+$test = To::excerpt('foo bar baz qux');
+~~~

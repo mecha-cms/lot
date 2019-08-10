@@ -1,7 +1,7 @@
 ---
 @version: [2, current]
 @description: Format date input using native PHP date formatter.
-@lot: string $format = DATE_WISE
+@lot: string $format = 'Y-m-d H:i:s'
 @example: |
   $date = (new Date('[[e]]echo date('Y-m-d H:i:s');[[/e]]'))->format('c');
 @result: |

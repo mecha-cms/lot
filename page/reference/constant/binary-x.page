@@ -1,8 +1,0 @@
----
-@version: [current]
-@description: Return binary file extensions (any files that cannot be edited by text editor applications).
-@example: |
-  echo BINARY_X;
-@result: |
-  'aif,mid,mov,mpa,mp3,m3u,m4a,ogg,wav,wma,cbr,gz,iso,pkg,rar,rpm,tar,zip,zipx,7z,avi,flv,mkv,mov,mpg,mp4,m4a,m4v,ogv,rm,swf,vob,webm,wmv,3gp,3g2,doc,docx,odt,pdf,ppt,pptx,rtf,xlr,xls,xlsx'
-...

@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: Public variables.
-@final: 1
-@parent: genome
-...
-
-[connect:../variable]

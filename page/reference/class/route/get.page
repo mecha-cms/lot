@@ -8,7 +8,7 @@
 @example: |
   test(
       Route::get('blog'),
-      Route::get('blog/(\d+)'),
+      Route::get('blog/:slug'),
       Route::get('foo/bar')
   );
 ...

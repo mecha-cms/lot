@@ -3,11 +3,11 @@ title: Custom Home Page
 description: Replace the default home page with a custom one.
 ...
 
-The easiest way to replace the default home page appearance is to use the built-in feature. By default, home page appearance will use `.\lot\page\index.page` file as the page content. It is because the default configuration set the home page path as `index`. If you want to change the home page path, go to `.\lot\extend\page\lot\state\config.php` then replace the `path` value with the desired page path. It can be anything as long as it is exists:
+The easiest way to replace the default home page appearance is to use the built-in feature. By default, home page appearance will use `.\lot\page\.archive` file as the page content. It is because the default configuration set the home page path as `""`. If you want to change the home page path, go to `.\lot\x\page\lot\state\config.php` then replace the `path` value with the desired page path. It can be anything as long as it is exists:
 
 ~~~ .php
 [
-    'path' => 'index', // ← this
+    'path' => 'article', // ← this
     'page' => [
         'sort' => [-1, 'path'],
         'chunk' => 5
@@ -15,4 +15,4 @@ The easiest way to replace the default home page appearance is to use the built-
 ]
 ~~~
 
-You should be automatically redirected to the home page when you go to `http://127.0.0.1/index`.
+You should be automatically redirected to the home page when you go to `http://127.0.0.1/article`.

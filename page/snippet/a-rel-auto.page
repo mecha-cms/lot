@@ -9,7 +9,7 @@ This snippet will automatically add `rel="nofollow"` and `target="_blank"` attri
 Hook::set([
     'page.description',
     'page.content'
-], function($content, array $lot = []) use($url) {
+], function($content) use($url) {
     // Page type is not set or has value other than “HTML”, skip!
     if ($this->type !== 'HTML') {
         return $content;
@@ -19,15 +19,14 @@ Hook::set([
         return $content;
     }
     // Get anchor element(s) from page content…
-    return preg_replace_callback('#<a(?:\s[^<>]*?)?>[\s\S]*?</a>#', function($m) use($url) {
-        $a = HTML::apart($m[0]);
+    return preg_replace_callback('#<a(?:\s[^>]*?)?>[\s\S]*?</a>#', function($m) use($url) {
+        $a = new HTML($m[0]);
         // No `href` attribute, skip!
-        if (!isset($a[2]['href'])) {
+        if (!$href = $a['href'])) {
             return $m[0];
         }
         // Check for external link(s)…
         // Based on <https://github.com/tovic/parsedown-extra-plugin>
-        $href = $a[2]['href'];
         $if = strpos($href, 'https://' . $url->host) === 0 ||
               strpos($href, 'http://' . $url->host) === 0 ||
               strpos($href, '/') === 0 ||
@@ -47,12 +46,12 @@ Hook::set([
         // If external link…
         if (!$if) {
             // Add `rel="nofollow"` attribute
-            $a[2]['rel'] = 'nofollow';
+            $a['rel'] = 'nofollow';
             // Add `target="_blank"` attribute
-            $a[2]['target'] = '_blank';
+            $a['target'] = '_blank';
         }
         // Re-unite the anchor…
-        return HTML::unite($a);
+        return $a;
     }, $content);
     return $content;
 }, 2.1);

@@ -10,11 +10,11 @@
       'qux' => 3
   ];
 
-  $anemon = Anemon::eat($array)->map(function($v) {
+  $anemon = Anemon::from($array)->map(function($v) {
       return 'i:' . $v;
   });
 
-  $A = $anemon->vomit();
+  $A = $anemon->get();
 @result: |
   $A = [
       'foo' => 'i:0',

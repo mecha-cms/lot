@@ -5,7 +5,6 @@
 - void
 - string $separator = '&'
 - string $separator = '&', array $q = []
-@static: 2
 @example: |
   $A = $url->query;
   $B = $url->query();

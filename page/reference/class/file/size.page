@@ -8,6 +8,6 @@
   $A = $file->size; // Automatic (as short as possible)
   $B = $file->size('KB'); // Force to `KB`
 @result: |
-  $A = '[[e]]echo (new File($this->path))->size;[[/e]]';
-  $B = '[[e]]echo (new File($this->path))->size('KB');[[/e]]';
+  $A = '388 B';
+  $B = '0.38 KB';
 ...

@@ -2,7 +2,8 @@
 @version: [2, current]
 @description: Treat `Config` object as string.
 @example: |
-  $config->reset();
+  $config->let();
+
   $config->set('foo', 1);
   $config->set('bar', 2);
 

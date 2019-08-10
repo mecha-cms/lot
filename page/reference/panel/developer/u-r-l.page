@@ -6,15 +6,14 @@ description: Common URL pattern used by this extension.
 ### Path
 
 ~~~ .txt
-<url>/<slug>/::<command>::/<directory>/<path>/<i>
+http://127.0.0.1/:slug/:command/:directory/:path/:i
 ~~~
 
- - `<url>` → The base URL
- - `<slug>` → The `path` value as defined in `.\lot\extend\panel\lot\state\config.php`
- - `<command>` → In general, it can be `s`, `g` or `r` ([info][link:../../article/case-grammar])
- - `<directory>` → The base folder name relative to [`LOT`][link:../constant]
- - `<path>` → Any path that maps to the file/folder in `<directory>`
- - `<i>` → Optional page offset that will replace current file editor to a file browser if exists.
+ - `:slug` → The `path` value as defined in `.\lot\x\panel\lot\state\config.php`
+ - `:command` → In general, it can be `::s::`, `::g::` or `::l::` ([info][link:../../article/case-grammar])
+ - `:directory` → The base folder name relative to [`LOT`][link:../constant/lot]
+ - `:path` → Any path that maps to the file/folder in `:directory`
+ - `:i` → Optional page offset that will replace current file editor to a file browser if exists.
 
 **Example:**
 
@@ -23,25 +22,25 @@ http://127.0.0.1/panel/::s::/asset/css → Create a file in `.\lot\asset\css`
 http://127.0.0.1/panel/::g::/asset/css → Edit `css` folder that is stored in `.\lot\asset`
 http://127.0.0.1/panel/::g::/asset/css/1 → Browse files in `.\lot\asset\css` folder
 http://127.0.0.1/panel/::g::/asset/css/a.css → Edit `a.css` file that is stored in `.\lot\asset\css` folder
-http://127.0.0.1/panel/::r::/asset/css/a.css → Delete `a.css` file that is stored in `.\lot\asset\css` folder
+http://127.0.0.1/panel/::l::/asset/css/a.css → Delete `a.css` file that is stored in `.\lot\asset\css` folder
 ~~~
 
 ### Query
 
 Name | Description
 ---- | -----------
-`f` | Base query to set pre-defined value in a form element by its name.
-`f[name]` | Set pre-defined value in a form element with name `name`.
+`field` | Base query to set pre-defined value in a form element by its name.
+`field[name]` | Set pre-defined value in a form element with name `name`.
 `q` | Search query to filter the files.
 `tab[0]` | Activate tab panel by its name (default to the first tab).
 `token` | Store the current security token.
-`view` | Define the layout view: `file`, `page`, or `data` (default to `file`).
+`type` | Define the layout type: `file`, `page`, or `data` (default to `file`).
 
 **Example:**
 
 ~~~ .txt
-http://127.0.0.1/panel/::s::/page?f[page][title]=Page%20Title&f[page][content]=Page%20content.
-http://127.0.0.1/panel/::g::/page?view=file
+http://127.0.0.1/panel/::s::/page?field[page][title]=Page%20Title&field[page][content]=Page%20content.
+http://127.0.0.1/panel/::g::/page?type=file
 http://127.0.0.1/panel/::g::/page?tab[0]=data
 http://127.0.0.1/panel/::g::/asset?q=css
 ~~~

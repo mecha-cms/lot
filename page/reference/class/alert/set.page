@@ -1,0 +1,14 @@
+---
+@version: [current]
+@description: Store alert message to session.
+@lot: string $type, string $message, array $vars, bool $preserve_case = false
+@example: |
+  Alert::set('error', 'Error message here.');
+...
+
+The engine will first search for an `alert-{$type}-* language property that has the same suffix as the message text and return that property value:
+
+~~~ .php
+// Search for `$language->alertTestSuccess`, otherwise return `success`
+Alert::set('test', 'success');
+~~~

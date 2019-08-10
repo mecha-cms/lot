@@ -1,8 +1,8 @@
 ---
 @version: [2, current]
-@description: Return a placeholder character.
+@description: Return the extension folder path.
 @example: |
   echo X;
 @result: |
-  '␚'
+  '.\www\directory\lot\x'
 ...

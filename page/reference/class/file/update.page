@@ -8,8 +8,10 @@
   $file = new File('.\path\to\file.txt');
 
   $A = $file->update;
-  $B = $file->update('Y/m/d H:i:s');
+  $B = $file->update('%Y-%m-%d %T');
 @result: |
   $A = [[e]]echo $_SERVER['REQUEST_TIME'];[[/e]];
-  $B = '[[e]]echo date('Y/m/d H:i:s', $_SERVER['REQUEST_TIME']);[[/e]]';
+  $B = '[[e]]echo strftime('%Y-%m-%d %T', $_SERVER['REQUEST_TIME']);[[/e]]';
 ...
+
+[connect:../date/.invoke]

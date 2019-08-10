@@ -11,16 +11,16 @@ There are some folders in the `lot` folder, whose the contents will not change:
 
  - `asset`
  - `comment` [^1]
- - `extend`
  - `page`
- - `shield` [^4]
+ - `content` [^4]
  - `state`
  - `tag` [^2]
  - `user` [^3]
+ - `x`
 
 You can change all of the existing files except the contents inside the folders above. Up to whether you want to update the rest of the folders by re-uploading them or by editing each files inside them one by one, or by downloading the static folders I have mentioned above, and then delete the entire site, replace it with the fresh version of Mecha, then put back the downloaded folders to the previous location.
 
 [^1]: [connect:../reference/extension/comment]
 [^2]: [connect:../reference/extension/tag]
 [^3]: [connect:../reference/extension/user]
-[^4]: Except the `document` shield folder.
+[^4]: Except the `document` skin folder.

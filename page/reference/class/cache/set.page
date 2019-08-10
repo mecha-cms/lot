@@ -16,7 +16,7 @@
   });
 @result: |
   $A = ['[[e]]echo date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']);[[/e]]', '.\lot\cache\8c736521.php', 1549080564];
-  $B = ['[[e]]echo date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']);[[/e]]', '.\lot\cache\path\to\file.php.php', 1549080564];
+  $B = ['Content of file.php', '.\lot\cache\path\to\file.php.php', 1549080564];
 @result-note: |
   If `$id` is identified as a valid file, then the generated cache path will be structured like this:
 

@@ -1,8 +1,0 @@
----
-@version: [1, 2, current]
-@description: Open a file.
-@lot: ...$lot
-@static: 1
-@example: |
-  File::open('.\path\to\file.txt');
-...

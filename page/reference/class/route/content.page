@@ -1,0 +1,8 @@
+---
+@version: [current]
+@description: Set response body from ID.
+@example: |
+  Route::set('foo/bar', function() {
+      $this->content('foo/bar/baz');
+  }); // TODO
+...

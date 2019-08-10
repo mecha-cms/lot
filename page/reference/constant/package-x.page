@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: Return package file extensions.
-@example: |
-  echo PACKAGE_X;
-@result: |
-  'cbr,gz,iso,pkg,rar,rpm,tar,zip,zipx,7z'
-...

@@ -4,13 +4,13 @@
 @lot: int $index
 @example: |
   $array = [
-      'foo' => 0,
-      'bar' => 1,
-      'baz' => 2,
-      'qux' => 3
+      'foo' => 10,
+      'bar' => 11,
+      'baz' => 12,
+      'qux' => 13
   ];
 
-  $A = Anemon::eat($array)->key(2);
+  $A = Anemon::from($array)->key(2);
 @result: |
   $A = 'baz';
 ...

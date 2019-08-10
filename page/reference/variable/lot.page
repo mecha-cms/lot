@@ -1,7 +1,7 @@
 ---
 @version: [2, current]
-@description: This variable exists on every file attached by the [`Shield::get()`][link:../class/shield/get] method when the second argument is defined and is an array.
+@description: This variable exists on every file attached by the [`Content::get()`][link:../class/content/get] method when the second argument is defined and is an array.
 @example: |
-  Shield::get('.\path\to\file.php', ['body' => 'Lorem ipsum dolor sit amet.']);
+  Content::get('.\path\to\file.php', ['body' => 'Lorem ipsum dolor sit amet.']);
 @example-note: Here, variable `$lot['body']` will be available in `.\path\to\file.php` file.
 ...

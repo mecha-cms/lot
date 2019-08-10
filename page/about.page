@@ -13,13 +13,13 @@ Mecha is as simple as files and folders. Yet, that doesn’t mean that Mecha is 
 
 If you want to make something that is super huge with Mecha, that would be possible, but remember that Mecha wasn’t created to replace databases. Mecha was previously created simply to help people getting rid of various resources that are not needed from the start (such as databases). There will be a time when you need a database, and when that time comes, just use a database. Mecha is fairly open to be extended with other database-based applications.
 
-### Feature
+### Features
 
  - Writing pages with ease using [Markdown][link:article/markdown-syntax].
  - Unlimited page children.
  - Unlimited page fields.
  - Extensible as hell.
- - Create unique design for each blog post by adding special CSS and JavaScript files using the [art][link:reference/extension/plugin/art] plugin.
+ - Create unique design for each blog post by adding special CSS and JavaScript files using the [art][link:reference/extension/art] extension.
  - Built-in commenting system using the [comment][link:reference/extension/comment] extension.
  - Almost everything are optional. [^1]
  - RSS and Sitemap using the [feed][link:reference/extension/feed] extension.
@@ -37,7 +37,7 @@ If you want to make something that is super huge with Mecha, that would be possi
  2. Download the available package from the [home page][link:index].
  3. Upload Mecha through your FTP/SFTP to the public folder/directory [^2] on your site, then extract it!
  4. Take a look on the available [extensions][link:reference/extension] and [plugins][link:reference/extension/plugin] that you might be interested.
- 5. Upload your extension folders to `.\lot\extend` and your plugin folders to `.\lot\extend\plugin\lot`. They’re auto-loaded.
+ 5. Upload your extension folders to `.\lot\x` and your plugin folders to `.\lot\plugin`. They’re auto-loaded.
  6. Read on how to add [pages][link:reference/extension/page] and [tags][link:reference/extension/tag]. Learn on how to create pages from the author by looking at the [source code](https://github.com/mecha-cms/lot "GitHub").
  7. Install the [panel][link:reference/extension/panel] extension if you are stuck by doing everything manually. You always have the full control to remove this extension without having to worry that your site will stop running after doing so.
 
@@ -50,7 +50,7 @@ If you want to make something that is super huge with Mecha, that would be possi
 ### Site Theme
 
 [[e]]
-foreach (glob(SHIELD . DS . '$' . DS . 'asset' . DS . 'css' . DS . '$' . DS . '*.css') as $v) {
+foreach (glob(CONTENT . DS . '$' . DS . 'asset' . DS . 'css' . DS . '$' . DS . '*.css') as $v) {
     $content = file_get_contents($v);
     if (strpos($content, '#') !== false && preg_match_all('/#(?:[a-z\d]{3}){1,2}\b/', strtolower($content), $colors)) {
         echo '<p><a class="colors" href="?skin=' . ($name = basename($v, '.css')) . '" title="' . To::title($name) . '"><b>' . $name . '</b>';

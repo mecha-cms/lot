@@ -1,19 +1,18 @@
 ---
 @version: [2, current]
 @description: Get array value recursively.
-@lot: array &$array, string $key, string $separator = '.'
-@static: 1
+@lot: string $key = null, string $separator = '.'
 @example: |
-  $array = [
+  $array = new Anemon([
       'foo' => 1,
       'bar' => [
           'baz' => 2,
           'qux' => 3
       ]
-  ];
+  ]);
 
-  $A = Anemon::get($array, 'bar.baz') ?? '#';
-  $B = Anemon::get($array, 'bar.wut') ?? '#';
+  $A = $array->get('bar.baz') ?? '#';
+  $B = $array->get('bar.wut') ?? '#';
 @result: |
   $A = 2;
   $B = '#';

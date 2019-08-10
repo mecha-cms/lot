@@ -6,7 +6,7 @@ description: The little anemon who likes to eat.
 I am currently experimenting with the [`IteratorAggregate`](http://php.net/manual/en/class.iteratoraggregate.php "Itarator Aggregate · PHP") interface to allow [`Anemon`][link:../reference/class/anemon] instances to be used as ordinary arrays. This is interesting because we can shorten the API by implementing `IteratorAggregate` to the `Anemon` class. As in version `2.0.0`, we need to do this extra `vomit` thing to randomize an array before iterating it afterwards:
 
 ~~~ .php
-$random = Anemon::eat([1, 2, 3, 4, 5, 6])->shake()->vomit();
+$random = Anemon::from([1, 2, 3, 4, 5, 6])->shake()->vomit();
 
 foreach ($random as $v) {
     $color = '#' . substr(dechex(crc32($v)), 0, 6);
@@ -17,7 +17,7 @@ foreach ($random as $v) {
 But now, we can simply do this:
 
 ~~~ .php
-$random = Anemon::eat([1, 2, 3, 4, 5, 6])->shake();
+$random = Anemon::from([1, 2, 3, 4, 5, 6])->shake();
 
 foreach ($random as $v) {
     $color = '#' . substr(dechex(crc32($v)), 0, 6);
@@ -28,7 +28,7 @@ foreach ($random as $v) {
 This also applies to other methods such as `sort`, `is`, `not`, [etc][link:../reference/class/anemon]:
 
 ~~~ .php
-foreach (Anemon::eat([1, 2, 3])->sort(-1) as $v) { … }
+foreach (Anemon::from([1, 2, 3])->sort(-1) as $v) { … }
 ~~~
 
 My next plan is to convert the global [`$pages`][link:../reference/variable] variable into an `Anemon` instance, so that next time we can do more on this variable as follows:

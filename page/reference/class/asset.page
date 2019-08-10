@@ -1,8 +1,0 @@
----
-@version: [1, 2, current]
-@description: Asset hooks.
-@final: 1
-@parent: genome
-...
-
-> **Info:** This class is located in `.\lot\extend\asset\engine\kernel` folder.

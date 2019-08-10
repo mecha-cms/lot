@@ -1,0 +1,9 @@
+---
+@version: [current]
+@description: Copy folder with its contents to a folder.
+@lot: string $to
+@example: |
+  $A = (new Folder('.\path\to\folder'))->copy('.\path\to\folder-1');
+@result: |
+  $A = [[ … ], [ … ]];
+...

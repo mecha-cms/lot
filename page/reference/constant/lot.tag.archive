@@ -1,4 +1,8 @@
 ---
 @version: [2, current]
 @description: This is an alias for [link:tag].
+@source:
+  lot:
+    x:
+      tag: 0
 ...

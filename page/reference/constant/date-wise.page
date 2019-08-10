@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: Return the standard PHP date format string.
-@example: |
-  echo DATE_WISE;
-@result: |
-  'Y-m-d H:i:s'
-...

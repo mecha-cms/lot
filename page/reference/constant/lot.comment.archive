@@ -1,4 +1,8 @@
 ---
 @version: [2, current]
 @description: This is an alias for [link:comment].
+@source:
+  lot:
+    x:
+      comment: 0
 ...

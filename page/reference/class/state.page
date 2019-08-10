@@ -1,9 +1,0 @@
----
-@version: [2, current]
-@description: Get states data.
-@parent: genome
-...
-
-### In Depth
-
- - [link:/snippet/hook-state]

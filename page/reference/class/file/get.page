@@ -2,22 +2,10 @@
 @version: [1, 2, current]
 @description: Reading file line by line.
 @lot:
-- int $stop = null, $ch = 1024
-- string $stop = null, $ch = 1024
-- array $stop, $ch = 1024
-- callable $stop, $ch = 1024
+- void
+- int $i
 @example: |
-  // Stop reading at line 4
-  echo File::open('.\path\to\file.txt')->get(3);
-  // Stop reading at line that contains `$`
-  echo File::open('.\path\to\file.txt')->get('$');
-  // Stop reading at line that contains `$` exactly at position `12`
-  echo File::open('.\path\to\file.txt')->get(['$', 12]);
-  // Stop reading at `true` condition
-  echo File::open('.\path\to\file.txt')->get(function($chunk, $i, $out) {
-      $chunk = trim($chunk);
-      return $chunk === "" || $chunk === '---';
-  });
+  $file = new File('.\path\to\file.txt');
+  echo $file->get(); // Get the file content
+  echo $file->get(0); // Get the file content exactly at line 0
 ...
-
-An alternative to the [`read()`][link:read] method which allow you to stop the reading process on a specific line/condition.

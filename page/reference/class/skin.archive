@@ -1,0 +1,15 @@
+---
+@version: [current]
+@description: Alias for [`Content`][link:content].
+@parent: genome
+
+@use:
+  '.\lot\x\content': 1
+...
+
+Skin is a term used by Mecha to express _theme_ in other CMS.
+
+### In Depth
+
+ - [link:/reference/extension/content]
+ - [link:/snippet/hook-state]

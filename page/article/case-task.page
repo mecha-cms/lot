@@ -16,31 +16,13 @@ if (!file_exists($f)) {
 }
 ~~~
 
-This file can be placed in any [extensions][link:../reference/extension], [plugins][link:../reference/extension/plugin], [shields][link:../reference/shield] and even in the core folder.
+This file can be placed in any extensions, plugins, shields and even in the core folder.
 
 ~~~ .txt
 .\
 ├── engine\
 ├── lot\
 │   ├── cache\
-│   ├── extend\
-│   │   ├── …
-│   │   ├── comment\
-│   │   │   ├── index.php
-│   │   │   └── task.php ✔
-│   │   └── plugin\
-│   │       ├── engine\
-│   │       └── lot\
-│   │           └── worker\
-│   │               ├── …
-│   │               ├── example-plugin\
-│   │               │   ├── index.php
-│   │               │   └── task.php ✔
-│   │               ├── art\
-│   │               └── markdown\
-│   ├── language\
-│   │   ├── …
-│   │   └── en-us.page
 │   ├── page\
 │   │   └── …
 │   ├── shield\
@@ -49,8 +31,22 @@ This file can be placed in any [extensions][link:../reference/extension], [plugi
 │   │   │   ├── index.php
 │   │   │   └── task.php ✔
 │   │   └── document\
-│   └── state\
-│       └── config.php
+│   ├── state\
+│   │   └── config.php
+│   └── x\
+│       ├── …
+│       ├── comment\
+│       │   ├── index.php
+│       │   └── task.php ✔
+│       └── plugin\
+│           ├── engine\
+│           └── lot\
+│                ├── …
+│                ├── example-plugin\
+│                │   ├── index.php
+│                │   └── task.php ✔
+│                ├── art\
+│                └── markdown\
 ├── .htaccess
 ├── favicon.ico
 ├── index.php

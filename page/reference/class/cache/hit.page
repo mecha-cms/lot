@@ -20,7 +20,7 @@
   ], function($files) {
       $out = [];
       foreach ($files as $file) {
-          $out = extend($out, require $file);
+          $out = array_replace($out, require $file);
       }
       return $out;
   });

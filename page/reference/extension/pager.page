@@ -5,7 +5,7 @@ description: Custom page navigation.
 
 ![1](%{asset}%/png/reference/extension/pager.png)
 
-To enable the numbered page navigation style, open your `pages.php` file then find the code that looks like one of the examples below:
+To enable the numbered page navigation style, open your `pages.php` file then find code that looks like one of the examples below:
 
 ~~~ .html
 <nav><?php echo $pager; ?></nav>
@@ -20,3 +20,10 @@ Replace with this:
 ~~~ .php
 <?php static::pager('step'); ?>
 ~~~
+
+### Types
+
+Type | Description
+---- | -----------
+`pager` | Numbered page navigation.
+`title` | Add page title to the next and previous link.

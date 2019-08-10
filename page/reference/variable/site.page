@@ -5,4 +5,4 @@
   <?php echo $site->title; ?>
 ...
 
-Added by the [shield][link:../extension/shield] extension.
+Added by the [content][link:../extension/content] extension.

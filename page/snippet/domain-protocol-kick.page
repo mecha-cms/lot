@@ -6,6 +6,6 @@ description: Redirect from HTTP to HTTPS.
 ~~~ .php
 // Redirect from `http://example.com` to `https://example.com`
 if ($url->scheme === 'http') {
-    Guard::kick('https://' . explode('://', $url->current)[1]);
+    Guard::kick('https://' . explode('://', $url->current, 2)[1]);
 }
 ~~~

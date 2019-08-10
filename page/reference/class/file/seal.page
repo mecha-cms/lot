@@ -1,0 +1,28 @@
+---
+@version: [current]
+@description: Set or get file permission.
+@lot:
+- void
+- int $seal
+- string $seal
+@example: |
+  $file = new File('.\path\to\file.txt');
+
+  // Set file permission
+  $file->seal(0600);
+  $file->seal('0600');
+
+  // Get file permission
+  $A = $file->seal;
+  $B = $file->_seal;
+
+  $f = new File;
+
+  $C = $f->seal;
+  $D = $f->_seal;
+@result: |
+  $A = '0666';
+  $B = 33206;
+  $C = null;
+  $D = null;
+...

@@ -1,0 +1,18 @@
+---
+@version: [current]
+@description: Dynamic methods.
+@lot: string $kin, array $lot = []
+...
+
+If no kin was defined, this method will function as a shortcut for [`Alert::get()`][link:get].
+
+**Example:**
+
+~~~ .php
+Alert::error('create');
+Alert::info('create');
+Alert::success('create');
+
+Alert::foo('create');
+Alert::bar('create');
+~~~

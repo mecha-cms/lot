@@ -1,0 +1,28 @@
+---
+@version: [current]
+@description: Set or get folder permission.
+@lot:
+- void
+- int $seal
+- string $seal
+@example: |
+  $folder = new Folder('.\path\to\folder');
+
+  // Set folder permission
+  $folder->seal(0600);
+  $folder->seal('0600');
+
+  // Get folder permission
+  $A = $folder->seal;
+  $B = $folder->_seal;
+
+  $f = new Folder;
+
+  $C = $f->seal;
+  $D = $f->_seal;
+@result: |
+  $A = '0666';
+  $B = 33206;
+  $C = null;
+  $D = null;
+...

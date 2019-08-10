@@ -1,0 +1,44 @@
+---
+@version: [2, current]
+@description: Generate all possible template’s file path to be tested by [link:../file/exist].
+@lot: $in
+@static: 1
+@example: |
+  // Set current skin folder
+  Content::$config['root'] = '.\lot\content\:skin';
+  // Set skin extension order
+  Content::$config['x'] = ['html', 'php'];
+
+  // Search for files relative to the current skin folder
+  // with extension `html` or `php` based on the given name.
+  // Otherwise, return `null`
+  $A = Content::path('page');
+  $B = Content::path('foo');
+
+  // Search for files relative to the current skin folder
+  // with extension `html` or `php` based on the given _namespace_.
+  // Otherwise, return `null`
+  $C = Content::path('page/about/us')
+@result: |
+  $A = '.\lot\content\:skin\page.html'; // or `.\lot\content\:skin\page.php`
+  $B = false;
+
+  // Can be
+  $C = '.\lot\content\:skin\page.about.us.html';
+  // or
+  $C = '.\lot\content\:skin\page.about.us.php';
+  // or
+  $C = '.\lot\content\:skin\page\about\us.html';
+  // or
+  $C = '.\lot\content\:skin\page\about\us.php';
+  // or
+  $C = '.\lot\content\:skin\page\about.html';
+  // or
+  $C = '.\lot\content\:skin\page\about.php';
+  // or
+  $C = '.\lot\content\:skin\page.html';
+  // or
+  $C = '.\lot\content\:skin\page.php';
+  // or
+  $C = null;
+...

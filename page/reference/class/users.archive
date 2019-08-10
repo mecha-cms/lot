@@ -1,0 +1,19 @@
+---
+@version: [current]
+@description: User collection.
+@parent: pages
+@example: |
+  $users = new Users([
+      '.\lot\user\author-1.page',
+      '.\lot\user\author-2.page',
+      '.\lot\user\author-3.page'
+  ]);
+
+  foreach ($users->sort([-1, 'time']) as $user) {
+      echo '<h2>' . $user->name . '</h2>';
+      echo '<div>' . $user->content . '</div>';
+  }
+
+@use:
+  '.\lot\x\user': 1
+...

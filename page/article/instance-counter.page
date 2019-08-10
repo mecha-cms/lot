@@ -3,6 +3,9 @@ title: Instance Counter
 description: Counting the class instances.
 ...
 
+
+> **Update 2019/06/16:** This experimental feature will be removed in the future.
+
 I have just added `$__instance__` property to the [`Genome`][link:../reference/class/genome] class, which will automatically store the class instances.
 
 ### Before

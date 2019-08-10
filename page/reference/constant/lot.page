@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: [1, 2, current]
 @description: Return the lot folder path.
 @example: |
   echo LOT;

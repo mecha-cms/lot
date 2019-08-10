@@ -10,11 +10,11 @@
       'qux' => 3
   ];
 
-  $anemon = Anemon::eat($array)->not(function($v) {
+  $anemon = Anemon::from($array)->not(function($v) {
       return $v < 2;
   });
 
-  $A = $anemon->vomit();
+  $A = $anemon->get();
 @result: |
   $A = [
       'baz' => 2,

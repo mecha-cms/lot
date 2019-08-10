@@ -1,15 +1,15 @@
 ---
-@version: [2, current]
+@version: [current]
 @description: Get current item in array.
 @example: |
   $array = [
-      'foo' => 0,
-      'bar' => 1,
-      'baz' => 2,
-      'qux' => 3
+      'foo' => 10,
+      'bar' => 11,
+      'baz' => 12,
+      'qux' => 13
   ];
 
-  $A = Anemon::eat($array)->to('bar')->current();
+  $A = Anemon::from($array)->to('bar')->current();
 @result: |
-  $A = 1;
+  $A = 11;
 ...

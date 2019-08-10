@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Working with comments.
+@parent: page
+
+@use:
+  '.\lot\x\comment': 1
+...

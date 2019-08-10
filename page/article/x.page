@@ -1,0 +1,16 @@
+---
+title: That Annoying X
+description: I just can’t let this go wild on my mind all days since [April 2017][link:case-grammar].
+...
+
+So here’s the problem: the word “extend” is a verb and it is very uncomfortable for me to apply it as a noun. Until now. But I’m also not ready yet to say it “extension” because the word is too long and not worthy of being juxtaposed with other folder names like “asset” and “page”.
+
+Well, this is a personal stress dilemma but I really can’t stand it all, so feeling very guilty until the end of my life I decided to let it go and rename the `extend` folder in [Mecha 2.0.0][link:version-2-0-0] to `x` in the next version of Mecha. Don’t worry, the `X` constant that states the placeholder character has now changed to `P`.
+
+Even though the name of this folder is now meaningless, I can imagine how people around the world would talk about Mecha in the future when one day this content management system is already well-known. They might talk about the `x` folder specifically because they think this is very rare, and therefore the name of this folder can be a distinctive feature of Mecha to distinguish it from the structure of other content management systems.
+
+This change will certainly lead to other problems such as compatibility of extensions from other developers, but while the content management system is still not very well-known, then I can tear apart all of the existing API structure as I want until I find that… these are good enough to leave; as how I am no longer so interested in changing [this color picker](https://github.com/tovic/color-picker) API. ~~At least for now.~~ No.
+
+And my first task now is to change all repository names from `extend.*` to `x.*`.
+
+I’m such an idiot.

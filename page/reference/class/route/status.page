@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Set response status.
+@example: |
+  Route::set('foo/bar', function() {
+      $this->status(404);
+      echo 'Error 404: Not found.';
+      exit;
+  });
+...

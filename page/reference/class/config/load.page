@@ -1,8 +1,0 @@
----
-@version: [current]
-@description: Pre-define configuration items from a file.
-@lot: string $path
-@static: 1
-@example: |
-  Config::load('.\path\to\file.php');
-...

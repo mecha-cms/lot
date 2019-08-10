@@ -1,6 +1,6 @@
 ---
 @version: [1, 2, current]
-@description: Working with files and folders.
+@description: Working with files.
 @parent: genome
 ...
 
@@ -9,8 +9,24 @@
 ~~~ .php
 File::$config = [
     // List of allowed file extension(s)
-    'x' => ['txt'],
+    'x' => [
+        'gif' => 1,
+        'html' => 1,
+        'jpg' => 1,
+        'json' => 1,
+        'jpeg' => 1,
+        'log' => 1,
+        'png' => 1,
+        'txt' => 1,
+        'xml' => 1
+    ],
     // Minimum and maximum file size allowed in byte(s)
     'size' => [0, 2097152]
 ];
+~~~
+
+Create a new file or open file if it already exists:
+
+~~~ .php
+$file = new File('.\path\to\file.txt');
 ~~~

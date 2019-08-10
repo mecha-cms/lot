@@ -5,7 +5,7 @@ description: Built-in commenting system.
 
 ### Installation
 
-Edit the `page.php` file in your active shield folder then put this snippet after the `</article>` tag:
+Edit the `page.php` file in your active skin folder then put this snippet after the `</article>` tag:
 
 ~~~ .php
 <?php static::comments(); ?>
@@ -38,7 +38,7 @@ state:
 Page content.
 ~~~
 
-To set pre-defined comment visibility globally, specify a comment flag on the [first array of the shield arguments][link:../../article/case-shield-feature]:
+To set pre-defined comment visibility globally, specify a comment flag on the first array of the content arguments:
 
 ~~~ .php
 <?php static::comments([2]); ?>
@@ -56,10 +56,10 @@ COMMENT
 
 ### Class
 
-We now have a `Comment` class which works the same as the [`Page`][link:../class/page] class, but with custom hook _namespace_:
+We now have a `Comment` class which works the same as the [`Page`][link:../class/page] class, but with custom hook prefix:
 
 ~~~ .php.xmp
-Comment(string $path = null, array $lot = [], $NS = ['*', 'comment']): self;
+Comment(string $path = null, array $lot = [], $prefix = ['*', 'comment']): self;
 ~~~
 
 **Example:**

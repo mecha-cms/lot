@@ -1,0 +1,9 @@
+---
+@version: [current]
+@description: Read the stored alert messages from session.
+@lot: []
+@example: |
+  Alert::get();
+...
+
+TODO

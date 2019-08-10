@@ -1,9 +1,0 @@
----
-@version: [1, 2, current]
-@description: Prepend content to a file.
-@lot: string $data
-@static: 2
-@example: |
-  File::prepend('some text')->saveTo('.\path\to\file.txt');
-  File::open('.\path\to\file.txt')->prepend('some text')->save();
-...

@@ -1,0 +1,15 @@
+---
+@version: [current]
+@description: Fetch page content from a URL.
+@lot:
+- string $url, string $agent = null
+- string $url, array $headers = []
+@static: 1
+@example: |
+  $A = fetch('https://example.com');
+  $B = fetch('https://example.com', Get::UA());
+  $C = fetch('https://example.com', [
+      'X-Foo' => 1,
+      'X-Bar' => 2
+  ]);
+...

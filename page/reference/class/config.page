@@ -2,6 +2,12 @@
 @version: [1, 2, current]
 @description: Configuration getter and setter.
 @parent: genome
+@interface:
+- .array-access
+- .countable
+- .iterator-aggregate
+- .json-serializable
+- .serializable
 ...
 
 This class provides a mechanism for storing data globally in a well managed fashion: stores your variables/objects that you need in a global scope without polluting the global _namespace_ of your application.

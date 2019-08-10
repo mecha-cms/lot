@@ -10,8 +10,8 @@
       'qux' => 3
   ];
 
-  $A = Anemon::eat($array)->prepend('#')->vomit();
-  $B = Anemon::eat($array)->prepend('#', 'a')->vomit();
+  $A = Anemon::from($array)->prepend('#')->get();
+  $B = Anemon::from($array)->prepend('#', 'a')->get();
 @result: |
   $A = [
       0 => '#',

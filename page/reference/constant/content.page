@@ -1,0 +1,12 @@
+---
+@version: [2, current]
+@description: Return the content folder path.
+@source:
+  lot:
+    x:
+      shield: 0
+@example: |
+  echo CONTENT;
+@result: |
+  '.\www\directory\lot\content'
+...

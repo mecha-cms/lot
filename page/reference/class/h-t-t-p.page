@@ -1,6 +1,0 @@
----
-@version: [2, current]
-@description: Working with HTTP headers.
-@final: 1
-@parent: genome
-...

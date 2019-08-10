@@ -10,9 +10,9 @@
       'qux' => 3
   ];
 
-  $A = Anemon::eat($array)->end->prev->current();
-  $B = Anemon::eat($array)->end->prev->prev->current();
-  $C = Anemon::eat($array)->end->prev(1)->current();
+  $A = Anemon::from($array)->toLast()->prev()->current();
+  $B = Anemon::from($array)->toLast()->prev()->prev()->current();
+  $C = Anemon::from($array)->toLast()->prev(1)->current();
 @result: |
   $A = 2;
   $B = 1;

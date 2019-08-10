@@ -40,6 +40,8 @@
       ],
       "\t" => 'foo bar baz'
   ];
+@use:
+  '.\lot\x\y-a-m-l': 1
 ...
 
 [connect:/article/y-a-m-l]

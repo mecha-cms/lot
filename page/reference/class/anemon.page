@@ -1,7 +1,6 @@
 ---
 @version: [2, current]
 @description: Array and object.
-@final: 1
 @parent: genome
 @interface:
 - .array-access

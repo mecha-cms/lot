@@ -1,0 +1,11 @@
+---
+@version: [2, current]
+@description: Constructor.
+@lot: iterable $array
+@static: 1
+@return: self
+@example: |
+  Anemon::from([1, 2, 3, 4, 5])->shake()->get();
+  // … is the same as …
+  (new Anemon([1, 2, 3, 4, 5]))->shake()->get();
+...

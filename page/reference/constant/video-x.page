@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: Return video file extensions.
-@example: |
-  echo VIDEO_X;
-@result: |
-  'avi,flv,mkv,mov,mpg,mp4,m4a,m4v,ogv,rm,swf,vob,webm,wmv,3gp,3g2'
-...

@@ -6,5 +6,5 @@
   // This is …
   $config->title;
   // … equal to this
-  $config->get('title', null);
+  $config->get('title');
 ...

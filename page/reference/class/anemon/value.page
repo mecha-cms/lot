@@ -1,0 +1,21 @@
+---
+@version: [current]
+@description: Set current item in array with a value.
+@lot: $value
+@example: |
+  $array = [
+      'foo' => 0,
+      'bar' => 1,
+      'baz' => 2,
+      'qux' => 3
+  ];
+
+  $A = Anemon::from($array)->next()->value('#')->get();
+@result: |
+  $A = [
+      'foo' => 0,
+      'bar' => '#',
+      'baz' => 2,
+      'qux' => 3
+  ];
+...

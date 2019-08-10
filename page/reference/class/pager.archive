@@ -1,0 +1,7 @@
+---
+@version: [current]
+@description: Navigation item generator.
+@parent: genome
+@use:
+  '.\lot\x\page': 1
+...

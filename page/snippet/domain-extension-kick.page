@@ -5,7 +5,7 @@ description: Redirect from base domain to alternate domain with PHP.
 
 ~~~ .php
 // Redirect from `http://example-1.com/dir/*` to `http://example-2.com/*`
-if ($url->host === 'example-1.com' && $url->directory === 'dir') {
-    Guard::kick($url->protocol . 'example-2.com/' . $url->path);
+if ($url->host === 'example-1.com' && $url->directory === '/dir') {
+    Guard::kick($url->protocol . 'example-2.com' . $url->path);
 }
 ~~~

@@ -65,6 +65,8 @@ class Common extends Genome {
 }
 ~~~
 
+> **Update:** This pattern has been changed to _set_, _let_ and _get_.
+
 By standardizing the commands, I hope people can learn and understand faster because they can easily guess what methods are contained on every standard class.
 
 ### Plural and Singular
@@ -97,7 +99,7 @@ That’s why I stopped doing something like naming the folder or classes with pl
 │   │   └── …
 │   ├── plug\
 │   │   └── …
-│   ├── ignite.php
+│   ├── f.php
 │   └── fire.php
 ├── lot\
 │   ├── asset\
@@ -108,13 +110,9 @@ That’s why I stopped doing something like naming the folder or classes with pl
 │   │   └── plugin\
 │   │       ├── engine\
 │   │       └── lot\
-│   │           └── worker\
-│   │               ├── …
-│   │               ├── art\
-│   │               └── markdown\
-│   ├── language\
-│   │   ├── …
-│   │   └── en-us.page
+│   │            ├── …
+│   │            ├── art\
+│   │            └── markdown\
 │   ├── page\
 │   │   └── …
 │   ├── shield\

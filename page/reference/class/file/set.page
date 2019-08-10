@@ -1,5 +1,10 @@
 ---
 @version: [current]
-@description: Alias for [`put`][link:put].
+@description: Write content to a file.
+@lot: string $data
 @static: 2
+@example: |
+  $file = new File('.\path\to\file.txt');
+  $file->set('some text');
+  $file->save();
 ...

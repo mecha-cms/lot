@@ -4,7 +4,6 @@
 @lot:
 - void
 - string $prefix = '#'
-@static: 2
 @example: |
   $A = $url->hash;
   $B = $url->hash();

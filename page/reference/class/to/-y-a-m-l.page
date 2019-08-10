@@ -2,6 +2,8 @@
 @version: [2, current]
 @description: Convert array into YAML string.
 @static: 1
+@use:
+  '.\lot\x\y-a-m-l': 1
 ...
 
 ~~~ .php.xmp

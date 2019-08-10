@@ -4,8 +4,8 @@
 @lot: array $blob, string $path = ROOT
 @static: 1
 @example: |
-  if ($blob = HTTP::files('foo')) { // → for `<input name="foo" type="file">`
-      $response = File::push($blob, '.\path\to\folder');
+  if (!empty($_POST['foo'])) { // → for `<input name="foo" type="file">`
+      $response = File::push($_POST['foo'], '.\path\to\folder');
   }
 ...
 

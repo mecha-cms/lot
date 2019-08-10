@@ -7,8 +7,8 @@ This page describes about how to make your old pages becomes readable by the sec
 
 ### Pages
 
- - Store the static pages in `lot\page` folder.
- - Store the blog pages (articles) in `lot\page\article` folder.
+ - Store the static pages in `.\lot\page` folder.
+ - Store the blog pages (articles) in `.\lot\page\article` folder.
 
 #### Version `1.x.x`
 
@@ -36,12 +36,13 @@ type: Markdown
 In version `2.x.x`, you can create custom fields as separate files named as the field key with extension `data`, stored in a folder with the same name as the page name, without the file extension ([the page state][link:../reference/extension/page]). Here, custom fields value will becomes the file content:
 
 ~~~ .txt
-lot\
-└── page\
-    ├── page-slug\
-    │   ├── foo.data ← contains `bar`
-    │   └── bar.data ← contains `1`
-    └── page-slug.page
+.\
+└── lot\
+    └── page\
+        ├── page-slug\
+        │   ├── foo.data ← contains `bar`
+        │   └── bar.data ← contains `1`
+        └── page-slug.page
 ~~~
 
 ### Custom Fields
@@ -65,11 +66,12 @@ echo $page->bar;
 > **Info:** You can revert to the old behavior of Mecha by storing the custom fields data as JSON and save it to a file named as `fields.data` instead:
 >
 > ~~~ .txt
-> lot\
-> └── page\
->     ├── page-slug\
->     │   └── fields.data
->     └── page-slug.page
+> .\
+> └── lot\
+>     └── page\
+>         ├── page-slug\
+>         │   └── fields.data
+>         └── page-slug.page
 > ~~~
 >
 > Contents of `fields.data`:
@@ -138,12 +140,13 @@ Split your custom CSS and JavaScript data by `====` so that you will have two pa
 Store them in folder that has relationship with the page:
 
 ~~~ .txt
-lot\
-└── page\
-    ├── page-slug\
-    │   ├── css.data ← contains the first part
-    │   └── js.data ← contains the second part
-    └── page-slug.page
+.\
+└── lot\
+    └── page\
+        ├── page-slug\
+        │   ├── css.data ← contains the first part
+        │   └── js.data ← contains the second part
+        └── page-slug.page
 ~~~
 
 ### Time and Tags
@@ -176,21 +179,25 @@ kind: [1,2,3,11]
 > **Note:** It is highly recommended to set the `time` and `kind` data in a separated field files because those fields data are commonly used to sort the pages. Reading embedded fields value in the page file is fairly slow, therefore, Mecha sets a higher priority on reading separated fields data instead of embedded fields data. In the case of [reading page property individually][link:../reference/class/page/get], Mecha will first seek for a separated field file from the page. When the desired field can be found, Mecha will only read that field and then cancel the process of reading the entire content of that page file:
 >
 > ~~~ .txt
-> lot\
-> └── page\
->     ├── page-slug\
->     │   ├── kind.data
->     │   └── time.data
->     └── page-slug.page
+> .\
+> └── lot\
+>     └── page\
+>         ├── page-slug\
+>         │   ├── kind.data
+>         │   └── time.data
+>         └── page-slug.page
 > ~~~
 >
-> > **Info:** The default [shield][link:../reference/file/shield] uses `slug` to set the `$key` value in the `sort()` method of [`Anemon` class][link:../reference/class/anemon#reference:order], and they are sorted ascending. To sort the page listing descending by time, go to `lot\shield\document\state\config.php` then replace the `sort` value like this:
+> > **Info:** The default [skin][link:../reference/skin] uses `path` to set the `$key` value in the `sort()` method of [`Pages` class][link:../reference/class/pages/sort], and they are sorted ascending. To sort the page listing descending by time, go to `.\lot\page\index.page` then add `sort` property with this value:
 > >
-> > ~~~ .php
-> > [
-> >     // sort descending by the `time` field
-> >     'sort' => [-1, 'time']
-> > ]
+> > ~~~ .yaml
+> > ---
+> > title: Home
+> > description: Welcome to my personal home page!
+> > sort: [-1, time] # Sort descending by the `time` field
+> > ...
+> >
+> > Content goes here.
 > > ~~~
 
 ### Shortcodes
@@ -224,7 +231,7 @@ You can choose either to replace old syntax with the new syntax, or by setting c
 
 ### Comments
 
- - Store the comments data in `lot\comment\article`.
+ - Store the comments data in `.\lot\comment\article`.
 
 [connect:../reference/extension/comment]
 
@@ -264,14 +271,15 @@ user_agent: Mozilla/5.0 (Windows NT 6.3; rv:43.0) Gecko/20100101 Firefox/43.0
 In this version, only the comment time that is stored in the file name. Post ID becomes the parent folder of the comment file, and is using the page slug instead of page ID as the comment reference. Parent ID is stored as a separated file in the related folder:
 
 ~~~ .txt
-lot\
-└── comment\
-    └── article\
-        └── page-slug\
-            ├── 2014-05-05-09-09-32\
-            │   └── parent.data
-            ├── 2014-05-04-06-04-22.page
-            └── 2014-05-05-09-09-32.page
+.\
+└── lot\
+    └── comment\
+        └── article\
+            └── page-slug\
+                ├── 2014-05-05-09-09-32\
+                │   └── parent.data
+                ├── 2014-05-04-06-04-22.page
+                └── 2014-05-05-09-09-32.page
 ~~~
 
 _To be continued…_

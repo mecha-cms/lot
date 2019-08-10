@@ -1,6 +1,10 @@
 ---
 @version: [2, current]
 @description: Return the user folder path.
+@source:
+  lot:
+    x:
+      user: 0
 @example: |
   echo USER;
 @result: |

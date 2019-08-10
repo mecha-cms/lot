@@ -7,7 +7,7 @@ I have updated the [`Page`][link:../reference/class/page] class recently so that
 
 ### Time
 
-The engine will first search for a hard-coded `time` data from the page file to be used. If it doesn’t exist, then it uses the page’s file creation time as the page time. But, if the page’s file name itself is formatted as a timestamp-like format, then the engine will try to parse the page’s file name into a valid `time` data. So now you can set a file name as `2017-04-21-14-25-02.page` to set the `time` data to `2017-04-21 14:25:02` or `2017-04-21.page` to set the `time` data to `2017-04-21 00:00:00`. If there is no `title` field provided in the page file, the `title` data will be set to `2017/04/21 02:25:02 PM` for the first example and `2017/04/21 12:00:00 AM` for the second example.
+The engine will first search for a hard-coded `time` data from the page file to be used. If it doesn’t exist, then it will use the page’s file creation time as the page time. But, if the page’s file name itself is formatted as a timestamp-like format, then the engine will try to parse the page’s file name into a valid `time` data. So now you can set a file name as `2017-04-21-14-25-02.page` to set the `time` data to `2017-04-21 14:25:02` or `2017-04-21.page` to set the `time` data to `2017-04-21 00:00:00`. If there is no `title` field provided in the page file, the `title` data will be set to `2017/04/21 02:25:02 PM` for the first example and `2017/04/21 12:00:00 AM` for the second example.
 
 ### Title
 
@@ -15,7 +15,7 @@ You can now create a page file without the `title` field but still can have it i
 
 ### Description
 
-Exception for this. There are no plan for making the fake `description` data which is —you guess— created from the page’s `content` data. Consider to use the [excerpt][link:../reference/extension/plugin/excerpt] plugin instead.
+Exception for this. There are no plan for making the fake `description` data which is —you guess— created from the page’s `content` data. Consider to use the [excerpt][link:../reference/extension/excerpt] extension instead.
 
 ### URL
 

@@ -10,11 +10,11 @@
       'qux' => 3
   ];
 
-  $anemon = Anemon::eat($array)->is(function($v, $k) {
+  $anemon = Anemon::from($array)->is(function($v, $k) {
       return $v < 2 || $k === 'qux';
   });
 
-  $A = $anemon->vomit();
+  $A = $anemon->get();
 @result: |
   $A = [
       // $v < 2

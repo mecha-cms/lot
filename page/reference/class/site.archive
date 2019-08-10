@@ -1,0 +1,7 @@
+---
+@version: [current]
+@description: Alias for [`Config`][link:config].
+@parent: genome
+@use:
+  '.\lot\x\content': 1
+...

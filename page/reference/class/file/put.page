@@ -1,9 +1,0 @@
----
-@version: [current]
-@description: Write content to a file.
-@lot: string $data
-@static: 2
-@example: |
-  File::put('some text')->saveTo('.\path\to\file.txt');
-  File::open('.\path\to\file.txt')->put('some text')->save();
-...

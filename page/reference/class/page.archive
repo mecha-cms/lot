@@ -1,0 +1,13 @@
+---
+@version: [2, current]
+@description: Working with pages.
+@parent: genome
+@use:
+  '.\lot\x\page': 1
+@interface:
+- .array-access
+- .countable
+- .iterator-aggregate
+- .json-serializable
+- .serializable
+...
