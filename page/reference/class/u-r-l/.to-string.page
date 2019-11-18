@@ -1,0 +1,4 @@
+---
+@version: [2, current]
+@description: Treat `URL` object as string.
+...

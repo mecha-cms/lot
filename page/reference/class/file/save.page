@@ -7,6 +7,5 @@
 - string $seal
 @example: |
   $file = new File('.\path\to\file.txt');
-  $file->set('some text');
-  $file->save(0600);
+  $file->set('some text')->save(0600);
 ...

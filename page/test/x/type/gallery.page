@@ -1,9 +1,0 @@
----
-type: Gallery
-...
-
-[[e]]
-foreach (glob(ASSET . '/ag-279/*.png') as $k => $v) {
-    echo To::URL($v) . "\n";
-}
-[[/e]]

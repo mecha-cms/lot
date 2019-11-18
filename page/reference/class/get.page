@@ -1,6 +1,6 @@
 ---
 @version: [1, 2, current]
-@description: Data getter.
+@description: Working with `$_GET` data.
 @final: 1
 @parent: genome
 ...

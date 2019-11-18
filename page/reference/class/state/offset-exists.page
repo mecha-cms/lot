@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Check the existence of state item.
+@lot:
+- string $key
+@interface:
+- .array-access
+@example: |
+  if (isset($state['foo-bar-baz'])) { … }
+...

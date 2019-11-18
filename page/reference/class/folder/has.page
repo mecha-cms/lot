@@ -1,0 +1,9 @@
+---
+@version: [current]
+@description: Check the existence of a file or folder in a folder.
+@lot:
+- string $path
+@example: |
+  $folder = new Folder('.\path\to\folder');
+  if ($folder->has('file.txt')) { … }
+...

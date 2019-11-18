@@ -1,7 +1,8 @@
 ---
 @version: [current]
 @description: Less than.
-@lot: $a, $b
+@lot:
+- $a, $b
 @example: |
   if (lt('abcdef', 5)) { … }
   if (lt(['a', 'b', 'c', 'd', 'e', 'f'], 5)) { … }

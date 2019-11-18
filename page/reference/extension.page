@@ -3,7 +3,9 @@ title: Extension
 description: Add extra functionality to the core engine.
 ...
 
-An extension doesn’t have to change the behavior of your site directly. It can also be used as an API enhancer that does nothing until you use it on a particular [skin][link:extension/content], or in your personal function file.
+An extension don’t have to change the behavior of your site directly. It can also be used as an API enhancer that does nothing until you use it on a particular [layout][link:layout], or in your personal function file.
+
+### Structure
 
 An extension is a folder with a unique name, stored in `.\lot\x` folder:
 
@@ -30,21 +32,21 @@ A standard extension should at least contains files that structured like this:
 │   │   └── extension-1.php
 │   └── fire.php
 ├── lot\
-│   ├── asset\
-│   │   ├── .htaccess
-│   │   ├── css\
-│   │   └── js\
-│   └── state\
-│       └── config.php
+│   └── asset\
+│       ├── .htaccess
+│       ├── css\
+│       └── js\
+│
+│
 ├── about.page
-└── index.php
+├── index.php
+└── state.php
 ~~~
 
-But the simplest one can be achieved as:
+But the simplest one also can be achieved as:
 
 ~~~ .txt
 .\lot\x\extension-1\
-├── about.page
 └── index.php
 ~~~
 
@@ -55,3 +57,50 @@ But the simplest one can be achieved as:
 > ~~~
 
 The most important part is the `index.php` file. The automatic extension loader will seek for `index.php` file and once it found, then the engine will include it before everything else is being loaded.
+
+### State
+
+The `state.php` file contains custom settings for your users. It will be automatically loaded automatically along with the `index.php` file loading. The state values will be loaded to the `x` property in the global `$state` variable:
+
+~~~ .php
+// Get `page` extension’s state as object
+$page_state = $state->x->page;
+
+// Get `page` extension’s state as array
+$page_state = state('x.page');
+~~~
+
+If you are affraid that your extension state data will overload the memory usage of your site environment due to the automatic loading process, you can try to store the state data to another file and then load it manually:
+
+~~~ .txt
+.\lot\x\extension-1\
+├── state\
+│   └── foo-bar.php
+└── index.php
+~~~
+
+~~~ .php
+if ($should_load_the_state) {
+    $the_state = require __DIR__ . DS . 'state' . DS . 'foo-bar.php';
+} else {
+    $the_state = [];
+}
+~~~
+
+### Check if Extension Exists
+
+There is no special mechanism to detect if an extension exists. The easiest way would be to detect the state value of certain extension that is stored in the global `$state` variable. As of the automatic loading proccess that I have explained before, then you can confirm the existence of an extension by checking the state value of the desired extension. If it at least return an empty array, then it means that the extension does exists even if you don’t have any `state.php` file in your extension folder.
+
+~~~ .php
+if (null !== state('x.page')) {
+    // Has `page` extension
+}
+~~~
+
+Or even simpler:
+
+~~~ .php
+if (is_file(X . DS . 'page' . DS . 'index.php')) {
+    // Has `page` extension
+}
+~~~

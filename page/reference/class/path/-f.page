@@ -1,38 +1,21 @@
 ---
-title: `$path::F()`
-description: Convert file/folder path to a folder path.
+@version: [2, current]
+@description: Convert file or folder path to a folder path.
+@lot:
+- string $path, string $join = DS
+@static: 1
+@example: |
+  $A = Path::D('a\b\c\foo\bar\baz.qux');
+  $B = Path::D('a\b\c\foo\bar\baz');
+  $C = Path::F('a\b\c\foo\bar\baz.qux');
+  $D = Path::F('a\b\c\foo\bar\baz');
+
+  $E = Path::F('a\b\c\foo\bar\baz.qux', '/');
+@result: |
+  $A = 'a\b\c\foo\bar';
+  $B = 'a\b\c\foo\bar';
+  $C = 'a\b\c\foo\bar\baz';
+  $D = 'a\b\c\foo\bar\baz';
+
+  $E = 'a/b/c/foo/bar/baz';
 ...
-
-Remove file/folder extension.
-
-~~~ .php.xmp
-Path::F($path, $root = null, $s = DS);
-~~~
-
-**Example:**
-
-~~~ .php
-$test_1 = Path::D('\a\b\c\foo\bar\baz.qux');
-$test_2 = Path::D('\a\b\c\foo\bar\baz');
-$test_3 = Path::F('\a\b\c\foo\bar\baz.qux');
-$test_4 = Path::F('\a\b\c\foo\bar\baz');
-~~~
-
-~~~ .php
-$test_5 = Path::F('\a\b\c\foo\bar\baz.qux', '\a\b\c');
-$test_6 = Path::F('\a\b\c\foo\bar\baz.qux', null, '/');
-~~~
-
-Result:
-
-~~~ .php
-$test_1 = '\a\b\c\foo\bar';
-$test_2 = '\a\b\c\foo\bar';
-$test_3 = '\a\b\c\foo\bar\baz';
-$test_4 = '\a\b\c\foo\bar\baz';
-~~~
-
-~~~ .php
-$test_5 = 'foo\bar\baz';
-$test_6 = '/a/b/c/foo/bar/baz';
-~~~

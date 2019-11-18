@@ -7,7 +7,7 @@
 - array $keys
 @static: 1
 @example: |
-  // Remove all cookie(s)
+  // Remove all cookies
   Cookie::let();
   // Remove `foo` cookie
   Cookie::let('foo');

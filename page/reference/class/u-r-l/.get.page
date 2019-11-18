@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Dynamic properties.
+@lot:
+- string $key
+@example: |
+  echo $url->path;
+...

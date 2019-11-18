@@ -1,0 +1,9 @@
+---
+@version: [current]
+@description: Set value to `$_GET` variable.
+@lot:
+- string $key, $value = null
+@static: 1
+@example: |
+  Get::set('id', 1);
+...

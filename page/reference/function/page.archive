@@ -1,0 +1,5 @@
+---
+@version: [current]
+@description: Short function for [link:../class/page/.construct].
+@parent: page
+...

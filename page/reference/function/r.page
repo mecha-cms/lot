@@ -1,3 +1,13 @@
 ---
 @version: [2, current]
+@description: String replace helper.
+@lot:
+- string $from, string $to, string $text
+- array $from, array $to, string $text
+@example: |
+  $A = r('o', '#', 'foo');
+  $B = r(['f', 'o'], ['!', '#'], 'foo');
+@result: |
+  $A = 'f##';
+  $B = '!##';
 ...

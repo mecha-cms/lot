@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Get the generated cache file.
-@lot: string $id
+@lot:
+- string $id
 @static: 1
 @example: |
   $cache = Cache::get('foo');

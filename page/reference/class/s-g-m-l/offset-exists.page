@@ -1,0 +1,12 @@
+---
+@version: [current]
+@description: Check the existence of SGML attribute.
+@lot:
+- string $name
+@interface:
+- .array-access
+@example: |
+  $foo = new SGML('<foo bar="baz">qux</foo>');
+
+  if (isset($foo['bar'])) { … }
+...

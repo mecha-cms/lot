@@ -1,0 +1,11 @@
+---
+@version: [current]
+@description: Return the directory path relative to the server root if any, otherwise return `null`.
+@lot:
+- void
+- string $join = '/'
+@example: |
+  $A = $url->d;
+@result: |
+  $A = '/directory';
+...

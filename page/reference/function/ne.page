@@ -1,7 +1,8 @@
 ---
 @version: [current]
 @description: Not equal to.
-@lot: $a, $b
+@lot:
+- $a, $b
 @example: |
   if (ne('abcdef', 5)) { … }
   if (ne(['a', 'b', 'c', 'd', 'e', 'f'], 5)) { … }

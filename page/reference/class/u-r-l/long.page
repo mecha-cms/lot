@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Convert relative URL into full URL.
-@lot: string $path, $root = true
+@lot:
+- string $path, $root = true
 @static: 1
 @example: |
   $A = URL::long("");

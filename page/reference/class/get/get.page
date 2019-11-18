@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Get and evaluate `$_GET` data.
+@lot:
+- void
+- string $key
+@static: 1
+@example: |
+  if (Get::get('id')) { … }
+...

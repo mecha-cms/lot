@@ -1,6 +1,0 @@
----
-@version: [2, current]
-@description: This variable is an instance of the [`Language` class][link:../class/language].
-@example: |
-  <?php echo $language->home; ?>
-...

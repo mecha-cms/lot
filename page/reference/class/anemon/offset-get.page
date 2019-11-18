@@ -1,0 +1,16 @@
+---
+@version: [current]
+@description: Get array item.
+@lot:
+- string $key
+@interface:
+- .array-access
+@example: |
+  $A = new Anemon([1, 2, 3, 4, 5]);
+
+  $B = $A[0];
+  $C = $A[999];
+@result: |
+  $B = 1;
+  $C = null;
+...

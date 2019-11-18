@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Move to the next item.
-@lot: int $skip = 0
+@lot:
+- int $skip = 0
 @example: |
   $array = [
       'foo' => 0,

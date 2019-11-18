@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Remove URL property.
+@lot:
+- string $key
+@example: |
+  unset($url->path);
+...

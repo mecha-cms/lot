@@ -1,9 +1,11 @@
 ---
 @version: [current]
 @description: Clear alert messages from session.
-@lot: []
+@lot:
+- void
+- string $type
+- array $types
+@static: 1
 @example: |
   Alert::let();
 ...
-
-TODO

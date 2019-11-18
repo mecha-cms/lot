@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Convert YAML string into array.
-@lot: $in, string $dent = '  ', $docs = false, $e = true
+@lot:
+- $in, string $dent = '  ', $docs = false, $e = true
 @static: 1
 @example: |
   $A = From::YAML('foo: bar');

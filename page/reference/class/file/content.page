@@ -1,0 +1,9 @@
+---
+@version: [1, 2, current]
+@description: Read file content as string.
+@lot:
+- void
+@example: |
+  $file = new File('.\path\to\file.txt');
+  echo $file->content();
+...

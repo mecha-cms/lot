@@ -1,18 +1,18 @@
 ---
 @version: [current]
-@description: Page collection.
-@parent: anemon
-@example: |
-  $pages = new Pages([
-      '.\lot\page\article\lorem-ipsum-1.page',
-      '.\lot\page\article\lorem-ipsum-2.page',
-      '.\lot\page\article\lorem-ipsum-3.page'
-  ]);
-
-  foreach ($pages->sort([-1, 'time']) as $page) {
-      echo '<h2>' . $page->title . '</h2>';
-      echo '<div>' . $page->content . '</div>';
-  }
-@use:
-  '.\lot\x\page': 1
+@description: Bulk [page][link:page] instance from array.
+@parent: files
 ...
+
+~~~ .php
+$pages = new Pages([
+    '.\path\to\file-1.page',
+    '.\path\to\file-2.page',
+    '.\path\to\file-3.page',
+    '.\path\to\file-4.page',
+]);
+
+foreach ($pages as $page) {
+    echo $page->title . '<br>';
+}
+~~~

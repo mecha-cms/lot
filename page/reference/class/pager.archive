@@ -1,6 +1,6 @@
 ---
 @version: [current]
-@description: Navigation item generator.
+@description: Pagination generator.
 @parent: genome
 @use:
   '.\lot\x\page': 1

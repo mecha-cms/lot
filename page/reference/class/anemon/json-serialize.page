@@ -1,0 +1,14 @@
+---
+@version: [current]
+@description: Convert Anemon class instance to JSON.
+@lot:
+- void
+@interface:
+- .json-serializable
+@example: |
+  $A = new Anemon([1, 2, 3, 4, 5]);
+
+  echo To::JSON($A);
+@result: |
+  '[1,2,3,4,5]'
+...

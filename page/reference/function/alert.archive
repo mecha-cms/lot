@@ -1,0 +1,9 @@
+---
+@version: [current]
+@description: Short function for [`Alert::info()`][link:../class/alert/.call-static].
+@lot:
+- string $message
+@parent: alert
+@exammple: |
+  alert('Info message goes here.');
+...

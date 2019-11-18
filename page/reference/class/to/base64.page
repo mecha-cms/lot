@@ -1,14 +1,11 @@
 ---
-title: `$to::base64()`
-description: Encode string to Base64.
+@version: [2, current]
+@description: Encode string to Base64.
+@lot:
+- string $in
+@static: 1
+@example: |
+  $A = To::base64('i love you');
+@result: |
+  $A = '[[e]]echo To::base64('i love you');[[/e]]';
 ...
-
-~~~ .php.xmp
-To::base64($in);
-~~~
-
-**Example:**
-
-~~~ .php
-$test = To::base64('i love you');
-~~~

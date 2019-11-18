@@ -1,0 +1,18 @@
+---
+@version: [current]
+@description: Call a date pattern directly.
+@lot:
+- string $kin, array $lot = []
+@example: |
+  Time::_('foo', '%A, %B %d, %Y');
+
+  $time = new Time('[[e]]echo date('Y-m-d H:i:s');[[/e]]');
+
+  $A = $time->foo;
+  $B = $time->bar;
+@result: |
+  $A = '[[e]]Time::_('foo', '%A, %B %d, %Y');echo (new Time(date('Y-m-d H:i:s')))->foo;[[/e]]';
+  $B = null;
+...
+
+Call a [date pattern][link:i] directly if available or try to execute pre-defined date pattern defined by [`Genome::_()`][link:../genome]. Default to [`$genome->__call()`][link:../genome].

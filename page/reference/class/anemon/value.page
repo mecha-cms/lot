@@ -1,7 +1,8 @@
 ---
 @version: [current]
 @description: Set current item in array with a value.
-@lot: $value
+@lot:
+- $value
 @example: |
   $array = [
       'foo' => 0,

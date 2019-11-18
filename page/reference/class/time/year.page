@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Get year.
+@lot:
+- void
+@example: |
+  echo (new Time('[[e]]echo date('Y-m-d H:i:s');[[/e]]'))->year;
+@result: |
+  '[[e]]echo (new Time(date('Y-m-d H:i:s')))->year;[[/e]]'
+...

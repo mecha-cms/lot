@@ -1,9 +1,0 @@
----
-type: Audio
-...
-
-[[e]]
-if ($audios = glob(ASSET . DS . 'mp3' . DS . '*.mp3', GLOB_NOSORT)) {
-    echo To::URL($audios[0]);
-}
-[[/e]]

@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Get array value recursively.
-@lot: string $key = null, string $separator = '.'
+@lot:
+- string $key = null, string $join = '.'
 @example: |
   $array = new Anemon([
       'foo' => 1,

@@ -1,0 +1,45 @@
+---
+@version: [current]
+@description: Format date input using custom formatter.
+@lot:
+- string $pattern = '%Y-%m-%d %T'
+@example: |
+  $time = (new Time('[[e]]echo date('Y-m-d H:i:s');[[/e]]'))->i('%Y/%m/%d');
+@result: |
+  $time = '[[e]]echo (new Time(time()))->i('%Y/%m/%d');[[/e]]';
+...
+
+Supported date pattern:
+
+Pattern |	Description | Example
+------- | ----------- | -------
+`%‌a` | An abbreviated textual representation of the day. | _Sun_ through _Sat_
+`%‌A` | A full textual representation of the day. | _Sunday_ through _Saturday_
+`%‌d` | Two-digit day of the month (with leading zeros). | _01_ to _31_
+`%‌u` | ISO-8601 numeric representation of the day of the week. | _1_ (for _Monday_) though _7_ (for _Sunday_)
+`%‌w` | Numeric representation of the day of the week. | _0_ (for _Sunday_) through _6_ (for _Saturday_)
+`%‌b` | Abbreviated month name, based on the locale. | _Jan_ through _Dec_
+`%‌B` | Full month name, based on the locale. | _January_ through _December_
+`%‌m` | Two digit representation of the month. | _01_ (for _January_) through _12_ (for _December_)
+`%‌y` | Two digit representation of the year. | _09_ for _2009_, _79_ for _1979_
+`%‌Y` | Four digit representation for the year. | _2038_
+`%‌H` | Two digit representation of the hour in 24-hour format. | _00_ through _23_
+`%‌I` | Two digit representation of the hour in 12-hour format. | _01_ through _12_
+`%‌M` | Two digit representation of the minute. | _00_ through _59_
+`%‌p` | Upper-case _AM_ or _PM_ based on the given time. | _AM_ for _00:31_, _PM_ for _22:23_
+`%‌P` | Lower-case _am_ or _pm_ based on the given time. | _am_ for _00:31_, _pm_ for _22:23_
+`%‌r` | Same as `%‌I:%‌M:%‌S %‌p` | _09:34:17 PM_ for _21:34:17_
+`%‌R` | Same as `%‌H:%‌M` | _00:35_ for _12:35 AM_, _16:44_ for _4:44 PM_
+`%‌S` | Two digit representation of the second. | _00_ through _59_
+`%‌T` | Same as `%‌H:%‌M:%‌S` | _21:34:17_ for _09:34:17 PM_
+`%‌X` | Preferred time representation based on locale, without the date. | _03:59:16_ or _15:59:16_
+`%‌c` | Preferred date and time stamp based on locale. | _Tue Feb 5 00:45:10 2009_ for _February 5, 2009 at 12:45:10 AM_
+`%‌D` | Same as `%‌m/%‌d/%‌y` | _02/05/09_ for _February 5, 2009_
+`%‌F` | Same as `%‌Y-%‌m-%‌d` | _2009-02-05_ for _February 5, 2009_
+`%‌s` | Unix Epoch Time timestamp (same as the `time()` function). | _305815200_ for _September 10, 1979 08:40:00 AM_
+`%‌x` | Preferred date representation based on locale, without the time. | _02/05/09_ for _February 5, 2009_
+`%‌n` | A new-line character (`\n`) |
+`%‌t` | A tab character (`\t`) |
+`%‌%` | A literal percentage character (`%‌`) |
+
+Read more about date formatting pattern [here](http://php.net/manual/en/function.strftime.php "PHP strftime()").

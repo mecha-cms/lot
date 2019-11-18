@@ -1,9 +1,8 @@
 ---
 @version: [current]
 @description: Copy a file to a folder.
-@lot: string $to
+@lot:
+- string $to
 @example: |
-  $A = (new File('.\path\to\file.txt'))->copy('.\path\to\folder');
-@result: |
-  $A = ['.\path\to\file.txt', '.\path\to\folder\file.txt'];
+  (new File('.\path\to\file.txt'))->copy('.\path\to\folder');
 ...

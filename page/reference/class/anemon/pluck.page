@@ -1,7 +1,8 @@
 ---
 @version: [current]
 @description: The OOP style of [link:../../function/pluck].
-@lot: string $key, $alt = null
+@lot:
+- string $key, $or = null
 @example: |
   $array = [
       [

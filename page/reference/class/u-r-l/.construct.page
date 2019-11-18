@@ -8,16 +8,16 @@
   $url = new URL('http://127.0.0.1/directory/foo/bar?foo=bar&baz=qux#foo');
 
   echo $url; // Return the base URL
-  echo $url->scheme; // Return the URL protocol without the `://` suffix
-  echo $url->protocol; // Return the URL protocol with the `://` suffix
+  echo $url->protocol; // Return the URL protocol
   echo $url->host; // Return the URL host name
   echo $url->port; // Return the URL port if any
-  echo $url->directory; // Return the URL directory if CMS is installed in a sub-folder
-  echo $url->path; // Return the URL path without the `i` property
-  echo $url->i; // Return the pagination index if any
-  echo $url->current; // Return the full URL of current page including the `i` and `query` property
+  echo $url->d; // Return the URL directory if CMS is installed in a sub-folder
+  echo $url->path; // Return the URL path without page offset
+  echo $url->i; // Return the page offset if any
+  echo $url->current; // Return the full URL of current page including the `i`, `query` and `hash` property
+  echo $url->clean; // Return the clean URL of current page without the `i`, `query` and `hash` property
   echo $url->query; // Return the URL query
-  echo $url->hash; // Return the URL hash defined by `$_COOKIE['hash']`
+  echo $url->hash; // Return the URL hash stored in `$_COOKIE['hash']`
 @example-description: Inspect URL properties:
-@example-note: Most of numeric path value at the end of URL path will be moved from `path` property to `i` property. So, if we have `http://127.0.0.1/foo/bar/baz/1` then we would get `foo/bar/baz` in the `path` property and `1` in the `i` property.
+@example-note: Most of numeric path value at the end of URL path will be moved from `path` property to `i` property. So, if we have `http://127.0.0.1/foo/bar/baz/1` then we would get `/foo/bar/baz` in the `path` property and `/1` in the `i` property.
 ...

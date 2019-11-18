@@ -8,7 +8,7 @@ This class is purposed to be used as an extension to other classes so that the e
 
 ~~~ .php
 class Blastula extends Genome {
-    public static function test() {} // native method
+    public static function test() {} // Native method
 }
 ~~~
 
@@ -115,7 +115,7 @@ static::_($kin);
 ~~~ .php
 $A = Blastula::_();
 $B = Blastula::_('birth');
-$C = Blastula::_('test'); // check for native method?
+$C = Blastula::_('test'); // Check for native method?
 ~~~
 
 **Result:**
@@ -127,7 +127,7 @@ $A = [
 
 $B = ['birth'];
 
-$C = false;
+$C = null;
 ~~~
 
 ### Eject

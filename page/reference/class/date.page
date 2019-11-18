@@ -1,6 +1,0 @@
----
-@version: [1, 2, current]
-@description: Date and time.
-@final: 1
-@parent: genome
-...

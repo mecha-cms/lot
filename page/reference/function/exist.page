@@ -1,0 +1,20 @@
+---
+@version: [current]
+@description: Check the existence of files and folders.
+@lot:
+- string $path
+- array $path
+@example: |
+  if (exist('.\path\to\file.txt')) { … }
+  if (exist('.\path\to\folder')) { … }
+
+  // Check if at least one of the file and folder path is exists
+  if (exist([
+      '.\path\to\file-1.txt',
+      '.\path\to\file-2.txt',
+      '.\path\to\file-3.txt',
+      '.\path\to\folder-1',
+      '.\path\to\folder-2',
+      '.\path\to\folder-3'
+  ])) { … }
+...

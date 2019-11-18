@@ -1,0 +1,15 @@
+---
+@version: [current]
+@description: Short function for [link:../class/session/set] and [link:../class/session/get].
+@lot:
+- ...$lot
+@parent: session
+@example: |
+  // Set `foo` session
+  session('foo', 1);
+
+  // Get sessions
+  $sessions = session();
+  // Get `foo` session
+  $session = session('foo');
+...

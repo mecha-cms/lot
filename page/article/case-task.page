@@ -16,7 +16,7 @@ if (!file_exists($f)) {
 }
 ~~~
 
-This file can be placed in any extensions, plugins, shields and even in the core folder.
+This file can be placed in any extensions, layout and even in the core folder.
 
 ~~~ .txt
 .\

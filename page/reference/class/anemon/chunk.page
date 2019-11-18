@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Split an array into chunks.
-@lot: int $chunk = 5, int $index = -1, $preserve_key = false
+@lot:
+- int $chunk = 5, int $index = -1, $preserve_key = false
 @example: |
   $array = range(1, 20);
 

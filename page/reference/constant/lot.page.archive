@@ -1,8 +1,4 @@
 ---
 @version: [2, current]
 @description: This is an alias for [link:page].
-@source:
-  lot:
-    x:
-      page: 0
 ...

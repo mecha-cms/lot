@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Constructor.
-@lot: iterable $array
+@lot:
+- iterable $array
 @static: 1
 @return: self
 @example: |

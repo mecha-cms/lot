@@ -1,3 +1,8 @@
 ---
 @version: [current]
+@description: Return file contents if input is a valid file path, otherwise return `null`.
+@lot:
+- string $path
+@example: |
+  if (null !== content('.\path\to\file.txt')) { … }
 ...

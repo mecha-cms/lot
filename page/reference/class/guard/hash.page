@@ -1,10 +1,11 @@
 ---
 @version: [2, current]
 @description: Generate random hash.
-@lot: string $salt = ""
+@lot:
+- string $salt = ""
 @static: 1
 @example: |
-  echo Guard::hash();
+  $A = Guard::hash();
 @result: |
-  '[[e]]echo Guard::hash();[[/e]]'
+  $A = '[[e]]echo Guard::hash();[[/e]]';
 ...

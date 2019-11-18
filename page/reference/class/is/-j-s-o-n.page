@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Check for valid JSON string.
-@lot: $x
+@lot:
+- $x
 @static: 1
 @example: |
   if (Is::JSON('{"foo":"bar"}')) { … }

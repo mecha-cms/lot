@@ -1,3 +1,24 @@
 ---
 @version: [2, current]
+@description: Convert values into their string representation.
+@lot:
+- $value, array $extra = []
+- array $values, array $extra = []
+@example: |
+  // Convert `true` to string
+  $A = s(true);
+  // Convert these values to string
+  $B = s([true, false, null, 1, .5, 'a', '?'], [
+      '?' => 'null'
+  ]);
 ...
+
+This function does the following tasks:
+
+ - Convert integer and float to string.
+ - Convert object to JSON string.
+ - Convert `true` value to the string `'true'`.
+ - Convert `false` value to the string `'false'`.
+ - Convert `true` value to the string `'true'`.
+ - Convert `null` value to the string `'null'`.
+ - Return the string value anyway.

@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Get and evaluate `$_SERVER` data.
+@lot:
+- void
+- string $key
+@static: 1
+@example: |
+  if (Server::get('QUERY_STRING')) { … }
+...

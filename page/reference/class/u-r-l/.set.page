@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Dynamic properties.
+@lot:
+- string $key, $value
+@example: |
+  $url->path = '/foo/bar/baz';
+...

@@ -1,4 +1,0 @@
----
-@version: [current]
-@description: Short function for [`new Page()`][link:../class/page/.construct].
-...

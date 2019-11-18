@@ -26,12 +26,12 @@ If you want to make something that is super huge with Mecha, that would be possi
  - Easy to use and [well documented][link:reference] API.
  - [Control panel][link:reference/extension/panel] extension.
 
-### Dependency
+### Environments
 
  - PHP 7.1.0 and above, with enabled [`mbstring`](http://php.net/manual/en/book.mbstring.php "PHP Extension `mbstring`") extension.
  - Apache 2.4 and above, with enabled [`mod_rewrite`](http://httpd.apache.org/docs/current/mod/mod_rewrite.html "Apache Module `mod_rewrite`") module.
 
-### Preparation
+### Preparations
 
  1. Make sure that you already have the required components.
  2. Download the available package from the [home page][link:index].
@@ -41,7 +41,7 @@ If you want to make something that is super huge with Mecha, that would be possi
  6. Read on how to add [pages][link:reference/extension/page] and [tags][link:reference/extension/tag]. Learn on how to create pages from the author by looking at the [source code](https://github.com/mecha-cms/lot "GitHub").
  7. Install the [panel][link:reference/extension/panel] extension if you are stuck by doing everything manually. You always have the full control to remove this extension without having to worry that your site will stop running after doing so.
 
-### Credit
+### Credits
 
 © 2014 – [[e]]echo $date->year;[[/e]] Mecha CMS. Except where otherwise noted, content on this site is licensed under a [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
 
@@ -50,7 +50,7 @@ If you want to make something that is super huge with Mecha, that would be possi
 ### Site Theme
 
 [[e]]
-foreach (glob(CONTENT . DS . '$' . DS . 'asset' . DS . 'css' . DS . '$' . DS . '*.css') as $v) {
+foreach (glob(Layout::$state['path'] . DS . 'asset' . DS . 'css' . DS . 'layout' . DS . '*.css') as $v) {
     $content = file_get_contents($v);
     if (strpos($content, '#') !== false && preg_match_all('/#(?:[a-z\d]{3}){1,2}\b/', strtolower($content), $colors)) {
         echo '<p><a class="colors" href="?skin=' . ($name = basename($v, '.css')) . '" title="' . To::title($name) . '"><b>' . $name . '</b>';

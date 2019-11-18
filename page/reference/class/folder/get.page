@@ -1,0 +1,13 @@
+---
+@version: [current]
+@description: Get folder contents as array.
+@lot:
+- $x = null, $deep = 0
+@example: |
+  $folder = new Folder('.\path\to\folder');
+
+  $A = $folder->get();
+  $B = $folder->get('gif,jpeg,jpg,png');
+  $C = $folder->get(null, true);
+  $D = $folder->get(null, 2);
+...

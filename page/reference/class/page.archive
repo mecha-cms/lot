@@ -1,13 +1,13 @@
 ---
 @version: [2, current]
 @description: Working with pages.
-@parent: genome
+@parent: file
 @use:
   '.\lot\x\page': 1
-@interface:
-- .array-access
-- .countable
-- .iterator-aggregate
-- .json-serializable
-- .serializable
 ...
+
+Create an empty page or open page if it already exists:
+
+~~~ .php
+$page = new Page('.\path\to\file.page');
+~~~

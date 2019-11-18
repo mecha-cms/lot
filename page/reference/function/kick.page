@@ -1,4 +1,9 @@
 ---
 @version: [current]
-@description: Short function for [`Guard::kick()`][link:../class/guard/kick].
+@description: Short function for [link:../class/guard/kick].
+@lot:
+- string $path
+@parent: guard
+@example: |
+  kick('http://example.com');
 ...

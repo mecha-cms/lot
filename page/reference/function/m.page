@@ -1,3 +1,13 @@
 ---
 @version: [2, current]
+@description: Normalize range to the specified boundaries.
+@lot:
+- $value, [$old_start, $old_end], [$new_start, $new_end]
+@example: |
+  // Convert range of 0–24 to 0–100
+  $A = m(12, [0, 24], [0, 100]) . '%';
+  // Make sure to not exceed the boundaries with `b`
+  $B = m(b(12345, [0, 24]), [0, 24], [0, 100]) . '%';
+@result: |
+  $A = '[[e]]echo m(12, [0, 24], [0, 100]) . '%';[[/e]]';
 ...

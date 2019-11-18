@@ -14,4 +14,4 @@
   $B = '[[e]]echo strftime('%Y-%m-%d %T', $_SERVER['REQUEST_TIME']);[[/e]]';
 ...
 
-[connect:../date/.invoke]
+[connect:../time/.invoke]

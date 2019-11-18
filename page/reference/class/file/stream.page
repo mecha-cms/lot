@@ -1,0 +1,17 @@
+---
+@version: [current]
+@description: Stream file content line by line.
+@lot:
+- void
+@example: |
+  $file = new File('.\path\to\file.txt');
+
+  // Search “TODO” text in file contents
+  $found = false;
+  foreach ($file->stream() as $k => $v) {
+      if (strpos($v, 'TODO:') !== false) {
+          $found = true;
+          break;
+      }
+  }
+...

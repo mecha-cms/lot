@@ -1,35 +1,41 @@
 ---
-title: `$to::query()`
-description: Convert PHP array into URL query string.
+@version: [2, current]
+@description: Convert PHP array into URL query string.
+@lot:
+- array $in
+@static: 1
+@example: |
+  $A = To::query([
+      'a' => 1,
+      'b' => true,
+      'c' => 'true',
+      'd' => false,
+      'e' => 'false',
+      'f' => null,
+      'g' => 'null',
+      'h' => "",
+      'i' => [
+          'j' => [
+              'k' => [1, 2],
+              'l' => 'mno'
+          ]
+      ]
+  ]);
+@result: |
+  $A = '[[e]]echo To::query([
+      'a' => 1,
+      'b' => true,
+      'c' => 'true',
+      'd' => false,
+      'e' => 'false',
+      'f' => null,
+      'g' => 'null',
+      'h' => "",
+      'i' => [
+          'j' => [
+              'k' => [1, 2],
+              'l' => 'mno'
+          ]
+      ]
+  ]);[[/e]]';
 ...
-
-~~~ .php.xmp
-To::query($in, $c = ['?', '&', '=', ""]);
-~~~
-
-**Example:**
-
-~~~ .php
-$test = To::query([
-    'a' => 1,
-    'b' => true,
-    'c' => 'true',
-    'd' => false,
-    'e' => 'false',
-    'f' => null,
-    'g' => 'null',
-    'h' => "",
-    'i' => [
-        'j' => [
-            'k' => [1, 2],
-            'l' => 'mno'
-        ]
-    ]
-]);
-~~~
-
-Result:
-
-~~~ .php
-$test = '?a=1&b&c=true&e=false&g=null&h=&i%5Bj%5D%5Bk%5D%5B0%5D=1&i%5Bj%5D%5Bk%5D%5B1%5D=2&i%5Bj%5D%5Bl%5D=mno';
-~~~

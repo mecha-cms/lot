@@ -2,8 +2,8 @@
 @version: [current]
 @description: Return the document title.
 @example: |
-  <title><?php echo $t; ?></title>
+  <title><?= $t; ?></title>
 @example-language: 'html'
 ...
 
-Added by the [content][link:../extension/content] extension.
+Added by the [layout][link:../store/extension/content] extension.

@@ -1,3 +1,9 @@
 ---
 @version: [current]
+@description: Randomize array order.
+@lot:
+- array $data, $preserve_key = true
+- array $data, callable $fn
+@example: |
+  $A = shake([1, 2, 3, 4, 5]);
 ...

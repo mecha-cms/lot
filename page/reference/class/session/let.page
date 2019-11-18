@@ -7,10 +7,10 @@
 - array $keys
 @static: 1
 @example: |
-  // Remove all session(s)
-  Session::reset();
+  // Remove all sessions
+  Session::let();
   // Remove `foo` session
-  Session::reset('foo');
+  Session::let('foo');
   // Remove `foo` and `bar` session
-  Session::reset(['foo', 'bar']);
+  Session::let(['foo', 'bar']);
 ...

@@ -9,18 +9,6 @@
   // Get current hook
   test(Hook::is());
 
-  // Check if current hook container name was `start`
-  if (Hook::is('start')) { … }
-
-  // Check current hook container name within a closure
-  Hook::set([
-      'page.link',
-      'tag.link',
-      'user.link'
-  ], function($link) {
-      if (Hook::is('user.link')) {
-          $link = str_replace('@', "", $link);
-      }
-      return str_replace('&', '&amp;', $link);
-  });
+  // Check if current hook container name was `set`
+  if (Hook::is('set')) { … }
 ...

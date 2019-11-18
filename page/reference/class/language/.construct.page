@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: Constructor.
-@lot: void
-@example: |
-  Language::$config['id'] = 'en-us';
-  $language = new Language; // Set global `$language` variable
-...

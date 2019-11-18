@@ -1,3 +1,20 @@
 ---
 @version: [2, current]
+@description: Advance `glob` function that returns `Generator` instead of plain array.
+@lot:
+- string $folder, string $x, string $deep = 0
+- string $folder int $type, string $deep = 0
+@example: |
+  // Default stream
+  foreach (g('.\path\to\folder') as $path => $type) { … }
+  // Stream folders only
+  foreach (g('.\path\to\folder', 0) as $path => $type) { … }
+  // Stream files only
+  foreach (g('.\path\to\folder', 1) as $path => $type) { … }
+  // Stream image files only
+  foreach (g('.\path\to\folder', 'gif,jpeg,jpg,png') as $path => $type) { … }
+  // Stream files recursively
+  foreach (g('.\path\to\folder', 1, true) as $path => $type) { … }
+  // Stream files recursive to 3 directory level only
+  foreach (g('.\path\to\folder', 1, 3) as $path => $type) { … }
 ...

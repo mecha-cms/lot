@@ -1,0 +1,16 @@
+---
+@version: [current]
+@description: Remove `$_POST` value.
+@lot:
+- void
+- string $key
+- array $keys
+@static: 1
+@example: |
+  // Remove all items
+  Post::let();
+  // Remove `foo` item
+  Post::let('foo');
+  // Remove `foo` and `bar` item
+  Post::let(['foo', 'bar']);
+...

@@ -2,7 +2,7 @@
 @version: [2, current]
 @description: Enable or disable debug mode.
 @example: |
-  if (DEBUG === true) { … }
+  if (true === DEBUG) { … }
 @result: |
   null
 ...

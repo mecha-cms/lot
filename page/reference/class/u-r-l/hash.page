@@ -1,9 +1,9 @@
 ---
 @version: [current]
-@description: Return the URL hash.
+@description: Return the URL hash if any, otherwise return `null`.
 @lot:
 - void
-- string $prefix = '#'
+- string $join = '#'
 @example: |
   $A = $url->hash;
   $B = $url->hash();

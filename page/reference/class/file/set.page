@@ -1,10 +1,9 @@
 ---
 @version: [current]
 @description: Write content to a file.
-@lot: string $data
-@static: 2
+@lot:
+- $content
 @example: |
   $file = new File('.\path\to\file.txt');
-  $file->set('some text');
-  $file->save();
+  $file->set('some text')->save();
 ...

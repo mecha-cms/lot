@@ -187,18 +187,6 @@ kind: [1,2,3,11]
 >         │   └── time.data
 >         └── page-slug.page
 > ~~~
->
-> > **Info:** The default [skin][link:../reference/skin] uses `path` to set the `$key` value in the `sort()` method of [`Pages` class][link:../reference/class/pages/sort], and they are sorted ascending. To sort the page listing descending by time, go to `.\lot\page\index.page` then add `sort` property with this value:
-> >
-> > ~~~ .yaml
-> > ---
-> > title: Home
-> > description: Welcome to my personal home page!
-> > sort: [-1, time] # Sort descending by the `time` field
-> > ...
-> >
-> > Content goes here.
-> > ~~~
 
 ### Shortcodes
 

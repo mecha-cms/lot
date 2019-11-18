@@ -1,0 +1,36 @@
+---
+@version: [1, 2, current]
+@description: State getter and setter.
+@parent: genome
+@interface:
+- .array-access
+- .countable
+- .iterator-aggregate
+- .json-serializable
+...
+
+This class provides a mechanism for storing data globally in a well managed fashion: stores your variables/objects that you need in a global scope without polluting the global _namespace_ of your application.
+
+Instantiating this class to a different variable will not create a new storage due to its static architecture. To create a new container, you will need to extend this class to another class:
+
+~~~ .php
+$A = new State;
+$A->foo = 1;
+
+$B = new State;
+
+echo $A->foo; // `1`
+echo $B->foo; // `1`
+~~~
+
+~~~ .php
+class Storage extends State {}
+
+$A = new State;
+$A->foo = 1;
+
+$B = new Storage;
+
+echo $A->foo; // `1`
+echo $B->foo; // `null`
+~~~

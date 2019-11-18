@@ -1,14 +1,12 @@
 ---
 @version: [current]
 @description: Move a file or folder to folder.
-@lot: string $to, string $as = null
+@lot:
+- string $to, string $as = null
 @example: |
   // Move a file to a folder
-  $A = (new File('.\path\to\file.txt'))->move('.\path\to\folder');
+  (new File('.\path\to\file.txt'))->move('.\path\to\folder');
 
   // Move a file to a folder, then rename it!
-  $B = (new File('.\path\to\file.txt'))->move('.\path\to\folder', 'file-1.txt');
-@result: |
-  $A = ['.\path\to\file.txt' => '.\path\to\folder\file.txt'];
-  $B = ['.\path\to\file.txt' => '.\path\to\folder\file-1.txt'];
+  (new File('.\path\to\file.txt'))->move('.\path\to\folder', 'file-1.txt');
 ...

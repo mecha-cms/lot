@@ -3,11 +3,12 @@
 @description: Return the stored alert messages if any.
 @example: |
   <form>
-    <?php echo $alert; ?>
+    <?= $alert; ?>
     …
     …
   </form>
+@example-description: This variable is an instance of [`Page`][link:../class/page] with current page path as the input.
 @example-language: 'html'
 ...
 
-Added by the [alert][link:../extension/alert] extension.
+Added by the [alert][link:../store/extension/alert] extension.

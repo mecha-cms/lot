@@ -11,9 +11,12 @@
 @example-description: Get data of `style-2.css` path that has been added to the hooks storage if any, otherwise, return `null`.
 @result: |
   $A = [
-      'path' => '.\lot\asset\css\style-2.css',
-      'url' => 'http://127.0.0.1/lot/asset/css/style-2.css',
-      'data' => [],
+      0 => null,
+      1 => "",
+      2 => [
+          'path' => '.\lot\asset\css\style-2.css',
+          'url' => 'http://127.0.0.1/lot/asset/css/style-2.css'
+      ],
       'stack' => 10
   ];
 

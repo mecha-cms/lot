@@ -1,0 +1,11 @@
+---
+@version: [current]
+@description: Create a time instance.
+@lot:
+- $date
+@example: |
+  $A = new Time([[e]]echo time();[[/e]]);
+  $B = new Time('[[e]]echo time();[[/e]]');
+  $C = new Time('[[e]]echo date('Y-m-d H:i:s');[[/e]]');
+  $D = new Time('[[e]]echo date('Y-m-d-H-i-s');[[/e]]');
+...

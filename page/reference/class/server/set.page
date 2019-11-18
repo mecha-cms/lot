@@ -1,0 +1,9 @@
+---
+@version: [current]
+@description: Set value to `$_SERVER` variable.
+@lot:
+- string $key, $value = null
+@static: 1
+@example: |
+  Server::set('HTTP_X_REQUESTED_WITH', 'XHR');
+...

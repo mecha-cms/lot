@@ -1,15 +1,18 @@
 ---
 @version: [current]
-@description: Fetch page content from a URL.
+@description: Fetch content from a remote URL.
 @lot:
-- string $url, string $agent = null
-- string $url, array $headers = []
-@static: 1
+- string $url, string $agent = null, string $type = 'GET'
+- string $url, array $lot = [], string $type = 'GET'
 @example: |
   $A = fetch('https://example.com');
-  $B = fetch('https://example.com', Get::UA());
+  $B = fetch('https://example.com', $_SERVER['HTTP_USER_AGENT']);
   $C = fetch('https://example.com', [
+      'User-Agent' => $_SERVER['HTTP_USER_AGENT'],
       'X-Foo' => 1,
       'X-Bar' => 2
   ]);
+
+  // Send `POST` request with data as URL query
+  $D = fetch('https://example.com?foo=bar&baz=qux', [], 'POST');
 ...

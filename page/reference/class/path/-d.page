@@ -1,26 +1,17 @@
 ---
-title: `$path::D()`
-description: Convert file path to its directory path.
+@version: [2, current]
+@description: Convert file path to its directory path.
+@lot:
+- string $path, int $step = 1, string $join = DS
+@static: 1
+@example: |
+  $A = Path::D('foo\bar\baz.qux');
+  $B = Path::D('foo\bar\baz.qux', 2);
+  $C = Path::D('foo-bar-baz.qux', 1, '-');
+  $D = Path::D('foo.bar.baz.qux', 1, '.');
+@result: |
+  $A = 'foo\bar';
+  $B = 'foo';
+  $C = 'foo-bar';
+  $D = 'foo.bar.baz';
 ...
-
-~~~ .php.xmp
-Path::D($path, $step = 1, $s = null);
-~~~
-
-**Example:**
-
-~~~ .php
-$test_1 = Path::D('foo\bar\baz.qux');
-$test_2 = Path::D('foo\bar\baz.qux', 2);
-$test_3 = Path::D('foo-bar-baz.qux', 1, '-');
-$test_4 = Path::D('foo.bar.baz.qux', 1, '.');
-~~~
-
-Result:
-
-~~~ .php
-$test_1 = 'foo\bar';
-$test_2 = 'foo';
-$test_3 = 'foo-bar';
-$test_4 = 'foo.bar.baz';
-~~~

@@ -6,8 +6,8 @@
 - string $id
 @static: 1
 @example: |
-  // Get all of the attached hook(s)
+  // Get all of the attached hooks
   test(Hook::get());
-  // Get all hook(s) attached to `content`
+  // Get all hooks attached to `content`
   test(Hook::get('content'));
 ...

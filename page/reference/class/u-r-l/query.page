@@ -1,10 +1,10 @@
 ---
 @version: [current]
-@description: Return the URL query.
+@description: Return the URL query if any, otherwise return `null`.
 @lot:
 - void
-- string $separator = '&'
-- string $separator = '&', array $q = []
+- string $join = '&'
+- string $join = '&', array $q = []
 @example: |
   $A = $url->query;
   $B = $url->query();

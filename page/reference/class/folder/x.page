@@ -1,9 +1,10 @@
 ---
 @version: [current]
 @description: Get current folder extension.
-@lot: void
+@lot:
+- void
 @example: |
-  echo (new Folder('.\path\to\folder.a.b.c'))->x;
+  $A = (new Folder('.\path\to\folder.a.b.c'))->x;
 @result: |
-  null
+  $A = null;
 ...

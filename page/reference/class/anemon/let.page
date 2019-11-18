@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Remove array value recursively.
-@lot: string $key, string $separator = '.'
+@lot:
+- string $key, string $join = '.'
 @example: |
   $array = new Anemon([
       'foo' => 1,

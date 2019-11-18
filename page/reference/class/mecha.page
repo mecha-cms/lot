@@ -1,6 +1,0 @@
----
-@version: [1, 2, current]
-@description: Provides information about the system.
-@final: 1
-@parent: genome
-...

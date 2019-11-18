@@ -1,7 +1,8 @@
 ---
 @version: [current]
-@description: Convert array into page content.
-@lot: array $in
+@description: Convert array into page file content.
+@lot:
+- array $in
 @static: 1
 @example: |
   echo To::page([

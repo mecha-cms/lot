@@ -1,0 +1,14 @@
+---
+@version: [current]
+@description: Convert SGML class instance to JSON.
+@lot:
+- void
+@interface:
+- .json-serializable
+@example: |
+  $foo = new SGML('<foo bar="baz">qux</foo>');
+
+  echo To::JSON($foo);
+@result: |
+  '["foo","qux",{"bar":"baz"}]'
+...

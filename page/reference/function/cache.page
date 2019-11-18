@@ -1,0 +1,12 @@
+---
+@version: [current]
+@description: Short function for [link:../class/cache/hit].
+@lot:
+- string $file, callable $fn
+- array $files, callable $fn
+@parent: cache
+@example: |
+  cache('.\path\to\file.php', function($file) {
+      return require $file;
+  });
+...

@@ -1,6 +1,7 @@
 ---
 title: Default Page Data
 description: These page data will have their own default values.
+type: Markdown
 ...
 
 I have updated the [`Page`][link:../reference/class/page] class recently so that now we can have more meaningful default page data.

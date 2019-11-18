@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Remove state property.
+@lot:
+- string $key
+@example: |
+  unset($state->fooBarBaz);
+...

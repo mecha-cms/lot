@@ -1,0 +1,29 @@
+---
+@version: [current]
+@description: Stream folder contents.
+@lot:
+- $x = null, $deep = 0
+@example: |
+  $folder = new Folder('.\path\to\folder');
+
+  $files = $folders = [];
+
+  // Flat stream
+  foreach ($folder->stream() as $k => $v) {
+      // `$k` for path, and `$v` for type (`1` for file and `0` for folder)
+      if ($v === 1) {
+          $files[] = $k;
+      } else {
+          $folders[] = $k;
+      }
+  }
+
+  // Stream by specific file extension (files only)
+  foreach ($folder->stream('gif,jpeg,jpg,png') as $k => $v) { … }
+
+  // Recursive stream
+  foreach ($folder->stream(null, true) as $k => $v) { … }
+
+  // Recursive stream (2 level only)
+  foreach ($folder->stream(null, 2) as $k => $v) { … }
+...

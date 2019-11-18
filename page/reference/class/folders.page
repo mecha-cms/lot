@@ -1,0 +1,18 @@
+---
+@version: [current]
+@description: Bulk [folder][link:folder] instance from array.
+@parent: genome
+...
+
+~~~ .php
+$folders = new Folders([
+    '.\path\to\folder-1',
+    '.\path\to\folder-2',
+    '.\path\to\folder-3',
+    '.\path\to\folder-4',
+]);
+
+foreach ($folders as $folder) {
+    echo $folder->name . '<br>';
+}
+~~~

@@ -1,0 +1,16 @@
+---
+@version: [2, current]
+@description: Dynamic methods.
+@lot:
+- string $kin, array $lot = []
+@example: |
+  // This is …
+  $state->page('title');
+  // … equal to this
+  $state->get('page.title');
+
+  // This is …
+  $state->foo('bar.baz');
+  // … equal to this
+  $state->get('foo.bar.baz');
+...

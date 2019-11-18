@@ -1,0 +1,10 @@
+---
+@version: [2, current]
+@description: Count state items.
+@lot:
+- void
+@interface:
+- .countable
+@example: |
+  test($state->count(), count($state));
+...

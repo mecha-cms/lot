@@ -3,7 +3,9 @@
 @description: Check whether current URL path is matched with the given route pattern.
 @lot:
 - string $id
+- string $id, string $path
 - array $id
+- array $id, string $path
 @static: 1
 @example: |
   if (Route::is('blog/:slug')) { … }

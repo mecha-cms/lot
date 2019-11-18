@@ -1,3 +1,33 @@
 ---
-@version: [2, current]
+@version: [current]
+@description: Internationalization.
+@lot:
+- string $key
+- string $key, string $var
+- string $key, array $vars
 ...
+
+Any text declared in the first parameter will be returned by default. This example will simply return “I'm ready!”:
+
+~~~ .php
+<?= i('I\'m ready!'); ?>
+~~~
+
+Writing text through this function is not different than just writing with generic `echo` and `sprintf`. However, this function actually allows you to make the text input as a key for the translation data that you set in the `$GLOBALS['I']` variable. So, for example, somewhere in your includable file, you add this line to make the previous example return “Aku siap!”:
+
+~~~ .php
+$GLOBALS['I']['I\'m ready!'] = 'Aku siap!';
+~~~
+
+Given the sensitive key, I recommend you to use plain ASCII characters without any HTML markup at all as the translation key so that you don’t have to worry about unicode and HTML markup in the future as they can be presented in various way which you can’t control. It’s okay if you are a typography freak. You can add your awesome punctuations later in the value:
+
+~~~ .php
+$GLOBALS['I']['I\'m ready!'] = 'I’m ready!';
+$GLOBALS['I']['Content goes here...'] = 'Content goes here…';
+~~~
+
+For text contains HTML markup, consider to split them as a separate entity:
+
+~~~ .php
+<?= i('Hello') . ' <abbr>' . i('PHP') . '</abbr>!'; ?>
+~~~

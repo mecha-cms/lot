@@ -4,7 +4,7 @@
 @parent: genome
 ...
 
-Create a new folder or open folder if it already exists:
+Create an empty folder or open folder if it already exists:
 
 ~~~ .php
 $folder = new Folder('.\path\to\folder');

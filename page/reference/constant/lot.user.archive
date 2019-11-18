@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: This is an alias for [link:user].
-@source:
-  lot:
-    x:
-      user: 0
-...

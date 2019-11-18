@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Check the existence of a URL property.
+@lot:
+- string $key
+@example: |
+  if (isset($url->path)) { … }
+...

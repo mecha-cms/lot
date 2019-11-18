@@ -1,4 +1,9 @@
 ---
 @version: [current]
-@description: Short function for [`Guard::abort()`][link:../class/guard/abort].
+@description: Short function for [link:../class/guard/abort].
+@lot:
+- string $alert
+@parent: guard
+@example: |
+  abort('Error message goes here.');
 ...

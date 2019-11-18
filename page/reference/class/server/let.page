@@ -1,0 +1,16 @@
+---
+@version: [current]
+@description: Remove `$_SERVER` value.
+@lot:
+- void
+- string $key
+- array $keys
+@static: 1
+@example: |
+  // Remove all items
+  Server::let();
+  // Remove `foo` item
+  Server::let('foo');
+  // Remove `foo` and `bar` item
+  Server::let(['foo', 'bar']);
+...

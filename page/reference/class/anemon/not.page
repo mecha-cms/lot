@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: The OOP style of [link:../../function/not].
-@lot: callable $fn
+@lot:
+- callable $fn
 @example: |
   $array = [
       'foo' => 0,

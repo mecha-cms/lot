@@ -1,0 +1,17 @@
+---
+@version: [current]
+@description: Output HTML component as string.
+@lot:
+- void
+@example: |
+  $img = new HTML('<img>');
+  $img['width'] = 16;
+  $img['height'] = 16;
+  $img['src'] = 'http://127.0.0.1/favicon.ico';
+  $img['test'] = 'aaa"bbb"ccc';
+
+  echo $img;
+@result: |
+  <img height="16" src="http://127.0.0.1/favicon.ico" test="aaa&quot;bbb&quot;ccc" width="16">
+@result-language: 'html'
+...

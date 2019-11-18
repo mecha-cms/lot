@@ -1,0 +1,9 @@
+---
+@version: [current]
+@description: Set value to `$_POST` variable.
+@lot:
+- string $key, $value = null
+@static: 1
+@example: |
+  Post::set('id', 1);
+...

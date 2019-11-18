@@ -1,0 +1,15 @@
+---
+@version: [current]
+@description: Short function for [link:../class/cookie/set] and [link:../class/cookie/get].
+@lot:
+- ...$lot
+@parent: cookie
+@example: |
+  // Set `foo` cookie
+  cookie('foo', 1, '1 day');
+
+  // Get cookies
+  $cookies = cookie();
+  // Get `foo` cookie
+  $cookie = cookie('foo');
+...

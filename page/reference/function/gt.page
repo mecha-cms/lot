@@ -1,7 +1,8 @@
 ---
 @version: [current]
 @description: Greater than.
-@lot: $a, $b
+@lot:
+- $a, $b
 @example: |
   if (gt('abcdef', 5)) { … }
   if (gt(['a', 'b', 'c', 'd', 'e', 'f'], 5)) { … }

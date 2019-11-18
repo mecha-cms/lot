@@ -1,8 +1,9 @@
 ---
 @version: [2, current]
-@description: This is an alias for [`$config`][link:config].
+@description: Return the site data.
 @example: |
-  <?php echo $site->title; ?>
+  <?= $site->title; ?>
+@example-description: This is an alias for [link:state].
 ...
 
-Added by the [content][link:../extension/content] extension.
+Added by the [layout][link:../store/extension/content] extension.

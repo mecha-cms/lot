@@ -1,0 +1,49 @@
+---
+@version: [2, current]
+@description: Get global state item.
+@lot:
+- void
+- string $key, $array = false
+- array $keys, $array = false
+@static: 1
+@example: |
+  $A = State::get('x');
+  $B = State::get('x', true);
+  $C = State::get('x.page.page.chunk');
+  $D = State::get('x.page.page')->chunk;
+  $E = State::get('x.page.page', true)['chunk'];
+
+  $F = State::get([
+      'title' => false,
+      'x.page.page.title' => false
+  ]);
+  $G = State::get([
+      'title' => false,
+      'x.page.page.title' => false
+  ], true);
+@result: |
+  $A = (object) [
+      'alert' => (object) [ … ],
+      'art' => (object) [ … ],
+      'asset' => (object) [ … ],
+      …
+  ];
+  $B = [
+      'alert' => [ … ],
+      'art' => [ … ],
+      'asset' => [ … ],
+      …
+  ];
+  $C = 5;
+  $D = 5;
+  $E = 5;
+
+  $F = (object) [
+      'title' => 'Site Title',
+      'x.page.page.title' => 'Default Page Title'
+  ]);
+  $G = [
+      'title' => 'Site Title',
+      'x.page.page.title' => 'Default Page Title'
+  ];
+...

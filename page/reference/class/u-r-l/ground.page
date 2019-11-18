@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Return the base URL, otherwise return `null`.
+@lot:
+- void
+@example: |
+  $A = $url->ground;
+@result: |
+  $A = 'http://127.0.0.1';
+...

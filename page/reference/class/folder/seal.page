@@ -3,8 +3,8 @@
 @description: Set or get folder permission.
 @lot:
 - void
-- int $seal
-- string $seal
+- int $i
+- string $i
 @example: |
   $folder = new Folder('.\path\to\folder');
 

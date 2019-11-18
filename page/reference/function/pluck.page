@@ -1,3 +1,42 @@
 ---
 @version: [current]
+@description: Extract member of array items by key and serve it as flat array.
+@lot:
+- array $data, string $key, $or = null
+@example: |
+  $data = [
+      [
+          'value' => 'A',
+          'id' => '41'
+      ],
+      [
+          'value' => 'B',
+          'id' => '42'
+      ],
+      [
+          'value' => 'C',
+          'id' => '43'
+      ],
+      [
+          'value' => 'D',
+          'id' => '44'
+      ],
+      [
+          'value' => 'E',
+          'id' => '45'
+      ],
+      [
+          'value' => 'F',
+          'id' => '46'
+      ],
+      [
+          'id' => '47'
+      ]
+  ];
+
+  $A = pluck($data, 'value');
+  $B = pluck($data, 'value', '?');
+@result: |
+  $A = ['A', 'B', 'C', 'D', 'E', 'F'];
+  $B = ['A', 'B', 'C', 'D', 'E', 'F', '?'];
 ...

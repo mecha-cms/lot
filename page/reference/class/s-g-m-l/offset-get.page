@@ -1,0 +1,17 @@
+---
+@version: [current]
+@description: Get SGML attribute.
+@lot:
+- string $name
+@interface:
+- .array-access
+@example: |
+  $foo = new SGML('<foo bar="baz">qux</foo>');
+
+  test(
+      $foo[0], // Return the SGML tag name
+      $foo[1], // Return the SGML content
+      $foo[2], // Return the SGML attributes with their value
+      $foo['bar'] // Return the SGML `bar` attribute value
+  );
+...

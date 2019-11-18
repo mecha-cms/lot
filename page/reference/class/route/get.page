@@ -7,6 +7,7 @@
 @static: 1
 @example: |
   test(
+      Route::get(),
       Route::get('blog'),
       Route::get('blog/:slug'),
       Route::get('foo/bar')

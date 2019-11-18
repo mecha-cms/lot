@@ -1,0 +1,9 @@
+---
+@version: [current]
+@description: Set response body from the layout ID.
+@example: |
+  Route::set('foo/bar', function() {
+      $this->type('text/html');
+      $this->view('page/reference');
+  });
+...

@@ -1,0 +1,12 @@
+---
+@version: [current]
+@description: Count SGML element.
+@lot:
+- void
+@interface:
+- .countable
+@example: |
+  $foo = new SGML('<foo bar="baz">qux</foo>');
+
+  echo count($foo); // This always return `1`
+...

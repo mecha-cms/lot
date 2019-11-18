@@ -3,8 +3,8 @@
 @description: Set or get file permission.
 @lot:
 - void
-- int $seal
-- string $seal
+- int $i
+- string $i
 @example: |
   $file = new File('.\path\to\file.txt');
 

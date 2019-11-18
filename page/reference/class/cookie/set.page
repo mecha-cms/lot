@@ -4,7 +4,7 @@
 @lot:
 - string $key, $value = "", int $expires = 86400
 - string $key, $value = "", string $expires = '1 day'
-- "string $key, $value = \"\", array $config = [\n    'expires' => '1 day',\n    'path' => '\/',\n    'domain' => \"\",\n    'secure' => false,\n    'httponly' => false\n]"
+- "string $key, $value = \"\", array $state = [\n    'expires' => '1 day',\n    'path' => '\/',\n    'domain' => \"\",\n    'secure' => false,\n    'httponly' => false\n]"
 @static: 1
 @example: |
   // Quick cookie

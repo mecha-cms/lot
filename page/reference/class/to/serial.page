@@ -1,14 +1,11 @@
 ---
-title: `$to::serial()`
-description: Serialize data.
+@version: [2, current]
+@description: Serialize data.
+@lot:
+- $in
+@static: 1
+@example: |
+  $A = To::serial([0, 'a', []]);
+@result: |
+  $A = '[[e]]echo To::serial([0, 'a', []]);[[/e]]';
 ...
-
-~~~ .php.xmp
-To::serial($in);
-~~~
-
-**Example:**
-
-~~~ .php
-$test = To::serial([0, 'a', []]);
-~~~

@@ -2,10 +2,8 @@
 @version: [1, 2, current]
 @description: Reading file line by line.
 @lot:
-- void
-- int $i
+- int $i = 0
 @example: |
   $file = new File('.\path\to\file.txt');
-  echo $file->get(); // Get the file content
-  echo $file->get(0); // Get the file content exactly at line 0
+  echo $file->get(2); // Get the file content exactly at line 2
 ...

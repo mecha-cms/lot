@@ -1,3 +1,13 @@
 ---
 @version: [current]
+@description: Set response MIME type.
+@example: |
+  Route::set('foo/bar', function() {
+      $this->type('application/json');
+      echo To::JSON([
+          'foo' => 'bar',
+          'baz' => [1, 2, 3]
+      ]);
+      exit;
+  });
 ...

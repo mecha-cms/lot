@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Set or replace array values recursively.
-@lot: string $key, $value = null, string $separator = '.'
+@lot:
+- string $key, $value = null, string $join = '.'
 @example: |
   $array = new Anemon([
       'foo' => 1,

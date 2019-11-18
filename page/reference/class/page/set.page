@@ -1,51 +1,22 @@
 ---
-title: `$page->set()`
-description: Insert new page data, update and/or remove current page data.
+@version: [2, current]
+@description: Insert new page data, update and/or remove current page data.
+@lot:
+- string $key, $value = null
+- array $values
+- string $content
+@example: |
+  $page = new Page('.\path\to\file.page');
+
+  // Set page title
+  $page->set('title', 'Lorem Ipsum');
+
+  // Set page title and description at once
+  $page->set([
+      'title' => 'Lorem Ipsum',
+      'description' => 'Lorem ipsum dolor sit amet.'
+  ]);
+
+  // Set page content
+  $page->set('<p>Lorem ipsum dolor sit amet.</p>');
 ...
-
-~~~ .php.xmp
-->set($input, $fn = null);
-~~~
-
-**Example:**
-
-Set page header:
-
-~~~ .php
-Page::open('path\to\file.page')->set([
-    'title' => 'Page Title',
-    'description' => 'Page description.',
-    'author' => 'Taufik Nurrohman',
-    'type' => 'HTML'
-]);
-~~~
-
-~~~ .php
-Page::open('path\to\file.page')->set('title', function($data) {
-    return $data['author']; // ← set `author` value as the `title`
-});
-~~~
-
-Set page content:
-
-~~~ .php
-Page::open('path\to\file.page')->set('<p>Page content.</p>');
-~~~
-
-Remove `title` data:
-
-~~~ .php
-Page::open('path\to\file.page')->set(['title' => false]);
-~~~
-
-Set `title` data as `false`:
-
-~~~ .php
-Page::open('path\to\file.page')->set(['title' => 'false']);
-~~~
-
-Remove page content:
-
-~~~ .php
-Page::open('path\to\file.page')->set(false);
-~~~

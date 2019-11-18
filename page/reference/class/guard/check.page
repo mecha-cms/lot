@@ -1,8 +1,9 @@
 ---
 @version: [2, current]
 @description: Check token.
-@lot: string $token, $id = 0
+@lot:
+- string $token, $id = 0
 @static: 1
 @example: |
-  if (Guard::check((string) HTTP::post('token')) !== false) { … }
+  if (false !== Guard::check(Post::get('token'))) { … }
 ...

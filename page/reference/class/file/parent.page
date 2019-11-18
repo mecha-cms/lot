@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Get current file directory.
+@lot:
+- void
+@example: |
+  $A = (new File('.\path\to\file.txt'))->parent;
+@result: |
+  $A = '.\path\to';
+...

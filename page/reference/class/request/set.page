@@ -1,0 +1,9 @@
+---
+@version: [current]
+@description: Set value to `$_REQUEST` variable.
+@lot:
+- string $key, $value = null
+@static: 1
+@example: |
+  Request::set('id', 1);
+...

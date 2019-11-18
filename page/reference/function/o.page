@@ -1,4 +1,21 @@
 ---
 @version: [2, current]
-@description: Convert array to object.
+@description: Convert array to plain object.
+@lot:
+- $array, $safe = true
+@example: |
+  test(o([
+      'foo' => 1,
+      'bar' => 2,
+      'baz' => new Foo(1),
+      'qux' => [1, 2, 3, 4, 5]
+  ]));
+@example-note: If `$safe` is `false`, sequence array will be converted into object too.
+@result: |
+  (object) [
+      'foo' => 1,
+      'bar' => 2,
+      'baz' => Foo::__set_state([ … ]),
+      'qux' => [1, 2, 3, 4, 5]
+  ]
 ...

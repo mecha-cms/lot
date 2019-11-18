@@ -1,0 +1,6 @@
+---
+@version: [current]
+@description: Working with `$_SERVER` data.
+@parent: genome
+@final: 1
+...

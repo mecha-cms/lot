@@ -1,0 +1,15 @@
+---
+@version: [current]
+@description: Short function for [link:../class/hook/set] and [link:../class/hook/get].
+@lot:
+- ...$lot
+@parent: hook
+@example: |
+  // Set `foo` hook
+  hook('foo', function() { … });
+
+  // Get all hooks
+  $hooks = hook();
+  // Get `foo` hooks
+  $hook = hook('foo');
+...

@@ -1,9 +1,8 @@
 ---
 @version: [current]
 @description: Delete a file.
-@lot: void
+@lot:
+- void
 @example: |
-  $A = (new File('.\path\to\file.txt'))->let();
-@result: |
-  $A = '.\path\to\file.txt';
+  (new File('.\path\to\file.txt'))->let();
 ...

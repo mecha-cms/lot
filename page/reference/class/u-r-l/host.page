@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Return the URL host if any, otherwise return `null`.
+@lot:
+- void
+@example: |
+  $A = $url->host;
+@result: |
+  $A = '127.0.0.1';
+...

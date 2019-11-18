@@ -1,0 +1,17 @@
+---
+@version: [current]
+@description: Remove SGML attribute.
+@lot:
+- string $name
+@interface:
+- .array-access
+@example: |
+  $foo = new SGML('<foo bar="baz">qux</foo>');
+
+  unset($foo['bar']);
+
+  echo $foo;
+@result: |
+  <foo>qux</foo>
+@result-language: 'html'
+...

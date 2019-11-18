@@ -1,18 +1,11 @@
 ---
-title: `$to::{HTML,html}()`
-description: Decode HTML special characters.
+@version: [2, current]
+@description: Decode HTML special characters.
+@lot:
+- string $in
+@static: 1
+@example: |
+  $A = To::HTML('&lt;foo bar=&quot;baz&quot;&gt;');
+@result: |
+  $A = '[[e]]echo To::HTML('&lt;foo bar=&quot;baz&quot;&gt;');[[/e]]';
 ...
-
-~~~ .php.xmp
-To::HTML($in);
-~~~
-
-~~~ .php.xmp
-To::html($in); // alias
-~~~
-
-**Example:**
-
-~~~ .php
-$test = To::HTML('&lt;foo bar=&quot;baz&quot;&gt;');
-~~~

@@ -1,14 +1,17 @@
 ---
-title: `$to::kebab()`
-description: Convert string input into `kebab-case`.
+@version: [current]
+@description: Convert string into `kebab-case`.
+@lot:
+- string $in, string $join = '-', $accent = true
+@static: 1
+@example: |
+  $A = To::kebab('foo bar baz');
+  $B = To::kebab('Foo Bar Baz');
+  $C = To::kebab('Foo Bàr BÀZ');
+  $D = To::kebab('FooBarBaz');
+@result: |
+  $A = '[[e]]echo To::kebab('foo bar baz');[[/e]]';
+  $B = '[[e]]echo To::kebab('Foo Bar Baz');[[/e]]';
+  $C = '[[e]]echo To::kebab('Foo Bàr BÀZ');[[/e]]';
+  $D = '[[e]]echo To::kebab('FooBarBaz');[[/e]]';
 ...
-
-~~~ .php.xmp
-To::kebab($in, $a = true);
-~~~
-
-**Example:**
-
-~~~ .php
-$test = To::kebab('foo bar baz');
-~~~

@@ -1,0 +1,13 @@
+---
+@version: [current]
+@description: Create a new SGML component.
+@lot:
+- string $in
+- array $in
+@example: |
+  $A = new SGML('<foo bar="baz"></foo>');
+  $B = new SGML(['foo', "", ['bar' => 'baz']]);
+
+  $container = new SGML(['div', ""]);
+  $void = new SGML(['img', false]);
+...

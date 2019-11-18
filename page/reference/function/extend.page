@@ -1,3 +1,18 @@
 ---
 @version: [current]
+@description: Extend arrays to a single array.
+@lot:
+- array $a, array $b, …, $recursive = true
+@example: |
+  // Create default configuration values
+  $defaults = [
+      'chunk' => 5,
+      'deep' => 0,
+      'sort' => [
+          0 => 1,
+          1 => 'path'
+      ]
+  ];
+
+  $A = extend($data, $defaults);
 ...

@@ -3,7 +3,7 @@ title: Variable
 description: Reserved variables.
 ...
 
-These PHP variables are reserved. You shouldn’t redefine these PHP variables where possible. Please consider to choose other variable names other than these.
+These PHP variables are reserved. You shouldn’t redefine these PHP variables where possible. Consider to [name a variable with custom prefix for private use][link:../article/case-variable-name]. Global variables are stored in the `$GLOBALS` variable. Add your own public variables there to be used in the layout files.
 
 ### Pattern
 

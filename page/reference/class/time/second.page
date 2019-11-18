@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Get second.
+@lot:
+- void
+@example: |
+  echo (new Time('[[e]]echo date('Y-m-d H:i:s');[[/e]]'))->second;
+@result: |
+  '[[e]]echo (new Time(date('Y-m-d H:i:s')))->second;[[/e]]'
+...

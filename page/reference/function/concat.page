@@ -1,3 +1,8 @@
 ---
 @version: [current]
+@description: Concatenate sequence array values.
+@lot:
+- array $a, array $b, …, $recursive = true
+@example: |
+  $A = concat([1, 2, 3], [4, 5, 6], [7, 8, 9]);
 ...

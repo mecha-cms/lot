@@ -5,10 +5,10 @@
 @parent: genome
 ...
 
-Without specifying the `hexColor` method via [`_`][link:is/_], checking any input will always return `null`.
+Without specifying the `hexColor` method via [link:is/_], checking any input will always return `null`.
 
 ~~~ .php
-// This will return `null` because the `Is::hexColor` method never existed
+// This will return `null` because `Is::hexColor()` method does not exist
 if (Is::hexColor('#000')) {
     echo 'Is a HEX color.';
 } else {

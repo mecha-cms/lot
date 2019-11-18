@@ -1,0 +1,14 @@
+---
+@version: [current]
+@description: Set HTTP header.
+@lot:
+- string $key, $value = null
+- array $keys
+@static: 1
+@example: |
+  Lot::set('Content-Type', 'text/plain');
+  Lot::set([
+      'Content-Length' => 0,
+      'Content-Type' => 'text/plain'
+  ]);
+...

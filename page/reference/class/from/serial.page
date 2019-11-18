@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Unserialize data.
-@lot: string $in
+@lot:
+- string $in
 @static: 1
 @example: |
   $A = From::serial('a:3:{i:0;i:0;i:1;s:1:"a";i:2;a:0:{}}');

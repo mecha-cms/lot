@@ -1,0 +1,18 @@
+---
+@version: [2, current]
+@description: Set global state item.
+@lot:
+- string $key, $value
+- array $values
+@static: 1
+@example: |
+  // Set a `test` item with value `#`
+  State::set('test', '#');
+  // Set a `test` item with value `['foo' => '#']`
+  State::set('test.foo', '#');
+  // Set multiple items
+  State::set([
+      'foo' => 'bar',
+      'baz' => 'qux'
+  ]);
+...

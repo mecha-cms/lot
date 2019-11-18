@@ -7,7 +7,7 @@
 - array $id
 @static: 1
 @example: |
-  // Remove all route(s)
+  // Remove all routes
   Route::let();
   // Remove `blog/:slug` route
   Route::let('blog/:slug');

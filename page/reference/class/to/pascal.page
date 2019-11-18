@@ -1,14 +1,19 @@
 ---
-title: `$to::pascal()`
-description: Convert string input into `PascalCase`.
+@version: [2, current]
+@description: Convert string into `PascalCase`.
+@lot:
+- string $in
+@static: 1
+@example: |
+  $A = To::pascal('foo bar baz');
+  $B = To::pascal('foo-bar-baz');
+  $C = To::pascal('foo_bar_baz');
+  $D = To::pascal('Foo Bar Baz');
+  $E = To::pascal('FooBarBaz');
+@result: |
+  $A = '[[e]]echo To::pascal('foo bar baz');[[/e]]';
+  $B = '[[e]]echo To::pascal('foo-bar-baz');[[/e]]';
+  $C = '[[e]]echo To::pascal('foo_bar_baz');[[/e]]';
+  $D = '[[e]]echo To::pascal('Foo Bar Baz');[[/e]]';
+  $E = '[[e]]echo To::pascal('FooBarBaz');[[/e]]';
 ...
-
-~~~ .php.xmp
-To::pascal($x, $a = false, $i = "");
-~~~
-
-**Example:**
-
-~~~ .php
-$test = To::pascal('foo bar baz');
-~~~

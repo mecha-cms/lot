@@ -1,0 +1,11 @@
+---
+@version: [current]
+@description: Get client’s user agent.
+@lot:
+- void
+@static: 1
+@example: |
+  $A = Client::UA();
+@result: |
+  $A = '[[e]]echo Client::UA();[[/e]]';
+...

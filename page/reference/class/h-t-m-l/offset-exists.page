@@ -1,0 +1,12 @@
+---
+@version: [current]
+@description: Check the existence of HTML attribute.
+@lot:
+- string $name
+@interface:
+- .array-access
+@example: |
+  $div = new HTML('<div id="foo"></div>');
+
+  if (isset($div['id'])) { … }
+...

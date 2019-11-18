@@ -1,5 +1,9 @@
 ---
 @version: [current]
-@description: SGML markup constructor.
+@description: SGML markup helpers.
 @parent: genome
+@interface:
+- .array-access
+- .countable
+- .json-serializable
 ...

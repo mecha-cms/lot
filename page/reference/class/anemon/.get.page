@@ -1,7 +1,8 @@
 ---
 @version: [current]
 @description: Shortcut for calling methods with empty arguments.
-@lot: string $key
+@lot:
+- string $key
 @example: |
   Anemon::from([1, 2, 3, 4, 5])->count;
   Anemon::from([1, 2, 3, 4, 5])->next->current;

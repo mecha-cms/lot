@@ -1,0 +1,14 @@
+---
+@version: [current]
+@description: Set HTML attribute.
+@lot:
+- string $name, $value
+@interface:
+- .array-access
+@example: |
+  $div = new HTML('<div></div>');
+
+  $div[0] = 'span'; // Change HTML element to `<span></span>`
+  $div[1] = 'Content goes here…'; // Set HTML content
+  $div['id'] = 'foo'; // Set HTML `id` attribute
+...

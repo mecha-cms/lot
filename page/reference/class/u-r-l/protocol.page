@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Return the URL protocol if any, otherwise return `null`.
+@lot:
+- void
+@example: |
+  $A = $url->protocol;
+@result: |
+  $A = 'http://';
+...

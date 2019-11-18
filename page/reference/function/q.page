@@ -1,3 +1,17 @@
 ---
 @version: [2, current]
+@description: Quantity resolver.
+@lot:
+- $value
 ...
+
+This function does the following tasks:
+
+ - Count the length of a string
+ - Count array values
+ - Count `Traversable` class instance
+ - Convert standard PHP object into plain array and count it as array
+ - Return `1` if value is `true`
+ - Return `0` if value is either `false` or `null`
+ - Return the integer and float value anyway
+ - Count any input with PHP `count()` function anyway.

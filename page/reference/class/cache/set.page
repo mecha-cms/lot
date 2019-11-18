@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Create a new cache file.
-@lot: string $id, callable $fn, array $lot = []
+@lot:
+- string $id, callable $fn, array $lot = []
 @return: array
 @static: 1
 @example: |

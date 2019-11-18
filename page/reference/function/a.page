@@ -1,18 +1,19 @@
 ---
 @version: [2, current]
-@description: Convert object to array.
-@lot: $object, $safe = true
+@description: Convert standard PHP object to plain array.
+@lot:
+- $object, $safe = true
 @example: |
   test(a((object) [
       'foo' => 1,
       'bar' => 2,
-      'baz' => new Date(time())
+      'baz' => new Foo(1)
   ]));
 @example-note: If `$safe` is `false`, any class instance will be converted into array too.
 @result: |
   [
       'foo' => 1,
       'bar' => 2,
-      'baz' => Date::__set_state([ … ])
+      'baz' => Foo::__set_state([ … ])
   ]
 ...

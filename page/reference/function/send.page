@@ -1,0 +1,36 @@
+---
+@version: [current]
+@description: Send HTML email.
+@lot:
+- string $from, string $to, string $title, string $content, array $lot = []
+- string $from, array $to, string $title, string $content, array $lot = []
+@example: |
+  send(
+      'from@example.com',
+      'to@example.com',
+      'Title Goes Here',
+      '<p>Content goes here.</p>'
+  );
+
+  send(
+      'from@example.com',
+      [
+          'to@example-1.com',
+          'to@example-2.com',
+          'to@example-3.com'
+      ],
+      'Title Goes Here',
+      '<p>Content goes here.</p>'
+  );
+
+  send(
+      'from@example.com',
+      [
+          'to@example-1.com' => 'Person 1',
+          'to@example-2.com' => 'Person 2',
+          'to@example-3.com' => 'Person 3'
+      ],
+      'Title Goes Here',
+      '<p>Content goes here.</p>'
+  );
+...

@@ -1,0 +1,45 @@
+---
+@version: [2, current]
+@description: Generate all possible template’s file path to be tested by [link:../file/exist].
+@lot:
+- $in
+@static: 1
+@example: |
+  // Set current shield folder
+  Content::$config['path'] = '.\lot\shield\:name';
+  // Set shield extension order
+  Content::$config['x'] = ['html', 'php'];
+
+  // Search for files relative to the current shield folder
+  // with extension `html` or `php` based on the given name.
+  // Otherwise, return `null`
+  $A = Content::path('page');
+  $B = Content::path('foo');
+
+  // Search for files relative to the current shield folder
+  // with extension `html` or `php` based on the given _namespace_.
+  // Otherwise, return `null`
+  $C = Content::path('page/about/us')
+@result: |
+  $A = '.\lot\shield\:name\page.html'; // or `.\lot\shield\:name\page.php`
+  $B = false;
+
+  // Can be
+  $C = '.\lot\shield\:name\page.about.us.html';
+  // or
+  $C = '.\lot\shield\:name\page.about.us.php';
+  // or
+  $C = '.\lot\shield\:name\page\about\us.html';
+  // or
+  $C = '.\lot\shield\:name\page\about\us.php';
+  // or
+  $C = '.\lot\shield\:name\page\about.html';
+  // or
+  $C = '.\lot\shield\:name\page\about.php';
+  // or
+  $C = '.\lot\shield\:name\page.html';
+  // or
+  $C = '.\lot\shield\:name\page.php';
+  // or
+  $C = null;
+...

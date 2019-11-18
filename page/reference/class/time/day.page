@@ -1,0 +1,16 @@
+---
+@version: [current]
+@description: Get day.
+@lot:
+- $type = null
+@example: |
+  $time = new Time('[[e]]echo date('Y-m-d H:i:s');[[/e]]');
+
+  $A = $time->day;
+  $B = $time->day("");
+  $C = $time->day(7);
+@result: |
+  $A = '[[e]]echo (new Time(date('Y-m-d H:i:s')))->day;[[/e]]';
+  $B = '[[e]]echo (new Time(date('Y-m-d H:i:s')))->day("");[[/e]]';
+  $C = '[[e]]echo (new Time(date('Y-m-d H:i:s')))->day(7);[[/e]]';
+...

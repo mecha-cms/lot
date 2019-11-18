@@ -1,5 +1,9 @@
 ---
 @version: [2, current]
-@description: Alias for [`eMail`][link:e-mail].
+@description: Check for valid email address.
+@lot:
+- $x
 @static: 1
+@example: |
+  if (Is::email('foo@bar.baz')) { … }
 ...

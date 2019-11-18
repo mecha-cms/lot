@@ -1,0 +1,7 @@
+---
+@version: [2, current]
+@description: Trigger a route.
+@static: 1
+@example: |
+  Route::fire('test/:foo/:bar/:baz/*', [2019, 11, 16, 'a/b/c/d']);
+...

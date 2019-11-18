@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Return the base URL including the directory path relative to the server root if any, otherwise return `null`.
+@lot:
+- void
+@example: |
+  $A = $url->root;
+@result: |
+  $A = 'http://127.0.0.1/directory';
+...

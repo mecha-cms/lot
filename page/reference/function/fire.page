@@ -1,3 +1,25 @@
 ---
 @version: [current]
+@description: Trigger callable input with parameters and scope.
+@lot:
+- callable $fn, array $lot, $that
+@example: |
+  class Calc {
+      public $i;
+      public function __construct(int $i) {
+          $this->i = $i;
+      }
+      public function add(int $i) {
+          $this->i += $i;
+      }
+  }
+
+  $scope = new Calc(1);
+
+  function foo(int $i) {
+      $this->add($i);
+      return $this->i;
+  }
+
+  echo fire('foo', [4], $scope); // `5`
 ...

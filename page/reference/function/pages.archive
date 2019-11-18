@@ -1,0 +1,5 @@
+---
+@version: [current]
+@description: Short function for [link:../class/pages/from].
+@parent: pages
+...

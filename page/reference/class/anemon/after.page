@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Insert element after current item.
-@lot: $value, $key = null
+@lot:
+- $value, $key = null
 @example: |
   $array = [
       'foo' => 0,

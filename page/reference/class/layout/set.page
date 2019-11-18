@@ -1,0 +1,15 @@
+---
+@version: [2, current]
+@description: Disable automatic view path based on ID by specifying a file path to it.
+@lot:
+- string $id, string $path
+@static: 1
+@example: |
+  Content::get('foo.bar'); // [^1]
+  Content::set('foo.bar', '.\lot\asset\php\view.php'); // [^2]
+  Content::get('foo.bar'); // [^3]
+
+  // [^1]: Prints nothing.
+  // [^2]: Set!
+  // [^3]: Prints the contents of `.\lot\asset\php\view.php` file.
+...

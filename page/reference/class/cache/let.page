@@ -7,7 +7,7 @@
 - array $id
 @static: 1
 @example: |
-  // Delete all cache(s)
+  // Delete all caches
   Cache::let();
   // Delete single cache
   Cache::let('foo');

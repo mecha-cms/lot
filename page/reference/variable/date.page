@@ -1,6 +1,7 @@
 ---
 @version: [2, current]
-@description: This variable is an instance of the [`Date` class][link:../class/date] with current time as the input.
+@description: Return the current date.
 @example: |
-  <?php echo $date->year; ?>
+  <?= $date->year; ?>
+@example-description: This is an alias for [link:time].
 ...

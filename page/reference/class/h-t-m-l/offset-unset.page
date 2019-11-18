@@ -1,0 +1,17 @@
+---
+@version: [current]
+@description: Remove HTML attribute.
+@lot:
+- string $name
+@interface:
+- .array-access
+@example: |
+  $div = new HTML('<div id="foo"></div>');
+
+  unset($div['id']);
+
+  echo $div;
+@result: |
+  <div></div>
+@result-language: 'html'
+...

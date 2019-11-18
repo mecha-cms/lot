@@ -1,7 +1,8 @@
 ---
 @version: [current]
 @description: The OOP style of [link:../../function/has].
-@lot: string $value, string $separator = P
+@lot:
+- string $value, string $join = P
 @example: |
   if (Anemon::from(['foo', 'bar', 'baz'])->has('foo')) { … }
 ...

@@ -1,3 +1,15 @@
 ---
 @version: [current]
+@description: Short function for [link:../class/state/set] and [link:../class/state/get].
+@lot:
+- ...$lot
+@parent: state
+@example: |
+  // Set `foo` state
+  state('foo', 1);
+
+  // Get states as array
+  $states = state();
+  // Get `foo` state
+  $state = state('foo');
 ...

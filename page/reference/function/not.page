@@ -1,3 +1,15 @@
 ---
 @version: [current]
+@description: Return array items that does not pass to the function test.
+@lot:
+- iterable $data, callable $fn
+@example: |
+  $A = not([1, 2, 3, 4, 5], function($v, $k) {
+      return 3 !== $v && $v < 5;
+  });
+@result: |
+  $A = [
+      2 => 3,
+      4 => 5
+  ];
 ...

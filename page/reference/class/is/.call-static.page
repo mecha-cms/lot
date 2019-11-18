@@ -1,6 +1,7 @@
 ---
 @version: [2, current]
 @description: Dynamic methods.
-@lot: string $kin, array $lot = []
+@lot:
+- string $kin, array $lot = []
 @static: 1
 ...

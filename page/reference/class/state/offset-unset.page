@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Remove state property.
+@lot:
+- string $key
+@interface:
+- .array-access
+@example: |
+  unset($state['foo-bar-baz']);
+...

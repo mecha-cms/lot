@@ -1,0 +1,21 @@
+---
+@version: [current]
+@description: Treat `Alert` object as string.
+@example: |
+  Alert::error('Error message.');
+  Alert::info('Info message.');
+  Alert::success('Success message.');
+  Alert::success('Success message 2.');
+  Alert::hello('Hello message.');
+  Alert::set('test', 'Test message.');
+
+  echo new Alert;
+@result: |
+  <alert type="error">Error message.</alert>
+  <alert type="info">Info message.</alert>
+  <alert type="success">Success message.</alert>
+  <alert type="success">Success message 2.</alert>
+  <alert type="hello">Hello message.</alert>
+  <alert type="test">Test message.</alert>
+@result-language: 'html'
+...

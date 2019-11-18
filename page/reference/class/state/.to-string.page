@@ -1,0 +1,13 @@
+---
+@version: [2, current]
+@description: Treat `State` object as string.
+@example: |
+  $state->let();
+
+  $state->set('foo', 1);
+  $state->set('bar', 2);
+
+  echo $state;
+@result: |
+  '[[e]]echo json_encode(['foo' => 1, 'bar' => 2]);[[/e]]'
+...

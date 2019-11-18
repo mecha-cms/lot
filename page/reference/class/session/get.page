@@ -6,6 +6,6 @@
 - string $key
 @static: 1
 @example: |
-  $B = Session::get(); // Get all session(s)
-  $A = Session::get('foo'); // Get `foo` session
+  $A = Session::get(); // Get all sessions
+  $B = Session::get('foo'); // Get `foo` session
 ...

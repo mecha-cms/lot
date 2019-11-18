@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Get current folder type.
+@lot:
+- void
+@example: |
+  $A = (new Folder('.\path\to\folder'))->type;
+@result: |
+  $A = null;
+...

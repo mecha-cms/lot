@@ -1,4 +1,0 @@
----
-@version: [current]
-@description: Short function for [`$file->let()`][link:../class/file/let] or [`$folder->let()`][link:../class/folder/let].
-...

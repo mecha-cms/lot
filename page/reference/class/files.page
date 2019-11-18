@@ -1,0 +1,18 @@
+---
+@version: [current]
+@description: Bulk [file][link:file] instance from array.
+@parent: anemon
+...
+
+~~~ .php
+$files = new Files([
+    '.\path\to\file-1.txt',
+    '.\path\to\file-2.txt',
+    '.\path\to\file-3.txt',
+    '.\path\to\file-4.txt',
+]);
+
+foreach ($files as $file) {
+    echo $file->name . '<br>';
+}
+~~~

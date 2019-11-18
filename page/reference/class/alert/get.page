@@ -1,9 +1,11 @@
 ---
 @version: [current]
-@description: Read the stored alert messages from session.
-@lot: []
+@description: Get raw alert messages data from session.
+@lot:
+- void
+- string $type
+- array $types
+@static: 1
 @example: |
   Alert::get();
 ...
-
-TODO

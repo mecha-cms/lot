@@ -9,27 +9,27 @@
 @static: 1
 @example: |
   // Default
-  Route::set('product/:id', function() {
-      // In this scope, `$this->id` variable returns
-      // `[[e]]echo dechex(crc32('gundam'));[[/e]]` in `‌http://127.0.0.1‌/product/[[e]]echo dechex(crc32('gundam'));[[/e]]`
+  Route::set('product/:id', function($id) {
+      // In this scope, `$id` variable would
+      // capture `[[e]]echo dechex(crc32('gundam'));[[/e]]` in `‌http://127.0.0.1‌/product/[[e]]echo dechex(crc32('gundam'));[[/e]]`
   });
 
 
 
-  // With pre-defined page status
+  // With pre-defined response status
   Route::set('product/:id', 200, function() { … });
 
 
 
-  // Overriding the page status
+  // Overriding the response status
   Route::set('product/:id', 200, function() {
       // There is no such `Product` class, this is just an example
-      $product = Product::get($this->id);
+      $product = Product::get($id);
       if (!$product) {
           $this->status(404);
-          $this->content('.\path\to\content\404.php');
+          $this->view('.\path\to\layout\404.php');
       }
-      $this->content('.\path\to\content.php', [
+      $this->view('.\path\to\layout.php', [
           'product' => new Product($product);
       ]);
   });

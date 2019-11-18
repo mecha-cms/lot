@@ -1,0 +1,12 @@
+---
+@version: [current]
+@description: Check the existence of array item.
+@lot:
+- string $key
+@interface:
+- .array-access
+@example: |
+  $A = new Anemon([1, 2, 3, 4, 5]);
+
+  if (isset($A[0])) { … }
+...

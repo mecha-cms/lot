@@ -1,4 +1,0 @@
----
-@version: [current]
-@description: Short function for [`$file->moveTo()`][link:../class/file/move-to] or [`$folder->moveTo()`][link:../class/folder/move-to].
-...

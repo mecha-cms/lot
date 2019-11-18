@@ -8,5 +8,5 @@ description: GUI extension for Mecha.
 ### Usage
 
  - Make sure you have uploaded the required extensions and plugins.
- - Upload the `panel` folder to `.\lot\extend` folder.
+ - Upload the `panel` folder to `.\lot\x` folder.
  - Now go to `http://127.0.0.1/panel/::g::/enter` to create a new user.

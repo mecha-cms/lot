@@ -1,21 +1,13 @@
 ---
 @version: [2, current]
 @description: Convert array into YAML string.
+@lot:
+- array $in, string $dent = '  ' $docs = false, $e = true
 @static: 1
+@example: |
+  $A = To::YAML(['foo' => 'bar']);
+@result: |
+  $A = '[[e]]echo To::YAML(['foo' => 'bar']);[[/e]]';
 @use:
   '.\lot\x\y-a-m-l': 1
 ...
-
-~~~ .php.xmp
-To::YAML($in, $d = '  ', $safe = false, $dent = 0);
-~~~
-
-~~~ .php.xmp
-To::yaml($in, $d = '  ', $safe = false, $dent = 0); // alias
-~~~
-
-**Example:**
-
-~~~ .php
-$test = To::YAML(['foo' => 'bar']);
-~~~

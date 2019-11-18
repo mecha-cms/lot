@@ -1,10 +1,11 @@
 ---
 @version: [2, current]
 @description: Decode Base64 string.
-@lot: string $in
+@lot:
+- string $in
 @static: 1
 @example: |
-  echo From::base64('aSBsb3ZlIHlvdQ==');
+  $A = From::base64('aSBsb3ZlIHlvdQ==');
 @result: |
-  '[[e]]echo From::base64('aSBsb3ZlIHlvdQ==');[[/e]]'
+  $A = '[[e]]echo From::base64('aSBsb3ZlIHlvdQ==');[[/e]]';
 ...

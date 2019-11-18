@@ -3,6 +3,8 @@ title: Updating Mecha Manually
 description: This is just a visualization for my previous article [here][link:update].
 ...
 
+> **TODO:** Update the image.
+
 Currently, _Mecha_ version `2.x.x` is still in active development, so it is normal when you want to see what’s new by updating your _Mecha_ site multiple times. There will be a time when you get to see that everything is broken by your own hand. Common practices like copying and pasting new files to overwrite the old files aren’t safe because _pasting_ will only override the currently available files, but doesn’t know what files need to be deleted. In this tutorial, I will explain step by step how to update your _Mecha_ site safely with better visualizations.
 
 ### Step 1: Create a Site Copy
@@ -35,9 +37,9 @@ Now visit `http://127.0.0.1/test` to make sure that the site is visible as expec
 
 ![4](%{asset}%/png/article/update-view/4.png)
 
-### Step 6: Skins and Extensions
+### Step 6: Layout and Extensions
 
-Everything is OK. You can start installing the previous [skins][link:../reference/skin] and [extensions][link:../reference/extension] that is located in the parent folder. But it is a good practice to install the fresh version of them instead of moving the previous skins and extensions one by one.
+Everything is OK. You can start installing the previous [shields][link:../reference/shield] and [extensions][link:../reference/extension] that is located in the parent folder. But it is a good practice to install the fresh version of them instead of moving the previous shields and extensions one by one.
 
 ### Step 7: Double Check the 5<sup>th</sup> Step
 
@@ -45,8 +47,8 @@ Double check the 5<sup>th</sup> step to make sure that everything is OK.
 
 You may need to configure back the skins and extensions configuration value to match with the previous configuration value. Most of them are stored in:
 
- - `.\lot\content\:name\state\config.php`
- - `.\lot\x\:name\lot\state\config.php`
+ - `.\lot\shield\:name\state.php`
+ - `.\lot\x\:name\state.php`
 
 ### Step 8: Delete All Files in the Parent Folder
 

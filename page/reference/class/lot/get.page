@@ -1,0 +1,22 @@
+---
+@version: [current]
+@description: Get HTTP header.
+@lot:
+- void
+- string $key
+@static: 1
+@example: |
+  $A = Lot::get();
+  $B = Lot::get('Content-Type');
+  $C = Lot::get('X-Foo');
+@result: |
+  $A = [
+      'X-Powered-By' => 'Mecha/[[e]]echo VERSION;[[/e]]',
+      'Expires' => 'Thu, 19 Nov 1981 08:52:00 GMT',
+      'Content-type' => 'text/html'
+  ];
+
+  $B = 'text/html';
+
+  $C = null;
+...

@@ -1,8 +1,0 @@
----
-@version: [current]
-@description: Set response body.
-@example: |
-  Route::set('foo/bar', function() {
-      $this->put('<!DOCTYPE html><html dir="ltr"> ... </html>');
-  }); // TODO
-...

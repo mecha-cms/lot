@@ -2,11 +2,12 @@
 @version: [2, current]
 @description: Define how the asset data should be outputted.
 @static: 1
-@lot: string $kin, callable $fn
+@lot:
+- string $kin, callable $fn
 @parent: genome
 @example: |
   Asset::_('.css', function($value, $key) {
-      return '<link href="' . $value['url'] . '" rel="stylesheet">';
+      return '<link href="' . $value[2]['url'] . '" rel="stylesheet">';
   });
 @example-description: 'To make it specific to the [`Asset`][link:] class, make sure to add a dot character just before the method name you want to add. Other than that, the result will inherit to [`Genome::_()`][link:../genome#reference:plug].'
 ...

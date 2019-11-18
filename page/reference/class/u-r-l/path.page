@@ -1,10 +1,10 @@
 ---
 @version: [current]
-@description: Return the URL path.
+@description: Return the URL path if any, otherwise return `null`.
 @lot:
 - void
-- string $separator = '/'
-- string $separator = '/', array $p = []
+- string $join = '/'
+- string $join = '/', array $p = []
 @example: |
   $A = $url->path;
   $B = $url->path();

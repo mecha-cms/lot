@@ -1,15 +1,13 @@
 ---
-title: `$to::text()`
-description: Convert file name or HTML string into plain text.
+@version: [2, current]
+@description: Convert file name or HTML string into plain text.
+@lot:
+- string $in
+@static: 1
+@example: |
+  $A = To::text('foo-bar-baz');
+  $B = To::text('<p><strong>Foo</strong> Bar <em>Baz</em></p>');
+@result: |
+  $A = '[[e]]echo To::text('foo-bar-baz');[[/e]]';
+  $B = '[[e]]echo To::text('<p><strong>Foo</strong> Bar <em>Baz</em></p>');[[/e]]';
 ...
-
-~~~ .php.xmp
-To::text($x, $c = [], $n = false);
-~~~
-
-**Example:**
-
-~~~ .php
-$test_1 = To::text('foo-bar-baz');
-$test_2 = To::text('<p><strong>Foo</strong> Bar <em>Baz</em></p>');
-~~~

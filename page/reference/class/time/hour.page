@@ -1,0 +1,14 @@
+---
+@version: [current]
+@description: Get hour.
+@lot:
+- $type = null
+@example: |
+  $time = new Time('[[e]]echo date('Y-m-d H:i:s');[[/e]]');
+
+  $A = $time->hour;
+  $B = $time->hour(12);
+@result: |
+  $A = '[[e]]echo (new Time(date('Y-m-d H:i:s')))->hour;[[/e]]';
+  $B = '[[e]]echo (new Time(date('Y-m-d H:i:s')))->hour(12);[[/e]]';
+...

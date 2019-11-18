@@ -1,11 +1,12 @@
 ---
 @version: [current]
 @description: Upload a file.
-@lot: array $blob, string $path = ROOT
+@lot:
+- array $blob, string $folder = ROOT
 @static: 1
 @example: |
-  if (!empty($_POST['foo'])) { // → for `<input name="foo" type="file">`
-      $response = File::push($_POST['foo'], '.\path\to\folder');
+  if ($blob = Post::get('blob')) { // → for `<input name="blob" type="file">`
+      $response = File::push($blob, '.\path\to\folder');
   }
 ...
 

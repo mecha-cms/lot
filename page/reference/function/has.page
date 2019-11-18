@@ -1,3 +1,8 @@
 ---
 @version: [current]
+@description: Check if array contains item.
+@lot:
+- array $data, $v
+@example: |
+  if (has([1, 2, 3, 4, 5], 3)) { … }
 ...

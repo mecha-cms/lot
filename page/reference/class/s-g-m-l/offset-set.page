@@ -1,0 +1,14 @@
+---
+@version: [current]
+@description: Set SGML attribute.
+@lot:
+- string $name, $value
+@interface:
+- .array-access
+@example: |
+  $foo = new SGML('<foo></foo>');
+
+  $foo[0] = 'wow'; // Change SGML element to `<wow></wow>`
+  $foo[1] = 'qux'; // Set SGML content
+  $foo['bar'] = 'baz'; // Set SGML `bar` attribute
+...

@@ -1,0 +1,15 @@
+---
+@version: [current]
+@description: Short function for [link:../class/route/set] and [link:../class/route/get].
+@lot:
+- ...$lot
+@parent: route
+@example: |
+  // Set `foo/:id` route
+  route('foo/:id', function() { … });
+
+  // Get routes
+  $routes = route();
+  // Get `foo/:id` route
+  $route = route('foo/:id');
+...

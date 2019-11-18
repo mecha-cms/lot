@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Insert element to the end of array.
-@lot: $value, $key = null
+@lot:
+- $value, $key = null
 @example: |
   $array = [
       'foo' => 0,

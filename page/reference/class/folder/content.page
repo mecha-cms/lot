@@ -1,0 +1,9 @@
+---
+@version: [1, 2, current]
+@description: Read file content in a folder as string.
+@lot:
+- string $path
+@example: |
+  $folder = new Folder('.\path\to\folder');
+  echo $folder->content('file.txt');
+...

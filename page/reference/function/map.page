@@ -1,3 +1,18 @@
 ---
 @version: [current]
+@description: Modify array values.
+@lot:
+- iterable $data, callable $fn
+@example: |
+  $A = map([1, 2, 3, 4, 5], function($v, $k) {
+      return $k . ':' . $v;
+  });
+@result: |
+  $A = [
+      0 => '0:1',
+      1 => '1:2',
+      2 => '2:3',
+      3 => '3:4',
+      4 => '4:5'
+  ];
 ...

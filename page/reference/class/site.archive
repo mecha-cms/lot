@@ -1,7 +1,5 @@
 ---
 @version: [current]
-@description: Alias for [`Config`][link:config].
+@description: Alias for [`State`][link:state].
 @parent: genome
-@use:
-  '.\lot\x\content': 1
 ...

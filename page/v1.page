@@ -1,6 +1,8 @@
 ---
 title: 1.2.x
-description: Looking for the old documentation?
+name: v1
+description: 'Looking for the old documentation?'
+type: Markdown
 ...
 
 Please [follow this link](http://127.0.0.1/2016).

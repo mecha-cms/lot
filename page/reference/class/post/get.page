@@ -1,0 +1,11 @@
+---
+@version: [current]
+@description: Get and evaluate `$_POST` data.
+@lot:
+- void
+- string $key
+@static: 1
+@example: |
+  if (Post::get('id')) { … }
+@example-note: You could also get `$_FILES` data using this method because `$_FILES` data are merged with the `$_POST` data since version `2.2.0`.
+...

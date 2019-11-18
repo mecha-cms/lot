@@ -1,3 +1,30 @@
 ---
 @version: [2, current]
+@description: Try to evaluate string to the proper data type.
+@lot:
+- $value, array $extra = []
+- array $values, array $extra = []
+@example: |
+  // Evaluate data from `$_GET`
+  $data = e($_GET);
+  // Evaluate `yes` and `no` string as well
+  $data = e($_GET, [
+      'yes' => true,
+      'no' => false,
+      'YES' => true,
+      'NO' => false,
+  ]);
 ...
+
+This function does the following tasks:
+
+ - Convert numeric string to integer if string does not contains `'.'` character.
+ - Convert numeric string to float if string contains `'.'` character.
+ - Convert JSON string to real PHP values (will be converted to plain array if JSON is an object).
+ - Convert `'true'` string to real `true` value.
+ - Convert `'false'` string to real `false` value.
+ - Convert `'null'` string to real `null` value.
+ - Convert `'TRUE'` string to real `true` value.
+ - Convert `'FALSE'` string to real `false` value.
+ - Convert `'NULL'` string to real `null` value.
+ - Unwrap string value from single and double quotes if the JSON evaluation has been failed to perform, so that the string value will not be evaluated. This is useful if you want to make sure that the parser will not evaluate your `'true'` value by surrounding the string value with single or double quotes like `'\'true\''` or `'"true"'`.

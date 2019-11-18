@@ -4,15 +4,19 @@
 @example: |
   echo f2p('foo');
   echo f2p('.foo');
+  echo f2p('.foo.bar');
   echo f2p('foo-bar');
   echo f2p('foo_bar');
   echo f2p('foo_-bar');
+  echo f2p('-f-o-o_-b-a-r');
 @result: |
   [[e]]
   echo f2p('foo') . "\n";
   echo f2p('.foo') . "\n";
+  echo f2p('.foo.bar') . "\n";
   echo f2p('foo-bar') . "\n";
   echo f2p('foo_bar') . "\n";
-  echo f2p('foo_-bar');
+  echo f2p('foo_-bar') . "\n";
+  echo f2p('-f-o-o_-b-a-r');
   [[/e]]
 ...

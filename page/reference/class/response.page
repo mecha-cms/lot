@@ -1,0 +1,18 @@
+---
+@version: []
+@description: Working with HTTP responses.
+...
+
+There is no such class named `Response` in Mecha. Literally, any value that you spit out through `echo` in any `index.php` file will becomes the response. You may need some help from the [link:lot] class to determine response status and MIME type.
+
+~~~ .php
+Lot::status(200);
+Lot::type('application/json');
+
+echo To::JSON([
+    'status' => 200,
+    'content' => 'I am a JSON now.'
+]);
+
+exit;
+~~~

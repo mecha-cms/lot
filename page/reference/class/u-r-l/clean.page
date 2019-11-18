@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Return current URL without page offset, query string and hash.
+@lot:
+- void
+@example: |
+  $A = $url->clean;
+@result: |
+  $A = 'http://127.0.0.1/directory/foo/bar/baz';
+...

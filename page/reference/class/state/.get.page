@@ -1,0 +1,16 @@
+---
+@version: [2, current]
+@description: Dynamic properties.
+@lot:
+- string $key
+@example: |
+  // This is …
+  $state->title;
+  // … equal to this
+  $state->get('title');
+
+  // This is …
+  $state->fooBarBaz;
+  // … equal to this
+  $state->get('foo-bar-baz');
+...

@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Get array position by key.
-@lot: string $key
+@lot:
+- string $key
 @example: |
   $array = [
       'foo' => 10,

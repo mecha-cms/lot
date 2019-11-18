@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: Dynamic properties.
-@lot: string $key, $value
-@example: |
-  $language->home = 'Beranda';
-@example-description: This will trigger `Language::set('home', 'Beranda')`.
-...

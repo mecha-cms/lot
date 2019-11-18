@@ -1,0 +1,5 @@
+---
+@version: [current]
+@lot:
+- string $x
+...

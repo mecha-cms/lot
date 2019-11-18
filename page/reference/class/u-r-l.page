@@ -3,4 +3,6 @@
 @description: Extract current URL data.
 @final: 1
 @parent: genome
+@interface:
+- .array-access
 ...

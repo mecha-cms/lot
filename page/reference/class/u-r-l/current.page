@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Return current URL including the page offset, query string and hash.
+@lot:
+- void
+@example: |
+  $A = $url->current;
+@result: |
+  $A = 'http://127.0.0.1/directory/foo/bar/baz/2?foo=bar&baz=qux#asdf';
+...

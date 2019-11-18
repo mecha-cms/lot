@@ -8,6 +8,7 @@
 @example: |
   // Execute the `content` hook
   Hook::fire('content');
+
   // Execute the `content` hook to an input
-  Hook::fire('content', ['<!DOCTYPE html><html dir="ltr"> …']);
+  Hook::fire('content', ['<!DOCTYPE html><html dir="ltr"> … </html>']);
 ...

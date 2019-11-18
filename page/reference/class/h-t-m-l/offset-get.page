@@ -1,0 +1,17 @@
+---
+@version: [current]
+@description: Get HTML attribute.
+@lot:
+- string $name
+@interface:
+- .array-access
+@example: |
+  $div = new HTML('<div id="foo"></div>');
+
+  test(
+      $div[0], // Return the HTML tag name
+      $div[1], // Return the HTML content
+      $div[2], // Return the HTML attributes with their value
+      $div['id'] // Return the HTML `id` attribute value
+  );
+...

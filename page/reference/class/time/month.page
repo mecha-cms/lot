@@ -1,0 +1,14 @@
+---
+@version: [current]
+@description: Get month.
+@lot:
+- $type = null
+@example: |
+  $date = new Time('[[e]]echo date('Y-m-d H:i:s');[[/e]]');
+
+  $A = $date->month;
+  $B = $date->month("");
+@result: |
+  $A = '[[e]]echo (new Time(date('Y-m-d H:i:s')))->month;[[/e]]';
+  $B = '[[e]]echo (new Time(date('Y-m-d H:i:s')))->month("");[[/e]]';
+...

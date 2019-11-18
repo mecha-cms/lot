@@ -1,20 +1,15 @@
 ---
-title: `$to::{URL,url}()`
-description: Convert private file path into public URL, or decode URL special characters.
+@version: [2, current]
+@description: Convert private file path into public URL, or decode URL special characters.
+@lot:
+- string $in, $raw = false
+@static: 1
+@example: |
+  $A = To::URL('.\path\to\file.html');
+  $B = To::URL('foo%20bar+baz');
+  $C = To::URL('foo%20bar+baz', true);
+@result: |
+  $A = '[[e]]echo $url;[[/e]]/path/to/file.html';
+  $B = '[[e]]echo To::URL('foo%20bar+baz');[[/e]]';
+  $C = '[[e]]echo To::URL('foo%20bar+baz', true);[[/e]]';
 ...
-
-~~~ .php.xmp
-To::URL($in, $raw = false);
-~~~
-
-~~~ .php.xmp
-To::url($in, $raw = false); // alias
-~~~
-
-**Example:**
-
-~~~ .php
-$test_1 = To::URL('.\path\to\file.html');
-$test_2 = To::URL('foo%20bar+baz');
-$test_3 = To::URL('foo%20bar+baz', true);
-~~~

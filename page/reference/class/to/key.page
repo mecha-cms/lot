@@ -1,17 +1,17 @@
 ---
-title: `$to::key()`
-description: Convert string input into a valid array key.
+@version: [2, current]
+@description: Convert string into a valid object key.
+@lot:
+- string $in, $accent = true
+@static: 1
+@example: |
+  $A = To::key('foo bar baz');
+  $B = To::key('foo-bar-baz');
+  $C = To::key('123 foo bar baz');
+  $D = To::key('123-foo-bar-baz');
+@result: |
+  $A = '[[e]]echo To::key('foo bar baz');[[/e]]';
+  $B = '[[e]]echo To::key('foo-bar-baz');[[/e]]';
+  $C = '[[e]]echo To::key('123 foo bar baz');[[/e]]';
+  $D = '[[e]]echo To::key('123-foo-bar-baz');[[/e]]';
 ...
-
-~~~ .php.xmp
-To::key($in, $a = true);
-~~~
-
-**Example:**
-
-~~~ .php
-$test_1 = To::key('foo bar baz');
-$test_2 = To::key('foo-bar-baz');
-$test_3 = To::key('123 foo bar baz');
-$test_4 = To::key('123-foo-bar-baz');
-~~~

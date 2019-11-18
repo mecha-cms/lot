@@ -1,14 +1,19 @@
 ---
-title: `$to::camel()`
-description: Convert string input into `camelCase`.
+@version: [2, current]
+@description: Convert string input into `camelCase`.
+@lot:
+- string $in
+@static: 1
+@example: |
+  $A = To::camel('foo bar baz');
+  $B = To::camel('foo-bar-baz');
+  $C = To::camel('Foo Bar BAZ');
+  $D = To::camel('foO baR baz');
+  $E = To::camel('foo_bar_baz');
+@result: |
+  $A = '[[e]]echo To::camel('foo bar baz');[[/e]]';
+  $B = '[[e]]echo To::camel('foo-bar-baz');[[/e]]';
+  $C = '[[e]]echo To::camel('Foo Bar BAZ');[[/e]]';
+  $D = '[[e]]echo To::camel('foO baR baz');[[/e]]';
+  $E = '[[e]]echo To::camel('foo_bar_baz');[[/e]]';
 ...
-
-~~~ .php.xmp
-To::camel($x, $a = false, $i = "");
-~~~
-
-**Example:**
-
-~~~ .php
-$test = To::camel('foo bar baz');
-~~~

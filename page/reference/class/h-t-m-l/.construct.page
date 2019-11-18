@@ -1,0 +1,13 @@
+---
+@version: [current]
+@description: Create a new HTML component.
+@lot:
+- string $in
+- array $in
+@example: |
+  $A = new HTML('<foo bar="baz"></foo>');
+  $B = new HTML(['foo', "", ['bar' => 'baz']]);
+
+  $container = new HTML(['div', ""]);
+  $void = new HTML(['img', false]);
+...

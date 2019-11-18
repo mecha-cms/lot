@@ -1,0 +1,11 @@
+---
+@version: [current]
+@description: Get client’s IP.
+@lot:
+- void
+@static: 1
+@example: |
+  $A = Client::IP();
+@result: |
+  $A = '[[e]]echo Client::IP();[[/e]]';
+...

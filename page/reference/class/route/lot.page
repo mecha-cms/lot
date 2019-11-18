@@ -1,0 +1,20 @@
+---
+@version: [current]
+@description: Set response headers.
+@lot:
+- void
+- string $key
+- string $key, $value = null
+- array $values
+@example: |
+  Route::set('foo/bar', 200, function() {
+      $this->lot('X-Foo', 1);
+      $this->lot('X-Bar', 2);
+      $this->lot([
+          'X-Baz' => 3,
+          'X-Qux' => 4
+      ]);
+      echo 'Success 200: Okay.';
+      exit;
+  });
+...

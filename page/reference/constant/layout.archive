@@ -1,0 +1,10 @@
+---
+@version: [current]
+@description: Return the layout folder path.
+@example: |
+  echo LAYOUT;
+@result: |
+  '.\www\directory\lot\layout'
+@use:
+  '.\lot\x\layout': 1
+...

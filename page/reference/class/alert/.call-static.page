@@ -1,18 +1,15 @@
 ---
 @version: [current]
 @description: Dynamic methods.
-@lot: string $kin, array $lot = []
+@lot:
+- string $kin, array $lot = []
+@static: 1
+@example: |
+  Alert::error('Invalid token.');
+  Alert::info('Your pass is <em>asdf</em>.');
+  Alert::success('File <code>.\index.php</code> successfully updated.');
+
+  Alert::foo('Foo message goes here.');
+  Alert::bar('Bar message goes here.');
+@example-description: If no kin was defined, this method will function as a shortcut for [link:get].
 ...
-
-If no kin was defined, this method will function as a shortcut for [`Alert::get()`][link:get].
-
-**Example:**
-
-~~~ .php
-Alert::error('create');
-Alert::info('create');
-Alert::success('create');
-
-Alert::foo('create');
-Alert::bar('create');
-~~~

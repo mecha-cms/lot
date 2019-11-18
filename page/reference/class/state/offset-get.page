@@ -1,0 +1,11 @@
+---
+@version: [current]
+@description: Get state item.
+@lot:
+- string $key
+@interface:
+- .array-access
+@example: |
+  $A = $state['foo-bar-baz'];
+  $B = $state->fooBarBaz;
+...

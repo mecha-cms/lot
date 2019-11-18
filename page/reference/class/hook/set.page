@@ -7,10 +7,10 @@
 @static: 1
 @example: |
   // Named function
-  function fn_enter() {
+  function _enter() {
       echo '<mark>test</mark>';
   }
-  Hook::set('enter', 'fn_enter', 1);
+  Hook::set('enter', '_enter', 1);
 
   // Un-named function
   Hook::set('enter', function() {

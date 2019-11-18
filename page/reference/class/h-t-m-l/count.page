@@ -1,0 +1,12 @@
+---
+@version: [current]
+@description: Count HTML element.
+@lot:
+- void
+@interface:
+- .countable
+@example: |
+  $div = new HTML('<div id="foo"></div>');
+
+  echo count($div); // This always return `1`
+...

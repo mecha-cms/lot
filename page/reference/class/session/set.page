@@ -1,7 +1,8 @@
 ---
 @version: [2, current]
 @description: Set a session.
-@lot: string $key, $value
+@lot:
+- string $key, $value
 @static: 1
 @example: |
   Session::set('foo', 'bar');

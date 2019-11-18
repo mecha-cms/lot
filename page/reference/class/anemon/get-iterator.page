@@ -1,0 +1,10 @@
+---
+@version: [2, current]
+@description: Iterate over all items.
+@lot:
+- void
+@interface:
+- .iterator-aggregate
+@example: |
+  foreach (new Anemon([1, 2, 3, 4, 5, 6]) as $k => $v) { … }
+...

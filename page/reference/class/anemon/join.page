@@ -1,7 +1,8 @@
 ---
 @version: [current]
 @description: Join array values.
-@lot: string $separator = ', '
+@lot:
+- string $join = ', '
 @example: |
   $array = Anemon::from([
       'foo' => 0,

@@ -1,0 +1,14 @@
+---
+@version: [current]
+@description: Set or get HTTP status code.
+@lot:
+- void
+- int $i
+@static: 1
+@example: |
+  // Set
+  Lot::status(404);
+
+  // Get
+  echo Lot::status();
+...

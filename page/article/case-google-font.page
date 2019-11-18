@@ -146,7 +146,7 @@ Route::set('fonts.css', function() {
 });
 ~~~
 
-Add the code snippet above to the `index.php` file of your active skin, then visit `http://127.0.0.1/fonts.css` (assuming you are in local mode), you should get a result like this:
+Add the code snippet above to the `index.php` file of your active layout, then visit `http://127.0.0.1/fonts.css` (assuming you are in local mode), you should get a result like this:
 
 ![2](%{asset}%/png/article/case-google-font/2.png)
 

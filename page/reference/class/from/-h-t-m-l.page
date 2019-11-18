@@ -1,10 +1,11 @@
 ---
 @version: [2, current]
 @description: Encode HTML special characters.
-@lot: string $in
+@lot:
+- string $in
 @static: 1
 @example: |
-  echo From::HTML('<foo bar="baz">');
+  $A = From::HTML('<foo bar="baz">');
 @result: |
-  '[[e]]echo From::HTML('<foo bar="baz">');[[/e]]'
+  $A = '[[e]]echo From::HTML('<foo bar="baz">');[[/e]]';
 ...

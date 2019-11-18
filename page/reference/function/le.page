@@ -1,7 +1,8 @@
 ---
 @version: [current]
 @description: Less than or equal to.
-@lot: $a, $b
+@lot:
+- $a, $b
 @example: |
   if (le('abcdef', 5)) { … }
   if (le(['a', 'b', 'c', 'd', 'e', 'f'], 5)) { … }

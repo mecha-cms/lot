@@ -1,0 +1,21 @@
+---
+@version: [current]
+@description: Remove array item.
+@lot:
+- string $key
+@interface:
+- .array-access
+@example: |
+  $A = new Anemon([1, 2, 3, 4, 5]);
+
+  unset($A[0]);
+
+  test($A->get());
+@result: |
+  [
+      1 => 2,
+      2 => 3,
+      3 => 4,
+      4 => 5
+  ]
+...

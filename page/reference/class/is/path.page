@@ -1,11 +1,13 @@
 ---
 @version: [2, current]
 @description: Check for valid local path address.
-@lot: $x, $exist = false
+@lot:
+- $x, $exist = false
 @static: 1
 @example: |
   // Check for valid local path address (whether it is exists or not)
   if (Is::path('.\path\to\file.txt')) { … }
+
   // Check for valid local path address and make sure it is exists
   if (Is::path('.\path\to\file.txt', true)) { … }
 ...

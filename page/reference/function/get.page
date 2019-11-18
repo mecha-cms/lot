@@ -1,0 +1,9 @@
+---
+@version: [current]
+@description: Get array value recursively using dot notation.
+@lot:
+- array &$data, string $access, string $join = '.'
+@example: |
+  // Return `$_GET['foo']['bar']['baz']` value or `null`
+  echo get($_GET, 'foo.bar.baz');
+...

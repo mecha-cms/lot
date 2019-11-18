@@ -1,0 +1,14 @@
+---
+@version: [current]
+@description: Set or get document type.
+@lot:
+- void
+- string $type, array $lot = []
+@static: 1
+@example: |
+  // Set
+  Lot::type('text/plain');
+
+  // Get
+  echo Lot::type();
+...

@@ -1,14 +1,11 @@
 ---
-title: `$to::file()`
-description: Sanitize string input into safe file path.
+@version: [2, current]
+@description: Sanitize string into safe file path.
+@lot:
+- string $in
+@static: 1
+@example: |
+  $A = To::file('foo / bar / baz .txt / abc $ def $ ghi .txt');
+@result: |
+  $A = '[[e]]echo To::file('foo / bar / baz .txt / abc $ def $ ghi .txt');[[/e]]';
 ...
-
-~~~ .php.xmp
-To::file($in);
-~~~
-
-**Example:**
-
-~~~ .php
-$test = To::file('foo / bar / baz .txt / abc $ def $ ghi .txt');
-~~~

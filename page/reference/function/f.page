@@ -1,3 +1,17 @@
 ---
 @version: [2, current]
+@description: Sanitize string input.
+@lot:
+- string $text, $accent = true, string $excludes = ""
 ...
+
+This function does the following tasks:
+
+ - Remove HTML tags and character references.
+ - Remove anything except the characters that listed in `$excludes`.
+ - Convert multiple white-space to a single space.
+ - Replace accents to their voice if `$accent` is `true`.
+
+This function does not do the following tasks:
+
+ - Trim white-spaces at the start and end of the string.

@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: Treat `Date` object as string.
-@example: |
-  echo new Date([[e]]echo date('U');[[/e]]);
-@result: |
-  '[[e]]echo date('Y-m-d H:i:s');[[/e]]'
-...

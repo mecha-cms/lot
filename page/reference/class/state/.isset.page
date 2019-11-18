@@ -1,0 +1,8 @@
+---
+@version: [2, current]
+@description: Check the existence of a state property.
+@lot:
+- string $key
+@example: |
+  if (isset($state->fooBarBaz)) { … }
+...

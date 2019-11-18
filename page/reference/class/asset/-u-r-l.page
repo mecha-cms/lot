@@ -1,10 +1,11 @@
 ---
 @version: [2, current]
 @description: Generate full public URL path of the `$url`.
-@lot: string $url
+@lot:
+- string $url
 @static: 1
 @example: |
   $A = Asset::URL('.\lot\asset\css\style.css');
-  $B = Asset::URL('http://example.com/asset/icons.css');
+  $B = Asset::URL('http://example.com/asset/css/icons.css');
 @example-note: Setting external URL to the `$url` parameter will return that `$url` anyway.
 ...
