@@ -1,3 +1,6 @@
 ---
 @version: [2, current]
+@description: Returns a string with backslashes before regular expression characters.
+@lot:
+- "string $in = null, string $extra = "'", string $default = '-+*/=:()[]{}<>^$.?!|\\'"
 ...

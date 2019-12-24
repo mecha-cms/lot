@@ -7,8 +7,8 @@
     …
     …
   </form>
-@example-description: This variable is an instance of [`Page`][link:../class/page] with current page path as the input.
+@example-description: This variable is an instance of [link:../class/alert].
 @example-language: 'html'
 ...
 
-Added by the [alert][link:../store/extension/alert] extension.
+Added by the [link:../store/extension/alert] extension.

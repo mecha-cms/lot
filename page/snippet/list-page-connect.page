@@ -6,7 +6,7 @@ description: Show list of pages in random order, filtered by the similarities of
 ~~~ .php
 <?php
 
-$_path = PAGE . DS . Path::D($url->path);
+$_path = LOT . DS . 'page' . DS . Path::D($url->path);
 $_chunk = 7;
 $_relates = [];
 

@@ -44,7 +44,7 @@ Hook::set('comment.avatar', function($avatar) {
         return $content;
     }
     $id = md5($this->email);
-    if ($path = File::exist(ASSET . DS . 'png' . DS . '-avatar' . DS . $id . '.png')) {
+    if ($path = File::exist(LOT . DS . 'asset' . DS . 'png' . DS . '-avatar' . DS . $id . '.png')) {
         return To::URL($path) . '?v=' . File::open($path)->update;
     }
     // Local avatar image does not exist, return the initial value…

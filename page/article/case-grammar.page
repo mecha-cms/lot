@@ -65,7 +65,7 @@ class Common extends Genome {
 }
 ~~~
 
-> **Update:** This pattern has been changed to _set_, _let_ and _get_.
+> **Update:** [This pattern has been changed to _set_, _let_ and _get_.][link:version-2-2-0]
 
 By standardizing the commands, I hope people can learn and understand faster because they can easily guess what methods are contained on every standard class.
 
@@ -250,3 +250,5 @@ echo $language->{'save' . Anemon::alter($status, [
     2 => 'ed'
 ], "")};
 ~~~
+
+> **Update:** [This feature has been removed.][link:version-2-2-0]

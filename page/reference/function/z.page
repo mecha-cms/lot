@@ -1,3 +1,4 @@
 ---
 @version: [2, current]
+@description: Export array/object into a compact PHP file.
 ...

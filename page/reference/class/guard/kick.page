@@ -8,10 +8,8 @@
 @example: |
   // Redirect to `http://127.0.0.1/directory/foo/bar`
   Guard::kick('foo/bar');
-
   // Redirect to `http://127.0.0.1/foo/bar`
   Guard::kick('/foo/bar');
-
   // Redirect to `http://example.com`
   Guard::kick('http://example.com');
 ...

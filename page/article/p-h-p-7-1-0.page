@@ -89,7 +89,7 @@ In the future, I hope it will be possible for us to manipulate page properties b
 
 ~~~ .php
 Hook::set('page.content', function($content) {
-    if ($this->type === 'Markdown') {
+    if ('Markdown' === $this->type) {
         return (new \Parsedown)->text($content);
     }
     return $content;

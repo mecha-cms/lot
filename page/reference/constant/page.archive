@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: Return the page folder path.
-@example: |
-  echo PAGE;
-@result: |
-  '.\www\directory\lot\page'
-...

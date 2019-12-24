@@ -1,6 +1,6 @@
 ---
 title: Mecha’s GitHub API
-description: I’m creating some public GitHub API for our [control panel extension][link:../reference/extension/panel].
+description: I’m creating some public GitHub API for our [control panel extension][link:../store/extension/panel].
 ...
 
 So, recently I made a number of API to quickly display my repository status on GitHub. But then I decided to make it public (can be used to display other people’s repositories). I hope this will not burden my shared hosting server, haha! 😆

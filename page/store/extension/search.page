@@ -1,0 +1,32 @@
+---
+title: Search
+description: Find files by query.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.0.5
+
+use:
+  '.\lot\x\page': 1
+...
+
+### Usage
+
+Append `?q=search+query` to the pages URL to search pages by file name or file content.
+
+Add this snippet just before the `</header>` in `header.php` file of your active layout folder to add the default search form:
+
+~~~ .php
+<?= self::form('search'); ?>
+~~~
+
+### Conditions
+
+These page conditional statements are available to quickly determine the type of page we are currently in:
+
+ - `$site->is('search')` → Return `true` if current page is a search results page.
+
+### Classes
+
+These HTML classes will be added to the `<html>` element that has a `class` attribute:
+
+ - `is:search` → Will be added on search results page.

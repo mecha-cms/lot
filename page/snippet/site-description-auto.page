@@ -5,7 +5,7 @@ description: Automatically change the site slogan based on the current page desc
 
 ~~~ .php
 Hook::set('route.enter', function() use($site, $url) {
-    $path = PAGE . DS . ($site->is('pages') ? $url->path : Path::D($url->path));
+    $path = LOT . DS . 'page' . DS . ($site->is('pages') ? $url->path : Path::D($url->path));
     if ($path = File::exist([
         $path . '.page',
         $path . '.archive'

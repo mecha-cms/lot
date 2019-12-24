@@ -27,7 +27,7 @@ $foo = new SGML('<foo baz="qux">bar</foo>');
 echo To::JSON($foo); // `["foo","bar",{"baz":"qux"}]`
 ~~~
 
-There will be no such standard way to make SGML comments markup through the class constructor because this markup is too easy to be written by hand. The case will be different when we want to add or remove some HTML or [block][link:../reference/extension/block] attributes directly through its string representation. And that’s why I made this class. However, developers can still add their own custom methods dynamically through the [`Genome`][link:../reference/class/genome] class feature, or by defining those methods directly. For example, here, a developer can add a `comment` method to make it easier for users to write HTML comments:
+There will be no such standard way to make SGML comments markup through the class constructor because this markup is too easy to be written by hand. The case will be different when we want to add or remove some HTML or [block][link:../store/extension/block] attributes directly through its string representation. And that’s why I made this class. However, developers can still add their own custom methods dynamically through the [`Genome`][link:../reference/class/genome] class feature, or by defining those methods directly. For example, here, a developer can add a `comment` method to make it easier for users to write HTML comments:
 
 ~~~ .php
 class HTML extends SGML {

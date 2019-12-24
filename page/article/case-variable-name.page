@@ -17,12 +17,13 @@ User variable style should be prefixed by a `_` to prevent collision with the re
 $_site
 ~~~
 
-> **Note:** If for a reason, the reserved variables are overwritten, you can always restore the original variable value by accessing the global variables defined by the [`Lot`][link:../reference/class/lot] class:
+> **Note:** If for a reason, the reserved variables are overwritten, you can always restore the original variable value by accessing the global variables stored in `$GLOBALS`:
+>
 > ~~~ .php
 > $site = null; // :(
 > echo $site->title; // :'(
 >
-> $site = Lot::get('site'); // :)
+> $site = $GLOBALS['site']; // :)
 > echo $site->title; // :*
 > ~~~
 
@@ -40,11 +41,11 @@ Common variable names using a letter with their meaning:
 
  - `$a` → [array][link:../reference/class/anemon] container
  - `$b` → base
- - `$c` → [class][link:../reference/class/h-t-m-l], [configuration][link:../reference/class/config]
+ - `$c` → [class][link:../reference/class], [configuration][link:../reference/class/state]
  - `$d` → [directory][link:../reference/class/path]
  - `$e` → [evaluate][link:../reference/function#reference:e]
  - `$f` → [file][link:../reference/class/file]
- - `$g` → results of the `glob` function
+ - `$g` → results of the `g` and `glob` function
  - `$h` → hint
  - `$i` → increment, integer, number
  - `$j` → length of the `$a` (used in `for` loop)
@@ -54,13 +55,13 @@ Common variable names using a letter with their meaning:
  - `$n` → [name][link:../reference/class/path]
  - `$o` → array container, output container
  - `$p` → [page][link:../reference/class/page], [path][link:../reference/class/path]
- - `$q` → [query][link:../reference/class/h-t-t-p/query]
- - `$r` → ?
+ - `$q` → [query][link:../reference/class/u-r-l/query]
+ - `$r` → return value
  - `$s` → placeholder, universal variable
  - `$t` → title, text
- - `$u` → [union][link:../reference/class/union], [URL][link:../reference/class/u-r-l], URL part
+ - `$u` → [URL][link:../reference/class/u-r-l], URL part
  - `$v` → array value
- - `$w` → ?
+ - `$w` → word
  - `$x` → test, [file extension][link:../reference/class/path]
  - `$y` → ?
  - `$z` → ?

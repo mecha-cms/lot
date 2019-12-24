@@ -1,5 +1,32 @@
 ---
 @version: [2, current]
-...
+@description: Compares first array against second array and returns the values in first array that are not present in the second array.
+@lot:
+- array $a, array $b
+@example: |
+  // Difference on Level 1
+  $a = ['a' => ['b' => ['c' => 'c']], 'd' => 'd'];
+  $b = ['a' => ['b' => ['c' => 'c']]];
+  $diff = j($a, $b); // ['d' => 'd']
 
-_Reserved._
+  // Difference on value on Level 3
+  $a = ['a' => ['b' => ['c' => 'c']], 'd' => 'd'];
+  $b = ['a' => ['b' => ['c' => 'x']], 'd' => 'd'];
+  $diff = j($a, $b); // ['a' => ['b' => ['c' => 'c']]]
+
+  // Difference on key on Level 3
+  $a = ['a' => ['b' => ['c' => 'c']], 'd' => 'd'];
+  $b = ['a' => ['b' => ['x' => 'c']], 'd' => 'd'];
+  $diff = j($a, $b); // ['a' => ['b' => ['c' => 'c']]]
+
+  // No differences even if Level 2 of $b has an extra item
+  $a = ['a' => ['b'=> ['c' => 'c']], 'd' => 'd'];
+  $b = ['a' => ['b'=> ['c' => 'c'], 'x' => 'x'], 'd' => 'd'];
+  $diff = j($a, $b); // []
+
+  // No differences even if Level 3 of $b has an extra item because
+  // $b has all the $a keys and values
+  $a = ['a' => ['b'=> ['c' => 'c']], 'd' => 'd'];
+  $b = ['a' => ['b'=> ['c' => 'c', 'x' => 'x']], 'd' => 'd'];
+  $diff = j($a, $b); // []
+...

@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: Return the extension folder path.
-@example: |
-  echo X;
-@result: |
-  '.\www\directory\lot\x'
-...

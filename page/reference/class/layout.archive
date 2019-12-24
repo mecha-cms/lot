@@ -1,16 +1,16 @@
 ---
 @version: [current]
-@description: Content output.
+@description: Render layout from file.
 @parent: genome
 ...
 
 ### Configuration
 
 ~~~ .php
-Content::$config = [
-    'root' => ROOT,
-    // List of alternative file extensions used by the content files.
-    // Content with `html` extension is a priority for best performance.
+Layout::$state = [
+    'path' => LOT . DS . 'layout',
+    // List of alternative file extensions used by the layout files.
+    // Layout with `html` extension is a priority for best performance.
     // To change the priority order, re-order this file extensions placement.
     'x' => ['html', 'php']
 ];

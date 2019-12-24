@@ -1,7 +1,7 @@
 ---
 title: Mecha Rich Text Editor
 description: A rich text editor that is designed to accept only limited set of inline HTML tags. Works best to be used on any editors that are accessible in the public such as comment form in a blog or Q/A form in a forum.
-link: 'https://github.com/tovic/rich-text-editor'
+link: 'http://taufik-nurrohman.github.io/rich-text-editor'
 ...
 
 ![1](%{asset}%/gif/article/rich-text-editor.gif)

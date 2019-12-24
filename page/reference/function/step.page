@@ -1,0 +1,36 @@
+---
+@version: [current]
+@description: Create list of steps from a string separated by dots.
+@lot:
+- string $steps, string $join = '.', int $dir = 1
+@example: |
+  $A = step('a.b.c.d.e.f');
+  $B = step('a.b.c.d.e.f', '.', -1);
+  $C = step('a.b.c.d.e\.f');
+@result: |
+  $A = [
+      "" => 'a.b.c.d.e.f',
+      'f' => 'a.b.c.d.e',
+      'e.f' => 'a.b.c.d',
+      'd.e.f' => 'a.b.c',
+      'c.d.e.f' => 'a.b',
+      'b.c.d.e.f' => 'a'
+  ];
+
+  $B = [
+      'a.b.c.d.e' => 'f',
+      'a.b.c.d' => 'e.f',
+      'a.b.c' => 'd.e.f',
+      'a.b' => 'c.d.e.f',
+      'a' => 'b.c.d.e.f',
+      "" => 'a.b.c.d.e.f'
+  ];
+
+  $C = [
+      "" => 'a.b.c.d.e.f',
+      'e.f' => 'a.b.c.d',
+      'd.e.f' => 'a.b.c',
+      'c.d.e.f' => 'a.b',
+      'b.c.d.e.f' => 'a'
+  ];
+...

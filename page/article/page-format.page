@@ -20,7 +20,7 @@ type: HTML
 Page content goes here.
 ~~~
 
-You might think that you can only set the `type` value as `HTML` or `Markdown`. But, actually you can set any value into it, as you like:
+You might think that you can only set the `type` value as `HTML` or `Markdown`. But, actually you can set any value to it:
 
 ~~~ .yaml
 ---
@@ -36,15 +36,19 @@ Page content goes here.
 The custom `type` value in the example above will not give any effects unless you set a hook to the page content based on it:
 
 ~~~ .php
-Hook::set('page.content', function($content, $lot) {
+Hook::set('page.content', function($content) {
     // `type` data does not exist or has the value other than “Quote”, skip…
-    if (!isset($lot['type']) || $lot['type'] !== 'Quote') {
+    if (!$this->type || 'Quote' !== $this->type) {
         return $content;
     }
     // Remove all HTML block tag(s) and normalize line-break
-    $content = n(To::text($content, HTML_FORMAT_INLINE, true));
+    $tags = 'a,abbr,b,br,cite,code,del,dfn,em,i,ins,kbd,mark,q,span,strong,sub,sup,time,u,var';
+    $content = n(To::text($content, $tags, true));
     // Convert line-break into paragraph tag(s)
-    $content = '<p>' . str_replace(["\n\n", "\n"], ['</p><p>', '<br>'], $content) . '</p>';
+    $content = '<p>' . strtr($content, [
+        "\n\n" => '</p><p>',
+        "\n" => '<br>'
+    ]) . '</p>';
     // Surround the page content with `<blockquote>` tag
     return '<blockquote>' . $content . '</blockquote>';
 });
@@ -53,55 +57,36 @@ Hook::set('page.content', function($content, $lot) {
 You can also add the post format support by customizing the `page.php` file instead of hooking the page content:
 
 ~~~ .html
-<?php static::header(); ?>
-<!-- quote page template -->
-<?php if ($page->type === 'Quote'): ?>
-<article class="page" id="page-<?php echo $page->id; ?>">
+<?= self::before(); ?>
+<!-- Quote page layout -->
+<?php if ('Quote' === $page->type): ?>
+<article id="page-<?= $page->id; ?>">
   <blockquote>
   <?php
 
-  $content = n(To::text($page->content, HTML_FORMAT_INLINE, true));
-  $content = '<p>' . str_replace(["\n\n", "\n"], ['</p><p>', '<br>'], $content) . '</p>';
+  $tags = 'a,abbr,b,br,cite,code,del,dfn,em,i,ins,kbd,mark,q,span,strong,sub,sup,time,u,var';
+  $content = n(To::text($content, $tags, true));
+  $content = '<p>' . strtr($content, [
+      "\n\n" => '</p><p>',
+      "\n" => '<br>'
+  ]) . '</p>';
 
   echo $content;
 
   ?>
   </blockquote>
 </article>
-<!-- default page template -->
+<!-- Default page layout -->
 <?php else: ?>
-<article class="page" id="page-<?php echo $page->id; ?>">
-  <header class="page-header">
-    <h3 class="page-title">
-      <?php echo $page->title; ?>
-    </h3>
+<article id="page-<?= $page->id; ?>">
+  <header>
+    <h3><?= $page->title; ?></h3>
   </header>
-  <section class="page-body">
-    <?php echo $page->content; ?>
-  </section>
-  <footer class="page-footer">
-    <p><?php echo $language->author . ': ' . $page->author; ?></p>
+  <div><?= $page->content; ?></div>
+  <footer>
+    <p><?= i('Author') . ': ' . $page->author; ?></p>
   </footer>
 </article>
 <?php endif; ?>
-<?php static::footer(); ?>
+<?= self::after(); ?>
 ~~~
-
----
-
-If you have [panel][link:../reference/extension/panel] extension installed, you can also insert this snippet to enable _Quote_ option in the _Type_ field:
-
-~~~ .php
-Config::set('panel.o.page.type.Quote', 'Quote');
-~~~
-
-Or, add a `Quote` property to the `o_type` language item:
-
-~~~ .yaml
-o_type:
-  HTML: HTML
-  Markdown: Markdown
-  Quote: Quote # ← this
-~~~
-
-![1](%{asset}%/png/article/page-format.png)

@@ -42,7 +42,7 @@ foreach ($pages->sort([1, 'title']) as $page) { … }
 ~~~ .php
 // Add sticky post
 if ($site->is('home') && $pages = Lot::get('pages')) {
-    $pages->prepend(new Page(PAGE . DS . 'sticky.page'));
+    $pages->prepend(new Page(LOT . DS . 'page' . DS . 'sticky.page'));
     Lot::set('pages', $pages->chunk($site->page('chunk'), $url->i ?: 1));
 }
 ~~~

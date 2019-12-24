@@ -12,7 +12,6 @@
   // Remove an attached `content` hook with ID `fn_meta` before execution,
   // or prevent a hook with ID `_meta` to be attached to the `content` container
   Hook::let('content', '_meta');
-
   // Remove all hooks attached to the `content` container
   Hook::let('content');
 @example-note: You cannot remove hooks that are attached using anonymous function because they have no ID.

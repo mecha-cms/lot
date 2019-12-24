@@ -8,7 +8,7 @@ This snippet will prepend a list of keyword links on top of your page content, j
 ~~~ .php
 Hook::set('*.content', function($content, $lot = [], $that) use($language, $site, $url) {
     $path = $that->get('path');
-    if (!$path || strpos($path, PAGE . DS) !== 0) {
+    if (!$path || strpos($path, LOT . DS . 'page' . DS) !== 0) {
         return $content;
     }
     $page = Page::open($path)->get([

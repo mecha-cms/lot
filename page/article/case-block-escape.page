@@ -3,9 +3,9 @@ title: Escaping Blocks
 description: How to write literal block syntax in the page content?
 ...
 
-Unlike [Markdown][link:../reference/extension/markdown], [blocks][link:../reference/extension/block] are still accessible within the `<code>` tags. So, it is not possible to write literal block syntax within the `<code>` tags. To write literal block syntax in the page content, you will need to wrap the syntax with some backtick characters like so:
+Unlike [markdown][link:../store/extension/markdown], [blocks][link:../store/extension/block] are still accessible within the `<code>` tags. So, it is not possible to write literal block syntax within the `<code>` tags. To write literal block syntax in the page content, you will need to wrap the syntax with some backtick characters like so:
 
-> **Update 2019/06/1:** The escape syntax below will be removed in the future.
+> **Update 2019/12/22:** [The escape syntax feature has been removed.][link:version-2-2-0].
 
 ~~~ .txt
 `[‌[‌block‌]‌]`

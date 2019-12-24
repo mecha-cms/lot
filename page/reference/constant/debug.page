@@ -3,6 +3,4 @@
 @description: Enable or disable debug mode.
 @example: |
   if (true === DEBUG) { … }
-@result: |
-  null
 ...

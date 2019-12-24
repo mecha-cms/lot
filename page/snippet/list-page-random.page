@@ -6,7 +6,7 @@ description: Show list of pages in random order.
 ~~~ .php
 <?php
 
-$_path = PAGE . DS . 'article';
+$_path = LOT . DS . 'page' . DS . 'article';
 $_chunk = 7;
 
 echo '<h3>Random Posts</h3>';

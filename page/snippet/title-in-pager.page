@@ -8,13 +8,13 @@ Replace the default pager that you see in `page.php` file with this:
 ~~~ .html
 <nav style="overflow:hidden;">
   <?php if ($s = $pager->previous): ?>
-    <?php $s = PAGE . DS . str_replace($url . '/', "", $s) . '.page'; ?>
+    <?php $s = LOT . DS . 'page' . DS . str_replace($url . '/', "", $s) . '.page'; ?>
     <span style="float:left;">
       <?php echo $pager->previous(Elevator::WEST . ' ' . Page::open($s)->get('title')); ?>
     </span>
   <?php endif; ?>
   <?php if ($s = $pager->next): ?>
-    <?php $s = PAGE . DS . str_replace($url . '/', "", $s) . '.page'; ?>
+    <?php $s = LOT . DS . 'page' . DS . str_replace($url . '/', "", $s) . '.page'; ?>
     <span style="float:right;">
       <?php echo $pager->next(Page::open($s)->get('title') . ' ' . Elevator::EAST); ?>
     </span>

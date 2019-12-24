@@ -8,19 +8,7 @@ I have updated the [`Page`][link:../reference/class/page] class recently so that
 
 ### Time
 
-The engine will first search for a hard-coded `time` data from the page file to be used. If it doesn’t exist, then it will use the page’s file creation time as the page time. But, if the page’s file name itself is formatted as a timestamp-like format, then the engine will try to parse the page’s file name into a valid `time` data. So now you can set a file name as `2017-04-21-14-25-02.page` to set the `time` data to `2017-04-21 14:25:02` or `2017-04-21.page` to set the `time` data to `2017-04-21 00:00:00`. If there is no `title` field provided in the page file, the `title` data will be set to `2017/04/21 02:25:02 PM` for the first example and `2017/04/21 12:00:00 AM` for the second example.
-
-### Title
-
-You can now create a page file without the `title` field but still can have it included to the page output. It is a [fake title][link:../reference/class/to/title] that is generated from the page’s file name.
-
-### Description
-
-Exception for this. There are no plan for making the fake `description` data which is —you guess— created from the page’s `content` data. Consider to use the [excerpt][link:../reference/extension/excerpt] extension instead.
-
-### URL
-
-The default `url` value will use the file path that is converted into a public URL by the [`To::URL()`][link:../reference/class/to/-u-r-l] method.
+The engine will first search for a hard-coded `time` data from the page file to be used. If it doesn’t exist, then it will use the page’s file creation time as the page time. But, if the page’s file name itself is formatted as a timestamp-like format, then the engine will try to parse the page’s file name into a valid `time` data. So now you can set a file name as `2017-04-21-14-25-02.page` to set the `time` data to `2017-04-21 14:25:02` or `2017-04-21.page` to set the `time` data to `2017-04-21 00:00:00`.
 
 ### ID
 
@@ -28,13 +16,4 @@ The default `id` value will use the `time` value that is converted into unsigned
 
 ### Type
 
-The default `type` value wil use the page’s file extension that is converted into upper-case words.
- 
-> **Note:** If you set some default values explicitly in `page` configuration property, then those data will be replaced by them. Example:
- 
-~~~ .php
-Config::set('page', [
-    'title' => 'My Default Title',
-    'type' => 'HTML'
-]);
-~~~
+The default `type` value is `text/html`.

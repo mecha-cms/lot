@@ -1,0 +1,46 @@
+---
+title: Thumbnail
+description: Resize and crop images on the fly.
+...
+
+### URL Pattern
+
+ - `/t/{$width}/{$path}` → proportional image resize
+ - `/t/{$width}/{$height}/{$path}` → proportional image resize and crop
+ - `/t/{$x}/{$y}/{$width}/{$height}/{$path}` → crop image without resize
+
+### Example
+
+~~~ .txt
+http://127.0.0.1/t/200/path/to/image.jpg
+http://127.0.0.1/t/200/200/path/to/image.jpg
+http://127.0.0.1/t/30/60/200/400/path/to/image.jpg
+~~~
+
+### Description
+
+ - `{$width}` → the image width
+ - `{$height}` → the image height
+ - `{$x}` → horizontal position from the original image corner
+ - `{$y}` → vertical position from the original image corner
+ - `{$path}` → the image path relative to the `.\lot\asset` folder.
+
+### Converter
+
+Convert default image URL into image thumbnail URL:
+
+~~~ .php.xmp
+To::thumbnail($in, $size);
+To::thumbnail($in, $width, $height);
+To::thumbnail($in, $x, $y, $width, $height);
+~~~
+
+**Example:**
+
+~~~ .html
+<?php $path = 'http://127.0.0.1/lot/asset/jpg/city.jpg'; ?>
+
+<img alt="" src="<?php echo To::thumbnail($path, 50); ?>">
+<img alt="" src="<?php echo To::thumbnail($path, 50, 50); ?>">
+<img alt="" src="<?php echo To::thumbnail($path, 10, 10, 50, 50); ?>">
+~~~

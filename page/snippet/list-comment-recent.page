@@ -8,7 +8,7 @@ Requires [comment][link:../reference/extension/comment] extension.
 ~~~ .php
 <?php
 
-$_path = COMMENT;
+$_path = LOT . DS . 'comment';
 $_chunk = 7;
 
 echo '<h3>Recent Comments</h3>';

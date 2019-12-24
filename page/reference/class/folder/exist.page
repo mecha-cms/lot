@@ -8,14 +8,12 @@
 @example: |
   // Generic
   if (Folder::exist('.\path\to\file.txt')) { … }
-
   // Return the given path if file exists, return `false` if not
   if ($folder = Folder::exist('.\path\to\folder')) {
       require $folder;
   } else {
       require '.\path\to\folder.alt';
   }
-
   // Loop through list of folder path until it finds a folder that exists
   if ($test = Folder::exist([
       '.\path\to\folder.v2',

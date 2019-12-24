@@ -3,5 +3,5 @@
 @description: Return the custom variable that added in the layout argument.
 @example: |
   Layout::get('.\path\to\file.php', ['body' => 'Lorem ipsum dolor sit amet.']);
-@example-description: This variable exists on every file attached by the [`Layout::get()`][link:../class/layout/get] method when the second argument is defined and is an array. In this example, variable `$lot['body']` will be available in `.\path\to\file.php` file.
+@example-description: This variable exists on every file attached by the [link:../class/layout/get] method when the second argument is defined and is an array. In this example, variable `$lot['body']` will be available in `.\path\to\file.php` file.
 ...

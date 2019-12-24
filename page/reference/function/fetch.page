@@ -1,6 +1,6 @@
 ---
 @version: [current]
-@description: Fetch content from a remote URL.
+@description: Fetch contents from a remote URL.
 @lot:
 - string $url, string $agent = null, string $type = 'GET'
 - string $url, array $lot = [], string $type = 'GET'

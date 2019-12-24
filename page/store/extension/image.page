@@ -1,0 +1,149 @@
+---
+title: Image
+description: Image resizer and cropper.
+author: Taufik Nurrohman
+type: Markdown
+version: 2.2.3
+
+use:
+  '.\lot\x\page': 0
+...
+
+This extension provides various API to work with BMP, GIF, JPEG, PNG and WEBP images.
+
+### API Usage
+
+#### Create Image
+
+Create a new image from a file path, an external URL or a Base64 URL:
+
+~~~ .php
+// Create image from file
+$blob = new Image('.\path\to\image.png');
+
+// Create image from remote URL
+$blob = new Image('http://127.0.0.1/path/to/image.png');
+
+// Create image from Base64 URL
+$blob = new Image('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAy…');
+~~~
+
+#### Get Image Dimension
+
+Get current image width and height:
+
+~~~ .php
+$width = $blob->width;
+$height = $blob->height;
+~~~
+
+#### Get Image Type
+
+Get current image MIME type:
+
+~~~ .php
+$type = $blob->type;
+~~~
+
+#### Resize Image
+
+Resize image to an absolute width and height:
+
+~~~ .php
+$width = 100;
+$height = 50;
+$blob->resize($width); // Is the same as `->resize($width, $width)`
+$blob->resize($width, $height);
+~~~
+
+#### Scale Image
+
+Resize image width and height relative to the current image width and height:
+
+~~~ .php
+$blob->scale(50); // 50% of current image dimension
+$blob->scale(200); // 200% of current image dimension
+~~~
+
+#### Fit Image
+
+Resize image and make sure that the width and height will not overflow the maximum width and height:
+
+~~~ .php
+$max_width = 100;
+$max_height = 100;
+
+$blob->fit($max_width, $max_height);
+~~~
+
+#### Crop and Resize Image
+
+Resize and crop image to the center:
+
+~~~ .php
+$width = 100;
+$height = 100;
+
+$blob->crop($width); // Is the same as `->crop($width, $width)`
+$blob->crop($width, $height);
+~~~
+
+#### Crop Image without Resize
+
+Crop image with custom X and Y coordinate:
+
+~~~ .php
+$left = 20;
+$top = 20;
+$width = 100;
+$height = 100;
+
+$blob->crop($left, $top, $width, $height);
+~~~
+
+#### Save Image
+
+Store the modified image blob to a file:
+
+~~~ .php
+$blob->store('.\path\to\image-1.png');
+$blob->store('.\path\to\image-1.png', 50); // Set image quality to 50%
+~~~
+
+#### Draw Image
+
+Show image to the browser window as a file:
+
+~~~ .php
+$blob->draw();
+~~~
+
+~~~ .php
+$blob->draw(null, 50); // Set image quality to 50%
+~~~
+
+Draw and store to a file:
+
+~~~ .php
+$blob->draw('.\path\to\image-1.png', 50);
+~~~
+
+Draw as JPEG image:
+
+~~~ .php
+$blob->draw(null, 50, 'image/jpeg');
+~~~
+
+### Image API with Page Extension
+
+This extension will also add `image` and `images` property to the current `$page` object. The `image` property will contain the first image URL found in the current page content, and `images` property will contain list of images URL found in the current page content. This extension will skip the parsing process if you set the `image` and `images` property values explicitly in the page file header:
+
+~~~ .html.php
+<?php foreach ($pages as $page): ?>
+<article>
+  <?php if ($image = $page->image(72, 72)): ?>
+  <img alt="" src="<?= $image; ?>">
+  <?php endif; ?>
+</article>
+<?php endforeach; ?>
+~~~

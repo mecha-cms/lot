@@ -75,14 +75,12 @@ function birth($name = 'Mecha', $entity = 'world') {
     return 'Hello ' . $entity . '! My name is ' . $name . '.';
 }
 
-/* Using the default method. */
+// Using the default method
 Blastula::_('birth_1', 'birth');
-
-/* Alter the first default argument value to `Mocha`. */
+// Alter the first default argument value to `Mocha`
 Blastula::_('birth_2', ['birth', ['Mocha']]);
-
-/* Alter the first default argument value to `Mocha`. */
-/* Limit arguments to `1` (changing the `$entity` parameter won’t give any effect here). */
+// Alter the first default argument value to `Mocha`
+// Limit arguments to `1` (changing the `$entity` parameter won’t give any effect here)
 Blastula::_('birth_3', ['birth', ['Mocha'], 1]);
 ~~~
 

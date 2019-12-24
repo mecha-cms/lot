@@ -1,8 +1,0 @@
----
-@version: [2, current]
-@description: Return the cache folder path.
-@example: |
-  echo CACHE;
-@result: |
-  '.\www\directory\lot\cache'
-...

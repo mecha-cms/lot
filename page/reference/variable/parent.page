@@ -6,4 +6,4 @@
 @example-description: This variable returns the parent page instance of [link:page].
 ...
 
-Added by the [page][link:../store/extension/page] extension.
+Added by the [link:../store/extension/page] extension.

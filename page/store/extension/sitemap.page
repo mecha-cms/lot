@@ -1,0 +1,15 @@
+---
+title: Sitemap
+description: Add sitemap feature.
+author: Taufik Nurrohman
+type: Markdown
+version: 2.0.0
+
+use:
+  '.\lot\x\page': 1
+...
+
+### Usage
+
+ - Normal view → `./path/to/page`
+ - Sitemap view → `./path/to/page/sitemap.xml`

@@ -5,7 +5,7 @@ description: Changes in version `2.0.0`.
 
 ### Unlimited Page Children
 
-Mecha `2.0.0` comes with unlimited page children feature. All pages are now stored in `.\lot\page` folder. You can add as many pages as you want and add as many page children as you want to the parent page folder with rules and specifications defined in the [page extension reference][link:../reference/extension/page].
+Mecha `2.0.0` comes with unlimited page children feature. All pages are now stored in `.\lot\page` folder. You can add as many pages as you want and add as many page children as you want to the parent page folder with rules and specifications defined in the [page extension reference][link:../store/extension/page].
 
 ~~~ .txt
 .\lot\page\about.page
@@ -19,11 +19,11 @@ Mecha `2.0.0` comes with unlimited page children feature. All pages are now stor
 
 ### Built as a Framework
 
-The blog and static page views that you see on this site are basically just the result of the [page][link:../reference/extension/page] extension. If you delete this extension, you can use Mecha as a PHP framework so that you can create your own page rendering logic. You can make any kind of site as you want using the available API.
+The blog and static page views that you see on this site are basically just the result of the [page][link:../store/extension/page] extension. If you delete this extension, you can use Mecha as a PHP framework so that you can create your own page rendering logic. You can make any kind of site as you want using the available API.
 
 ### Performance Improvement
 
-We try not to rely on automatic cache files as a method to accelerate the web page access because most of static files will only increase the web storage, which will also increase the web hosting cost. We use that method only for specific purposes like generating [page archive][link:../reference/extension/block.archive] which require you to load all of the page contents, recursively. It will only cache the archive list part and not the whole document, because we have [form token][link:../reference/class/guard/token] and such that shouldn’t be cached forever. Instead, we use static arrays to store the data processed on every web page access, where the data then can be used multiple times in the same page without the need to repeat the complicated filter process on each called data.
+We try not to rely on automatic cache files as a method to accelerate the web page access because most of static files will only increase the web storage, which will also increase the web hosting cost. We use that method only for specific purposes like generating [page archive][link:../store/extension/block.archive] which require you to load all of the page contents, recursively. It will only cache the archive list part and not the whole document, because we have [form token][link:../reference/class/guard/token] and such that shouldn’t be cached forever. Instead, we use static arrays to store the data processed on every web page access, where the data then can be used multiple times in the same page without the need to repeat the complicated filter process on each called data.
 
 ~~~ .php
 $cache = [];
@@ -87,7 +87,7 @@ echo $page->trigger2; // Alerts `:(`
 
 ### Extension
 
-[Extension][link:../reference/extension] is a core feature enhancer that has a higher level than plugin. An extension doesn’t have to change the behavior of Mecha directly, it can also be used as an API enhancer that does nothing until you use it on a particular plugin or shield, or even in a private [function][link:../reference/function] file that you have. One example of the extension I mean here is the [image][link:../reference/extension/image] extension, and the use of the image extension can be seen in the thumbnail plugin.
+[Extension][link:../store/extension] is a core feature enhancer that has a higher level than plugin. An extension doesn’t have to change the behavior of Mecha directly, it can also be used as an API enhancer that does nothing until you use it on a particular plugin or shield, or even in a private [function][link:../reference/function] file that you have. One example of the extension I mean here is the [image][link:../store/extension/image] extension, and the use of the image extension can be seen in the thumbnail plugin.
 
 The name _Genome_ was taken from an abstract class included in the core. What this class doing is simply making other classes become pluggable. We can add methods on every classes extended to the [`Genome`][link:../reference/class/genome] class dynamically.
 
@@ -116,9 +116,9 @@ Open means that Mecha is extensible and can be improved so that it can have more
 
 By the way, here are some things that has been simplified in the current version of Mecha:
 
- - Control panel feature has been removed by default and it can be added by installing the [panel][link:../reference/extension/panel] extension that is available separately. This feature also has different API and it stands alone. So, basically, you can create your own control panel feature with your own API that you can customize it as you wish whenever you think that my control panel extension is not perfect.
- - Comment feature has been removed by default and it can be added by installing the [comment][link:../reference/extension/comment] extension.
- - RSS feature has been removed by default and it can be added by installing the [feed][link:../reference/extension/feed] extension.
+ - Control panel feature has been removed by default and it can be added by installing the [panel][link:../store/extension/panel] extension that is available separately. This feature also has different API and it stands alone. So, basically, you can create your own control panel feature with your own API that you can customize it as you wish whenever you think that my control panel extension is not perfect.
+ - Comment feature has been removed by default and it can be added by installing the [comment][link:../store/extension/comment] extension.
+ - RSS feature has been removed by default and it can be added by installing the [feed][link:../store/extension/feed] extension.
  - In the previous version, Mecha use hook and filter separately, but now you can use hook as a filter simply by returning the first function arguments.
 
 ### What’s Next?

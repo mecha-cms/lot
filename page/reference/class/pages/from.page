@@ -2,7 +2,7 @@
 @version: [current]
 @description: Bulk [page][link:../page] instance from a folder.
 @lot:
-- string $folder = PAGE, $x = 'page', $deep = 0
+- string $folder = LOT . DS . 'page', $x = 'page', $deep = 0
 @static: 1
 @example: |
   $pages = Pages::from('.\path\to\folder');

@@ -1,3 +1,9 @@
 ---
 @version: [current]
+@description: Dump PHP values.
+@lot:
+- ...$values
+@example: |
+  test(new File);
+  test(new File, new Folder, $_SERVER);
 ...

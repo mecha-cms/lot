@@ -3,5 +3,5 @@
 @description: Return the current time.
 @example: |
   <?= $time->hour; ?>
-@example-note: This variable is an instance of the [`Time`][link:../class/date] with current time as the input.
+@example-description: This variable is an instance of [`Time`][link:../class/date] with current time as the input.
 ...

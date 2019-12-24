@@ -13,10 +13,10 @@ An extension is a folder with a unique name, stored in `.\lot\x` folder:
 .\
 └── lot\
     └── x\
+        ├── art\
         ├── asset\
         ├── extension-1\
         ├── extension-2\
-        ├── page\
         ├── …
         └── …
 ~~~
@@ -36,14 +36,12 @@ A standard extension should at least contains files that structured like this:
 │       ├── .htaccess
 │       ├── css\
 │       └── js\
-│
-│
 ├── about.page
 ├── index.php
 └── state.php
 ~~~
 
-But the simplest one also can be achieved as:
+But the simplest one can also be achieved as:
 
 ~~~ .txt
 .\lot\x\extension-1\
@@ -60,7 +58,7 @@ The most important part is the `index.php` file. The automatic extension loader 
 
 ### State
 
-The `state.php` file contains custom settings for your users. It will be automatically loaded automatically along with the `index.php` file loading. The state values will be loaded to the `x` property in the global `$state` variable:
+The `state.php` file contains custom settings for your users. It will be loaded automatically along with the `index.php` file loading. The state values will be loaded to the `x` property in your global `$state` variable:
 
 ~~~ .php
 // Get `page` extension’s state as object
@@ -89,7 +87,7 @@ if ($should_load_the_state) {
 
 ### Check if Extension Exists
 
-There is no special mechanism to detect if an extension exists. The easiest way would be to detect the state value of certain extension that is stored in the global `$state` variable. As of the automatic loading proccess that I have explained before, then you can confirm the existence of an extension by checking the state value of the desired extension. If it at least return an empty array, then it means that the extension does exists even if you don’t have any `state.php` file in your extension folder.
+There is no special mechanism to detect if an extension exists. The easiest way would be to detect the state value of certain extension that is stored in the global `$state` variable. As of the automatic loading proccess that I have explained before, then you can confirm the existence of an extension by checking the state value of the desired extension. If it at least return an empty array, then it means that the extension does exist even if you don’t have any `state.php` file in your extension folder.
 
 ~~~ .php
 if (null !== state('x.page')) {
@@ -100,7 +98,7 @@ if (null !== state('x.page')) {
 Or even simpler:
 
 ~~~ .php
-if (is_file(X . DS . 'page' . DS . 'index.php')) {
+if (is_file(LOT . DS . 'x' . DS . 'page' . DS . 'index.php')) {
     // Has `page` extension
 }
 ~~~

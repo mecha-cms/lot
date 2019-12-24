@@ -6,7 +6,7 @@ description: Making a better page conditional mechanism.
 I am currently working on a maintainable and extensible page conditional statement mechanism. Currently, we use the `is` property that is stored in the `$site` variable to indicate what type of page we are currently in:
 
 ~~~ .php
-if ($site->is === 'page') {
+if ('page' === $site->is) {
     // A single page.
 }
 ~~~
@@ -15,8 +15,8 @@ The problem here is that the `is` property can only store single state of the pa
 
 ~~~ .php
 if (
-    $site->is === 'pages' &&
-    strpos($url->path . '/', Extend::state('tag', 'path') . '/') === 0
+    'pages' === $site->is &&
+    0 === strpos($url->path . '/', Extend::state('tag', 'path') . '/')
 ) {
     // A tags page.
 }
@@ -53,6 +53,8 @@ if (is('pages') && is('tag')) { … }
 ~~~
 
 ~~~ .php
+function are() { … }
+function can() { … }
 function is() { … }
 function not() { … }
 function any() { … }

@@ -1,19 +1,19 @@
 ---
 @version: [2, current]
-@description: Force to disable view output by ID.
+@description: Force to disable layout output by ID.
 @lot:
 - void
 - string $id
 - array $id
 @static: 1
 @example: |
-  Content::set('foo.bar', '.\lot\asset\php\view.php'); // [^1]
-  Content::get('foo.bar'); // [^2]
-  Content::let('foo.bar'); // [^3]
-  Content::get('foo.bar'); // [^4]
+  Layout::set('foo.bar', '.\lot\asset\php\layout.php'); // [^1]
+  Layout::get('foo.bar'); // [^2]
+  Layout::let('foo.bar'); // [^3]
+  Layout::get('foo.bar'); // [^4]
 
   // [^1]: Set!
-  // [^2]: Prints the contents of `.\lot\asset\php\view.php` file.
+  // [^2]: Prints the contents of `.\lot\asset\php\layout.php` file.
   // [^3]: Disable!
   // [^4]: Prints nothing.
 ...

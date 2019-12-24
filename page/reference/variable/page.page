@@ -3,7 +3,7 @@
 @description: Return the current page data.
 @example: |
   <?= $page->title; ?>
-@example-description: This variable is an instance of [`Page`][link:../class/page] with current page path as the input.
+@example-description: This variable is an instance of [link:../class/page] with current page path as the input.
 ...
 
-Added by the [page][link:../store/extension/page] extension.
+Added by the [link:../store/extension/page] extension.

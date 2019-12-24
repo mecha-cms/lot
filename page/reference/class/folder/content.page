@@ -1,5 +1,5 @@
 ---
-@version: [1, 2, current]
+@version: [current]
 @description: Read file content in a folder as string.
 @lot:
 - string $path

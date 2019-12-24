@@ -3,15 +3,14 @@ title: Task File
 description: Disposable commands.
 ...
 
-Mecha introduces `task.php` file functionality in the core version greater than `2.0.0`, which is just an includable file that functions exactly the same as the `index.php` file, but is intended to be used once. This file will be stored together with the `index.php` file and may or may not exist depending on the requirements. All `task.php` files will be loaded automatically as the `index.php` file. But, the special thing about this file is that it is always equipped with a command to destroy itself when a condition has been met.
+Mecha introduces `task.php` file functionality in the core version greater than `2.0.0`, which is just an includable file that functions exactly the same as the `index.php` file, but is intended to be used once. This file will be stored along with the `index.php` file and may or may not exist depending on the requirements. All `task.php` files will be loaded automatically as the `index.php` file. But, the special thing about this file is that it is always equipped with a command to destroy itself when a condition has been met.
 
 ~~~ .php
-$f = LOT . DS . 'comment';
-if (!file_exists($f)) {
-    // create folder if not exists
-    mkdir($f, 0700, true);
+if (!is_dir($folder = LOT . DS . 'page')) {
+    // Create folder if not exists
+    mkdir($folder, 0700, true);
 } else {
-    // self destruct
+    // Self destruct
     unlink(__FILE__);
 }
 ~~~
@@ -23,33 +22,20 @@ This file can be placed in any extensions, layout and even in the core folder.
 ├── engine\
 ├── lot\
 │   ├── cache\
-│   ├── page\
-│   │   └── …
-│   ├── shield\
+│   ├── layout\
 │   │   ├── …
-│   │   ├── example-shield\
-│   │   │   ├── index.php
-│   │   │   └── task.php ✔
-│   │   └── document\
-│   ├── state\
-│   │   └── config.php
+│   │   ├── index.php
+│   │   └── task.php ✔
+│   ├── page\
 │   └── x\
 │       ├── …
-│       ├── comment\
-│       │   ├── index.php
-│       │   └── task.php ✔
-│       └── plugin\
-│           ├── engine\
-│           └── lot\
-│                ├── …
-│                ├── example-plugin\
-│                │   ├── index.php
-│                │   └── task.php ✔
-│                ├── art\
-│                └── markdown\
+│       └── art\
+│           ├── index.php
+│           └── task.php ✔
 ├── .htaccess
 ├── favicon.ico
 ├── index.php
+├── state.php
 ├── task.php ✔
 └── LICENSE
 ~~~

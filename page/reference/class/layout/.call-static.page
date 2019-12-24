@@ -1,21 +1,21 @@
 ---
 @version: [current]
-@description: Dynamic method name used to print templates within template.
+@description: Dynamic method name used to render layout within layout.
 @lot:
 - string $kin, array $lot = []
 @static: 1
 @example: |
-  <?php static::header(); ?>
+  <?= self::before(); ?>
   <main>
     <article>
-      <h2><?php echo $page->title; ?></h2>
-      <div><?php echo $page->content; ?></div>
+      <h2><?= $page->title; ?></h2>
+      <div><?= $page->content; ?></div>
     </article>
   </main>
-  <?php static::footer(); ?>
+  <?= self::after(); ?>
 @example-language: 'html'
 ...
 
 ### In Depth
 
- - [link:/article/case-shield-feature]
+ - [link:/article/case-layout-feature]

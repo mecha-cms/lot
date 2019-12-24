@@ -1,5 +1,5 @@
 ---
 @version: [current]
-@description: Alias for [`State`][link:state].
+@description: Alias for [link:state].
 @parent: genome
 ...

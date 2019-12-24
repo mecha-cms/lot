@@ -33,7 +33,7 @@ type: Markdown
 ...
 ~~~
 
-In version `2.x.x`, you can create custom fields as separate files named as the field key with extension `data`, stored in a folder with the same name as the page name, without the file extension ([the page state][link:../reference/extension/page]). Here, custom fields value will becomes the file content:
+In version `2.x.x`, you can create custom fields as separate files named as the field key with extension `data`, stored in a folder with the same name as the page name, without the file extension ([the page state][link:../store/extension/page]). Here, custom fields value will becomes the file content:
 
 ~~~ .txt
 .\
@@ -83,6 +83,8 @@ echo $page->bar;
 > To call the custom fields:
 >
 > ~~~ .php
+> $page->fields = (object) $page->fields;
+>
 > echo $page->fields->foo;
 > echo $page->fields->bar;
 > ~~~
@@ -161,7 +163,7 @@ Prior to version `2.x.x`, time and tags data are stored in the file name, follow
 
 #### Version `2.x.x`
 
-In this version, time and tags data are removed from the file name. However, the `time` data will remain attached to the page object with a value that is automatically created based on the current file modification time when you don’t set it explicitly. To set a hard-coded `time` data, you need to add `time` property to the page header. This also applies to `kind` (tags data):
+In this version, time and tags data are removed from the file name. However, the `time` data will remain attached to the page object with a value that is automatically created based on the current file creation time when you don’t set it explicitly. To set a hard-coded `time` data, you need to add `time` property to the page header. This also applies to `kind` (tags data):
 
 ~~~ .yaml
 ---
@@ -174,7 +176,7 @@ kind: [1,2,3,11]
 ...
 ~~~
 
-[connect:../reference/extension/tag]
+[connect:../store/extension/tag]
 
 > **Note:** It is highly recommended to set the `time` and `kind` data in a separated field files because those fields data are commonly used to sort the pages. Reading embedded fields value in the page file is fairly slow, therefore, Mecha sets a higher priority on reading separated fields data instead of embedded fields data. In the case of [reading page property individually][link:../reference/class/page/get], Mecha will first seek for a separated field file from the page. When the desired field can be found, Mecha will only read that field and then cancel the process of reading the entire content of that page file:
 >
@@ -208,7 +210,7 @@ In this version, blocks are enclosed with square brackets:
 [‌[‌block‌]‌]
 ~~~
 
-You can choose either to replace old syntax with the new syntax, or by setting custom configuration data of the [block][link:../reference/extension/block] extension to make it compatible with the old block syntax:
+You can choose either to replace old syntax with the new syntax, or by setting custom configuration data of the [block][link:../store/extension/block] extension to make it compatible with the old block syntax:
 
 ~~~ .php
 [
@@ -221,7 +223,7 @@ You can choose either to replace old syntax with the new syntax, or by setting c
 
  - Store the comments data in `.\lot\comment\article`.
 
-[connect:../reference/extension/comment]
+[connect:../store/extension/comment]
 
 #### Version `1.x.x`
 

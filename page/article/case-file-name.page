@@ -23,7 +23,7 @@ Mecha uses `.` character to represent a _namespace_ in file name:
 foo.bar-baz.txt
 ~~~
 
-When converted by [`__f2c__`][link:../reference/function#reference:file-to-class] function, the file name above (without the file extension) will be returned into this:
+When converted by the [`f2c`][link:../reference/function/f2c] function, the file name above (without the file extension) will be returned as this:
 
 ~~~ .txt
 Foo\BarBaz
@@ -31,7 +31,7 @@ Foo\BarBaz
 
 ### Partial
 
-Prefix a file name with a `-` to tell the engine that the file is a part of another file:
+Prefix a file name with a `-` to tell the engine that the file is part of another file:
 
 ~~~ .txt
 page.php

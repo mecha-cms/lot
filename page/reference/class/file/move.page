@@ -6,7 +6,6 @@
 @example: |
   // Move a file to a folder
   (new File('.\path\to\file.txt'))->move('.\path\to\folder');
-
   // Move a file to a folder, then rename it!
   (new File('.\path\to\file.txt'))->move('.\path\to\folder', 'file-1.txt');
 ...

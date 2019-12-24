@@ -13,14 +13,13 @@ Hook::set('page.images', function($content, $lot) {
     }
     return [];
 }, 1.9);
-foreach (Get::pages(PAGE . DS . 'support' . DS . 'banner', 'page', [1, 'slug'], 'path') as $v) {
-    $_page = new Page($v);
-    $_images = $_page->images;
-    if (!isset($_images[0])) continue;
-    shuffle($_images);
+foreach (Pages::from(LOT . DS . 'page' . DS . 'support' . DS . 'banner') as $v) {
+    $images = $v->images;
+    if (!isset($images[0])) continue;
+    shuffle($images);
     echo '<figure class="image">';
-    echo '<img alt="" src="' . $_images[0] . '">';
-    echo '<figcaption><a href="' . $_page->url . '">More by ' . $_page->author . '&hellip;</a></figcaption>';
+    echo '<img alt="" src="' . $images[0] . '">';
+    echo '<figcaption><a href="' . $v->url . '">More by ' . $v->author . '&hellip;</a></figcaption>';
     echo '</figure>';
 }
 [[/e]]

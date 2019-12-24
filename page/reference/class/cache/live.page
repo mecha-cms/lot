@@ -15,10 +15,4 @@
       require $file;
       return ob_get_clean();
   }, '1 day');
-@example-note: |
-  If `$id` is identified as a valid file, then the generated cache path will be structured like this:
-
-  ~~~ .txt
-  .\lot\foo\bar\baz.txt → .\lot\cache\foo\bar\baz.txt.php
-  ~~~
 ...

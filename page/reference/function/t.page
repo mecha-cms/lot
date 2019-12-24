@@ -1,3 +1,14 @@
 ---
 @version: [2, current]
+@description: Trim string from characters once.
+@lot:
+- string $in, string $start = '"', string $end = null
+@example: |
+  $A = t('"""abcdef"""', '"');
+  $B = t('"""abcdef"""', '""');
+  $C = t('"""abcdef"""', '""', '"');
+@result: |
+  $A = '[[e]]echo t('"""abcdef"""', '"');[[/e]]';
+  $B = '[[e]]echo t('"""abcdef"""', '""');[[/e]]';
+  $C = '[[e]]echo t('"""abcdef"""', '""', '"');[[/e]]';
 ...

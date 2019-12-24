@@ -1,3 +1,23 @@
 ---
 @version: [current]
+@description: Stream file contents line by line.
+@lot:
+- string $path, int $chars = 1024
+@example: |
+  // Read stream per-line
+  foreach (stream('.\path\to\file.yaml') as $v) {
+      // `$v` includes the new line character that has been normalized to `\n`
+      if ("---\n" === $v) {
+          // Found a YAML header in the content
+      }
+  }
+
+
+
+  // Read per-specified characters length
+  foreach (stream('.\path\to\file.yaml', 5) as $v) {
+      if (false !== strpos($v, 'TODO:')) {
+          // Found a “TODO‌:” text in the content
+      }
+  }
 ...

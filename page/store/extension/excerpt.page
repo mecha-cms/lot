@@ -1,0 +1,47 @@
+---
+title: Page Excerpt
+description: Add manual page excerpt feature.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.0.8
+
+use:
+  '.\lot\x\page': 1
+...
+
+### Usage
+
+How to enable the page excerpt manually:
+
+~~~ .yaml
+---
+title: Post Title
+description: Post description.
+author: Taufik Nurrohman
+type: Markdown
+...
+
+This paragraph is going to be the page excerpt.
+
+<‌!-- cut --‌>
+
+Rest of the page content goes here.
+~~~
+
+To show the manual page excerpt in your layout:
+
+~~~ .php
+<?php foreach ($pages as $page): ?>
+<article>
+  <h3>
+    <?= $page->title; ?>
+  </h3>
+  <?= $page->excerpt; ?>
+  <p>
+    <a href="<?= $page->url; ?>#next:<?= $page->id; ?>">
+      Read More
+    </a>
+  </p>
+</article>
+<?php endforeach; ?>
+~~~

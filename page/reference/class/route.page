@@ -13,8 +13,6 @@ Pattern | Description
 `*` | Matched with any includes `/`
 `:{\d+}` | Matched with any value that pass to the regex pattern (`\d+` in this case)
 
-All patterns available in the route path will be available within the function closure as an indexed array, and if the first pattern exists, it will also generates dynamic property which can be accessed as array or object.
-
 ~~~ .php
 Route::set('test/:foo/:bar/:baz/*', function($foo, $bar, $baz, $qux) {
     test($foo, $bar, $baz, $qux);

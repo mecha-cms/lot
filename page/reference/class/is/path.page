@@ -7,7 +7,6 @@
 @example: |
   // Check for valid local path address (whether it is exists or not)
   if (Is::path('.\path\to\file.txt')) { … }
-
   // Check for valid local path address and make sure it is exists
   if (Is::path('.\path\to\file.txt', true)) { … }
 ...

@@ -10,7 +10,6 @@
 @example: |
   // Get all custom actions added before `blog/:slug` route execution
   test(Route::over('blog/:slug'));
-
   // Set custom action before `blog/:slug` route execution
   Route::over('blog/:slug', function() { … });
 ...

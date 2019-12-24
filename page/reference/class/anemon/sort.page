@@ -33,16 +33,12 @@
 
   // Basic
   $A = Anemon::from($array)->sort(1)->get();
-
   // Sort by value of the `color` property
   $B = Anemon::from($array)->sort([1, 'color'])->get();
-
   // Preserve original array key
   $C = Anemon::from($array)->sort([-1, 'color'], true)->get();
-
   // Set default value of array item with missing `color` property as `#black`
   $D = Anemon::from($array)->sort([-1, 'color', '#black'])->get();
-
   // Custom sort (sort by the third character of `size` value)
   $E = Anemon::from($array)->sort(function($a, $b) {
       if (!isset($a['size'][2]) && !isset($b['size'][2])) {

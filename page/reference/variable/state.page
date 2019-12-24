@@ -3,5 +3,5 @@
 @description: Return the site data.
 @example: |
   <?= $state->title; ?>
-@example-description: This variable is an instance of the [`State`][link:../class/state].
+@example-description: This variable is an instance of [link:../class/state].
 ...

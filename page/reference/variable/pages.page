@@ -3,7 +3,7 @@
 @description: Return the current page children.
 @example: |
   <?php foreach ($pages as $page) { … } ?>
-@example-description: This variable is an instance of [`Pages`][link:../class/page] with current page folder path as the input.
+@example-description: This variable is an instance of [link:../class/page] with current page folder path as the input.
 ...
 
-Added by the [page][link:../store/extension/page] extension.
+Added by the [link:../store/extension/page] extension.

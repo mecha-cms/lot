@@ -13,14 +13,14 @@ description: Helper functions.
 
 [[e]]
 $categories = [
-    'Array & Object' => 'a,any,concat,extend,find,get,has,is,let,map,not,o,pluck,set,shake,step,y,z',
+    'Array & Object' => 'a,any,concat,extend,find,get,has,is,j,let,map,not,o,pluck,set,shake,step,y,z',
     'Boolean' => 'eq,ge,gt,le,lt,ne',
     'File' => 'content,d,exist,fetch,g,k,send,stream',
     'Function' => 'fire',
     'Number' => 'b,m,q',
     'String' => 'c,c2f,e,f,f2c,f2p,h,i,l,n,p,p2f,r,s,t,u,v,w,x',
     'Factory' => 'abort,anemon,cache,check,cookie,hook,kick,mecha,open,route,session,state,token',
-    'Others' => 'j,test'
+    'Others' => 'test'
 ];
 
 foreach ($categories as $k => $v) {
