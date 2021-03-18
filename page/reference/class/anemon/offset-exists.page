@@ -1,10 +1,10 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Check the existence of array item.
 @lot:
-- string $key
+- $key
 @interface:
-- .array-access
+- /array-access
 @example: |
   $A = new Anemon([1, 2, 3, 4, 5]);
 

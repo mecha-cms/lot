@@ -1,15 +1,11 @@
 ---
-@version: [2, current]
-@description: Get one or more data from the currently opened page file.
+@version: 2
+@description: Remove one or more data from the currently opened page file.
 @lot:
 - string $key
 @example: |
   $page = new Page('.\path\to\file.page');
 
-  $A = $page->get('title');
-  $B = $page->get('foo-bar-baz');
-  $C = $page->get([
-      'title' => false,
-      'foo-bar-baz' => false
-  ]);
+  $page->let('title');
+  $page->let(['title', 'foo-bar-baz']);
 ...

@@ -1,0 +1,14 @@
+---
+title: Installer
+description: Using the installer.
+...
+
+[Download the installer file](http://127.0.0.1/pack/mecha-cms/start) {target="_blank"} then put the `start.php` file at the root of your site’s public folder. Visit the installer page via `http://your-site-domain/start.php` link to start the installation.
+
+---
+
+My read-only GitHub personal access token:
+
+~~~ .txt
+###
+~~~

@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Move to the first item.
 @example: |
   $array = [

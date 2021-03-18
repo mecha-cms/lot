@@ -1,12 +1,12 @@
 ---
-@version: [2, current]
+@version: 2
 @description: String normalization.
 @lot:
-- string $x = null, string $t = '    '
+- string $value = null, string $tab = '    '
 ...
 
 This function does the following tasks:
 
- - Removes multiple UTF-8 BOM sequences
- - Replaces `\t` characters to `$t`
+ - Removes multiple UTF-8 BOM sequences.
+ - Replaces `\t` characters to `$t`.
  - Normalizes line-break characters to `\n` character.

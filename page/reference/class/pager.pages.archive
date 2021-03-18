@@ -1,7 +1,0 @@
----
-@version: [current]
-@description: Pagination generator for multiple page mode.
-@parent: pager
-@use:
-  '.\lot\x\page': 1
-...

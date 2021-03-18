@@ -1,10 +1,13 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Return the URL host if any, otherwise return `null`.
 @lot:
 - void
 @example: |
-  $A = $url->host;
+  $url = new URL('http://127.0.0.1/foo/bar/1?baz=qux#asdf', '/foo');
+
+  echo $url->host;
 @result: |
-  $A = '127.0.0.1';
+  127.0.0.1
+@result-language: 'txt'
 ...

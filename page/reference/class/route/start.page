@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Execute the added routes.
 @lot:
 - void

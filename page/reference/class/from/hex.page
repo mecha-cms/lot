@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert HTML hexa-decimal characters representation into their original characters.
 @lot:
-- string $in
+- string $value
 @static: 1
 @example: |
   $A = From::hex('&#x0049;&#x0020;&#x2764;&#x0020;&#x0055;');

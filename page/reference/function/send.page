@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Send HTML email.
 @lot:
 - string $from, string $to, string $title, string $content, array $lot = []

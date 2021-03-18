@@ -8,7 +8,7 @@ Mecha introduces `task.php` file functionality in the core version greater than 
 ~~~ .php
 if (!is_dir($folder = LOT . DS . 'page')) {
     // Create folder if not exists
-    mkdir($folder, 0700, true);
+    mkdir($folder, 0777, true);
 } else {
     // Self destruct
     unlink(__FILE__);

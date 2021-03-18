@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Insert new page data, update and/or remove current page data.
 @lot:
 - string $key, $value = null

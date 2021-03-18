@@ -1,0 +1,41 @@
+---
+@version: 2.3.2
+@description: Remove array items with nonsense value to reduce the size.
+@lot:
+- iterable $value, callable $fn = null
+@example: |
+  $array = [0, 1, 'a', "", true, false, null, [], [0, 1, 'a', ""]];
+
+  $A = drop($array);
+  $B = drop($array, function($v) {
+      return 'a' === $v;
+  });
+@result: |
+  $A = [
+      0 => 0,
+      1 => 1,
+      2 => 'a',
+      4 => true,
+      5 => false,
+      8 => [
+          0 => 0,
+          1 => 1,
+          2 => 'a'
+      ]
+  ];
+
+  $B = [
+      0 => 0,
+      1 => 1,
+      3 => "",
+      4 => true,
+      5 => false,
+      6 => null,
+      7 => []
+      8 => [
+          0 => 0,
+          1 => 1,
+          3 => ""
+      ]
+  ];
+...

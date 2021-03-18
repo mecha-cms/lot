@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Short function for [link:../class/guard/check].
 @parent: guard
 ...

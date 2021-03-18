@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Set a hook.
 @lot:
 - string $id, callable $fn, float $stack = 10
@@ -7,10 +7,10 @@
 @static: 1
 @example: |
   // Named function
-  function _enter() {
+  function test_hook() {
       echo '<mark>test</mark>';
   }
-  Hook::set('enter', '_enter', 1);
+  Hook::set('enter', 'test_hook', 1);
 
   // Un-named function
   Hook::set('enter', function() {

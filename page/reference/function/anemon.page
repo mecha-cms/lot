@@ -1,8 +1,8 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Short function for [link:../class/anemon/.construct].
 @lot:
-- array $in, string $join = ','
+- array $value, string $join = ','
 @parent: anemon
 @example: |
   foreach (anemon([1, 2, 3, 4, 5]) as $k => $v) { … }

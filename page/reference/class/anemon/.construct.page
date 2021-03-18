@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Create magic array.
 @lot:
-- iterable $array, string $join = ', '
+- iterable $value, string $join = ', '
 @example: |
   $anemon = new Anemon(['foo', 'bar', 'baz']);
 

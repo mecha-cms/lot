@@ -1,0 +1,12 @@
+---
+title: Panel Skin Example
+description: Skin starter for the panel extension.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.1.0
+
+use:
+  '.\lot\x\panel': 1
+...
+
+Use this extension as a starting point to make your own control panel skin and functionalities. Custom contents, links, and routes are available under `.\lot\x\panel.skin\index\panel` folder. You can modify those files as you like.

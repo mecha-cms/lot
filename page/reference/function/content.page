@@ -1,8 +1,17 @@
 ---
-@version: [current]
-@description: Return file contents if input is a valid file path, otherwise return `null`.
+@version: 2.2
+@description: Return file content if input is a valid file path, otherwise return `null`.
 @lot:
 - string $path
+- string $path, string $content = null
 @example: |
   if (null !== content('.\path\to\file.txt')) { … }
+
+
+
+  if (content('.\path\to\file.txt', 'Yo!')) {
+      // File created!
+  } else {
+      // Error!
+  }
 ...

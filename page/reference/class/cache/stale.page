@@ -1,0 +1,12 @@
+---
+@version: 2.3
+@description: Check if cache file already expired.
+@lot:
+- string $id, int $for = 86400
+- string $id, string $for = '1 day'
+@static: 1
+@example: |
+  if (Cache::stale('foo', '1 year')) {
+      // Expired!
+  }
+...

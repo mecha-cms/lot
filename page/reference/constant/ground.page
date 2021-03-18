@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Return the private server root path without the trailing directory separator.
 @example: |
   echo GROUND;

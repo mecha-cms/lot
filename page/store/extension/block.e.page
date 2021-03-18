@@ -1,0 +1,18 @@
+---
+title: Eval Block
+description: Evaluate PHP expression within the page content.
+author: Taufik Nurrohman
+type: Markdown
+version: 2.3.8
+
+use:
+  '.\lot\x\block': 1
+...
+
+**This extension is not to be used on a site with multiple users. Other users may use this block to execute malicious functions to break your system.**
+
+### Usage
+
+<pre><code class="php">&#x5B;<span>&#x5B;e&#x5D;</span>&#x5D;
+echo $date-&gt;year; // Output the current year
+&#x5B;<span>&#x5B;/e&#x5D;</span>&#x5D;</code></pre>

@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert standard PHP object to plain array.
 @lot:
-- $object, $safe = true
+- $value, $safe = true
 @example: |
   test(a((object) [
       'foo' => 1,

@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Remove assets from the hooks storage.
 @lot:
 - void

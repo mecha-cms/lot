@@ -1,6 +1,8 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Treat `Time` object as string.
+@lot:
+- void
 @example: |
   echo new Time([[e]]echo date('U');[[/e]]);
 @result: |

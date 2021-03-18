@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Alias for [link:-y-a-m-l].
 @static: 1
 @use:

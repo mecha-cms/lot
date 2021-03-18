@@ -3,7 +3,7 @@ title: Page Excerpt
 description: Add manual page excerpt feature.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.0.8
+version: 1.0.9
 
 use:
   '.\lot\x\page': 1
@@ -30,7 +30,7 @@ Rest of the page content goes here.
 
 To show the manual page excerpt in your layout:
 
-~~~ .php
+~~~ .html
 <?php foreach ($pages as $page): ?>
 <article>
   <h3>

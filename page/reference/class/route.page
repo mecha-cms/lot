@@ -1,5 +1,5 @@
 ---
-@version: [1, 2, current]
+@version: 1
 @description: Do something if URL path matched with pattern.
 @final: 1
 @parent: genome
@@ -10,8 +10,9 @@
 Pattern | Description
 ------- | -----------
 `:key` | Matched with any but `/`
+`?` | Matched with any but `/`
 `*` | Matched with any includes `/`
-`:{\d+}` | Matched with any value that pass to the regex pattern (`\d+` in this case)
+`{\d+}` | Matched with any value that pass to the regex pattern (`\d+` in this case)
 
 ~~~ .php
 Route::set('test/:foo/:bar/:baz/*', function($foo, $bar, $baz, $qux) {
@@ -32,6 +33,6 @@ Route::set('test/:foo/:bar/:baz/*', function($foo, $bar, $baz, $qux) {
 >
 > ~~~ .php
 > Route::set('blog/2014', function() use($url) {
->     if ($url->i > 4) { … }
+>     if ($url['i'] > 4) { … }
 > });
 > ~~~

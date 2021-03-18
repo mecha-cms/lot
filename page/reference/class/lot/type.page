@@ -1,6 +1,6 @@
 ---
-@version: [current]
-@description: Set or get document type.
+@version: 2.2
+@description: Set or get response type.
 @lot:
 - void
 - string $type, array $lot = []

@@ -1,15 +1,17 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Return the URL hash if any, otherwise return `null`.
 @lot:
 - void
-- string $join = '#'
+- "string $join = '#'"
 @example: |
+  $url = new URL('http://127.0.0.1/foo/bar#baz');
+
   $A = $url->hash;
   $B = $url->hash();
   $C = $url->hash('#!');
 @result: |
-  $A = '[[e]]echo (new URL('#foo'))->hash;[[/e]]';
-  $B = '[[e]]echo (new URL('#foo'))->hash();[[/e]]';
-  $C = '[[e]]echo (new URL('#foo'))->hash('#!');[[/e]]';
+  $A = '[[e]]echo (new URL('http://127.0.0.1/foo/bar#baz'))->hash;[[/e]]';
+  $B = '[[e]]echo (new URL('http://127.0.0.1/foo/bar#baz'))->hash();[[/e]]';
+  $C = '[[e]]echo (new URL('http://127.0.0.1/foo/bar#baz'))->hash('#!');[[/e]]';
 ...

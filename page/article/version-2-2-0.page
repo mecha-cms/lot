@@ -1,21 +1,21 @@
 ---
-title: Released Version 2.2.0 to Break the Parkinson&rsquo;s Law
-description: Let&rsquo;s see what has been changed in version `2.2.0` compared to version `2.0.0`.
+title: Released Version 2.2.0 to Break the Parkinson’s Law
+description: Let’s see what has been changed in version `2.2.0` compared to version `2.0.0`.
 ...
 
-This started from a mistake: poor time management! After the release of [version 2.0.0][link:version-2-0-0], I have never set a fixed deadline for the next release. I was just stunned at the presence of [PHP 7.1.0][link:p-h-p-7-1-0] and wanted to use the new features as much as possible, and therefore made the completion time even longer. The development process feels nothing more than a mere experiment without considering the users&rsquo; needs. This led me to conclude that I was stuck with the [Parkinson&rsquo;s Law](https://en.wikipedia.org/wiki/Parkinson%27s_law).
+This started from a mistake: poor time management! After the release of [version 2.0.0][link:version-2-0-0], I have never set a fixed deadline for the next release. I was just stunned at the presence of [PHP 7.1.0][link:p-h-p-7-1-0] and wanted to use the new features as much as possible, and therefore made the completion time even longer. The development process feels nothing more than a mere experiment without considering the users’ needs. This led me to conclude that I was stuck with the [Parkinson’s Law](https://en.wikipedia.org/wiki/Parkinson%27s_law).
 
-> &ldquo;Work expands so as to fill the time available for its completion.&rdquo;
+> “Work expands so as to fill the time available for its completion.”
 
-Entering this January of 2020, I have reached the point that this development process has taken too long to complete. Although I haven&rsquo;t updated all of the official extensions and themes completely to make it work with the current core version, I am still determined to release this version today. The sooner the better.
+Entering this January of 2020, I have reached the point that this development process has taken too long to complete. Although I haven’t updated all of the official extensions and themes completely to make it work with the current core version, I am still determined to release this version today. The sooner the better.
 
 Updates to other extensions and themes will follow along with the minor changes of the core if needed. Extensions and themes that are already compatible with this version will be displayed in the [store][link:../store] section. You might also be interested in surfing to the new documentation pages, especially in the static function reference.
 
-Apart from that, let me show you the changes that I have made in the current release&hellip;
+Apart from that, let me show you the changes that I have made in the current release…
 
 ### Pages on This Website
 
-I reverted some of the page status on this website to draft because some of the code in it was no longer compatible with the current version. I don&rsquo;t want to confuse users who want to learn more. Maybe I will publish it again when I&rsquo;m ready.
+I reverted some of the page status on this website to draft because some of the code in it was no longer compatible with the current version. I don’t want to confuse users who want to learn more. Maybe I will publish it again when I’m ready.
 
 ### Added More Static Functions
 
@@ -23,15 +23,15 @@ I ventured to define some new static functions aside from functions that I named
 
 ### Being More Generic
 
-Class name like `Union` is no longer suitable for Mecha as it will make it more difficult for users to recognize its function by its name. The name `SGML` is more generic and so will be straight to the point. I also have removed some classes that don&rsquo;t offer any advantages other than &ldquo;fashion&rdquo; like &hellip; the `Form` class.
+Class name like `Union` is no longer suitable for Mecha as it will make it more difficult for users to recognize its function by its name. The name `SGML` is more generic and so will be straight to the point. I also have removed some classes that don’t offer any advantages other than “fashion” like … the `Form` class.
 
 Why? Becuase at first, I thought it would be good for developers if I give them some helper methods like `Form::text()` and `Form::textarea()` to speed up the creation of form elements. But, when I try to portray myself as a developer, to use the API of this class requires me to learn through the documentation page just to create a HTML `<input type="text">` element. That makes the process of achieving the goal twice as long. So, I decided to make everything conventional, back to the manual method, that is, by letting them write HTML elements manually using their hands, without any PHP processing help. Advanced HTML form elements API can be created as separate extensions, with third-party PHP libraries if necessary.
 
 Mecha also tries to avoid new syntaxes that are rarely known to be used, especially for patterns within string data. Mecha tries to maintain the generic syntax of PHP, [_printf_](https://en.wikipedia.org/wiki/Printf_format_string "Print Format String &middot; Wikipedia"), XML, JSON and YAML (or trying to make a parser for similar pattern if necessary) so that it will be more easily understood by everyone.
 
-### From &lsquo;Reset&rsquo; to &lsquo;Let&rsquo;
+### From ‘Reset’ to ‘Let’
 
-The &ldquo;Set, Get and Reset&rdquo; method naming standard that I have described earlier in [this article][link:case-grammar] has now been changed to &ldquo;Set, Get and Let&rdquo;:
+The “Set, Get and Reset” method naming standard that I have described earlier in [this article][link:case-grammar] has now been changed to “Set, Get and Let”:
 
 ~~~ .php
 Session::set('foo', 1);
@@ -74,7 +74,7 @@ Several methods used to obtain data such as `Session::get($key, $fail = false)` 
 Session::get('foo', 0);
 ~~~
 
-But, as the so called &ldquo;null coalescing operator&rdquo; feature in the latest PHP version becomes so useful that it can simplify some API that requires more function parameters in the previous versions, this inspired me to use `null` value everywhere as the default value for all inaccessible data. From now on, use the `??` operator to determine alternative value:
+But, as the so called “null coalescing operator” feature in the latest PHP version becomes so useful that it can simplify some API that requires more function parameters in the previous versions, this inspired me to use `null` value everywhere as the default value for all inaccessible data. From now on, use the `??` operator to determine alternative value:
 
 ~~~ .php
 // Return the `foo` value or `0`
@@ -97,7 +97,7 @@ foreach ($pages as $page) {
 
 ### Removed Plugin Features
 
-I have removed the ambiguity between what the extension is and what the plugin is. All plugins can now be placed along with the extensions, [in the `.\lot\x` folder][link:x]. There are no such thing called &ldquo;plugin&rdquo; in version `2.2.0`. They are now simply called &ldquo;extension&rdquo;.
+I have removed the ambiguity between what the extension is and what the plugin is. All plugins can now be placed along with the extensions, [in the `.\lot\x` folder][link:x]. There are no such thing called “plugin” in version `2.2.0`. They are now simply called “extension”.
 
 ### Removed Language and Layout Switcher Features
 
@@ -108,6 +108,19 @@ Languages is one part of a website that seems to be very rarely changed after a 
 I also have removed the theme modifier feature for the same reason. Now we no longer have the ability to change themes through configuration files, and therefore there will only be one theme on every website built with Mecha. As with the site’s interface language, themes are one of the things that website owners rarely change within a daily or monthly period. So, I decided to remove such features.
 
 Layout files are stored in the `.\lot\layout` folder. To change the default theme with another theme, remove all files from that folder and then put your custom theme files there.
+
+### Removed Escape Syntax for Blocks
+
+We no longer provide special syntax to display block markup as-is within the page content. Use your creativity to make it. The easiest way would be to use HTML entities in place of writing the literal <code>&#x5B;</code> and <code>&#x5D;</code> characters:
+
+<pre><code class="html">&lt;!-- Method 1 --&gt;
+&amp;#x5B;&amp;#x5B;foo-bar&amp;#x5D;&amp;#x5D;
+
+&lt;!-- Method 2 --&gt;
+&#x5B;&lt;span&gt;&#x5B;foo-bar&#x5D;&lt;/span&gt;&#x5D;
+
+&lt;!-- Method 3 (not copy-paste friendly) --&gt;
+&#x5B;&amp;zwnj;&#x5B;foo-bar&#x5D;&amp;zwnj;&#x5D;</code></pre>
 
 ### Page Conditional Statements
 
@@ -153,9 +166,9 @@ if (document.documentElement.classList.contains('is:art')) { … }
 
 Log-in and log-out system for users is now available as default functionality for user extension. You can log the user in or out even without the panel extension. User log system in our new panel extension now depends on this functionality.
 
-### Configurable Comment Thread&rsquo;s Depth
+### Configurable Comment Thread’s Depth
 
-The previous version only supports two comment thread levels. Now you can specify the depth level of comment replies through the configuration file in the comment extension. The current version also enables user button if you have installed the user extension. So you don&rsquo;t need to fill in your name and e-mail address to publish a comment when you are logged in.
+The previous version only supports two comment thread levels. Now you can specify the depth level of comment replies through the configuration file in the comment extension. The current version also enables user button if you have installed the user extension. So you don’t need to fill in your name and e-mail address to publish a comment when you are logged in.
 
 ### Improved Search Functionality
 
@@ -167,7 +180,7 @@ We have entered a trend where blogs only have one column layout. Mecha intention
 
 ![Panel](https://user-images.githubusercontent.com/1669261/71335844-2fb5c900-2577-11ea-9b39-4703813566cd.png)
 
-[See more previews on the control panel extension page &rarr;][link:../store/extension/panel]
+[See more previews on the control panel extension page →][link:../store/extension/panel]
 
 ### The Task Feature
 
@@ -175,6 +188,6 @@ A PHP includable file that will be executed once. Read more [here][link:case-tas
 
 ### Others
 
-There are various enhancements to the extensions, especially the control panel extension. I can&rsquo;t explain them all in details here, you may find them out on the release page of each repository. Some extensions are still incomplete, and are no longer compatible with this version, as well as user requests that still cannot be fully realized. Don&rsquo;t worry, I still remember them all and still working on it! Actually, I just need more time and coffee.
+There are various enhancements to the extensions, especially the control panel extension. I can’t explain them all in details here, you may find them out on the release page of each repository. Some extensions are still incomplete, and are no longer compatible with this version, as well as user requests that still cannot be fully realized. Don’t worry, I still remember them all and still working on it! Actually, I just need more time and coffee.
 
 *[FYI]: For Your Information

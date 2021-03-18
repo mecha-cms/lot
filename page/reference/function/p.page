@@ -1,6 +1,6 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert text to `PascalCase`.
 @lot:
-- string $text
+- string $value
 ...

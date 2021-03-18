@@ -1,10 +1,10 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Count SGML element.
 @lot:
 - void
 @interface:
-- .countable
+- /countable
 @example: |
   $foo = new SGML('<foo bar="baz">qux</foo>');
 

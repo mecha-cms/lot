@@ -1,8 +1,8 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Extract member of array items by key and serve it as flat array.
 @lot:
-- array $data, string $key, $or = null
+- array $values, string $key, $value = null
 @example: |
   $data = [
       [
@@ -37,6 +37,6 @@
   $A = pluck($data, 'value');
   $B = pluck($data, 'value', '?');
 @result: |
-  $A = ['A', 'B', 'C', 'D', 'E', 'F'];
+  $A = ['A', 'B', 'C', 'D', 'E', 'F', null];
   $B = ['A', 'B', 'C', 'D', 'E', 'F', '?'];
 ...

@@ -1,0 +1,15 @@
+---
+@version: 2.6
+@description: Convert relative path into full path.
+@lot:
+- string $value, $ground = true
+@static: 1
+@example: |
+  $A = Path::long('foo\bar\baz');
+  $B = Path::long('\foo\bar\baz');
+  $C = Path::long("");
+@result: |
+  $A = [[e]]echo Path::long('foo/bar/baz');[[/e]]
+  $B = [[e]]echo Path::long('/foo/bar/baz');[[/e]]
+  $C = [[e]]echo Path::long("");[[/e]]
+...

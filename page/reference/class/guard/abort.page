@@ -1,5 +1,5 @@
 ---
-@version: [1, 2, current]
+@version: 2
 @description: Abort script execution.
 @lot:
 - string $alert, $exit = true

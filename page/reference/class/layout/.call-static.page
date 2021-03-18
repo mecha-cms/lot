@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Dynamic method name used to render layout within layout.
 @lot:
 - string $kin, array $lot = []
@@ -18,4 +18,4 @@
 
 ### In Depth
 
- - [link:/article/case-layout-feature]
+ - [link:/article/case-layout]

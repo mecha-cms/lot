@@ -1,10 +1,13 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Return the base URL including the directory path relative to the server root if any, otherwise return `null`.
 @lot:
 - void
 @example: |
-  $A = $url->root;
+  $url = new URL('http://127.0.0.1/foo/bar/1?baz=qux#asdf', '/foo');
+
+  echo $url->root;
 @result: |
-  $A = 'http://127.0.0.1/directory';
+  http://127.0.0.1/foo
+@result-language: 'txt'
 ...

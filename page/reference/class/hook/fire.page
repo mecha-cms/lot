@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Execute a hook.
 @lot:
 - string $id, array $lot = [], $that = null, string $scope = null

@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Sort all items.
 @lot:
 - $sort = 1, $preserve_key = false
@@ -73,7 +73,7 @@
           'id' => 1
       ]
   ];
-  
+
   $B = [
       0 => [
           'size' => 'large',
@@ -94,7 +94,7 @@
           'id' => 4
       ]
   ];
-  
+
   $C = [
       'bar' => [
           'id' => 4
@@ -115,7 +115,7 @@
           'id' => 3
       ]
   ];
-  
+
   $D = [
       0 => [
           'size' => 'small',

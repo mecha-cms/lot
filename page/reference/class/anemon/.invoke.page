@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Join array value.
 @lot:
 - string $join = ', ', $filter = true

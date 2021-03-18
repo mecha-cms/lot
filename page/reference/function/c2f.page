@@ -1,6 +1,8 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Convert class name to file name.
+@lot:
+- string $value, $accent = false
 @example: |
   echo c2f('Foo');
   echo c2f('\Foo');
@@ -8,6 +10,7 @@
   echo c2f('FooBar');
   echo c2f('Foo_Bar');
   echo c2f('Foo\Bar');
+  echo c2f('Foo\Bar__Baz');
   echo c2f('Foo\_Bar');
   echo c2f('Foo_\Bar');
 @result: |
@@ -18,6 +21,7 @@
   echo c2f('FooBar') . "\n";
   echo c2f('Foo_Bar') . "\n";
   echo c2f('Foo\Bar') . "\n";
+  echo c2f('Foo\Bar__Baz') . "\n";
   echo c2f('Foo\_Bar') . "\n";
   echo c2f('Foo_\Bar');
   [[/e]]

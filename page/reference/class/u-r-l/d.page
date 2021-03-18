@@ -1,11 +1,16 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Return the directory path relative to the server root if any, otherwise return `null`.
 @lot:
 - void
 - string $join = '/'
 @example: |
-  $A = $url->d;
-@result: |
-  $A = '/directory';
+  $folder = strtr(ROOT, [
+      GROUND . DS => "",
+      DS => '/'
+  ]);
+
+  $url = new URL('http://127.0.0.1/foo/bar/1?baz=qux#asdf', '/' . $folder);
+
+  echo $url->d;
 ...

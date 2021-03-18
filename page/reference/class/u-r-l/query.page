@@ -1,18 +1,20 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Return the URL query if any, otherwise return `null`.
 @lot:
 - void
 - string $join = '&'
-- string $join = '&', array $q = []
+- string $join = '&', array $lot = []
 @example: |
+  $url = new URL('http://127.0.0.1/foo/bar?foo=bar&baz=qux');
+
   $A = $url->query;
   $B = $url->query();
   $C = $url->query('&amp;');
-  $D = $url->query(';', ['foo', => '#']);
+  $D = $url->query(';', ['foo' => 1]);
 @result: |
-  $A = '[[e]]echo (new URL('?foo=bar&baz=qux'))->query;[[/e]]';
-  $B = '[[e]]echo (new URL('?foo=bar&baz=qux'))->query();[[/e]]';
-  $C = '[[e]]echo (new URL('?foo=bar&baz=qux'))->query('&amp;');[[/e]]';
-  $D = '[[e]]echo (new URL('?foo=bar&baz=qux'))->query(';', ['foo' => '#']);[[/e]]';
+  $A = '[[e]]echo (new URL('http://127.0.0.1/foo/bar?foo=bar&baz=qux'))->query;[[/e]]';
+  $B = '[[e]]echo (new URL('http://127.0.0.1/foo/bar?foo=bar&baz=qux'))->query();[[/e]]';
+  $C = '[[e]]echo (new URL('http://127.0.0.1/foo/bar?foo=bar&baz=qux'))->query('&amp;');[[/e]]';
+  $D = '[[e]]echo (new URL('http://127.0.0.1/foo/bar?foo=bar&baz=qux'))->query(';', ['foo' => 1]);[[/e]]';
 ...

@@ -1,0 +1,10 @@
+---
+@version: 2
+@description: Iterate over all URL properties.
+@lot:
+- void
+@interface:
+- /iterator-aggregate
+@example: |
+  foreach (new URL('http://127.0.0.1/foo/bar/1?baz=qux#asdf') as $k => $v) { … }
+...

@@ -3,7 +3,7 @@ title: Next
 description: Split page content into different web pages.
 author: Taufik Nurrohman
 type: Markdown
-version: 2.0.3
+version: 2.1.0
 
 use:
   '.\lot\x\page': 1

@@ -1,10 +1,10 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Set or get file permission.
 @lot:
 - void
-- int $i
-- string $i
+- int $mode
+- string $mode
 @example: |
   $file = new File('.\path\to\file.txt');
 

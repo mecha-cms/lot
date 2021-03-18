@@ -1,9 +1,9 @@
 ---
-@version: [1, 2, current]
+@version: 1
 @description: Return the current page children.
 @example: |
   <?php foreach ($pages as $page) { … } ?>
-@example-description: This variable is an instance of [link:../class/page] with current page folder path as the input.
+@example-description: This variable is an instance of [link:../class/pages] with current page folder path as the input.
 ...
 
-Added by the [link:../store/extension/page] extension.
+Added by the [link:../../store/extension/page] extension.

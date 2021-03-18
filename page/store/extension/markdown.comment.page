@@ -1,0 +1,14 @@
+---
+title: Markdown Comment
+description: Using Markdown syntax in comments.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.0.0
+
+use:
+  '.\lot\x\markdown': 1
+  '.\lot\x\comment': 1
+  '.\lot\x\comment.hint': 0
+...
+
+This extension helps you to make the comment extension accept user input in the form of Markdown syntax. All HTML code written in the comment body will be removed, except HTML codes that are written inside the code block syntax.

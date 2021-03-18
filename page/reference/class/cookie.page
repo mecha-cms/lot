@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Persistent storage using cookies.
 @final: 1
 @parent: genome

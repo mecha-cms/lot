@@ -1,10 +1,10 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Count all items.
 @lot:
 - void
 @interface:
-- .countable
+- /countable
 @example: |
   $A = Anemon::from([1, 2, 3, 4, 5]);
 

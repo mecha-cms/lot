@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Bulk [file][link:../file] instance from a folder.
 @lot:
 - string $folder = ROOT, $x = 1, $deep = 0

@@ -1,5 +1,5 @@
 ---
-@version: [1, 2, current]
+@version: 1
 @description: Return the default directory separator.
 @example: |
   echo DS;

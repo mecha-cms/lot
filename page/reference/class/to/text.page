@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert file name or HTML string into plain text.
 @lot:
-- string $in
+- string $value
 @static: 1
 @example: |
   $A = To::text('foo-bar-baz');

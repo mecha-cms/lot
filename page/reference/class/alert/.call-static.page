@@ -1,13 +1,13 @@
 ---
-@version: [current]
+@version: 2
 @description: Dynamic methods.
 @lot:
 - string $kin, array $lot = []
 @static: 1
 @example: |
   Alert::error('Invalid token.');
-  Alert::info('Your pass is <em>asdf</em>.');
-  Alert::success('File <code>.\index.php</code> successfully updated.');
+  Alert::info('Your pass is %s.', ['<em>asdf</em>']);
+  Alert::success('File %s successfully updated.', ['<code>.\index.php</code>']);
 
   Alert::foo('Foo message goes here.');
   Alert::bar('Bar message goes here.');

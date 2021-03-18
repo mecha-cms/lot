@@ -1,0 +1,17 @@
+---
+@version: 2.2
+@description: Remove URL property.
+@lot:
+- $key
+@interface:
+- /array-access
+@example: |
+  $url = new URL('http://127.0.0.1/foo/bar#qux');
+
+  unset($url['path']);
+
+  echo $url->current;
+@result: |
+  http://127.0.0.1#qux
+@result-language: 'txt'
+...

@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert PHP value into JSON.
 @lot:
-- $in, $tidy = false
+- $value, $tidy = false
 @static: 1
 @example: |
   $A = To::JSON(['foo' => 'bar']);

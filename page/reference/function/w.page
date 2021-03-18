@@ -1,6 +1,6 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert file name or HTML to plain text.
 @lot:
-- string $in = null, $excludes = [], $n = false
+- string $value = null, $preserve_tags = [], $preserve_break = false
 ...

@@ -1,0 +1,68 @@
+---
+title: Candy
+description: Embed global variables in page content.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.5.1
+...
+
+Common patterns:
+
+### Page
+
+ - <code>%<span>&#x7B;page.url&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;page.title&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;page.description&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;page.link&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;page.author&#x7D;</span>%</code>
+ - …
+
+### Site
+
+ - <code>%<span>&#x7B;site.title&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;site.description&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;site.language&#x7D;</span>%</code>
+ - …
+
+### State
+
+ - <code>%<span>&#x7B;state.title&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;state.description&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;state.language&#x7D;</span>%</code>
+ - …
+
+### Time
+
+ - <code>%<span>&#x7B;time.year&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;time.month&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;time.en&#x7D;</span>%</code>
+ - …
+
+### URL
+
+ - <code>%<span>&#x7B;url&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;url.protocol&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;url.host&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;url.port&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;url.d&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;url.i&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;url.path&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;url.query&#x7D;</span>%</code>
+ - <code>%<span>&#x7B;url.current&#x7D;</span>%</code>
+ - …
+
+---
+
+### Custom
+
+Add your custom syntax or replace the default syntax in the `v` property, remove the default syntax in `x`:
+
+~~~ .php
+[
+    'v' => [
+        'asset' => 'http://127.0.0.1/lot/asset'
+        …
+    ],
+    'x' => [ … ]
+]
+~~~

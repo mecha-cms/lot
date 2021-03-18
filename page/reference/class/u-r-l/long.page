@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert relative URL into full URL.
 @lot:
-- string $path, $root = true
+- string $value, $ground = true
 @static: 1
 @example: |
   $A = URL::long("");
@@ -48,5 +48,5 @@
   $S = '[[e]]echo URL::long('/foo/bar');[[/e]]';
   $T = '[[e]]echo URL::long('/?foo&bar');[[/e]]';
   $U = '[[e]]echo URL::long('/&foo&bar');[[/e]]';
-@result-note: If `$root` is `false`, then a `/` character at the beginning of URL path will be ignored, and the result will always relative to the URL path where the CMS is being installed. The `$root` parameter changes makes sense only when Mecha is installed in a sub-directory.
+@result-note: If `$ground` is `false`, then the result will always relative to the URL path where the CMS is being installed. The `$ground` parameter changes makes sense only when Mecha is installed in a sub-directory.
 ...

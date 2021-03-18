@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Trigger callable input with parameters and scope.
 @lot:
 - callable $fn, array $lot, $that

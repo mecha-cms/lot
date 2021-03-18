@@ -1,9 +1,9 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Convert string into excerpt text.
 @lot:
-- string $in, $html = true, int $x = 200
-- "string $in, $html = true, array $x = [200, '&#x2026;']"
+- string $value, $html = true, int $x = 200
+- "string $value, $html = true, array $x = [200, '&#x2026;']"
 @static: 1
 @example: |
   $A = '<p>' . To::excerpt($page->content) . '</p>';

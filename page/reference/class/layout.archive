@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Render layout from file.
 @parent: genome
 ...

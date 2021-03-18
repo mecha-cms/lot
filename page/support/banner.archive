@@ -7,12 +7,6 @@ state:
 ...
 
 [[e]]
-Hook::set('page.images', function($content, $lot) {
-    if (preg_match_all('#\!\[.*?\]\((.*?)(?: +".*?")?\)#', file_get_contents($this->path), $m)) {
-        return $m[1];
-    }
-    return [];
-}, 1.9);
 foreach (Pages::from(LOT . DS . 'page' . DS . 'support' . DS . 'banner') as $v) {
     $images = $v->images;
     if (!isset($images[0])) continue;

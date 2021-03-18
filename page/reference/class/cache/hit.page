@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Update cache value automatically on every file update.
 @lot:
 - string $file, callable $fn

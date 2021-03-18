@@ -1,0 +1,165 @@
+---
+title: Normal
+description: Port of the default layout in Mecha version `1.x.x`.
+author: Taufik Nurrohman
+type: Markdown
+version: 2.10.4
+...
+
+![Normal Layout](https://user-images.githubusercontent.com/1669261/72040434-19c83800-32db-11ea-92e1-fce19cdc0630.png)
+
+This is the default layout used by Mecha version `1.x.x`.
+
+### Features
+
+ - Automatic menu navigation
+ - Automatic set the home page view to `/article`
+ - Comments (requires `comment` extension)
+ - Page views counter (requires `view` extension)
+ - Manual post excerpt (requires `excerpt` extension)
+ - Widgets:
+   - Tags (requires `tag` extension)
+   - Random Posts
+   - Recent Posts
+   - Related Posts
+   - Recent Comments (requires `comment` extension)
+   - List (custom)
+
+### Widgets
+
+To create a custom widget, open `aside.php` file then add this code just before the `</aside>` tag:
+
+~~~ .php
+<?= self::widget([
+    'id' => 'foo-bar', // Optional
+    'title' => 'Your Custom Widget Title', // Optional
+    'content' => '<p>Your custom widget content.</p>'
+]); ?>
+~~~
+
+Example widget as advertisement container:
+
+~~~ .php
+<?php
+
+$content = <<<HTML
+
+// Paste your ads code here!
+
+HTML;
+
+echo self::widget([
+  'title' => 'Advertisement',
+  'content' => $content
+]);
+
+?>
+~~~
+
+Example widget list:
+
+~~~ .php
+<?= self::widget('list', [
+    'title' => 'My List',
+    'list' => [
+        'List Item 1',
+        'List Item 2',
+        'List Item 3'
+    ]
+]); ?>
+~~~
+
+Example widget list as link list:
+
+~~~ .php
+<?= self::widget('list', [
+    'title' => 'My List',
+    'list' => [
+        '<a href="http://example.com/link-1">Link 1</a>',
+        '<a href="http://example.com/link-2">Link 2</a>',
+        '<a href="http://example.com/link-3">Link 3</a>'
+    ]
+]); ?>
+~~~
+
+### Grid System
+
+~~~ .html
+<div class="grids">
+  <div class="grid span-6">6/6 Column</div>
+</div>
+
+<div class="grids">
+  <div class="grid span-3">2/6 Column</div>
+  <div class="grid span-3">2/6 Column</div>
+</div>
+
+<div class="grids">
+  <div class="grid span-2">3/6 Column</div>
+  <div class="grid span-2">3/6 Column</div>
+  <div class="grid span-2">3/6 Column</div>
+</div>
+
+<div class="grids">
+  <div class="grid span-1">1/6 Column</div>
+  <div class="grid span-1">1/6 Column</div>
+  <div class="grid span-1">1/6 Column</div>
+  <div class="grid span-1">1/6 Column</div>
+  <div class="grid span-1">1/6 Column</div>
+  <div class="grid span-1">1/6 Column</div>
+</div>
+
+<div class="grids">
+  <div class="grid span-1">1/6 Column</div>
+  <div class="grid span-5">5/6 Column</div>
+</div>
+
+<div class="grids">
+  <div class="grid span-2">2/6 Column</div>
+  <div class="grid span-4">4/6 Column</div>
+</div>
+~~~
+
+### Embeds
+
+Embedding a video:
+
+~~~ .html
+<div class="video">
+  <!-- Video embed code goes here… -->
+</div>
+~~~
+
+Embedding an audio:
+
+~~~ .html
+<div class="audio">
+  <!-- Audio embed code goes here… -->
+</div>
+~~~
+
+Embedding an image with caption:
+
+~~~ .html
+<figure class="image">
+  <img alt="" src="/path/to/image.jpg">
+  <figcaption>Image caption goes here.</figcaption>
+</figure>
+~~~
+
+Embedding a table with borders:
+
+~~~ .html
+<table class="table">
+  <caption>Table caption goes here.</caption>
+  <!-- Table data goes here… -->
+</table>
+~~~
+
+### Image Alignments
+
+~~~ .html
+<img alt="" class="align-right" src="/path/to/image.jpg">
+<img alt="" class="align-center" src="/path/to/image.jpg">
+<img alt="" class="align-left" src="/path/to/image.jpg">
+~~~

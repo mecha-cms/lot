@@ -1,0 +1,15 @@
+---
+@version: 2.3
+@description: Set or get custom actions before specific route pattern execution.
+@lot:
+- string $id
+- array $id
+- string $id, callable $fn, float $stack = 10
+- array $id, callable $fn, float $stack = 10
+@static: 1
+@example: |
+  // Get all custom actions added before `blog/:slug` route execution
+  test(Route::hit('blog/:slug'));
+  // Set custom action before `blog/:slug` route execution
+  Route::hit('blog/:slug', function() { … });
+...

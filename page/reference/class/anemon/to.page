@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Move to the <var>N</var> item.
 @lot:
-- int $i
+- int $index
 - string $key
 @example: |
   $array = [

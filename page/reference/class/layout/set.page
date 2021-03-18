@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Disable automatic layout path based on ID by specifying a file path to it.
 @lot:
 - string $id, string $path

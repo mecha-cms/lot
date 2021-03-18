@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Treat `Anemon` object as string.
 @example: |
   echo new Anemon(['foo', 'bar', 'baz']);

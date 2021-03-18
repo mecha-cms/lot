@@ -1,10 +1,13 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Return the base URL, otherwise return `null`.
 @lot:
 - void
 @example: |
-  $A = $url->ground;
+  $url = new URL('http://127.0.0.1/foo/bar/1?baz=qux#asdf', '/foo');
+
+  echo $url->ground;
 @result: |
-  $A = 'http://127.0.0.1';
+  http://127.0.0.1
+@result-language: 'txt'
 ...

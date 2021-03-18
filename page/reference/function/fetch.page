@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Fetch contents from a remote URL.
 @lot:
 - string $url, string $agent = null, string $type = 'GET'
@@ -8,9 +8,9 @@
   $A = fetch('https://example.com');
   $B = fetch('https://example.com', $_SERVER['HTTP_USER_AGENT']);
   $C = fetch('https://example.com', [
-      'User-Agent' => $_SERVER['HTTP_USER_AGENT'],
-      'X-Foo' => 1,
-      'X-Bar' => 2
+      'user-agent' => $_SERVER['HTTP_USER_AGENT'],
+      'x-foo' => 1,
+      'x-bar' => 2
   ]);
 
   // Send `POST` request with data as URL query

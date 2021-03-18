@@ -1,11 +1,11 @@
 ---
 title: About
-description: WTF is Mecha?
+description: Mecha is a file-based content management system that carries the concept of minimalism. This content management system is suitable for use by journalists or bloggers who prioritize simplicity and speed in the presentation and transfer of their site data. Not everyone has free time to sit at the table and think about what to write.
 state:
   r-a-p-i-c: 0
 ...
 
-Mecha is a file-based CMS that survives on principle that a database-less site should be personal, portable, light and easy to be exported and backed up. That’s why most of the [projects][link:store] associated with Mecha are created with personal natures and are dedicated to be used for personal purposes such as blog, journal and [diary](http://latitudu.tk). Mecha’s market shares are people with high creativity and individuals who want to dedicate themselves to the freedom of speech that probably don’t have much time to learn web programming languages. By introducing Mecha as files and folders that used to be seen by people everyday in their working desktop, we hope you will soon be familiar with the way Mecha CMS works.
+Mecha survives on the principle that a database-less site should be personal, portable, light and easy to be exported and backed up. That’s why most of the [projects][link:store] associated with Mecha are created with personal natures and are dedicated to be used for personal purposes such as blog, journal and [diary](https://taufik-nurrohman.com). Mecha’s market shares are people with high creativity and individuals who want to dedicate themselves to the freedom of speech that probably don’t have much time to learn web programming languages. By introducing Mecha as files and folders that used to be seen by people everyday in their working desktop, we hope you will soon be familiar with the way Mecha CMS works.
 
 Mecha is as simple as files and folders. Yet, that doesn’t mean that Mecha is weak. Mecha has fairly flexible set of [API][link:reference] that you can use without having to make it bloated, keeping you happy focused on developing your own site, according to your personality.
 
@@ -19,9 +19,9 @@ If you want to make something that is super huge with Mecha, that would be possi
  - Extensible as hell.
  - Create unique design for each blog post by adding special CSS and JavaScript files using the [art][link:store/extension/art] extension.
  - Built-in commenting system using the [comment][link:store/extension/comment] extension.
- - Almost everything are optional. [^1]
- - RSS and Sitemap using the [feed][link:store/extension/feed] extension.
+ - Add RSS and Sitemap feature using the [feed][link:store/extension/feed] and [sitemap][link:store/extension/sitemap] extension.
  - Easy to use and [well documented][link:reference] API.
+ - Almost everything are optional. [^1]
  - [Control panel][link:store/extension/panel] extension.
 
 ### Environments
@@ -43,24 +43,8 @@ If you want to make something that is super huge with Mecha, that would be possi
 
 © 2014 – [[e]]echo $date->year;[[/e]] Mecha CMS. Except where otherwise noted, content on this site is licensed under a [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by/4.0/).
 
+ - Fonts by [URW++](https://en.wikipedia.org/wiki/Nimbus_Sans) and [Mike Abbink](https://fonts.google.com/specimen/IBM+Plex+Mono).
  - Icons by [Material Design Icons](http://materialdesignicons.com).
-
-### Themes
-
-[[e]]
-foreach (glob(Layout::$state['path'] . DS . 'asset' . DS . 'css' . DS . 'layout' . DS . '*.css') as $v) {
-    $content = file_get_contents($v);
-    if (strpos($content, '#') !== false && preg_match_all('/#(?:[a-z\d]{3}){1,2}\b/', strtolower($content), $colors)) {
-        echo '<p><a class="colors" href="?skin=' . ($name = basename($v, '.css')) . '" title="' . To::title($name) . '"><b>' . $name . '</b>';
-        $colors = array_unique($colors[0]);
-        sort($colors);
-        foreach ($colors as $color) {
-            echo '<span class="color" style="background:' . $color . ';">&zwnj;</span>';
-        }
-        echo "</a></p>\n";
-    }
-}
-[[/e]]
 
 [^1]: Mecha started to rebuild itself through two main principles: 1) everything is a page, 2) everything is an extension.
 [^2]: Required by the `markdown` extension.

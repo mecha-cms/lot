@@ -1,16 +1,16 @@
 ---
 title: Random Advertisements Position in Content
-description: Automatically places your advertisements code randomly within the page content.
+description: Insert advertisements code randomly within the page content.
 author: Taufik Nurrohman
 type: Markdown
-version: 2.4.2
+version: 2.4.3
 ...
 
-This extension will automatically insert your advertisements code into the page content with random position between the existing paragraphs.
+Insert advertisements code in random position between the existing paragraphs in the page content.
 
 ### Usage
 
-Open `.\lot\x\r-a-p-i-c\engine\r\content\ads.php` then put your advertisements code there.
+Open `.\lot\x\r-a-p-i-c\engine\r\layout\ads.php` then put your advertisements code there.
 
 To disable the automatic advertisements placement on certain page, add a `r-a-p-i-c` property within your page’s `state` property with a value that can be evaluated to `false`:
 

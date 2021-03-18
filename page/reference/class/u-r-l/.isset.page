@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Check the existence of a URL property.
 @lot:
 - string $key

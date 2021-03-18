@@ -1,0 +1,175 @@
+---
+title: Automatic Paragraph
+description: Convert line break sequences into paragraph and hard break elements.
+author: Taufik Nurrohman
+type: Markdown
+version: 2.2.1
+
+use:
+  '.\lot\x\page': 1
+...
+
+This extension inserts `<p>` and `<br>` tags automatically to the page content by detecting the surrounding `\n` characters. This extension will pay attention to which parts need to be automated and which do not. For example, this extension will never insert paragraph tags within the `<pre>`, `<script>`, `<style>` and `<textarea>` elements. This extension works only for pages with `type` of `HTML` and `text/html`.
+
+### Before
+
+~~~ .html
+<h1>Lorem Ipsum</h1>
+
+Lorem ipsum dolor sit amet.
+
+Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet.
+
+<pre><code>Lorem ipsum dolor sit amet.
+
+Lorem ipsum dolor sit amet.</code></pre>
+
+<blockquote>
+Lorem ipsum dolor sit amet.
+
+Lorem ipsum dolor sit amet.
+</blockquote>
+
+<div>
+Lorem ipsum dolor sit amet.
+</div>
+
+<p>Lorem ipsum dolor sit amet.</p>
+~~~
+
+### After
+
+~~~ .html
+<h1>Lorem Ipsum</h1>
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Lorem ipsum dolor sit amet.<br>
+Lorem ipsum dolor sit amet.</p>
+<pre><code>Lorem ipsum dolor sit amet.
+
+Lorem ipsum dolor sit amet.</code></pre>
+<blockquote>
+<p>Lorem ipsum dolor sit amet.</p>
+<p>Lorem ipsum dolor sit amet.</p>
+</blockquote>
+<div>
+<p>Lorem ipsum dolor sit amet.</p>
+</div>
+<p>Lorem ipsum dolor sit amet.</p>
+~~~
+
+---
+
+### Specifications
+
+Convert two sentences separated by double line break into paragraph for both, convert two sentences separated by a line break into a paragraph and hard breaks at the break point:
+
+~~~ .html
+aaa
+
+aaa
+
+aaa
+aaa
+~~~
+
+~~~ .html
+<p>aaa</p>
+<p>aaa</p>
+<p>aaa<br>
+aaa</p>
+~~~
+
+Empty data should returns empty:
+
+~~~ .html
+
+~~~
+
+~~~ .html
+
+~~~
+
+Convert sentences within common blocks into paragraph only if it starts with a line break and ends with a line break:
+
+~~~ .html
+<div>aaa</div>
+
+<div>aaa
+
+aaa</div>
+
+<div>
+aaa
+</div>
+
+<div>
+aaa
+
+aaa
+</div>
+
+<div>
+aaa
+
+aaa</div>
+~~~
+
+~~~ .html
+<div>aaa</div>
+
+<div>aaa<br>
+<br>
+aaa</div>
+
+<div>
+<p>aaa</p>
+</div>
+
+<div>
+<p>aaa</p>
+<p>aaa</p>
+</div>
+
+<div>aaa<br>
+<br>
+aaa</div>
+~~~
+
+Must ignore the existing paragraph and hard-break elements:
+
+~~~ .html
+aaa
+
+<p class="aaa">aaa</p>
+
+aaa<br class="aaa">
+aaa
+~~~
+
+~~~ .html
+<p>aaa</p>
+<p class="aaa">aaa</p>
+<p>aaa<br class="aaa">
+aaa</p>
+~~~
+
+Must not convert sentences within `<pre>`, `<script>`, `<style>` and `<textarea>` elements:
+
+~~~ .html
+<style>
+aaa
+
+aaa
+aaa
+</style>
+~~~
+
+~~~ .html
+<style>
+aaa
+
+aaa
+aaa
+</style>
+~~~

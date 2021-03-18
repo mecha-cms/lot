@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Get folder contents as array.
 @lot:
 - $x = null, $deep = 0

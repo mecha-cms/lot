@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert private file path into public URL, or decode URL special characters.
 @lot:
-- string $in, $raw = false
+- string $value, $raw = false
 @static: 1
 @example: |
   $A = To::URL('.\path\to\file.html');

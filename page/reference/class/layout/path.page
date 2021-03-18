@@ -1,9 +1,9 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Generate all possible layout’s file path to be tested by [link:../file/exist].
 @lot:
-- string $in
-- array $in
+- string $value
+- array $value
 @static: 1
 @example: |
   // Set current layout folder

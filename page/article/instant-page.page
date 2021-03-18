@@ -1,0 +1,81 @@
+---
+title: Even Faster Website with HTML5 Prefetch and AJAX
+description: How to make “instant page” effect using native HTML5 and JavaScript features.
+...
+
+Have you ever noticed how fast these web pages are loaded? Let me show you how to do it. There are two important elements to make it work. And it’s not about maximizing the web page’s cache expiration time, or even implementing the concept of accelerated mobile pages as introduced by the Google team.
+
+It is much simpler than you think. You know that from the title already, and I don’t think this will become a secret anymore. I have wasted your time by making you read all of this. So…
+
+### HTML5 Prefetch
+
+Let’s start by implementing the prefetch feature in HTML5. This is the easiest solution to increase the speed of web pages loading, even when it is not possible to use the power of JavaScript at the time.
+
+What is HTML5 prefetch anyway? So, it is a way to tell the browser to start fetching certain links in the background that would potentially be opened by visitors in the future.
+
+~~~ .html
+  …
+  <link href="http://127.0.0.1/foo/bar" rel="prefetch">
+  <link href="http://127.0.0.1/baz/qux" rel="prefetch">
+</head>
+~~~
+
+How do you know that visitors will open those links then?
+
+No one knows. All you can do is to guess it. Since Mecha is a dynamic site, it is easier to guess what links likely to be opened by the visitors. There are `$pager` and `$pages` variable that can be used to generate those links automatically. Here’s an example:
+
+~~~ .html
+  …
+  <?php if ($next = $pager->next): ?>
+    <link href="<?= $next->url; ?>" rel="prefetch">
+  <?php endif; ?>
+  <?php if ($prev = $pager->prev): ?>
+    <link href="<?= $prev->url; ?>" rel="prefetch">
+  <?php endif; ?>
+  <?php if ($site->is('pages')): ?>
+    <?php foreach ($pages as $page): ?>
+      <link href="<?= $page->url; ?>" rel="prefetch">
+    <?php endforeach; ?>
+  <?php endif; ?>
+</head>
+~~~
+
+That’s it. Once added to the `<head>` section, the browser will start fetching those links and cache it even before visitors decided to open one of them.
+
+You could also use `$links` as an addition, but it really depends on the layout features. Some may use different variable name, some may don’t have it at all.
+
+~~~ .html
+  …
+  <?php if (!empty($links)): ?>
+    <?php foreach ($links as $link): ?>
+      <link href="<?= $link->url; ?>" rel="prefetch">
+    <?php endforeach; ?>
+  <?php endif; ?>
+</head>
+~~~
+
+### AJAX
+
+Recently, I have made a JavaScript application to be used for enhancing your traditional websites that already can interact without AJAX features. It is called [F3H](https://github.com/taufik-nurrohman/f3h).
+
+Not much to do with it because this application will automatically adjust itself according to the settings you have provided. One main task you must do is to load parts of the response data that you need into the document parts that already available at the time. For example, here I will update the contents of `<main>` element without having to load the entire page completely:
+
+~~~ .js
+let f3h = new F3H(true),
+    main = document.querySelector('main');
+
+f3h.on('success', function(response) {
+    let title = response.title,
+        content = response.querySelector('main').innerHTML;
+    document.title = title;
+    main.innerHTML = content;
+});
+~~~
+
+Local page cache will likely invalidate every form token in it since it was never updated when you use the cached version of the page. But mostly it will be gone on the first form rejection because form submission will certainly delete the local page cache automatically. It’s already a standard behavior of F3H.
+
+These methods should improve the performance of your website several times. But even so, it doesn’t interest me to add these improvements as a default feature for future versions. They are just a trend, and all too fancy for something that’s so default.
+
+It’s cool and fast, but it’s not minimal. These are something that can be learned and applied separately rather than making it as a default feature and so asking people to get rid of it when they don’t want it.
+
+Let me know if you think we need this as an extension, so I can consider to share my time to make it. But, keep in mind that different layout will also have different HTML structure. You may need to set your own DOM selectors. And people who are able to make these kind of adjustments seem to be able to activate the F3H features without using any extensions.

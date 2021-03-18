@@ -5,25 +5,24 @@ description: File and folder structure.
 
 ~~~ .txt
 .\
- ├── engine\
- │   ├── kernel\
- │   ├── plug\
- │   ├── r\
- │   ├── f.php
- │   └── fire.php
- ├── lot\
- │   ├── asset\
- │   ├── layout\
- │   ├── page\
- │   └── x\
- ├── .htaccess
- ├── favicon.ico
- ├── index.php
- ├── state.php
- └── LICENSE
+├── engine\
+│   ├── kernel\
+│   ├── plug\
+│   ├── r\
+│   ├── f.php
+│   └── fire.php
+├── lot\
+│   ├── asset\
+│   ├── layout\
+│   ├── page\
+│   └── x\
+├── .htaccess
+├── favicon.ico
+├── index.php
+├── state.php
+└── LICENSE
 ~~~
 
  - Mecha consists of two main folders, they are named as `engine` and `lot`.
  - The `engine` folder is exists to be used as the way it is named: to store the engine. Classes and helper functions are stored and defined in this folder.
  - The `lot` folder is used to store the site data. This is the storage folder.
- - Etc.

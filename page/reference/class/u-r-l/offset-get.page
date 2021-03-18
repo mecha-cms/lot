@@ -1,0 +1,16 @@
+---
+@version: 2.2
+@description: Get normalized URL property.
+@lot:
+- $key
+@interface:
+- /array-access
+@example: |
+  $url = new URL('http://127.0.0.1/foo/bar/1');
+
+  $A = [$url->path, $url->i];
+  $B = [$url['path'], $url['i']];
+@result: |
+  $A = ['/foo/bar', '/1'];
+  $B = ['foo/bar', 1];
+...

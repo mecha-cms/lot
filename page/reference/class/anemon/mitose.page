@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Create a new instance without reference it to a variable.
 @example: |
   $A = new Anemon(['foo', 'bar', 'baz']);

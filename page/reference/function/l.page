@@ -1,6 +1,6 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert text to lower-case.
 @lot:
-- string $text
+- string $value
 ...

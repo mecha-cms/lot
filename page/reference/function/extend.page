@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Extend arrays to a single array.
 @lot:
 - array $a, array $b, …, $recursive = true

@@ -1,6 +1,7 @@
 ---
-title: Article
+title: Blog
 description: Updates.
+chunk: 20
 ...
 
 In this section we will talk about the current state of Mecha including current updates, bug fixes and probably, some new features.

@@ -1,10 +1,10 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Convert Anemon class instance to JSON.
 @lot:
 - void
 @interface:
-- .json-serializable
+- /json-serializable
 @example: |
   $A = new Anemon([1, 2, 3, 4, 5]);
 

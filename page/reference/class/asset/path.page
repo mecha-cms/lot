@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Generate full private file path of the `$path`.
 @lot:
-- string $path
+- string $value
 @static: 1
 @example: |
   $A = Asset::path('.\lot\asset\css\style.css');

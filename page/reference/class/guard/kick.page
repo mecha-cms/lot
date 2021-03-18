@@ -1,9 +1,10 @@
 ---
-@version: [1, 2, current]
+@version: 2
 @description: Redirect current page to a different page.
 @lot:
 - void
 - string $path
+- string $path, int $status = 301
 @static: 1
 @example: |
   // Redirect to `http://127.0.0.1/directory/foo/bar`

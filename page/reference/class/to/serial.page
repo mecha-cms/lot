@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Serialize data.
 @lot:
-- $in
+- $value
 @static: 1
 @example: |
   $A = To::serial([0, 'a', []]);

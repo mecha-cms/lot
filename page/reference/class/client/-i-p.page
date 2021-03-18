@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Get client’s IP.
 @lot:
 - void

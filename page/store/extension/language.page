@@ -1,0 +1,9 @@
+---
+title: Internationalization
+description: Set language phrases automatically based on the current `language` state value.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.1.1
+...
+
+Translation data will be focused on the `.\lot\x\language\state\id.php` file. If you want to contribute, be sure to follow the data in that file.

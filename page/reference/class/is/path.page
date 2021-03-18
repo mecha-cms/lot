@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Check for valid local path address.
 @lot:
-- $x, $exist = false
+- $value, $exist = false
 @static: 1
 @example: |
   // Check for valid local path address (whether it is exists or not)

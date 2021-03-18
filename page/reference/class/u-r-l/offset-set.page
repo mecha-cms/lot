@@ -1,0 +1,13 @@
+---
+@version: 2.2
+@description: Set URL property without normalization.
+@lot:
+- $key, $value
+@interface:
+- /array-access
+@example: |
+    $url = new URL('http://127.0.0.1');
+
+    $url['path'] = '/foo/bar';
+    $url['hash'] = '#baz';
+...

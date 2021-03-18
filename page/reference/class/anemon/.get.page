@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2
 @description: Shortcut for calling methods with empty arguments.
 @lot:
 - string $key

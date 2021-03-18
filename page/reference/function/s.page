@@ -1,9 +1,9 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert values into their string representation.
 @lot:
-- $value, array $extra = []
-- array $values, array $extra = []
+- $value, array $lot = []
+- array $values, array $lot = []
 @example: |
   // Convert `true` to string
   $A = s(true);

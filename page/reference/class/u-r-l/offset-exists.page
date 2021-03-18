@@ -1,0 +1,12 @@
+---
+@version: 2.2
+@description: Check the existence of an URL property.
+@lot:
+- $key
+@interface:
+- /array-access
+@example: |
+  $url = new URL('http://127.0.0.1');
+
+  if (isset($url['hash'])) { … }
+...

@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Format date input using native PHP date formatter.
 @lot:
 - "string $format = 'Y-m-d H:i:s'"

@@ -1,15 +1,15 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Check current request method.
 @lot:
 - void
-- string $name
-- string $name, string $key
+- string $type
+- string $type, string $key
 @static: 1
 @example: |
   // Check if current request method is `POST`
   if (Request::is('Post')) { … }
-  if (Request::is() === 'Post') { … }
+  if ('Post' === Request::is()) { … }
 
   // Check if `$_POST['id']` exists
   if (Request::is('Post', 'id')) { … }

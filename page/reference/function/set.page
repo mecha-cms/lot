@@ -1,8 +1,8 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Set array value recursively using dot notation.
 @lot:
-- array &$data, string $access, $value = null, string $join = '.'
+- array &$out, string $key, $value = null, string $join = '.'
 @example: |
   // Set `$_GET['foo']['bar']['baz']` value to `true`
   set($_GET, 'foo.bar.baz', true);

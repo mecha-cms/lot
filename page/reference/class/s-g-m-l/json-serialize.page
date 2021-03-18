@@ -1,10 +1,10 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Convert SGML class instance to JSON.
 @lot:
 - void
 @interface:
-- .json-serializable
+- /json-serializable
 @example: |
   $foo = new SGML('<foo bar="baz">qux</foo>');
 

@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Working with pages.
 @parent: file
 @use:

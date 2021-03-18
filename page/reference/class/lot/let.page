@@ -1,6 +1,6 @@
 ---
-@version: [current]
-@description: Remove HTTP header.
+@version: 2.2
+@description: Remove request headers.
 @lot:
 - void
 - string $key
@@ -9,8 +9,8 @@
 @example: |
   // Remove all headers
   Lot::let();
-  // Remove `X-Powered-By` header
-  Lot::let('X-Powered-By');
-  // Remove `X-Powered-By` and `X-Requested-With` header
-  Lot::let(['X-Powered-By', 'X-Requested-With']);
+  // Remove `x-powered-by` header
+  Lot::let('x-powered-by');
+  // Remove `x-powered-by` and `x-requested-with` header
+  Lot::let(['x-powered-by', 'x-requested-with']);
 ...

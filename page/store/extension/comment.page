@@ -3,13 +3,14 @@ title: Comment
 description: Built-in commenting system.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.15.3
+version: 1.19.2
 
 use:
   '.\lot\x\alert': 1
   '.\lot\x\asset': 1
   '.\lot\x\form': 0
   '.\lot\x\page': 1
+  '.\lot\x\user': 0
 ...
 
 ### Installation

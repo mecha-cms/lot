@@ -1,8 +1,8 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Convert string into `kebab-case`.
 @lot:
-- string $in, string $join = '-', $accent = true
+- string $value, string $join = '-', $accent = true
 @static: 1
 @example: |
   $A = To::kebab('foo bar baz');

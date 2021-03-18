@@ -1,0 +1,41 @@
+---
+title: LESS
+description: Convert LESS syntax into CSS syntax.
+author: Taufik Nurrohman
+type: Markdown
+link: 'http://leafo.net/lessphp'
+version: 2.6.0
+
+use:
+  '.\lot\x\art': 0
+  '.\lot\x\asset': 1
+...
+
+![LESS Logo](https://user-images.githubusercontent.com/1669261/73813016-5a9b6a00-4811-11ea-8212-f9e4b7a29937.png)
+
+This extension compiles LESS code into CSS code by looking for files with extension `.less` added through the `Asset::set()` method, storing the compiled results as static files and then displays them as CSS files. The compiled file contents will be updated automatically on every file modification changes on the LESS files.
+
+~~~ .txt
+.\path\to\file.less → .\path\to\file.css
+.\path\to\less\file.scss → .\path\to\css\file.css
+~~~
+
+### Usage
+
+~~~ .php
+Asset::set('.\path\to\file.less');
+~~~
+
+### Art Direction
+
+To enable this feature requires you to install the _Art Direction_ extension. Though, it’s already included by default in the core. Adding `less.data` file to a page folder will generate `css.data` file that contains the compiled results of `less.data` file automatically:
+
+~~~ .txt
+.\
+└── lot\
+    └── page\
+        ├── lorem-ipsum\
+        │   ├── css.data ← Automatic :)
+        │   └── less.data
+        └── lorem-ipsum.page
+~~~

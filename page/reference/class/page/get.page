@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Get one or more data from the currently opened page file.
 @lot:
 - string $key
@@ -10,6 +10,6 @@
   $B = $page->get('foo-bar-baz');
   $C = $page->get([
       'title' => false,
-      'foo-bar-baz' => false
+      'foo-bar-baz' => 1 // Default value is `1`
   ]);
 ...

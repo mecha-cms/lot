@@ -1,9 +1,9 @@
 ---
-@version: [current]
-@description: Set or get HTTP status code.
+@version: 2.2
+@description: Set or get response status code.
 @lot:
 - void
-- int $i
+- int $value
 @static: 1
 @example: |
   // Set

@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Encode special characters in URL.
 @lot:
-- string $in, $raw = false
+- string $value, $raw = false
 @static: 1
 @example: |
   $A = From::URL('foo bar+baz');

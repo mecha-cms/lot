@@ -1,10 +1,10 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Set state item.
 @lot:
-- string $key, $value
+- $key, $value
 @interface:
-- .array-access
+- /array-access
 @example: |
   $state['foo-bar-baz'] = 1;
 ...

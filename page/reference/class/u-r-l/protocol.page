@@ -1,10 +1,12 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Return the URL protocol if any, otherwise return `null`.
 @lot:
 - void
 @example: |
+  $url = new URL('http://127.0.0.1');
+
   $A = $url->protocol;
 @result: |
-  $A = 'http://';
+  $A = '[[e]]echo (new URL('http://127.0.0.1'))->protocol;[[/e]]';
 ...

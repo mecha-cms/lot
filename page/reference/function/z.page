@@ -1,4 +1,11 @@
 ---
-@version: [2, current]
-@description: Export array/object into a compact PHP file.
+@version: 2
+@description: Convert PHP array/object into a compact string of PHP array syntax.
+@lot:
+- $value, $short = true
+@example: |
+  content('.\state.php', '<?' . 'php return ' . z([
+      'foo' => 'bar',
+      'baz' => [1, 2, true]
+  ]));
 ...

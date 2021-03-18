@@ -1,6 +1,6 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert text to UPPER-CASE.
 @lot:
-- string $text
+- string $value
 ...

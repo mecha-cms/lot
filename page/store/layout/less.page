@@ -1,0 +1,78 @@
+---
+title: Layout-Less
+description: A layout system that outputs JSON data instead of HTML page. Useful for those who want to use Mecha as a headless CMS.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.0.0
+...
+
+A headless CMS is a back-end only content management system built from the ground up as a content repository that makes content accessible via a RESTful API for display on any device. The term “headless” comes from the concept of chopping the “head” (the front end, i.e. the website) off the “body” (the back end, i.e. the content repository).
+
+### Usage
+
+Accessing regular page URL will produce a JSON output, so you can process that using third-party services. The output will be cached for a day unless you add a `?cache=0` parameter to the URL. The following is an example output of a single page:
+
+~~~ .json
+{
+  "status": 200,
+  "t": "Page Title | Site Title",
+  "generator": "Mecha 2.2.1",
+  "url": {
+    "next": "http://127.0.0.1/article/page-name-2",
+    "prev": null,
+    "self": "http://127.0.0.1/article/page-name"
+  },
+  "title": "Site Title",
+  "description": "Site description.",
+  "can": { … },
+  "are": { … },
+  "has": { … },
+  "is": {
+    "page": true,
+    …
+  },
+  "not": { … },
+  "page": {
+    "id": "1577813996",
+    "title": "Page Title",
+    "description": "Page description.",
+    "time": "2020-01-01 00:39:56",
+    "link": null,
+    "url": "http://127.0.0.1/article/page-name",
+    "x": "page"
+  }
+}
+~~~
+
+### Supported Parameters
+
+Name | Description
+---- | -----------
+`cache` | Set to a value that can be evaluated to `false` to disable the cache.
+`token` | **TODO:** Make your data private by adding a mandatory access token.
+`site` | List your properties (separated by commas) that you want them to be available in the JSON output, taken from the `$site` variable.
+`page` | List your page properties (separated by commas) that you want them to be available in the JSON output.
+`pages` | List your page properties (separated by commas) of the pages that you want them to be available in the JSON output.
+`tag` | List your tag properties (separated by commas) that you want them to be available in the JSON output.
+
+### URL Examples
+
+~~~ .txt
+http://127.0.0.1/article/1?page=title,description,content,time&pages=title,description,time,url,link
+http://127.0.0.1/article/page-name?page=title,description,time,content
+~~~
+
+### JavaScript Example
+
+~~~ .html
+<script>
+fetch('http://127.0.0.1/article/page-name').then(response => {
+    if (!response.ok) {
+        // …
+    }
+    return response.json();
+}).then(json => {
+    console.log(json);
+});
+</script>
+~~~
