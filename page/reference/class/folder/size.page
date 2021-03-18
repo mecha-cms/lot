@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Get total sizes of files contained in a folder.
 @lot:
-- string $unit = null, int $r = 2
+- string $unit = null, int $round = 2
 @example: |
   (new Folder('.\path\to\folder'))->size;
 ...

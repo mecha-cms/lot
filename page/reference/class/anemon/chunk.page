@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Split an array into chunks.
 @lot:
 - int $chunk = 5, int $index = -1, $preserve_key = false

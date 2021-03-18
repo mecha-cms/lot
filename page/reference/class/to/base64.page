@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Encode string to Base64.
 @lot:
-- string $in
+- string $value
 @static: 1
 @example: |
   $A = To::base64('i love you');

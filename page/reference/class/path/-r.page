@@ -1,8 +1,8 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Remove root directory from file path.
 @lot:
-- string $path, string $root = ROOT, string $join = DS
+- string $value, string $root = ROOT, string $join = DS
 @static: 1
 @example: |
   $A = Path::R('.\foo\bar\baz\qux', '.\foo\bar');

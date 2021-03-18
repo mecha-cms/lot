@@ -1,8 +1,11 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Extract current URL data.
 @final: 1
 @parent: genome
 @interface:
-- .array-access
+- /array-access
+- /countable
+- /iterator-aggregate
+- /json-serializable
 ...

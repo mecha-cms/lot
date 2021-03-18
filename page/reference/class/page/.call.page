@@ -25,5 +25,5 @@ echo $page->test(function($text, $that) {
 Alternatively, you can use `?:` operator to treat `""`, `0`, `'0'`, `null`, `false`, and `[]` as `false` so that the next value will be returned:
 
 ~~~ .php
-echo $page->test ?: 'Alternate value.';
+echo $page->test ?? 'Alternate value.';
 ~~~

@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert file path to its base name.
 @lot:
-- string $path, int $step = 1, string $join = DS
+- string $value, int $step = 1, string $join = DS
 @static: 1
 @example: |
   $A = Path::B('foo\bar\baz.qux');

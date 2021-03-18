@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Return the line ending character of current Operating System.
 @example: |
   echo N;

@@ -1,6 +1,8 @@
 ---
-@version: [current]
-@description: Convert file name to class property name.
+@version: 2.2
+@description: Convert file name to property name.
+@lot:
+- string $value, $accent = false
 @example: |
   echo f2p('foo');
   echo f2p('.foo');

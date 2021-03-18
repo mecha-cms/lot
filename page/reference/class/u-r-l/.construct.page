@@ -1,11 +1,12 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Constructor.
 @lot:
 - void
-- string $in
+- string $value
+- string $value, string $d = null, int $i = null
 @example: |
-  $url = new URL('http://127.0.0.1/directory/foo/bar?foo=bar&baz=qux#foo');
+  $url = new URL('http://127.0.0.1/directory/foo/bar?foo=bar&baz=qux#foo', '/directory');
 
   echo $url; // Return the base URL
   echo $url->protocol; // Return the URL protocol

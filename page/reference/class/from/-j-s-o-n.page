@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert JSON into PHP object.
 @lot:
-- string $in
+- string $value
 @static: 1
 @example: |
   $A = From::JSON('{"foo":"bar"}');

@@ -1,0 +1,33 @@
+---
+title: Contrast
+description: Contrast is a simple blog theme with a nice clean design.
+link: 'https://github.com/niklasbuschmann/contrast'
+author: Taufik Nurrohman
+version: 1.1.2
+...
+
+![Contrast (Light Mode)](https://user-images.githubusercontent.com/1669261/72039093-5b0a1900-32d6-11ea-895f-9cccd597e713.png)
+
+### Others
+
+ - [Contrast (Dark Mode)](https://user-images.githubusercontent.com/1669261/72039100-5c3b4600-32d6-11ea-9bf6-f5c9f3adcdaa.png)
+ - [Minimal (Light Mode)](https://user-images.githubusercontent.com/1669261/72039101-5d6c7300-32d6-11ea-81a3-cf76bb297632.png)
+ - [Minimal (Dark Mode)](https://user-images.githubusercontent.com/1669261/72039102-5e9da000-32d6-11ea-86ba-d8649c7abdc9.png)
+
+This theme is based on a _Jekyll_ theme with the same name.
+
+### Settings
+
+Custom settings are available in `.\lot\layout\state.php` file.
+
+ - To hide the site title, set the `layout.title-show` state value to `false`.
+ - To hide the site navigation, set the `layout.nav-show` state value to `false`.
+ - To hide the site icons, set the `layout.icons-show` state value to `false`.
+ - To force dark mode by default, set the `layout.dark` state value to `true` (applies only to web browsers that does not have support dark mode feature).
+ - Limit the maximum links displayed in site navigation by setting the `layout.nav-show` state value as numbers to describe the limit.
+ - Add custom link icons in the `layout.icons` state.
+ - There are two custom `layout.style` available: `contrast` and `minimal`.
+
+### Embeds
+
+You can also embed a lot of stuff, for example from _YouTube_. To scale the video to full width use the `<div class="embed"></div>` wrapper around the iframe. Use `<div class="large"></div>` wrapper to increase the width of an image or iframe.

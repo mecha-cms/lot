@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Date and time.
 @final: 1
 @parent: genome

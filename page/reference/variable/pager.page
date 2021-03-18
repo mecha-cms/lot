@@ -1,11 +1,14 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Return the pagination.
 @example: |
   <?= $pager; ?>
-  <?= $pager->prev; ?>
-  <?= $pager->next; ?>
+
+  <?= $pager->next->url; ?>
+  <?= $pager->next->title; ?>
+
+  <?= $pager->next('Next Page'); ?>
 @example-description: This variable is an instance of [link:../class/pager].
 ...
 
-Added by the [link:../extension/page] extension.
+Added by the [link:../../store/extension/page] extension.

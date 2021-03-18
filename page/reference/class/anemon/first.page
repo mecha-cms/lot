@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Get first item in array.
 @lot:
 - $take = false

@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert HTML decimal characters representation into their original characters.
 @lot:
-- string $in
+- string $value
 @static: 1
 @example: |
   $A = From::dec('&#73;&#32;&#10084;&#32;&#85;');

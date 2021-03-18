@@ -1,8 +1,8 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Check if array contains at least one of the specified item.
 @lot:
-- iterable $data, $fn = null
+- iterable $value, $fn = null
 @example: |
   // Return `true` if `$data` contains `foo`
   if (any($data, 'foo')) { … }

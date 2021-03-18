@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert PHP array into URL query string.
 @lot:
-- array $in
+- array $value
 @static: 1
 @example: |
   $A = To::query([

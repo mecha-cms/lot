@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Treat `File` object as string.
 @example: |
   echo new File('.\path\to\file.txt');

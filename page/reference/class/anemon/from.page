@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Constructor.
 @lot:
-- iterable $array
+- iterable $value
 @static: 1
 @return: self
 @example: |

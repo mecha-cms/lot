@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Trim string from characters once.
 @lot:
-- string $in, string $start = '"', string $end = null
+- string $value, string $open = '"', string $close = $open
 @example: |
   $A = t('"""abcdef"""', '"');
   $B = t('"""abcdef"""', '""');

@@ -1,10 +1,10 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Convert HTML class instance to JSON.
 @lot:
 - void
 @interface:
-- .json-serializable
+- /json-serializable
 @example: |
   $div = new HTML('<div id="foo"></div>');
 

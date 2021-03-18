@@ -1,0 +1,40 @@
+---
+title: PHP Page
+description: Evaluate PHP syntax within the page content.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.0.2
+
+use:
+  '.\lot\x\page': 1
+...
+
+**This extension is not to be used on a site with multiple users. Other users may use this feature to execute malicious functions to break your system.**
+
+If you don’t like the [block](https://github.com/mecha-cms/x.block.e) evaluation method, you can use this extension to evaluate PHP expressions in the page file. It’s just that, you need to write the page content as raw HTML code, so you can’t combine this extension feature with [markdown](https://github.com/mecha-cms/mecha/tree/v2.2.2/lot/x/markdown) extension and the like (unless you are fine with implementing the parser in the PHP code).
+
+### Usage
+
+In your page header, add `type` property with value set to `PHP` or `application/php`:
+
+~~~ .yaml
+---
+title: Page Title
+description: Page description.
+author: Taufik Nurrohman
+type: PHP
+...
+
+<p>This is a <strong>bold</strong> text.</p>
+<p>Today is <?= $date->en; ?>.</p>
+<?php
+
+// Declare some PHP expressions here…
+
+echo 'Yo!';
+
+?>
+<p>Other HTML code goes here.</p>
+~~~
+
+This extension is suitable to be combined with [route](https://github.com/mecha-cms/x.route) extension.

@@ -1,0 +1,15 @@
+---
+@version: 2.2
+@description: Convert Anemon class instance to JSON.
+@lot:
+- void
+@interface:
+- /json-serializable
+@example: |
+  $url = new URL('http://127.0.0.1/foo/bar/1?baz=qux#asdf', '/foo');
+
+  echo To::JSON($url, true);
+@result: |
+  [[e]]echo To::JSON(new URL('http://127.0.0.1/foo/bar/1?baz=qux#asdf', '/foo'), true);[[/e]]
+@result-language: 'json'
+...

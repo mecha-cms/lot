@@ -1,0 +1,12 @@
+---
+title: Facebook Open Graph
+description: Automatically insert [Facebook Open Graph](https://developers.facebook.com/docs/sharing/opengraph "Open Graph Stories") meta tags in the `<head>` section.
+author: Taufik Nurrohman
+type: Markdown
+version: 2.2.5
+
+use:
+  '.\lot\x\layout': 1
+...
+
+Adding **Open Graph** meta tags to the `<head>` of your web page HTML will provide the crawler with structured info like a title, description and thumbnail image for the content.

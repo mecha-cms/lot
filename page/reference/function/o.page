@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert array to plain object.
 @lot:
-- $array, $safe = true
+- $value, $safe = true
 @example: |
   test(o([
       'foo' => 1,

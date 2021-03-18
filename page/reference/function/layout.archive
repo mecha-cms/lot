@@ -1,0 +1,13 @@
+---
+@version: 2.7
+@description: Short function for [link:../class/layout/set] and [link:../class/layout/get].
+@lot:
+- ...$lot
+@parent: layout
+@example: |
+  // Set `nav` layout
+  layout('nav', __DIR__ . DS . 'nav.php');
+
+  // Get `nav` layout
+  echo layout('nav');
+...

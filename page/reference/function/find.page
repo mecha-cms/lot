@@ -1,8 +1,8 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Return value of the first array item that pass the function test.
 @lot:
-- iterable $data, callable $fn
+- iterable $value, callable $fn
 @example: |
   $href = find($data, function($v, $k) {
       return isset($v['rel']) && 'alternate' === $v['rel'];

@@ -3,7 +3,7 @@ title: Dependency Inspector
 description: Check for missing dependency.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.0.1
+version: 1.0.2
 ...
 
 This extension will stop your page loading process when it finds a lack of certain extension dependencies by reading the `use` property in every `about.page` file. Currently only supports checking whether an extension needs another extension to make it work. In the future, maybe we can check if some extensions have been expired and need to be updated, or to provide advice if there are some new releases that can be downloaded.

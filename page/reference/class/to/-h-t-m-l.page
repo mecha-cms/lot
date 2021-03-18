@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Decode HTML special characters.
 @lot:
-- string $in
+- string $value
 @static: 1
 @example: |
   $A = To::HTML('&lt;foo bar=&quot;baz&quot;&gt;');

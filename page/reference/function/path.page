@@ -1,0 +1,8 @@
+---
+@version: 2.5.2
+@description: Return the resolved relative file/folder path if input is a valid file/folder path, otherwise return `null`.
+@lot:
+- string $value
+@example: |
+  echo path('../../index.css');
+...

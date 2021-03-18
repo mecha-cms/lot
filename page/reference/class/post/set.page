@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Set value to `$_POST` variable.
 @lot:
 - string $key, $value = null

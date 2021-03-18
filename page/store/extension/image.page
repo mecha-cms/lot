@@ -3,7 +3,7 @@ title: Image
 description: Image resizer and cropper.
 author: Taufik Nurrohman
 type: Markdown
-version: 2.2.3
+version: 2.2.4
 
 use:
   '.\lot\x\page': 0

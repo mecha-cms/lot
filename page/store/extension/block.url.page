@@ -1,0 +1,23 @@
+---
+title: URL Block
+description: Insert URL data to the page content.
+author: Taufik Nurrohman
+type: Markdown
+version: 2.2.4
+
+use:
+  '.\lot\x\block': 1
+  '.\lot\x\page': 1
+...
+
+Support these block patterns:
+
+ - <code>&#x5B;<span>&#x5B;url&#x5D;</span>&#x5D;</code> → `http://127.0.0.1/a`
+ - <code>&#x5B;<span>&#x5B;url.protocol&#x5D;</span>&#x5D;</code> → `http://`
+ - <code>&#x5B;<span>&#x5B;url.host&#x5D;</span>&#x5D;</code> → `127.0.0.1`
+ - <code>&#x5B;<span>&#x5B;url.port&#x5D;</span>&#x5D;</code> → `80`
+ - <code>&#x5B;<span>&#x5B;url.d&#x5D;</span>&#x5D;</code> → `/a`
+ - <code>&#x5B;<span>&#x5B;url.i&#x5D;</span>&#x5D;</code> → `/1`
+ - <code>&#x5B;<span>&#x5B;url.path&#x5D;</span>&#x5D;</code> → `/foo/bar`
+ - <code>&#x5B;<span>&#x5B;url.query&#x5D;</span>&#x5D;</code> → `?foo=bar&baz=qux`
+ - <code>&#x5B;<span>&#x5B;url.current&#x5D;</span>&#x5D;</code> → `http://127.0.0.1/a/foo/bar/1?foo=bar&baz=qux`

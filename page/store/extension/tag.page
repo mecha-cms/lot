@@ -1,21 +1,134 @@
 ---
 title: Tag
-description: Page tags.
+description: List all pages in the current folder filtered by tag.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.9.2
+version: 1.10.1
 
 use:
   '.\lot\x\page': 1
 ...
 
-This extension activates the tagging feature by utilizing the `kind` property on the page. This extension will also add several new routes such as `http://127.0.0.1/blog/tag/slug` on every page to allow users to list all pages in the current folder by a tag.
+This extension activates the tag feature by utilizing the `kind` property of the page. This extension will also add several new routes such as `http://127.0.0.1/blog/tag/:name` on every page to allow users to list all pages in the current folder by a tag.
+
+### Working with Tags
+
+[Panel](https://github.com/mecha-cms/x.panel) extension can help you to automate everything. But, if you have to, you can still make this extension work even without the GUI feature. Before we start, you need to know how this extension works.
+
+#### Page Properties
+
+**First**, get to know that this extension adds `query` and `tags` properties to the page only if the page contains `kind` property that is not empty:
+
+~~~ .php
+$page = Page::__set_state([
+    …
+    …
+    'kind' => [1, 2, 3], // [^1]
+    'query' => ['foo', 'bar', 'baz'], // [^2]
+    'tags' => Tags::__set_state([ // [^3]
+        'foo' => Tag::__set_state([
+            …
+            …
+            'id' => 1,
+            'name' => 'foo',
+            'url' => 'http://127.0.0.1/tag/foo'
+        ]),
+        'bar' => Tag::__set_state([
+            …
+            …
+            'id' => 2,
+            'name' => 'bar',
+            'url' => 'http://127.0.0.1/tag/bar'
+        ]),
+        'baz' => Tag::__set_state([
+            …
+            …
+            'id' => 3,
+            'name' => 'baz',
+            'url' => 'http://127.0.0.1/tag/baz'
+        ])
+    ])
+]);
+
+// [^1]: These numbers will be used as the tag ID.
+// [^2]: These queries are generated automatically based on the available tags.
+// [^3]: These rich tags data are also generated based on the available tags.
+~~~
+
+#### File Structure
+
+**Second**, writing a tag file is the same as writing a page file. The only difference is that you must write the `id` property separately from the page:
+
+~~~ .txt
+.\
+└── lot\
+    └── tag\
+        ├── bar\
+        │   └── id.data
+        ├── baz\
+        │   └── id.data
+        ├── foo\
+        │   └── id.data
+        ├── bar.page
+        ├── baz.page
+        └── foo.page
+~~~
+
+#### File Content
+
+**Third**, make sure to specify a unique number for each `id.data` file. These numbers, then will be used to connect the tag file with the `kind` property on every page.
+
+Here’s an example of a tag file content:
+
+~~~ .yaml
+---
+title: Tag Name
+description: Short description about this tag.
+...
+
+Long description about this tag.
+~~~
+
+#### Connections
+
+**Fourth**, to connect between tags with the current page, create a `kind.data` file in the corresponding folder, containing a list of tag’s ID written in a valid JSON format:
+
+~~~ .txt
+.\
+└── lot\
+    └── page\
+        ├── test-page\
+        │   └── kind.data
+        └── test-page.page
+~~~
+
+Example content of `kind.data` file:
+
+~~~ .json
+[1, 2, 3]
+~~~
+
+You can actually insert the `kind` property on the page header, but this method is a little inefficient in terms of performance:
+
+~~~ .yaml
+---
+title: Page Title
+description: Page description.
+author: Taufik Nurrohman
+type: Markdown
+kind: [1, 2, 3]
+...
+
+Page content goes here.
+~~~
+
+---
 
 ### Conditions
 
 These page conditional statements are available:
 
- - `$site->is('tags')` → `Return `true` if current items view is a tags view and is not empty.
+ - `$site->is('tags')` → Return `true` if current items view is a tags view and is not empty.
 
 ### Classes
 

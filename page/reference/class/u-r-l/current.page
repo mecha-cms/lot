@@ -1,10 +1,14 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Return current URL including the page offset, query string and hash.
 @lot:
 - void
 @example: |
-  $A = $url->current;
+  $url = new URL('http://127.0.0.1/foo/bar/1?baz=qux#asdf');
+  $url->hash = '#boo';
+
+  echo $url->current;
 @result: |
-  $A = 'http://127.0.0.1/directory/foo/bar/baz/2?foo=bar&baz=qux#asdf';
+  http://127.0.0.1/foo/bar/1?baz=qux#boo
+@result-language: 'txt'
 ...

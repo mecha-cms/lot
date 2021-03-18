@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert file or folder path to a folder path.
 @lot:
-- string $path, string $join = DS
+- string $value, string $join = DS
 @static: 1
 @example: |
   $A = Path::D('a\b\c\foo\bar\baz.qux');

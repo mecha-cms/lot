@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Set response status.
 @example: |
   Route::set('foo/bar', function() {

@@ -1,8 +1,9 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert file name, HTML string or plain text into `Title Case`.
+@static: 1
 @lot:
-- string $in
+- string $value
 @example: |
   $A = To::title('foo-bar-baz');
   $B = To::title('<p><strong>foo</strong> bar <em>baz</em></p>');

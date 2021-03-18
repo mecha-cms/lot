@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Stream file contents line by line.
 @lot:
 - string $path, int $chars = 1024

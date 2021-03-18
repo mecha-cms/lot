@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Define custom date pattern.
 @static: 1
 @lot:

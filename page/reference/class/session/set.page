@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Set a session.
 @lot:
 - string $key, $value

@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Short function for [`Alert::info()`][link:../class/alert/.call-static].
 @lot:
 - string $message

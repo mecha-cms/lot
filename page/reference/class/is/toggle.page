@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Check for valid boolean value.
 @lot:
-- $x
+- $value
 @static: 1
 @example: |
   if (Is::toggle(true)) { … }

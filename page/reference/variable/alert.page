@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Return the stored alert messages if any.
 @example: |
   <form>
@@ -11,4 +11,4 @@
 @example-language: 'html'
 ...
 
-Added by the [link:../store/extension/alert] extension.
+Added by the [link:../../store/extension/alert] extension.

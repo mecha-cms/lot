@@ -1,0 +1,77 @@
+---
+title: Highlight
+description: Syntax highlighter that works server-side.
+link: 'https://github.com/scrivo/highlight.php'
+author: Taufik Nurrohman
+type: Markdown
+version: 2.0.1
+
+use:
+  '.\lot\x\asset': 1
+  '.\lot\x\page': 1
+...
+
+Highlight.php is a server-side syntax highlighter written in PHP. It’s a port of [highlight.js](https://highlightjs.org) by Ivan Sagalaev that makes full use of the language and style definitions of the original JavaScript project.
+
+### Usage
+
+Add one of the language type available in `.\lot\x\highlight\engine\i\@scrivo\highlight.php\Highlight\languages` folder to the `<code>` element:
+
+~~~ .html
+<pre><code class="php">&lt;?php
+
+function foo($bar) {
+    return 'baz';
+}</code></pre>
+~~~
+
+Add `lang-` or `language-` prefix to the language type to make it a priority if you have multiple classes added to the `<code>` element:
+
+~~~ .html
+<pre><code class="foo bar language-php baz">&lt;?php
+
+function foo($bar) {
+    return 'baz';
+}</code></pre>
+~~~
+
+Without specifying a priority, this extension will try to use one of the most relevant language types between `foo`, `bar` and `baz`:
+
+~~~ .html
+<pre><code class="foo bar baz">&lt;?php
+
+function foo($bar) {
+    return 'baz';
+}</code></pre>
+~~~
+
+### Usage in Markdown
+
+Use fenced code block syntax to add the language type to the `<code>` element in Markdown:
+
+``` .markdown
+~~~ .php
+<?php
+
+function foo($bar) {
+    return 'baz';
+}
+~~~
+```
+
+### Syntax Highlighter Theme
+
+Set your preferred syntax highlighter theme to the `skin` property in `.\lot\x\highlight\state.php` file:
+
+~~~ .php
+return [
+    'skin' => 'agate', // ← this
+    'state' => [ … ]
+];
+~~~
+
+Or use the global state modifier to overwrite it in `.\lot\layout\index.php` file:
+
+~~~ .php
+State::set('x.highlight.skin', 'agate');
+~~~

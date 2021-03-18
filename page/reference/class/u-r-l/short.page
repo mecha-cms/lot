@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert full URL into relative URL.
 @lot:
-- string $path, $root = true
+- string $value, $ground = true
 @static: 1
 @example: |
   $A = URL::short('[[e]]echo $url;[[/e]]');
@@ -13,7 +13,7 @@
   $F = URL::short('[[e]]echo $url . '/foo/bar';[[/e]]');
   $G = URL::short('[[e]]echo $url . '?foo&bar';[[/e]]');
   $H = URL::short('[[e]]echo $url . '&foo&bar';[[/e]]');
-  $I = URL::short('[[e]]echo '//' . rtrim($url->host . '/' . $url->directory, '/');[[/e]]');
+  $I = URL::short('[[e]]echo '//' . rtrim($url->host . $url->d, '/');[[/e]]');
   $J = URL::short('http://example.com'); // External URL
   $K = URL::short('//example.com'); // External URL with relative protocol
 @result: |
@@ -25,8 +25,8 @@
   $F = '[[e]]echo URL::short($url . '/foo/bar');[[/e]]';
   $G = '[[e]]echo URL::short($url . '?foo&bar');[[/e]]';
   $H = '[[e]]echo URL::short($url . '&foo&bar');[[/e]]';
-  $I = '[[e]]echo URL::short('//' . rtrim($url->host . '/' . $url->directory, '/'));[[/e]]';
+  $I = '[[e]]echo URL::short('//' . rtrim($url->host . $url->d, '/'));[[/e]]';
   $J = '[[e]]echo URL::short('http://example.com');[[/e]]';
   $K = '[[e]]echo URL::short('//example.com');[[/e]]';
-@result-note: If `$root` is `false`, then the sub-directory path where the CMS is being installed will be removed too, and the leading `/` will also be removed. The `$root` parameter changes makes sense only when Mecha is installed in a sub-directory.
+@result-note: If `$ground` is `false`, then the sub-directory path where the CMS is being installed will be removed too. The `$ground` parameter changes makes sense only when Mecha is installed in a sub-directory.
 ...

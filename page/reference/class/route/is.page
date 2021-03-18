@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Check whether current URL path is matched with the given route pattern.
 @lot:
 - string $id
@@ -9,5 +9,4 @@
 @static: 1
 @example: |
   if (Route::is('blog/:slug')) { … }
-@example-note: This method will return the route data as class instance parsed from the current URL path or `false`.
 ...

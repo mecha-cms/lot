@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert string into `PascalCase`.
 @lot:
-- string $in
+- string $value
 @static: 1
 @example: |
   $A = To::pascal('foo bar baz');

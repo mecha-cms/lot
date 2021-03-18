@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Format date input using custom formatter.
 @lot:
 - string $pattern = '%Y-%m-%d %T'
@@ -38,8 +38,8 @@ Pattern |	Description | Example
 `%‌F` | Same as `%‌Y-%‌m-%‌d` | _2009-02-05_ for _February 5, 2009_
 `%‌s` | Unix Epoch Time timestamp (same as the `time()` function). | _305815200_ for _September 10, 1979 08:40:00 AM_
 `%‌x` | Preferred date representation based on locale, without the time. | _02/05/09_ for _February 5, 2009_
-`%‌n` | A new-line character (`\n`) |
-`%‌t` | A tab character (`\t`) |
-`%‌%` | A literal percentage character (`%‌`) |
+`%‌n` | A new-line character (`\n`) | ~
+`%‌t` | A tab character (`\t`) | ~
+`%‌%` | A literal percentage character (`%‌`) | ~
 
 Read more about date formatting pattern [here](http://php.net/manual/en/function.strftime.php "PHP strftime()").

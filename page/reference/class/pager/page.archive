@@ -1,0 +1,7 @@
+---
+@version: 2.2
+@description: Pagination generator for single page mode.
+@parent: pager
+@use:
+  '.\lot\x\page': 1
+...

@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Sanitize string into safe file path.
 @lot:
-- string $in
+- string $value
 @static: 1
 @example: |
   $A = To::file('foo / bar / baz .txt / abc $ def $ ghi .txt');

@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert file path to its name.
 @lot:
-- string $path, $x = false
+- string $value, $x = false
 @static: 1
 @example: |
   $A = Path::N('foo\bar\baz.qux');

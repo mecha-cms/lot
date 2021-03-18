@@ -1,0 +1,30 @@
+---
+title: Statically
+description: Statically is a free and public Content Delivery Network (CDN) for static assets.
+type: Markdown
+link: https://statically.io
+author: Taufik Nurrohman
+version: 1.0.0
+
+use:
+  '.\lot\x\panel': 0
+...
+
+Our mission is to make static files easy to manage and fast to deliver. We help files distribution faster, smaller, reliable, and more efficient than ever.
+
+### Features
+
+ - CDN for images (including: processing, optimization, and auto-WebP).
+ - CDN for CSS and JS (auto minify)
+ - Automatically generate a favicon from website’s name.
+ - Replace existing CDNJS URL with Statically.
+
+### Benefits
+
+ - Speeds up your site by serving assets from Statically CDN.
+ - Accelerate the delivery of your image files and add transformation capabilities.
+ - Save storage by serving featured images with Statically OG Image service.
+
+### Contribute
+
+Anyone is welcome to contribute to the extension on [GitHub](https://github.com/mecha-cms/x.statically).

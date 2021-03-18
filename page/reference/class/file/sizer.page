@@ -1,8 +1,8 @@
 ---
-@version: [current]
+@version: 2.2
 @description: File size converter.
 @lot:
-- int $size, string $unit = null, int $r = 2
+- float $size, string $unit = null, int $round = 2
 @static: 1
 @example: |
   $size = filesize('.\path\to\file.txt');

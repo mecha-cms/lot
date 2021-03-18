@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Get array value recursively.
 @lot:
 - string $key = null, string $join = '.'

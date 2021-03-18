@@ -208,7 +208,7 @@ Route::set('fonts.css', function() {
     // Set proper MIME type for CSS file
     $this->type('text/css');
     // Example: `?family=Roboto|Open+Sans`
-    if ($fonts = Get:get('family')) {
+    if ($fonts = Get::get('family')) {
         $out = ""; // Prepare the output…
         // Example: `Roboto:400,700,400i,700i|Open+Sans:400,700,400i,700i`
         foreach (explode('|', $fonts) as $font) {

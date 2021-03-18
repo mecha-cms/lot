@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2
 @description: Treat `Alert` object as string.
 @example: |
   Alert::error('Error message.');

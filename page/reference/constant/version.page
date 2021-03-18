@@ -1,0 +1,9 @@
+---
+@version: 2.2
+@description: Return the current Mecha CMS version.
+@example: |
+  echo '<p>Powered by Mecha ' . VERSION . '</p>';
+@result: |
+  [[e]]echo '<p>Powered by Mecha ' . VERSION . '</p>';[[/e]]
+@result-language: 'html'
+...

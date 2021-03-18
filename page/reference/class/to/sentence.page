@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert string into `Sentence case.`.
 @lot:
-- string $in, string $tail = '.'
+- string $value, string $tail = '.'
 @static: 1
 @example: |
   $A = To::sentence('foo bar baz', '?');

@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert string into their HTML hexagonal characters representation.
 @lot:
-- "string $in, $z = false, array $f = ['&#x', ';']"
+- string $value
 @static: 1
 @example: |
   $A = To::hex('I ❤ U');

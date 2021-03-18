@@ -1,9 +1,9 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Get data of the available assets.
 @lot:
 - void
-- string $path, int $i = 1
+- string $path
 @static: 1
 @example: |
   $A = Asset::get('.\lot\asset\css\style-2.css');

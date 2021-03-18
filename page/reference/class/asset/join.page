@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Load assets by its file extension.
 @lot:
 - string $x, string $join = ""

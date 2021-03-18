@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Get current hook.
 @lot:
 - void
@@ -8,6 +8,6 @@
 @example: |
   // Get current hook
   test(Hook::is());
-  // Check if current hook container name was `set`
-  if (Hook::is('set')) { … }
+  // Check if current hook container name was `content`
+  if (Hook::is('content')) { … }
 ...

@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert string into a valid object key.
 @lot:
-- string $in, $accent = true
+- string $value, $accent = true
 @static: 1
 @example: |
   $A = To::key('foo bar baz');

@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Upload a file.
 @lot:
 - array $blob, string $folder = ROOT

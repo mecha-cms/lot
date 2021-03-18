@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Get ISO8601 date format.
 @example: |
   $A = (new Time('[[e]]echo date('Y-m-d H:i:s');[[/e]]'))->ISO8601;

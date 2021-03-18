@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Normalize range to the specified boundaries.
 @lot:
 - $value, [$old_start, $old_end], [$new_start, $new_end]

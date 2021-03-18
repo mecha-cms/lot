@@ -1,0 +1,79 @@
+---
+title: Route
+description: Custom route files.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.0.1
+...
+
+Add some PHP files in `.\lot\route` folder:
+
+~~~ .txt
+.\
+└── lot\
+    └── route\
+        ├── user\
+        │   └── register.php
+        └── contact.php
+~~~
+
+Route files will automatically take effect on the existing site with an address according to the location of the route file, excluding the `.php` extension. For example, based on the file structure above, two routes will be applied:
+
+~~~ .txt
+http://127.0.0.1/route/contact
+http://127.0.0.1/route/user/register
+~~~
+
+Two global variables with name `$id` and `$path` are available to be used within the route file. `$id` refers to the value after the `http://127.0.0.1/route/` path, and `$path` refers to the route’s file path.
+
+The following is an example contents of a route file:
+
+~~~ .php
+<?php
+
+$errors = 0;
+
+// Validate request method
+if (!Request::is('Post')) {
+    Alert::error('Method not allowed.');
+    ++$errors;
+}
+
+// Validate form token
+if (!Guard::check(Post::get('token'), 'contact')) {
+    Alert::error('Invalid token.');
+    ++$errors;
+}
+
+// Redirect to the contact page immediately if there are some errors
+if ($errors > 0) {
+    Guard::kick('contact');
+}
+
+// Process the request data…
+$from = 'hello@example.com';
+$to = Post::get('email');
+$title = Post::get('title');
+$content = Post::get('content');
+if (send($from, $to, $title, $content)) {
+    Alert::success('Mail was sent successfully.');
+} else {
+    Alert::error('An error occurred while sending the mail.');
+}
+
+// Redirect to the contact page by default
+Guard::kick('contact');
+~~~
+
+Therefore you will be able to use that route as the form action in the HTML form element like so:
+
+~~~ .html
+<form action="<?= $url; ?>/route/contact" method="post">
+  <?= $alert; ?>
+  <p><input name="title" required type="text"></p>
+  <p><input name="email" required type="email"></p>
+  <p><textarea name="content" required></textarea></p>
+  <p><button type="submit"><?= i('Send'); ?></button></p>
+  <input name="token" type="hidden" value="<?= token('contact'); ?>">
+</form>
+~~~

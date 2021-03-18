@@ -1,9 +1,9 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Return the document title.
 @example: |
   <title><?= $t; ?></title>
 @example-language: 'html'
 ...
 
-Added by the [link:../store/extension/layout] extension.
+Added by the [link:../../store/extension/layout] extension.

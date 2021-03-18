@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Compares first array against second array and returns the values in first array that are not present in the second array.
 @lot:
 - array $a, array $b

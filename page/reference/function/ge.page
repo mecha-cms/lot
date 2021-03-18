@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Greater than or equal to.
 @lot:
 - $a, $b

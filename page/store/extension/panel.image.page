@@ -1,0 +1,136 @@
+---
+title: Featured Image Field
+description: Add featured image field to your panel extension.
+type: Markdown
+author: Taufik Nurrohman
+version: 1.1.0
+
+use:
+  '.\lot\x\image': 0
+  '.\lot\x\panel': 1
+...
+
+![Image Tab 1](https://user-images.githubusercontent.com/1669261/104103665-fe20b480-52d5-11eb-8f9e-254ef92d0671.png)
+
+![Image Tab 2](https://user-images.githubusercontent.com/1669261/104103668-ff51e180-52d5-11eb-87d2-cf8bb08281cf.png)
+
+This guide page is only useful for layout developers.
+
+### How to Change the Image Size List
+
+ - Set the `rect-auto` property value to `false` to force the writer to select an image dimension specified by the layout.
+ - Add or remove more image dimension options through the `rect` property.
+
+### How to Change the Options Directly
+
+Open `.\lot\x\panel.image\state.php` file with your source code editor, then adjust the value of the data in it according to your needs:
+
+~~~ .php
+return [
+    'title' => 'Image', // The tab title
+    'name' => 'image', // The page property name to store the image URL
+    'rect' => [ // List of pre-defined image dimension(s)
+        '1280x720' => "1280 \u{00D7} 720",
+        '1024x538' => "1024 \u{00D7} 538",
+        '300x300' => "300 \u{00D7} 300",
+        '150x150' => "150 \u{00D7} 150"
+    ],
+    'rect-auto' => true, // Allow user to preserve image dimension as-is?
+    'size' => [0, 204800] // Allowed minimum and maximum image file size in byte(s) (0 – 200 KB)
+];
+~~~
+
+### How to Change the Options Through Other Extensions
+
+In your executable extension file, add these instructions:
+
+~~~ .php
+// To modify some options
+State::set("x.panel\\.image.rect-auto", false);
+State::set("x.panel\\.image.rect", [
+    '150x150' => 'Small',
+    '300x300' => 'Medium',
+    '600x600' => 'Large'
+]);
+
+// To remove some options
+State::let("x.panel\\.image.rect.300x300");
+State::set("x.panel\\.image.rect", [
+    '150x150' => null,
+    '300x300' => null
+]);
+~~~
+
+### How to Change the Options Through Layout
+
+Open `.\lot\layout\state.php` file with your source code editor. Current extension’s state data will be overwritten by the layout state data under the `x.panel\.image` property:
+
+~~~ .php
+return [
+    'x' => [
+        // Custom “page” extension state
+        'page' => [ … ],
+        // Custom “panel.image” extension state
+        'panel.image' => [
+            'rect-auto' => false,
+            'rect' => [ … ]
+        ]
+    ]
+];
+~~~
+
+### How to Remove the Image Tab
+
+~~~ .php
+Hook::let('_', "_\\lot\\x\\panel\\image\\page\\fields");
+~~~
+
+### How to Remove the Image Tab Conditionally
+
+~~~ .php
+// To only show the image tab in gallery pages
+if (0 === strpos($_['path'], 'page/gallery/')) {
+    // Yo!
+} else {
+    // Remove the image tab
+    Hook::let('_', "_\\lot\\x\\panel\\image\\page\\fields");
+}
+~~~
+
+~~~ .php
+// To show the image tab in all pages but gallery pages
+if (0 === strpos($_['path'], 'page/gallery/')) {
+    // Remove the image tab
+    Hook::let('_', "_\\lot\\x\\panel\\image\\page\\fields");
+}
+~~~
+
+### How to Remove the Image URL Prefix
+
+~~~ .php
+$name = State::get("x.panel\\.image.name") ?? 'image';
+Hook::set(['do.page.get', 'do.page.set'], function($_) use($name, $url) {
+    if (!empty($_['alert']['error'])) {
+        return $_; // Abort on error!
+    }
+    if ('post' === $_['form']['type'] && $_['f']) {
+        $file = new File($_['f']);
+        $data = From::page($file->content, true);
+        if (isset($data[$name])) {
+            // Remove the root URL
+            $data[$name] = strtr($data[$name], [$url . "" => ""]);
+            // Update the page file
+            $file->set(To::page($data))->save();
+        }
+    }
+    return $_;
+}, 20.1); // Make sure to run after image upload event
+~~~
+
+You may also need to add this hook to ensure that the image URL remains accessible when displayed through Mecha that is mounted to a sub-folder:
+
+~~~ .php
+Hook::set('page.' . $name, function($image) use($url) {
+    return 0 === strpos($image, '/lot/') ? $url . $image : $image;
+}, 0);
+~~~

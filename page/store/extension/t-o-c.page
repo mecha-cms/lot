@@ -3,7 +3,7 @@ title: Table of Contents
 description: Generate table of contents automatically.
 author: Taufik Nurrohman
 type: Markdown
-version: 2.5.0
+version: 2.5.1
 
 use:
   '.\lot\x\asset': 1
@@ -11,15 +11,13 @@ use:
   '.\lot\x\page': 1
 ...
 
-This extension lets you build automatic table of contents on the page that has several headers in it so that you can use it to navigate between page headers. If you set the `type` value to `2`, then the table of contents will not be inserted into the page content, and this extension will only serve as an automatic permanent link ID generator for every header in your page content.
+This extension lets you build automatic table of contents on the page that has several headers in it so that you can use it to navigate between page headers. If you set the `type` value to `2`, table of contents will not be inserted to the page content, and this extension will only serves as an automatic permanent link ID generator for all header elements in your page content.
 
 ### Basic Usage
 
-Configuration data are available in `.\lot\x\t-o-c\state.php`.
-
 #### Custom Header ID
 
-You have the full control to determine your own header ID using the **Markdown Extra** syntax or with plain HTML markup. This extension will not overwrite the specific ID that you have specified in the header:
+You have the full control to determine your own header ID with Markdown Extra syntax or with plain HTML markup. This extension will not overwrite the specific ID that you have specified in the header elements:
 
 ~~~ .markdown
 #### Header Special {#special}
@@ -45,10 +43,9 @@ Add `not:t-o-c` class to the desired headers to exclude them from the TOC tree a
 
 #### Custom Placement
 
-If you have the _Block_ extension installed, you can put `[‌[‌t-o-c‌]‌]` block anywhere in the page content to mark the position you want to put the generated TOC tree to.
+If you have _Block_ extension installed, you can put <code>&#x5B;&#x5B;t-o-c&#x5D;&#x5D;</code> block anywhere in the page content to mark the position you want to put the generated TOC tree to:
 
-~~~ .yaml
----
+<pre><code class="yaml">---
 title: Page Title
 description: Page description.
 author: Taufik Nurrohman
@@ -57,18 +54,17 @@ type: Markdown
 
 First paragraph goes here.
 
-[‌[‌t-o-c title="Custom Title"‌]‌]
+&#x5B;<span>&#x5B;t-o-c title="Custom Title for Table of Contents"&#x5D;</span>&#x5D;
 
 Second paragraph goes here.
 
-Third paragraph goes here.
-~~~
+Third paragraph goes here.</code></pre>
 
 #### Disable TOC
 
 There are several ways to disable the automatic table of contents placement.
 
-The first way is through the extension configuration, that is, by setting the value of the `type` property to `0` or `false` (alias for `0`). This will disable the table of contents by default:
+First way is through the extension configuration, that is, by setting the value of the `type` property to `0` or `false` (alias for `0`). This will disable the table of contents by default:
 
 ~~~ .php
 <?php
@@ -93,7 +89,7 @@ state:
 ...
 ~~~
 
-The second way is through the page properties. To disable the automatic table of contents placement on certain page, add a `t-o-c` property within your page’s `state` property with a value that can be evaluated to `false`:
+Second way is through the page properties. To disable the automatic table of contents placement on certain page, add a `t-o-c` property within your page’s `state` property with a value that can be evaluated to `false`:
 
 ~~~ .yaml
 ---
@@ -120,7 +116,7 @@ state:
   t-o-c:
     type: 2
     class:
-    - table-of-content
+    - table-of-contents
 ...
 ~~~
 

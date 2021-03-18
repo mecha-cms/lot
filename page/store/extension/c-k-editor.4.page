@@ -1,0 +1,79 @@
+---
+title: CKEditor 4
+description: CKEditor is a WYSIWYG rich text editor which enables writing content directly inside of web pages or online applications. Its core code is written in JavaScript and it is developed by CKSource. CKEditor is available under open source and commercial licenses.
+author: Taufik Nurrohman
+type: Markdown
+link: 'https://github.com/ckeditor/ckeditor4'
+version: 2.2.0
+
+use:
+  '.\lot\x\panel': 1
+...
+
+![CKEditor 4](https://user-images.githubusercontent.com/1669261/85228767-b442b080-b40f-11ea-8b1c-8fbd899b1dc9.png)
+
+This extension works only for pages with `type` of `HTML` or `text/html`.
+
+### Features
+
+#### Styles
+
+Images that will be inserted to the editor content will use the CSS class as follows:
+
+~~~ .html
+<!-- `Full` -->
+<figure class="image">
+  <img alt="" src="/path/to/image.jpg">
+  <figcaption>Image caption.</figcaption>
+</figure>
+
+<!-- `Align Left` -->
+<figure class="image align-left">
+  <img alt="" src="/path/to/image.jpg">
+  <figcaption>Image caption.</figcaption>
+</figure>
+
+<!-- `Align Center` -->
+<figure class="image align-center">
+  <img alt="" src="/path/to/image.jpg">
+  <figcaption>Image caption.</figcaption>
+</figure>
+
+<!-- `Align Right` -->
+<figure class="image align-right">
+  <img alt="" src="/path/to/image.jpg">
+  <figcaption>Image caption.</figcaption>
+</figure>
+~~~
+
+You might need to add some special treatment to the generated HTML markup:
+
+~~~ .css
+.image {
+  display: block;
+}
+
+.align-left {
+  float: left;
+}
+
+.align-center {
+  float: none;
+}
+
+.align-right {
+  float: right;
+}
+~~~
+
+#### Languages
+
+All language files stored in `.\lot\x\c-k-editor.4\lot\asset\@ckeditor\ckeditor4\lang` and `.\lot\x\c-k-editor.4\lot\asset\@ckeditor\ckeditor4\plugins\*\lang` folders has been removed except `en.js` to reduce the file size.
+
+#### Codes
+
+The `codetag` plugin is a modified version of [this plugin](https://ckeditor.com/cke4/addon/codeTag) with some tweaks to make it possible to toggle the `<code>` tag based on [this pull](https://github.com/danielsvane/ckeditor-code-tag/pull/1).
+
+The `codesnippet` plugin has been modified so that it doesn’t use any syntax highlighter features. The main function of this plugin has been simplified just to insert a piece of code snippet with some HTML classes. You can apply the external syntax highlighter plugin on the public view of the site later. If you don’t like it, you can download the original `codesnippet` plugin [here](https://ckeditor.com/docs/ckeditor4/latest/examples/codesnippet.html) to replace the current `codesnippet` plugin.
+
+*[WYSIWYG]: What You See Is What You Get

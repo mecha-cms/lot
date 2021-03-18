@@ -1,0 +1,10 @@
+---
+title: Panel Browser Example
+description: Using the control panel API to make a simple asset browser feature.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.1.0
+
+use:
+  '.\lot\x\panel': 1
+...

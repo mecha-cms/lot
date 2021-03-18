@@ -1,10 +1,10 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Check the existence of HTML attribute.
 @lot:
-- string $name
+- $key
 @interface:
-- .array-access
+- /array-access
 @example: |
   $div = new HTML('<div id="foo"></div>');
 

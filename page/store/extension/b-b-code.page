@@ -1,0 +1,135 @@
+---
+title: BBCode
+description: Convert BBCode syntax to HTML.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.0.2
+
+use:
+  '.\lot\x\page': 1
+...
+
+[BBCode](https://www.bbcode.org) is short for Bulletin Board Code. It is used as a way for formatting posts made on message boards, blogs and more. It is similar to HTML in the sense that in BBCode one does also use tags to format something specific (contained within the tag). In BBCode, tags are indicated by rectangular brackets surrounding a keyword, which is in turn transformed into HTML before being delivered to a web browser.
+
+BBCode was implemented as method of providing a safer and easier way of allowing posts to be formatted on forums. Before BBCode forums sometimes allowed users to include HTML code in their posts, which had many security issues (i.e. the user could execute JavaScript code, break the layout of the site and so on). With BBCode being parsed by the forum scripts, it is easier to control what the user can do and can not do (allowing or not allowing specific BBCode tags).
+
+This extension generates semantic HTML markup. Your site will be safe. All HTML code will be encoded in the output, whether it is written outside the code block or inside the code block, without exception.
+
+### Usage
+
+In your page header, add a `type` property with a value set to `BBCode` or `text/bbcode`:
+
+<pre><code class="yaml">---
+title: Page Title
+description: Page description.
+author: Taufik Nurrohman
+type: BBCode
+...
+
+This is a &#x5B;b&#x5D;bold&#x5B;/b&#x5D; text :)</code></pre>
+
+### Syntax
+
+Here are the supported syntax. I deliberately did not include the <code>&#x5B;color&#x5D;</code> and <code>&#x5B;size&#x5D;</code> syntax in this extension because it is too complex and makes the text unpleasant to read.
+
+#### Bold, Italic, Strike and Underline Text
+
+<pre><code class="bbcode">&#x5B;b&#x5D;bold&#x5B;/b&#x5D;
+&#x5B;i&#x5D;italic&#x5B;/i&#x5D;
+&#x5B;s&#x5D;strike&#x5B;/s&#x5D;
+&#x5B;u&#x5D;underline&#x5B;/u&#x5D;</code></pre>
+
+Nesting is possible, but it won’t be as accurate as when using native HTML elements. In some cases, your syntax combination might damage each other.
+
+<pre><code class="bbcode">&#x5B;b&#x5D;&#x5B;i&#x5D;bold and italic&#x5B;/i&#x5D;&#x5B;/b&#x5D;</code></pre>
+
+#### Code
+
+BBCode syntax and smiley patterns written in the code block will not be touched by the parser. Language classes are supported on this extension to be combined with [highlight](https://github.com/mecha-cms/x.highlight) extension and such.
+
+<pre><code class="bbcode">&#x5B;code&#x5D;
+Code goes here…
+&#x5B;/code&#x5D;
+
+&#x5B;code=js&#x5D;
+JavaScript code goes here…
+&#x5B;/code&#x5D;</code></pre>
+
+#### Image
+
+For security reasons, this syntax will only display images when the image URL has an `.apng`, `.gif`, `.jpeg`, `.jpg`, `.png`, `.svg` or `.webp` extension at the end of the name.
+
+<pre><code class="bbcode">&#x5B;img&#x5D;http://127.0.0.1/path/to/image.jpg&#x5B;/img&#x5D;</code></pre>
+
+#### List
+
+Add a number to turn the list into an ordered list. A given number greater than `1` will create a `start` attribute with a value of that number added to the generated `<ol>` element. Nesting lists is not possible at this time.
+
+<pre><code class="bbcode">&#x5B;list&#x5D;
+* List item 1
+* List item 2
+* List item 3
+&#x5B;/list&#x5D;
+
+&#x5B;list=1&#x5D;
+* List item 1
+* List item 2
+* List item 3
+&#x5B;/list&#x5D;
+
+&#x5B;list=5&#x5D;
+* List item 1
+* List item 2
+* List item 3
+&#x5B;/list&#x5D;</code></pre>
+
+Several variant syntaxes for lists are available for compatibility reasons.
+
+<pre><code class="bbcode">&#x5B;list&#x5D;
+&#x5B;*&#x5D; List item 1
+&#x5B;*&#x5D; List item 2
+&#x5B;*&#x5D; List item 3
+&#x5B;/list&#x5D;
+
+&#x5B;list&#x5D;
+&#x5B;*&#x5D;List item 1&#x5B;/*&#x5D;
+&#x5B;*&#x5D;List item 2&#x5B;/*&#x5D;
+&#x5B;*&#x5D;List item 3&#x5B;/*&#x5D;
+&#x5B;/list&#x5D;</code></pre>
+
+#### Quote
+
+<pre><code class="bbcode">&#x5B;quote&#x5D;
+Important quote goes here…
+&#x5B;/quote&#x5D;</code></pre>
+
+#### URL
+
+<pre><code class="bbcode">&#x5B;url&#x5D;http://example.com&#x5B;/url&#x5D;
+&#x5B;url=http://example.com&#x5D;Example&#x5B;/url&#x5D;</code></pre>
+
+#### Smiley
+
+This extension supports a small set of smiley graphics to enhance the appearance without making them look excessive. No smiley code will be converted into images if it’s written in the HTML tags or in code blocks.
+
+<pre><code class="bbcode">:<span>cool</span>: :<span>grin</span>: :<span>hmm</span>: :<span>lol</span>: :<span>mad</span>: :<span>rolleyes</span>: :<span>sad</span>: :<span>smile</span>: :<span>straight</span>: :<span>tongue</span>: :<span>wink</span>: :<span>yikes</span>:</code></pre>
+
+<pre><code class="bbcode">8<span></span>) 8<span></span>-) B<span></span>) B<span></span>-)
+
+:<span></span>D :<span></span>-D
+
+:<span></span>/ :<span></span>-/ :<span></span>\ :<span></span>-\
+
+x<span></span>( x<span></span>-( X<span></span>( X<span></span>-(
+
+:<span></span>( :<span></span>-( :<span></span>'( :<span></span>'-(
+
+:<span></span>) :<span></span>-)
+
+:<span></span>| :<span></span>-|
+
+:<span></span>p :<span></span>-p :<span></span>P :<span></span>-P
+
+;<span></span>) ;<span></span>-)
+
+:<span></span>o :<span></span>-o :<span></span>O :<span></span>-O</code></pre>

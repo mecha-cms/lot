@@ -1,8 +1,13 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Copy folder with its contents to a folder.
 @lot:
-- string $to
+- string $to, string $as = null
 @example: |
+  // This creates `.\path\to\folder-1\folder`
   (new Folder('.\path\to\folder'))->copy('.\path\to\folder-1');
+  // This creates `.\path\to\folder-1\folder-a`
+  (new Folder('.\path\to\folder'))->copy('.\path\to\folder-1', 'folder-a');
+  // This creates `.\path\to\folder-1\folder\a`
+  (new Folder('.\path\to\folder'))->copy('.\path\to\folder-1', 'folder\a');
 ...

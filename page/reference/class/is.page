@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Detector.
 @final: 1
 @parent: genome

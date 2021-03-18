@@ -1,6 +1,8 @@
 ---
-@version: [current]
-@description: Convert class property name to file name.
+@version: 2.2
+@description: Convert property name to file name.
+@lot:
+- string $value, $accent = false
 @example: |
   echo p2f('foo');
   echo p2f('__foo');

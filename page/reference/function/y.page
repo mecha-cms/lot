@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Convert iterator to array.
 @lot:
-iterable $in
+iterable $value
 @example: |
   $A = y(g('.\path\to\folder'));
 ...

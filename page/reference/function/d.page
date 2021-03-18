@@ -1,11 +1,11 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Class auto-loader with callback feature.
 @lot:
 - string $folder, callable $fn
 @example: |
-  d('.\path\to\folder', function($ClassName, $name) {
-      echo 'Class <code>' . $ClassName '</code> was loaded.';
-      echo "Path: <code>.\\path\\to\\folder\\" . $name . '.php';
+  d('.\path\to\folder', function($class_name, $name) {
+      echo 'Class <code>' . $class_name . '</code> was loaded.';
+      echo "Path: <code>.\\path\\to\\folder\\" . $name . '.php</code>';
   });
 ...

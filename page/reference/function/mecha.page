@@ -1,6 +1,0 @@
----
-@version: [current]
-@description: This function name is reserved and actually does nothing.
-@lot:
-- void
-...

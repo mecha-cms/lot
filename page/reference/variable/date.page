@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Return the current date.
 @example: |
   <?= $date->year; ?>

@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Concatenate sequence array values.
 @lot:
 - array $a, array $b, …, $recursive = true

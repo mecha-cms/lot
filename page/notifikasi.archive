@@ -1,0 +1,38 @@
+---
+title: Notifikasi
+description: Komentar terbaru.
+type: HTML
+state:
+  comment: 0
+  r-a-p-i-c: 0
+  t-o-c: 0
+...
+
+[[e]]
+$files = [];
+if ($site->is('page')) {
+    foreach (g(LOT . DS . 'comment', 'page', true) as $k => $v) {
+        $files[$k] = basename($k);
+    }
+}
+arsort($files);
+$files = array_slice(array_keys($files), 0, 20);
+if ($files) {
+    $f = r('-', '_', $site->language);
+    foreach ($files as $v) {
+        $p = new Comment($v);
+        $pp = new Page(strtr(dirname($p->path), [LOT . DS . 'comment' . DS => LOT . DS . 'page' . DS]) . '.page');
+        echo '<h4>';
+        if ($p->link) {
+            echo '<a href="' . $p->link . '">' . $p->author . '</a>';
+        } else {
+            echo '<span>' . $p->author . '</span>';
+        }
+        echo ' pada <a href="' . $p->url . '#comment:' . $p->id . '">' . $pp->title . '</a></h4>';
+        echo $p->content;
+        echo '<p><time datetime="' . $p->time->format('c') . '">' . $p->time->{$f} . '</time></p>';
+    }
+} else {
+    echo '<p>' . i('No %s yet.', ['comments']) . '</p>';
+}
+[[/e]]

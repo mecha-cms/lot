@@ -1,9 +1,9 @@
 ---
-@version: [current]
+@version: 2.2
 @description: SGML markup helpers.
 @parent: genome
 @interface:
-- .array-access
-- .countable
-- .json-serializable
+- /array-access
+- /countable
+- /json-serializable
 ...

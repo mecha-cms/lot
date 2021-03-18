@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Specify minimum and maximum value for a value, and make sure that the value will not exceed the boundaries.
 @lot:
 - $value, [$min = 0, $max = null]

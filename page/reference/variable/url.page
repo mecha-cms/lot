@@ -1,7 +1,7 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Return the current URL.
 @example: |
   <?php if ('/foo/bar' === $url->path) { … } ?>
-@example-description: This variable is an instance of the [`URL`][link:../class/u-r-l].
+@example-description: This variable is an instance of the [link:../class/u-r-l].
 ...

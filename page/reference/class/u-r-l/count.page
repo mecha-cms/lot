@@ -1,0 +1,12 @@
+---
+@version: 2
+@description: Count all URL properties.
+@lot:
+- void
+@interface:
+- /countable
+@example: |
+  $url = new URL('http://127.0.0.1/foo/bar/1?baz=qux#asdf');
+
+  test($url->count(), count($url));
+...

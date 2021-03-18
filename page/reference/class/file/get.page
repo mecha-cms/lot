@@ -1,8 +1,8 @@
 ---
-@version: [1, 2, current]
+@version: 1
 @description: Reading file line by line.
 @lot:
-- int $i = 0
+- int $index = 0
 @example: |
   $file = new File('.\path\to\file.txt');
   echo $file->get(2); // Get the file content exactly at line 2

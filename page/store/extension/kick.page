@@ -1,0 +1,36 @@
+---
+title: Redirect
+description: URL redirection files.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.0.0
+...
+
+Create a `kick.tsv` file in `.\lot\page` folder:
+
+~~~ .txt
+.\
+└── lot\
+    └── page\
+        └── kick.tsv
+~~~
+
+Write some URL path and its new URL path on each line in the file. Separate old URL path data and its new URL path data with a tab character:
+
+~~~ .tsv
+/foo/bar.html         /foo/bar
+/2019/24/lorem-ipsum  /2020/05/lorem-ipsum
+/about-company        /about/company
+/about-us             /about/us
+~~~
+
+Please note that the example above uses space characters to visualize the tab characters. Original file must use the real tab characters to separate between fields.
+
+You can also use `kick.csv` file, but some people find this format is not so easy to read:
+
+~~~ .csv
+/foo/bar.html,/foo/bar
+/2019/24/lorem-ipsum,/2020/05/lorem-ipsum
+/about-company,/about/company
+/about-us,/about/us
+~~~

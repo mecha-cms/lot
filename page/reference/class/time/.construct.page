@@ -1,8 +1,8 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Create a time instance.
 @lot:
-- $date
+- $value
 @example: |
   $A = new Time([[e]]echo time();[[/e]]);
   $B = new Time('[[e]]echo time();[[/e]]');

@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Set a route.
 @lot:
 - string $id, callable $fn, float $stack = 10
@@ -22,7 +22,7 @@
 
 
   // Overriding the response status
-  Route::set('product/:id', 200, function() {
+  Route::set('product/:id', 200, function($id) {
       // There is no such `Product` class, this is just an example
       $product = Product::get($id);
       if (!$product) {

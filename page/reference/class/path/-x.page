@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Get file extension from a file path.
 @lot:
-- string $path, $x = false
+- string $value, $x = false
 @static: 1
 @example: |
   $A = Path::X('foo\bar\baz.qux');

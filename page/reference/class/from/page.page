@@ -1,8 +1,8 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Convert page file content into array.
 @lot:
-- string $in
+- string $value
 @static: 1
 @example: |
   $A = From::page(<<<PAGE
@@ -10,7 +10,7 @@
   title: Page Title
   description: Page description.
   ...
-  
+
   Page content.
   PAGE
   );

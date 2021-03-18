@@ -1,7 +1,7 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Return the current time.
 @example: |
   <?= $time->hour; ?>
-@example-description: This variable is an instance of [`Time`][link:../class/date] with current time as the input.
+@example-description: This variable is an instance of [link:../class/date] with current time as the input.
 ...

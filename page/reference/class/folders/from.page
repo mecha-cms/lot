@@ -1,0 +1,13 @@
+---
+@version: 2.2
+@description: Bulk [folder][link:../folder] instance from a folder.
+@lot:
+- string $folder = ROOT, $x = 0, $deep = 0
+@static: 1
+@example: |
+  $folders = Folders::from('.\path\to\folder');
+
+  foreach ($folders as $folder) {
+      echo $folder->name . '<br>';
+  }
+...

@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Check for empty string, array and object.
 @lot:
-- $x
+- $value
 @static: 1
 @example: |
   test(

@@ -1,9 +1,0 @@
----
-title: Plugin
-description: A lower priority extensions.
-built-in: 1
-...
-
-All plugin files are located in `lot` folder starting from the location of this file.
-
-[connect:../class/plugin]

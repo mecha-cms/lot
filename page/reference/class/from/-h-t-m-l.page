@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Encode HTML special characters.
 @lot:
-- string $in
+- string $value, $deep = false
 @static: 1
 @example: |
   $A = From::HTML('<foo bar="baz">');

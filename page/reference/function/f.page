@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Sanitize string input.
 @lot:
-- string $text, $accent = true, string $excludes = ""
+- string $value, $accent = true, string $preserve = ""
 ...
 
 This function does the following tasks:

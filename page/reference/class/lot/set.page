@@ -1,14 +1,21 @@
 ---
-@version: [current]
-@description: Set HTTP header.
+@version: 2.2
+@description: Set or get response headers.
 @lot:
+- string $key
 - string $key, $value = null
 - array $keys
 @static: 1
 @example: |
-  Lot::set('Content-Type', 'text/plain');
+  // Set `content-type` value for the response
+  Lot::set('content-type', 'text/plain');
+
+  // Set `content-length` and `content-type` value for the response
   Lot::set([
-      'Content-Length' => 0,
-      'Content-Type' => 'text/plain'
+      'content-length' => 0,
+      'content-type' => 'text/plain'
   ]);
+
+  // Get `content-type` value that has been set previously
+  echo Lot::set('content-type');
 ...

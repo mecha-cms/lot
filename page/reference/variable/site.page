@@ -1,9 +1,9 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Return the site data.
 @example: |
   <?= $site->title; ?>
 @example-description: This is an alias for [link:state].
 ...
 
-Added by the [link:../store/extension/layout] extension.
+Added by the [link:../../store/extension/layout] extension.

@@ -1,10 +1,10 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Alert messages.
 @final: 1
 @parent: genome
 @interface:
-- .countable
-- .iterator-aggregate
-- .json-serializable
+- /countable
+- /iterator-aggregate
+- /json-serializable
 ...

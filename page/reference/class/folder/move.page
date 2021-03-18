@@ -1,8 +1,13 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Move folder with its contents to a folder.
 @lot:
-- string $to
+- string $to, string $as = null
 @example: |
+  // Move to `.\path\to\folder\folder-1\folder`
   (new Folder('.\path\to\folder'))->move('.\path\to\folder-1');
+  // Move to `.\path\to\folder\folder-1\folder-a`
+  (new Folder('.\path\to\folder'))->move('.\path\to\folder-1', 'folder-a');
+  // Move to `.\path\to\folder\folder-1\folder\a`
+  (new Folder('.\path\to\folder'))->move('.\path\to\folder-1', 'folder\a');
 ...

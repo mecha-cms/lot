@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Return the custom variable that added in the layout argument.
 @example: |
   Layout::get('.\path\to\file.php', ['body' => 'Lorem ipsum dolor sit amet.']);

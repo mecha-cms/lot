@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2
 @description: Clear alert messages from session.
 @lot:
 - void

@@ -1,0 +1,16 @@
+---
+title: Comment Guard
+description: Basic security for the comment extension.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.0.0
+
+use:
+  '.\lot\x\comment': 1
+...
+
+This extension prevents users from publishing a comment based on certain criteria. For example, preventing users from writing more than five links in comments, blocking users coming from certain IP or email addresses, preventing users from writing certain words or sentences in comments, etc.
+
+ - Write email addresses of the users you want to block in the `.\lot\x\comment.guard\email.txt` file, each separated by a line break.
+ - Write IP addresses of the users you want to block in the `.\lot\x\comment.guard\ip.txt` file, each separated by a line break.
+ - Write a few words that you want to block in the `.\lot\x\comment.guard\words.txt` file, each separated by a line break. This file is not case-sensitive.

@@ -14,7 +14,7 @@ This extension will generate automatic link text and title attribute based on th
 
 ### Usage
 
-The link syntax is exactly the same as referenced link syntax in **Markdown**, the only difference is that you need to add a `link:` prefix to the reference ID:
+The link syntax is exactly the same as referenced link syntax in Markdown, the only difference is that you need to add a `link:` prefix to the reference ID:
 
 ~~~ .markdown
 [‌link:page-one] → will be replaced with `[Page Title](http://127.0.0.1/path/to/page-one "Page Title")`

@@ -1,4 +1,16 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Treat `URL` object as string.
+@lot:
+- void
+@example: |
+  $A = new URL('http://127.0.0.1/foo/bar/1?baz=qux#asdf');
+  $B = new URL('http://127.0.0.1/foo/bar/1?baz=qux#asdf', '/foo');
+
+  echo $A;
+  echo $B;
+@result: |
+  http://127.0.0.1
+  http://127.0.0.1/foo
+@result-language: 'txt'
 ...

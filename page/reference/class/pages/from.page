@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Bulk [page][link:../page] instance from a folder.
 @lot:
 - string $folder = LOT . DS . 'page', $x = 'page', $deep = 0

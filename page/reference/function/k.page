@@ -1,14 +1,14 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Filter [link:g] results by query.
 @lot:
-- string $folder, string $x, string $deep = 0, array $q, $content = false
-- string $folder int $type, string $deep = 0, array $q, $content = false
+- string $folder, string $x, string $deep = 0, array $query = [], $content = false
+- string $folder int $type, string $deep = 0, array $query = [], $content = false
 @example: |
-  $q = ['foo', 'bar'];
+  $query = ['foo', 'bar'];
 
   // Search `foo` and `bar` in file name
-  foreach (k('.\path\to\folder', 1, 0, $q) as $path => $type) { … }
+  foreach (k('.\path\to\folder', 1, 0, $query) as $path => $type) { … }
   // Search `foo` and `bar` in file content as well
-  foreach (k('.\path\to\folder', 1, 0, $q, true) as $path => $type) { … }
+  foreach (k('.\path\to\folder', 1, 0, $query, true) as $path => $type) { … }
 ...

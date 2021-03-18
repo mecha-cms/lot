@@ -3,7 +3,7 @@ title: Search
 description: Find files by query.
 author: Taufik Nurrohman
 type: Markdown
-version: 1.0.5
+version: 1.2.1
 
 use:
   '.\lot\x\page': 1
@@ -13,7 +13,7 @@ use:
 
 Append `?q=search+query` to the pages URL to search pages by file name or file content.
 
-Add this snippet just before the `</header>` in `header.php` file of your active layout folder to add the default search form:
+Add this snippet just before the `</header>` in `header.php` file of your active layout to add the default search form:
 
 ~~~ .php
 <?= self::form('search'); ?>

@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: HTML markup helpers.
 @parent: s-g-m-l
 ...

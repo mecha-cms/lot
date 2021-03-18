@@ -1,0 +1,83 @@
+---
+title: Chart
+description: Chart GUI for the panel extension.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.0.1
+
+use:
+  '.\lot\x\panel': 1
+...
+
+![Chart](https://user-images.githubusercontent.com/1669261/107127949-5d311380-68ec-11eb-99d7-106a2c00bcce.png)
+
+### Features
+
+These chart types are available for use.
+
+ - `chart/bar`
+ - `chart/bubble`
+ - `chart/doughnut`
+ - `chart/line`
+ - `chart/pie`
+ - `chart/polar-area`
+ - `chart/radar`
+ - `chart/scatter`
+
+### Usage
+
+~~~ .php
+[
+    'type' => 'chart',
+    'state' => [
+        'type' => 'line',
+        'data' => [ … ],
+        'options' => [ … ]
+    ],
+    'stack' => 10
+]
+~~~
+
+State data is for the configuration data that you will find in the documentation page of [Chart.js](https://www.chartjs.org/docs/latest)
+
+You don’t need to declare the chart type back in the `state` data when using specific chart type names. Several helper properties are available to make it easier for you to declare the data in the `state` property:
+
+ - `grid` → Determine the scale grid factor.
+ - `legend` → Determine the legend visibility and position.
+ - `lot` → Determine the chart data-set values.
+ - `max` → Determine the maximum scale in the chart.
+ - `min` → Determine the minimum scale in the chart.
+ - `set` → Determine the data-set labels (in the line chart, this will becomes the column names).
+ - `step` → Determine the scale step size.
+ - `title` → Determine the chart title.
+
+~~~ .php
+[
+    'set' => ['Data 1', 'Data 2', 'Data 3'],
+    'legend' => ['side' => 'right'],
+    'title' => 'Bar Chart',
+    'type' => 'chart/bar',
+    'min' => 0,
+    'max' => 50,
+    'lot' => [
+        0 => [
+            'title' => 'Subject 1',
+            'values' => [16, 4, 7], // Values for “Data 1”, “Data 2”, and “Data 3”
+            'color' => '#ff0000'
+        ],
+        1 => [
+            'title' => 'Subject 2',
+            'values' => [3, 1, 18],
+            'color' =>
+        ],
+        2 => [
+            'title' => 'Subject 3',
+            'values' => [6, 11, 8],
+            'color' =>
+        ]
+    ],
+    'stack' => 10
+]
+~~~
+
+An example page that displays the available charts is available at the following [link](http://127.0.0.1/panel/::g::/.test/charts).

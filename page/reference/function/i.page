@@ -1,10 +1,10 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Internationalization.
 @lot:
-- string $key
-- string $key, string $var
-- string $key, array $vars
+- string $value
+- string $value, string $var
+- string $value, array $lot
 ...
 
 Any text declared in the first parameter will be returned by default. This example will simply return “I'm ready!”:

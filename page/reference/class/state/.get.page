@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Dynamic properties.
 @lot:
 - string $key

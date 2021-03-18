@@ -3,7 +3,7 @@ title: Page View
 description: Page views counter.
 author: Taufik Nurrohman
 type: Markdown
-version: 2.3.0
+version: 2.4.1
 
 use:
   '.\lot\x\page': 1

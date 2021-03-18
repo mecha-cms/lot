@@ -1,9 +1,9 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Download a file.
 @lot:
 - string $path
-- string $path, string $name
+- string $path, string $as
 @static: 1
 @example: |
   File::pull('.\path\to\image.jpg');

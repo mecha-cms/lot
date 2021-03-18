@@ -1,0 +1,26 @@
+---
+title: Lazy
+description: Native lazy loading for the web.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.0.1
+
+use:
+  '.\lot\x\layout': 1
+...
+
+Lazy loading is technique that defers loading of non-critical resources at page load time. Instead, these non-critical resources are loaded at the moment of need. Where images are concerned, “non-critical” is often synonymous with “off-screen”. When we lazy-load images and video, we reduce initial page load time, initial page weight, and system resource usage, all of which have positive impacts on performance. [^1]
+
+Starting with [Chrome 76](https://chromium.googlesource.com/chromium/src/+log/75.0.3770.67..76.0.3809.88), you’ll be able to use the new `loading` attribute to lazy-load resources without the need to write custom lazy-loading code or use a separate JavaScript library. Please note that only images that are below the device viewport by the calculated distance load lazily. All images above the viewport, regardless of whether they’re immediately visible, load normally.
+
+This extension helps you to add the `loading` attribute automatically with value of `lazy`. To disable the lazy-loading behavior on certain iframes and images, you can add the attribute manually with value of `auto` (as this value is the default value, so it’s the same as if you didn’t add the attribute):
+
+~~~ .html
+<iframe loading="auto" src="/path/to/page.html"></iframe>
+~~~
+
+~~~ .html
+<img alt="" loading="auto" src="/path/to/image.jpg">
+~~~
+
+ [^1]: [Native Lazy-Loading for the Web](https://web.dev/native-lazy-loading)

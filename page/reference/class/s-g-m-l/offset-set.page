@@ -1,10 +1,10 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Set SGML attribute.
 @lot:
-- string $name, $value
+- $key, $value
 @interface:
-- .array-access
+- /array-access
 @example: |
   $foo = new SGML('<foo></foo>');
 

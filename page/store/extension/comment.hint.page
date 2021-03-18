@@ -1,0 +1,34 @@
+---
+title: Comment Hint
+description: Add a few instructions for your visitors on how to write a comment, right below the comment message field.
+author: Taufik Nurrohman
+type: Markdown
+version: 1.0.1
+
+use:
+  '.\lot\x\comment': 1
+...
+
+Open `.\lot\x\comment.hint\state.php` file then replace the default comment hint state as you wish:
+
+~~~ .php
+<?php
+
+return [
+    'hint' => 'Some HTML tags are allowed to be written in the comment body.'
+];
+~~~
+
+You can also specify it through the extension state modifier. Makes the comment hint becomes even more dynamic:
+
+~~~ .php
+<?php
+
+if ($comment_is_using_markdown) {
+    $hint = 'Please use Markdown syntax in the comment body. All HTML tags will be removed!';
+} else {
+    $hint = 'Some HTML tags are allowed to be written in the comment body.';
+}
+
+State::set('x.comment\.hint.hint', $hint);
+~~~

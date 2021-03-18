@@ -1,10 +1,10 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Remove SGML attribute.
 @lot:
-- string $name
+- $key
 @interface:
-- .array-access
+- /array-access
 @example: |
   $foo = new SGML('<foo bar="baz">qux</foo>');
 

@@ -1,8 +1,8 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Return the layout content.
 @lot:
-- $in, array $lot = []
+- $id, array $lot = []
 @static: 1
 @example: |
   Route::set('foo/bar', function() {

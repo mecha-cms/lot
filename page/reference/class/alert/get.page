@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2
 @description: Get raw alert messages data from session.
 @lot:
 - void

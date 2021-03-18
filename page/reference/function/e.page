@@ -1,9 +1,9 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Try to evaluate string to the proper data type.
 @lot:
-- $value, array $extra = []
-- array $values, array $extra = []
+- $value, array $lot = []
+- array $values, array $lot = []
 @example: |
   // Evaluate data from `$_GET`
   $data = e($_GET);

@@ -1,29 +1,34 @@
 ---
 title: Pager
 description: Custom page navigation.
-...
+author: Taufik Nurrohman
+type: Markdown
+version: 1.3.1
 
-![1](%{asset}%/png/reference/extension/pager.png)
+use:
+  '.\lot\x\asset': 1
+  '.\lot\x\page': 1
+...
 
 To enable the numbered page navigation style, open your `pages.php` file then find code that looks like one of the examples below:
 
 ~~~ .html
-<nav><?php echo $pager; ?></nav>
+<nav><?= $pager; ?></nav>
 ~~~
 
 ~~~ .php
-<?php static::pager(); ?>
+<?= self::pager(); ?>
 ~~~
 
 Replace with this:
 
 ~~~ .php
-<?php static::pager('step'); ?>
+<?= self::pager('steps'); ?>
 ~~~
 
 ### Types
 
 Type | Description
 ---- | -----------
-`step` | Numbered page navigation.
+`steps` | Numbered page navigation.
 `title` | Add page title to the next and previous link.

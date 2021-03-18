@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Convert current date to other date based on time zone input.
 @lot:
 - string $zone = 'UTC'

@@ -1,9 +1,9 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Advance `glob` function that returns `Generator` instead of plain array.
 @lot:
-- string $folder, string $x, string $deep = 0
-- string $folder int $type, string $deep = 0
+- string $folder, string $x, int $deep = 0
+- string $folder int $type, int $deep = 0
 @example: |
   // Default stream
   foreach (g('.\path\to\folder') as $path => $type) { … }

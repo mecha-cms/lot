@@ -1,0 +1,11 @@
+---
+@version: 2.6
+@description: Convert full path into relative path.
+@lot:
+- string $value, $ground = true
+@static: 1
+@example: |
+  $A = Path::short('.\var\www\foo\bar\baz');
+@result: |
+  $A = '\foo\bar\baz';
+...

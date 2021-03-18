@@ -1,19 +1,23 @@
 ---
-@version: [current]
-@description: Get HTTP header.
+@version: 2.2
+@description: Get request headers.
 @lot:
 - void
 - string $key
 @static: 1
 @example: |
   $A = Lot::get();
-  $B = Lot::get('Content-Type');
-  $C = Lot::get('X-Foo');
+  $B = Lot::get('content-type');
+  $C = Lot::get('x-foo');
 @result: |
   $A = [
-      'X-Powered-By' => 'Mecha/[[e]]echo VERSION;[[/e]]',
-      'Expires' => 'Thu, 19 Nov 1981 08:52:00 GMT',
-      'Content-type' => 'text/html'
+      'accept' => '…',
+      'accept-language' => '…',
+      'host' => '[[e]]echo $url->host;[[/e]]',
+      'user-agent' => '…',
+      'x-requested-with' => '…',
+      …
+      …
   ];
 
   $B = 'text/html';

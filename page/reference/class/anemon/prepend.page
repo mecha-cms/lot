@@ -1,5 +1,5 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Insert element to the start of array.
 @lot:
 - $value, $key = null

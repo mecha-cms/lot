@@ -1,9 +1,9 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Get initial array values.
 @lot:
 - void
-- array $lot, $over = false
+- array $value, $over = false
 @example: |
   $anemon = new Anemon(['foo', 'bar', 'baz']);
 

@@ -1,10 +1,10 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Array and object.
 @parent: genome
 @interface:
-- .array-access
-- .countable
-- .iterator-aggregate
-- .json-serializable
+- /array-access
+- /countable
+- /iterator-aggregate
+- /json-serializable
 ...

@@ -1,5 +1,5 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Bulk [folder][link:folder] instance from array.
 @parent: genome
 ...

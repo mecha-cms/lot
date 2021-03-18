@@ -1,8 +1,8 @@
 ---
-@version: [2, current]
+@version: 2
 @description: Check if current input is a valid folder path and make sure it is exists.
 @lot:
-- $x
+- $value
 @static: 1
 @example: |
   if (Is::folder('.\path\to\folder')) { … }

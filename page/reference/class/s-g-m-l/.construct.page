@@ -1,9 +1,9 @@
 ---
-@version: [current]
+@version: 2.2
 @description: Create a new SGML component.
 @lot:
-- string $in
-- array $in
+- string $value
+- array $value
 @example: |
   $A = new SGML('<foo bar="baz"></foo>');
   $B = new SGML(['foo', "", ['bar' => 'baz']]);
